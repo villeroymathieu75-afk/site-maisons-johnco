@@ -1,0 +1,737 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE PORTFOLIO v2 — Maison John&Co Marketing
+     Design nouveau : fond sombre, cartes horizontales,
+     filtres par secteur, métriques, sans lightbox.
+     VERSION WORDPRESS (sans DOCTYPE/html/head/body)
+     ═══════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+.mjc-pt{
+  --dk:#0A1628;--dk2:#131E30;--dk3:#1A2840;--lt:#F8FAFC;--wh:#FFFFFF;
+  --ac:#7C3AED;--acl:#A78BFA;--ach:#6D28D9;--acg:rgba(124,58,237,.35);
+  --pk:#EC4899;--gr:#10B981;--am:#F59E0B;--cy:#06B6D4;--or:#F97316;--red:#EF4444;
+  --td:#1A1A2E;--tm:#64748B;--tl:#F1F5F9;--tlm:#94A3B8;
+  --bl:#E2E8F0;--bd:rgba(255,255,255,.08);--bd2:rgba(255,255,255,.14);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--tl);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.mjc-pt *,.mjc-pt *::before,.mjc-pt *::after{box-sizing:border-box;}
+.mjc-pt p{margin:0 0 12px;} .mjc-pt h1,.mjc-pt h2,.mjc-pt h3,.mjc-pt h4{margin:0;letter-spacing:-.02em;}
+.mjc-pt a{text-decoration:none;color:inherit;}
+.pt-w{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+/* ANIMS */
+@keyframes pt-gr{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pt-fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes pt-up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pt-count{from{opacity:0}to{opacity:1}}
+.pt-rev{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+.pt-rev.on{opacity:1;transform:translateY(0);}
+.pt-rev.d1{transition-delay:.1s}.pt-rev.d2{transition-delay:.2s}.pt-rev.d3{transition-delay:.3s}
+
+/* ── HERO ── */
+.pt-hero{background:var(--dk);padding:120px 0 70px;position:relative;overflow:hidden;}
+.pt-hero-bg{position:absolute;inset:0;background:linear-gradient(140deg,#060E1A 0%,#0A1628 40%,#0F1E3A 70%,#060E1A 100%);z-index:0;}
+.pt-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(124,58,237,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.04) 1px,transparent 1px);background-size:60px 60px;z-index:1;}
+.pt-hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.12),transparent 70%);top:-200px;right:-100px;z-index:1;animation:pt-fl 10s ease-in-out infinite;}
+.pt-hero-in{position:relative;z-index:2;}
+.pt-hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:48px;}
+.pt-hero-left{max-width:640px;}
+.pt-pretitle{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acl);margin-bottom:20px;animation:pt-up .7s ease-out;}
+.pt-pretitle-line{width:32px;height:2px;background:linear-gradient(90deg,var(--ac),var(--acl));border-radius:2px;}
+.pt-hero h1{font-size:52px;font-weight:800;line-height:1.08;margin-bottom:16px;animation:pt-up .8s ease-out .1s both;}
+.pt-hero h1 em{font-style:normal;background:linear-gradient(135deg,#A78BFA,#7C3AED);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.pt-hero-sub{font-size:17px;color:var(--tlm);line-height:1.65;animation:pt-up .9s ease-out .2s both;}
+.pt-hero-right{display:flex;flex-direction:column;gap:12px;animation:pt-up .9s ease-out .3s both;}
+
+/* Compteurs hero */
+.pt-kpi-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.pt-kpi{background:var(--bd);border:1px solid var(--bd2);border-radius:16px;padding:20px 22px;min-width:140px;}
+.pt-kpi-v{font-size:28px;font-weight:800;background:linear-gradient(135deg,var(--tl),var(--acl));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:4px;}
+.pt-kpi-l{font-size:11px;color:var(--tlm);text-transform:uppercase;letter-spacing:1px;}
+
+/* ── FILTRES ── */
+.pt-filter-section{background:var(--dk2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:18px 0;position:sticky;top:0;z-index:80;}
+.pt-filter-inner{display:flex;align-items:center;gap:20px;flex-wrap:wrap;max-width:1200px;margin:0 auto;padding:0 24px;}
+.pt-filter-set{display:flex;align-items:center;gap:8px;}
+.pt-filter-lbl{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tlm);white-space:nowrap;}
+.pt-chips{display:flex;gap:6px;flex-wrap:wrap;}
+.pt-chip{padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .25s ease;font-family:inherit;border:1px solid var(--bd2);background:transparent;color:var(--tlm);}
+.pt-chip:hover{border-color:var(--acl);color:var(--acl);}
+.pt-chip.on{background:var(--ac);color:white;border-color:var(--ac);}
+.pt-filter-div{width:1px;height:24px;background:var(--bd2);flex-shrink:0;}
+
+/* ── CONTENU PRINCIPAL ── */
+.pt-content{background:var(--dk);padding:48px 0 100px;}
+.pt-info-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px;}
+.pt-info-count{font-size:14px;color:var(--tlm);}
+.pt-info-count strong{color:var(--acl);}
+.pt-sort{font-size:13px;color:var(--tlm);}
+
+/* ── GRILLE PROJETS ── */
+.pt-list{display:flex;flex-direction:column;gap:16px;}
+
+/* Carte projet horizontale */
+.pt-item{
+  background:var(--dk2);border:1px solid var(--bd);border-radius:20px;
+  display:grid;grid-template-columns:220px 1fr auto;gap:0;
+  overflow:hidden;cursor:pointer;transition:all .3s ease;
+}
+.pt-item:hover{border-color:rgba(124,58,237,.5);box-shadow:0 8px 32px rgba(0,0,0,.3),inset 0 0 0 1px rgba(124,58,237,.2);}
+.pt-item.pt-hidden{display:none;}
+
+/* Visuel projet */
+.pt-item-visual{
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  min-height:180px;
+}
+.pt-item-emoji{font-size:48px;position:relative;z-index:1;transition:transform .4s ease;}
+.pt-item:hover .pt-item-emoji{transform:scale(1.15);}
+.pt-item-visual-badge{position:absolute;bottom:12px;left:12px;padding:4px 10px;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:.5px;z-index:2;}
+
+/* Corps */
+.pt-item-body{padding:24px 28px;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--bd);}
+.pt-item-header{margin-bottom:12px;}
+.pt-item-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.pt-item-sector{font-size:11px;font-weight:600;color:var(--tlm);letter-spacing:.5px;text-transform:uppercase;}
+.pt-item-dot{width:4px;height:4px;border-radius:50%;background:var(--tlm);}
+.pt-item-date{font-size:11px;color:var(--tlm);}
+.pt-item h3{font-size:20px;font-weight:700;color:var(--tl);margin-bottom:8px;line-height:1.3;}
+.pt-item-desc{font-size:13px;color:var(--tlm);line-height:1.6;margin:0;}
+.pt-item-footer{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.pt-item-tag{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:600;background:rgba(124,58,237,.12);color:var(--acl);}
+
+/* Métriques */
+.pt-item-metrics{padding:24px;display:flex;flex-direction:column;justify-content:center;gap:12px;flex-shrink:0;min-width:160px;border-left:1px solid var(--bd);}
+.pt-metric{text-align:right;}
+.pt-metric-v{font-size:22px;font-weight:800;line-height:1;margin-bottom:2px;}
+.pt-metric-l{font-size:10px;color:var(--tlm);text-transform:uppercase;letter-spacing:.5px;}
+
+/* Couleurs visuel */
+.vis-ac{background:linear-gradient(135deg,#1A0A3A,#2D1B69);}
+.vis-pk{background:linear-gradient(135deg,#2D0A3A,#1E1048);}
+.vis-gr{background:linear-gradient(135deg,#0A2018,#0D2B1A);}
+.vis-am{background:linear-gradient(135deg,#1A1205,#2A1E0A);}
+.vis-cy{background:linear-gradient(135deg,#0A1A28,#0A2035);}
+.vis-or{background:linear-gradient(135deg,#1A0A05,#2A1205);}
+
+/* Couleurs métriques */
+.mv-ac{color:#A78BFA;} .mv-pk{color:#F9A8D4;} .mv-gr{color:#6EE7B7;} .mv-am{color:#FCD34D;} .mv-cy{color:#67E8F9;} .mv-or{color:#FDBA74;}
+
+/* Badges type */
+.bt-site{background:rgba(124,58,237,.8);color:white;}
+.bt-social{background:rgba(236,72,153,.8);color:white;}
+.bt-seo{background:rgba(245,158,11,.85);color:#0A1628;}
+.bt-ads{background:rgba(6,182,212,.8);color:#0A1628;}
+.bt-brand{background:rgba(16,185,129,.8);color:white;}
+.bt-content{background:rgba(249,115,22,.8);color:white;}
+
+/* Badges public */
+.bp-pro-b{background:rgba(124,58,237,.15);border:1px solid rgba(167,139,250,.25);color:var(--acl);}
+.bp-creator-b{background:rgba(236,72,153,.15);border:1px solid rgba(249,168,212,.25);color:#F9A8D4;}
+.bp-part-b{background:rgba(16,185,129,.15);border:1px solid rgba(110,231,183,.25);color:#6EE7B7;}
+
+/* Flèche survol */
+.pt-item-arrow{position:absolute;top:16px;right:16px;width:32px;height:32px;background:rgba(124,58,237,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease;}
+.pt-item:hover .pt-item-arrow{opacity:1;background:var(--ac);}
+
+/* ── SECTION TÉMOIGNAGES ── */
+.pt-temos{background:var(--dk2);padding:72px 0;border-top:1px solid var(--bd);}
+.pt-section-ttl{text-align:center;margin-bottom:44px;}
+.pt-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acl);display:block;margin-bottom:10px;}
+.pt-section-ttl h2{font-size:32px;font-weight:700;color:var(--tl);margin-bottom:8px;}
+.pt-section-ttl p{font-size:15px;color:var(--tlm);max-width:520px;margin:0 auto;}
+.pt-temo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.pt-temo{background:var(--dk3);border:1px solid var(--bd);border-radius:16px;padding:26px;}
+.pt-temo-stars{color:var(--am);font-size:13px;margin-bottom:10px;}
+.pt-temo-txt{font-size:14px;color:var(--tlm);line-height:1.65;font-style:italic;margin-bottom:18px;}
+.pt-temo-author{display:flex;align-items:center;gap:10px;}
+.pt-temo-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--acl));display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:700;flex-shrink:0;}
+.pt-temo-name{font-size:13px;font-weight:700;color:var(--tl);}
+.pt-temo-role{font-size:11px;color:var(--tlm);}
+
+/* ── CTA ── */
+.pt-cta{background:var(--dk);padding:90px 0;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bd);}
+.pt-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.12),transparent 70%);border-radius:50%;}
+.pt-cta-in{position:relative;z-index:1;max-width:600px;margin:0 auto;}
+.pt-cta h2{font-size:36px;font-weight:700;color:var(--tl);margin-bottom:12px;}
+.pt-cta h2 em{font-style:normal;background:linear-gradient(135deg,var(--acl),var(--ac));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.pt-cta p{font-size:16px;color:var(--tlm);margin-bottom:28px;}
+.pt-cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.pt-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-size:14px;font-weight:600;font-family:inherit;transition:all .3s ease;cursor:pointer;border:none;}
+.pt-btn-p{background:linear-gradient(135deg,var(--ac),var(--ach));color:white;box-shadow:0 4px 16px var(--acg);}
+.pt-btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--acg);}
+.pt-btn-o{background:var(--bd);color:var(--tl);border:1px solid var(--bd2);}
+.pt-btn-o:hover{background:var(--bd2);border-color:var(--acl);}
+
+/* Empty state */
+.pt-empty{display:none;text-align:center;padding:80px 20px;}
+.pt-empty.show{display:block;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .pt-hero h1{font-size:38px;}
+  .pt-item{grid-template-columns:160px 1fr;}
+  .pt-item-metrics{display:none;}
+  .pt-temo-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .pt-hero{padding:90px 0 50px;}
+  .pt-hero h1{font-size:28px;}
+  .pt-hero-top{flex-direction:column;}
+  .pt-kpi-row{grid-template-columns:repeat(4,1fr);}
+  .pt-kpi-v{font-size:20px;}
+  .pt-item{grid-template-columns:1fr;}
+  .pt-item-visual{min-height:120px;}
+  .pt-item-body{border-left:none;border-top:1px solid var(--bd);}
+  .pt-filter-inner{flex-direction:column;align-items:flex-start;}
+  .pt-filter-div{display:none;}
+  .pt-temo-grid{grid-template-columns:1fr;}
+  .pt-cta h2{font-size:26px;}
+  .pt-cta-btns{flex-direction:column;}
+}
+</style>
+
+<div class="mjc-pt">
+
+<!-- ── HERO ── -->
+<section class="pt-hero">
+  <div class="pt-hero-bg"></div>
+  <div class="pt-hero-grid"></div>
+  <div class="pt-hero-glow"></div>
+  <div class="pt-w">
+    <div class="pt-hero-in">
+      <div class="pt-hero-top">
+        <div class="pt-hero-left">
+          <div class="pt-pretitle"><div class="pt-pretitle-line"></div>Portfolio &amp; Réalisations</div>
+          <h1>Des résultats<br><em>concrets et mesurables</em></h1>
+          <p class="pt-hero-sub">Chaque projet ici représente une transformation digitale réelle. Chiffres vérifiables, clients réels, résultats publiés avec leur accord.</p>
+        </div>
+        <div class="pt-hero-right">
+          <div class="pt-kpi-row">
+            <div class="pt-kpi"><div class="pt-kpi-v">120+</div><div class="pt-kpi-l">Projets livrés</div></div>
+            <div class="pt-kpi"><div class="pt-kpi-v">98%</div><div class="pt-kpi-l">Satisfaction</div></div>
+            <div class="pt-kpi"><div class="pt-kpi-v">3 ans</div><div class="pt-kpi-l">D'expérience</div></div>
+            <div class="pt-kpi"><div class="pt-kpi-v">24/7</div><div class="pt-kpi-l">Suivi client</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FILTRES ── -->
+<div class="pt-filter-section">
+  <div class="pt-filter-inner">
+    <div class="pt-filter-set">
+      <span class="pt-filter-lbl">Service</span>
+      <div class="pt-chips" id="ptTypeGroup">
+        <button class="pt-chip on" data-type="all">Tout</button>
+        <button class="pt-chip" data-type="site">Site web</button>
+        <button class="pt-chip" data-type="social">Social Media</button>
+        <button class="pt-chip" data-type="seo">SEO</button>
+        <button class="pt-chip" data-type="ads">Publicité</button>
+        <button class="pt-chip" data-type="brand">Branding</button>
+        <button class="pt-chip" data-type="content">Contenu</button>
+      </div>
+    </div>
+    <div class="pt-filter-div"></div>
+    <div class="pt-filter-set">
+      <span class="pt-filter-lbl">Client</span>
+      <div class="pt-chips" id="ptPublicGroup">
+        <button class="pt-chip on" data-public="all">Tous</button>
+        <button class="pt-chip" data-public="pro">Entreprises</button>
+        <button class="pt-chip" data-public="creator">Créateurs</button>
+        <button class="pt-chip" data-public="part">Particuliers</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── LISTE PROJETS ── -->
+<section class="pt-content">
+  <div class="pt-w">
+    <div class="pt-info-bar">
+      <p class="pt-info-count"><strong id="ptCount">12</strong> projets affichés</p>
+    </div>
+
+    <div class="pt-list" id="ptList">
+
+      <!-- 1. E-commerce Maison Delcourt -->
+      <div class="pt-item pt-rev" data-type="site" data-public="pro">
+        <div class="pt-item-visual vis-ac">
+          <span class="pt-item-emoji">🛒</span>
+          <span class="pt-item-visual-badge bt-site">Site web</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Mobilier haut de gamme</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-pro-b">Entreprise</span>
+            </div>
+            <h3>Maison Delcourt — Refonte boutique e-commerce</h3>
+            <p class="pt-item-desc">Migration WooCommerce complète, refonte UX/UI premium et optimisation SEO technique. Le taux de conversion a triplé en 4 mois grâce à la refonte du tunnel d'achat.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">E-commerce</span>
+            <span class="pt-item-tag">UX Design</span>
+            <span class="pt-item-tag">SEO Technique</span>
+            <span class="pt-item-tag">Copywriting</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-ac">+312%</div><div class="pt-metric-l">Conversion</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-ac">×3.4</div><div class="pt-metric-l">Panier moyen</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-ac">+68%</div><div class="pt-metric-l">Trafic organique</div></div>
+        </div>
+      </div>
+
+      <!-- 2. Social Media Clara R. -->
+      <div class="pt-item pt-rev" data-type="social" data-public="creator">
+        <div class="pt-item-visual vis-pk">
+          <span class="pt-item-emoji">✨</span>
+          <span class="pt-item-visual-badge bt-social">Social Media</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Lifestyle &amp; Beauté</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-creator-b">Créatrice</span>
+            </div>
+            <h3>Clara R. — 8K à 94K abonnés Instagram en 8 mois</h3>
+            <p class="pt-item-desc">Refonte complète de la stratégie éditoriale, personal branding, calendrier contenu et optimisation des formats. 6 partenariats marques signés dans la foulée de la croissance.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">Personal Branding</span>
+            <span class="pt-item-tag">Stratégie éditoriale</span>
+            <span class="pt-item-tag">Instagram</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-pk">×11.7</div><div class="pt-metric-l">Abonnés</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-pk">+420%</div><div class="pt-metric-l">Engagement</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-pk">6</div><div class="pt-metric-l">Partenariats</div></div>
+        </div>
+      </div>
+
+      <!-- 3. SEO Immo -->
+      <div class="pt-item pt-rev" data-type="seo" data-public="pro">
+        <div class="pt-item-visual vis-gr">
+          <span class="pt-item-emoji">🏡</span>
+          <span class="pt-item-visual-badge bt-seo">SEO</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Immobilier</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-pro-b">Entreprise</span>
+            </div>
+            <h3>Confort'Immo Lyon — Trafic ×8 grâce au content SEO</h3>
+            <p class="pt-item-desc">Stratégie de contenu SEO sur 6 mois : 48 articles optimisés, cocon sémantique complet et netlinking qualitatif. Position #1 sur les requêtes immobilier Lyon.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">Content SEO</span>
+            <span class="pt-item-tag">Cocon sémantique</span>
+            <span class="pt-item-tag">Netlinking</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-gr">×8</div><div class="pt-metric-l">Trafic organique</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-gr">#1</div><div class="pt-metric-l">Lyon immobilier</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-gr">48</div><div class="pt-metric-l">Articles publiés</div></div>
+        </div>
+      </div>
+
+      <!-- 4. Meta Ads -->
+      <div class="pt-item pt-rev" data-type="ads" data-public="pro">
+        <div class="pt-item-visual vis-cy">
+          <span class="pt-item-emoji">📣</span>
+          <span class="pt-item-visual-badge bt-ads">Publicité</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Retail alimentaire</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-pro-b">Entreprise</span>
+            </div>
+            <h3>L'Épicerie du Jardin — ROAS ×23.5 sur Meta Ads</h3>
+            <p class="pt-item-desc">Lancement d'une épicerie fine bordelaise via Meta Ads. Ciblage géographique précis, visuels UGC produits, séquence de retargeting à 3 niveaux. 47 000€ de CA généré le premier trimestre.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">Meta Ads</span>
+            <span class="pt-item-tag">Retargeting</span>
+            <span class="pt-item-tag">UGC</span>
+            <span class="pt-item-tag">Copywriting</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-cy">×23.5</div><div class="pt-metric-l">ROAS</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-cy">47K€</div><div class="pt-metric-l">CA trimestre 1</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-cy">4.2%</div><div class="pt-metric-l">Taux conv.</div></div>
+        </div>
+      </div>
+
+      <!-- 5. Branding -->
+      <div class="pt-item pt-rev" data-type="brand" data-public="pro">
+        <div class="pt-item-visual vis-am">
+          <span class="pt-item-emoji">🎨</span>
+          <span class="pt-item-visual-badge bt-brand">Branding</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Photographie corporate</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2023</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-pro-b">Entreprise</span>
+            </div>
+            <h3>Lumière Studio — Identité de marque complète</h3>
+            <p class="pt-item-desc">Logo, charte graphique, design system, templates réseaux sociaux et site vitrine pour un studio de photographie corporate parisien. +85% de demandes entrantes en 3 mois.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">Logo</span>
+            <span class="pt-item-tag">Charte graphique</span>
+            <span class="pt-item-tag">Design System</span>
+            <span class="pt-item-tag">Site vitrine</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-am">+85%</div><div class="pt-metric-l">Demandes entrantes</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-am">100%</div><div class="pt-metric-l">Cohérence marque</div></div>
+        </div>
+      </div>
+
+      <!-- 6. Lancement formation créateur -->
+      <div class="pt-item pt-rev" data-type="content" data-public="creator">
+        <div class="pt-item-visual vis-pk">
+          <span class="pt-item-emoji">💰</span>
+          <span class="pt-item-visual-badge bt-content">Contenu</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Finance &amp; Crypto</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-creator-b">Créateur</span>
+            </div>
+            <h3>Thomas M. — 89 000€ de CA en 72h sur le lancement formation</h3>
+            <p class="pt-item-desc">Stratégie complète de lancement formation : tunnel de vente, page de vente, séquence email 7 jours, webinaire live. 348 ventes dès le premier jour d'ouverture.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">Tunnel de vente</span>
+            <span class="pt-item-tag">Email Marketing</span>
+            <span class="pt-item-tag">Copywriting</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-pk">89K€</div><div class="pt-metric-l">CA en 72h</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-pk">348</div><div class="pt-metric-l">Ventes J1</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-pk">4.8★</div><div class="pt-metric-l">Avis clients</div></div>
+        </div>
+      </div>
+
+      <!-- 7. Google Ads école -->
+      <div class="pt-item pt-rev" data-type="ads" data-public="pro">
+        <div class="pt-item-visual vis-cy">
+          <span class="pt-item-emoji">📚</span>
+          <span class="pt-item-visual-badge bt-ads">Publicité</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Formation / Éducation</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-pro-b">Entreprise</span>
+            </div>
+            <h3>Lingua Academy — CPA divisé par 3 en 60 jours</h3>
+            <p class="pt-item-desc">Restructuration complète des campagnes Google Ads d'une école de langues. Nouveaux groupes d'annonces, landing pages dédiées par langue et A/B testing continu. +180% d'inscriptions.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">Google Ads</span>
+            <span class="pt-item-tag">Landing Pages</span>
+            <span class="pt-item-tag">A/B Testing</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-cy">÷3.2</div><div class="pt-metric-l">Coût / élève</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-cy">+180%</div><div class="pt-metric-l">Inscriptions</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-cy">8.4%</div><div class="pt-metric-l">Taux conv.</div></div>
+        </div>
+      </div>
+
+      <!-- 8. Reconversion particulier -->
+      <div class="pt-item pt-rev" data-type="content" data-public="part">
+        <div class="pt-item-visual vis-gr">
+          <span class="pt-item-emoji">🔄</span>
+          <span class="pt-item-visual-badge bt-content">Reconversion</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Reconversion professionnelle</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-part-b">Particulier</span>
+            </div>
+            <h3>Marie L. — Emploi Social Media Manager en 5 mois</h3>
+            <p class="pt-item-desc">Accompagnement complet d'une reconversion comptabilité → digital : formation intensive, construction d'un portfolio de projets réels, coaching entretiens. CDI décroché en 5 mois.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">Formation</span>
+            <span class="pt-item-tag">Coaching carrière</span>
+            <span class="pt-item-tag">Portfolio</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-gr">5 mois</div><div class="pt-metric-l">Jusqu'à l'emploi</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-gr">100%</div><div class="pt-metric-l">Objectif atteint</div></div>
+        </div>
+      </div>
+
+      <!-- 9. TikTok Ads cosmétiques -->
+      <div class="pt-item pt-rev" data-type="ads" data-public="pro">
+        <div class="pt-item-visual vis-or">
+          <span class="pt-item-emoji">🌿</span>
+          <span class="pt-item-visual-badge bt-ads">Publicité</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Beauté bio</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-pro-b">Entreprise</span>
+            </div>
+            <h3>Élan Cosmétiques — ROAS 18.4 sur TikTok Ads</h3>
+            <p class="pt-item-desc">Lancement d'une gamme bio sur TikTok Ads avec contenu UGC authentique. Ciblage précis femmes 25-40, retargeting multi-étapes. 120K vues organiques générées en bonus.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">TikTok Ads</span>
+            <span class="pt-item-tag">UGC</span>
+            <span class="pt-item-tag">Retargeting</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-or">18.4</div><div class="pt-metric-l">ROAS TikTok</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-or">120K</div><div class="pt-metric-l">Vues organiques</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-or">+290%</div><div class="pt-metric-l">Ventes</div></div>
+        </div>
+      </div>
+
+      <!-- 10. Site RH -->
+      <div class="pt-item pt-rev" data-type="site" data-public="pro">
+        <div class="pt-item-visual vis-ac">
+          <span class="pt-item-emoji">🏢</span>
+          <span class="pt-item-visual-badge bt-site">Site web</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Conseil RH</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2023</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-pro-b">Entreprise</span>
+            </div>
+            <h3>Léa Conseil — Site vitrine, prise de contact doublée</h3>
+            <p class="pt-item-desc">Site vitrine WordPress pour un cabinet RH parisien. Design épuré, blog intégré, formulaire de contact avancé, SEO on-page complet. Top 3 Google sur les requêtes conseil RH Paris.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">WordPress</span>
+            <span class="pt-item-tag">SEO</span>
+            <span class="pt-item-tag">Design</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-ac">+200%</div><div class="pt-metric-l">Contacts</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-ac">Top 3</div><div class="pt-metric-l">Google RH Paris</div></div>
+        </div>
+      </div>
+
+      <!-- 11. Media Kit créatrice -->
+      <div class="pt-item pt-rev" data-type="brand" data-public="creator">
+        <div class="pt-item-visual vis-pk">
+          <span class="pt-item-emoji">💄</span>
+          <span class="pt-item-visual-badge bt-brand">Branding</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Beauté &amp; Lifestyle</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-creator-b">Créatrice</span>
+            </div>
+            <h3>Léa A. — Media Kit &amp; Personal Brand, 3 deals en 30 jours</h3>
+            <p class="pt-item-desc">Charte graphique personnelle, media kit professionnel multi-format et optimisation de bio. Résultat immédiat : 3 partenariats marques signés dans le mois suivant la livraison.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">Personal Branding</span>
+            <span class="pt-item-tag">Media Kit</span>
+            <span class="pt-item-tag">Charte graphique</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-pk">3</div><div class="pt-metric-l">Deals 30 jours</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-pk">+45%</div><div class="pt-metric-l">Taux réponse marques</div></div>
+        </div>
+      </div>
+
+      <!-- 12. SEO Local dentiste -->
+      <div class="pt-item pt-rev" data-type="seo" data-public="pro">
+        <div class="pt-item-visual vis-gr">
+          <span class="pt-item-emoji">🏥</span>
+          <span class="pt-item-visual-badge bt-seo">SEO</span>
+          <div class="pt-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+        </div>
+        <div class="pt-item-body">
+          <div class="pt-item-header">
+            <div class="pt-item-meta">
+              <span class="pt-item-sector">Santé</span>
+              <span class="pt-item-dot"></span>
+              <span class="pt-item-date">2024</span>
+              <span style="margin-left:auto;padding:3px 10px;border-radius:6px;font-size:10px;font-weight:700;" class="bp-pro-b">Entreprise</span>
+            </div>
+            <h3>Cabinet Virmaux — #1 Google Maps, +240% d'appels</h3>
+            <p class="pt-item-desc">SEO local pour un cabinet dentaire parisien : optimisation complète Google Business Profile, obtention de 80+ avis authentiques, citations locales et pages géolocalisées.</p>
+          </div>
+          <div class="pt-item-footer">
+            <span class="pt-item-tag">SEO Local</span>
+            <span class="pt-item-tag">Google Business</span>
+            <span class="pt-item-tag">Citations locales</span>
+          </div>
+        </div>
+        <div class="pt-item-metrics">
+          <div class="pt-metric"><div class="pt-metric-v mv-gr">#1</div><div class="pt-metric-l">Google Maps local</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-gr">+240%</div><div class="pt-metric-l">Appels entrants</div></div>
+          <div class="pt-metric"><div class="pt-metric-v mv-gr">80+</div><div class="pt-metric-l">Avis collectés</div></div>
+        </div>
+      </div>
+
+    </div><!-- fin pt-list -->
+
+    <div class="pt-empty" id="ptEmpty">
+      <div style="font-size:40px;margin-bottom:14px;">🔍</div>
+      <h3 style="font-size:18px;font-weight:600;color:var(--tl);margin-bottom:8px;">Aucun projet dans cette catégorie</h3>
+      <p style="font-size:13px;color:var(--tlm);">Essayez un autre filtre ou <a href="/contact" style="color:var(--acl);">contactez-nous</a> pour discuter de votre projet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TÉMOIGNAGES ── -->
+<section class="pt-temos">
+  <div class="pt-w">
+    <div class="pt-section-ttl pt-rev">
+      <span class="pt-eyebrow">Ils témoignent</span>
+      <h2>La parole à nos clients</h2>
+      <p>Des résultats obtenus avec de vraies personnes, dans de vraies entreprises.</p>
+    </div>
+    <div class="pt-temo-grid">
+      <div class="pt-temo pt-rev">
+        <div class="pt-temo-stars">★★★★★</div>
+        <p class="pt-temo-txt">"En 4 mois notre taux de conversion a été multiplié par 3. L'équipe ne se contente pas d'exécuter, elle comprend réellement les enjeux business derrière chaque décision technique."</p>
+        <div class="pt-temo-author">
+          <div class="pt-temo-av">MD</div>
+          <div><div class="pt-temo-name">Marc Delcourt</div><div class="pt-temo-role">Dirigeant, Maison Delcourt</div></div>
+        </div>
+      </div>
+      <div class="pt-temo pt-rev d1">
+        <div class="pt-temo-stars">★★★★★</div>
+        <p class="pt-temo-txt">"Le lancement de ma formation a dépassé toutes mes attentes. 89 000€ en 72h, c'est au-delà de ce que j'espérais. La stratégie email et le copywriting ont fait toute la différence."</p>
+        <div class="pt-temo-author">
+          <div class="pt-temo-av">TM</div>
+          <div><div class="pt-temo-name">Thomas M.</div><div class="pt-temo-role">Créateur finance, 230K abonnés</div></div>
+        </div>
+      </div>
+      <div class="pt-temo pt-rev d2">
+        <div class="pt-temo-stars">★★★★★</div>
+        <p class="pt-temo-txt">"Je cherchais un poste en marketing digital sans expérience. 5 mois plus tard j'ai décroché un CDI. L'accompagnement John&Co m'a donné le portfolio et la confiance pour y arriver."</p>
+        <div class="pt-temo-author">
+          <div class="pt-temo-av">ML</div>
+          <div><div class="pt-temo-name">Marie L.</div><div class="pt-temo-role">Social Media Manager (ancienne comptable)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="pt-cta">
+  <div class="pt-w">
+    <div class="pt-cta-in pt-rev">
+      <h2>Votre projet sera notre<br><em>prochain succès</em></h2>
+      <p>Appel découverte gratuit — 30 minutes pour analyser votre situation et trouver la meilleure approche.</p>
+      <div class="pt-cta-btns">
+        <a href="/contact?type=projet" class="pt-btn pt-btn-p">
+          Démarrer un projet
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://calendly.com/contact-maison-johnco-marketing" target="_blank" rel="noopener noreferrer" class="pt-btn pt-btn-o">
+          Réserver un appel gratuit
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var activeType='all', activePublic='all';
+  function filter(){
+    var items=document.querySelectorAll('#ptList .pt-item');
+    var n=0;
+    items.forEach(function(i){
+      var ok=(activeType==='all'||i.dataset.type===activeType)&&(activePublic==='all'||i.dataset.public===activePublic);
+      i.classList.toggle('pt-hidden',!ok);
+      if(ok)n++;
+    });
+    document.getElementById('ptCount').textContent=n;
+    var emp=document.getElementById('ptEmpty');
+    emp.classList.toggle('show',n===0);
+  }
+  document.querySelectorAll('#ptTypeGroup .pt-chip').forEach(function(c){
+    c.addEventListener('click',function(){
+      document.querySelectorAll('#ptTypeGroup .pt-chip').forEach(function(x){x.classList.remove('on');});
+      c.classList.add('on'); activeType=c.dataset.type; filter();
+    });
+  });
+  document.querySelectorAll('#ptPublicGroup .pt-chip').forEach(function(c){
+    c.addEventListener('click',function(){
+      document.querySelectorAll('#ptPublicGroup .pt-chip').forEach(function(x){x.classList.remove('on');});
+      c.classList.add('on'); activePublic=c.dataset.public; filter();
+    });
+  });
+  var ro=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target);}});
+  },{threshold:.05,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.pt-rev').forEach(function(el){ro.observe(el);});
+})();
+</script>
+<!-- /wp:html -->

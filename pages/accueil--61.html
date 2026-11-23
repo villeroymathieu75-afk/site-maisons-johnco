@@ -1,0 +1,2233 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE ACCUEIL V2 — Maison John&Co Marketing
+     Version WOW MAX : animations, particules, scroll-reveal, slots images
+     À coller dans un bloc HTML personnalisé WordPress
+     ═══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ═══════════ VARIABLES & RESET ═══════════ */
+  .mjc-home {
+    --bg-dark: #0A1628;
+    --bg-darker: #1E3A5F;
+    --bg-light: #FAFAFA;
+    --bg-white: #FFFFFF;
+    --accent: #7C3AED;
+    --accent-light: #A78BFA;
+    --accent-hover: #6D28D9;
+    --accent-glow: rgba(124, 58, 237, 0.4);
+    --text-dark: #1A1A2E;
+    --text-medium: #6B7280;
+    --text-light: #FFFFFF;
+    --text-light-mute: #B0B8C5;
+    --border-light: #E5E7EB;
+    --border-dark: rgba(255,255,255,0.1);
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .mjc-home *, .mjc-home *::before, .mjc-home *::after { box-sizing: border-box; }
+  .mjc-home p { margin: 0 0 16px; }
+  .mjc-home h1, .mjc-home h2, .mjc-home h3, .mjc-home h4 { margin: 0; letter-spacing: -0.02em; }
+  .mjc-home a { text-decoration: none; color: inherit; }
+  .mjc-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+
+  /* ═══════════ ANIMATIONS GLOBALES ═══════════ */
+  @keyframes mjc-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes mjc-pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+    50% { box-shadow: 0 0 0 20px rgba(124, 58, 237, 0); }
+  }
+  @keyframes mjc-gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes mjc-rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes mjc-scroll-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes mjc-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  @keyframes mjc-fade-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes mjc-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes mjc-scale-in {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Scroll reveal */
+  .mjc-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mjc-reveal.mjc-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .mjc-reveal-delay-1 { transition-delay: 0.1s; }
+  .mjc-reveal-delay-2 { transition-delay: 0.2s; }
+  .mjc-reveal-delay-3 { transition-delay: 0.3s; }
+  .mjc-reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ═══════════ BOUTONS ═══════════ */
+  .mjc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: 1;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .mjc-btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: var(--text-light);
+    box-shadow: 0 4px 20px var(--accent-glow);
+  }
+  .mjc-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+  }
+  .mjc-btn-primary:hover::before { left: 100%; }
+  .mjc-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px var(--accent-glow);
+  }
+  .mjc-btn-secondary-dark {
+    background: rgba(255,255,255,0.05);
+    color: var(--text-light);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+  }
+  .mjc-btn-secondary-dark:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--accent-light);
+    transform: translateY(-2px);
+  }
+  .mjc-btn-secondary-light {
+    background: var(--bg-white);
+    color: var(--text-dark);
+    border: 1px solid var(--border-light);
+  }
+  .mjc-btn-secondary-light:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+  }
+
+  /* ═══════════ HERO ═══════════ */
+  .mjc-hero {
+    background: var(--bg-dark);
+    padding: 140px 0 120px;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .mjc-particles-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .mjc-hero-gradient-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(125deg, #0A1628 0%, #1E3A5F 35%, #2D1B69 70%, #0A1628 100%);
+    background-size: 400% 400%;
+    animation: mjc-gradient-shift 20s ease infinite;
+    z-index: 0;
+  }
+  .mjc-hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    animation: mjc-float 8s ease-in-out infinite;
+  }
+  .mjc-hero-orb-1 {
+    top: 10%; right: -5%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    opacity: 0.25;
+  }
+  .mjc-hero-orb-2 {
+    bottom: 5%; left: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+    opacity: 0.2;
+    animation-delay: -4s;
+  }
+  .mjc-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+  }
+  .mjc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(124, 58, 237, 0.15);
+    backdrop-filter: blur(10px);
+    color: var(--accent-light);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    animation: mjc-fade-up 0.8s ease-out;
+  }
+  .mjc-badge-dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: mjc-pulse-glow 2s infinite;
+  }
+  .mjc-hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 28px;
+    color: var(--text-light);
+    animation: mjc-fade-up 0.9s ease-out 0.1s both;
+  }
+  .mjc-hero h1 .accent-gradient {
+    background: linear-gradient(135deg, #A78BFA 0%, #7C3AED 50%, #C4B5FD 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: mjc-gradient-shift 6s ease infinite;
+  }
+  .mjc-typewriter-wrap {
+    display: inline-block;
+    position: relative;
+  }
+  .mjc-typewriter {
+    display: inline-block;
+  }
+  .mjc-typewriter-cursor {
+    display: inline-block;
+    width: 4px;
+    height: 1em;
+    background: var(--accent-light);
+    vertical-align: text-bottom;
+    margin-left: 4px;
+    animation: mjc-blink 1s infinite;
+  }
+  .mjc-hero-subtitle {
+    font-size: 20px;
+    color: var(--text-light-mute);
+    margin-bottom: 44px;
+    line-height: 1.6;
+    max-width: 680px;
+    animation: mjc-fade-up 1s ease-out 0.3s both;
+  }
+  .mjc-hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    animation: mjc-fade-up 1s ease-out 0.5s both;
+  }
+  .mjc-hero-mini-stats {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-dark);
+    animation: mjc-fade-up 1s ease-out 0.7s both;
+  }
+  .mjc-hero-mini-stat {
+    display: flex;
+    flex-direction: column;
+  }
+  .mjc-hero-mini-stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .mjc-hero-mini-stat-label {
+    font-size: 13px;
+    color: var(--text-light-mute);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .mjc-scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-light-mute);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 3;
+    animation: mjc-fade-in 1.5s ease-out 1.5s both;
+  }
+  .mjc-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--accent-light), transparent);
+    animation: mjc-float 2s ease-in-out infinite;
+  }
+
+  /* ═══════════ BANDEAU DÉFILANT (logos clients) ═══════════ */
+  .mjc-marquee-section {
+    background: var(--bg-white);
+    padding: 48px 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    overflow: hidden;
+  }
+  .mjc-marquee-label {
+    text-align: center;
+    color: var(--text-medium);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .mjc-marquee {
+    display: flex;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  }
+  .mjc-marquee-track {
+    display: flex;
+    gap: 80px;
+    animation: mjc-scroll-marquee 30s linear infinite;
+    flex-shrink: 0;
+    padding-right: 80px;
+  }
+  .mjc-marquee-item {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-medium);
+    opacity: 0.5;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    letter-spacing: -0.02em;
+  }
+  .mjc-marquee:hover .mjc-marquee-track {
+    animation-play-state: paused;
+  }
+  .mjc-marquee-item:hover {
+    opacity: 1;
+    color: var(--accent);
+  }
+
+  /* ═══════════ STATS (compteurs animés) ═══════════ */
+  .mjc-stats {
+    background: var(--bg-light);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .mjc-stats::before {
+    content: '';
+    position: absolute;
+    top: 50%; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  .mjc-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    position: relative;
+  }
+  .mjc-stat-card {
+    background: var(--bg-white);
+    padding: 40px 32px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .mjc-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .mjc-stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(10, 22, 40, 0.1);
+    border-color: var(--accent-light);
+  }
+  .mjc-stat-card:hover::before { transform: scaleX(1); }
+  .mjc-stat-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(167,139,250,0.15));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    margin: 0 auto 20px;
+  }
+  .mjc-stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .mjc-stat-suffix { font-size: 32px; }
+  .mjc-stat-label {
+    font-size: 15px;
+    color: var(--text-medium);
+    font-weight: 500;
+  }
+
+  /* ═══════════ SECTION TITLE ═══════════ */
+  .mjc-section-title {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 80px;
+  }
+  .mjc-section-title .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .mjc-section-title .eyebrow::before,
+  .mjc-section-title .eyebrow::after {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+  .mjc-section-title h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .mjc-section-title h2 .accent-gradient {
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .mjc-section-title p {
+    font-size: 19px;
+    color: var(--text-medium);
+    margin: 0;
+  }
+
+  /* ═══════════ SERVICES (3 publics) ═══════════ */
+  .mjc-services {
+    background: var(--bg-white);
+    padding: 120px 0;
+    position: relative;
+  }
+  .mjc-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .mjc-service-card {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 0;
+    border: 1px solid var(--border-light);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  .mjc-service-card:hover {
+    transform: translateY(-10px) rotateX(2deg);
+    box-shadow: 0 30px 60px rgba(10, 22, 40, 0.12);
+    border-color: var(--accent-light);
+  }
+  .mjc-service-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--accent) 200%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* SLOT IMAGE : remplacer par background-image: url('/wp-content/uploads/service-entreprise.jpg'); background-size: cover; */
+  }
+  .mjc-service-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(124,58,237,0.4), transparent 70%);
+  }
+  .mjc-service-image-icon {
+    color: rgba(255,255,255,0.9);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s ease;
+  }
+  .mjc-service-card:hover .mjc-service-image-icon {
+    transform: scale(1.15) rotate(-5deg);
+  }
+  .mjc-service-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .mjc-service-card h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .mjc-service-card > .mjc-service-content > p {
+    color: var(--text-medium);
+    font-size: 16px;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+  .mjc-service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+  }
+  .mjc-service-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--text-dark);
+  }
+  .mjc-service-features li::before {
+    content: '';
+    width: 18px; height: 18px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .mjc-service-link {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+    margin-top: auto;
+  }
+  .mjc-service-link:hover { gap: 14px; }
+
+  /* ═══════════ POURQUOI NOUS ═══════════ */
+  .mjc-why {
+    background: var(--bg-light);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .mjc-why-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .mjc-why-left .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .mjc-why-left .eyebrow::before {
+    content: ''; width: 24px; height: 1px; background: var(--accent); opacity: 0.5;
+  }
+  .mjc-why-left h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .mjc-why-left > p {
+    font-size: 18px;
+    color: var(--text-medium);
+    margin-bottom: 40px;
+  }
+  .mjc-why-features {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .mjc-why-feature {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    background: var(--bg-white);
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+  }
+  .mjc-why-feature:hover {
+    transform: translateX(8px);
+    border-color: var(--accent-light);
+    box-shadow: 0 12px 24px rgba(10, 22, 40, 0.06);
+  }
+  .mjc-why-feature-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    box-shadow: 0 8px 16px rgba(124, 58, 237, 0.25);
+  }
+  .mjc-why-feature h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .mjc-why-feature p {
+    font-size: 15px;
+    color: var(--text-medium);
+    margin: 0;
+  }
+  .mjc-why-visual {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    border-radius: 24px;
+    padding: 56px;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .mjc-why-visual-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+  }
+  .mjc-why-visual-orb-1 {
+    top: -100px; right: -100px;
+    width: 300px; height: 300px;
+    background: var(--accent);
+    opacity: 0.4;
+    animation: mjc-float 6s ease-in-out infinite;
+  }
+  .mjc-why-visual-orb-2 {
+    bottom: -80px; left: -80px;
+    width: 250px; height: 250px;
+    background: var(--accent-light);
+    opacity: 0.2;
+    animation: mjc-float 8s ease-in-out infinite;
+    animation-delay: -3s;
+  }
+  .mjc-why-visual-content {
+    position: relative;
+    z-index: 1;
+  }
+  .mjc-why-quote-icon {
+    color: var(--accent-light);
+    margin-bottom: 24px;
+    opacity: 0.6;
+  }
+  .mjc-why-quote {
+    font-size: 26px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 32px;
+    color: var(--text-light);
+  }
+  .mjc-why-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-light-mute);
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .mjc-why-author-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    /* SLOT IMAGE : remplacer par background-image: url('/wp-content/uploads/portrait.jpg'); background-size: cover; */
+  }
+  .mjc-why-author-name {
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 16px;
+  }
+
+  /* ═══════════ PROCESSUS (timeline) ═══════════ */
+  .mjc-process {
+    background: var(--bg-dark);
+    padding: 120px 0;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+  }
+  .mjc-process .mjc-section-title h2 { color: var(--text-light); }
+  .mjc-process .mjc-section-title p { color: var(--text-light-mute); }
+  .mjc-process-orb {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 800px; height: 800px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 60%);
+    z-index: 0;
+  }
+  .mjc-process-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .mjc-process-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--accent), var(--accent), transparent);
+    transform: translateX(-50%);
+  }
+  .mjc-process-step {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+    position: relative;
+  }
+  .mjc-process-step:last-child { margin-bottom: 0; }
+  .mjc-process-content {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s ease;
+  }
+  .mjc-process-content:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--accent-light);
+    transform: scale(1.02);
+  }
+  .mjc-process-step:nth-child(even) .mjc-process-content { grid-column: 3; }
+  .mjc-process-step:nth-child(odd) .mjc-process-empty { grid-column: 3; }
+  .mjc-process-step:nth-child(even) .mjc-process-empty { grid-column: 1; }
+  .mjc-process-step:nth-child(odd) .mjc-process-content { grid-column: 1; text-align: right; }
+  .mjc-process-step:nth-child(odd) .mjc-process-content .mjc-process-features { justify-content: flex-end; }
+  .mjc-process-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 0 0 8px rgba(10, 22, 40, 1), 0 0 0 9px var(--accent), 0 0 30px var(--accent-glow);
+    position: relative;
+    z-index: 2;
+    grid-column: 2;
+  }
+  .mjc-process-content h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-light);
+  }
+  .mjc-process-content p {
+    color: var(--text-light-mute);
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .mjc-process-features {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .mjc-process-tag {
+    background: rgba(124, 58, 237, 0.2);
+    color: var(--accent-light);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(124, 58, 237, 0.3);
+  }
+
+  /* ═══════════ EXPERTISES (grille étendue) ═══════════ */
+  .mjc-expertise {
+    background: var(--bg-white);
+    padding: 120px 0;
+  }
+  .mjc-expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .mjc-expertise-item {
+    background: var(--bg-light);
+    padding: 28px;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .mjc-expertise-item:hover {
+    background: var(--bg-white);
+    border-color: var(--accent-light);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(10, 22, 40, 0.08);
+  }
+  .mjc-expertise-icon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(167,139,250,0.15));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+  }
+  .mjc-expertise-item:hover .mjc-expertise-icon {
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    color: white;
+    transform: rotate(-10deg) scale(1.1);
+  }
+  .mjc-expertise-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-dark);
+  }
+  .mjc-expertise-item p {
+    font-size: 13px;
+    color: var(--text-medium);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ═══════════ TÉMOIGNAGES ═══════════ */
+  .mjc-testimonials {
+    background: var(--bg-light);
+    padding: 120px 0;
+    position: relative;
+  }
+  .mjc-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .mjc-testimonial {
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 36px;
+    border: 1px solid var(--border-light);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mjc-testimonial:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(10, 22, 40, 0.08);
+    border-color: var(--accent-light);
+  }
+  .mjc-testimonial-stars {
+    display: flex;
+    gap: 4px;
+    color: #F59E0B;
+    margin-bottom: 20px;
+  }
+  .mjc-testimonial-text {
+    font-size: 16px;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .mjc-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+  }
+  .mjc-testimonial-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    /* SLOT IMAGE : remplacer par background-image: url('/wp-content/uploads/client-X.jpg'); background-size: cover; */
+  }
+  .mjc-testimonial-name {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 2px;
+  }
+  .mjc-testimonial-role {
+    font-size: 13px;
+    color: var(--text-medium);
+  }
+
+  /* ═══════════ BLOG TEASER ═══════════ */
+  .mjc-blog {
+    background: var(--bg-white);
+    padding: 120px 0;
+  }
+  .mjc-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .mjc-blog-card {
+    background: var(--bg-white);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  .mjc-blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(10, 22, 40, 0.1);
+    border-color: var(--accent-light);
+  }
+  .mjc-blog-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--bg-darker), var(--accent));
+    position: relative;
+    overflow: hidden;
+    /* SLOT IMAGE : remplacer par background-image: url('/wp-content/uploads/blog-X.jpg'); background-size: cover; */
+  }
+  .mjc-blog-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,22,40,0.4), transparent);
+  }
+  .mjc-blog-category {
+    position: absolute;
+    top: 16px; left: 16px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 1;
+  }
+  .mjc-blog-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .mjc-blog-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text-medium);
+    margin-bottom: 12px;
+  }
+  .mjc-blog-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .mjc-blog-card > .mjc-blog-content > p {
+    color: var(--text-medium);
+    font-size: 15px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+  .mjc-blog-link {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+    margin-top: auto;
+  }
+  .mjc-blog-link:hover { gap: 14px; }
+
+  /* ═══════════ FAQ ACCORDÉON ═══════════ */
+  .mjc-faq {
+    background: var(--bg-light);
+    padding: 120px 0;
+  }
+  .mjc-faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .mjc-faq-item {
+    background: var(--bg-white);
+    border-radius: 14px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .mjc-faq-item:hover { border-color: var(--accent-light); }
+  .mjc-faq-question {
+    padding: 24px 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--text-dark);
+    user-select: none;
+    transition: color 0.3s ease;
+  }
+  .mjc-faq-question:hover { color: var(--accent); }
+  .mjc-faq-toggle {
+    width: 32px; height: 32px;
+    background: rgba(124,58,237,0.1);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  .mjc-faq-item.open .mjc-faq-toggle {
+    background: var(--accent);
+    color: white;
+    transform: rotate(45deg);
+  }
+  .mjc-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    color: var(--text-medium);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .mjc-faq-item.open .mjc-faq-answer {
+    max-height: 300px;
+    padding: 0 28px 28px;
+  }
+
+  /* ═══════════ CTA + FORMULAIRE RAPIDE + LOCALISATION ═══════════ */
+  .mjc-contact-section {
+    background: var(--bg-dark);
+    padding: 120px 0;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+  }
+  .mjc-contact-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(124,58,237,0.15) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(167,139,250,0.1) 0%, transparent 40%);
+    z-index: 0;
+  }
+  .mjc-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+  .mjc-contact-left h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--text-light);
+  }
+  .mjc-contact-left > p {
+    font-size: 18px;
+    color: var(--text-light-mute);
+    margin-bottom: 40px;
+  }
+  .mjc-contact-shortcuts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .mjc-shortcut {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  .mjc-shortcut:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--accent-light);
+    transform: translateX(8px);
+  }
+  .mjc-shortcut-icon {
+    width: 44px; height: 44px;
+    background: rgba(124,58,237,0.2);
+    color: var(--accent-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .mjc-shortcut-label {
+    font-size: 13px;
+    color: var(--text-light-mute);
+    margin-bottom: 2px;
+  }
+  .mjc-shortcut-value {
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+  .mjc-contact-form {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-dark);
+    border-radius: 20px;
+    padding: 40px;
+  }
+  .mjc-contact-form h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-light);
+  }
+  .mjc-contact-form > p {
+    color: var(--text-light-mute);
+    margin-bottom: 28px;
+    font-size: 15px;
+  }
+  .mjc-form-group {
+    margin-bottom: 18px;
+  }
+  .mjc-form-label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-light-mute);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .mjc-form-input,
+  .mjc-form-textarea,
+  .mjc-form-select {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-dark);
+    border-radius: 10px;
+    color: var(--text-light);
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+  }
+  .mjc-form-input:focus,
+  .mjc-form-textarea:focus,
+  .mjc-form-select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(124,58,237,0.05);
+    box-shadow: 0 0 0 4px rgba(124,58,237,0.15);
+  }
+  .mjc-form-input::placeholder,
+  .mjc-form-textarea::placeholder { color: rgba(255,255,255,0.4); }
+  .mjc-form-textarea { min-height: 100px; resize: vertical; }
+  .mjc-form-select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23A78BFA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+  .mjc-form-submit {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    font-family: inherit;
+  }
+  .mjc-form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px var(--accent-glow);
+  }
+
+  /* ═══════════ FINAL CTA ═══════════ */
+  .mjc-cta-final {
+    background: var(--bg-white);
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .mjc-cta-final-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: mjc-rotate-slow 60s linear infinite;
+  }
+  .mjc-cta-final-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .mjc-cta-final h2 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, var(--text-dark) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .mjc-cta-final p {
+    font-size: 20px;
+    color: var(--text-medium);
+    margin-bottom: 40px;
+  }
+
+  /* ═══════════ RESPONSIVE ═══════════ */
+  @media (max-width: 1024px) {
+    .mjc-hero h1 { font-size: 48px; }
+    .mjc-services-grid,
+    .mjc-testimonials-grid,
+    .mjc-blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .mjc-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .mjc-expertise-grid { grid-template-columns: repeat(3, 1fr); }
+    .mjc-why-grid { grid-template-columns: 1fr; gap: 48px; }
+    .mjc-contact-grid { grid-template-columns: 1fr; }
+    .mjc-section-title h2 { font-size: 38px; }
+  }
+  @media (max-width: 768px) {
+    .mjc-hero { padding: 100px 0 80px; min-height: auto; }
+    .mjc-hero h1 { font-size: 38px; }
+    .mjc-hero-subtitle { font-size: 17px; }
+    .mjc-hero-cta { flex-direction: column; align-items: stretch; }
+    .mjc-btn { justify-content: center; }
+    .mjc-hero-mini-stats { gap: 24px; }
+    .mjc-hero-mini-stat-value { font-size: 26px; }
+    .mjc-stats, .mjc-services, .mjc-why, .mjc-process, .mjc-expertise, .mjc-testimonials, .mjc-blog, .mjc-faq, .mjc-contact-section, .mjc-cta-final { padding: 80px 0; }
+    .mjc-stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .mjc-stat-card { padding: 28px 20px; }
+    .mjc-stat-number { font-size: 36px; }
+    .mjc-services-grid, .mjc-testimonials-grid, .mjc-blog-grid { grid-template-columns: 1fr; }
+    .mjc-expertise-grid { grid-template-columns: 1fr 1fr; }
+    .mjc-why-visual { padding: 36px; min-height: auto; }
+    .mjc-why-quote { font-size: 20px; }
+    .mjc-section-title h2, .mjc-why-left h2, .mjc-contact-left h2 { font-size: 32px; }
+    .mjc-section-title p { font-size: 17px; }
+    .mjc-cta-final h2 { font-size: 36px; }
+    .mjc-cta-final p { font-size: 17px; }
+    .mjc-marquee-item { font-size: 22px; }
+    /* Timeline mobile : tout à gauche */
+    .mjc-process-line { left: 40px; }
+    .mjc-process-step { grid-template-columns: 80px 1fr; gap: 24px; margin-bottom: 32px; }
+    .mjc-process-step .mjc-process-circle { grid-column: 1; width: 60px; height: 60px; font-size: 22px; }
+    .mjc-process-step .mjc-process-content { grid-column: 2 !important; text-align: left !important; padding: 24px; }
+    .mjc-process-step .mjc-process-empty { display: none; }
+    .mjc-process-step:nth-child(odd) .mjc-process-content .mjc-process-features { justify-content: flex-start; }
+    .mjc-contact-form { padding: 28px; }
+  }
+</style>
+
+<div class="mjc-home">
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO + PARTICULES + GRADIENT ANIMÉ + TYPEWRITER
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-hero">
+    <div class="mjc-hero-gradient-bg"></div>
+    <canvas class="mjc-particles-canvas" id="mjcParticlesCanvas"></canvas>
+    <div class="mjc-hero-orb mjc-hero-orb-1"></div>
+    <div class="mjc-hero-orb mjc-hero-orb-2"></div>
+
+    <div class="mjc-container">
+      <div class="mjc-hero-content">
+        <div class="mjc-badge">
+          <span class="mjc-badge-dot"></span>
+          Agence marketing digital · 2026
+        </div>
+        <h1>
+          Boostez votre <span class="accent-gradient">visibilité</span>.<br>
+          Générez des <br>
+          <span class="mjc-typewriter-wrap">
+            <span class="mjc-typewriter accent-gradient" id="mjcTypewriter">leads qualifiés</span><span class="mjc-typewriter-cursor"></span>
+          </span>
+        </h1>
+        <p class="mjc-hero-subtitle">
+          Nous accompagnons les entreprises ambitieuses, les créateurs de contenu et les particuliers dans leur croissance digitale. Stratégies sur mesure, résultats mesurables, approche humaine.
+        </p>
+        <div class="mjc-hero-cta">
+          <a href="/contact?type=devis" class="mjc-btn mjc-btn-primary">
+            Demander un devis gratuit
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="/services" class="mjc-btn mjc-btn-secondary-dark">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Découvrir nos services
+          </a>
+        </div>
+
+        <div class="mjc-hero-mini-stats">
+          <div class="mjc-hero-mini-stat">
+            <span class="mjc-hero-mini-stat-value mjc-counter" data-target="50" data-suffix="+">0</span>
+            <span class="mjc-hero-mini-stat-label">Projets réalisés</span>
+          </div>
+          <div class="mjc-hero-mini-stat">
+            <span class="mjc-hero-mini-stat-value mjc-counter" data-target="98" data-suffix="%">0</span>
+            <span class="mjc-hero-mini-stat-label">Clients satisfaits</span>
+          </div>
+          <div class="mjc-hero-mini-stat">
+            <span class="mjc-hero-mini-stat-value mjc-counter" data-target="24" data-suffix="h">0</span>
+            <span class="mjc-hero-mini-stat-label">Délai de réponse</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mjc-scroll-indicator">
+      <span>Scroll</span>
+      <div class="mjc-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       BANDEAU DÉFILANT (logos / mots-clés)
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-marquee-section">
+    <div class="mjc-container">
+      <p class="mjc-marquee-label">Ils nous font confiance · ou bientôt</p>
+    </div>
+    <div class="mjc-marquee">
+      <div class="mjc-marquee-track">
+        <div class="mjc-marquee-item">PME</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Influenceurs</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">E-commerce</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Restauration</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Coachs</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Artisans</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Startups</div>
+        <div class="mjc-marquee-item">★</div>
+      </div>
+      <div class="mjc-marquee-track" aria-hidden="true">
+        <div class="mjc-marquee-item">PME</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Influenceurs</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">E-commerce</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Restauration</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Coachs</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Artisans</div>
+        <div class="mjc-marquee-item">★</div>
+        <div class="mjc-marquee-item">Startups</div>
+        <div class="mjc-marquee-item">★</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       STATS CARDS AVEC COMPTEURS ANIMÉS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-stats">
+    <div class="mjc-container">
+      <div class="mjc-section-title mjc-reveal">
+        <span class="eyebrow">Notre impact</span>
+        <h2>Des résultats <span class="accent-gradient">qui parlent</span></h2>
+        <p>L'engagement de nos équipes au service de votre croissance.</p>
+      </div>
+      <div class="mjc-stats-grid">
+        <div class="mjc-stat-card mjc-reveal mjc-reveal-delay-1">
+          <div class="mjc-stat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="mjc-stat-number"><span class="mjc-counter" data-target="50">0</span><span class="mjc-stat-suffix">+</span></div>
+          <div class="mjc-stat-label">Clients accompagnés</div>
+        </div>
+        <div class="mjc-stat-card mjc-reveal mjc-reveal-delay-2">
+          <div class="mjc-stat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="mjc-stat-number"><span class="mjc-counter" data-target="120">0</span><span class="mjc-stat-suffix">+</span></div>
+          <div class="mjc-stat-label">Projets réalisés</div>
+        </div>
+        <div class="mjc-stat-card mjc-reveal mjc-reveal-delay-3">
+          <div class="mjc-stat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div class="mjc-stat-number"><span class="mjc-counter" data-target="98">0</span><span class="mjc-stat-suffix">%</span></div>
+          <div class="mjc-stat-label">Clients satisfaits</div>
+        </div>
+        <div class="mjc-stat-card mjc-reveal mjc-reveal-delay-4">
+          <div class="mjc-stat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="mjc-stat-number"><span class="mjc-counter" data-target="24">0</span><span class="mjc-stat-suffix">h</span></div>
+          <div class="mjc-stat-label">Délai de réponse</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SERVICES (3 PUBLICS) AVEC SLOTS IMAGES
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-services">
+    <div class="mjc-container">
+      <div class="mjc-section-title mjc-reveal">
+        <span class="eyebrow">Nos services</span>
+        <h2>Trois publics, <span class="accent-gradient">une expertise</span></h2>
+        <p>Nous adaptons notre accompagnement à chaque profil pour des résultats à la hauteur de vos ambitions.</p>
+      </div>
+
+      <div class="mjc-services-grid">
+        <div class="mjc-service-card mjc-reveal mjc-reveal-delay-1">
+          <div class="mjc-service-image">
+            <svg class="mjc-service-image-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="mjc-service-content">
+            <h3>Pour les entreprises</h3>
+            <p>TPE, PME, ETI — boostez votre acquisition client et structurez votre stratégie digitale.</p>
+            <ul class="mjc-service-features">
+              <li>Stratégie digitale & accompagnement</li>
+              <li>Publicité en ligne (PPC, vidéo, ADS)</li>
+              <li>Référencement & visibilité</li>
+              <li>Automatisation & CRM</li>
+            </ul>
+            <a href="/services/entreprises" class="mjc-service-link">
+              Voir les services entreprises
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="mjc-service-card mjc-reveal mjc-reveal-delay-2">
+          <div class="mjc-service-image">
+            <svg class="mjc-service-image-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="mjc-service-content">
+            <h3>Pour les influenceurs</h3>
+            <p>Créateurs de contenu — développez votre audience, votre image de marque et vos revenus.</p>
+            <ul class="mjc-service-features">
+              <li>Personal branding & positionnement</li>
+              <li>Création de contenu & identité visuelle</li>
+              <li>Développement d'audience</li>
+              <li>Monétisation & partenariats</li>
+            </ul>
+            <a href="/services/influenceurs" class="mjc-service-link">
+              Voir les services créateurs
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="mjc-service-card mjc-reveal mjc-reveal-delay-3">
+          <div class="mjc-service-image">
+            <svg class="mjc-service-image-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-3V5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M9 7V5h6v2"/></svg>
+          </div>
+          <div class="mjc-service-content">
+            <h3>Pour les particuliers</h3>
+            <p>Formations, cours et coaching — montez en compétences sur les métiers du digital.</p>
+            <ul class="mjc-service-features">
+              <li>Formations métiers du digital</li>
+              <li>Cours & ateliers en direct</li>
+              <li>Accompagnement individuel</li>
+              <li>Outils & packs clés en main</li>
+            </ul>
+            <a href="/services/particuliers" class="mjc-service-link">
+              Voir les services particuliers
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       POURQUOI NOUS — avec citation visuelle
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-why">
+    <div class="mjc-container">
+      <div class="mjc-why-grid">
+        <div class="mjc-why-left mjc-reveal">
+          <span class="eyebrow">Pourquoi nous choisir</span>
+          <h2>Une approche <span class="accent-gradient">humaine</span>, des résultats mesurables</h2>
+          <p>Nous ne vendons pas du marketing. Nous construisons des stratégies durables qui transforment votre présence en ligne en véritable moteur de croissance.</p>
+
+          <div class="mjc-why-features">
+            <div class="mjc-why-feature">
+              <div class="mjc-why-feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h4>Réactivité garantie</h4>
+                <p>Réponse sous 24h ouvrées. Un interlocuteur dédié pour chaque projet.</p>
+              </div>
+            </div>
+            <div class="mjc-why-feature">
+              <div class="mjc-why-feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <div>
+                <h4>Performance mesurée</h4>
+                <p>Tableaux de bord, KPI clairs, reporting régulier. Vous savez où va votre budget.</p>
+              </div>
+            </div>
+            <div class="mjc-why-feature">
+              <div class="mjc-why-feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+              <div>
+                <h4>Expertise complète</h4>
+                <p>Stratégie, création, publicité, SEO, automatisation : une équipe, toutes les compétences.</p>
+              </div>
+            </div>
+            <div class="mjc-why-feature">
+              <div class="mjc-why-feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div>
+                <h4>Engagement solidaire</h4>
+                <p>Une partie de nos bénéfices reversée à l'association Enfant de Cœur.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mjc-why-visual mjc-reveal mjc-reveal-delay-2">
+          <div class="mjc-why-visual-orb mjc-why-visual-orb-1"></div>
+          <div class="mjc-why-visual-orb mjc-why-visual-orb-2"></div>
+          <div class="mjc-why-visual-content">
+            <svg class="mjc-why-quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M9.583 17.321C8.553 16.227 8 15 8 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C18.553 16.227 18 15 18 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+            <p class="mjc-why-quote">"Le marketing digital n'est pas une dépense. C'est l'investissement le plus rentable que vous puissiez faire pour votre croissance."</p>
+          </div>
+          <div class="mjc-why-author">
+            <div class="mjc-why-author-avatar">M</div>
+            <div>
+              <div class="mjc-why-author-name">Maison John&Co</div>
+              <div>Notre philosophie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PROCESSUS — TIMELINE VERTICALE
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-process">
+    <div class="mjc-process-orb"></div>
+    <div class="mjc-container">
+      <div class="mjc-section-title mjc-reveal">
+        <span class="eyebrow">Notre méthode</span>
+        <h2>4 étapes pour <span class="accent-gradient">transformer</span> votre digital</h2>
+        <p>Une démarche structurée, transparente, conçue pour votre succès.</p>
+      </div>
+
+      <div class="mjc-process-timeline">
+        <div class="mjc-process-line"></div>
+
+        <div class="mjc-process-step mjc-reveal">
+          <div class="mjc-process-content">
+            <h4>Audit & écoute</h4>
+            <p>On comprend votre activité, vos objectifs, vos défis. On analyse votre présence actuelle et votre marché.</p>
+            <div class="mjc-process-features">
+              <span class="mjc-process-tag">Diagnostic</span>
+              <span class="mjc-process-tag">Analyse concurrentielle</span>
+            </div>
+          </div>
+          <div class="mjc-process-circle">1</div>
+          <div class="mjc-process-empty"></div>
+        </div>
+
+        <div class="mjc-process-step mjc-reveal">
+          <div class="mjc-process-empty"></div>
+          <div class="mjc-process-circle">2</div>
+          <div class="mjc-process-content">
+            <h4>Stratégie sur mesure</h4>
+            <p>On bâtit un plan d'action clair, priorisé, actionnable. Avec des KPI précis et un calendrier réaliste.</p>
+            <div class="mjc-process-features">
+              <span class="mjc-process-tag">Roadmap</span>
+              <span class="mjc-process-tag">KPI</span>
+              <span class="mjc-process-tag">Budget</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mjc-process-step mjc-reveal">
+          <div class="mjc-process-content">
+            <h4>Exécution</h4>
+            <p>On déploie les actions avec rigueur et créativité. Création, campagnes, contenus, automatisations.</p>
+            <div class="mjc-process-features">
+              <span class="mjc-process-tag">Production</span>
+              <span class="mjc-process-tag">Déploiement</span>
+            </div>
+          </div>
+          <div class="mjc-process-circle">3</div>
+          <div class="mjc-process-empty"></div>
+        </div>
+
+        <div class="mjc-process-step mjc-reveal">
+          <div class="mjc-process-empty"></div>
+          <div class="mjc-process-circle">4</div>
+          <div class="mjc-process-content">
+            <h4>Mesure & optimisation</h4>
+            <p>On analyse, on ajuste, on amplifie ce qui fonctionne. Reporting transparent, ajustements continus.</p>
+            <div class="mjc-process-features">
+              <span class="mjc-process-tag">Reporting</span>
+              <span class="mjc-process-tag">A/B Test</span>
+              <span class="mjc-process-tag">Scaling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       EXPERTISES — GRILLE ÉTENDUE
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-expertise">
+    <div class="mjc-container">
+      <div class="mjc-section-title mjc-reveal">
+        <span class="eyebrow">Nos expertises</span>
+        <h2>Tout ce qu'il faut pour <span class="accent-gradient">votre succès digital</span></h2>
+        <p>Stratégie, création, acquisition, automatisation : notre éventail complet de compétences.</p>
+      </div>
+
+      <div class="mjc-expertise-grid">
+        <div class="mjc-expertise-item mjc-reveal">
+          <div class="mjc-expertise-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/></svg></div>
+          <h4>Stratégie digitale</h4>
+          <p>Plan d'action sur mesure pour atteindre vos objectifs.</p>
+        </div>
+        <div class="mjc-expertise-item mjc-reveal mjc-reveal-delay-1">
+          <div class="mjc-expertise-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h4>Publicité en ligne</h4>
+          <p>Google Ads, Meta Ads, TikTok Ads, campagnes pilotées au ROI.</p>
+        </div>
+        <div class="mjc-expertise-item mjc-reveal mjc-reveal-delay-2">
+          <div class="mjc-expertise-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h4>SEO & référencement</h4>
+          <p>Visibilité durable sur Google, contenu optimisé, autorité.</p>
+        </div>
+        <div class="mjc-expertise-item mjc-reveal mjc-reveal-delay-3">
+          <div class="mjc-expertise-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+          <h4>Publicité vidéo</h4>
+          <p>Scripts, production, diffusion sur YouTube & réseaux.</p>
+        </div>
+        <div class="mjc-expertise-item mjc-reveal">
+          <div class="mjc-expertise-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h4>Email marketing</h4>
+          <p>Newsletters, séquences automatisées, segmentation fine.</p>
+        </div>
+        <div class="mjc-expertise-item mjc-reveal mjc-reveal-delay-1">
+          <div class="mjc-expertise-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+          <h4>E-commerce</h4>
+          <p>Création, optimisation, conversion de boutiques en ligne.</p>
+        </div>
+        <div class="mjc-expertise-item mjc-reveal mjc-reveal-delay-2">
+          <div class="mjc-expertise-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <h4>Automatisation</h4>
+          <p>Workflows, CRM, gain de temps et efficacité opérationnelle.</p>
+        </div>
+        <div class="mjc-expertise-item mjc-reveal mjc-reveal-delay-3">
+          <div class="mjc-expertise-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <h4>Création de contenu</h4>
+          <p>Visuels, vidéos, copywriting, identité de marque cohérente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TÉMOIGNAGES (placeholder)
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-testimonials">
+    <div class="mjc-container">
+      <div class="mjc-section-title mjc-reveal">
+        <span class="eyebrow">Témoignages</span>
+        <h2>Ce qu'ils <span class="accent-gradient">disent de nous</span></h2>
+        <p>L'authenticité de leurs retours est notre meilleure publicité.</p>
+      </div>
+
+      <div class="mjc-testimonials-grid">
+        <div class="mjc-testimonial mjc-reveal">
+          <div class="mjc-testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="mjc-testimonial-text">"Un accompagnement humain et professionnel. Notre visibilité a explosé en quelques mois. On recommande sans hésiter."</p>
+          <div class="mjc-testimonial-author">
+            <div class="mjc-testimonial-avatar">SL</div>
+            <div>
+              <div class="mjc-testimonial-name">Sophie L.</div>
+              <div class="mjc-testimonial-role">Fondatrice · TPE Lifestyle</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mjc-testimonial mjc-reveal mjc-reveal-delay-1">
+          <div class="mjc-testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="mjc-testimonial-text">"Mes campagnes pub ont enfin du sens. ROI multiplié par 3 en six mois. L'équipe est à l'écoute, réactive et compétente."</p>
+          <div class="mjc-testimonial-author">
+            <div class="mjc-testimonial-avatar">MD</div>
+            <div>
+              <div class="mjc-testimonial-name">Marc D.</div>
+              <div class="mjc-testimonial-role">CEO · PME Tech</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mjc-testimonial mjc-reveal mjc-reveal-delay-2">
+          <div class="mjc-testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="mjc-testimonial-text">"En tant que créatrice, je ne savais pas par où commencer. Ils m'ont structurée, je vis maintenant de ma passion."</p>
+          <div class="mjc-testimonial-author">
+            <div class="mjc-testimonial-avatar">EB</div>
+            <div>
+              <div class="mjc-testimonial-name">Elsa B.</div>
+              <div class="mjc-testimonial-role">Créatrice de contenu lifestyle</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       BLOG TEASER
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-blog">
+    <div class="mjc-container">
+      <div class="mjc-section-title mjc-reveal">
+        <span class="eyebrow">Ressources</span>
+        <h2>Apprenez avec <span class="accent-gradient">nos articles</span></h2>
+        <p>Conseils, guides, études — tout pour faire avancer votre projet digital.</p>
+      </div>
+
+      <div class="mjc-blog-grid">
+        <a href="/blog/article-1" class="mjc-blog-card mjc-reveal">
+          <div class="mjc-blog-image">
+            <span class="mjc-blog-category">Stratégie</span>
+          </div>
+          <div class="mjc-blog-content">
+            <div class="mjc-blog-meta">
+              <span>5 min de lecture</span>
+              <span>•</span>
+              <span>11 mai 2026</span>
+            </div>
+            <h4>Comment construire une stratégie digitale qui convertit en 2026</h4>
+            <p>Les 5 piliers à mettre en place pour une croissance durable et mesurable.</p>
+            <span class="mjc-blog-link">
+              Lire l'article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="/blog/article-2" class="mjc-blog-card mjc-reveal mjc-reveal-delay-1">
+          <div class="mjc-blog-image">
+            <span class="mjc-blog-category">Publicité</span>
+          </div>
+          <div class="mjc-blog-content">
+            <div class="mjc-blog-meta">
+              <span>7 min de lecture</span>
+              <span>•</span>
+              <span>9 mai 2026</span>
+            </div>
+            <h4>Google Ads vs Meta Ads : lequel choisir pour votre activité ?</h4>
+            <p>Comparatif complet pour bien investir votre budget publicitaire.</p>
+            <span class="mjc-blog-link">
+              Lire l'article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="/blog/article-3" class="mjc-blog-card mjc-reveal mjc-reveal-delay-2">
+          <div class="mjc-blog-image">
+            <span class="mjc-blog-category">Influence</span>
+          </div>
+          <div class="mjc-blog-content">
+            <div class="mjc-blog-meta">
+              <span>6 min de lecture</span>
+              <span>•</span>
+              <span>6 mai 2026</span>
+            </div>
+            <h4>Monétiser ses réseaux sociaux : les 7 leviers à connaître</h4>
+            <p>De la publicité aux partenariats, le guide pour vivre de sa passion.</p>
+            <span class="mjc-blog-link">
+              Lire l'article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FAQ ACCORDÉON
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-faq">
+    <div class="mjc-container">
+      <div class="mjc-section-title mjc-reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Vos questions, <span class="accent-gradient">nos réponses</span></h2>
+        <p>Tout ce qu'il faut savoir avant de nous confier votre projet.</p>
+      </div>
+
+      <div class="mjc-faq-wrapper">
+        <div class="mjc-faq-item mjc-reveal">
+          <div class="mjc-faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <span>Combien coûte un accompagnement marketing digital ?</span>
+            <span class="mjc-faq-toggle">+</span>
+          </div>
+          <div class="mjc-faq-answer">
+            Nos tarifs s'adaptent à votre profil et à vos objectifs. Nous proposons des packs structurés (TPE, PME, ETI) ainsi que du sur-mesure. Le premier échange est gratuit et sans engagement, permettant de définir le périmètre exact de la collaboration.
+          </div>
+        </div>
+
+        <div class="mjc-faq-item mjc-reveal">
+          <div class="mjc-faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <span>Sous combien de temps voit-on les premiers résultats ?</span>
+            <span class="mjc-faq-toggle">+</span>
+          </div>
+          <div class="mjc-faq-answer">
+            Cela dépend du levier activé : la publicité en ligne génère des résultats immédiats (quelques jours), le SEO demande 3 à 6 mois pour s'installer durablement, l'email marketing montre son ROI dès les premières campagnes. Nous fixons toujours des jalons clairs et mesurables.
+          </div>
+        </div>
+
+        <div class="mjc-faq-item mjc-reveal">
+          <div class="mjc-faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <span>Travaillez-vous avec tous les secteurs d'activité ?</span>
+            <span class="mjc-faq-toggle">+</span>
+          </div>
+          <div class="mjc-faq-answer">
+            Nous accompagnons une grande diversité de secteurs : commerce, e-commerce, B2B, restauration, hôtellerie, éducation, services. Si votre activité est légale et éthique, nous trouvons une stratégie adaptée.
+          </div>
+        </div>
+
+        <div class="mjc-faq-item mjc-reveal">
+          <div class="mjc-faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <span>Suis-je engagé sur la durée ?</span>
+            <span class="mjc-faq-toggle">+</span>
+          </div>
+          <div class="mjc-faq-answer">
+            Nous proposons à la fois des missions ponctuelles (audit, formation, mission courte) et des accompagnements longs. Les contrats récurrents peuvent être résiliés avec un préavis raisonnable. Pas de piège, pas d'engagement caché.
+          </div>
+        </div>
+
+        <div class="mjc-faq-item mjc-reveal">
+          <div class="mjc-faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <span>Comment se passe la collaboration au quotidien ?</span>
+            <span class="mjc-faq-toggle">+</span>
+          </div>
+          <div class="mjc-faq-answer">
+            Vous avez un interlocuteur dédié, des points réguliers planifiés, un tableau de bord en temps réel et un accès à l'espace client pour suivre l'avancement. Réactivité sous 24h ouvrées garantie sur les demandes urgentes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT — RACCOURCIS + FORMULAIRE RAPIDE
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-contact-section">
+    <div class="mjc-contact-bg-pattern"></div>
+    <div class="mjc-container">
+      <div class="mjc-contact-grid">
+        <div class="mjc-contact-left mjc-reveal">
+          <span class="eyebrow" style="color: var(--accent-light); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; display: inline-block; margin-bottom: 20px;">Contact</span>
+          <h2>Discutons de <span class="accent-gradient">votre projet</span></h2>
+          <p>Premier échange gratuit, sans engagement, riche en pistes concrètes.</p>
+
+          <div class="mjc-contact-shortcuts">
+            <a href="mailto:contact@maison-johnco-marketing.com" class="mjc-shortcut">
+              <div class="mjc-shortcut-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="mjc-shortcut-label">Email</div>
+                <div class="mjc-shortcut-value">contact@maison-johnco-marketing.com</div>
+              </div>
+            </a>
+
+            <a href="/contact?type=rdv" class="mjc-shortcut">
+              <div class="mjc-shortcut-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div>
+                <div class="mjc-shortcut-label">Rendez-vous</div>
+                <div class="mjc-shortcut-value">Réserver un créneau en visio</div>
+              </div>
+            </a>
+
+            <a href="/espace-client" class="mjc-shortcut">
+              <div class="mjc-shortcut-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div class="mjc-shortcut-label">Espace client</div>
+                <div class="mjc-shortcut-value">Accéder à mon tableau de bord</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="mjc-contact-form mjc-reveal mjc-reveal-delay-2">
+          <h3>Devis gratuit en 60 secondes</h3>
+          <p>Remplissez ce formulaire, on vous répond sous 24h ouvrées.</p>
+
+          <form>
+            <div class="mjc-form-group">
+              <label class="mjc-form-label">Nom complet</label>
+              <input type="text" class="mjc-form-input" placeholder="Jean Dupont">
+            </div>
+            <div class="mjc-form-group">
+              <label class="mjc-form-label">Email professionnel</label>
+              <input type="email" class="mjc-form-input" placeholder="jean@entreprise.com">
+            </div>
+            <div class="mjc-form-group">
+              <label class="mjc-form-label">Vous êtes</label>
+              <select class="mjc-form-select">
+                <option>Une entreprise (TPE/PME/ETI)</option>
+                <option>Un créateur de contenu</option>
+                <option>Un particulier</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="mjc-form-group">
+              <label class="mjc-form-label">Décrivez votre projet en quelques mots</label>
+              <textarea class="mjc-form-textarea" placeholder="Je souhaite augmenter ma visibilité, lancer une campagne pub, monter en compétences..."></textarea>
+            </div>
+            <button type="submit" class="mjc-form-submit">
+              Envoyer ma demande →
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CTA FINAL
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mjc-cta-final">
+    <div class="mjc-cta-final-bg"></div>
+    <div class="mjc-container">
+      <div class="mjc-cta-final-content mjc-reveal">
+        <h2>Prêt à transformer votre présence digitale ?</h2>
+        <p>Discutons de votre projet aujourd'hui. Le premier échange est gratuit.</p>
+        <div class="mjc-hero-cta" style="justify-content: center;">
+          <a href="/contact?type=devis" class="mjc-btn mjc-btn-primary">
+            Demander un devis gratuit
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="/contact?type=rdv" class="mjc-btn mjc-btn-secondary-light">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Prendre rendez-vous
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS — PARTICULES + COMPTEURS + REVEAL + TYPEWRITER
+     ═══════════════════════════════════════════════════════ -->
+<script>
+(function() {
+  // ─── PARTICULES HERO (canvas) ─────────────────────────
+  const canvas = document.getElementById('mjcParticlesCanvas');
+  if (canvas && canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationId;
+
+    function resizeCanvas() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    }
+
+    function createParticles() {
+      particles = [];
+      const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          radius: Math.random() * 1.5 + 0.5,
+          opacity: Math.random() * 0.5 + 0.2
+        });
+      }
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Connexions entre particules proches
+      for (let i = 0; i < particles.length; i++) {
+        const p1 = particles[i];
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(167, 139, 250, ${0.15 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        }
+      }
+      // Particules
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(167, 139, 250, ${p.opacity})`;
+        ctx.fill();
+      });
+      animationId = requestAnimationFrame(drawParticles);
+    }
+
+    resizeCanvas();
+    createParticles();
+    drawParticles();
+
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(animationId);
+      resizeCanvas();
+      createParticles();
+      drawParticles();
+    });
+  }
+
+  // ─── EFFET MACHINE À ÉCRIRE ──────────────────────────
+  const typewriter = document.getElementById('mjcTypewriter');
+  if (typewriter) {
+    const words = ['leads qualifiés', 'clients fidèles', 'revenus durables', 'résultats mesurables'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const currentWord = words[wordIndex];
+      if (isDeleting) {
+        typewriter.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typewriter.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let speed = isDeleting ? 50 : 100;
+      if (!isDeleting && charIndex === currentWord.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = 300;
+      }
+      setTimeout(type, speed);
+    }
+    setTimeout(type, 1200);
+  }
+
+  // ─── COMPTEURS ANIMÉS ────────────────────────────────
+  const counters = document.querySelectorAll('.mjc-counter');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = 'true';
+        const target = parseInt(entry.target.dataset.target);
+        const duration = 2000;
+        const startTime = performance.now();
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          entry.target.textContent = Math.floor(target * eased);
+          if (progress < 1) requestAnimationFrame(update);
+          else entry.target.textContent = target;
+        }
+        requestAnimationFrame(update);
+      }
+    });
+  }, { threshold: 0.3 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ─── SCROLL REVEAL ────────────────────────────────────
+  const revealElements = document.querySelectorAll('.mjc-reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('mjc-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+  revealElements.forEach(el => revealObserver.observe(el));
+})();
+</script>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

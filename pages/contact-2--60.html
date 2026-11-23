@@ -1,0 +1,487 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Maison John&Co | Agence de Marketing Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .form-input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+        }
+        .booking-slot:hover {
+            background-color: #4f46e5;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+   
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-700 to-purple-600 text-white py-16">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Contactez notre équipe</h1>
+            <p class="text-xl max-w-2xl mx-auto">Nous sommes à votre écoute pour concrétiser vos projets digitaux. Choisissez le mode de contact qui vous convient.</p>
+        </div>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Contact Card 1 -->
+                <div class="bg-white rounded-lg shadow-md p-8 contact-card transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Appelez-nous</h3>
+                    <p class="text-gray-600 mb-6">Discutez directement avec un conseiller</p>
+                    <a href="tel:+33123456789" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium inline-block hover:bg-indigo-700 transition">
+                        <i class="fas fa-phone mr-2"></i>06 02 20 63 13
+                    </a>
+                    <p class="text-sm text-gray-500 mt-2">Lun-Ven: 9h-18h</p>
+                </div>
+
+                <!-- Contact Card 2 -->
+                <div class="bg-white rounded-lg shadow-md p-8 contact-card transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Prendre rendez-vous</h3>
+                    <p class="text-gray-600 mb-6">Planifiez un appel avec nos experts</p>
+                    <button onclick="openBookingModal()" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium inline-block hover:bg-indigo-700 transition">
+                        <i class="fas fa-clock mr-2"></i>Choisir un créneau
+                    </button>
+                </div>
+
+                <!-- Contact Card 3 -->
+                <div class="bg-white rounded-lg shadow-md p-8 contact-card transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Demander un devis</h3>
+                    <p class="text-gray-600 mb-6">Obtenez une offre personnalisée</p>
+                    <button onclick="openQuoteModal()" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium inline-block hover:bg-indigo-700 transition">
+                        <i class="fas fa-pen mr-2"></i>Formulaire devis
+                    </button>
+                </div>
+
+                <!-- Contact Card 4 -->
+                <div class="bg-white rounded-lg shadow-md p-8 contact-card transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Support & Assistance</h3>
+                    <p class="text-gray-600 mb-6">Questions techniques et suivi client</p>
+                    <button onclick="openSupportModal()" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium inline-block hover:bg-indigo-700 transition">
+                        <i class="fas fa-question-circle mr-2"></i>Accéder au support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-indigo-700 text-white p-8 md:p-12">
+                        <h2 class="text-2xl font-bold mb-6">Nos coordonnées</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Adresse</h3>
+                                    <p>231 Rue Saint-Honoré<br>75001 Paris, France</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Téléphone</h3>
+                                    <p>06 02 20 63 13</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Email</h3>
+                                    <p>contact@maison-johnco-marketing.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Horaires</h3>
+                                    <p>Lundi-Mercredi: 9h-12h / 14h-19h30<br>Jeudi-Vendredi: 09h-12h / 14h-18h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="font-semibold mb-4">Suivez-nous</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/maison_john_co_marketing/" class="text-white hover:text-indigo-200 text-xl"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://x.com/maison_john_co_marketing/" class="text-white hover:text-indigo-200 text-xl"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/company/maison-john-co-marketing" class="text-white hover:text-indigo-200 text-xl"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/maison_john_co_marketing/" class="text-white hover:text-indigo-200 text-xl"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h2 class="text-2xl font-bold mb-6 text-gray-800">Envoyez-nous un message</h2>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
+                                <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    <option value="">Sélectionnez un sujet</option>
+                                    <option value="general">Question générale</option>
+                                    <option value="service">Demande de service</option>
+                                    <option value="support">Support technique</option>
+                                    <option value="partnership">Partenariat</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-indigo-700 transition">
+                                Envoyer le message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nous trouver</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167898.63016008!2d2.2351069280055675!3d48.888406784712885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1756659119886!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Prendre rendez-vous</h3>
+                    <button onclick="closeBookingModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Sélectionnez un conseiller</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="Mathieu">Mathieu Villeroy - Direction Générale</option>
+                            <option value="Alban">Alban Lemoine-Drouin - Directeur général</option>
+                            <option value="Victoire">Victoire Arnaudet - Directrices général adjoint</option>
+                            <option value="Sacha">Sacha Belloy - Directeur de cabinet</option>
+                            <option value="Maëlle">Victoire Arnaudet - Secrétaire général</option>
+                            <option value="Étienne">Sacha Belloy - Direction de la Stratégie Digitale</option>
+                            <option value="Thaïs">Maëlle Montfort - Direction des Opérations</option>
+                            <option value="Augustin">Étienne De Malcourt - Direction Commerciale & Partenariats</option>
+                            <option value="Salomé">Thaïs Brémond-Laurens - Direction Financière</option>
+                            <option value="Gaspard">Augustin Garance - Responsable Administratif</option>
+                            <option value="Clara">Salomé D’Hervilly - Responsable Ressources Humaines</option>
+                            <option value="Ismaël">Gaspard Vallois - Responsable Juridique</option>
+                            <option value="Jeanne">Clara De La Varenne - Office Manager / Secrétariat de Direction</option>
+                            <option value="Noé">Ismaël Ronceray - Responsable Comptabilité et Facturation</option>
+                            <option value="Éloïse">Jeanne Courcelle - Responsable Informatique & SI</option>
+                            <option value="Léo-Antoine">Noé Delestré - Chef de Projet Événements Corporate</option>
+                            <option value="Margot">Éloïse De Rochemont - Support Outils & Packs Digitaux</option>
+                            <option value="Thibault">Léo-Antoine Rousselot - PÔLE ÉVÉNEMENTS ENTREPRISES</option>
+                            <option value="Diane">Margot Lefebvre-Henriot - RESPONSABLEÉVÉNEMENTS STRATÉGIQUES & CORPORATE</option>
+                            <option value="Maxence">Thibault Mareuil - RESPONSABLEÉVÉNEMENTS DE FORMATION & ACCULTURATION DIGITALE</option>
+                            <option value="Romane">Diane Peltier-Duchesne - RESPONSABLEÉVÉNEMENTS COMMUNICATION, MARQUE & PROMOTION</option>
+                            <option value="Aurèle">Maxence De Ferluc - RESPONSABLEÉVÉNEMENTS DE NETWORKING & RELATIONNEL</option>
+                            <option value="Isaure">Romane Bellière - RESPONSABLEÉVÉNEMENTS RH, RECRUTEMENT & MARQUE EMPLOYEUR</option>
+                            <option value="Naël">Aurèle De La Bussière - RESPONSABLEÉVÉNEMENTS INNOVATION, CRÉATIVITÉ & LABS</option>
+                            <option value="Alix">Isaure Chanteloup - RESPONSABLEÉVÉNEMENTS HYBRIDES & DIGITAUX</option>
+                            <option value="Mathis">Naël Valembois - RESPONSABLEÉVÉNEMENTS BIEN-ÊTRE, CULTURE & QVT</option>
+                            <option value="Sybille">Alix De Cressanges - PÔLE ÉVÉNEMENTS CRÉATEURS DE CONTENU</option>
+                            <option value="Jules">Mathis Dervault - RESPONSABLEÉVÉNEMENTS D'ACCOMPAGNEMENT & STRATÉGIE DE CARRIÈRE</option>
+                            <option value="Honorine">Sybille Montlaur - RESPONSABLEÉVÉNEMENTS DE CRÉATION, PRODUCTION & TECHNIQUE</option>
+                            <option value="Marius">Jules Desrousseaux - RESPONSABLEÉVÉNEMENTS RÉSEAUTAGE & VISIBILITÉ</option>
+                            <option value="Clémence">Honorine Cazalès - RESPONSABLEÉVÉNEMENTS MONÉTISATION & BUSINESS</option>
+                            <option value="Eliott">Marius Vandrac - RESPONSABLEÉVÉNEMENTS MINDSET, IMAGE & SANTÉ MENTALE</option>
+                            <option value="Garance">Clémence Rochebrune - RESPONSABLEÉVÉNEMENTS ÉDUCATIFS & TRANSMISSION</option>
+                            <option value="Tristan">Eliott Beaugrand - PÔLE ÉVÉNEMENTS PARTICULIERS</option>
+                            <option value="Apolline">Garance Trouvé - RESPONSABLEÉVÉNEMENTS ÉDUCATIFS & DÉCOUVERTE DU DIGITAL</option>
+                            <option value="Corentin">Tristan Devron - RESPONSABLEÉVÉNEMENTS D’ACCOMPAGNEMENT & PROJETS PERSONNELS</option>
+                            <option value="Anaïs">Apolline De Mauriac - RESPONSABLEÉVÉNEMENTS DE CRÉATION & EXPRESSIONS DIGITALES</option>
+                            <option value="Edgar">Corentin Brachet - RESPONSABLEÉVÉNEMENTS POUR LES JEUNES & LA JEUNESSE ÉLARGIE</option>
+                            <option value="Zoé">Anaïs Villedary - RESPONSABLEÉVÉNEMENTS INSPIRANTS & COMMUNAUTAIRES</option>
+                            <option value="Timothée">Edgar Foucaud - RESPONSABLEÉVÉNEMENTS DE VULGARISATION & CITOYENNETÉ DIGITALE</option>
+                            <option value="Hermine">Zoé De Lauzanne - PÔLE SERVICES ENTREPRISES</option>
+                            <option value="Basile">Timothée Béranger-Loysel - RESPONSABLESTRATÉGIE DIGITALE & ACCOMPAGNEMENT</option>
+                            <option value="Manon">Hermine Castellan - RESPONSABLECRÉATION DIGITALE & IDENTITÉ</option>
+                            <option value="Octave">Basile Fouchier - RESPONSABLEPUBLICITÉ DIGITALE</option>
+                            <option value="Isaïe">Manon Delorme-Ferrat - RESPONSABLERÉFÉRENCEMENT & VISIBILITÉ</option>
+                            <option value="Camille">Octave Courvoisier - RESPONSABLECONTENU & RÉDACTION</option>
+                            <option value="Côme">Isaïe Le Dréan - RESPONSABLEAUTOMATISATION & CRM</option>
+                            <option value="Solène">Camille De Silans - RESPONSABLEANALYSE & PERFORMANCE</option>
+                            <option value="Aymeric">Côme Valtenaire - RESPONSABLEINFLUENCE, SOCIAL MEDIA & COMMUNAUTÉ</option>
+                            <option value="Céleste">Solène Desmarais - PÔLE SERVICES CRÉATEUR DE CONTENU</option>
+                            <option value="Lubin">Aymeric De La Marnierre - RESPONSABLESTRATÉGIE & IMAGE DE MARQUE</option>
+                            <option value="Faustine">Céleste Giraudon - RESPONSABLECRÉATION DE CONTENU & IDENTITÉ VISUELLE</option>
+                            <option value="Eloi">Lubin De Caumont - RESPONSABLEDÉVELOPPEMENT D’AUDIENCE & COMMUNAUTÉ</option>
+                            <option value="Philomène">Faustine Bellançon - RESPONSABLEMONÉTISATION & COLLABORATIONS</option>
+                            <option value="Marceau">Eloi Grandpierre - RESPONSABLETECHNIQUE & AUTOMATISATION</option>
+                            <option value="Judith">Philomène Daubigné - RESPONSABLEFORMATION & MONTÉE EN COMPÉTENCES</option>
+                            <option value="Malo">Marceau De Lauris - PÔLE SERVICES PARTICULIERS</option>
+                            <option value="Prénom">Judith Trélat - RESPONSABLEFORMATIONS EN LIGNE</option>
+                            <option value="Capucine">Malo Vernier - RESPONSABLECOURS & ATELIERS EN DIRECT</option>
+                            <option value="Ninon">Prénom Nom - RESPONSABLEACCOMPAGNEMENT INDIVIDUEL</option>
+                            <option value="Émile">Capucine La Motte - RESPONSABLEOUTILS & PACKS CLÉS EN MAIN</option>
+                            <option value="Maëlle">Ninon Charleval - RESPONSABLESENSIBILISATION & INCLUSION NUMÉRIQUE</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date du rendez-vous</label>
+                        <input type="date" min="2023-06-01" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Créneaux disponibles</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-2">
+                            <button class="booking-slot bg-gray-100 text-gray-800 py-2 px-4 rounded-lg border border-gray-300 hover:border-indigo-500 transition">09:00 - 09:30</button>
+                            <button class="booking-slot bg-gray-100 text-gray-800 py-2 px-4 rounded-lg border border-gray-300 hover:border-indigo-500 transition">10:00 - 10:30</button>
+                            <button class="booking-slot bg-gray-100 text-gray-800 py-2 px-4 rounded-lg border border-gray-300 hover:border-indigo-500 transition">11:00 - 11:30</button>
+                            <button class="booking-slot bg-gray-100 text-gray-800 py-2 px-4 rounded-lg border border-gray-300 hover:border-indigo-500 transition">14:00 - 14:30</button>
+                            <button class="booking-slot bg-gray-100 text-gray-800 py-2 px-4 rounded-lg border border-gray-300 hover:border-indigo-500 transition">15:00 - 15:30</button>
+                            <button class="booking-slot bg-gray-100 text-gray-800 py-2 px-4 rounded-lg border border-gray-300 hover:border-indigo-500 transition">16:00 - 16:30</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Vos informations</label>
+                        <input type="text" placeholder="Nom complet" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-3">
+                        <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-3">
+                        <input type="tel" placeholder="Téléphone" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Sujet du rendez-vous</label>
+                        <textarea rows="3" placeholder="Décrivez brièvement l'objet de notre échange" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-indigo-700 transition">
+                        Confirmer le rendez-vous
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Demander un devis</h3>
+                    <button onclick="closeQuoteModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Type de projet</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Sélectionnez un type de projet</option>
+                            <option value="website">Site web</option>
+                            <option value="ecommerce">Boutique en ligne</option>
+                            <option value="seo">SEO & Référencement</option>
+                            <option value="social">Réseaux sociaux</option>
+                            <option value="ads">Publicité en ligne</option>
+                            <option value="branding">Identité de marque</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Budget estimé</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Sélectionnez une fourchette</option>
+                            <option value="1">Moins de 1 000€</option>
+                            <option value="2">1 000€ - 3 000€</option>
+                            <option value="3">3 000€ - 5 000€</option>
+                            <option value="4">5 000€ - 10 000€</option>
+                            <option value="5">Plus de 10 000€</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Délai souhaité</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Sélectionnez un délai</option>
+                            <option value="urgent">Urgent (moins d'1 mois)</option>
+                            <option value="1-3">1 à 3 mois</option>
+                            <option value="3-6">3 à 6 mois</option>
+                            <option value="flexible">Délai flexible</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Détails du projet</label>
+                        <textarea rows="5" placeholder="Décrivez votre projet en détail (objectifs, cibles, spécificités...)" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Vos informations</label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Nom complet" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <input type="text" placeholder="Entreprise" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <input type="tel" placeholder="Téléphone" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="terms" class="mt-1 mr-2">
+                        <label for="terms" class="text-sm text-gray-600">J'accepte que Maison John&Co utilise mes informations pour me contacter dans le cadre de ma demande de devis.</label>
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-indigo-700 transition">
+                        Envoyer ma demande de devis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Modal -->
+    <div id="supportModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Support & Assistance</h3>
+                    <button onclick="closeSupportModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-indigo-800 mb-2"><i class="fas fa-info-circle mr-2"></i>Notre engagement</h4>
+                        <p class="text-indigo-700">Notre équipe support s'engage à répondre à vos questions techniques sous 24h ouvrées. Pour les urgences, privilégiez l'appel téléphonique.</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Type de demande</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Sélectionnez une option</option>
+                            <option value="technical">Problème technique</option>
+                            <option value="account">Question sur mon compte</option>
+                            <option value="billing">Facturation</option>
+                            <option value="follow">Suivi de projet</option>
+                            <option value="other">Autre demande</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Décrivez votre demande</label>
+                        <textarea rows="5" placeholder="Décrivez votre problème ou question en détail. Si c'est lié à un projet spécifique, merci d'indiquer son nom ou référence." class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Pièces jointes</label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                            <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
+                            <p class="text-gray-500">Glissez-déposez vos fichiers ici ou <span class="text-indigo-600 cursor-pointer">parcourir</span></p>
+                            <p class="text-xs text-gray-400 mt-2">Formats acceptés: JPG, PNG, PDF, DOC (max. 5MB)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Vos informations</label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Nom complet" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg form-input focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2"><i class="fas fa-question-circle mr-2"></i>Questions fréquentes</h4>
+                        <div class="space-y-2">
+                            <details class="border-b border-gray-200 pb-2">
+                                <summary class="font-medium text-gray-700 cursor-pointer">Comment suivre l'avancement de mon projet?</summary>
+                                <p class="text-gray-600 mt-1">Vous recevez des rapports hebdomadaires par email. Vous pouvez également accéder à votre espace client sur notre site.</p>
+                            </details>
+                            <details class="border-b border-gray-200 pb-2">
+                                <summary class="font-medium text-gray-700 cursor-pointer">Quels sont vos délais de réponse?</summary>
+                                <p class="text-gray-600 mt-1">Nous nous engageons à répondre à toutes les demandes sous 24h ouvrées (48h pour les demandes complexes).</p>
+                            </details>
+                            <details class="border-b border-gray-200 pb-2">
+                                <summary class="font-medium text-gray-700 cursor-pointer">Comment modifier une information sur mon projet?</summary>
+                                <p class="text-gray-600 mt-1">Contactez directement votre chef de projet par email ou via l'espace client avec la mention "URGENT" si nécessaire.</p>
+                            </details>
+                        </div>
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-indigo-700 transition">
+                        Envoyer ma demande de support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        // Modal functions
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function openQuoteModal() {
+            document.getElementById('quoteModal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quoteModal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function openSupportModal() {
+            document.getElementById('supportModal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeSupportModal() {
+            document.getElementById('supportModal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Booking slot selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const slots = document.querySelectorAll('.booking-slot');
+            slots.forEach(slot => {
+                slot.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    slots.forEach(s => s.classList.remove('bg-indigo-600', 'text-white'));
+                    this.classList.add('bg-indigo-600', 'text-white');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

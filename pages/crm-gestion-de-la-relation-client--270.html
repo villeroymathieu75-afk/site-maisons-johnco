@@ -1,0 +1,555 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM & Gestion de la Relation Client | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion-content.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <div class="gradient-bg min-h-screen">
+        <!-- Hero Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+                <div class="inline-flex items-center mb-4 px-4 py-2 bg-blue-100 rounded-full">
+                    <i data-feather="users" class="w-5 h-5 mr-2 text-blue-600"></i>
+                    <span class="text-blue-600 font-medium">CRM & Relation Client</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Optimisez votre relation client avec un CRM performant</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Centralisez, analysez et exploitez vos données clients pour transformer chaque interaction en opportunité commerciale.</p>
+            </div>
+        </section>
+
+        <!-- Definition Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-12 items-center" data-aos="fade-up">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl font-bold mb-6">Définition et périmètre</h2>
+                        <p class="text-lg mb-6">La Gestion de la Relation Client (CRM – Customer Relationship Management) désigne l'ensemble des stratégies, processus et outils permettant de centraliser, organiser, analyser et exploiter les données clients et prospects afin d'optimiser la relation commerciale et marketing.</p>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <div class="flex items-start mb-4">
+                                <i data-feather="check-circle" class="w-5 h-5 mt-1 mr-3 text-green-500"></i>
+                                <p>Le périmètre inclut l'implémentation d'une solution CRM (Salesforce, HubSpot, Zoho, Microsoft Dynamics, etc.)</p>
+                            </div>
+                            <div class="flex items-start mb-4">
+                                <i data-feather="check-circle" class="w-5 h-5 mt-1 mr-3 text-green-500"></i>
+                                <p>Collecte et unification des données multicanales</p>
+                            </div>
+                            <div class="flex items-start mb-4">
+                                <i data-feather="check-circle" class="w-5 h-5 mt-1 mr-3 text-green-500"></i>
+                                <p>Segmentation des audiences et automatisation des processus</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="check-circle" class="w-5 h-5 mt-1 mr-3 text-green-500"></i>
+                                <p>Suivi des interactions clients et mesure de la performance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-blue-50 p-8 rounded-xl">
+                            <div class="flex items-center mb-6">
+                                <div class="p-3 bg-blue-100 rounded-full mr-4">
+                                    <i data-feather="target" class="w-6 h-6 text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Finalités business et marketing</h3>
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Structurer la donnée client pour une vision unique et fiable</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Améliorer la qualité de la relation en personnalisant chaque interaction</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Accélérer le cycle de vente grâce à un suivi rigoureux</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Augmenter la conversion et la fidélisation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Maximiser la valeur vie client (CLV)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Réduire les coûts commerciaux et marketing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Faciliter la collaboration interne entre équipes</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-4">Notre approche méthodologique</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Une démarche structurée pour une mise en œuvre efficace de votre CRM</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="search" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Audit et cadrage</h3>
+                        <p class="text-gray-600">Analyse de l'organisation existante, identification des points de friction et définition des objectifs CRM.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="check-square" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Choix de la solution</h3>
+                        <p class="text-gray-600">Sélection de la plateforme adaptée à votre entreprise, budget et besoins spécifiques.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="database" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Collecte des données</h3>
+                        <p class="text-gray-600">Intégration des sources multiples, nettoyage et normalisation des données.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="filter" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Segmentation</h3>
+                        <p class="text-gray-600">Classification des clients selon leur comportement, valeur et maturité dans le cycle d'achat.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="refresh-cw" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Automatisation</h3>
+                        <p class="text-gray-600">Création de workflows pour la gestion des leads, relances et suivi post-achat.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="activity" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Suivi des interactions</h3>
+                        <p class="text-gray-600">Centralisation des emails, appels, rendez-vous et historiques de commande.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="bar-chart-2" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Analyse et reporting</h3>
+                        <p class="text-gray-600">Mise en place de tableaux de bord pour le pipeline commercial et taux de conversion.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="trending-up" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Optimisation continue</h3>
+                        <p class="text-gray-600">Ajustement des processus, enrichissement des données et amélioration de l'expérience client.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standards Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <h2 class="text-3xl font-bold mb-6">Standards de qualité et conformité</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="p-2 bg-blue-100 rounded-full mr-4">
+                                    <i data-feather="shield" class="w-5 h-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-2">Sécurité des données</h3>
+                                    <p class="text-gray-600">Chiffrement, sauvegarde et gestion des accès pour protéger vos informations sensibles.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="p-2 bg-blue-100 rounded-full mr-4">
+                                    <i data-feather="lock" class="w-5 h-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-2">Conformité RGPD</h3>
+                                    <p class="text-gray-600">Gestion des consentements, droit à l'oubli et minimisation des données pour respecter la réglementation.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="p-2 bg-blue-100 rounded-full mr-4">
+                                    <i data-feather="check" class="w-5 h-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-2">Fiabilité de l'information</h3>
+                                    <p class="text-gray-600">Processus de nettoyage et déduplication pour garantir des données précises et à jour.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2" data-aos="fade-left">
+                        <div class="bg-gray-50 p-8 rounded-xl h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="p-3 bg-blue-100 rounded-full mr-4">
+                                    <i data-feather="link" class="w-6 h-6 text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Interdépendance avec les autres disciplines digitales</h3>
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Alimente le marketing automation avec des données segmentées</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Enrichit l'email marketing et le SMS marketing par une personnalisation fine</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Soutient le social selling et les campagnes publicitaires</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Aligne les équipes marketing et commerciales autour de données communes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="chevron-right" class="w-5 h-5 mt-1 mr-3 text-blue-500"></i>
+                                    <span>Améliore le service client avec une vision 360° des clients</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section class="py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-4">Formats et livrables</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Les résultats concrets de notre collaboration</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="map" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Cartographie relation client</h3>
+                        </div>
+                        <p class="text-gray-600">Sources, canaux et processus clairement identifiés et documentés.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="box" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Solution CRM configurée</h3>
+                        </div>
+                        <p class="text-gray-600">Plateforme opérationnelle et intégrée à votre écosystème digital.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="pie-chart" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Plan de segmentation</h3>
+                        </div>
+                        <p class="text-gray-600">Classification des clients et prospects selon des critères pertinents.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="repeat" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Workflows automatisés</h3>
+                        </div>
+                        <p class="text-gray-600">Processus de lead management, relances et fidélisation optimisés.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="monitor" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Tableaux de bord</h3>
+                        </div>
+                        <p class="text-gray-600">Outils de suivi personnalisés pour chaque équipe (marketing, ventes, support).</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="book" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Guide de gouvernance</h3>
+                        </div>
+                        <p class="text-gray-600">Documentation complète des processus et bonnes pratiques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPIs Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-4">Mesure de performance et optimisation continue</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Les indicateurs clés pour évaluer et améliorer votre CRM</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="dollar-sign" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Efficacité commerciale</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Taux de conversion des leads</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Durée moyenne du cycle de vente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Valeur moyenne des opportunités</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="bar-chart" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Efficacité marketing</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Coût par lead (CPL)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Coût d'acquisition client (CAC)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Part des leads qualifiés (SQL/MQL)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i data-feather="heart" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-lg">Fidélisation</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Taux de réachat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Churn rate</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Net Promoter Score (NPS)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 mt-1 mr-2 text-blue-500"></i>
+                                <span>Customer Lifetime Value (CLV)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-12 bg-blue-50 p-8 rounded-xl" data-aos="fade-up">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-blue-100 rounded-full mr-4">
+                            <i data-feather="award" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Résultats attendus</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Un service de CRM et gestion de la relation client abouti fournit à l'entreprise un référentiel unique et fiable, une relation client plus personnalisée et performante, un pilotage clair des ventes et du marketing, ainsi qu'une amélioration continue de la satisfaction et de la fidélisation.</p>
+                    <p class="text-gray-700">L'entreprise dispose ainsi d'un véritable levier de croissance durable, centré sur la donnée et l'efficacité opérationnelle.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold mb-4">Questions fréquentes</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Trouvez des réponses aux questions les plus courantes sur notre service CRM</p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer">
+                            <h3 class="font-bold text-lg">Quelle est la durée typique d'un projet CRM ?</h3>
+                            <i data-feather="chevron-down" class="w-6 h-6 text-blue-600 accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content mt-4">
+                            <p class="text-gray-600">La durée varie selon la complexité du projet et la taille de l'entreprise. Un déploiement standard prend généralement entre 3 et 6 mois, incluant l'audit, la configuration, la migration des données, la formation et le suivi post-déploiement.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer">
+                            <h3 class="font-bold text-lg">Quelle solution CRM recommandez-vous ?</h3>
+                            <i data-feather="chevron-down" class="w-6 h-6 text-blue-600 accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content mt-4">
+                            <p class="text-gray-600">Le choix dépend de vos besoins spécifiques. Pour les PME, HubSpot et Zoho CRM offrent d'excellents rapports qualité-prix. Les grandes entreprises préfèrent souvent Salesforce ou Microsoft Dynamics. Nous vous accompagnons dans le choix de la solution la plus adaptée à votre activité, budget et objectifs.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer">
+                            <h3 class="font-bold text-lg">Comment garantissez-vous la qualité des données ?</h3>
+                            <i data-feather="chevron-down" class="w-6 h-6 text-blue-600 accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content mt-4">
+                            <p class="text-gray-600">Nous mettons en place des processus rigoureux de nettoyage, déduplication et validation des données. Nous automatisons également les contrôles qualité et établissons des règles de gouvernance pour maintenir la qualité des données dans le temps.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer">
+                            <h3 class="font-bold text-lg">Quel est le retour sur investissement attendu ?</h3>
+                            <i data-feather="chevron-down" class="w-6 h-6 text-blue-600 accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content mt-4">
+                            <p class="text-gray-600">Les entreprises constatent généralement une augmentation de 10 à 25% de leur chiffre d'affaires grâce à une meilleure conversion des leads, une réduction des coûts d'acquisition et une amélioration de la fidélisation. Le ROI exact dépend de votre secteur et de votre maturité commerciale actuelle.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up">
+                        <div class="accordion-header flex justify-between items-center cursor-pointer">
+                            <h3 class="font-bold text-lg">Comment gérez-vous la formation des équipes ?</h3>
+                            <i data-feather="chevron-down" class="w-6 h-6 text-blue-600 accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content mt-4">
+                            <p class="text-gray-600">Nous proposons des sessions de formation adaptées à chaque métier (commerciaux, marketing, support client). Nos formations combinent théorie et pratique, avec des supports pédagogiques et des sessions de coaching post-formation pour garantir l'adoption par les équipes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Quote -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Devis Button -->
+            <div data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="file-text" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Demander un devis</h2>
+                    <p class="text-gray-600 mb-8">Obtenez une estimation personnalisée gratuite adaptée à vos besoins spécifiques et recevez une proposition détaillée. Notre équipe vous répond sous 48 heures ouvrées.</p>
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="file-text" class="mr-3"></i>
+                        Demander un devis gratuit
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Gratuit et sans engagement</p>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <div data-aos="fade-left">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="mail" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Nous contacter</h2>
+                    <p class="text-gray-600 mb-8">Une question ? Besoin d'informations complémentaires ? Notre équipe est à votre écoute pour échanger sur vos besoins.</p>
+                    <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="mail" class="mr-3"></i>
+                        Nous contacter
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Réponse rapide garantie</p>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.accordion-icon');
+                
+                if(content.classList.contains('active')) {
+                    content.classList.remove('active');
+                    icon.setAttribute('data-feather', 'chevron-down');
+                } else {
+                    content.classList.add('active');
+                    icon.setAttribute('data-feather', 'chevron-up');
+                }
+                feather.replace();
+            });
+        });
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // In a real scenario, you would send this data to your server
+            fetch('mailto:contact@maison-johnco-marketing.com?subject=Demande de devis CRM&body=' + 
+                  encodeURIComponent(`Nom: ${data.name}\nEmail: ${data.email}\nTéléphone: ${data.phone}\nEntreprise: ${data.company}\nMessage: ${data.message}`))
+                .then(() => {
+                    alert('Votre demande a été envoyée avec succès !');
+                    this.reset();
+                })
+                .catch(() => {
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                });
+        });
+
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

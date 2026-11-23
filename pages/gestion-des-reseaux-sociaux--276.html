@@ -1,0 +1,825 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Réseaux Sociaux | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 32px;
+            height: calc(100% - 32px);
+            width: 2px;
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Hero Section -->
+        <section class="gradient-bg rounded-2xl p-8 mb-16" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-2/3 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Gestion des Réseaux Sociaux</h1>
+                    <p class="text-xl text-gray-700 mb-6">Une présence stratégique et performante sur les réseaux sociaux pour développer votre marque et engager votre audience.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm flex items-center">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-1"></i> Stratégie
+                        </span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm flex items-center">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-1"></i> Création
+                        </span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm flex items-center">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-1"></i> Animation
+                        </span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm flex items-center">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-1"></i> Analyse
+                        </span>
+                    </div>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-xs">
+                        <div class="flex flex-col items-center text-center">
+                            <i data-feather="share-2" class="w-12 h-12 text-blue-600 mb-4"></i>
+                            <h3 class="font-semibold mb-2">Contactez-nous</h3>
+                            <p class="text-sm text-gray-600 mb-4">Discutons de votre stratégie réseaux sociaux</p>
+                            <a href="https://maison-johnco-marketing.com/devis-sur-mesure/" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                                Demander un devis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Definition Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-900">Définition et périmètre</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <p class="text-lg text-gray-700 mb-6">
+                    La gestion des réseaux sociaux couvre l'ensemble des opérations nécessaires pour administrer, animer et développer des présences de marque sur les plateformes sociales (Facebook, Instagram, TikTok, LinkedIn, X, Pinterest, YouTube, Snapchat, forums et communautés spécialisées).
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border-l-4 border-blue-600 pl-4">
+                        <h3 class="font-semibold text-lg mb-2">Périmètre inclus</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Audit des comptes existants et définition des lignes éditoriales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Planification et production de contenus</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Orchestration des publications et modération</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Veille et social listening</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Amplification payante ciblée (boosting)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Gouvernance des accès et mesure de la performance</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="shield" class="w-6 h-6 text-blue-600 mr-3"></i>
+                            <h3 class="font-semibold">Cadre de conformité</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Nous assurons une gestion conforme aux exigences juridiques et de sécurité de marque, avec une attention particulière sur la protection des données et la propriété intellectuelle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Goals Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-900">Finalités business et marketing</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Notoriété de marque</h3>
+                    <p class="text-gray-600">Renforcer la notoriété et la préférence de marque par une présence régulière, distinctive et cohérente.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="message-square" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Engagement qualifié</h3>
+                    <p class="text-gray-600">Générer de l'engagement qualifié avec des interactions utiles et des conversations à valeur.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="external-link" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Trafic vers actifs</h3>
+                    <p class="text-gray-600">Alimenter le trafic vers les actifs propriétaires (site, app, boutique).</p>
+                </div>
+                <div class="service-card bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="dollar-sign" class="w-6 h-6 text-yellow-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Conversion</h3>
+                    <p class="text-gray-600">Soutenir la conversion directe ou assistée via des contenus orientés preuve et usage.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="heart" class="w-6 h-6 text-red-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Fidélisation</h3>
+                    <p class="text-gray-600">Développer la fidélisation et le service client par une relation réactive et attentionnée.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl shadow-sm p-6">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="eye" class="w-6 h-6 text-indigo-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Insights marché</h3>
+                    <p class="text-gray-600">Capter des insights marché (verbatims, signaux faibles) pour améliorer offre et message.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-900">Méthodologie opérationnelle</h2>
+            </div>
+            <div class="relative">
+                <div class="space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-semibold text-xl mb-3">Audit & cadrage</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Cartographie des comptes et audiences</li>
+                                <li>Benchmark concurrentiel</li>
+                                <li>Évaluation des performances historiques</li>
+                                <li>Revue des messages sensibles</li>
+                                <li>Inventaire des assets et des droits</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-semibold text-xl mb-3">Stratégie & ligne éditoriale</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Positionnement et piliers thématiques</li>
+                                <li>Tonalité et codes visuels par plateforme</li>
+                                <li>Règles d'adaptation cross-canal</li>
+                                <li>Formats, durées, ratio texte/visuel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-semibold text-xl mb-3">Planification & production</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Calendrier éditorial glissant (hebdo/mensuel)</li>
+                                <li>Briefs, scripts et gabarits</li>
+                                <li>Tournages/visuels/motion</li>
+                                <li>Déclinaisons multi-formats</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-semibold text-xl mb-3">Publication & orchestration</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Outils de planification</li>
+                                <li>Fenêtres d'audience</li>
+                                <li>Tags UTM</li>
+                                <li>Versioning par langue/pays</li>
+                                <li>Coordination avec campagnes payantes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-semibold text-xl mb-3">Modération & social care</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Réponses contextualisées</li>
+                                <li>SLA par canal</li>
+                                <li>Banque de réponses validées</li>
+                                <li>Protocole d'escalade</li>
+                                <li>Gestion des UGC et des droits d'exploitation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 6 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <span class="font-bold">6</span>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-semibold text-xl mb-3">Veille & social listening</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Surveillance des mentions, hashtags</li>
+                                <li>Analyses de sentiment et de tendance</li>
+                                <li>Remontée d'insights produits et CX</li>
+                                <li>Surveillance des concurrents et leaders d'opinion</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 7 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <span class="font-bold">7</span>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-semibold text-xl mb-3">Amplification & collaboration paid</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Boosting sélectif des publications</li>
+                                <li>Ciblages précis (intérêts, lookalike, retargeting)</li>
+                                <li>Tests créatifs rapides</li>
+                                <li>Maîtrise de la fréquence et du reach incrémental</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 8 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <span class="font-bold">8</span>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-semibold text-xl mb-3">Mesure & itération</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Tableaux de bord unifiés</li>
+                                <li>Analyses périodiques</li>
+                                <li>Tests contrôlés (A/B, séquentiels)</li>
+                                <li>Recommandations d'optimisation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Standards Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-900">Standards de qualité, accessibilité et conformité</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-sm p-8">
+                    <div class="flex items-center mb-6">
+                        <i data-feather="check-circle" class="w-8 h-8 text-green-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold">Accessibilité & qualité</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Respect des exigences d'accessibilité (sous-titres, alt-text, contraste, lisibilité mobile)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Cohérence iconographique et typographique</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                            <span>Exactitude factuelle et vérification des sources</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm p-8">
+                    <div class="flex items-center mb-6">
+                        <i data-feather="shield" class="w-8 h-8 text-blue-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold">Conformité & sécurité</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="lock" class="w-5 h-5 text-blue-500 mr-2 mt-0.5"></i>
+                            <span>Conformité RGPD (gestion des messages privés et données personnelles)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="file-text" class="w-5 h-5 text-blue-500 mr-2 mt-0.5"></i>
+                            <span>Transparence sur les collaborations et contenus sponsorisés</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="key" class="w-5 h-5 text-blue-500 mr-2 mt-0.5"></i>
+                            <span>Sécurisation des accès (2FA, rôles, journaux d'activité)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="archive" class="w-5 h-5 text-blue-500 mr-2 mt-0.5"></i>
+                            <span>Cloisonnement des environnements et sauvegardes des assets</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governance Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-900">Gouvernance & organisation</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Rôles et responsabilités</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                    <i data-feather="user" class="w-5 h-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Social Media Manager</h4>
+                                    <p class="text-sm text-gray-600">Pilotage stratégique</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 rounded-full p-2 mr-4">
+                                    <i data-feather="users" class="w-5 h-5 text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Community Manager</h4>
+                                    <p class="text-sm text-gray-600">Animation/modération</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 rounded-full p-2 mr-4">
+                                    <i data-feather="image" class="w-5 h-5 text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Création</h4>
+                                    <p class="text-sm text-gray-600">Design/vidéo</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 rounded-full p-2 mr-4">
+                                    <i data-feather="bar-chart-2" class="w-5 h-5 text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Data/Analytics</h4>
+                                    <p class="text-sm text-gray-600">Mesure/insights</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Processus clés</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-red-100 rounded-full p-2 mr-4">
+                                    <i data-feather="book" class="w-5 h-5 text-red-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Playbook de réponse</h4>
+                                    <p class="text-sm text-gray-600">Par scénario (question produit, crise, troll, incident logistique)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 rounded-full p-2 mr-4">
+                                    <i data-feather="clock" class="w-5 h-5 text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Planning de couverture</h4>
+                                    <p class="text-sm text-gray-600">Heures d'affluence, week-ends, jours fériés</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-pink-100 rounded-full p-2 mr-4">
+                                    <i data-feather="alert-triangle" class="w-5 h-5 text-pink-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Protocole de crise</h4>
+                                    <p class="text-sm text-gray-600">Messages holding, porte-parole, validation express</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-900">Formats & livrables</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-sm p-6 flex items-start">
+                    <div class="bg-blue-100 rounded-lg p-3 mr-4">
+                        <i data-feather="file-text" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Audit social complet</h3>
+                        <p class="text-gray-600 text-sm">Analyse détaillée de votre présence actuelle sur les réseaux sociaux.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm p-6 flex items-start">
+                    <div class="bg-purple-100 rounded-lg p-3 mr-4">
+                        <i data-feather="book-open" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Charte Social Media</h3>
+                        <p class="text-gray-600 text-sm">Ligne éditoriale, tonalité, chartes visuelles et de modération.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm p-6 flex items-start">
+                    <div class="bg-green-100 rounded-lg p-3 mr-4">
+                        <i data-feather="calendar" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Calendrier éditorial</h3>
+                        <p class="text-gray-600 text-sm">Planification opérationnelle des contenus.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm p-6 flex items-start">
+                    <div class="bg-yellow-100 rounded-lg p-3 mr-4">
+                        <i data-feather="layers" class="w-6 h-6 text-yellow-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Bibliothèque de templates</h3>
+                        <p class="text-gray-600 text-sm">Posts, stories, shorts, miniatures prêts à l'emploi.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm p-6 flex items-start">
+                    <div class="bg-red-100 rounded-lg p-3 mr-4">
+                        <i data-feather="clipboard" class="w-6 h-6 text-red-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Scripts et kits créatifs</h3>
+                        <p class="text-gray-600 text-sm">Contenus prêts à produire pour vos équipes.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm p-6 flex items-start">
+                    <div class="bg-indigo-100 rounded-lg p-3 mr-4">
+                        <i data-feather="pie-chart" class="w-6 h-6 text-indigo-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Tableaux de bord</h3>
+                        <p class="text-gray-600 text-sm">Engagement, portée, trafic, sentiment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPIs Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-900">Mesure de performance et indicateurs clés</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                <i data-feather="award" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-semibold">Notoriété</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-blue-500 mr-2 mt-0.5"></i>
+                                <span>Portée unique, impressions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-blue-500 mr-2 mt-0.5"></i>
+                                <span>Part de voix</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-blue-500 mr-2 mt-0.5"></i>
+                                <span>Croissance communautaire</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 rounded-full p-2 mr-4">
+                                <i data-feather="message-circle" class="w-5 h-5 text-purple-600"></i>
+                            </div>
+                            <h3 class="font-semibold">Engagement</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-purple-500 mr-2 mt-0.5"></i>
+                                <span>Taux d'engagement par impression</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-purple-500 mr-2 mt-0.5"></i>
+                                <span>Sauvegardes/partages</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-purple-500 mr-2 mt-0.5"></i>
+                                <span>Temps de visionnage</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 rounded-full p-2 mr-4">
+                                <i data-feather="target" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <h3 class="font-semibold">Trafic & conversion</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Clics qualifiés (UTM)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Taux de rebond social</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Conversions directes/assistées</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 rounded-full p-2 mr-4">
+                                <i data-feather="users" class="w-5 h-5 text-yellow-600"></i>
+                            </div>
+                            <h3 class="font-semibold">Relation & réputation</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-yellow-500 mr-2 mt-0.5"></i>
+                                <span>SLA de réponse</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-yellow-500 mr-2 mt-0.5"></i>
+                                <span>FCR (First Contact Resolution)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="w-4 h-4 text-yellow-500 mr-2 mt-0.5"></i>
+                                <span>Sentiment et volume de mentions</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expected Results Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-900">Résultats attendus</h2>
+            </div>
+            <div class="bg-blue-50 rounded-xl p-8">
+                <div class="flex items-center mb-6">
+                    <i data-feather="star" class="w-8 h-8 text-blue-600 mr-4"></i>
+                    <h3 class="text-xl font-semibold">Une présence sociale saine, scalable et performante</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-5 h-5 text-blue-600 mr-2 mt-0.5"></i>
+                                <span>Communauté engagée et trafic qualifié vers les actifs propriétaires</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-5 h-5 text-blue-600 mr-2 mt-0.5"></i>
+                                <span>Conversions directes et assistées mieux attribuées</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-5 h-5 text-blue-600 mr-2 mt-0.5"></i>
+                                <span>Service client plus réactif et réputation maîtrisée</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-5 h-5 text-blue-600 mr-2 mt-0.5"></i>
+                                <span>Insights exploitables pour le produit et le marketing</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 bg-white rounded-lg p-6">
+                    <div class="flex items-center">
+                        <i data-feather="bar-chart-2" class="w-6 h-6 text-blue-600 mr-4"></i>
+                        <p class="font-medium">Les réseaux sociaux deviennent un actif relationnel et business durable, gouverné, mesurable et conforme.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-900">Questions fréquentes</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="accordion-item">
+                        <button class="w-full flex justify-between items-center p-6 text-left font-medium">
+                            <span>Quels réseaux sociaux gérez-vous ?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
+                        </button>
+                        <div class="px-6 pb-6 hidden">
+                            <p class="text-gray-600">Nous gérons l'ensemble des plateformes sociales pertinentes pour votre activité : Facebook, Instagram, TikTok, LinkedIn, X (Twitter), Pinterest, YouTube, Snapchat, ainsi que les forums et communautés spécialisées en lien avec votre secteur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="accordion-item">
+                        <button class="w-full flex justify-between items-center p-6 text-left font-medium">
+                            <span>Combien de publications par semaine recommandez-vous ?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
+                        </button>
+                        <div class="px-6 pb-6 hidden">
+                            <p class="text-gray-600">La fréquence idéale varie selon la plateforme et votre secteur d'activité. Après analyse de votre audience et benchmark concurrentiel, nous établissons un calendrier éditorial adapté. En moyenne : 3-5 posts/semaine sur Facebook, 4-7 sur Instagram, 1-2 sur LinkedIn, et quotidiennement sur les stories et formats éphémères.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="accordion-item">
+                        <button class="w-full flex justify-between items-center p-6 text-left font-medium">
+                            <span>Comment mesurez-vous les résultats ?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
+                        </button>
+                        <div class="px-6 pb-6 hidden">
+                            <p class="text-gray-600">Nous utilisons des tableaux de bord unifiés avec indicateurs clés segmentés par objectif (notoriété, engagement, trafic, conversion, réputation). Des rapports mensuels détaillent l'évolution des performances, insights et recommandations d'optimisation. Des tests A/B permanents permettent d'affiner la stratégie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="accordion-item">
+                        <button class="w-full flex justify-between items-center p-6 text-left font-medium">
+                            <span>Quel est votre délai de réponse aux messages ?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
+                        </button>
+                        <div class="px-6 pb-6 hidden">
+                            <p class="text-gray-600">Nos SLA (Service Level Agreements) garantissent une réponse sous 2h en journée ouvrée pour les demandes urgentes (SAV, crise), et sous 24h pour les interactions courantes. Un protocole d'escalade est activé pour les situations sensibles, avec validation juridique si nécessaire.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="accordion-item">
+                        <button class="w-full flex justify-between items-center p-6 text-left font-medium">
+                            <span>Comment gérez-vous les contenus sponsorisés ?</span>
+                            <i data-feather="chevron-down" class="w-5 h-5 text-gray-500 transform transition-transform"></i>
+                        </button>
+                        <div class="px-6 pb-6 hidden">
+                            <p class="text-gray-600">Nous appliquons strictement les règles de transparence : mention "Sponsorisé" visible, conformité aux politiques des plateformes, et respect du RGPD. Nos équipes créatives et media optimisent les campagnes via ciblages précis (intérêts, lookalike, retargeting) avec tests incrémentaux pour maximiser le ROI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Quote -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Devis Button -->
+            <div data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="file-text" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Demander un devis</h2>
+                    <p class="text-gray-600 mb-8">Obtenez une estimation personnalisée gratuite adaptée à vos besoins spécifiques et recevez une proposition détaillée. Notre équipe vous répond sous 48 heures ouvrées.</p>
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="file-text" class="mr-3"></i>
+                        Demander un devis gratuit
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Gratuit et sans engagement</p>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <div data-aos="fade-left">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="mail" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Nous contacter</h2>
+                    <p class="text-gray-600 mb-8">Une question ? Besoin d'informations complémentaires ? Notre équipe est à votre écoute pour échanger sur vos besoins.</p>
+                    <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="mail" class="mr-3"></i>
+                        Nous contacter
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Réponse rapide garantie</p>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.closest('.accordion-item');
+                const content = item.querySelector('div');
+                const icon = button.querySelector('i');
+
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Veuillez remplir les champs obligatoires (*)');
+                return;
+            }
+            
+            // Construct email body
+            const subject = `Demande de devis - Gestion des Réseaux Sociaux`;
+            const body = `Nom: ${name}%0D%0AEntreprise: ${company}%0D%0AEmail: ${email}%0D%0ATéléphone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+            
+            // Open mail client
+            window.location.href = `mailto:contact@maison-johnco-marketing.com?subject=${subject}&body=${body}`;
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.');
+        });
+
+        // Replace Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

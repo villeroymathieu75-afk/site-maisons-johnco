@@ -1,0 +1,805 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE PACKS PROS — TPE / PME / ETI — Maison John&Co Marketing
+     ═══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .mjc-pp {
+    --bg-dark:#0A1628; --bg-mid:#1E3A5F; --bg-light:#FAFAFA; --bg-white:#FFFFFF;
+    --accent:#7C3AED; --accent-l:#A78BFA; --accent-h:#6D28D9; --accent-g:rgba(124,58,237,.4);
+    --green:#10B981; --amber:#F59E0B;
+    --text-d:#1A1A2E; --text-m:#6B7280; --text-l:#FFFFFF; --text-lm:#B0B8C5;
+    --border-l:#E5E7EB; --border-d:rgba(255,255,255,.1);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--text-d); line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .mjc-pp *,.mjc-pp *::before,.mjc-pp *::after{box-sizing:border-box;}
+  .mjc-pp p{margin:0 0 16px;} .mjc-pp h1,.mjc-pp h2,.mjc-pp h3,.mjc-pp h4{margin:0;letter-spacing:-.02em;}
+  .mjc-pp a{text-decoration:none;color:inherit;}
+  .pp-c{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+  /* ANIMS */
+  @keyframes pp-grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  @keyframes pp-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  @keyframes pp-pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-g)}70%{box-shadow:0 0 0 14px transparent}}
+  @keyframes pp-up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+  .pp-rev{opacity:0;transform:translateY(32px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+  .pp-rev.on{opacity:1;transform:translateY(0);}
+  .pp-rev.d1{transition-delay:.1s}.pp-rev.d2{transition-delay:.2s}.pp-rev.d3{transition-delay:.3s}
+
+  /* ─── HERO ─── */
+  .pp-hero{background:var(--bg-dark);padding:130px 0 90px;position:relative;overflow:hidden;color:var(--text-l);text-align:center;}
+  .pp-hero-bg{position:absolute;inset:0;background:linear-gradient(125deg,#0A1628 0%,#1E3A5F 35%,#2D1B69 70%,#0A1628 100%);background-size:400% 400%;animation:pp-grad 20s ease infinite;z-index:0;}
+  .pp-orb{position:absolute;border-radius:50%;filter:blur(80px);z-index:1;animation:pp-float 8s ease-in-out infinite;}
+  .pp-orb-1{top:-80px;right:-80px;width:450px;height:450px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.25;}
+  .pp-orb-2{bottom:-80px;left:-80px;width:350px;height:350px;background:radial-gradient(circle,var(--accent-l),transparent 70%);opacity:.18;animation-delay:-4s;}
+  .pp-hero-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;}
+  .pp-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,58,237,.15);backdrop-filter:blur(10px);color:var(--accent-l);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:28px;border:1px solid rgba(167,139,250,.3);animation:pp-up .8s ease-out;}
+  .pp-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pp-pulse 2s infinite;}
+  .pp-hero h1{font-size:56px;font-weight:700;line-height:1.1;margin-bottom:20px;color:var(--text-l);animation:pp-up .9s ease-out .1s both;}
+  .pp-hero h1 .ag{background:linear-gradient(135deg,#A78BFA,#7C3AED,#C4B5FD);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:pp-grad 5s ease infinite;}
+  .pp-sub{font-size:18px;color:var(--text-lm);margin-bottom:40px;line-height:1.6;animation:pp-up 1s ease-out .3s both;}
+
+  /* Sélecteur taille */
+  .pp-size-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:0;animation:pp-up 1s ease-out .5s both;flex-wrap:wrap;}
+  .pp-size-tab{padding:12px 28px;background:rgba(255,255,255,.07);border:1px solid var(--border-d);border-radius:12px;color:var(--text-lm);font-size:15px;font-weight:600;cursor:pointer;transition:all .3s ease;font-family:inherit;}
+  .pp-size-tab:hover{background:rgba(124,58,237,.15);color:var(--text-l);}
+  .pp-size-tab.active{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;border-color:transparent;box-shadow:0 4px 20px var(--accent-g);}
+
+  /* ─── SECTION PACKS DÉTAILLÉS ─── */
+  .pp-packs-section{background:var(--bg-dark);padding:80px 0 100px;position:relative;}
+  .pp-packs-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:600px;background:radial-gradient(circle,rgba(124,58,237,.08),transparent 70%);pointer-events:none;}
+
+  /* Grille 3 packs */
+  .pp-packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:1;}
+
+  .pp-pack{
+    background:rgba(255,255,255,.04);border:1px solid var(--border-d);border-radius:24px;
+    padding:40px 32px;display:flex;flex-direction:column;gap:0;
+    transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;
+  }
+  .pp-pack:hover{transform:translateY(-8px);border-color:rgba(167,139,250,.4);box-shadow:0 24px 50px rgba(0,0,0,.3);}
+  .pp-pack.popular{border-color:var(--accent);background:linear-gradient(160deg,rgba(124,58,237,.18),rgba(167,139,250,.06));}
+  .pp-pack.popular::after{
+    content:'Recommandé PME';position:absolute;top:28px;right:-36px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-h));
+    color:white;font-size:10px;font-weight:700;letter-spacing:1px;
+    padding:6px 52px;transform:rotate(45deg);text-transform:uppercase;
+  }
+  .pp-pack-top{margin-bottom:28px;}
+  .pp-pack-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent-l);margin-bottom:8px;}
+  .pp-pack h3{font-size:28px;font-weight:700;color:var(--text-l);margin-bottom:6px;}
+  .pp-pack-target{font-size:13px;color:var(--text-lm);margin-bottom:0;}
+  .pp-pack-price-wrap{margin-bottom:24px;}
+  .pp-from{font-size:12px;color:var(--text-lm);margin-bottom:2px;}
+  .pp-price-row{display:flex;align-items:baseline;gap:6px;}
+  .pp-price-amount{font-size:56px;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .pp-price-unit{font-size:16px;color:var(--text-lm);}
+  .pp-price-note{font-size:12px;color:var(--text-lm);margin-top:4px;}
+  .pp-divider{height:1px;background:var(--border-d);margin:24px 0;}
+
+  /* Services inclus */
+  .pp-services-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-l);margin-bottom:16px;}
+  .pp-features{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:11px;flex:1;}
+  .pp-feature{display:flex;align-items:flex-start;gap:12px;font-size:14px;line-height:1.5;}
+  .pp-feature.yes{color:var(--text-l);}
+  .pp-feature.no{color:rgba(255,255,255,.3);}
+  .pp-feature.highlight{color:var(--accent-l);font-weight:600;}
+  .pp-fi{flex-shrink:0;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;margin-top:1px;}
+  .fi-yes{background:linear-gradient(135deg,var(--accent),var(--accent-l));color:white;}
+  .fi-no{background:rgba(255,255,255,.08);color:rgba(255,255,255,.3);}
+  .fi-star{background:linear-gradient(135deg,var(--amber),#D97706);color:white;}
+
+  .pp-pack-cta{
+    display:block;width:100%;text-align:center;padding:15px;border-radius:12px;
+    font-size:15px;font-weight:700;transition:all .3s ease;margin-top:auto;
+  }
+  .cta-solid{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;box-shadow:0 4px 20px var(--accent-g);}
+  .cta-solid:hover{transform:translateY(-2px);box-shadow:0 12px 32px var(--accent-g);}
+  .cta-outline{background:transparent;color:var(--text-l);border:1px solid var(--border-d);}
+  .cta-outline:hover{background:rgba(255,255,255,.06);border-color:var(--accent-l);}
+
+  /* ─── COMPARATIF DÉTAILLÉ ─── */
+  .pp-compare-section{background:var(--bg-light);padding:80px 0 100px;}
+  .pp-section-title{text-align:center;max-width:700px;margin:0 auto 56px;}
+  .pp-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+  .pp-eyebrow::before,.pp-eyebrow::after{content:'';width:20px;height:1px;background:var(--accent);opacity:.5;}
+  .pp-section-title h2{font-size:40px;font-weight:700;line-height:1.15;margin-bottom:14px;color:var(--text-d);}
+  .pp-section-title p{font-size:17px;color:var(--text-m);margin:0;}
+
+  .pp-table-wrap{overflow-x:auto;border-radius:20px;box-shadow:0 8px 32px rgba(10,22,40,.08);}
+  .pp-table{width:100%;border-collapse:collapse;background:var(--bg-white);font-size:14px;}
+  .pp-table th{background:var(--bg-dark);color:var(--text-l);padding:20px 24px;text-align:left;font-weight:600;font-size:13px;}
+  .pp-table th:first-child{border-radius:20px 0 0 0;min-width:220px;}
+  .pp-table th:last-child{border-radius:0 20px 0 0;}
+  .pp-table th.col-popular{background:linear-gradient(135deg,var(--accent),var(--accent-h));position:relative;}
+  .pp-table th.col-popular::before{content:'⭐ Recommandé';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--amber);color:#0A1628;font-size:10px;font-weight:700;padding:3px 12px;border-radius:0 0 8px 8px;letter-spacing:.5px;white-space:nowrap;}
+  .pp-table td{padding:16px 24px;border-bottom:1px solid var(--border-l);color:var(--text-d);vertical-align:middle;}
+  .pp-table tr:last-child td{border-bottom:none;}
+  .pp-table tr:nth-child(even) td{background:rgba(124,58,237,.02);}
+  .pp-table tr:hover td{background:rgba(124,58,237,.04);}
+  .pp-table td:first-child{font-weight:600;color:var(--text-d);}
+  .pp-table td.col-popular{background:rgba(124,58,237,.05);}
+  .pp-table tr:hover td.col-popular{background:rgba(124,58,237,.08);}
+  .pp-table td.cat-header{background:linear-gradient(90deg,rgba(124,58,237,.08),transparent);color:var(--accent);font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 24px;}
+  .pp-check{color:var(--accent);font-size:18px;font-weight:700;}
+  .pp-cross{color:rgba(0,0,0,.2);font-size:16px;}
+  .pp-tag-in-table{display:inline-block;background:rgba(124,58,237,.1);color:var(--accent);padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;}
+  .pp-table td.col-popular .pp-tag-in-table{background:rgba(124,58,237,.15);}
+  .pp-table-footer{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;background:var(--bg-dark);}
+  .pp-table-footer-cell{padding:20px 24px;text-align:center;}
+  .pp-table-footer-cell:first-child{text-align:left;}
+  .pp-table-footer a{display:inline-block;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;transition:all .3s ease;color:white;}
+  .tf-solid{background:linear-gradient(135deg,var(--accent),var(--accent-h));}
+  .tf-solid:hover{transform:translateY(-2px);box-shadow:0 8px 20px var(--accent-g);}
+  .tf-outline{border:1px solid var(--border-d);background:transparent;}
+  .tf-outline:hover{background:rgba(255,255,255,.06);}
+
+  /* ─── POURQUOI NOUS ─── */
+  .pp-why-section{background:var(--bg-dark);padding:80px 0;}
+  .pp-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .pp-why-card{background:rgba(255,255,255,.04);border:1px solid var(--border-d);border-radius:20px;padding:32px;transition:all .3s ease;}
+  .pp-why-card:hover{background:rgba(124,58,237,.08);border-color:rgba(167,139,250,.3);transform:translateY(-4px);}
+  .pp-why-icon{width:52px;height:52px;background:rgba(124,58,237,.15);color:var(--accent-l);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+  .pp-why-card h4{font-size:19px;font-weight:700;color:var(--text-l);margin-bottom:10px;}
+  .pp-why-card p{font-size:14px;color:var(--text-lm);margin:0;line-height:1.6;}
+
+  /* ─── SIMULATEUR ROI ─── */
+  .pp-roi-section{background:var(--bg-light);padding:80px 0;}
+  .pp-roi-box{background:var(--bg-dark);border-radius:28px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;overflow:hidden;}
+  .pp-roi-box::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.2),transparent 70%);border-radius:50%;pointer-events:none;}
+  .pp-roi-left h3{font-size:32px;font-weight:700;color:var(--text-l);margin-bottom:12px;}
+  .pp-roi-left p{font-size:16px;color:var(--text-lm);margin-bottom:28px;}
+  .pp-roi-slider-group{margin-bottom:24px;}
+  .pp-roi-slider-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+  .pp-roi-slider-label span:first-child{font-size:14px;font-weight:600;color:var(--text-l);}
+  .pp-roi-slider-label span:last-child{font-size:16px;font-weight:700;color:var(--accent-l);}
+  .pp-roi-slider{width:100%;height:6px;-webkit-appearance:none;appearance:none;background:rgba(255,255,255,.1);border-radius:3px;outline:none;cursor:pointer;}
+  .pp-roi-slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-l));cursor:pointer;box-shadow:0 0 0 4px rgba(124,58,237,.2);}
+  .pp-roi-result{background:rgba(255,255,255,.04);border:1px solid var(--border-d);border-radius:20px;padding:32px;position:relative;z-index:1;}
+  .pp-roi-result h4{font-size:14px;font-weight:600;color:var(--text-lm);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:24px;}
+  .pp-roi-metric{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--border-d);}
+  .pp-roi-metric:last-of-type{border-bottom:none;}
+  .pp-roi-metric-label{font-size:14px;color:var(--text-lm);}
+  .pp-roi-metric-value{font-size:22px;font-weight:800;color:var(--accent-l);}
+  .pp-roi-metric-value.positive{color:var(--green);}
+  .pp-roi-cta{display:block;width:100%;text-align:center;margin-top:20px;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;border-radius:12px;font-size:15px;font-weight:600;transition:all .3s ease;}
+  .pp-roi-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-g);}
+
+  /* ─── FAQ ─── */
+  .pp-faq-section{background:var(--bg-white);padding:80px 0;}
+  .pp-faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+  .pp-faq{background:var(--bg-light);border:1px solid var(--border-l);border-radius:14px;overflow:hidden;}
+  .pp-faq:hover{border-color:var(--accent-l);}
+  .pp-faq-q{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-weight:600;font-size:15px;color:var(--text-d);user-select:none;transition:color .2s ease;}
+  .pp-faq-q:hover{color:var(--accent);}
+  .pp-faq-tog{width:28px;height:28px;background:rgba(124,58,237,.1);color:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:all .3s ease;}
+  .pp-faq.open .pp-faq-tog{background:var(--accent);color:white;transform:rotate(45deg);}
+  .pp-faq-a{max-height:0;overflow:hidden;font-size:14px;color:var(--text-m);line-height:1.7;padding:0 24px;transition:max-height .4s ease,padding .4s ease;}
+  .pp-faq.open .pp-faq-a{max-height:300px;padding:0 24px 20px;}
+
+  /* ─── CTA FINAL ─── */
+  .pp-cta-section{background:var(--bg-dark);padding:100px 0;text-align:center;position:relative;overflow:hidden;}
+  .pp-cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);border-radius:50%;}
+  .pp-cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+  .pp-cta-section h2{font-size:44px;font-weight:700;line-height:1.15;margin-bottom:20px;color:var(--text-l);}
+  .pp-cta-section h2 .ag{background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .pp-cta-section p{font-size:18px;color:var(--text-lm);margin-bottom:36px;}
+  .pp-cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .pp-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;transition:all .3s ease;border:none;cursor:pointer;font-family:inherit;}
+  .pp-btn-p{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;box-shadow:0 4px 16px var(--accent-g);}
+  .pp-btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--accent-g);}
+  .pp-btn-o{background:rgba(255,255,255,.06);color:white;border:1px solid var(--border-d);}
+  .pp-btn-o:hover{background:rgba(255,255,255,.1);border-color:var(--accent-l);}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .pp-hero h1{font-size:42px;}
+    .pp-packs-grid{grid-template-columns:1fr;}
+    .pp-pack.popular::after{display:none;}
+    .pp-why-grid{grid-template-columns:1fr 1fr;}
+    .pp-roi-box{grid-template-columns:1fr;gap:36px;padding:36px;}
+    .pp-cta-section h2{font-size:32px;}
+  }
+  @media(max-width:768px){
+    .pp-hero{padding:90px 0 60px;}
+    .pp-hero h1{font-size:30px;}
+    .pp-sub{font-size:16px;}
+    .pp-packs-section,.pp-compare-section,.pp-why-section,.pp-roi-section,.pp-faq-section{padding:60px 0;}
+    .pp-section-title h2{font-size:28px;}
+    .pp-table th.col-popular::before{display:none;}
+    .pp-why-grid{grid-template-columns:1fr;}
+    .pp-table-footer{grid-template-columns:1fr 1fr;}
+    .pp-cta-section{padding:64px 0;}
+    .pp-cta-section h2{font-size:26px;}
+    .pp-cta-btns{flex-direction:column;align-items:stretch;}
+    .pp-btn{justify-content:center;}
+  }
+</style>
+
+<div class="mjc-pp">
+
+  <!-- HERO -->
+  <section class="pp-hero">
+    <div class="pp-hero-bg"></div>
+    <div class="pp-orb pp-orb-1"></div>
+    <div class="pp-orb pp-orb-2"></div>
+    <div class="pp-c">
+      <div class="pp-hero-inner">
+        <div class="pp-badge"><span class="pp-dot"></span>Packs pour entreprises</div>
+        <h1>Des packs <span class="ag">taillés pour votre taille</span></h1>
+        <p class="pp-sub">TPE, PME ou ETI — votre structure a des besoins spécifiques. Nos packs professionnels sont conçus pour y répondre précisément, avec les bons leviers, au bon niveau d'intensité.</p>
+        <div class="pp-size-tabs">
+          <button class="pp-size-tab active" data-pack="tpe">🏪 TPE — Starter Digital</button>
+          <button class="pp-size-tab" data-pack="pme">🏢 PME — Growth Digital</button>
+          <button class="pp-size-tab" data-pack="eti">🏦 ETI — Scale Digital</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKS DÉTAILLÉS -->
+  <section class="pp-packs-section">
+    <div class="pp-c">
+      <div class="pp-packs-grid">
+
+        <!-- TPE -->
+        <div class="pp-pack pp-rev">
+          <div class="pp-pack-top">
+            <div class="pp-pack-label">Pack TPE</div>
+            <h3>Starter Digital</h3>
+            <p class="pp-pack-target">Pour les TPE, artisans, freelances professionnels, commerçants de proximité</p>
+          </div>
+          <div class="pp-pack-price-wrap">
+            <div class="pp-from">À partir de</div>
+            <div class="pp-price-row">
+              <div class="pp-price-amount">500</div>
+              <div class="pp-price-unit">€ / mois</div>
+            </div>
+            <div class="pp-price-note">Engagement minimum : 3 mois · Préavis : 1 mois</div>
+          </div>
+          <div class="pp-divider"></div>
+          <div class="pp-services-title">Ce qui est inclus</div>
+          <ul class="pp-features">
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Audit digital complet (onboarding)</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Stratégie digitale personnalisée</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Gestion 2 réseaux sociaux</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>8 publications / mois</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>SEO technique de base</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Optimisation Google Business Profile</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Rapport mensuel de performance</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>1 interlocuteur dédié</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Support email (réponse 48h)</li>
+            <li class="pp-feature no"><span class="pp-fi fi-no">–</span>Publicité payante gérée</li>
+            <li class="pp-feature no"><span class="pp-fi fi-no">–</span>Email marketing automatisé</li>
+            <li class="pp-feature no"><span class="pp-fi fi-no">–</span>Création de contenu vidéo</li>
+          </ul>
+          <div class="pp-divider"></div>
+          <a href="/contact?type=devis&pack=tpe" class="pp-pack-cta cta-outline">Démarrer ce pack →</a>
+        </div>
+
+        <!-- PME -->
+        <div class="pp-pack popular pp-rev d1">
+          <div class="pp-pack-top">
+            <div class="pp-pack-label">Pack PME</div>
+            <h3>Growth Digital</h3>
+            <p class="pp-pack-target">Pour les PME de 10 à 250 salariés qui veulent accélérer leur croissance en ligne</p>
+          </div>
+          <div class="pp-pack-price-wrap">
+            <div class="pp-from">À partir de</div>
+            <div class="pp-price-row">
+              <div class="pp-price-amount">1 500</div>
+              <div class="pp-price-unit">€ / mois</div>
+            </div>
+            <div class="pp-price-note">Engagement minimum : 3 mois · Préavis : 1 mois</div>
+          </div>
+          <div class="pp-divider"></div>
+          <div class="pp-services-title">Ce qui est inclus</div>
+          <ul class="pp-features">
+            <li class="pp-feature highlight"><span class="pp-fi fi-star">★</span>Audit + stratégie 360° complète</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Gestion 4 réseaux sociaux</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>16 publications / mois</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>SEO avancé + articles de blog (2/mois)</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Gestion Google Business + avis</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Campagnes PPC managées (budget excl.)</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Email marketing mensuel</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Dashboard analytics personnalisé</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Rapport bi-mensuel</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Chef de projet dédié</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Support prioritaire (réponse 24h)</li>
+            <li class="pp-feature no"><span class="pp-fi fi-no">–</span>Automatisation marketing complète</li>
+          </ul>
+          <div class="pp-divider"></div>
+          <a href="/contact?type=devis&pack=pme" class="pp-pack-cta cta-solid">Démarrer ce pack →</a>
+        </div>
+
+        <!-- ETI -->
+        <div class="pp-pack pp-rev d2">
+          <div class="pp-pack-top">
+            <div class="pp-pack-label">Pack ETI</div>
+            <h3>Scale Digital</h3>
+            <p class="pp-pack-target">Pour les ETI (250+ salariés) avec ambitions nationales ou internationales</p>
+          </div>
+          <div class="pp-pack-price-wrap">
+            <div class="pp-from">À partir de</div>
+            <div class="pp-price-row">
+              <div class="pp-price-amount">4 000</div>
+              <div class="pp-price-unit">€ / mois</div>
+            </div>
+            <div class="pp-price-note">Engagement minimum : 6 mois · Préavis : 1 mois</div>
+          </div>
+          <div class="pp-divider"></div>
+          <div class="pp-services-title">Ce qui est inclus</div>
+          <ul class="pp-features">
+            <li class="pp-feature highlight"><span class="pp-fi fi-star">★</span>Direction stratégique dédiée</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Équipe multi-experts assignée</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Gestion tous réseaux sociaux</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Contenus illimités (selon brief)</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>SEO national / international</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Multi-canaux publicitaires managés</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Automatisation marketing complète</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>CRM setup et intégration</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Dashboard temps réel multi-sources</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Reporting hebdomadaire</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Réunion direction mensuelle</li>
+            <li class="pp-feature yes"><span class="pp-fi fi-yes">✓</span>Support VIP (réponse 4h)</li>
+          </ul>
+          <div class="pp-divider"></div>
+          <a href="/contact?type=devis&pack=eti" class="pp-pack-cta cta-outline">Démarrer ce pack →</a>
+        </div>
+
+      </div>
+
+      <p class="pp-rev" style="text-align:center;color:var(--text-lm);font-size:13px;margin-top:32px;position:relative;z-index:1;">
+        Tous les packs sont personnalisables. Les tarifs affichés sont indicatifs — un devis précis vous sera soumis après le premier échange gratuit.<br>
+        Les budgets publicitaires (Google Ads, Meta Ads...) sont en sus et versés directement aux plateformes.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPARATIF DÉTAILLÉ -->
+  <section class="pp-compare-section">
+    <div class="pp-c">
+      <div class="pp-section-title pp-rev">
+        <div class="pp-eyebrow">Comparatif détaillé</div>
+        <h2>Tout ce qui est inclus,<br>fonctionnalité par fonctionnalité</h2>
+        <p>Le tableau complet pour choisir le bon pack sans surprise.</p>
+      </div>
+
+      <div class="pp-table-wrap pp-rev">
+        <table class="pp-table">
+          <thead>
+            <tr>
+              <th>Fonctionnalité</th>
+              <th>Starter <span style="display:block;font-size:11px;font-weight:400;opacity:.7;">TPE · 500€/mois</span></th>
+              <th class="col-popular">Growth <span style="display:block;font-size:11px;font-weight:400;opacity:.8;margin-top:12px;">PME · 1 500€/mois</span></th>
+              <th>Scale <span style="display:block;font-size:11px;font-weight:400;opacity:.7;">ETI · 4 000€/mois</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- STRATÉGIE -->
+            <tr><td class="cat-header" colspan="4">🎯 Stratégie & Accompagnement</td></tr>
+            <tr>
+              <td>Audit digital initial</td>
+              <td><span class="pp-check">✓</span> Basique</td>
+              <td class="col-popular"><span class="pp-check">✓</span> Complet 360°</td>
+              <td><span class="pp-check">✓</span> Approfondi</td>
+            </tr>
+            <tr>
+              <td>Stratégie personnalisée</td>
+              <td><span class="pp-check">✓</span></td>
+              <td class="col-popular"><span class="pp-check">✓</span> Avancée</td>
+              <td><span class="pp-check">✓</span> Direction dédiée</td>
+            </tr>
+            <tr>
+              <td>Interlocuteur dédié</td>
+              <td><span class="pp-check">✓</span> 1 chargé</td>
+              <td class="col-popular"><span class="pp-check">✓</span> Chef de projet</td>
+              <td><span class="pp-check">✓</span> Équipe dédiée</td>
+            </tr>
+            <tr>
+              <td>Coaching équipes internes</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular"><span class="pp-check">✓</span> Mensuel</td>
+              <td><span class="pp-check">✓</span> Hebdomadaire</td>
+            </tr>
+            <!-- RÉSEAUX SOCIAUX -->
+            <tr><td class="cat-header" colspan="4">📱 Réseaux Sociaux</td></tr>
+            <tr>
+              <td>Nombre de plateformes</td>
+              <td><span class="pp-tag-in-table">2 plateformes</span></td>
+              <td class="col-popular"><span class="pp-tag-in-table">4 plateformes</span></td>
+              <td><span class="pp-tag-in-table">Illimité</span></td>
+            </tr>
+            <tr>
+              <td>Publications / mois</td>
+              <td>8 posts</td>
+              <td class="col-popular">16 posts</td>
+              <td>Selon brief</td>
+            </tr>
+            <tr>
+              <td>Stories / Reels</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular"><span class="pp-check">✓</span> 8/mois</td>
+              <td><span class="pp-check">✓</span> Illimité</td>
+            </tr>
+            <tr>
+              <td>Community management</td>
+              <td>Basique</td>
+              <td class="col-popular"><span class="pp-check">✓</span> Actif</td>
+              <td><span class="pp-check">✓</span> Premium</td>
+            </tr>
+            <!-- SEO -->
+            <tr><td class="cat-header" colspan="4">🔍 SEO & Visibilité</td></tr>
+            <tr>
+              <td>Audit SEO technique</td>
+              <td><span class="pp-check">✓</span> Basique</td>
+              <td class="col-popular"><span class="pp-check">✓</span> Avancé</td>
+              <td><span class="pp-check">✓</span> Complet</td>
+            </tr>
+            <tr>
+              <td>Optimisation on-page</td>
+              <td><span class="pp-check">✓</span></td>
+              <td class="col-popular"><span class="pp-check">✓</span></td>
+              <td><span class="pp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Articles de blog SEO</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular">2 / mois</td>
+              <td>4 / mois</td>
+            </tr>
+            <tr>
+              <td>SEO international</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular"><span class="pp-cross">—</span></td>
+              <td><span class="pp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Google Business Profile</td>
+              <td><span class="pp-check">✓</span></td>
+              <td class="col-popular"><span class="pp-check">✓</span> + avis</td>
+              <td><span class="pp-check">✓</span> Premium</td>
+            </tr>
+            <!-- PUB -->
+            <tr><td class="cat-header" colspan="4">📣 Publicité Digitale</td></tr>
+            <tr>
+              <td>Gestion campagnes PPC</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular"><span class="pp-check">✓</span> Google + Meta</td>
+              <td><span class="pp-check">✓</span> Multi-canaux</td>
+            </tr>
+            <tr>
+              <td>Retargeting</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular"><span class="pp-check">✓</span></td>
+              <td><span class="pp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Publicité vidéo</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular">En option</td>
+              <td><span class="pp-check">✓</span></td>
+            </tr>
+            <!-- EMAIL & AUTO -->
+            <tr><td class="cat-header" colspan="4">📧 Email & Automatisation</td></tr>
+            <tr>
+              <td>Email marketing</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular">1 campagne / mois</td>
+              <td>Illimité</td>
+            </tr>
+            <tr>
+              <td>Marketing automation</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular">En option</td>
+              <td><span class="pp-check">✓</span> Complet</td>
+            </tr>
+            <tr>
+              <td>CRM setup</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular">En option</td>
+              <td><span class="pp-check">✓</span></td>
+            </tr>
+            <!-- REPORTING -->
+            <tr><td class="cat-header" colspan="4">📊 Analytics & Reporting</td></tr>
+            <tr>
+              <td>Tableau de bord analytics</td>
+              <td>Basique</td>
+              <td class="col-popular">Personnalisé</td>
+              <td>Temps réel multi-sources</td>
+            </tr>
+            <tr>
+              <td>Fréquence du rapport</td>
+              <td>Mensuel</td>
+              <td class="col-popular">Bi-mensuel</td>
+              <td>Hebdomadaire</td>
+            </tr>
+            <tr>
+              <td>Réunion de suivi</td>
+              <td>Mensuelle</td>
+              <td class="col-popular">Bi-mensuelle</td>
+              <td>Hebdomadaire + direction</td>
+            </tr>
+            <!-- SUPPORT -->
+            <tr><td class="cat-header" colspan="4">🛟 Support & Réactivité</td></tr>
+            <tr>
+              <td>Délai de réponse</td>
+              <td>48h ouvrées</td>
+              <td class="col-popular">24h ouvrées</td>
+              <td>4h ouvrées</td>
+            </tr>
+            <tr>
+              <td>Canal de support</td>
+              <td>Email</td>
+              <td class="col-popular">Email + Slack</td>
+              <td>Slack + téléphone</td>
+            </tr>
+            <tr>
+              <td>Accès urgences</td>
+              <td><span class="pp-cross">—</span></td>
+              <td class="col-popular">En option</td>
+              <td><span class="pp-check">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pp-table-footer">
+          <div class="pp-table-footer-cell" style="display:flex;align-items:center;">
+            <span style="font-size:12px;color:var(--text-lm);">* Hors budgets publicitaires</span>
+          </div>
+          <div class="pp-table-footer-cell">
+            <a href="/contact?type=devis&pack=tpe" class="tf-outline">Démarrer TPE →</a>
+          </div>
+          <div class="pp-table-footer-cell">
+            <a href="/contact?type=devis&pack=pme" class="tf-solid">Démarrer PME →</a>
+          </div>
+          <div class="pp-table-footer-cell">
+            <a href="/contact?type=devis&pack=eti" class="tf-outline">Démarrer ETI →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI NOUS -->
+  <section class="pp-why-section">
+    <div class="pp-c">
+      <div class="pp-section-title pp-rev" style="margin-bottom:48px;">
+        <div class="pp-eyebrow" style="color:var(--accent-l);">— Nos engagements —</div>
+        <h2 style="color:var(--text-l);">Pourquoi choisir Maison John&Co</h2>
+        <p style="color:var(--text-lm);">Ce qui nous différencie concrètement des autres agences.</p>
+      </div>
+      <div class="pp-why-grid">
+        <div class="pp-why-card pp-rev">
+          <div class="pp-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>100+ experts, 1 équipe dédiée</h4>
+          <p>Vous bénéficiez d'un réseau de 100+ freelances spécialisés, coordonnés par une équipe interne qui connaît votre dossier sur le bout des doigts. Pas de généralistes, que des experts de leur domaine.</p>
+        </div>
+        <div class="pp-why-card pp-rev d1">
+          <div class="pp-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h4>Résultats mesurables dès le mois 1</h4>
+          <p>Nous posons des KPI dès le premier jour. Chaque action est liée à un indicateur chiffré. Pas de rapport opaque : vous voyez exactement ce que produit chaque euro investi.</p>
+        </div>
+        <div class="pp-why-card pp-rev d2">
+          <div class="pp-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <h4>Présence nationale, expertise locale</h4>
+          <p>Siège à Paris, antennes dans 11 villes. Nos experts connaissent le tissu économique local (Bordeaux ≠ Strasbourg ≠ Nice). Vous avez la puissance d'une agence nationale avec la proximité du terrain.</p>
+        </div>
+        <div class="pp-why-card pp-rev">
+          <div class="pp-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Transparence totale, zéro frais cachés</h4>
+          <p>Votre devis est détaillé ligne par ligne. Les budgets publicitaires sont gérés sur vos propres comptes (vous restez propriétaire). Aucune surfacturation possible, tout est visible.</p>
+        </div>
+        <div class="pp-why-card pp-rev d1">
+          <div class="pp-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h4>Adaptable à votre croissance</h4>
+          <p>Votre entreprise évolue, votre pack aussi. Vous pouvez monter en gamme (TPE → PME) ou ajouter des services à la carte sans repartir de zéro. Nous grandissons avec vous.</p>
+        </div>
+        <div class="pp-why-card pp-rev d2">
+          <div class="pp-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>Engagement solidaire inclus</h4>
+          <p>5% de nos bénéfices sont reversés à l'association Enfant de Cœur. En travaillant avec nous, vous soutenez indirectement des actions concrètes. Nos clients peuvent également mentionner ce partenariat dans leur communication RSE.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULATEUR ROI -->
+  <section class="pp-roi-section">
+    <div class="pp-c">
+      <div class="pp-roi-box pp-rev">
+        <div class="pp-roi-left">
+          <h3>Estimez votre retour sur investissement</h3>
+          <p>Ajustez les curseurs selon votre situation pour obtenir une projection de vos gains potentiels. Chiffres basés sur nos moyennes clients (résultats non garantis).</p>
+
+          <div class="pp-roi-slider-group">
+            <div class="pp-roi-slider-label">
+              <span>CA mensuel actuel</span>
+              <span id="roiCa">50 000 €</span>
+            </div>
+            <input type="range" class="pp-roi-slider" id="sliderCa" min="10000" max="500000" step="5000" value="50000">
+          </div>
+
+          <div class="pp-roi-slider-group">
+            <div class="pp-roi-slider-label">
+              <span>Part du CA venant du digital</span>
+              <span id="roiDigital">20%</span>
+            </div>
+            <input type="range" class="pp-roi-slider" id="sliderDigital" min="5" max="80" step="5" value="20">
+          </div>
+
+          <div class="pp-roi-slider-group">
+            <div class="pp-roi-slider-label">
+              <span>Investissement mensuel envisagé</span>
+              <span id="roiInvest">1 500 €</span>
+            </div>
+            <input type="range" class="pp-roi-slider" id="sliderInvest" min="500" max="10000" step="500" value="1500">
+          </div>
+        </div>
+
+        <div class="pp-roi-result">
+          <h4>Projection à 12 mois</h4>
+          <div class="pp-roi-metric">
+            <span class="pp-roi-metric-label">Croissance digitale estimée</span>
+            <span class="pp-roi-metric-value" id="roiCroissance">+240%</span>
+          </div>
+          <div class="pp-roi-metric">
+            <span class="pp-roi-metric-label">CA digital additionnel / an</span>
+            <span class="pp-roi-metric-value positive" id="roiGain">+120 000 €</span>
+          </div>
+          <div class="pp-roi-metric">
+            <span class="pp-roi-metric-label">Investissement total / an</span>
+            <span class="pp-roi-metric-value" id="roiTotal">18 000 €</span>
+          </div>
+          <div class="pp-roi-metric">
+            <span class="pp-roi-metric-label">ROI estimé</span>
+            <span class="pp-roi-metric-value positive" id="roiRatio">×6.7</span>
+          </div>
+          <a href="/contact?type=devis" class="pp-roi-cta">
+            Obtenir un chiffrage précis →
+          </a>
+          <p style="font-size:11px;color:rgba(255,255,255,.35);text-align:center;margin:10px 0 0;line-height:1.5;">Estimation indicative basée sur la moyenne de nos clients. Les résultats varient selon le secteur, la concurrence et les investissements publicitaires.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pp-faq-section">
+    <div class="pp-c">
+      <div class="pp-section-title pp-rev">
+        <div class="pp-eyebrow">Questions fréquentes</div>
+        <h2>Tout ce que vous voulez savoir<br>avant de vous lancer</h2>
+        <p>Des réponses directes et honnêtes.</p>
+      </div>
+      <div class="pp-faq-list">
+        <div class="pp-faq">
+          <div class="pp-faq-q"><span>Combien de temps avant de voir les premiers résultats ?</span><span class="pp-faq-tog">+</span></div>
+          <div class="pp-faq-a">En règle générale, les premiers indicateurs de progression (trafic, engagement, visibilité) sont visibles dès le 2e mois. Pour le SEO, les résultats significatifs arrivent entre 3 et 6 mois. La publicité payante peut générer des leads dès la première semaine. Nous établissons un calendrier réaliste lors de notre premier échange.</div>
+        </div>
+        <div class="pp-faq">
+          <div class="pp-faq-q"><span>Puis-je passer du pack TPE au pack PME en cours de route ?</span><span class="pp-faq-tog">+</span></div>
+          <div class="pp-faq-a">Oui, et c'est même prévu dans notre organisation. Le passage d'un pack à l'autre se fait sans friction : votre équipe connaît déjà votre dossier, vos outils sont déjà configurés. L'upgrade est effectif dès le mois suivant, avec un simple avenant au contrat.</div>
+        </div>
+        <div class="pp-faq">
+          <div class="pp-faq-q"><span>Les budgets publicitaires sont-ils inclus dans le pack ?</span><span class="pp-faq-tog">+</span></div>
+          <div class="pp-faq-a">Non. Les budgets publicitaires (Google Ads, Meta Ads, LinkedIn Ads...) sont versés directement sur vos comptes publicitaires. Vous restez propriétaire de vos comptes et contrôlez le budget en temps réel. Nos honoraires couvrent la gestion, la stratégie et l'optimisation des campagnes.</div>
+        </div>
+        <div class="pp-faq">
+          <div class="pp-faq-q"><span>Que se passe-t-il si je veux résilier ?</span><span class="pp-faq-tog">+</span></div>
+          <div class="pp-faq-a">Préavis d'un mois pour les packs TPE et PME, d'un trimestre pour le pack ETI. Aucun frais de résiliation. À la fin du contrat, nous vous remettons l'intégralité de vos actifs digitaux (comptes, données, contenus). Vous ne repartez jamais les mains vides.</div>
+        </div>
+        <div class="pp-faq">
+          <div class="pp-faq-q"><span>Est-ce que je reste propriétaire de mon contenu et de mes comptes ?</span><span class="pp-faq-tog">+</span></div>
+          <div class="pp-faq-a">Toujours. Vos comptes sociaux, votre Google Ads, votre site, vos données analytics, vos listes emails — tout vous appartient. Nous travaillons sur vos outils, pas sur les nôtres. C'est un principe non négociable chez John&Co.</div>
+        </div>
+        <div class="pp-faq">
+          <div class="pp-faq-q"><span>Avez-vous de l'expérience dans mon secteur d'activité ?</span><span class="pp-faq-tog">+</span></div>
+          <div class="pp-faq-a">Avec 100+ experts dans notre réseau, nous couvrons la plupart des secteurs : retail, e-commerce, BtoB industriel, professions libérales, restauration, immobilier, tech, artisanat, santé. Lors du premier échange, nous vous présentons des références concrètes dans votre secteur ou un secteur proche.</div>
+        </div>
+        <div class="pp-faq">
+          <div class="pp-faq-q"><span>Mon équipe interne doit-elle être impliquée ?</span><span class="pp-faq-tog">+</span></div>
+          <div class="pp-faq-a">Seulement autant que vous le souhaitez. Certains clients délèguent 100% et ne regardent que les rapports. D'autres préfèrent une collaboration étroite pour monter en compétence. Nous nous adaptons. Le minimum requis : un point de contact interne (30 min/mois pour le pack Starter, 1h/mois pour Growth).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="pp-cta-section">
+    <div class="pp-c">
+      <div class="pp-cta-inner pp-rev">
+        <h2>Prêt à faire décoller votre <span class="ag">présence digitale</span> ?</h2>
+        <p>Premier échange gratuit, sans engagement. On analyse votre situation et on vous dit exactement ce qu'on peut faire pour vous.</p>
+        <div class="pp-cta-btns">
+          <a href="/contact?type=rdv" class="pp-btn pp-btn-p">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Prendre rendez-vous gratuitement
+          </a>
+          <a href="/contact?type=devis" class="pp-btn pp-btn-o">
+            Demander un devis précis
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  // FAQ
+  document.querySelectorAll('.pp-faq').forEach(f => {
+    f.querySelector('.pp-faq-q').addEventListener('click', () => {
+      const open = f.classList.contains('open');
+      document.querySelectorAll('.pp-faq').forEach(i => i.classList.remove('open'));
+      if (!open) f.classList.add('open');
+    });
+  });
+
+  // Scroll reveal
+  const ro = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); }});
+  }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.pp-rev').forEach(el => ro.observe(el));
+
+  // Tabs hero (scroll vers le bon pack)
+  document.querySelectorAll('.pp-size-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.pp-size-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const section = document.querySelector('.pp-packs-section');
+      if(section) window.scrollTo({top: section.getBoundingClientRect().top + window.pageYOffset - 80, behavior:'smooth'});
+    });
+  });
+
+  // Simulateur ROI
+  const fmt = n => new Intl.NumberFormat('fr-FR').format(Math.round(n));
+  function updateROI(){
+    const ca = parseInt(document.getElementById('sliderCa').value);
+    const digital = parseInt(document.getElementById('sliderDigital').value);
+    const invest = parseInt(document.getElementById('sliderInvest').value);
+
+    document.getElementById('roiCa').textContent = fmt(ca) + ' €';
+    document.getElementById('roiDigital').textContent = digital + '%';
+    document.getElementById('roiInvest').textContent = fmt(invest) + ' €';
+
+    // Croissance moyenne observée selon le niveau d'investissement
+    const taux = invest < 1000 ? 1.8 : invest < 3000 ? 2.4 : invest < 6000 ? 3.2 : 4.1;
+    const caDigital = ca * (digital / 100);
+    const gain = caDigital * taux * 12;
+    const investTotal = invest * 12;
+    const roi = investTotal > 0 ? gain / investTotal : 0;
+
+    document.getElementById('roiCroissance').textContent = '+' + Math.round(taux * 100) + '%';
+    document.getElementById('roiGain').textContent = '+' + fmt(gain) + ' €';
+    document.getElementById('roiTotal').textContent = fmt(investTotal) + ' €';
+    document.getElementById('roiRatio').textContent = '×' + roi.toFixed(1);
+  }
+  ['sliderCa','sliderDigital','sliderInvest'].forEach(id => {
+    document.getElementById(id)?.addEventListener('input', updateROI);
+  });
+  updateROI();
+})();
+</script>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

@@ -1,0 +1,412 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE SERVICES ENTREPRISES — Maison John&Co Marketing
+     Sidebar sticky + cartes expandables — charte violette
+     ═══════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ 
+<style>
+.mjc-se{--dk:#0A1628;--dk2:#1E3A5F;--lt:#FAFAFA;--wh:#FFFFFF;--ac:#7C3AED;--acl:#A78BFA;--ach:#6D28D9;--acg:rgba(124,58,237,.4);--td:#1A1A2E;--tm:#6B7280;--tl:#FFFFFF;--tlm:#B0B8C5;--bl:#E5E7EB;--bd:rgba(255,255,255,.1);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--td);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.mjc-se *,.mjc-se *::before,.mjc-se *::after{box-sizing:border-box;}
+.mjc-se p{margin:0 0 14px;}.mjc-se h1,.mjc-se h2,.mjc-se h3,.mjc-se h4{margin:0;letter-spacing:-.02em;}
+.mjc-se a{text-decoration:none;color:inherit;}
+.se-w{max-width:1280px;margin:0 auto;padding:0 24px;}
+ 
+/* ANIMS */
+@keyframes se-gr{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes se-fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@keyframes se-pu{0%,100%{box-shadow:0 0 0 0 var(--acg)}70%{box-shadow:0 0 0 14px transparent}}
+@keyframes se-up{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+.se-rev{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+.se-rev.on{opacity:1;transform:translateY(0);}
+ 
+/* HERO */
+.se-hero{background:var(--dk);padding:140px 0 100px;position:relative;overflow:hidden;color:var(--tl);}
+.se-hero-bg{position:absolute;inset:0;background:linear-gradient(125deg,#0A1628 0%,#1E3A5F 35%,#2D1B69 70%,#0A1628 100%);background-size:400% 400%;animation:se-gr 20s ease infinite;z-index:0;}
+.se-o{position:absolute;border-radius:50%;filter:blur(80px);z-index:1;animation:se-fl 8s ease-in-out infinite;}
+.se-o1{top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,var(--ac),transparent 70%);opacity:.22;}
+.se-o2{bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,var(--acl),transparent 70%);opacity:.18;animation-delay:-4s;}
+.se-hero-in{position:relative;z-index:2;max-width:900px;}
+.se-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,58,237,.15);backdrop-filter:blur(10px);color:var(--acl);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:32px;border:1px solid rgba(167,139,250,.3);animation:se-up .8s ease-out;}
+.se-badge-dot{width:8px;height:8px;background:var(--ac);border-radius:50%;animation:se-pu 2s infinite;}
+.se-hero h1{font-size:62px;font-weight:700;line-height:1.08;margin-bottom:22px;animation:se-up .9s ease-out .1s both;}
+.se-hero h1 .ag{background:linear-gradient(135deg,#A78BFA,#7C3AED,#C4B5FD);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:se-gr 6s ease infinite;}
+.se-sub{font-size:19px;color:var(--tlm);margin-bottom:40px;line-height:1.6;max-width:720px;animation:se-up 1s ease-out .3s both;}
+.se-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:60px;animation:se-up 1s ease-out .5s both;}
+.se-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;transition:all .3s ease;cursor:pointer;border:none;}
+.se-btn-p{background:linear-gradient(135deg,var(--ac),var(--ach));color:white;box-shadow:0 4px 20px var(--acg);}
+.se-btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--acg);}
+.se-btn-o{background:rgba(255,255,255,.07);color:white;border:1px solid rgba(255,255,255,.25);}
+.se-btn-o:hover{background:rgba(255,255,255,.12);border-color:var(--acl);}
+.se-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding-top:40px;border-top:1px solid var(--bd);animation:se-up 1s ease-out .7s both;}
+.se-stat-v{font-size:36px;font-weight:700;background:linear-gradient(135deg,var(--acl),var(--ac));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:6px;}
+.se-stat-l{font-size:12px;color:var(--tlm);text-transform:uppercase;letter-spacing:1px;}
+ 
+/* MAIN */
+.se-main{background:var(--lt);padding:80px 0 120px;}
+.se-layout{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start;}
+ 
+/* SIDEBAR */
+.se-sidebar{position:sticky;top:100px;background:var(--wh);border:1px solid var(--bl);border-radius:20px;padding:24px;max-height:calc(100vh - 120px);overflow-y:auto;}
+.se-sidebar-ttl{font-size:12px;font-weight:700;color:var(--ac);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;padding:0 8px;}
+.se-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;}
+.se-nav-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;color:var(--tm);font-size:13px;font-weight:500;cursor:pointer;transition:all .3s ease;position:relative;line-height:1.4;}
+.se-nav-item:hover{background:var(--lt);color:var(--td);}
+.se-nav-item.on{background:rgba(124,58,237,.08);color:var(--ac);font-weight:600;}
+.se-nav-item.on::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:24px;background:linear-gradient(180deg,var(--ac),var(--acl));border-radius:0 3px 3px 0;}
+.se-num{flex-shrink:0;width:24px;height:24px;background:rgba(124,58,237,.1);color:var(--ac);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all .3s ease;}
+.se-nav-item.on .se-num{background:linear-gradient(135deg,var(--ac),var(--acl));color:white;}
+.se-sidebar-cta{margin-top:20px;padding:16px;background:linear-gradient(135deg,var(--dk),var(--dk2));border-radius:14px;text-align:center;}
+.se-sidebar-cta p{font-size:13px;color:var(--tlm);margin:0 0 12px;}
+.se-sidebar-cta a{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;background:var(--ac);color:white;border-radius:8px;font-size:13px;font-weight:600;transition:all .3s ease;}
+.se-sidebar-cta a:hover{background:var(--ach);transform:translateY(-1px);}
+ 
+/* CATÉGORIE */
+.se-cat{margin-bottom:80px;scroll-margin-top:100px;}
+.se-cat:last-of-type{margin-bottom:60px;}
+.se-cat-hd{display:flex;align-items:flex-start;gap:24px;margin-bottom:32px;padding:32px;background:var(--wh);border-radius:20px;border:1px solid var(--bl);position:relative;overflow:hidden;}
+.se-cat-hd::before{content:'';position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(124,58,237,.07),transparent 70%);border-radius:50%;}
+.se-cat-icon{flex-shrink:0;width:64px;height:64px;background:linear-gradient(135deg,var(--ac),var(--acl));color:white;border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px var(--acg);position:relative;z-index:1;}
+.se-cat-info{flex:1;position:relative;z-index:1;}
+.se-cat-n{display:inline-block;background:rgba(124,58,237,.1);color:var(--ac);padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:1.5px;margin-bottom:8px;}
+.se-cat-hd h2{font-size:28px;font-weight:700;line-height:1.2;margin-bottom:8px;}
+.se-cat-hd p{font-size:15px;color:var(--tm);margin:0;line-height:1.6;}
+.se-cat-cnt{flex-shrink:0;background:var(--lt);padding:8px 14px;border-radius:999px;font-size:12px;font-weight:600;color:var(--tm);border:1px solid var(--bl);position:relative;z-index:1;}
+ 
+/* GRILLE */
+.se-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+ 
+/* CARTE */
+.se-card{background:var(--wh);border:1px solid var(--bl);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1);}
+.se-card:hover{border-color:var(--acl);transform:translateY(-3px);box-shadow:0 12px 24px rgba(10,22,40,.06);}
+.se-card.open{border-color:var(--ac);box-shadow:0 16px 32px rgba(124,58,237,.12);grid-column:span 2;}
+.se-card-hd{padding:22px;display:flex;align-items:flex-start;gap:14px;}
+.se-card-ico{flex-shrink:0;width:42px;height:42px;background:rgba(124,58,237,.08);color:var(--ac);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+.se-card.open .se-card-ico,.se-card:hover .se-card-ico{background:linear-gradient(135deg,var(--ac),var(--acl));color:white;}
+.se-card-txt{flex:1;min-width:0;}
+.se-card-txt h3{font-size:16px;font-weight:700;line-height:1.3;margin-bottom:5px;color:var(--td);}
+.se-card-short{font-size:13px;color:var(--tm);line-height:1.5;margin:0;}
+.se-card-tog{flex-shrink:0;width:30px;height:30px;background:var(--lt);color:var(--tm);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:1px solid var(--bl);transition:all .3s ease;}
+.se-card.open .se-card-tog{background:var(--ac);color:white;transform:rotate(45deg);border-color:var(--ac);}
+.se-card-body{max-height:0;overflow:hidden;padding:0 22px;transition:max-height .5s cubic-bezier(.16,1,.3,1),padding .5s ease;}
+.se-card.open .se-card-body{max-height:700px;padding:0 22px 22px;}
+.se-card-body-in{padding-top:14px;border-top:1px solid var(--bl);}
+.se-card-body h4{font-size:11px;font-weight:700;color:var(--ac);letter-spacing:1.5px;text-transform:uppercase;margin:14px 0 8px;}
+.se-card-body h4:first-child{margin-top:0;}
+.se-card-body p{font-size:14px;color:var(--td);line-height:1.75;margin:0;}
+.se-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:5px;}
+.se-list li{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--td);}
+.se-list li::before{content:'';flex-shrink:0;width:14px;height:14px;background:linear-gradient(135deg,var(--ac),var(--acl));border-radius:50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;}
+.se-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.se-tag{background:rgba(124,58,237,.08);color:var(--ac);padding:4px 10px;border-radius:999px;font-size:11px;font-weight:500;border:1px solid rgba(124,58,237,.15);}
+.se-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:9px 16px;background:var(--ac);color:white;border-radius:8px;font-size:13px;font-weight:600;transition:all .3s ease;}
+.se-card-link:hover{background:var(--ach);transform:translateY(-1px);box-shadow:0 6px 16px var(--acg);}
+ 
+/* FINAL */
+.se-final{background:linear-gradient(135deg,var(--dk),var(--dk2));padding:100px 0;color:white;text-align:center;position:relative;overflow:hidden;}
+.se-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(124,58,237,.18),transparent 70%);border-radius:50%;}
+.se-final-in{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.se-final h2{font-size:44px;font-weight:700;line-height:1.15;margin-bottom:18px;}
+.se-final h2 .ag{background:linear-gradient(135deg,var(--acl),var(--ac));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.se-final p{font-size:17px;color:var(--tlm);margin-bottom:36px;}
+.se-final-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+ 
+/* RESPONSIVE */
+@media(max-width:1024px){.se-hero h1{font-size:44px;}.se-stats{grid-template-columns:repeat(2,1fr);}.se-layout{grid-template-columns:1fr;}.se-sidebar{position:relative;top:0;max-height:none;order:-1;}.se-grid{grid-template-columns:1fr;}.se-card.open{grid-column:span 1;}}
+@media(max-width:768px){.se-hero{padding:100px 0 60px;}.se-hero h1{font-size:30px;}.se-sub{font-size:16px;}.se-cta-row{flex-direction:column;align-items:stretch;}.se-btn{justify-content:center;}.se-main{padding:48px 0 80px;}.se-cat-hd{flex-wrap:wrap;padding:20px;}.se-cat-hd h2{font-size:22px;}.se-list{grid-template-columns:1fr;}.se-final h2{font-size:28px;}.se-final-btns{flex-direction:column;}}
+</style>
+ 
+<div class="mjc-se">
+ 
+<!-- ══ HERO ══ -->
+<section class="se-hero">
+  <div class="se-hero-bg"></div>
+  <div class="se-o se-o1"></div>
+  <div class="se-o se-o2"></div>
+  <div class="se-w">
+    <div class="se-hero-in">
+      <div class="se-badge"><span class="se-badge-dot"></span>Services pour les entreprises</div>
+      <h1>L'expertise digitale au service de votre <span class="ag">croissance</span></h1>
+      <p class="se-sub">TPE, PME, ETI — 9 domaines d'expertise, 41 services concrets. Stratégie, création, publicité, SEO, contenu, automatisation, analyse, influence et solutions sur mesure.</p>
+      <div class="se-cta-row">
+        <a href="/contact?type=devis" class="se-btn se-btn-p">Demander un devis gratuit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="#se-cat-1" class="se-btn se-btn-o"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>Explorer les services</a>
+      </div>
+      <div class="se-stats">
+        <div><div class="se-stat-v">9</div><div class="se-stat-l">Domaines d'expertise</div></div>
+        <div><div class="se-stat-v">41</div><div class="se-stat-l">Services dédiés</div></div>
+        <div><div class="se-stat-v">TPE→ETI</div><div class="se-stat-l">Toutes tailles</div></div>
+        <div><div class="se-stat-v">100%</div><div class="se-stat-l">Sur mesure</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ MAIN ══ -->
+<section class="se-main">
+  <div class="se-w">
+    <div class="se-layout">
+ 
+      <!-- SIDEBAR -->
+      <aside class="se-sidebar">
+        <div class="se-sidebar-ttl">Nos 9 expertises</div>
+        <ul class="se-nav">
+          <li class="se-nav-item on" data-t="se-cat-1"><span class="se-num">01</span><span>Stratégie & Accompagnement</span></li>
+          <li class="se-nav-item" data-t="se-cat-2"><span class="se-num">02</span><span>Création Digitale & Identité</span></li>
+          <li class="se-nav-item" data-t="se-cat-3"><span class="se-num">03</span><span>Publicité Digitale</span></li>
+          <li class="se-nav-item" data-t="se-cat-4"><span class="se-num">04</span><span>Référencement & SEO</span></li>
+          <li class="se-nav-item" data-t="se-cat-5"><span class="se-num">05</span><span>Contenu & Rédaction</span></li>
+          <li class="se-nav-item" data-t="se-cat-6"><span class="se-num">06</span><span>Automatisation & CRM</span></li>
+          <li class="se-nav-item" data-t="se-cat-7"><span class="se-num">07</span><span>Analyse & Performance</span></li>
+          <li class="se-nav-item" data-t="se-cat-8"><span class="se-num">08</span><span>Influence & Social Media</span></li>
+          <li class="se-nav-item" data-t="se-cat-9"><span class="se-num">09</span><span>Solutions sur mesure</span></li>
+        </ul>
+        <div class="se-sidebar-cta">
+          <p>Besoin d'un service spécifique ?</p>
+          <a href="/contact?type=devis">Devis sur mesure <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </aside>
+ 
+      <!-- CONTENU -->
+      <div>
+ 
+        <!-- ── CAT 1 : STRATÉGIE ── -->
+        <section class="se-cat se-rev" id="se-cat-1">
+          <div class="se-cat-hd">
+            <div class="se-cat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/></svg></div>
+            <div class="se-cat-info"><span class="se-cat-n">CATÉGORIE 01</span><h2>Stratégie Digitale & Accompagnement</h2><p>Définir la direction, structurer la croissance et piloter la transformation digitale.</p></div>
+            <span class="se-cat-cnt">5 services</span>
+          </div>
+          <div class="se-grid">
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><div class="se-card-txt"><h3>Consulting Stratégique Digital</h3><p class="se-card-short">Conseil à haut niveau pour aligner votre vision digitale avec vos objectifs business.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Mission de conseil stratégique où nous travaillons main dans la main avec votre direction pour bâtir une feuille de route digitale réaliste et ambitieuse. Idéal pour les dirigeants qui veulent transformer leur entreprise en profondeur sur 12 à 36 mois.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Diagnostic de maturité digitale</li><li>Roadmap stratégique 12-36 mois</li><li>Plan d'investissement priorisé</li><li>Recommandations chiffrées</li></ul><div class="se-tags"><span class="se-tag">PME en croissance</span><span class="se-tag">ETI</span><span class="se-tag">Direction générale</span></div><a href="/contact?service=consulting" class="se-card-link">Démarrer →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="se-card-txt"><h3>Audit Digital Complet</h3><p class="se-card-short">Analyse 360° de votre présence en ligne pour identifier les leviers de croissance prioritaires.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Audit complet de votre écosystème digital : site web, SEO, réseaux sociaux, publicité, benchmark concurrentiel. Vous repartez avec une vision claire de vos forces, faiblesses et les 3 actions prioritaires à mener.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Audit technique du site</li><li>Analyse SEO complète</li><li>Benchmark concurrentiel</li><li>Plan d'action priorisé</li></ul><div class="se-tags"><span class="se-tag">TPE / PME</span><span class="se-tag">Avant refonte</span><span class="se-tag">Diagnostic</span></div><a href="/contact?service=audit" class="se-card-link">Demander un audit →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="se-card-txt"><h3>Coaching Équipes Digitales</h3><p class="se-card-short">Montée en compétences de vos équipes internes sur tous les leviers du marketing digital.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Accompagnement personnalisé de vos équipes (marketing, communication, commercial) pour les rendre autonomes. Coaching individuel ou collectif avec des objectifs concrets et mesurables.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Plan de montée en compétences</li><li>Sessions coaching dédiées</li><li>Suivi des progrès</li><li>Ressources & outils fournis</li></ul><div class="se-tags"><span class="se-tag">Équipes internes</span><span class="se-tag">Autonomie</span></div><a href="/contact?service=coaching" class="se-card-link">Démarrer →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div><div class="se-card-txt"><h3>Plan de Communication Digitale</h3><p class="se-card-short">Document stratégique structuré qui guide toutes vos actions digitales sur 6 à 12 mois.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Construction d'un plan de communication digital complet : objectifs, cibles, messages-clés, canaux, calendrier éditorial, budget, KPI. Un document de référence que vos équipes peuvent exécuter.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Plan 6-12 mois</li><li>Calendrier éditorial</li><li>KPI et objectifs chiffrés</li><li>Budget prévisionnel</li></ul><div class="se-tags"><span class="se-tag">Lancement</span><span class="se-tag">Repositionnement</span></div><a href="/contact?service=plan-com" class="se-card-link">Construire mon plan →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><div class="se-card-txt"><h3>Transformation Digitale</h3><p class="se-card-short">Pilotage de votre transformation digitale globale, de la stratégie au déploiement opérationnel.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Accompagnement long terme dans la transformation digitale de votre entreprise : structuration des équipes, choix des outils, conduite du changement, déploiement progressif. Pour les entreprises qui veulent vraiment devenir digitales.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Pilotage complet</li><li>Conduite du changement</li><li>Choix d'outils & process</li><li>Suivi sur la durée</li></ul><div class="se-tags"><span class="se-tag">ETI</span><span class="se-tag">Long terme</span></div><a href="/contact?service=transformation" class="se-card-link">En savoir plus →</a></div></div></div>
+ 
+          </div>
+        </section>
+ 
+        <!-- ── CAT 2 : CRÉATION ── -->
+        <section class="se-cat se-rev" id="se-cat-2">
+          <div class="se-cat-hd">
+            <div class="se-cat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <div class="se-cat-info"><span class="se-cat-n">CATÉGORIE 02</span><h2>Création Digitale & Identité</h2><p>Des expériences digitales qui marquent, convertissent et reflètent votre marque.</p></div>
+            <span class="se-cat-cnt">6 services</span>
+          </div>
+          <div class="se-grid">
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="se-card-txt"><h3>Création & Refonte de Site Web</h3><p class="se-card-short">Sites vitrines, institutionnels et complexes. Performants, modernes et conçus pour convertir.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Création complète de sites web : du brief initial à la mise en ligne. WordPress, sites sur mesure, sites institutionnels. Performance, SEO technique, accessibilité et responsive design garantis dès la conception.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Site clé en main</li><li>Performance optimisée</li><li>SEO technique intégré</li><li>Formation à l'administration</li></ul><a href="/contact?service=site" class="se-card-link">Créer mon site →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><div class="se-card-txt"><h3>Création de Boutique E-Commerce</h3><p class="se-card-short">Boutiques en ligne optimisées pour la conversion et faciles à gérer au quotidien.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Création complète de boutique e-commerce sur WooCommerce, Shopify ou Prestashop selon vos besoins. Tunnel de conversion optimisé, paiement sécurisé, gestion des stocks et formation à la gestion quotidienne.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Boutique clé en main</li><li>Paiement & livraison</li><li>Tunnel de conversion</li><li>Formation gestion</li></ul><a href="/contact?service=ecommerce" class="se-card-link">Lancer ma boutique →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="se-card-txt"><h3>Landing Pages & Tunnels de Conversion</h3><p class="se-card-short">Pages d'atterrissage et tunnels de vente conçus pour transformer le trafic en clients.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Création de landing pages dédiées aux campagnes et de tunnels de vente complets. Copywriting persuasif, tests A/B, suivi des conversions. Idéal pour les campagnes publicitaires ou le lancement de produits.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Landing page optimisée</li><li>Tunnel complet</li><li>Tests A/B</li><li>Suivi des conversions</li></ul><a href="/contact?service=landing" class="se-card-link">Créer ma landing →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div><div class="se-card-txt"><h3>Identité Visuelle Digitale & Logo</h3><p class="se-card-short">Création ou refonte de votre identité de marque : logo, charte graphique, design system.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Création complète d'une identité visuelle forte et cohérente : logo, palette de couleurs, typographies, éléments graphiques, design system applicable à tous vos supports digitaux et print.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Logo + variantes</li><li>Charte graphique complète</li><li>Design system</li><li>Fichiers sources</li></ul><a href="/contact?service=identite" class="se-card-link">Créer mon identité →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div class="se-card-txt"><h3>Webdesign & UX Design</h3><p class="se-card-short">Maquettes web esthétiques et parcours utilisateurs fluides orientés conversion.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Conception de maquettes Figma et optimisation de l'expérience utilisateur. Wireframes, tests utilisateurs, amélioration du taux de conversion. L'esthétique au service de la performance.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Maquettes Figma</li><li>Wireframes UX</li><li>Tests utilisateurs</li><li>Composants réutilisables</li></ul><a href="/contact?service=ux" class="se-card-link">Améliorer mon UX →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="se-card-txt"><h3>Création de Contenus Visuels</h3><p class="se-card-short">Visuels, motion design, vidéos et templates adaptés à chaque canal et usage.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Production de tous les contenus visuels dont votre entreprise a besoin : posts réseaux sociaux, bannières, infographies, motion design, vidéos courtes, templates Canva. Cohérents avec votre charte graphique.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Visuels & motion design</li><li>Templates réutilisables</li><li>Vidéos courtes</li><li>Adaptation multi-canal</li></ul><a href="/contact?service=visuels" class="se-card-link">Commander des visuels →</a></div></div></div>
+ 
+          </div>
+        </section>
+ 
+        <!-- ── CAT 3 : PUBLICITÉ ── -->
+        <section class="se-cat se-rev" id="se-cat-3">
+          <div class="se-cat-hd">
+            <div class="se-cat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+            <div class="se-cat-info"><span class="se-cat-n">CATÉGORIE 03</span><h2>Publicité Digitale</h2><p>Campagnes pilotées au ROI pour acquérir du trafic qualifié et générer des leads.</p></div>
+            <span class="se-cat-cnt">5 services</span>
+          </div>
+          <div class="se-grid">
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="se-card-txt"><h3>Google Ads (Search & Shopping)</h3><p class="se-card-short">Campagnes Search et Shopping sur Google, optimisées pour un ROI maximal.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Conception, lancement et pilotage de campagnes Google Ads : Search, Shopping, Performance Max. Stratégie d'enchères, création d'annonces, optimisation continue et reporting hebdomadaire pour un ROI toujours en amélioration.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Stratégie d'enchères</li><li>Création des annonces</li><li>Optimisation continue</li><li>Reporting hebdomadaire</li></ul><div class="se-tags"><span class="se-tag">Google Ads</span><span class="se-tag">Shopping</span><span class="se-tag">ROI</span></div><a href="/contact?service=google-ads" class="se-card-link">Lancer une campagne →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="se-card-txt"><h3>Publicité Meta & Social Ads</h3><p class="se-card-short">Campagnes Meta (Facebook/Instagram), TikTok, LinkedIn pour toucher votre cible précisément.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Gestion de campagnes publicitaires sur Meta (Facebook, Instagram), TikTok Ads, LinkedIn Ads, Pinterest. Ciblage précis, création de visuels et vidéos, suivi des conversions et optimisation continue.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Stratégie multi-plateformes</li><li>Création visuels</li><li>Ciblage avancé</li><li>Pixel & conversions</li></ul><div class="se-tags"><span class="se-tag">Meta Ads</span><span class="se-tag">TikTok Ads</span><span class="se-tag">LinkedIn</span></div><a href="/contact?service=social-ads" class="se-card-link">Lancer mes ADS →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8M8 8l8 8"/></svg></div><div class="se-card-txt"><h3>Retargeting & Remarketing</h3><p class="se-card-short">Reciblage des visiteurs non convertis sur tous les canaux publicitaires.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Mise en place de campagnes de retargeting sur tous canaux : display, social media, search. Segmentation des audiences selon le comportement sur site. ROI très élevé car vous ciblez des personnes déjà intéressées.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Stratégie de reciblage</li><li>Segmentation audiences</li><li>Visuels personnalisés</li><li>Suivi des conversions</li></ul><a href="/contact?service=retargeting" class="se-card-link">Récupérer mes prospects →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><div class="se-card-txt"><h3>Publicité Vidéo (YouTube, Reels, TikTok)</h3><p class="se-card-short">Production et diffusion de publicités vidéo à fort impact sur toutes les plateformes.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>De la conception à la diffusion : scripts, tournage ou animation, montage, déclinaison multi-formats et diffusion sur YouTube, TikTok, Instagram Reels et Meta. La vidéo est le format le plus performant du moment.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Production vidéo</li><li>Versions multi-formats</li><li>Diffusion ciblée</li><li>Mesure performance</li></ul><a href="/contact?service=video-pub" class="se-card-link">Produire une vidéo →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="se-card-txt"><h3>Display Programmatique</h3><p class="se-card-short">Diffusion automatisée de bannières sur des milliers de sites pour la notoriété et l'acquisition.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Diffusion de campagnes display via les plateformes programmatiques. Ciblage contextuel et comportemental, création de bannières adaptatives, optimisation du CPM et du CPA.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Stratégie d'achat média</li><li>Création de bannières</li><li>Ciblage programmatique</li><li>Reporting performances</li></ul><a href="/contact?service=display" class="se-card-link">Déployer une campagne →</a></div></div></div>
+ 
+          </div>
+        </section>
+ 
+        <!-- ── CAT 4 : SEO ── -->
+        <section class="se-cat se-rev" id="se-cat-4">
+          <div class="se-cat-hd">
+            <div class="se-cat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <div class="se-cat-info"><span class="se-cat-n">CATÉGORIE 04</span><h2>Référencement & Visibilité SEO</h2><p>Apparaître en tête de Google et générer un trafic qualifié, durable et gratuit.</p></div>
+            <span class="se-cat-cnt">4 services</span>
+          </div>
+          <div class="se-grid">
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="se-card-txt"><h3>SEO Technique & On-Page</h3><p class="se-card-short">Optimisation complète de votre site pour satisfaire les critères de Google et monter en position.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Audit SEO technique approfondi, correction des erreurs, optimisation des balises, structure d'URL, Core Web Vitals, plan de mots-clés, optimisation on-page. La fondation indispensable pour une présence durable sur Google.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Audit technique complet</li><li>Correction erreurs SEO</li><li>Optimisation on-page</li><li>Suivi positions Google</li></ul><a href="/contact?service=seo" class="se-card-link">Améliorer mon SEO →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="se-card-txt"><h3>SEO Local & Google Business Profile</h3><p class="se-card-short">Dominer les résultats Google Maps et les recherches locales pour votre zone géographique.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Optimisation SEO local : Google Business Profile complet et actif, citations locales, stratégie d'avis clients, netlinking local, pages locales. Indispensable pour tout commerce physique ou service de proximité.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Google Business optimisé</li><li>Citations locales</li><li>Stratégie d'avis</li><li>Pages locales SEO</li></ul><a href="/contact?service=seo-local" class="se-card-link">Dominer localement →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="se-card-txt"><h3>Stratégie de Contenu SEO</h3><p class="se-card-short">Plan éditorial SEO pour générer un trafic organique ciblé sur les bonnes intentions de recherche.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Construction d'une stratégie de contenu SEO complète : analyse des intentions de recherche, cocon sémantique, planning éditorial sur 6-12 mois, rédaction et publication des articles. Des actifs qui rapportent pendant des années.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Analyse intentions de recherche</li><li>Cocon sémantique</li><li>Planning éditorial</li><li>Articles optimisés</li></ul><a href="/contact?service=contenu-seo" class="se-card-link">Construire mon contenu →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div><div class="se-card-txt"><h3>Netlinking & Autorité de Domaine</h3><p class="se-card-short">Acquisition de liens entrants qualifiés pour renforcer votre autorité aux yeux de Google.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Stratégie de netlinking white-hat : identification des opportunités de liens, outreach, guest blogging, partenariats éditoriaux. Des backlinks qui améliorent durablement votre autorité de domaine et vos positions.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Stratégie de backlinks</li><li>Outreach qualifié</li><li>Guest blogging</li><li>Reporting autorité</li></ul><a href="/contact?service=netlinking" class="se-card-link">Renforcer mon autorité →</a></div></div></div>
+ 
+          </div>
+        </section>
+ 
+        <!-- ── CAT 5 : CONTENU ── -->
+        <section class="se-cat se-rev" id="se-cat-5">
+          <div class="se-cat-hd">
+            <div class="se-cat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+            <div class="se-cat-info"><span class="se-cat-n">CATÉGORIE 05</span><h2>Contenu & Rédaction</h2><p>Les bons mots au bon endroit pour convaincre, engager et convertir votre audience.</p></div>
+            <span class="se-cat-cnt">4 services</span>
+          </div>
+          <div class="se-grid">
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="se-card-txt"><h3>Copywriting & Rédaction Commerciale</h3><p class="se-card-short">Pages de vente, emails, landing pages et scripts qui transforment les lecteurs en clients.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Rédaction de contenus à forte valeur commerciale : pages de vente, séquences email, landing pages, scripts publicitaires, fiches produits e-commerce. L'art de transformer des mots en ventes.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Pages de vente</li><li>Séquences email</li><li>Scripts publicitaires</li><li>Fiches produits</li></ul><a href="/contact?service=copywriting" class="se-card-link">Rédiger mes textes →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="se-card-txt"><h3>Rédaction SEO & Blog d'Entreprise</h3><p class="se-card-short">Articles de blog optimisés pour Google qui génèrent du trafic qualifié sur la durée.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Rédaction d'articles de blog 1 500 à 3 000 mots, optimisés SEO, avec une vraie expertise éditoriale. Chaque article est un actif qui continue à ramener du trafic pendant des années sans dépense supplémentaire.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Articles 1500-3000 mots</li><li>Optimisation SEO complète</li><li>Visuels & infographies</li><li>Planning éditorial</li></ul><a href="/contact?service=blog" class="se-card-link">Lancer mon blog →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="se-card-txt"><h3>Newsletter & Email Marketing Éditorial</h3><p class="se-card-short">Newsletters régulières qui fidélisent votre audience et génèrent des ventes récurrentes.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Conception, rédaction et envoi de newsletters et emails marketing. Templates personnalisés, segmentation, calendrier éditorial, A/B testing. Transformez votre liste email en canal de revenus régulier.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Template newsletter</li><li>Calendrier éditorial</li><li>Segmentation</li><li>Reporting performance</li></ul><a href="/contact?service=newsletter" class="se-card-link">Lancer ma newsletter →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><div class="se-card-txt"><h3>Scripts Vidéo & Podcasts</h3><p class="se-card-short">Écriture de scripts vidéo et podcasts qui captent l'attention et transmettent votre expertise.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Rédaction de scripts pour vidéos publicitaires, vidéos YouTube, podcasts d'entreprise. Structure hook-valeur-CTA pour les formats courts, storytelling expert pour les formats longs.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Scripts vidéo prêts</li><li>Storyboard inclus</li><li>Scripts podcast</li><li>Versions multi-formats</li></ul><a href="/contact?service=scripts" class="se-card-link">Écrire mes scripts →</a></div></div></div>
+ 
+          </div>
+        </section>
+ 
+        <!-- ── CAT 6 : AUTOMATISATION ── -->
+        <section class="se-cat se-rev" id="se-cat-6">
+          <div class="se-cat-hd">
+            <div class="se-cat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <div class="se-cat-info"><span class="se-cat-n">CATÉGORIE 06</span><h2>Automatisation & CRM</h2><p>Gagner du temps, structurer la relation client et faire travailler la machine à votre place.</p></div>
+            <span class="se-cat-cnt">4 services</span>
+          </div>
+          <div class="se-grid">
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="se-card-txt"><h3>Marketing Automation</h3><p class="se-card-short">Workflows automatisés pour nourrir vos prospects 24/7 selon leur comportement.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Mise en place de scénarios d'automatisation marketing : nurturing de prospects, scoring de leads, déclenchement d'actions selon comportements, relances abandons panier. Sur ActiveCampaign, HubSpot, Brevo ou Mailchimp.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Workflows complexes</li><li>Scoring de leads</li><li>Déclencheurs comportementaux</li><li>Intégration outils</li></ul><a href="/contact?service=automation" class="se-card-link">Automatiser →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><div class="se-card-txt"><h3>CRM & Structuration Commerciale</h3><p class="se-card-short">Mise en place et configuration d'un CRM adapté pour piloter votre activité commerciale.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Choix, paramétrage et déploiement du bon CRM (HubSpot, Pipedrive, Salesforce, Brevo). Structuration des pipelines de vente, automatisations commerciales, formation des équipes, intégration à votre écosystème d'outils.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Choix & paramétrage CRM</li><li>Pipelines configurés</li><li>Formation équipes</li><li>Intégrations outils</li></ul><a href="/contact?service=crm" class="se-card-link">Structurer mon CRM →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="se-card-txt"><h3>Email Marketing Automatisé</h3><p class="se-card-short">Séquences email automatiques qui convertissent à chaque étape du parcours client.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Stratégie email complète avec séquences automatisées : welcome series, nurturing prospects, relance panier abandonné, fidélisation post-achat, réactivation clients inactifs. Le canal digital avec le meilleur ROI.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Séquences automatisées</li><li>Templates personnalisés</li><li>Segmentation avancée</li><li>Reporting délivrabilité</li></ul><a href="/contact?service=email-auto" class="se-card-link">Automatiser mes emails →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="se-card-txt"><h3>Intégrations & Connecteurs d'Outils</h3><p class="se-card-short">Connexion de tous vos outils digitaux pour qu'ils fonctionnent ensemble sans friction.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Mise en place d'intégrations entre vos outils via Zapier, Make (ex-Integromat) ou API directes. CRM + email + site + publicité + analytics — tout connecté pour un flux de données sans rupture.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Cartographie des outils</li><li>Intégrations Zapier/Make</li><li>Flux de données optimisé</li><li>Documentation complète</li></ul><a href="/contact?service=integrations" class="se-card-link">Connecter mes outils →</a></div></div></div>
+ 
+          </div>
+        </section>
+ 
+        <!-- ── CAT 7 : ANALYSE ── -->
+        <section class="se-cat se-rev" id="se-cat-7">
+          <div class="se-cat-hd">
+            <div class="se-cat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="se-cat-info"><span class="se-cat-n">CATÉGORIE 07</span><h2>Analyse & Performance</h2><p>Mesurer, comprendre, optimiser. Ce qui se mesure progresse.</p></div>
+            <span class="se-cat-cnt">3 services</span>
+          </div>
+          <div class="se-grid">
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="se-card-txt"><h3>Setup Analytics & Suivi des Conversions</h3><p class="se-card-short">Configuration complète de Google Analytics 4, Tag Manager et tracking des conversions.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Installation et configuration rigoureuse de Google Analytics 4, Google Tag Manager, suivi des conversions personnalisées (formulaires, ventes, appels, téléchargements). Sans tracking, pas d'optimisation possible.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>GA4 configuré</li><li>Tag Manager opérationnel</li><li>Conversions trackées</li><li>Documentation complète</li></ul><a href="/contact?service=analytics" class="se-card-link">Configurer mon tracking →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div><div class="se-card-txt"><h3>Tableaux de Bord & Reporting</h3><p class="se-card-short">Dashboards personnalisés qui centralisent toutes vos données marketing en un seul endroit.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Création de tableaux de bord sur-mesure via Looker Studio (ex-Data Studio) ou autre. Toutes vos métriques clés (SEO, pub, réseaux, email) centralisées et actualisées automatiquement. Pilotez en temps réel.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Dashboard multi-sources</li><li>Mise à jour automatique</li><li>Partage avec vos équipes</li><li>Formation à la lecture</li></ul><a href="/contact?service=dashboard" class="se-card-link">Créer mon dashboard →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="se-card-txt"><h3>Optimisation du Taux de Conversion (CRO)</h3><p class="se-card-short">Tests A/B et optimisations pour convertir plus de visiteurs en leads ou clients.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Analyse comportementale (heatmaps, enregistrements de sessions), identification des points de friction, hypothèses d'amélioration, mise en place de tests A/B et suivi statistique. Plus de conversions sans plus de trafic.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Analyse comportementale</li><li>Tests A/B structurés</li><li>Hypothèses validées</li><li>Rapport CRO mensuel</li></ul><a href="/contact?service=cro" class="se-card-link">Optimiser mes conversions →</a></div></div></div>
+ 
+          </div>
+        </section>
+ 
+        <!-- ── CAT 8 : INFLUENCE & SOCIAL MEDIA ── -->
+        <section class="se-cat se-rev" id="se-cat-8">
+          <div class="se-cat-hd">
+            <div class="se-cat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="se-cat-info"><span class="se-cat-n">CATÉGORIE 08</span><h2>Influence & Social Media</h2><p>Gérer votre présence sociale et activer l'influence pour toucher de nouvelles audiences.</p></div>
+            <span class="se-cat-cnt">4 services</span>
+          </div>
+          <div class="se-grid">
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="se-card-txt"><h3>Gestion des Réseaux Sociaux</h3><p class="se-card-short">Animation quotidienne de vos comptes sociaux : contenu, publication, engagement, modération.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Prise en charge complète de votre présence sur les réseaux sociaux : stratégie éditoriale, création des contenus (visuels, textes, vidéos), publication planifiée, réponses aux commentaires, reporting mensuel.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Stratégie éditoriale</li><li>Publications régulières</li><li>Gestion des commentaires</li><li>Rapport mensuel</li></ul><a href="/contact?service=social-media" class="se-card-link">Gérer mes réseaux →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="se-card-txt"><h3>Social Media Management</h3><p class="se-card-short">Stratégie social media complète et pilotage de votre présence sur toutes les plateformes.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Management complet de votre présence social media : audit, stratégie, calendrier éditorial multi-plateformes, production de contenus, planning de publications, veille, reporting et recommandations d'optimisation.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Audit social media</li><li>Stratégie multi-canaux</li><li>Production contenus</li><li>Reporting complet</li></ul><a href="/contact?service=smm" class="se-card-link">Piloter ma présence →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div><div class="se-card-txt"><h3>Stratégie d'Influence Digitale</h3><p class="se-card-short">Partenariats avec des influenceurs sélectionnés pour toucher votre cible avec authenticité.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Identification et sélection des influenceurs pertinents (nano, micro, macro) selon votre secteur, votre budget et vos objectifs. Gestion des partenariats de A à Z : brief, production, publication, mesure des résultats.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Sélection influenceurs</li><li>Gestion partenariats</li><li>Brief & suivi</li><li>Rapport de campagne</li></ul><a href="/contact?service=influence" class="se-card-link">Activer l'influence →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="se-card-txt"><h3>Création de Communauté Digitale</h3><p class="se-card-short">Lancement et animation d'une communauté en ligne autour de votre marque ou secteur.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Création et animation d'une communauté de marque : choix de la plateforme (Slack, Discord, LinkedIn Group, Facebook Group), stratégie d'animation, contenus exclusifs, modération, croissance organique.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Stratégie communautaire</li><li>Setup de la plateforme</li><li>Plan d'animation</li><li>Croissance organique</li></ul><a href="/contact?service=communaute" class="se-card-link">Créer ma communauté →</a></div></div></div>
+ 
+          </div>
+        </section>
+ 
+        <!-- ── CAT 9 : SUR MESURE ── -->
+        <section class="se-cat se-rev" id="se-cat-9">
+          <div class="se-cat-hd">
+            <div class="se-cat-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+            <div class="se-cat-info"><span class="se-cat-n">CATÉGORIE 09</span><h2>Solutions sur mesure</h2><p>Votre projet ne rentre dans aucune case. C'est justement notre spécialité.</p></div>
+            <span class="se-cat-cnt">3 services</span>
+          </div>
+          <div class="se-grid">
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="se-card-txt"><h3>Pack Multi-Services Personnalisé</h3><p class="se-card-short">Combinaison sur mesure de plusieurs services pour un accompagnement 360° de votre croissance.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Nous construisons un pack multi-services entièrement personnalisé selon votre situation : taille d'entreprise, secteur, objectifs, budget et niveau de maturité digitale. Un tarif global avantageux et une équipe coordonnée.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Services combinés</li><li>Tarif global avantageux</li><li>Coordination unique</li><li>Cohérence garantie</li></ul><a href="/contact?service=pack-multi" class="se-card-link">Construire mon pack →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="se-card-txt"><h3>Mission Ponctuelle ou Expertise</h3><p class="se-card-short">Intervention ciblée d'un expert pour une problématique ou un projet spécifique.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Vous avez besoin d'un expert pour une mission précise et limitée dans le temps : lancement d'un produit, refonte d'une stratégie, résolution d'un problème technique, formation approfondie. On intervient, on livre, on repart.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Expert dédié</li><li>Périmètre défini</li><li>Livrable précis</li><li>Délai respecté</li></ul><a href="/contact?service=mission-ponctuelle" class="se-card-link">Lancer une mission →</a></div></div></div>
+ 
+            <div class="se-card"><div class="se-card-hd"><div class="se-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="se-card-txt"><h3>Devis sur Mesure</h3><p class="se-card-short">Votre besoin est unique. On construit une proposition sur mesure sous 48h, gratuite et sans engagement.</p></div><div class="se-card-tog">+</div></div><div class="se-card-body"><div class="se-card-body-in"><h4>En quoi consiste ce service</h4><p>Vous ne savez pas exactement de quoi vous avez besoin, ou votre projet ne correspond à rien dans les catégories ci-dessus ? Décrivez votre situation, vos objectifs et vos contraintes. Nous construisons une proposition personnalisée sous 48h, sans engagement.</p><h4>Ce que vous obtenez</h4><ul class="se-list"><li>Premier échange gratuit</li><li>Proposition personnalisée</li><li>Devis sous 48h</li><li>Aucun engagement</li></ul><div class="se-tags"><span class="se-tag">100% personnalisé</span><span class="se-tag">Gratuit</span></div><a href="/contact?type=devis&profil=entreprise" class="se-card-link">Décrire mon besoin →</a></div></div></div>
+ 
+          </div>
+        </section>
+ 
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ FINAL ══ -->
+<section class="se-final">
+  <div class="se-w">
+    <div class="se-final-in se-rev">
+      <h2>Prêt à structurer votre <span class="ag">croissance digitale</span> ?</h2>
+      <p>Premier échange gratuit, sans engagement. On analyse votre situation et on vous dit exactement comment avancer.</p>
+      <div class="se-final-btns">
+        <a href="/contact?type=devis" class="se-btn se-btn-p">Demander un devis gratuit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="/contact?type=rdv" class="se-btn se-btn-o">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+</div>
+ 
+<script>
+(function(){
+  // Accordéon
+  document.querySelectorAll('.se-card').forEach(c => {
+    c.querySelector('.se-card-hd').addEventListener('click', () => c.classList.toggle('open'));
+  });
+  // Sidebar
+  const items = document.querySelectorAll('.se-nav-item');
+  const cats = document.querySelectorAll('.se-cat');
+  items.forEach(i => {
+    i.addEventListener('click', () => {
+      const t = document.getElementById(i.dataset.t);
+      if(t) window.scrollTo({top: t.getBoundingClientRect().top + window.pageYOffset - 100, behavior:'smooth'});
+    });
+  });
+  window.addEventListener('scroll', () => {
+    let cur = null;
+    const pos = window.pageYOffset + 160;
+    cats.forEach(c => { if(c.offsetTop <= pos) cur = c.id; });
+    items.forEach(i => i.classList.toggle('on', i.dataset.t === cur));
+  }, {passive:true});
+  // Reveal
+  const ro = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); }});
+  }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.se-rev').forEach(el => ro.observe(el));
+})();
+</script>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

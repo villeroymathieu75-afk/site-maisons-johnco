@@ -1,0 +1,19 @@
+MAISON JOHN&CO MARKETING — SOURCE POUR GOOGLE AI STUDIO
+
+Contenu :
+- pages/ : 132 fichiers HTML exportés individuellement.
+- assets/uploads/2026/ : ressources de 2026 conservées (documents et visuels).
+
+Exclus volontairement :
+- thème Astra et autres fichiers de thème ;
+- Elementor et ses ressources ;
+- UAG/Spectra et ses feuilles CSS générées ;
+- médias des années 2020, 2022, 2023 et 2025 provenant d'anciens thèmes ;
+- miniatures et fichiers techniques non nécessaires à l'import initial.
+
+Consignes : ne pas inventer une nouvelle maquette et ne pas remplacer les pages par un template.
+Lire les 132 fichiers HTML comme sources de contenu et de design autonomes.
+Chaque page doit être rendue comme une page distincte, avec ses styles et scripts intégrés.
+Construire ensuite le routage entre les pages à partir des liens internes existants et des noms de fichiers.
+Ne supprimer aucune page avant un inventaire et une validation explicite.
+Signaler séparément les liens qui pointent vers des ressources manquantes ou externes.

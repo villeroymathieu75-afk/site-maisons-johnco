@@ -1,0 +1,355 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étude de cas - Optimisation des conversions pour une clinique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600;
+            }
+            .stat-card {
+                @apply bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="text-center mb-16">
+            <span class="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-4">Étude de cas - 9 mois</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Optimisation des conversions pour une clinique privée</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Transformation digitale complète du parcours patient avec réduction de 32% du coût d'acquisition et augmentation de 68% du taux de conversion.</p>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="grid md:grid-cols-2 gap-12 mb-20 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 text-gradient">Contexte & Défis</h2>
+                <p class="text-gray-700 mb-4">Dans un secteur médical où la confiance est primordiale et les coûts d'acquisition élevés, la clinique faisait face à plusieurs défis :</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i data-feather="alert-circle" class="text-red-500 mr-2 mt-1"></i>
+                        <span>Parcours patient complexe avec formulaires trop longs</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="smartphone" class="text-blue-500 mr-2 mt-1"></i>
+                        <span>Expérience mobile non optimisée malgré 65% des visites</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="bar-chart-2" class="text-purple-500 mr-2 mt-1"></i>
+                        <span>Taux d'abandon de 72% sur les formulaires de rendez-vous</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="dollar-sign" class="text-green-500 mr-2 mt-1"></i>
+                        <span>Coût d'acquisition patient trop élevé pour la rentabilité</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                <img src="http://static.photos/medical/1024x576/1" alt="Clinique privée" class="rounded-lg w-full h-auto">
+            </div>
+        </section>
+
+        <!-- Methodology -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gradient">Notre Approche en 4 Phases</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="stat-card">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <i data-feather="search" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">1. Audit Complet</h3>
+                    <p class="text-gray-600">Analyse technique, UX et stratégique du parcours patient existant avec identification des points de friction.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                        <i data-feather="layout" class="text-purple-600"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">2. Refonte UX/UI</h3>
+                    <p class="text-gray-600">Redesign centré patient avec simplification des formulaires et optimisation mobile.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <i data-feather="activity" class="text-green-600"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">3. Tracking Avancé</h3>
+                    <p class="text-gray-600">Mise en place d'outils analytiques pour suivre chaque interaction et segmenter les patients.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                        <i data-feather="refresh-cw" class="text-red-600"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">4. Optimisation Continue</h3>
+                    <p class="text-gray-600">Tests A/B, remarketing et améliorations basées sur les données collectées.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Results -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gradient">Résultats Concrets</h2>
+            
+            <!-- Stats Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 rounded-xl text-center">
+                    <div class="text-5xl font-bold mb-2">-32%</div>
+                    <div class="text-xl">Coût d'acquisition patient</div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-600 to-purple-800 text-white p-8 rounded-xl text-center">
+                    <div class="text-5xl font-bold mb-2">+68%</div>
+                    <div class="text-xl">Taux de conversion global</div>
+                </div>
+                <div class="bg-gradient-to-br from-green-600 to-green-800 text-white p-8 rounded-xl text-center">
+                    <div class="text-5xl font-bold mb-2">+61%</div>
+                    <div class="text-xl">CA généré en ligne</div>
+                </div>
+            </div>
+
+            <!-- Detailed Table -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">KPI</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Avant</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Après</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Taux de conversion global</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">2.3%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">3.9%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-green-600 font-bold">+68%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Taux d'abandon formulaire</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">72%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">43%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-green-600 font-bold">-40%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Coût par lead médical</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">€85</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">€62</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-green-600 font-bold">-27%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Prise de rendez-vous mobile</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">28%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">55%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-green-600 font-bold">+96%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Taux de rétention patient</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">41%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">58%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-green-600 font-bold">+41%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Solutions Implemented -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-8 text-gradient">Solutions Clés Mises en Œuvre</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <h3 class="font-bold text-xl mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="smartphone" class="w-4 h-4"></i>
+                        </span>
+                        Optimisation Mobile
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Refonte complète responsive avec parcours simplifié</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Chargement 3x plus rapide sur mobile</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Intégration de la géolocalisation pour trouver la clinique</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <h3 class="font-bold text-xl mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="edit" class="w-4 h-4"></i>
+                        </span>
+                        Formulaires Intelligents
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Réduction de 60% des champs obligatoires</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Autocomplétion des informations patients</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Affichage dynamique des créneaux disponibles</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <h3 class="font-bold text-xl mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="shield" class="w-4 h-4"></i>
+                        </span>
+                        Éléments de Confiance
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Affichage des certifications médicales</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Témoignages vidéo de patients</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Transparence sur les mesures sanitaires</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <h3 class="font-bold text-xl mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="bar-chart-2" class="w-4 h-4"></i>
+                        </span>
+                        Analyse & Tracking
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Tracking de 95% des parcours utilisateurs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Heatmaps pour identifier les points de friction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Segmentation précise des audiences</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-12 text-center mb-20">
+            <i data-feather="message-square" class="w-12 h-12 text-blue-500 mx-auto mb-6"></i>
+            <blockquote class="max-w-3xl mx-auto">
+                <p class="text-xl md:text-2xl font-medium text-gray-800 mb-6">"La transformation digitale opérée par l'agence a radicalement changé notre capacité à acquérir et fidéliser des patients. En 9 mois, nous avons non seulement réduit nos coûts marketing de 32%, mais surtout augmenté notre chiffre d'affaires en ligne de 61%. Le parcours patient simplifié et l'analyse data nous permettent aujourd'hui de prendre des décisions éclairées."</p>
+                <footer class="text-gray-600">
+                    <strong>Dr. Sophie Martin</strong>, Directrice Médicale
+                </footer>
+            </blockquote>
+        </section>
+
+        <!-- Timeline -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gradient">Chronologie du Projet</h2>
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-12 md:space-y-0">
+                    <!-- Item 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center md:odd:flex-row-reverse group">
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="hidden md:block md:w-1/2">
+                            <div class="group-odd:ml-12 group-even:mr-12 p-8 bg-white rounded-xl shadow-md border border-gray-100">
+                                <h3 class="font-bold text-xl mb-2">Mois 1-2: Audit & Stratégie</h3>
+                                <p class="text-gray-600">Analyse complète du parcours existant et définition de la feuille de route stratégique.</p>
+                            </div>
+                        </div>
+                        <div class="absolute hidden md:flex left-1/2 -translate-x-1/2 items-center justify-center w-8 h-8 bg-blue-600 rounded-full text-white font-bold">1</div>
+                        <div class="md:hidden w-full mb-4 p-6 bg-white rounded-xl shadow-md border border-gray-100">
+                            <h3 class="font-bold text-xl mb-2">Mois 1-2: Audit & Stratégie</h3>
+                            <p class="text-gray-600">Analyse complète du parcours existant et définition de la feuille de route stratégique.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="relative flex flex-col md:flex-row items-center md:odd:flex-row-reverse group">
+                        <div class="md:w-1/2">
+                            <div class="group-odd:ml-12 group-even:mr-12 p-8 bg-white rounded-xl shadow-md border border-gray-100">
+                                <h3 class="font-bold text-xl mb-2">Mois 3-4: Refonte UX/UI</h3>
+                                <p class="text-gray-600">Conception et implémentation du nouveau parcours patient avec tests utilisateurs.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="absolute hidden md:flex left-1/2 -translate-x-1/2 items-center justify-center w-8 h-8 bg-purple-600 rounded-full text-white font-bold">2</div>
+                        <div class="md:hidden w-full mb-4 p-6 bg-white rounded-xl shadow-md border border-gray-100">
+                            <h3 class="font-bold text-xl mb-2">Mois 3-4: Refonte UX/UI</h3>
+                            <p class="text-gray-600">Conception et implémentation du nouveau parcours patient avec tests utilisateurs.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center md:odd:flex-row-reverse group">
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="hidden md:block md:w-1/2">
+                            <div class="group-odd:ml-12 group-even:mr-12 p-8 bg-white rounded-xl shadow-md border border-gray-100">
+                                <h3 class="font-bold text-xl mb-2">Mois 5-6: Déploiement & Formation</h3>
+                                <p class="text-gray-600">Mise en production progressive et formation des équipes aux nouveaux outils.</p>
+                            </div>
+                        </div>
+                        <div class="absolute hidden md:flex left-1/2 -translate-x-1/2 items-center justify-center w-8 h-8 bg-blue-600 rounded-full text-white font-bold">3</div>
+                        <div class="md:hidden w-full mb-4 p-6 bg-white rounded-xl shadow-md border border-gray-100">
+                            <h3 class="font-bold text-xl mb-2">Mois 5-6: Déploiement & Formation</h3>
+                            <p class="text-gray-600">Mise en production progressive et formation des équipes aux nouveaux outils.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="relative flex flex-col md:flex-row items-center md:odd:flex-row-reverse group">
+                        <div class="md:w-1/2">
+                            <div class="group-odd:ml-12 group-even:mr-12 p-8 bg-white rounded-xl shadow-md border border-gray-100">
+                                <h3 class="font-bold text-xl mb-2">Mois 7-9: Optimisation Continue</h3>
+                                <p class="text-gray-600">Analyse des données, tests A/B et ajustements pour maximiser les résultats.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="absolute hidden md:flex left-1/2 -translate-x-1/2 items-center justify-center w-8 h-8 bg-purple-600 rounded-full text-white font-bold">4</div>
+                        <div class="md:hidden w-full mb-4 p-6 bg-white rounded-xl shadow-md border border-gray-100">
+                            <h3 class="font-bold text-xl mb-2">Mois 7-9: Optimisation Continue</h3>
+                            <p class="text-gray-600">Analyse des données, tests A/B et ajustements pour maximiser les résultats.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

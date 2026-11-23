@@ -1,0 +1,368 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LXEDC - L'offre exceptionnelle de Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #6B46C1 0%, #3182CE 100%);
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        .countdown-box {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Prix <span class="text-yellow-300">
+                    <p class="text-xl mb-8">Offre exceptionnelle disponible uniquement du 1er au 21 septembre. Places limitées.</p>
+                    
+                    <div class="bg-white bg-opacity-20 rounded-lg p-6 mb-8" data-aos="fade-up">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm uppercase tracking-wider">Offre se termine dans</p>
+                                <div id="countdown" class="flex space-x-2 mt-2">
+                                    <div class="countdown-box bg-black bg-opacity-30 rounded px-3 py-2 text-center">
+                                        <span id="days" class="text-2xl font-bold">00</span>
+                                        <span class="block text-xs">Jours</span>
+                                    </div>
+                                    <div class="countdown-box bg-black bg-opacity-30 rounded px-3 py-2 text-center">
+                                        <span id="hours" class="text-2xl font-bold">00</span>
+                                        <span class="block text-xs">Heures</span>
+                                    </div>
+                                    <div class="countdown-box bg-black bg-opacity-30 rounded px-3 py-2 text-center">
+                                        <span id="minutes" class="text-2xl font-bold">00</span>
+                                        <span class="block text-xs">Minutes</span>
+                                    </div>
+                                    <div class="countdown-box bg-black bg-opacity-30 rounded px-3 py-2 text-center">
+                                        <span id="seconds" class="text-2xl font-bold">00</span>
+                                        <span class="block text-xs">Secondes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Pricing Section -->
+    <section class="py-20 px-4 bg-gray-100">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-4" data-aos="fade-up">Choisissez votre formule</h2>
+            <p class="text-center text-lg mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Toutes les formules donnent accès à l'essentiel, mais plus vous investissez, plus vous bénéficiez d'avantages exclusifs.
+                <span class="font-semibold text-purple-600">La formule à 19,99€ est la plus populaire et suffit pour démarrer.</span>
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Pricing Card 1 -->
+                <div class="pricing-card bg-white rounded-lg shadow-md overflow-hidden border-2 border-purple-500 transform transition duration-300" data-aos="fade-up">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">LXEDC Basic</h3>
+                        <p class="text-3xl font-bold mb-4">19,99€<span class="text-sm font-normal">/mois</span></p>
+                        <p class="text-sm text-gray-600 mb-6">La formule la plus choisie, idéale pour démarrer</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Accès à toutes les formations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Documents de base</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Programme d'affiliation (15%)</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded transition duration-300">
+                            Choisir cette offre
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Pricing Card 2 -->
+                <div class="pricing-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 transform transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">LXEDC Standard</h3>
+                        <p class="text-3xl font-bold mb-4">29,99€<span class="text-sm font-normal">/mois</span></p>
+                        <p class="text-sm text-gray-600 mb-6">Pour ceux qui veulent aller plus loin</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Tout dans Basic</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Documents avancés</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Programme d'affiliation (20%)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>1 webinar exclusif/mois</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-800 hover:bg-black text-white font-bold py-3 px-4 rounded transition duration-300">
+                            Choisir cette offre
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Pricing Card 3 -->
+                <div class="pricing-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 transform transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">LXEDC Pro</h3>
+                        <p class="text-3xl font-bold mb-4">39,99€<span class="text-sm font-normal">/mois</span></p>
+                        <p class="text-sm text-gray-600 mb-6">Pour les entrepreneurs sérieux</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Tout dans Standard</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Accès aux templates premium</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Programme d'affiliation (22%)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>2 webinars exclusifs/mois</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Support prioritaire</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-800 hover:bg-black text-white font-bold py-3 px-4 rounded transition duration-300">
+                            Choisir cette offre
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Pricing Card 4 -->
+                <div class="pricing-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 transform transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">LXEDC Business</h3>
+                        <p class="text-3xl font-bold mb-4">49,99€<span class="text-sm font-normal">/mois</span></p>
+                        <p class="text-sm text-gray-600 mb-6">Pour développer son business rapidement</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Tout dans Pro</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Accès aux masterclasses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Programme d'affiliation (23%)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>3 webinars exclusifs/mois</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Analyse de projet offerte</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-800 hover:bg-black text-white font-bold py-3 px-4 rounded transition duration-300">
+                            Choisir cette offre
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Pricing Card 5 -->
+                <div class="pricing-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 transform transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">LXEDC Premium</h3>
+                        <p class="text-3xl font-bold mb-4">59,99€<span class="text-sm font-normal">/mois</span></p>
+                        <p class="text-sm text-gray-600 mb-6">L'excellence pour les plus ambitieux</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Tout dans Business</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Accès VIP à tous les contenus</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Programme d'affiliation (25%)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Webinars illimités</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Coaching individuel mensuel</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Accès anticipé aux nouvelles formations</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-800 hover:bg-black text-white font-bold py-3 px-4 rounded transition duration-300">
+                            Choisir cette offre
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+           
+
+   
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Ne manquez pas cette opportunité unique</h2>
+            <p class="text-xl mb-8" data-aos="fade-up" data-aos-delay="100">
+                Après le 21 septembre, l'offre disparaîtra et ne reviendra qu'à la prochaine rentrée.
+            </p>
+            
+            <div class="bg-white bg-opacity-20 rounded-lg p-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-sm uppercase tracking-wider">Offre se termine dans</p>
+                        <div id="countdown2" class="flex space-x-2 mt-2">
+                            <div class="countdown-box bg-black bg-opacity-30 rounded px-3 py-2 text-center">
+                                <span id="days2" class="text-2xl font-bold">00</span>
+                                <span class="block text-xs">Jours</span>
+                            </div>
+                            <div class="countdown-box bg-black bg-opacity-30 rounded px-3 py-2 text-center">
+                                <span id="hours2" class="text-2xl font-bold">00</span>
+                                <span class="block text-xs">Heures</span>
+                            </div>
+                            <div class="countdown-box bg-black bg-opacity-30 rounded px-3 py-2 text-center">
+                                <span id="minutes2" class="text-2xl font-bold">00</span>
+                                <span class="block text-xs">Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                        Rejoindre LXEDC maintenant
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+   
+
+    
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const targetDate = new Date(now.getFullYear(), 8, 21, 23, 59, 59); // September is month 8 (0-indexed)
+            
+            if (now > targetDate) {
+                targetDate.setFullYear(targetDate.getFullYear() + 1);
+            }
+            
+            const diff = targetDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            document.getElementById('days2').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours2').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes2').textContent = minutes.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Initialize animations and icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        feather.replace();
+        
+        // Animate pricing cards on hover
+        anime({
+            targets: '.pricing-card',
+            scale: {
+                value: 1.05,
+                duration: 300,
+                easing: 'easeInOutQuad'
+            },
+            boxShadow: {
+                value: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                duration: 300,
+                easing: 'easeInOutQuad'
+            },
+            delay: anime.stagger(100)
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

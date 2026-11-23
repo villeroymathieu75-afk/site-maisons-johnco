@@ -1,0 +1,910 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGES LÉGALES — Maison John&Co Marketing
+     3 onglets : Mentions légales / CGV / RGPD
+     À coller dans un bloc HTML personnalisé WordPress
+     ═══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .mjc-legal {
+    --bg-dark:#0A1628; --bg-mid:#1E3A5F; --bg-light:#FAFAFA; --bg-white:#FFFFFF;
+    --accent:#7C3AED; --accent-l:#A78BFA; --accent-h:#6D28D9; --accent-g:rgba(124,58,237,.4);
+    --text-d:#1A1A2E; --text-m:#6B7280; --text-l:#FFFFFF; --text-lm:#B0B8C5;
+    --border-l:#E5E7EB; --border-d:rgba(255,255,255,.1);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--text-d); line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .mjc-legal *,.mjc-legal *::before,.mjc-legal *::after{box-sizing:border-box;}
+  .mjc-legal p{margin:0 0 14px;}
+  .mjc-legal h1,.mjc-legal h2,.mjc-legal h3,.mjc-legal h4{margin:0;letter-spacing:-.01em;}
+  .mjc-legal a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+  .mjc-legal a:hover{color:var(--accent-h);}
+  .lg-c{max-width:960px;margin:0 auto;padding:0 24px;}
+
+  /* ─── HERO ─── */
+  .lg-hero{background:var(--bg-dark);padding:100px 0 60px;position:relative;overflow:hidden;color:var(--text-l);text-align:center;}
+  .lg-hero-bg{position:absolute;inset:0;background:linear-gradient(125deg,#0A1628 0%,#1E3A5F 40%,#2D1B69 70%,#0A1628 100%);background-size:400% 400%;animation:lg-grad 20s ease infinite;z-index:0;}
+  .lg-orb{position:absolute;border-radius:50%;filter:blur(80px);z-index:1;animation:lg-float 8s ease-in-out infinite;}
+  .lg-orb-1{top:-60px;right:-60px;width:350px;height:350px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.2;}
+  .lg-orb-2{bottom:-60px;left:-60px;width:280px;height:280px;background:radial-gradient(circle,var(--accent-l),transparent 70%);opacity:.15;animation-delay:-4s;}
+  @keyframes lg-grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  @keyframes lg-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .lg-hero-inner{position:relative;z-index:2;}
+  .lg-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,58,237,.15);backdrop-filter:blur(10px);color:var(--accent-l);padding:7px 16px;border-radius:999px;font-size:12px;font-weight:500;margin-bottom:20px;border:1px solid rgba(167,139,250,.3);}
+  .lg-hero h1{font-size:40px;font-weight:700;line-height:1.1;margin-bottom:12px;color:var(--text-l);}
+  .lg-hero h1 .ag{background:linear-gradient(135deg,#A78BFA,#7C3AED);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .lg-hero-sub{font-size:15px;color:var(--text-lm);margin:0;}
+  .lg-update{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;color:rgba(255,255,255,.4);}
+
+  /* ─── ONGLETS ─── */
+  .lg-tabs-wrap{background:var(--bg-dark);border-bottom:1px solid var(--border-d);position:sticky;top:0;z-index:100;}
+  .lg-tabs{display:flex;max-width:960px;margin:0 auto;padding:0 24px;}
+  .lg-tab{
+    padding:18px 28px;color:var(--text-lm);font-size:14px;font-weight:600;
+    cursor:pointer;transition:all .3s ease;border-bottom:2px solid transparent;
+    display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+    font-family:inherit;background:transparent;border-top:none;border-left:none;border-right:none;
+  }
+  .lg-tab:hover{color:var(--text-l);}
+  .lg-tab.active{color:var(--accent-l);border-bottom-color:var(--accent);}
+
+  /* ─── CONTENU ─── */
+  .lg-main{background:var(--bg-light);padding:60px 0 100px;min-height:60vh;}
+  .lg-panel{display:none;}
+  .lg-panel.active{display:block;}
+
+  /* Boîte d'article */
+  .lg-box{background:var(--bg-white);border:1px solid var(--border-l);border-radius:20px;padding:48px;margin-bottom:0;}
+
+  /* Typographie légale */
+  .lg-section{margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid var(--border-l);}
+  .lg-section:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .lg-section-num{display:inline-block;background:rgba(124,58,237,.1);color:var(--accent);padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+  .lg-section h2{font-size:22px;font-weight:700;color:var(--text-d);margin-bottom:16px;line-height:1.3;}
+  .lg-section h3{font-size:17px;font-weight:700;color:var(--text-d);margin:20px 0 10px;}
+  .lg-section p{font-size:14px;color:var(--text-d);line-height:1.75;}
+  .lg-section ul,.lg-section ol{padding-left:20px;margin:0 0 14px;}
+  .lg-section li{font-size:14px;color:var(--text-d);line-height:1.7;margin-bottom:4px;}
+  .lg-info-box{background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.15);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+  .lg-info-box p{margin:0;font-size:13px;color:var(--text-d);}
+  .lg-warn-box{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);border-left:3px solid #F59E0B;border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+  .lg-warn-box p{margin:0;font-size:13px;color:var(--text-d);}
+  .lg-data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;}
+  .lg-data-table th{background:var(--bg-light);padding:10px 14px;text-align:left;font-weight:700;font-size:12px;color:var(--text-m);border:1px solid var(--border-l);text-transform:uppercase;letter-spacing:.5px;}
+  .lg-data-table td{padding:10px 14px;border:1px solid var(--border-l);color:var(--text-d);vertical-align:top;}
+  .lg-data-table tr:nth-child(even) td{background:var(--bg-light);}
+
+  /* Contact box */
+  .lg-contact-box{background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(167,139,250,.04));border:1px solid rgba(124,58,237,.2);border-radius:14px;padding:24px;margin-top:32px;}
+  .lg-contact-box h4{font-size:16px;font-weight:700;color:var(--text-d);margin-bottom:12px;}
+  .lg-contact-box p{font-size:13px;color:var(--text-m);margin-bottom:6px;}
+  .lg-contact-box p:last-child{margin:0;}
+  .lg-contact-box strong{color:var(--text-d);}
+
+  /* TOC */
+  .lg-toc{background:var(--bg-light);border:1px solid var(--border-l);border-radius:14px;padding:20px 24px;margin-bottom:32px;}
+  .lg-toc h4{font-size:13px;font-weight:700;color:var(--text-m);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;}
+  .lg-toc ol{padding-left:16px;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 20px;}
+  .lg-toc li{font-size:13px;color:var(--accent);font-weight:500;margin-bottom:4px;cursor:pointer;}
+  .lg-toc li:hover{color:var(--accent-h);}
+
+  /* RESPONSIVE */
+  @media(max-width:768px){
+    .lg-hero h1{font-size:28px;}
+    .lg-tabs{overflow-x:auto;}
+    .lg-tab{padding:14px 18px;font-size:13px;}
+    .lg-box{padding:24px;}
+    .lg-toc ol{grid-template-columns:1fr;}
+    .lg-data-table{font-size:12px;}
+    .lg-data-table th,.lg-data-table td{padding:8px 10px;}
+  }
+</style>
+
+<div class="mjc-legal">
+
+  <!-- HERO -->
+  <section class="lg-hero">
+    <div class="lg-hero-bg"></div>
+    <div class="lg-orb lg-orb-1"></div>
+    <div class="lg-orb lg-orb-2"></div>
+    <div class="lg-c">
+      <div class="lg-hero-inner">
+        <div class="lg-badge">⚖️ Informations légales</div>
+        <h1>Transparence & <span class="ag">conformité</span></h1>
+        <p class="lg-hero-sub">Mentions légales, Conditions Générales de Vente et Politique de Confidentialité de Maison John&Co Marketing.</p>
+        <div class="lg-update">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Dernière mise à jour : 1er janvier 2025
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONGLETS -->
+  <div class="lg-tabs-wrap">
+    <div class="lg-tabs">
+      <button class="lg-tab active" data-tab="mentions">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        Mentions légales
+      </button>
+      <button class="lg-tab" data-tab="cgv">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Conditions Générales de Vente
+      </button>
+      <button class="lg-tab" data-tab="rgpd">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Politique de Confidentialité
+      </button>
+    </div>
+  </div>
+
+  <!-- CONTENU -->
+  <section class="lg-main">
+    <div class="lg-c">
+
+      <!-- ══════════════════════════════════════════
+           PANEL 1 — MENTIONS LÉGALES
+      ══════════════════════════════════════════ -->
+      <div class="lg-panel active" id="lg-panel-mentions">
+        <div class="lg-box">
+
+          <div class="lg-toc">
+            <h4>Sommaire</h4>
+            <ol>
+              <li onclick="scrollToId('ml-1')">1. Éditeur du site</li>
+              <li onclick="scrollToId('ml-2')">2. Directeur de la publication</li>
+              <li onclick="scrollToId('ml-3')">3. Hébergement</li>
+              <li onclick="scrollToId('ml-4')">4. Propriété intellectuelle</li>
+              <li onclick="scrollToId('ml-5')">5. Liens hypertextes</li>
+              <li onclick="scrollToId('ml-6')">6. Limitation de responsabilité</li>
+              <li onclick="scrollToId('ml-7')">7. Droit applicable</li>
+              <li onclick="scrollToId('ml-8')">8. Contact</li>
+            </ol>
+          </div>
+
+          <!-- Article 1 -->
+          <div class="lg-section" id="ml-1">
+            <span class="lg-section-num">Article 1</span>
+            <h2>Éditeur du site</h2>
+            <p>Le site internet accessible à l'adresse <strong>maison-johnco-marketing.com</strong> (ci-après "le Site") est édité par :</p>
+            <div class="lg-info-box">
+              <p><strong>Maison John&Co Marketing</strong><br>
+              Société par actions simplifiée (SAS)<br>
+              Siège social : Paris, Île-de-France, France<br>
+              Capital social : [À compléter]<br>
+              Numéro SIREN : [À compléter]<br>
+              Numéro SIRET : [À compléter]<br>
+              Code APE/NAF : 7311Z (Activités des agences de publicité)<br>
+              Numéro de TVA intracommunautaire : FR [À compléter]<br>
+              Email : <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a></p>
+            </div>
+            <div class="lg-warn-box">
+              <p>⚠️ <strong>Note :</strong> Les informations SIREN, SIRET, capital social et numéro de TVA sont à compléter lors de l'immatriculation de la société auprès du Registre du Commerce et des Sociétés (RCS) compétent.</p>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="lg-section" id="ml-2">
+            <span class="lg-section-num">Article 2</span>
+            <h2>Directeur de la publication</h2>
+            <p>Le directeur de la publication du Site est <strong>Mathieu Villeroy</strong>, en sa qualité de Directeur Général de la société Maison John&Co Marketing.</p>
+            <p>Contact du directeur de la publication : <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a></p>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="lg-section" id="ml-3">
+            <span class="lg-section-num">Article 3</span>
+            <h2>Hébergement</h2>
+            <p>Le Site est hébergé par :</p>
+            <div class="lg-info-box">
+              <p><strong>Hostinger International Ltd</strong><br>
+              61 Lordou Vironos Street, 6023 Larnaca, Chypre<br>
+              Site web : <a href="https://www.hostinger.fr" target="_blank" rel="noopener">www.hostinger.fr</a></p>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="lg-section" id="ml-4">
+            <span class="lg-section-num">Article 4</span>
+            <h2>Propriété intellectuelle</h2>
+            <p>L'ensemble du contenu du Site (textes, images, graphismes, logos, icônes, sons, vidéos, logiciels, bases de données, etc.) est la propriété exclusive de Maison John&Co Marketing ou de ses partenaires, et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle, notamment le Code de la Propriété Intellectuelle.</p>
+            <p>Toute reproduction, représentation, modification, publication, transmission ou dénaturation, totale ou partielle, du contenu du Site, par quelque procédé que ce soit, et sur quelque support que ce soit, est interdite sans l'autorisation écrite préalable de Maison John&Co Marketing.</p>
+            <p>Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur.</p>
+            <h3>Marque</h3>
+            <p>La marque "Maison John&Co Marketing", son logo et les éléments graphiques associés sont la propriété exclusive de Maison John&Co Marketing. Toute utilisation sans autorisation expresse et écrite est prohibée.</p>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="lg-section" id="ml-5">
+            <span class="lg-section-num">Article 5</span>
+            <h2>Liens hypertextes</h2>
+            <h3>Liens sortants</h3>
+            <p>Le Site peut contenir des liens hypertextes vers d'autres sites internet. Maison John&Co Marketing n'a aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leur disponibilité ou leurs pratiques en matière de protection des données personnelles.</p>
+            <h3>Liens entrants</h3>
+            <p>Tout lien hypertexte pointant vers le Site est soumis à l'autorisation préalable et écrite de Maison John&Co Marketing. Pour toute demande, contactez : <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a>.</p>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="lg-section" id="ml-6">
+            <span class="lg-section-num">Article 6</span>
+            <h2>Limitation de responsabilité</h2>
+            <p>Maison John&Co Marketing s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur le Site. Cependant, Maison John&Co Marketing ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition sur le Site.</p>
+            <p>En conséquence, Maison John&Co Marketing décline toute responsabilité :</p>
+            <ul>
+              <li>Pour toute imprécision, inexactitude ou omission portant sur les informations disponibles sur le Site ;</li>
+              <li>Pour tous dommages résultant d'une intrusion frauduleuse d'un tiers ayant entraîné une modification des informations mises à disposition sur le Site ;</li>
+              <li>Pour tout dommage causé aux équipements informatiques des utilisateurs et/ou aux données hébergées ;</li>
+              <li>Pour les interruptions ou indisponibilités du Site.</li>
+            </ul>
+          </div>
+
+          <!-- Article 7 -->
+          <div class="lg-section" id="ml-7">
+            <span class="lg-section-num">Article 7</span>
+            <h2>Droit applicable et juridiction compétente</h2>
+            <p>Les présentes mentions légales sont soumises au droit français. En cas de litige relatif à leur interprétation ou à leur exécution, et à défaut d'accord amiable, les tribunaux français seront seuls compétents.</p>
+            <p>Pour toute réclamation concernant le Site, vous pouvez contacter Maison John&Co Marketing à l'adresse email mentionnée à l'article 8 ci-dessous.</p>
+          </div>
+
+          <!-- Article 8 -->
+          <div class="lg-section" id="ml-8">
+            <span class="lg-section-num">Article 8</span>
+            <h2>Contact</h2>
+            <p>Pour toute question relative aux présentes mentions légales ou au fonctionnement du Site, vous pouvez contacter Maison John&Co Marketing :</p>
+            <div class="lg-contact-box">
+              <h4>Maison John&Co Marketing</h4>
+              <p><strong>Email :</strong> <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a></p>
+              <p><strong>Site web :</strong> <a href="https://maison-johnco-marketing.com">maison-johnco-marketing.com</a></p>
+              <p><strong>Siège social :</strong> Paris, Île-de-France, France</p>
+              <p><strong>Délai de réponse :</strong> 48h ouvrées maximum</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           PANEL 2 — CGV
+      ══════════════════════════════════════════ -->
+      <div class="lg-panel" id="lg-panel-cgv">
+        <div class="lg-box">
+
+          <div class="lg-toc">
+            <h4>Sommaire</h4>
+            <ol>
+              <li onclick="scrollToId('cgv-1')">1. Objet et champ d'application</li>
+              <li onclick="scrollToId('cgv-2')">2. Acceptation des CGV</li>
+              <li onclick="scrollToId('cgv-3')">3. Services proposés</li>
+              <li onclick="scrollToId('cgv-4')">4. Formation du contrat</li>
+              <li onclick="scrollToId('cgv-5')">5. Tarifs et facturation</li>
+              <li onclick="scrollToId('cgv-6')">6. Conditions de paiement</li>
+              <li onclick="scrollToId('cgv-7')">7. Obligations des parties</li>
+              <li onclick="scrollToId('cgv-8')">8. Propriété intellectuelle</li>
+              <li onclick="scrollToId('cgv-9')">9. Confidentialité</li>
+              <li onclick="scrollToId('cgv-10')">10. Résiliation</li>
+              <li onclick="scrollToId('cgv-11')">11. Responsabilité</li>
+              <li onclick="scrollToId('cgv-12')">12. Force majeure</li>
+              <li onclick="scrollToId('cgv-13')">13. Droit applicable</li>
+              <li onclick="scrollToId('cgv-14')">14. Médiation</li>
+            </ol>
+          </div>
+
+          <div class="lg-warn-box">
+            <p>⚠️ Ces Conditions Générales de Vente s'appliquent aux relations commerciales entre Maison John&Co Marketing (ci-après "le Prestataire") et ses clients professionnels (B2B) ou particuliers (B2C). Toute commande de services implique l'acceptation sans réserve des présentes CGV.</p>
+          </div>
+
+          <!-- Article 1 -->
+          <div class="lg-section" id="cgv-1">
+            <span class="lg-section-num">Article 1</span>
+            <h2>Objet et champ d'application</h2>
+            <p>Les présentes Conditions Générales de Vente (ci-après "CGV") régissent les relations contractuelles entre :</p>
+            <ul>
+              <li><strong>Le Prestataire :</strong> Maison John&Co Marketing, SAS au capital de [X] euros, dont le siège social est situé à Paris (France), immatriculée au RCS de Paris sous le numéro [À compléter] ;</li>
+              <li><strong>Le Client :</strong> toute personne physique ou morale, professionnelle ou particulière, qui passe commande d'une ou plusieurs prestations auprès du Prestataire.</li>
+            </ul>
+            <p>Les présentes CGV s'appliquent à l'ensemble des prestations de services fournies par Maison John&Co Marketing, notamment : conseil en stratégie digitale, gestion des réseaux sociaux, référencement SEO, publicité en ligne, création de sites web, formation, coaching et toute prestation connexe.</p>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="lg-section" id="cgv-2">
+            <span class="lg-section-num">Article 2</span>
+            <h2>Acceptation des CGV</h2>
+            <p>Le Client reconnaît avoir pris connaissance des présentes CGV et les accepte sans réserve lors de :</p>
+            <ul>
+              <li>La signature d'un devis ou d'un bon de commande ;</li>
+              <li>Le règlement d'un acompte ou du montant total d'une prestation ;</li>
+              <li>L'envoi d'un email de confirmation de commande ;</li>
+              <li>Toute commande passée via le Site internet.</li>
+            </ul>
+            <p>Le fait de ne pas avoir lu les présentes CGV ne peut être invoqué par le Client pour s'en affranchir.</p>
+            <p>Le Prestataire se réserve le droit de modifier les présentes CGV à tout moment. Les CGV applicables sont celles en vigueur à la date de la commande.</p>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="lg-section" id="cgv-3">
+            <span class="lg-section-num">Article 3</span>
+            <h2>Services proposés</h2>
+            <p>Maison John&Co Marketing propose notamment les catégories de services suivantes :</p>
+            <h3>Pour les entreprises (B2B)</h3>
+            <ul>
+              <li>Conseil en stratégie digitale et accompagnement</li>
+              <li>Gestion et animation des réseaux sociaux</li>
+              <li>Référencement naturel (SEO) et référencement payant (SEA/PPC)</li>
+              <li>Création et refonte de sites web, landing pages, e-commerce</li>
+              <li>Email marketing et marketing automation</li>
+              <li>Analyse de données et reporting</li>
+              <li>Formation des équipes internes</li>
+            </ul>
+            <h3>Pour les créateurs de contenu</h3>
+            <ul>
+              <li>Personal branding et stratégie de carrière</li>
+              <li>Développement d'audience et community management</li>
+              <li>Mise en relation avec des marques partenaires</li>
+              <li>Création de contenus et identité visuelle</li>
+              <li>Stratégie de monétisation et lancement de formations</li>
+            </ul>
+            <h3>Pour les particuliers</h3>
+            <ul>
+              <li>Formations en ligne au marketing digital</li>
+              <li>Cours collectifs et ateliers en direct</li>
+              <li>Coaching et accompagnement individuel</li>
+              <li>Accompagnement à la reconversion numérique</li>
+            </ul>
+            <p>La description détaillée de chaque service est précisée dans le devis ou la proposition commerciale remis au Client.</p>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="lg-section" id="cgv-4">
+            <span class="lg-section-num">Article 4</span>
+            <h2>Formation du contrat</h2>
+            <p>Le contrat entre le Prestataire et le Client est formé dès :</p>
+            <ul>
+              <li>La signature du devis par le Client (signature électronique ou manuscrite) ;</li>
+              <li>Ou le versement de l'acompte mentionné dans le devis ;</li>
+              <li>Ou l'envoi d'un email de confirmation écrit par le Client.</li>
+            </ul>
+            <p>Tout devis est valable 30 jours à compter de sa date d'émission, sauf mention contraire expressément indiquée.</p>
+            <p>Le démarrage effectif des prestations n'intervient qu'après :</p>
+            <ul>
+              <li>La signature du contrat ou du devis ;</li>
+              <li>Le versement de l'acompte convenu (si applicable) ;</li>
+              <li>La fourniture par le Client des éléments et accès nécessaires à la réalisation des prestations.</li>
+            </ul>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="lg-section" id="cgv-5">
+            <span class="lg-section-num">Article 5</span>
+            <h2>Tarifs et facturation</h2>
+            <h3>5.1 Prix</h3>
+            <p>Les prix des prestations sont indiqués en euros hors taxes (HT) sur les devis et propositions commerciales. La TVA applicable au taux en vigueur (actuellement 20% pour les services en France) est ajoutée lors de la facturation.</p>
+            <p>Les prix affichés sur le Site sont indicatifs et non contractuels. Seul le devis signé par les deux parties fait foi.</p>
+            <h3>5.2 Budgets publicitaires</h3>
+            <p>Sauf mention contraire dans le devis, les budgets d'achat d'espaces publicitaires (Google Ads, Meta Ads, LinkedIn Ads, etc.) ne sont pas inclus dans les honoraires du Prestataire. Ces budgets sont versés directement par le Client aux plateformes publicitaires concernées, sur ses propres comptes.</p>
+            <h3>5.3 Révision des tarifs</h3>
+            <p>Le Prestataire se réserve le droit de réviser ses tarifs à chaque renouvellement de contrat ou en cours de contrat avec un préavis d'un mois. En cas de désaccord, le Client peut résilier le contrat dans les conditions prévues à l'article 10.</p>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="lg-section" id="cgv-6">
+            <span class="lg-section-num">Article 6</span>
+            <h2>Conditions de paiement</h2>
+            <h3>6.1 Modalités générales</h3>
+            <p>Sauf conditions particulières mentionnées dans le devis, les conditions de paiement standard sont les suivantes :</p>
+            <ul>
+              <li><strong>Prestations mensuelles :</strong> facturation en début de mois, paiement à réception de facture ou par prélèvement automatique ;</li>
+              <li><strong>Missions ponctuelles :</strong> acompte de 30 à 50% à la signature, solde à la livraison ;</li>
+              <li><strong>Formations individuelles :</strong> paiement intégral avant le démarrage, possibilité de paiement en 3x sans frais sur demande.</li>
+            </ul>
+            <h3>6.2 Retard de paiement</h3>
+            <p>Conformément aux articles L.441-10 et suivants du Code de commerce, tout retard de paiement entraîne de plein droit l'application de pénalités de retard au taux légal majoré de 10 points, ainsi qu'une indemnité forfaitaire de recouvrement de 40 euros.</p>
+            <p>En cas de retard de paiement supérieur à 15 jours, le Prestataire se réserve le droit de suspendre les prestations en cours sans mise en demeure préalable, et ce jusqu'au règlement intégral des sommes dues.</p>
+            <h3>6.3 Contestation de facture</h3>
+            <p>Toute contestation d'une facture doit être formulée par écrit dans un délai de 8 jours à compter de sa réception. À défaut, la facture est réputée acceptée.</p>
+          </div>
+
+          <!-- Article 7 -->
+          <div class="lg-section" id="cgv-7">
+            <span class="lg-section-num">Article 7</span>
+            <h2>Obligations des parties</h2>
+            <h3>7.1 Obligations du Prestataire</h3>
+            <p>Le Prestataire s'engage à :</p>
+            <ul>
+              <li>Exécuter les prestations commandées avec soin, compétence et diligence ;</li>
+              <li>Affecter les ressources humaines nécessaires à la bonne réalisation des prestations ;</li>
+              <li>Informer le Client de toute difficulté susceptible d'affecter la bonne exécution des prestations ;</li>
+              <li>Respecter les délais convenus dans le devis, sauf cas de force majeure ou manquement du Client à ses propres obligations ;</li>
+              <li>Maintenir la confidentialité des informations communiquées par le Client.</li>
+            </ul>
+            <p>Les prestations du Prestataire sont des <strong>obligations de moyens</strong>. À ce titre, le Prestataire ne garantit pas de résultats spécifiques (nombre d'abonnés, positions SEO, ROI publicitaire), sauf engagement écrit et explicite dans le devis.</p>
+            <h3>7.2 Obligations du Client</h3>
+            <p>Le Client s'engage à :</p>
+            <ul>
+              <li>Fournir au Prestataire, en temps et en heure, tous les éléments, informations, accès et validations nécessaires à la bonne réalisation des prestations ;</li>
+              <li>Désigner un interlocuteur unique, disponible et disposant du pouvoir de décision ;</li>
+              <li>Régler les factures dans les délais convenus ;</li>
+              <li>Respecter les délais de validation des livrables. À défaut de validation dans le délai convenu (par défaut 48h ouvrées), le livrable est considéré comme approuvé.</li>
+            </ul>
+            <p>Tout retard imputable au Client dans la fourniture des éléments nécessaires entraîne automatiquement un report des délais de livraison, sans que cela ne puisse être invoqué par le Client comme motif de résiliation ou de réduction d'honoraires.</p>
+          </div>
+
+          <!-- Article 8 -->
+          <div class="lg-section" id="cgv-8">
+            <span class="lg-section-num">Article 8</span>
+            <h2>Propriété intellectuelle</h2>
+            <h3>8.1 Livrables créés par le Prestataire</h3>
+            <p>Sauf mention contraire dans le devis, la propriété des livrables (sites web, créations graphiques, contenus éditoriaux, scripts, etc.) est transférée au Client dès le règlement intégral des sommes dues.</p>
+            <p>Avant ce transfert, le Client bénéficie d'un droit d'utilisation non exclusif et non cessible pour les besoins couverts par le contrat.</p>
+            <h3>8.2 Comptes et accès</h3>
+            <p>Les comptes créés au nom du Client (Google Ads, Meta Business, Google Analytics, comptes sociaux, etc.) appartiennent au Client. Le Prestataire y travaille en tant qu'administrateur délégué et ne saurait revendiquer aucun droit de propriété sur ces comptes.</p>
+            <h3>8.3 Outils et méthodes propriétaires</h3>
+            <p>Les méthodes, processus, outils et savoir-faire développés par le Prestataire restent sa propriété exclusive et ne font pas l'objet d'un transfert au Client.</p>
+            <h3>8.4 Référence commerciale</h3>
+            <p>Sauf opposition écrite du Client, le Prestataire se réserve le droit de mentionner le nom du Client et les prestations réalisées à titre de référence commerciale (site web, portfolio, propositions commerciales).</p>
+          </div>
+
+          <!-- Article 9 -->
+          <div class="lg-section" id="cgv-9">
+            <span class="lg-section-num">Article 9</span>
+            <h2>Confidentialité</h2>
+            <p>Chacune des parties s'engage à garder strictement confidentielles toutes les informations de nature confidentielle échangées dans le cadre du contrat (données commerciales, financières, techniques, stratégiques, etc.).</p>
+            <p>Cette obligation de confidentialité s'applique pendant toute la durée du contrat et pendant 3 ans après son terme.</p>
+            <p>Cette obligation ne s'applique pas aux informations qui :</p>
+            <ul>
+              <li>Sont ou deviennent publiquement disponibles sans violation du contrat ;</li>
+              <li>Étaient déjà connues de la partie réceptrice avant leur communication ;</li>
+              <li>Doivent être divulguées en vertu d'une obligation légale ou réglementaire.</li>
+            </ul>
+          </div>
+
+          <!-- Article 10 -->
+          <div class="lg-section" id="cgv-10">
+            <span class="lg-section-num">Article 10</span>
+            <h2>Résiliation</h2>
+            <h3>10.1 Résiliation à l'initiative du Client</h3>
+            <p>Le Client peut résilier le contrat à tout moment, sous réserve du respect du préavis contractuel :</p>
+            <ul>
+              <li><strong>Pack TPE et PME :</strong> préavis d'un (1) mois ;</li>
+              <li><strong>Pack ETI :</strong> préavis d'un (1) trimestre ;</li>
+              <li><strong>Formations et prestations ponctuelles :</strong> non résiliables après démarrage, sauf accord des parties.</li>
+            </ul>
+            <p>La résiliation doit être notifiée par email avec accusé de réception à <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a>.</p>
+            <p>Aucun frais de résiliation ne sera facturé au Client, hormis les sommes dues pour les prestations déjà réalisées.</p>
+            <h3>10.2 Résiliation pour manquement</h3>
+            <p>En cas de manquement grave de l'une des parties à ses obligations, et après mise en demeure restée sans effet pendant 15 jours, l'autre partie peut résilier le contrat de plein droit, sans préavis ni indemnité.</p>
+            <h3>10.3 Effets de la résiliation</h3>
+            <p>À la résiliation du contrat, le Prestataire remet au Client l'ensemble de ses actifs digitaux (accès aux comptes, données, livrables réalisés et réglés). Les sommes dues restent exigibles.</p>
+          </div>
+
+          <!-- Article 11 -->
+          <div class="lg-section" id="cgv-11">
+            <span class="lg-section-num">Article 11</span>
+            <h2>Responsabilité</h2>
+            <p>La responsabilité du Prestataire ne peut être engagée qu'en cas de faute prouvée de sa part. Elle est expressément limitée aux dommages directs et prévisibles subis par le Client.</p>
+            <p>En tout état de cause, la responsabilité du Prestataire est plafonnée au montant total des sommes versées par le Client au cours des 12 mois précédant le sinistre.</p>
+            <p>Le Prestataire ne peut être tenu responsable des conséquences découlant :</p>
+            <ul>
+              <li>Des modifications apportées unilatéralement par le Client aux livrables du Prestataire ;</li>
+              <li>Des changements d'algorithmes des plateformes (Google, Meta, TikTok, etc.) affectant les performances ;</li>
+              <li>De l'utilisation non conforme des livrables ou prestations par le Client ;</li>
+              <li>D'informations erronées ou incomplètes fournies par le Client ;</li>
+              <li>De retards imputables au Client.</li>
+            </ul>
+          </div>
+
+          <!-- Article 12 -->
+          <div class="lg-section" id="cgv-12">
+            <span class="lg-section-num">Article 12</span>
+            <h2>Force majeure</h2>
+            <p>Aucune des parties ne peut être tenue responsable d'un retard ou d'une inexécution de ses obligations contractuelles si cette inexécution est due à la survenance d'un cas de force majeure au sens de l'article 1218 du Code civil.</p>
+            <p>Constituent notamment des cas de force majeure : catastrophes naturelles, guerres, actes terroristes, pandémies, grèves générales, pannes d'infrastructure internet d'ampleur nationale, décisions gouvernementales.</p>
+            <p>La partie constatant le cas de force majeure devra en informer l'autre partie dans les 72 heures. Les obligations des parties seront suspendues pendant la durée de l'événement.</p>
+          </div>
+
+          <!-- Article 13 -->
+          <div class="lg-section" id="cgv-13">
+            <span class="lg-section-num">Article 13</span>
+            <h2>Droit applicable et juridiction compétente</h2>
+            <p>Les présentes CGV et tous les contrats conclus avec le Prestataire sont soumis au droit français.</p>
+            <p>En cas de litige, les parties s'engagent à rechercher une solution amiable avant tout recours judiciaire. À défaut d'accord amiable dans un délai de 30 jours, le litige sera soumis à la compétence exclusive des tribunaux de Paris, sauf règles impératives contraires.</p>
+          </div>
+
+          <!-- Article 14 -->
+          <div class="lg-section" id="cgv-14">
+            <span class="lg-section-num">Article 14</span>
+            <h2>Médiation des litiges (consommateurs)</h2>
+            <p>Conformément aux dispositions du Code de la consommation concernant le règlement amiable des litiges, le Client consommateur a le droit de recourir gratuitement au service de médiation proposé par le Prestataire.</p>
+            <p>En cas de litige non résolu, le Client peut saisir le médiateur compétent dont les coordonnées sont disponibles sur la plateforme européenne de règlement en ligne des litiges accessible à l'adresse : <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>.</p>
+            <div class="lg-contact-box">
+              <h4>Contact pour litiges et réclamations</h4>
+              <p><strong>Email :</strong> <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a></p>
+              <p><strong>Délai de traitement :</strong> 48h ouvrées</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           PANEL 3 — RGPD / POLITIQUE DE CONFIDENTIALITÉ
+      ══════════════════════════════════════════ -->
+      <div class="lg-panel" id="lg-panel-rgpd">
+        <div class="lg-box">
+
+          <div class="lg-toc">
+            <h4>Sommaire</h4>
+            <ol>
+              <li onclick="scrollToId('rg-1')">1. Responsable du traitement</li>
+              <li onclick="scrollToId('rg-2')">2. Données collectées</li>
+              <li onclick="scrollToId('rg-3')">3. Finalités des traitements</li>
+              <li onclick="scrollToId('rg-4')">4. Base légale</li>
+              <li onclick="scrollToId('rg-5')">5. Destinataires des données</li>
+              <li onclick="scrollToId('rg-6')">6. Durée de conservation</li>
+              <li onclick="scrollToId('rg-7')">7. Vos droits</li>
+              <li onclick="scrollToId('rg-8')">8. Cookies et traceurs</li>
+              <li onclick="scrollToId('rg-9')">9. Sécurité des données</li>
+              <li onclick="scrollToId('rg-10')">10. Transferts hors UE</li>
+              <li onclick="scrollToId('rg-11')">11. Modifications de la politique</li>
+              <li onclick="scrollToId('rg-12')">12. Contact DPO</li>
+            </ol>
+          </div>
+
+          <div class="lg-info-box">
+            <p>Maison John&Co Marketing s'engage à traiter vos données personnelles dans le respect du Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679), de la loi Informatique et Libertés modifiée, et de toute réglementation applicable en matière de protection des données personnelles.</p>
+          </div>
+
+          <!-- Article 1 -->
+          <div class="lg-section" id="rg-1">
+            <span class="lg-section-num">Article 1</span>
+            <h2>Responsable du traitement</h2>
+            <p>Le responsable du traitement de vos données personnelles est :</p>
+            <div class="lg-info-box">
+              <p><strong>Maison John&Co Marketing</strong><br>
+              Représentée par Mathieu Villeroy, Directeur Général<br>
+              Siège social : Paris, Île-de-France, France<br>
+              Email : <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a></p>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="lg-section" id="rg-2">
+            <span class="lg-section-num">Article 2</span>
+            <h2>Données personnelles collectées</h2>
+            <p>Nous collectons les catégories de données personnelles suivantes :</p>
+
+            <h3>2.1 Données collectées directement auprès de vous</h3>
+            <table class="lg-data-table">
+              <thead>
+                <tr>
+                  <th>Catégorie</th>
+                  <th>Données concernées</th>
+                  <th>Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Identité</td>
+                  <td>Nom, prénom</td>
+                  <td>Formulaires de contact, devis, inscription</td>
+                </tr>
+                <tr>
+                  <td>Coordonnées</td>
+                  <td>Email, téléphone, adresse postale</td>
+                  <td>Formulaires, contrats</td>
+                </tr>
+                <tr>
+                  <td>Données professionnelles</td>
+                  <td>Nom de l'entreprise, poste, secteur</td>
+                  <td>Formulaires, échanges commerciaux</td>
+                </tr>
+                <tr>
+                  <td>Données de connexion</td>
+                  <td>Adresse IP, logs de connexion</td>
+                  <td>Navigation sur le Site</td>
+                </tr>
+                <tr>
+                  <td>Données de navigation</td>
+                  <td>Pages visitées, durée, source</td>
+                  <td>Cookies analytiques (avec consentement)</td>
+                </tr>
+                <tr>
+                  <td>Données de contenu</td>
+                  <td>Messages, projets, échanges</td>
+                  <td>Formulaires de contact, emails</td>
+                </tr>
+                <tr>
+                  <td>Données de paiement</td>
+                  <td>Informations de facturation (pas de données bancaires stockées)</td>
+                  <td>Processeur de paiement tiers</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>2.2 Données collectées via les services tiers</h3>
+            <p>Dans le cadre de nos services de gestion de comptes digitaux pour nos clients (Google Ads, Meta, etc.), nous pouvons avoir accès aux données analytiques de leurs comptes. Ces traitements sont encadrés par des contrats de sous-traitance spécifiques.</p>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="lg-section" id="rg-3">
+            <span class="lg-section-num">Article 3</span>
+            <h2>Finalités des traitements</h2>
+            <p>Vos données personnelles sont traitées aux fins suivantes :</p>
+            <table class="lg-data-table">
+              <thead>
+                <tr>
+                  <th>Finalité</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gestion de la relation client</td>
+                  <td>Réponse aux demandes, gestion des devis et contrats, exécution des prestations</td>
+                </tr>
+                <tr>
+                  <td>Facturation</td>
+                  <td>Émission des factures, suivi des paiements, obligations comptables</td>
+                </tr>
+                <tr>
+                  <td>Communication commerciale</td>
+                  <td>Envoi de newsletters, offres et contenus marketing (avec consentement)</td>
+                </tr>
+                <tr>
+                  <td>Amélioration du Site</td>
+                  <td>Analyse de l'utilisation du Site pour en améliorer les fonctionnalités</td>
+                </tr>
+                <tr>
+                  <td>Obligations légales</td>
+                  <td>Respect des obligations fiscales, comptables et légales</td>
+                </tr>
+                <tr>
+                  <td>Sécurité</td>
+                  <td>Protection du Site contre les accès non autorisés, les fraudes et les abus</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="lg-section" id="rg-4">
+            <span class="lg-section-num">Article 4</span>
+            <h2>Base légale des traitements</h2>
+            <p>Chaque traitement de vos données repose sur une base légale prévue par le RGPD :</p>
+            <ul>
+              <li><strong>Exécution d'un contrat :</strong> traitement nécessaire à l'exécution de nos prestations (gestion client, facturation, livraison) ;</li>
+              <li><strong>Intérêt légitime :</strong> amélioration du Site, sécurité, prospection commerciale B2B ;</li>
+              <li><strong>Consentement :</strong> envoi de newsletters et communications marketing, dépôt de cookies analytiques et marketing ;</li>
+              <li><strong>Obligation légale :</strong> conservation des données comptables et fiscales.</li>
+            </ul>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="lg-section" id="rg-5">
+            <span class="lg-section-num">Article 5</span>
+            <h2>Destinataires des données</h2>
+            <p>Vos données personnelles peuvent être partagées avec les catégories de destinataires suivantes :</p>
+            <ul>
+              <li><strong>Notre équipe interne</strong> : accès limité aux seules personnes ayant besoin des données pour l'exécution de leurs missions ;</li>
+              <li><strong>Nos prestataires et sous-traitants</strong> : hébergeur (Hostinger), outils CRM, outils de marketing automation, solutions de paiement — liés par un accord de traitement des données conforme au RGPD ;</li>
+              <li><strong>Autorités administratives ou judiciaires</strong> : sur demande légale ou dans le cadre de nos obligations légales.</li>
+            </ul>
+            <div class="lg-warn-box">
+              <p>🔒 <strong>Engagement :</strong> Maison John&Co Marketing ne vend jamais vos données personnelles à des tiers, et ne les partage pas à des fins publicitaires sans votre consentement explicite.</p>
+            </div>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="lg-section" id="rg-6">
+            <span class="lg-section-num">Article 6</span>
+            <h2>Durée de conservation des données</h2>
+            <table class="lg-data-table">
+              <thead>
+                <tr>
+                  <th>Catégorie de données</th>
+                  <th>Durée de conservation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Données clients (contrats, devis, prestations)</td>
+                  <td>5 ans à compter de la fin de la relation commerciale</td>
+                </tr>
+                <tr>
+                  <td>Données comptables et fiscales</td>
+                  <td>10 ans (obligation légale)</td>
+                </tr>
+                <tr>
+                  <td>Données de prospection commerciale (leads)</td>
+                  <td>3 ans à compter du dernier contact</td>
+                </tr>
+                <tr>
+                  <td>Abonnés newsletter</td>
+                  <td>Jusqu'à désabonnement + 3 ans</td>
+                </tr>
+                <tr>
+                  <td>Données de navigation (cookies analytiques)</td>
+                  <td>13 mois maximum</td>
+                </tr>
+                <tr>
+                  <td>Logs de connexion</td>
+                  <td>12 mois</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>À l'expiration de ces délais, les données sont supprimées ou anonymisées de façon irréversible.</p>
+          </div>
+
+          <!-- Article 7 -->
+          <div class="lg-section" id="rg-7">
+            <span class="lg-section-num">Article 7</span>
+            <h2>Vos droits sur vos données personnelles</h2>
+            <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles :</p>
+            <ul>
+              <li><strong>Droit d'accès (Art. 15 RGPD) :</strong> obtenir une copie des données vous concernant que nous détenons ;</li>
+              <li><strong>Droit de rectification (Art. 16 RGPD) :</strong> faire corriger vos données inexactes ou incomplètes ;</li>
+              <li><strong>Droit à l'effacement (Art. 17 RGPD) :</strong> demander la suppression de vos données, sous réserve de nos obligations légales ;</li>
+              <li><strong>Droit à la limitation (Art. 18 RGPD) :</strong> demander la suspension temporaire du traitement de vos données ;</li>
+              <li><strong>Droit à la portabilité (Art. 20 RGPD) :</strong> recevoir vos données dans un format structuré et lisible par machine ;</li>
+              <li><strong>Droit d'opposition (Art. 21 RGPD) :</strong> vous opposer au traitement de vos données, notamment à des fins de prospection ;</li>
+              <li><strong>Droit de retrait du consentement :</strong> retirer votre consentement à tout moment, sans que cela affecte la licéité des traitements antérieurs ;</li>
+              <li><strong>Droit de définir des directives post-mortem :</strong> indiquer des directives relatives à la conservation et la suppression de vos données après votre décès.</li>
+            </ul>
+            <h3>Comment exercer vos droits</h3>
+            <p>Pour exercer l'un de ces droits, adressez votre demande par email à : <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a>, en joignant une copie d'un justificatif d'identité.</p>
+            <p>Nous nous engageons à répondre à votre demande dans un délai d'un (1) mois à compter de sa réception.</p>
+            <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés) :</p>
+            <div class="lg-info-box">
+              <p><strong>CNIL</strong><br>
+              3 Place de Fontenoy – TSA 80715 – 75334 PARIS CEDEX 07<br>
+              Site web : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
+            </div>
+          </div>
+
+          <!-- Article 8 -->
+          <div class="lg-section" id="rg-8">
+            <span class="lg-section-num">Article 8</span>
+            <h2>Cookies et traceurs</h2>
+            <h3>8.1 Qu'est-ce qu'un cookie ?</h3>
+            <p>Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, smartphone, tablette) lors de la visite d'un site internet. Il permet au site de mémoriser certaines informations sur votre navigation.</p>
+            <h3>8.2 Cookies utilisés sur notre Site</h3>
+            <table class="lg-data-table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Finalité</th>
+                  <th>Durée</th>
+                  <th>Consentement requis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cookies essentiels</td>
+                  <td>Fonctionnement du Site (session, sécurité)</td>
+                  <td>Session</td>
+                  <td>Non</td>
+                </tr>
+                <tr>
+                  <td>Cookies analytiques</td>
+                  <td>Mesure d'audience (Google Analytics)</td>
+                  <td>13 mois</td>
+                  <td>Oui</td>
+                </tr>
+                <tr>
+                  <td>Cookies de préférence</td>
+                  <td>Mémorisation de vos préférences</td>
+                  <td>12 mois</td>
+                  <td>Oui</td>
+                </tr>
+                <tr>
+                  <td>Cookies marketing</td>
+                  <td>Publicité ciblée, retargeting</td>
+                  <td>13 mois</td>
+                  <td>Oui</td>
+                </tr>
+              </tbody>
+            </table>
+            <h3>8.3 Gestion de vos préférences cookies</h3>
+            <p>Lors de votre première visite sur le Site, un bandeau de gestion des cookies vous permet d'accepter ou de refuser les cookies non essentiels. Vous pouvez modifier vos préférences à tout moment via le lien "Gestion des cookies" disponible en pied de page.</p>
+            <p>Vous pouvez également configurer votre navigateur pour bloquer ou supprimer les cookies. Cela peut affecter le bon fonctionnement de certaines fonctionnalités du Site.</p>
+          </div>
+
+          <!-- Article 9 -->
+          <div class="lg-section" id="rg-9">
+            <span class="lg-section-num">Article 9</span>
+            <h2>Sécurité des données</h2>
+            <p>Maison John&Co Marketing met en œuvre les mesures techniques et organisationnelles appropriées pour garantir la sécurité de vos données personnelles, notamment :</p>
+            <ul>
+              <li>Chiffrement des données sensibles (SSL/TLS) ;</li>
+              <li>Accès aux données limité aux seules personnes habilitées, avec authentification sécurisée ;</li>
+              <li>Sauvegardes régulières et procédures de restauration ;</li>
+              <li>Formation de notre personnel aux bonnes pratiques de sécurité ;</li>
+              <li>Revue régulière de nos mesures de sécurité.</li>
+            </ul>
+            <p>En cas de violation de données susceptible d'engendrer un risque pour vos droits et libertés, nous nous engageons à notifier la CNIL dans les 72 heures, et les personnes concernées sans délai indu si le risque est élevé.</p>
+          </div>
+
+          <!-- Article 10 -->
+          <div class="lg-section" id="rg-10">
+            <span class="lg-section-num">Article 10</span>
+            <h2>Transferts de données hors de l'Union européenne</h2>
+            <p>Certains de nos sous-traitants (outils SaaS, hébergeurs) peuvent être établis hors de l'Union européenne. Dans ce cas, nous nous assurons que ces transferts sont encadrés par des garanties appropriées conformément au RGPD :</p>
+            <ul>
+              <li>Clauses contractuelles types de la Commission européenne ;</li>
+              <li>Accord d'adéquation entre l'UE et le pays tiers concerné (ex : Data Privacy Framework UE-États-Unis) ;</li>
+              <li>Règles d'entreprise contraignantes.</li>
+            </ul>
+            <p>Pour toute information sur les transferts spécifiques, vous pouvez nous contacter à <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a>.</p>
+          </div>
+
+          <!-- Article 11 -->
+          <div class="lg-section" id="rg-11">
+            <span class="lg-section-num">Article 11</span>
+            <h2>Modifications de la présente politique</h2>
+            <p>Maison John&Co Marketing se réserve le droit de modifier la présente politique de confidentialité à tout moment, notamment pour se conformer à l'évolution de la réglementation applicable.</p>
+            <p>Toute modification substantielle vous sera notifiée par email (si vous êtes abonné à notre newsletter) ou par une mention visible sur le Site. La date de dernière mise à jour est indiquée en tête de la présente politique.</p>
+            <p>Nous vous encourageons à consulter régulièrement cette page pour rester informé des éventuelles mises à jour.</p>
+          </div>
+
+          <!-- Article 12 -->
+          <div class="lg-section" id="rg-12">
+            <span class="lg-section-num">Article 12</span>
+            <h2>Contact — Délégué à la Protection des Données</h2>
+            <p>Pour toute question relative à la présente politique de confidentialité, au traitement de vos données personnelles, ou pour exercer vos droits, vous pouvez contacter notre référent protection des données :</p>
+            <div class="lg-contact-box">
+              <h4>Référent Protection des Données — Maison John&Co Marketing</h4>
+              <p><strong>Email :</strong> <a href="mailto:contact@maison-johnco-marketing.com">contact@maison-johnco-marketing.com</a></p>
+              <p><strong>Objet :</strong> merci de préciser "RGPD — [votre demande]" dans l'objet de votre email</p>
+              <p><strong>Délai de réponse :</strong> 1 mois maximum (délai légal)</p>
+              <p><strong>Justificatif requis :</strong> copie d'un document d'identité pour les demandes d'exercice de droits</p>
+            </div>
+            <p style="margin-top:16px;">Vous avez également le droit d'introduire une réclamation auprès de l'autorité de contrôle compétente, la <strong>CNIL</strong> (<a href="https://www.cnil.fr/fr/vous-souhaitez-contacter-la-cnil" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  // Onglets
+  const tabs = document.querySelectorAll('.lg-tab');
+  const panels = document.querySelectorAll('.lg-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const target = document.getElementById('lg-panel-' + tab.dataset.tab);
+      if(target) target.classList.add('active');
+      window.scrollTo({top: document.querySelector('.lg-tabs-wrap').offsetTop - 10, behavior:'smooth'});
+    });
+  });
+
+  // Lien depuis URL hash (#mentions, #cgv, #rgpd)
+  const hash = window.location.hash?.replace('#','');
+  if(hash && ['mentions','cgv','rgpd'].includes(hash)){
+    tabs.forEach(t => t.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    document.querySelector(`.lg-tab[data-tab="${hash}"]`)?.classList.add('active');
+    document.getElementById(`lg-panel-${hash}`)?.classList.add('active');
+  }
+})();
+
+// Scroll vers un article (appelé depuis le TOC)
+function scrollToId(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const offset = 120;
+  window.scrollTo({top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior:'smooth'});
+}
+</script>
+<!-- /wp:html -->

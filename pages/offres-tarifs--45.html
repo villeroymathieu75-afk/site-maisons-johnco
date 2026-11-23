@@ -1,0 +1,793 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE OFFRES & TARIFS HUB — Maison John&Co Marketing
+     À coller dans un bloc HTML personnalisé WordPress
+     ═══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .mjc-ot {
+    --bg-dark:#0A1628; --bg-darker:#1E3A5F; --bg-light:#FAFAFA; --bg-white:#FFFFFF;
+    --accent:#7C3AED; --accent-l:#A78BFA; --accent-h:#6D28D9; --accent-g:rgba(124,58,237,0.4);
+    --pink:#EC4899; --pink-l:#F9A8D4; --green:#10B981; --green-l:#6EE7B7;
+    --amber:#F59E0B; --amber-l:#FCD34D;
+    --text-d:#1A1A2E; --text-m:#6B7280; --text-l:#FFFFFF; --text-lm:#B0B8C5;
+    --border-l:#E5E7EB; --border-d:rgba(255,255,255,0.1);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--text-d); line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .mjc-ot *,.mjc-ot *::before,.mjc-ot *::after{box-sizing:border-box;}
+  .mjc-ot p{margin:0 0 16px;} .mjc-ot h1,.mjc-ot h2,.mjc-ot h3,.mjc-ot h4{margin:0;letter-spacing:-0.02em;}
+  .mjc-ot a{text-decoration:none;color:inherit;}
+  .mjc-ot-c{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;}
+
+  /* ANIMS */
+  @keyframes ot-grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  @keyframes ot-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  @keyframes ot-pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-g)}70%{box-shadow:0 0 0 14px transparent}}
+  @keyframes ot-up{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+
+  .mjc-ot-rev{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+  .mjc-ot-rev.on{opacity:1;transform:translateY(0);}
+  .mjc-ot-rev.d1{transition-delay:.1s}.mjc-ot-rev.d2{transition-delay:.2s}.mjc-ot-rev.d3{transition-delay:.3s}.mjc-ot-rev.d4{transition-delay:.4s}
+
+  /* HERO */
+  .mjc-ot-hero{background:var(--bg-dark);padding:130px 0 90px;position:relative;overflow:hidden;color:var(--text-l);text-align:center;}
+  .mjc-ot-hero-bg{position:absolute;inset:0;background:linear-gradient(125deg,#0A1628 0%,#1E3A5F 35%,#2D1B69 70%,#0A1628 100%);background-size:400% 400%;animation:ot-grad 20s ease infinite;z-index:0;}
+  .mjc-ot-orb{position:absolute;border-radius:50%;filter:blur(80px);z-index:1;animation:ot-float 8s ease-in-out infinite;}
+  .mjc-ot-orb-1{top:-80px;right:-80px;width:450px;height:450px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.25;}
+  .mjc-ot-orb-2{bottom:-80px;left:-80px;width:350px;height:350px;background:radial-gradient(circle,var(--accent-l),transparent 70%);opacity:.18;animation-delay:-4s;}
+  .mjc-ot-hero-inner{position:relative;z-index:2;max-width:800px;margin:0 auto;}
+  .mjc-ot-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,58,237,.15);backdrop-filter:blur(10px);color:var(--accent-l);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:28px;border:1px solid rgba(167,139,250,.3);animation:ot-up .8s ease-out;}
+  .mjc-ot-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:ot-pulse 2s infinite;}
+  .mjc-ot-hero h1{font-size:56px;font-weight:700;line-height:1.1;margin-bottom:20px;color:var(--text-l);animation:ot-up .9s ease-out .1s both;}
+  .mjc-ot-hero h1 .ag{background:linear-gradient(135deg,#A78BFA,#7C3AED,#C4B5FD);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:ot-grad 5s ease infinite;}
+  .mjc-ot-sub{font-size:18px;color:var(--text-lm);margin-bottom:0;line-height:1.6;animation:ot-up 1s ease-out .3s both;}
+
+  /* SELECTOR PROFIL */
+  .mjc-ot-selector{background:var(--bg-dark);padding:0 0 80px;position:relative;}
+  .mjc-ot-selector::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.1),transparent 70%);}
+  .mjc-ot-who{text-align:center;margin-bottom:48px;position:relative;z-index:1;}
+  .mjc-ot-who h2{font-size:36px;font-weight:700;color:var(--text-l);margin-bottom:12px;}
+  .mjc-ot-who p{font-size:16px;color:var(--text-lm);}
+  .mjc-ot-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:1;}
+  .mjc-ot-card{
+    background:rgba(255,255,255,.04);border:1px solid var(--border-d);border-radius:20px;
+    padding:32px 24px;text-align:center;transition:all .35s cubic-bezier(.16,1,.3,1);cursor:pointer;
+    position:relative;overflow:hidden;
+  }
+  .mjc-ot-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-l));transform:scaleX(0);transform-origin:left;transition:transform .35s ease;}
+  .mjc-ot-card:hover{background:rgba(124,58,237,.1);border-color:rgba(167,139,250,.4);transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.3);}
+  .mjc-ot-card:hover::before{transform:scaleX(1);}
+  .mjc-ot-card.featured{background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(167,139,250,.1));border-color:var(--accent);box-shadow:0 0 40px rgba(124,58,237,.2);}
+  .mjc-ot-card.featured::before{transform:scaleX(1);}
+  .mjc-ot-card-badge{display:inline-block;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:16px;text-transform:uppercase;}
+  .badge-pro{background:rgba(124,58,237,.2);color:var(--accent-l);border:1px solid rgba(124,58,237,.3);}
+  .badge-creator{background:rgba(236,72,153,.2);color:var(--pink-l);border:1px solid rgba(236,72,153,.3);}
+  .badge-part{background:rgba(16,185,129,.2);color:var(--green-l);border:1px solid rgba(16,185,129,.3);}
+  .badge-custom{background:rgba(245,158,11,.2);color:var(--amber-l);border:1px solid rgba(245,158,11,.3);}
+  .mjc-ot-card-emoji{font-size:48px;display:block;margin-bottom:16px;}
+  .mjc-ot-card h3{font-size:22px;font-weight:700;color:var(--text-l);margin-bottom:10px;}
+  .mjc-ot-card p{font-size:14px;color:var(--text-lm);margin-bottom:24px;line-height:1.5;}
+  .mjc-ot-card-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:10px;font-size:14px;font-weight:600;
+    transition:all .3s ease;
+  }
+  .cta-pro{background:var(--accent);color:white;}
+  .cta-pro:hover{background:var(--accent-h);transform:translateY(-2px);box-shadow:0 8px 20px var(--accent-g);}
+  .cta-creator{background:var(--pink);color:white;}
+  .cta-creator:hover{background:#BE185D;transform:translateY(-2px);}
+  .cta-part{background:var(--green);color:white;}
+  .cta-part:hover{background:#059669;transform:translateY(-2px);}
+  .cta-custom{background:var(--amber);color:#0A1628;}
+  .cta-custom:hover{background:#D97706;transform:translateY(-2px);}
+
+  /* SECTION PACKS PRO */
+  .mjc-ot-section{padding:100px 0;position:relative;}
+  .mjc-ot-section-dark{background:var(--bg-dark);color:var(--text-l);}
+  .mjc-ot-section-light{background:var(--bg-white);}
+  .mjc-ot-section-grey{background:var(--bg-light);}
+  .mjc-ot-title-center{text-align:center;max-width:720px;margin:0 auto 64px;}
+  .mjc-ot-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
+  .mjc-ot-eyebrow::before,.mjc-ot-eyebrow::after{content:'';width:24px;height:1px;opacity:.5;}
+  .ey-purple{color:var(--accent-l);}.ey-purple::before,.ey-purple::after{background:var(--accent-l);}
+  .ey-pink{color:var(--pink-l);}.ey-pink::before,.ey-pink::after{background:var(--pink-l);}
+  .ey-green{color:var(--green-l);}.ey-green::before,.ey-green::after{background:var(--green-l);}
+  .ey-amber{color:var(--amber);}.ey-amber::before,.ey-amber::after{background:var(--amber);}
+  .mjc-ot-title-center h2{font-size:44px;font-weight:700;line-height:1.15;margin-bottom:16px;}
+  .mjc-ot-title-center h2.dark{color:var(--text-l);}
+  .mjc-ot-title-center p{font-size:18px;margin:0;}
+  .mjc-ot-title-center p.dark{color:var(--text-lm);}
+  .mjc-ot-title-center p.light{color:var(--text-m);}
+
+  /* PACKS GRILLE */
+  .mjc-ot-packs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .mjc-ot-pack{
+    background:rgba(255,255,255,.04);border:1px solid var(--border-d);border-radius:24px;
+    padding:40px 32px;transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;
+  }
+  .mjc-ot-pack:hover{transform:translateY(-8px);border-color:rgba(167,139,250,.5);box-shadow:0 24px 48px rgba(0,0,0,.3);}
+  .mjc-ot-pack.popular{border-color:var(--accent);background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(167,139,250,.08));}
+  .mjc-ot-pack.popular::after{content:'Plus populaire';position:absolute;top:24px;right:-32px;background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 48px;transform:rotate(45deg);text-transform:uppercase;}
+  .mjc-ot-pack-label{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-l);margin-bottom:8px;}
+  .mjc-ot-pack h3{font-size:26px;font-weight:700;color:var(--text-l);margin-bottom:8px;}
+  .mjc-ot-pack-target{font-size:13px;color:var(--text-lm);margin-bottom:24px;}
+  .mjc-ot-pack-price{margin-bottom:24px;}
+  .mjc-ot-pack-from{font-size:13px;color:var(--text-lm);}
+  .mjc-ot-pack-amount{font-size:52px;font-weight:800;background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+  .mjc-ot-pack-period{font-size:16px;color:var(--text-lm);}
+  .mjc-ot-pack-divider{height:1px;background:var(--border-d);margin:24px 0;}
+  .mjc-ot-pack-features{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:12px;}
+  .mjc-ot-pack-features li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text-lm);line-height:1.5;}
+  .mjc-ot-pack-features li.included{color:var(--text-l);}
+  .mjc-ot-pack-features li .icon{flex-shrink:0;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .icon-yes{background:linear-gradient(135deg,var(--accent),var(--accent-l));color:white;font-size:10px;}
+  .icon-no{background:rgba(255,255,255,.08);color:var(--text-lm);font-size:12px;}
+  .mjc-ot-pack-btn{
+    display:block;width:100%;text-align:center;padding:14px;border-radius:12px;
+    font-size:15px;font-weight:600;transition:all .3s ease;
+  }
+  .pack-btn-solid{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;box-shadow:0 4px 16px var(--accent-g);}
+  .pack-btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--accent-g);}
+  .pack-btn-outline{background:transparent;color:var(--text-l);border:1px solid var(--border-d);}
+  .pack-btn-outline:hover{background:rgba(255,255,255,.06);border-color:var(--accent-l);}
+
+  /* PACKS CRÉATEURS */
+  .mjc-ot-creator-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .mjc-ot-creator-pack{
+    background:var(--bg-white);border:1px solid var(--border-l);border-radius:24px;
+    padding:36px 28px;transition:all .4s ease;position:relative;overflow:hidden;
+  }
+  .mjc-ot-creator-pack:hover{transform:translateY(-6px);border-color:var(--pink-l);box-shadow:0 20px 40px rgba(236,72,153,.1);}
+  .mjc-ot-creator-pack.popular{border-color:var(--pink);box-shadow:0 0 30px rgba(236,72,153,.15);}
+  .mjc-ot-creator-pack.popular::after{content:'Recommandé';position:absolute;top:20px;right:-30px;background:linear-gradient(135deg,var(--pink),#BE185D);color:white;font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 44px;transform:rotate(45deg);text-transform:uppercase;}
+  .creator-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);margin-bottom:8px;}
+  .mjc-ot-creator-pack h3{font-size:24px;font-weight:700;color:var(--text-d);margin-bottom:8px;}
+  .creator-target{font-size:13px;color:var(--text-m);margin-bottom:20px;}
+  .creator-price .from{font-size:12px;color:var(--text-m);}
+  .creator-price .amount{font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--pink),#BE185D);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+  .creator-price .period{font-size:15px;color:var(--text-m);}
+  .creator-divider{height:1px;background:var(--border-l);margin:20px 0;}
+  .creator-features{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;}
+  .creator-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-d);line-height:1.5;}
+  .creator-features li .ck{flex-shrink:0;width:16px;height:16px;background:linear-gradient(135deg,var(--pink),#BE185D);border-radius:50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;margin-top:2px;}
+  .creator-btn{display:block;width:100%;text-align:center;padding:13px;border-radius:12px;font-size:14px;font-weight:600;transition:all .3s ease;}
+  .creator-btn-solid{background:linear-gradient(135deg,var(--pink),#BE185D);color:white;box-shadow:0 4px 16px rgba(236,72,153,.3);}
+  .creator-btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(236,72,153,.4);}
+  .creator-btn-outline{background:transparent;color:var(--text-d);border:1px solid var(--border-l);}
+  .creator-btn-outline:hover{border-color:var(--pink-l);color:var(--pink);}
+
+  /* PACKS PARTICULIERS */
+  .mjc-ot-part-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .mjc-ot-part-pack{
+    background:rgba(255,255,255,.04);border:1px solid var(--border-d);border-radius:24px;
+    padding:36px 28px;transition:all .4s ease;
+  }
+  .mjc-ot-part-pack:hover{transform:translateY(-6px);border-color:rgba(110,231,183,.4);box-shadow:0 20px 40px rgba(0,0,0,.2);}
+  .part-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green-l);margin-bottom:8px;}
+  .mjc-ot-part-pack h3{font-size:22px;font-weight:700;color:var(--text-l);margin-bottom:8px;}
+  .part-target{font-size:13px;color:var(--text-lm);margin-bottom:20px;}
+  .part-price .from{font-size:12px;color:var(--text-lm);}
+  .part-price .amount{font-size:44px;font-weight:800;background:linear-gradient(135deg,var(--green-l),var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+  .part-price .period{font-size:14px;color:var(--text-lm);}
+  .part-divider{height:1px;background:var(--border-d);margin:20px 0;}
+  .part-features{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;}
+  .part-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-lm);line-height:1.5;}
+  .part-features li .ck{flex-shrink:0;width:16px;height:16px;background:linear-gradient(135deg,var(--green),#059669);border-radius:50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;margin-top:2px;}
+  .part-btn{display:block;width:100%;text-align:center;padding:13px;border-radius:12px;font-size:14px;font-weight:600;transition:all .3s ease;}
+  .part-btn-solid{background:linear-gradient(135deg,var(--green),#059669);color:white;box-shadow:0 4px 16px rgba(16,185,129,.3);}
+  .part-btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(16,185,129,.4);}
+  .part-btn-outline{background:rgba(255,255,255,.06);color:var(--text-l);border:1px solid var(--border-d);}
+  .part-btn-outline:hover{border-color:var(--green-l);}
+
+  /* DEVIS SUR MESURE */
+  .mjc-ot-custom{
+    background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(252,211,77,.06));
+    border:1px solid rgba(245,158,11,.3);border-radius:28px;padding:56px;
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+  }
+  .mjc-ot-custom h3{font-size:36px;font-weight:700;color:var(--text-l);margin-bottom:16px;}
+  .mjc-ot-custom > div:first-child p{font-size:17px;color:var(--text-lm);margin-bottom:28px;}
+  .mjc-ot-custom-features{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:12px;}
+  .mjc-ot-custom-features li{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--text-l);}
+  .mjc-ot-custom-features li::before{content:'✓';width:22px;height:22px;background:rgba(245,158,11,.2);color:var(--amber-l);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+  .mjc-ot-custom-form{background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);border-radius:20px;padding:36px;}
+  .mjc-ot-custom-form h4{font-size:20px;font-weight:700;color:var(--text-l);margin-bottom:6px;}
+  .mjc-ot-custom-form > p{font-size:14px;color:var(--text-lm);margin-bottom:24px;}
+  .ot-field{margin-bottom:16px;}
+  .ot-label{display:block;font-size:12px;font-weight:600;color:var(--text-lm);margin-bottom:8px;letter-spacing:.3px;}
+  .ot-input,.ot-select,.ot-textarea{width:100%;padding:13px 16px;background:rgba(255,255,255,.06);border:1px solid var(--border-d);border-radius:10px;color:var(--text-l);font-size:14px;font-family:inherit;transition:all .3s ease;appearance:none;}
+  .ot-input:focus,.ot-select:focus,.ot-textarea:focus{outline:none;border-color:var(--amber);background:rgba(245,158,11,.05);box-shadow:0 0 0 4px rgba(245,158,11,.1);}
+  .ot-input::placeholder,.ot-textarea::placeholder{color:rgba(255,255,255,.3);}
+  .ot-textarea{min-height:90px;resize:vertical;}
+  .ot-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FCD34D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;}
+  .ot-select option{background:#0A1628;color:white;}
+  .ot-submit{width:100%;padding:15px;background:linear-gradient(135deg,var(--amber),#D97706);color:#0A1628;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:all .3s ease;font-family:inherit;margin-top:8px;}
+  .ot-submit:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(245,158,11,.4);}
+
+  /* GARANTIES */
+  .mjc-ot-guarantees{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .mjc-ot-guarantee{text-align:center;padding:32px 20px;background:var(--bg-white);border:1px solid var(--border-l);border-radius:20px;transition:all .3s ease;}
+  .mjc-ot-guarantee:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(10,22,40,.06);border-color:var(--accent-l);}
+  .mjc-ot-guarantee-icon{width:56px;height:56px;background:linear-gradient(135deg,rgba(124,58,237,.1),rgba(167,139,250,.15));color:var(--accent);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+  .mjc-ot-guarantee h4{font-size:17px;font-weight:700;color:var(--text-d);margin-bottom:8px;}
+  .mjc-ot-guarantee p{font-size:13px;color:var(--text-m);margin:0;line-height:1.5;}
+
+  /* FAQ */
+  .mjc-ot-faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .mjc-ot-faq-item{background:var(--bg-white);border:1px solid var(--border-l);border-radius:14px;overflow:hidden;transition:border-color .3s ease;}
+  .mjc-ot-faq-item:hover{border-color:var(--accent-l);}
+  .mjc-ot-faq-q{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;font-weight:600;font-size:15px;color:var(--text-d);user-select:none;transition:color .2s ease;}
+  .mjc-ot-faq-q:hover{color:var(--accent);}
+  .mjc-ot-faq-tog{flex-shrink:0;width:30px;height:30px;background:rgba(124,58,237,.1);color:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;transition:all .3s ease;}
+  .mjc-ot-faq-item.open .mjc-ot-faq-tog{background:var(--accent);color:white;transform:rotate(45deg);}
+  .mjc-ot-faq-a{max-height:0;overflow:hidden;font-size:14px;color:var(--text-m);line-height:1.7;padding:0 24px;transition:max-height .4s ease,padding .4s ease;}
+  .mjc-ot-faq-item.open .mjc-ot-faq-a{max-height:300px;padding:0 24px 20px;}
+
+  /* CTA FINAL */
+  .mjc-ot-cta{background:var(--bg-dark);padding:100px 0;text-align:center;position:relative;overflow:hidden;}
+  .mjc-ot-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);border-radius:50%;}
+  .mjc-ot-cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+  .mjc-ot-cta h2{font-size:44px;font-weight:700;line-height:1.15;margin-bottom:20px;color:var(--text-l);}
+  .mjc-ot-cta h2 .ag{background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .mjc-ot-cta p{font-size:18px;color:var(--text-lm);margin-bottom:36px;}
+  .mjc-ot-cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .ot-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;transition:all .3s ease;border:none;cursor:pointer;font-family:inherit;}
+  .ot-btn-p{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;box-shadow:0 4px 16px var(--accent-g);}
+  .ot-btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--accent-g);}
+  .ot-btn-o{background:rgba(255,255,255,.06);color:white;border:1px solid var(--border-d);}
+  .ot-btn-o:hover{background:rgba(255,255,255,.1);border-color:var(--accent-l);}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .mjc-ot-hero h1{font-size:42px;}
+    .mjc-ot-cards{grid-template-columns:repeat(2,1fr);}
+    .mjc-ot-packs,.mjc-ot-creator-grid,.mjc-ot-part-grid{grid-template-columns:1fr;}
+    .mjc-ot-pack.popular::after,.mjc-ot-creator-pack.popular::after{display:none;}
+    .mjc-ot-custom{grid-template-columns:1fr;padding:36px;gap:32px;}
+    .mjc-ot-guarantees{grid-template-columns:repeat(2,1fr);}
+    .mjc-ot-cta h2{font-size:32px;}
+  }
+  @media(max-width:768px){
+    .mjc-ot-hero{padding:90px 0 60px;}
+    .mjc-ot-hero h1{font-size:30px;}
+    .mjc-ot-sub{font-size:16px;}
+    .mjc-ot-selector{padding:0 0 60px;}
+    .mjc-ot-cards{grid-template-columns:1fr;}
+    .mjc-ot-section{padding:64px 0;}
+    .mjc-ot-title-center h2{font-size:28px;}
+    .mjc-ot-title-center p{font-size:16px;}
+    .mjc-ot-guarantees{grid-template-columns:1fr 1fr;}
+    .mjc-ot-custom-form{padding:24px;}
+    .mjc-ot-cta{padding:64px 0;}
+    .mjc-ot-cta h2{font-size:26px;}
+    .mjc-ot-cta-btns{flex-direction:column;align-items:stretch;}
+    .ot-btn{justify-content:center;}
+  }
+</style>
+
+<div class="mjc-ot">
+
+  <!-- HERO -->
+  <section class="mjc-ot-hero">
+    <div class="mjc-ot-hero-bg"></div>
+    <div class="mjc-ot-orb mjc-ot-orb-1"></div>
+    <div class="mjc-ot-orb mjc-ot-orb-2"></div>
+    <div class="mjc-ot-c">
+      <div class="mjc-ot-hero-inner">
+        <div class="mjc-ot-badge"><span class="mjc-ot-dot"></span>Offres & Tarifs</div>
+        <h1>Des offres claires pour chaque <span class="ag">ambition</span></h1>
+        <p class="mjc-ot-sub">Pas de frais cachés, pas de jargon. Choisissez l'offre qui correspond à votre profil et à vos objectifs — ou demandez un devis entièrement sur mesure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SÉLECTEUR PROFIL -->
+  <section class="mjc-ot-selector">
+    <div class="mjc-ot-c" style="padding-top:60px;">
+      <div class="mjc-ot-who mjc-ot-rev">
+        <h2>Vous êtes...</h2>
+        <p>Sélectionnez votre profil pour accéder à l'offre qui vous correspond</p>
+      </div>
+      <div class="mjc-ot-cards">
+
+        <div class="mjc-ot-card featured mjc-ot-rev">
+          <span class="mjc-ot-card-badge badge-pro">Entreprises</span>
+          <span class="mjc-ot-card-emoji">🏢</span>
+          <h3>Packs Pros</h3>
+          <p>TPE, PME, ETI — des packs structurés par taille d'entreprise pour booster votre croissance digitale.</p>
+          <a href="#packs-pro" class="mjc-ot-card-cta cta-pro">
+            Voir les packs pros
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </div>
+
+        <div class="mjc-ot-card mjc-ot-rev d1">
+          <span class="mjc-ot-card-badge badge-creator">Créateurs</span>
+          <span class="mjc-ot-card-emoji">🎬</span>
+          <h3>Offres Créateurs</h3>
+          <p>Influenceurs, créateurs de contenu — des offres pour développer votre carrière et vos revenus.</p>
+          <a href="#offres-createurs" class="mjc-ot-card-cta cta-creator">
+            Voir les offres créateurs
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </div>
+
+        <div class="mjc-ot-card mjc-ot-rev d2">
+          <span class="mjc-ot-card-badge badge-part">Particuliers</span>
+          <span class="mjc-ot-card-emoji">👤</span>
+          <h3>Offres Particuliers</h3>
+          <p>Formations, coaching et accompagnement pour apprendre le digital à votre rythme.</p>
+          <a href="#offres-particuliers" class="mjc-ot-card-cta cta-part">
+            Voir les offres particuliers
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </div>
+
+        <div class="mjc-ot-card mjc-ot-rev d3">
+          <span class="mjc-ot-card-badge badge-custom">Sur mesure</span>
+          <span class="mjc-ot-card-emoji">⚙️</span>
+          <h3>Devis sur mesure</h3>
+          <p>Votre projet ne rentre dans aucune case ? On construit une proposition 100% personnalisée.</p>
+          <a href="#devis-mesure" class="mjc-ot-card-cta cta-custom">
+            Demander un devis
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKS PROS (fond sombre) -->
+  <section class="mjc-ot-section mjc-ot-section-dark" id="packs-pro" style="scroll-margin-top:80px;">
+    <div class="mjc-ot-c">
+      <div class="mjc-ot-title-center mjc-ot-rev">
+        <div class="mjc-ot-eyebrow ey-purple">Packs professionnels</div>
+        <h2 class="dark">Des packs adaptés à <span class="ag" style="background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">chaque taille d'entreprise</span></h2>
+        <p class="dark">TPE, PME ou ETI — chaque structure a des besoins différents. Nos packs sont conçus pour y répondre précisément.</p>
+      </div>
+
+      <div class="mjc-ot-packs">
+
+        <!-- TPE -->
+        <div class="mjc-ot-pack mjc-ot-rev">
+          <div class="mjc-ot-pack-label">Pack TPE</div>
+          <h3>Starter Digital</h3>
+          <p class="mjc-ot-pack-target">Idéal pour les TPE, artisans, freelances professionnels</p>
+          <div class="mjc-ot-pack-price">
+            <div class="mjc-ot-pack-from">À partir de</div>
+            <div style="display:flex;align-items:baseline;gap:4px;">
+              <div class="mjc-ot-pack-amount">500</div>
+              <div class="mjc-ot-pack-period">€ / mois</div>
+            </div>
+          </div>
+          <div class="mjc-ot-pack-divider"></div>
+          <ul class="mjc-ot-pack-features">
+            <li class="included"><span class="icon icon-yes">✓</span>Audit digital initial</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Stratégie sur mesure</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Gestion 2 réseaux sociaux</li>
+            <li class="included"><span class="icon icon-yes">✓</span>SEO de base</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Rapport mensuel</li>
+            <li class="included"><span class="icon icon-yes">✓</span>1 interlocuteur dédié</li>
+            <li><span class="icon icon-no">–</span>Publicité payante incluse</li>
+            <li><span class="icon icon-no">–</span>Email marketing automatisé</li>
+          </ul>
+          <a href="/contact?type=devis&pack=tpe" class="mjc-ot-pack-btn pack-btn-outline">Demander ce pack</a>
+        </div>
+
+        <!-- PME -->
+        <div class="mjc-ot-pack popular mjc-ot-rev d1">
+          <div class="mjc-ot-pack-label">Pack PME</div>
+          <h3>Growth Digital</h3>
+          <p class="mjc-ot-pack-target">Pour les PME prêtes à accélérer leur croissance digitale</p>
+          <div class="mjc-ot-pack-price">
+            <div class="mjc-ot-pack-from">À partir de</div>
+            <div style="display:flex;align-items:baseline;gap:4px;">
+              <div class="mjc-ot-pack-amount">1 500</div>
+              <div class="mjc-ot-pack-period">€ / mois</div>
+            </div>
+          </div>
+          <div class="mjc-ot-pack-divider"></div>
+          <ul class="mjc-ot-pack-features">
+            <li class="included"><span class="icon icon-yes">✓</span>Audit + stratégie complète</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Gestion 4 réseaux sociaux</li>
+            <li class="included"><span class="icon icon-yes">✓</span>SEO avancé + contenu</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Campagnes PPC (budget excl.)</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Email marketing mensuel</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Dashboard analytics</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Reporting bi-mensuel</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Chef de projet dédié</li>
+          </ul>
+          <a href="/contact?type=devis&pack=pme" class="mjc-ot-pack-btn pack-btn-solid">Demander ce pack</a>
+        </div>
+
+        <!-- ETI -->
+        <div class="mjc-ot-pack mjc-ot-rev d2">
+          <div class="mjc-ot-pack-label">Pack ETI</div>
+          <h3>Scale Digital</h3>
+          <p class="mjc-ot-pack-target">Pour les ETI avec ambitions internationales et équipes internes</p>
+          <div class="mjc-ot-pack-price">
+            <div class="mjc-ot-pack-from">À partir de</div>
+            <div style="display:flex;align-items:baseline;gap:4px;">
+              <div class="mjc-ot-pack-amount">4 000</div>
+              <div class="mjc-ot-pack-period">€ / mois</div>
+            </div>
+          </div>
+          <div class="mjc-ot-pack-divider"></div>
+          <ul class="mjc-ot-pack-features">
+            <li class="included"><span class="icon icon-yes">✓</span>Direction stratégique complète</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Équipe multi-experts dédiée</li>
+            <li class="included"><span class="icon icon-yes">✓</span>SEO international</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Multi-canaux publicitaires</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Automatisation & CRM</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Dashboard temps réel</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Reporting hebdomadaire</li>
+            <li class="included"><span class="icon icon-yes">✓</span>Réunion direction mensuelle</li>
+          </ul>
+          <a href="/contact?type=devis&pack=eti" class="mjc-ot-pack-btn pack-btn-outline">Demander ce pack</a>
+        </div>
+
+      </div>
+
+      <p style="text-align:center;color:var(--text-lm);font-size:13px;margin-top:32px;position:relative;z-index:1;">
+        Tous les packs sont personnalisables et sans engagement long terme.<br>
+        Tarifs indicatifs, devis précis après premier échange gratuit.
+      </p>
+    </div>
+  </section>
+
+  <!-- OFFRES CRÉATEURS (fond blanc) -->
+  <section class="mjc-ot-section mjc-ot-section-light" id="offres-createurs" style="scroll-margin-top:80px;">
+    <div class="mjc-ot-c">
+      <div class="mjc-ot-title-center mjc-ot-rev">
+        <div class="mjc-ot-eyebrow ey-pink">Offres créateurs</div>
+        <h2>Pour les créateurs qui veulent <span style="background:linear-gradient(135deg,var(--pink),#BE185D);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">vivre de leur passion</span></h2>
+        <p class="light">Des offres pensées pour les créateurs de contenu, influenceurs et personnalités digitales, à chaque étape de leur carrière.</p>
+      </div>
+
+      <div class="mjc-ot-creator-grid">
+
+        <!-- Débutant -->
+        <div class="mjc-ot-creator-pack mjc-ot-rev">
+          <div class="creator-label">Débutant</div>
+          <h3>Creator Starter</h3>
+          <p class="creator-target">Pour les créateurs qui débutent ou cherchent à se professionnaliser</p>
+          <div class="creator-price">
+            <div class="from">À partir de</div>
+            <div style="display:flex;align-items:baseline;gap:4px;">
+              <div class="amount">350</div>
+              <div class="period">€ / mois</div>
+            </div>
+          </div>
+          <div class="creator-divider"></div>
+          <ul class="creator-features">
+            <li><span class="ck"></span>Audit de profil & positionnement</li>
+            <li><span class="ck"></span>Personal branding de base</li>
+            <li><span class="ck"></span>Stratégie de contenu 1 plateforme</li>
+            <li><span class="ck"></span>Templates visuels (pack 20)</li>
+            <li><span class="ck"></span>Coaching mensuel 1h</li>
+          </ul>
+          <a href="/contact?type=devis&pack=creator-starter" class="creator-btn creator-btn-outline">Démarrer →</a>
+        </div>
+
+        <!-- Intermédiaire -->
+        <div class="mjc-ot-creator-pack popular mjc-ot-rev d1">
+          <div class="creator-label">Croissance</div>
+          <h3>Creator Growth</h3>
+          <p class="creator-target">Pour les créateurs prêts à monter en puissance et monétiser</p>
+          <div class="creator-price">
+            <div class="from">À partir de</div>
+            <div style="display:flex;align-items:baseline;gap:4px;">
+              <div class="amount">800</div>
+              <div class="period">€ / mois</div>
+            </div>
+          </div>
+          <div class="creator-divider"></div>
+          <ul class="creator-features">
+            <li><span class="ck"></span>Stratégie multi-plateformes</li>
+            <li><span class="ck"></span>Media kit professionnel</li>
+            <li><span class="ck"></span>Community management (2h/jour)</li>
+            <li><span class="ck"></span>Mise en relation avec marques</li>
+            <li><span class="ck"></span>Coaching bi-mensuel</li>
+            <li><span class="ck"></span>Dashboard performances</li>
+          </ul>
+          <a href="/contact?type=devis&pack=creator-growth" class="creator-btn creator-btn-solid">Démarrer →</a>
+        </div>
+
+        <!-- Pro -->
+        <div class="mjc-ot-creator-pack mjc-ot-rev d2">
+          <div class="creator-label">Pro</div>
+          <h3>Creator Pro</h3>
+          <p class="creator-target">Pour les créateurs établis qui veulent scaler leur business</p>
+          <div class="creator-price">
+            <div class="from">À partir de</div>
+            <div style="display:flex;align-items:baseline;gap:4px;">
+              <div class="amount">1 800</div>
+              <div class="period">€ / mois</div>
+            </div>
+          </div>
+          <div class="creator-divider"></div>
+          <ul class="creator-features">
+            <li><span class="ck"></span>Direction créative complète</li>
+            <li><span class="ck"></span>Négociation partenariats</li>
+            <li><span class="ck"></span>Création produits propres</li>
+            <li><span class="ck"></span>Communauté privée setup</li>
+            <li><span class="ck"></span>Email list + newsletter</li>
+            <li><span class="ck"></span>Coaching hebdomadaire</li>
+            <li><span class="ck"></span>Gestionnaire de carrière dédié</li>
+          </ul>
+          <a href="/contact?type=devis&pack=creator-pro" class="creator-btn creator-btn-outline">Démarrer →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFRES PARTICULIERS (fond sombre) -->
+  <section class="mjc-ot-section mjc-ot-section-dark" id="offres-particuliers" style="scroll-margin-top:80px;">
+    <div class="mjc-ot-c">
+      <div class="mjc-ot-title-center mjc-ot-rev">
+        <div class="mjc-ot-eyebrow ey-green">Offres particuliers</div>
+        <h2 class="dark">Apprendre le digital, <span style="background:linear-gradient(135deg,var(--green-l),var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">à votre rythme</span></h2>
+        <p class="dark">Des offres accessibles pour les particuliers qui veulent se former, se reconvertir ou développer un projet personnel.</p>
+      </div>
+
+      <div class="mjc-ot-part-grid">
+
+        <!-- Formation -->
+        <div class="mjc-ot-part-pack mjc-ot-rev">
+          <div class="part-label">Formation</div>
+          <h3>Formation Solo</h3>
+          <p class="part-target">Accès aux formations en ligne en autonomie</p>
+          <div class="part-price">
+            <div class="from">À partir de</div>
+            <div style="display:flex;align-items:baseline;gap:4px;">
+              <div class="amount">97</div>
+              <div class="period">€ / formation</div>
+            </div>
+          </div>
+          <div class="part-divider"></div>
+          <ul class="part-features">
+            <li><span class="ck"></span>Accès formation complète</li>
+            <li><span class="ck"></span>Vidéos + supports PDF</li>
+            <li><span class="ck"></span>Accès replay illimité</li>
+            <li><span class="ck"></span>Exercices pratiques</li>
+            <li><span class="ck"></span>Certificat de complétion</li>
+          </ul>
+          <a href="/services/particuliers" class="part-btn part-btn-outline">Voir les formations</a>
+        </div>
+
+        <!-- Accompagné -->
+        <div class="mjc-ot-part-pack mjc-ot-rev d1" style="border-color:rgba(110,231,183,.4);background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(110,231,183,.05));">
+          <div class="part-label">Accompagné</div>
+          <h3>Formation + Coaching</h3>
+          <p class="part-target">Formation + sessions de coaching individuel</p>
+          <div class="part-price">
+            <div class="from">À partir de</div>
+            <div style="display:flex;align-items:baseline;gap:4px;">
+              <div class="amount">297</div>
+              <div class="period">€ / mois</div>
+            </div>
+          </div>
+          <div class="part-divider"></div>
+          <ul class="part-features">
+            <li><span class="ck"></span>Accès toutes les formations</li>
+            <li><span class="ck"></span>2 sessions coaching / mois</li>
+            <li><span class="ck"></span>Plan personnalisé</li>
+            <li><span class="ck"></span>Accès groupe WhatsApp</li>
+            <li><span class="ck"></span>Feedback sur vos travaux</li>
+            <li><span class="ck"></span>Certificat premium</li>
+          </ul>
+          <a href="/contact?type=devis&pack=particulier-coaching" class="part-btn part-btn-solid">Commencer →</a>
+        </div>
+
+        <!-- Reconversion -->
+        <div class="mjc-ot-part-pack mjc-ot-rev d2">
+          <div class="part-label">Reconversion</div>
+          <h3>Parcours Complet</h3>
+          <p class="part-target">Reconversion professionnelle vers le digital</p>
+          <div class="part-price">
+            <div class="from">À partir de</div>
+            <div style="display:flex;align-items:baseline;gap:4px;">
+              <div class="amount">890</div>
+              <div class="period">€ / trimestre</div>
+            </div>
+          </div>
+          <div class="part-divider"></div>
+          <ul class="part-features">
+            <li><span class="ck"></span>Bilan de compétences inclus</li>
+            <li><span class="ck"></span>Accès toutes les formations</li>
+            <li><span class="ck"></span>Coaching hebdomadaire</li>
+            <li><span class="ck"></span>Construction du portfolio</li>
+            <li><span class="ck"></span>Aide à la recherche d'emploi</li>
+            <li><span class="ck"></span>Mentorat 6 mois</li>
+          </ul>
+          <a href="/contact?type=devis&pack=reconversion" class="part-btn part-btn-outline">Démarrer →</a>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:32px;position:relative;z-index:1;">
+        <p style="color:var(--text-lm);font-size:14px;margin-bottom:16px;">Financement possible via CPF · Tarifs solidaires disponibles sur demande</p>
+        <a href="/nos-projets" style="color:var(--green-l);font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:3px;">Programme Digital Pour Tous → accès solidaire</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVIS SUR MESURE (fond gris) -->
+  <section class="mjc-ot-section mjc-ot-section-dark" id="devis-mesure" style="scroll-margin-top:80px;">
+    <div class="mjc-ot-c">
+      <div class="mjc-ot-custom mjc-ot-rev">
+        <div>
+          <div class="mjc-ot-eyebrow ey-amber" style="margin-bottom:16px;display:inline-flex;">Devis sur mesure</div>
+          <h3>Votre projet ne rentre dans aucune case.</h3>
+          <p>Parfait. Ce sont nos projets préférés. Décrivez-nous votre situation, vos objectifs et vos contraintes. Nous vous revenons avec une proposition claire, détaillée et honnête sous 48h.</p>
+          <ul class="mjc-ot-custom-features">
+            <li>Premier échange 100% gratuit</li>
+            <li>Proposition sous 48h ouvrées</li>
+            <li>Tarif transparent, sans surprise</li>
+            <li>Aucun engagement à l'issue du devis</li>
+            <li>Adaptable à tous les budgets</li>
+          </ul>
+        </div>
+        <div class="mjc-ot-custom-form">
+          <h4>Décrivez votre projet</h4>
+          <p>On vous recontacte sous 24h ouvrées.</p>
+          <div class="ot-field">
+            <label class="ot-label">Vous êtes *</label>
+            <select class="ot-select">
+              <option value="" disabled selected>Sélectionner votre profil</option>
+              <option>Une entreprise (TPE)</option>
+              <option>Une entreprise (PME/ETI)</option>
+              <option>Un créateur de contenu</option>
+              <option>Un particulier</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="ot-field">
+            <label class="ot-label">Votre email *</label>
+            <input type="email" class="ot-input" placeholder="jean@entreprise.com">
+          </div>
+          <div class="ot-field">
+            <label class="ot-label">Décrivez votre besoin *</label>
+            <textarea class="ot-textarea" placeholder="Mon besoin est... / Mon budget est environ... / Je veux atteindre..."></textarea>
+          </div>
+          <button class="ot-submit">
+            Envoyer ma demande →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIES -->
+  <section class="mjc-ot-section mjc-ot-section-grey">
+    <div class="mjc-ot-c">
+      <div class="mjc-ot-title-center mjc-ot-rev">
+        <div class="mjc-ot-eyebrow ey-purple" style="color:var(--accent);"><span style="background:none;color:var(--accent);opacity:.5">—</span> Nos garanties <span style="background:none;color:var(--accent);opacity:.5">—</span></div>
+        <h2>Ce que nous vous promettons</h2>
+        <p class="light">Pas de promesses en l'air. Des engagements concrets sur lesquels vous pouvez vous appuyer.</p>
+      </div>
+
+      <div class="mjc-ot-guarantees">
+        <div class="mjc-ot-guarantee mjc-ot-rev">
+          <div class="mjc-ot-guarantee-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Réponse sous 24h</h4>
+          <p>Toute demande reçoit une réponse dans les 24h ouvrées. Un interlocuteur dédié dès le premier contact.</p>
+        </div>
+        <div class="mjc-ot-guarantee mjc-ot-rev d1">
+          <div class="mjc-ot-guarantee-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Transparence totale</h4>
+          <p>Aucun frais caché, aucune surprise. Vous savez exactement ce que vous payez et ce que vous obtenez.</p>
+        </div>
+        <div class="mjc-ot-guarantee mjc-ot-rev d2">
+          <div class="mjc-ot-guarantee-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h4>Sans engagement caché</h4>
+          <p>Pas de contrat piège. Nos engagements sont clairs, nos préavis raisonnables.</p>
+        </div>
+        <div class="mjc-ot-guarantee mjc-ot-rev d3">
+          <div class="mjc-ot-guarantee-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h4>Résultats mesurables</h4>
+          <p>Chaque action est liée à un KPI clair. Vous suivez vos progrès en temps réel avec votre tableau de bord.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ TARIFS -->
+  <section class="mjc-ot-section mjc-ot-section-light">
+    <div class="mjc-ot-c">
+      <div class="mjc-ot-title-center mjc-ot-rev">
+        <div class="mjc-ot-eyebrow ey-purple" style="color:var(--accent);"><span style="color:var(--accent);opacity:.5">—</span> FAQ tarifs <span style="color:var(--accent);opacity:.5">—</span></div>
+        <h2>Vos questions sur les tarifs</h2>
+        <p class="light">Des réponses directes et honnêtes sur tout ce qui concerne nos prix.</p>
+      </div>
+
+      <div class="mjc-ot-faq-list">
+        <div class="mjc-ot-faq-item">
+          <div class="mjc-ot-faq-q"><span>Pourquoi ne pas afficher des prix fixes ?</span><span class="mjc-ot-faq-tog">+</span></div>
+          <div class="mjc-ot-faq-a">Chaque situation est différente. Un pack "PME" peut varier du simple au triple selon le nombre de canaux, le niveau de maturité digitale, les objectifs et la durée. Les prix affichés sont des points de départ pour que vous sachiez à quel niveau de budget vous attendre. Le devis précis vient après le premier échange.</div>
+        </div>
+        <div class="mjc-ot-faq-item">
+          <div class="mjc-ot-faq-q"><span>Le premier échange est vraiment gratuit ?</span><span class="mjc-ot-faq-tog">+</span></div>
+          <div class="mjc-ot-faq-a">Oui, 100% gratuit et sans obligation. On prend 30 minutes pour comprendre votre situation, vos objectifs et voir si on est le bon partenaire pour vous. Si on ne l'est pas, on vous le disons honnêtement.</div>
+        </div>
+        <div class="mjc-ot-faq-item">
+          <div class="mjc-ot-faq-q"><span>Y a-t-il un budget minimum pour travailler avec vous ?</span><span class="mjc-ot-faq-tog">+</span></div>
+          <div class="mjc-ot-faq-a">Pas de minimum strict. Nos offres démarrent à 97€ (formation solo particulier) jusqu'à plusieurs milliers d'euros par mois pour les ETI. L'essentiel est d'avoir des objectifs clairs et un budget adapté à vos ambitions.</div>
+        </div>
+        <div class="mjc-ot-faq-item">
+          <div class="mjc-ot-faq-q"><span>Les tarifs incluent-ils les budgets publicitaires ?</span><span class="mjc-ot-faq-tog">+</span></div>
+          <div class="mjc-ot-faq-a">Non, les budgets publicitaires (Google Ads, Meta Ads, etc.) sont en sus de nos honoraires. Ils sont versés directement aux plateformes. Nous gérons les campagnes, vous contrôlez le budget publicitaire.</div>
+        </div>
+        <div class="mjc-ot-faq-item">
+          <div class="mjc-ot-faq-q"><span>Comment fonctionne la résiliation ?</span><span class="mjc-ot-faq-tog">+</span></div>
+          <div class="mjc-ot-faq-a">Préavis d'un mois pour les abonnements mensuels, un trimestre pour les engagements trimestriels. Aucun frais de résiliation. On préfère vous garder parce que vous êtes satisfait, pas parce que vous êtes coincé.</div>
+        </div>
+        <div class="mjc-ot-faq-item">
+          <div class="mjc-ot-faq-q"><span>Proposez-vous des facilités de paiement ?</span><span class="mjc-ot-faq-tog">+</span></div>
+          <div class="mjc-ot-faq-a">Pour certaines offres (notamment les formations), nous proposons le paiement en 3x sans frais. Pour les grandes missions, un paiement en plusieurs échéances peut être négocié lors du devis.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="mjc-ot-cta">
+    <div class="mjc-ot-c">
+      <div class="mjc-ot-cta-inner mjc-ot-rev">
+        <h2>Encore des questions ? <span class="ag">Parlons-en.</span></h2>
+        <p>Premier échange gratuit, sans engagement. On clarifie tout ensemble en 30 minutes.</p>
+        <div class="mjc-ot-cta-btns">
+          <a href="/contact?type=rdv" class="ot-btn ot-btn-p">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Prendre rendez-vous gratuitement
+          </a>
+          <a href="/contact?type=devis" class="ot-btn ot-btn-o">
+            Demander un devis précis
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  // FAQ
+  document.querySelectorAll('.mjc-ot-faq-item').forEach(item => {
+    item.querySelector('.mjc-ot-faq-q').addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.mjc-ot-faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+  // Scroll reveal
+  const ro = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); }});
+  }, {threshold:.1, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.mjc-ot-rev').forEach(el => ro.observe(el));
+  // Smooth scroll ancres
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if(t){ e.preventDefault(); window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-80,behavior:'smooth'}); }
+    });
+  });
+})();
+</script>
+<!-- /wp:html -->

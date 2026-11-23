@@ -1,0 +1,496 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webanalyse & Suivi des Conversions | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#1E3A8A',
+                        accent: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <div class="text-center mb-16" data-aos="fade-up">
+            <div class="flex justify-center mb-6">
+                <div class="gradient-bg text-white icon-box">
+                    <i data-feather="bar-chart-2" class="w-6 h-6"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Webanalyse & Suivi des Conversions</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Transformez les comportements utilisateurs en informations décisionnelles pour optimiser votre performance digitale.
+            </p>
+        </div>
+
+        <!-- Definition Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="book-open" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Définition et positionnement du service</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <p class="text-gray-700 mb-4">
+                    Le service Webanalyse & Suivi des Conversions consiste à concevoir, mettre en place et exploiter un dispositif de mesure fiable qui transforme le comportement des utilisateurs en informations décisionnelles.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Il couvre l'architecture de tracking (événements, conversions, paramètres), la collecte multi-canale (web, app, campagnes), la qualité de la donnée (exhaustivité, exactitude, cohérence), l'attribution des résultats aux leviers marketing et la production d'insights actionnables pour optimiser l'acquisition, l'expérience et la rentabilité.
+                </p>
+                <p class="text-gray-700">
+                    L'approche privilégie la conformité réglementaire, la robustesse technique et l'alignement strict sur les objectifs business.
+                </p>
+            </div>
+        </div>
+
+        <!-- Problematic Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="alert-triangle" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Problématiques adressées et objectifs</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <p class="text-gray-700 mb-4">
+                    Ce service répond aux difficultés récurrentes des organisations face à des données incomplètes, contradictoires ou non exploitables :
+                </p>
+                <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                    <li>Balises mal déployées</li>
+                    <li>Écarts entre outils</li>
+                    <li>Perte de signal liée aux restrictions de consentement ou aux navigateurs</li>
+                    <li>Absence de modélisation fiable des entonnoirs</li>
+                    <li>Confusion métrique entre « clics », « sessions » et « utilisateurs »</li>
+                    <li>Incapacité à relier conversions en ligne et revenus réels</li>
+                </ul>
+                <p class="text-gray-700 mb-4">
+                    Les objectifs sont d'établir une mesure de référence (« single source of truth »), de quantifier précisément la contribution des canaux, de suivre la performance des parcours et micro-conversions, d'identifier les frictions, de fiabiliser le pilotage budgétaire et d'accélérer l'amélioration continue.
+                </p>
+            </div>
+        </div>
+
+        <!-- Scope Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="map" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Périmètre d'intervention</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <p class="text-gray-700 mb-6">
+                    Le périmètre intègre l'ensemble de la chaîne de mesure :
+                </p>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Sur le plan fonctionnel :</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Cadrage des objectifs</li>
+                        <li>Définition des KPI (business et opérationnels)</li>
+                        <li>Cartographie des parcours (acquisition, activation, rétention)</li>
+                        <li>Choix des fenêtres d'attribution et des segments</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Sur le plan technique :</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Design du plan de marquage (taxonomy d'événements et de paramètres)</li>
+                        <li>Gouvernance UTM</li>
+                        <li>Suivi cross-domain et cross-device</li>
+                        <li>Gestion des SPA (History API)</li>
+                        <li>E-commerce avancé (vues de liste, vues produit, ajout panier, checkout, remboursements)</li>
+                        <li>Suivi des leads (qualifications, statuts CRM, revenus)</li>
+                        <li>Tracking des appels et formulaires</li>
+                        <li>Imports de conversions hors-ligne</li>
+                        <li>Mode serveur (server-side tagging) pour améliorer la résilience du signal</li>
+                        <li>Intégration data warehouse/BI (exports bruts, schémas, clés d'identification/déduplication)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Sur le plan conformité & confiance :</h3>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>Consentement (CMP)</li>
+                        <li>Paramétrage du Consent Mode</li>
+                        <li>Minimisation et pseudonymisation</li>
+                        <li>Sécurisation des flux</li>
+                        <li>Traçabilité des versions de balises</li>
+                        <li>Documentation et politiques de rétention</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Methodology Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="layers" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Méthodologie et déroulé type</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">1. Cadrage initial</h3>
+                    <p class="text-gray-700">
+                        La démarche s'ouvre par un cadrage qui aligne enjeux business, questions auxquelles la donnée doit répondre, périmètres canaux/produits et décisions attendues.
+                    </p>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">2. Audit 360°</h3>
+                    <p class="text-gray-700">
+                        Vient ensuite un audit 360° des implémentations existantes (balises, dataLayer, cohérence des événements, vues/rapports, charges de page), des écarts entre plateformes (analytics, adtech, CRM) et des contraintes réglementaires.
+                    </p>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">3. Conception du plan de marquage</h3>
+                    <p class="text-gray-700">
+                        Un plan de marquage est conçu : nomenclature des événements et paramètres, mapping des conversions primaires et secondaires, règles UTM, schéma de données pour exports bruts et jointures CRM.
+                    </p>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">4. Implémentation technique</h3>
+                    <p class="text-gray-700">
+                        L'implémentation s'effectue via un gestionnaire de balises (web et, si pertinent, server-side), avec environnements de recette, contrôles qualité automatisés et tests bout-en-bout sur parcours clés.
+                    </p>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">5. Monitoring et alertes</h3>
+                    <p class="text-gray-700">
+                        Un dispositif de monitoring est déployé (alertes d'anomalie, tests de régression, vérifications périodiques).
+                    </p>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">6. Modélisation et attribution</h3>
+                    <p class="text-gray-700">
+                        La modélisation et l'attribution sont paramétrées selon le contexte (fenêtres, règles de déduplication, modèles algorithmiques disponibles).
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">7. Exploitation et optimisation</h3>
+                    <p class="text-gray-700">
+                        La phase d'exploitation produit tableaux de bord, analyses ad-hoc et recommandations d'optimisation continues.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deliverables Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="package" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Livrables standards</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <ul class="list-disc pl-6 text-gray-700 space-y-3">
+                    <li>Document de cadrage analytique (objectifs, KPI, définitions officielles)</li>
+                    <li>Plan de marquage détaillé (événements, paramètres, dataLayer, règles UTM, schémas d'export)</li>
+                    <li>Guide d'implémentation (spécifications par gabarit et par composant)</li>
+                    <li>Checklist QA et procès-verbaux de recette</li>
+                    <li>Matrice d'attribution et de déduplication par canal</li>
+                    <li>Dossier conformité (consentement, minimisation, rétention)</li>
+                    <li>Tableaux de bord opérationnels et exécutifs prêts à l'emploi, alimentés par des jeux de données contrôlés</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="trending-up" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Résultats attendus et indicateurs clés</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <p class="text-gray-700 mb-4">
+                    Les résultats se traduisent par une fiabilité accrue des métriques, la réduction des « données perdues », une vision unifiée des performances, une meilleure compréhension des parcours et un pilotage budgétaire plus précis.
+                </p>
+                <p class="text-gray-700 mb-4 font-semibold">
+                    Indicateurs clés :
+                </p>
+                <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                    <li>Couverture de marquage (pages/événements balisés vs attendus)</li>
+                    <li>Taux d'erreur (événements rejetés, incohérences)</li>
+                    <li>Latence de collecte</li>
+                    <li>Part des sessions/conversions mesurées avec consentement vs modélisées</li>
+                    <li>Cohérence inter-outils (écarts tolérés)</li>
+                    <li>Part de conversions attribuées par canal</li>
+                    <li>Taux de complétion d'entonnoir</li>
+                    <li>Valeur par visiteur</li>
+                    <li>Côté e-commerce/lead gen : le revenu ou pipeline attribué</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Governance Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="users" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Gouvernance et mode de collaboration</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <p class="text-gray-700 mb-4">
+                    Le dispositif repose sur une gouvernance claire : sponsor métier, propriétaire de la donnée, référent technique, responsables canaux.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Les décisions de mesure et d'attribution sont documentées et versionnées ; tout changement de gabarit, de parcours ou d'offre déclenche un cycle de mise à jour du plan de marquage et une recette.
+                </p>
+                <p class="text-gray-700">
+                    Les équipes marketing, produit, data/BI et juridique collaborent de manière rituelle via comités de suivi, backlog et SLA de correction.
+                </p>
+            </div>
+        </div>
+
+        <!-- Prerequisites Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="check-circle" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Pré-requis côté client</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <p class="text-gray-700 mb-4">
+                    Sont nécessaires :
+                </p>
+                <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                    <li>Accès aux environnements (CMS, TMS, préproduction)</li>
+                    <li>Accès aux outils d'analytics et de publicité</li>
+                    <li>Accès à la CMP et à la charte UTM</li>
+                    <li>Accès à la documentation technique des formulaires et checkouts</li>
+                    <li>Le cas échéant, accès aux flux CRM (import/export) et au data warehouse</li>
+                </ul>
+                <p class="text-gray-700 mt-4">
+                    La disponibilité des parties prenantes pour la recette et la validation des définitions KPI est déterminante.
+                </p>
+            </div>
+        </div>
+
+        <!-- Success Factors Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="award" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Facteurs de succès et limites</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <p class="text-gray-700 mb-4">
+                    La réussite dépend de :
+                </p>
+                <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-6">
+                    <li>La discipline de gouvernance (définitions stables, versioning)</li>
+                    <li>La qualité de l'implémentation (dataLayer propre, balises performantes)</li>
+                    <li>La conformité (consentement, minimisation)</li>
+                    <li>La capacité à rapprocher online/offline (imports CRM)</li>
+                </ul>
+                <p class="text-gray-700 mb-4">
+                    Les limites tiennent à :
+                </p>
+                <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                    <li>La variabilité des environnements (navigateurs, ITP, bloqueurs)</li>
+                    <li>Les contraintes de consentement</li>
+                    <li>Les modèles d'attribution qui restent des approximations</li>
+                </ul>
+                <p class="text-gray-700 mt-4">
+                    La transparence sur les hypothèses et la triangulation des sources réduisent ces biais.
+                </p>
+            </div>
+        </div>
+
+        <!-- Use Cases Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="briefcase" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Cas d'usage typiques</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                    <li>Refonte ou migration de site/app</li>
+                    <li>Lancement e-commerce avec suivi granularisé du panier et du checkout</li>
+                    <li>Professionnalisation d'un dispositif d'acquisition multi-plateformes</li>
+                    <li>Réconciliation des conversions en ligne avec le chiffre d'affaires CRM</li>
+                    <li>Mise en place d'un server-side tagging pour améliorer la persistance du signal</li>
+                    <li>Rationalisation d'outils d'analytics multiples en un schéma de données unifié</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Value Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="dollar-sign" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Valeur apportée</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8 hover-scale">
+                <p class="text-gray-700">
+                    La webanalyse et le suivi des conversions convertissent des interactions éparses en avantage informationnel : une donnée fiable, une lecture claire de la contribution des leviers, des arbitrages budgétaires mieux fondés et une boucle d'amélioration continue qui élève durablement la performance marketing et produit.
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-800 icon-box mr-4">
+                    <i data-feather="help-circle" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">Questions fréquentes</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="faq-item p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Quelle est la durée typique d'un projet de webanalyse ?</h3>
+                    <p class="text-gray-700">
+                        La durée varie selon la complexité du dispositif existant et les objectifs. Un audit initial prend 2-3 semaines, l'implémentation complète 4-8 semaines, et l'exploitation continue est mensuelle.
+                    </p>
+                </div>
+                <div class="faq-item p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Quels outils utilisez-vous pour le tracking ?</h3>
+                    <p class="text-gray-700">
+                        Nous travaillons avec tous les outils du marché (Google Analytics, Adobe Analytics, Matomo, etc.) et recommandons le meilleur choix selon votre contexte technique et réglementaire.
+                    </p>
+                </div>
+                <div class="faq-item p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Comment gérez-vous le respect du RGPD ?</h3>
+                    <p class="text-gray-700">
+                        Nous intégrons systématiquement la conformité : consentement via CMP, pseudonymisation, minimisation des données, documentation des traitements et politique de rétention.
+                    </p>
+                </div>
+                <div class="faq-item p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Peut-on suivre des conversions hors ligne ?</h3>
+                    <p class="text-gray-700">
+                        Oui, nous mettons en place des mécanismes d'import des conversions offline (CRM, call centers) et leur attribution aux canaux digitaux d'origine.
+                    </p>
+                </div>
+                <div class="faq-item p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Quelle est la différence avec un simple paramétrage Google Analytics ?</h3>
+                    <p class="text-gray-700">
+                        Nous allons bien au-delà : architecture de données robuste, qualité et exhaustivité du tracking, modélisation avancée, intégration multi-outils, conformité et gouvernance pérenne.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact & Quote -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Devis Button -->
+            <div data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="file-text" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Demander un devis</h2>
+                    <p class="text-gray-600 mb-8">Obtenez une estimation personnalisée gratuite adaptée à vos besoins spécifiques et recevez une proposition détaillée. Notre équipe vous répond sous 48 heures ouvrées.</p>
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="file-text" class="mr-3"></i>
+                        Demander un devis gratuit
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Gratuit et sans engagement</p>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <div data-aos="fade-left">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="mail" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Nous contacter</h2>
+                    <p class="text-gray-600 mb-8">Une question ? Besoin d'informations complémentaires ? Notre équipe est à votre écoute pour échanger sur vos besoins.</p>
+                    <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="mail" class="mr-3"></i>
+                        Nous contacter
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Réponse rapide garantie</p>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        feather.replace();
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const formData = new FormData(this);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            // In a real scenario, you would send this to your server
+            console.log('Form submitted:', formObject);
+            
+            // Show success message
+            alert('Votre demande a bien été envoyée. Nous vous contacterons rapidement.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

@@ -1,0 +1,623 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création & Optimisation de Sites Web | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 32px;
+            height: calc(100% - 32px);
+            width: 2px;
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <section class="text-center mb-16" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <span class="text-blue-600">Création</span> & <span class="text-blue-600">Optimisation</span> de Sites Web
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Des plateformes digitales performantes conçues pour maximiser votre visibilité, vos conversions et votre crédibilité en ligne.
+            </p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="https://maison-johnco-marketing.com/devis-sur-mesure/" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+                    Demander un devis
+                </a>
+                <a href="#methodologie" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition duration-300">
+                    Notre méthode
+                </a>
+            </div>
+        </section>
+
+        <!-- Definition Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="gradient-bg rounded-2xl p-8 md:p-12">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i data-feather="globe" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Définition et périmètre</h2>
+                        <div class="space-y-4 text-gray-700">
+                            <p>
+                                La création et l'optimisation de sites web englobent l'ensemble des processus nécessaires à la conception, au développement, à la mise en ligne et à l'amélioration continue d'une plateforme digitale destinée à représenter une marque, une entreprise, une institution ou un projet.
+                            </p>
+                            <p>
+                                La création concerne la planification, la conception graphique et technique, l'intégration des contenus et la mise en place des fonctionnalités nécessaires pour atteindre les objectifs définis.
+                            </p>
+                            <p>
+                                L'optimisation vise à améliorer en permanence les performances, l'ergonomie, le référencement naturel (SEO), la rapidité d'affichage, la compatibilité mobile et la capacité du site à générer des conversions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Goals -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Finalités business et marketing</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 service-card transition duration-300">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="eye" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Visibilité & Crédibilité</h3>
+                    <p class="text-gray-600">
+                        Assurer la présence et la crédibilité de votre marque sur Internet avec une plateforme professionnelle.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 service-card transition duration-300">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Trafic Qualifié</h3>
+                    <p class="text-gray-600">
+                        Générer du trafic ciblé grâce à une structure optimisée pour les moteurs de recherche.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 service-card transition duration-300">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="dollar-sign" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Conversion</h3>
+                    <p class="text-gray-600">
+                        Transformer les visiteurs en prospects ou clients via des parcours utilisateurs efficaces.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 service-card transition duration-300">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="users" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Fidélisation</h3>
+                    <p class="text-gray-600">
+                        Fidéliser votre audience avec une expérience fluide, rapide et cohérente.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 service-card transition duration-300">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="award" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Image de Marque</h3>
+                    <p class="text-gray-600">
+                        Soutenir votre image en reflétant vos valeurs, votre qualité et votre expertise.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 service-card transition duration-300">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="bar-chart-2" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Actif Stratégique</h3>
+                    <p class="text-gray-600">
+                        Un site bien conçu réduit les coûts d'acquisition et améliore les performances marketing globales.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodologie -->
+        <section id="methodologie" class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Approche méthodologique</h2>
+            <div class="relative">
+                <div class="space-y-8">
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Analyse et cadrage</h3>
+                        <p class="text-gray-600">
+                            Étude des besoins, définition des objectifs, analyse du public cible, identification des concurrents et des tendances sectorielles.
+                        </p>
+                    </div>
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Conception fonctionnelle et graphique</h3>
+                        <p class="text-gray-600">
+                            Élaboration d'une architecture de l'information (sitemap), création de wireframes et maquettes UI, définition d'une identité visuelle adaptée.
+                        </p>
+                    </div>
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Développement technique</h3>
+                        <p class="text-gray-600">
+                            Intégration front-end et back-end, mise en place d'un CMS ou d'une solution sur mesure, installation des modules nécessaires (sécurité, formulaires, CRM, e-commerce si besoin).
+                        </p>
+                    </div>
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Optimisation SEO on-page</h3>
+                        <p class="text-gray-600">
+                            Hiérarchisation des balises, optimisation des contenus, amélioration des temps de chargement, maillage interne, structuration des données.
+                        </p>
+                    </div>
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Optimisation UX et conversion</h3>
+                        <p class="text-gray-600">
+                            Fluidité des parcours, call-to-action stratégiques, compatibilité mobile et responsive, simplification des formulaires, réduction des frictions.
+                        </p>
+                    </div>
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="font-bold">6</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Sécurité et conformité</h3>
+                        <p class="text-gray-600">
+                            Certificat SSL, protection contre les intrusions, conformité RGPD pour la gestion des données.
+                        </p>
+                    </div>
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="font-bold">7</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Tests et validation</h3>
+                        <p class="text-gray-600">
+                            Contrôles multi-supports et multi-navigateurs, tests de performance et d'accessibilité, validation avec les parties prenantes.
+                        </p>
+                    </div>
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="font-bold">8</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Mise en ligne et suivi</h3>
+                        <p class="text-gray-600">
+                            Déploiement du site, suivi analytique et configuration des outils de tracking.
+                        </p>
+                    </div>
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="font-bold">9</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Amélioration continue</h3>
+                        <p class="text-gray-600">
+                            Suivi des indicateurs, ajustements réguliers, mises à jour techniques et éditoriales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standards Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="gradient-bg rounded-2xl p-8 md:p-12">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i data-feather="check-circle" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Standards de qualité et conformité</h2>
+                        <div class="space-y-4 text-gray-700">
+                            <p>
+                                Un site web doit respecter les normes techniques du web (W3C), assurer l'accessibilité numérique (respect des standards WCAG), être compatible avec tous les appareils et navigateurs principaux, et garantir des performances optimales (Core Web Vitals).
+                            </p>
+                            <p>
+                                La conformité légale est également obligatoire, notamment concernant la gestion des cookies et la protection des données personnelles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interdependance -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Interdépendance avec les autres disciplines digitales</h2>
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-64 h-64 rounded-full bg-blue-50 opacity-70"></div>
+                            </div>
+                            <div class="relative grid grid-cols-3 gap-4">
+                                <div class="bg-blue-100 p-4 rounded-lg flex flex-col items-center">
+                                    <i data-feather="layout" class="text-blue-600 mb-2"></i>
+                                    <span class="text-sm font-medium text-center">Webdesign & UI Design</span>
+                                </div>
+                                <div class="bg-blue-100 p-4 rounded-lg flex flex-col items-center">
+                                    <i data-feather="user" class="text-blue-600 mb-2"></i>
+                                    <span class="text-sm font-medium text-center">UX Design</span>
+                                </div>
+                                <div class="bg-blue-100 p-4 rounded-lg flex flex-col items-center">
+                                    <i data-feather="search" class="text-blue-600 mb-2"></i>
+                                    <span class="text-sm font-medium text-center">SEO</span>
+                                </div>
+                                <div class="bg-blue-100 p-4 rounded-lg flex flex-col items-center">
+                                    <i data-feather="file-text" class="text-blue-600 mb-2"></i>
+                                    <span class="text-sm font-medium text-center">Content Marketing</span>
+                                </div>
+                                <div class="bg-blue-100 p-4 rounded-lg flex flex-col items-center">
+                                    <i data-feather="bar-chart" class="text-blue-600 mb-2"></i>
+                                    <span class="text-sm font-medium text-center">Analyse de données</span>
+                                </div>
+                                <div class="bg-blue-100 p-4 rounded-lg flex flex-col items-center">
+                                    <i data-feather="send" class="text-blue-600 mb-2"></i>
+                                    <span class="text-sm font-medium text-center">Stratégies d'acquisition</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <p class="text-gray-600 mb-4">
+                            La création et l'optimisation d'un site web s'articulent directement avec le Webdesign et l'UI Design, qui définissent l'identité visuelle, et avec l'UX Design, qui structure les parcours utilisateurs.
+                        </p>
+                        <p class="text-gray-600 mb-4">
+                            Elles sont également étroitement liées au SEO, au content marketing, à l'analyse de données et aux stratégies d'acquisition de trafic (SEA, réseaux sociaux, email marketing).
+                        </p>
+                        <p class="text-gray-600">
+                            Un site optimisé devient ainsi un hub central alimentant et consolidant l'ensemble de l'écosystème digital d'une marque.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Livrables -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Formats et livrables</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="border border-gray-200 rounded-lg p-6 flex items-start">
+                    <div class="bg-blue-100 p-2 rounded-full mr-4">
+                        <i data-feather="file-text" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Cahier des charges détaillé</h3>
+                        <p class="text-sm text-gray-600">Document complet définissant les spécifications techniques et fonctionnelles.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 flex items-start">
+                    <div class="bg-blue-100 p-2 rounded-full mr-4">
+                        <i data-feather="map" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Sitemap validé et wireframes</h3>
+                        <p class="text-sm text-gray-600">Architecture de l'information et schémas d'interface.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 flex items-start">
+                    <div class="bg-blue-100 p-2 rounded-full mr-4">
+                        <i data-feather="image" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Maquettes haute fidélité</h3>
+                        <p class="text-sm text-gray-600">Designs finaux approuvés avant développement.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 flex items-start">
+                    <div class="bg-blue-100 p-2 rounded-full mr-4">
+                        <i data-feather="monitor" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Site fonctionnel prêt à être mis en ligne</h3>
+                        <p class="text-sm text-gray-600">Version finale testée et optimisée.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 flex items-start">
+                    <div class="bg-blue-100 p-2 rounded-full mr-4">
+                        <i data-feather="book" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Guide d'administration et de mise à jour</h3>
+                        <p class="text-sm text-gray-600">Documentation complète pour la gestion autonome.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 flex items-start">
+                    <div class="bg-blue-100 p-2 rounded-full mr-4">
+                        <i data-feather="target" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Plan d'optimisation SEO et performance</h3>
+                        <p class="text-sm text-gray-600">Stratégie détaillée pour améliorer continuellement le site.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 flex items-start col-span-1 md:col-span-2 lg:col-span-3">
+                    <div class="bg-blue-100 p-2 rounded-full mr-4">
+                        <i data-feather="clipboard" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Rapport d'audit post-lancement</h3>
+                        <p class="text-sm text-gray-600">Analyse complète des performances après mise en ligne avec recommandations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="gradient-bg rounded-2xl p-8 md:p-12">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i data-feather="activity" class="text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Mesure de performance et optimisation continue</h2>
+                        <div class="space-y-4 text-gray-700">
+                            <p>
+                                Les performances d'un site web se mesurent à travers différents indicateurs : vitesse de chargement, taux de rebond, durée moyenne de session, nombre de pages vues, taux de conversion, trafic organique, classement SEO, rétention utilisateur et ROI global.
+                            </p>
+                            <p>
+                                Ces données alimentent une boucle d'amélioration continue permettant de maintenir la compétitivité du site et d'adapter ses fonctionnalités aux évolutions des usages et des technologies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Résultats attendus</h2>
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <div class="flex flex-col space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <i data-feather="check" class="text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-600">
+                                    Une plateforme <span class="font-semibold">robuste, performante, sécurisée et attractive</span>
+                                </p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <i data-feather="check" class="text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-600">
+                                    Une <span class="font-semibold">visibilité optimale</span> dans les moteurs de recherche
+                                </p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <i data-feather="check" class="text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-600">
+                                    Une <span class="font-semibold">expérience utilisateur fluide</span> et intuitive
+                                </p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <i data-feather="check" class="text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-600">
+                                    Des <span class="font-semibold">taux de conversion maximisés</span>
+                                </p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <i data-feather="check" class="text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-600">
+                                    Une <span class="font-semibold">image de marque renforcée</span> durablement
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <p class="text-gray-600 mb-4">
+                            Le résultat attendu est un outil digital central, capable de soutenir efficacement les ambitions marketing, commerciales et relationnelles de l'entreprise.
+                        </p>
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                            <div class="flex">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <i data-feather="zap" class="text-blue-600"></i>
+                                </div>
+                                <p class="text-blue-800 font-medium">
+                                    Votre site web devient un actif stratégique générant un retour sur investissement mesurable.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Questions fréquentes</h2>
+            <div class="space-y-4 max-w-3xl mx-auto">
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span class="font-medium">Combien de temps prend la création d'un site web ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-answer hidden p-4 pt-0 text-gray-600">
+                        <p>
+                            Le délai de création dépend de la complexité du projet. Un site vitrine simple peut être livré en 4 à 6 semaines, tandis qu'un site e-commerce ou une plateforme complexe peut nécessiter 3 à 6 mois. Nous établissons un calendrier précis lors de la phase de cadrage initial.
+                        </p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span class="font-medium">Quelle est la différence entre un CMS et un développement sur mesure ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-answer hidden p-4 pt-0 text-gray-600">
+                        <p>
+                            Un CMS (comme WordPress) est une solution pré-construite, modifiable via interface, idéale pour des besoins standards. Un développement sur mesure est codé spécifiquement pour votre projet, offrant une flexibilité totale mais à un coût plus élevé. Nous vous conseillons sur le meilleur choix selon vos besoins.
+                        </p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span class="font-medium">Quels sont les coûts d'un site web ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-answer hidden p-4 pt-0 text-gray-600">
+                        <p>
+                            Les tarifs varient de 3 000 € pour un site vitrine simple à 15 000 €+ pour un site e-commerce ou une plateforme complexe. Ce budget inclut la conception, le développement, les formations et souvent une année de maintenance. Nous fournissons un devis détaillé après analyse de vos besoins spécifiques.
+                        </p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span class="font-medium">Proposez-vous des services d'hébergement ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-answer hidden p-4 pt-0 text-gray-600">
+                        <p>
+                            Oui, nous proposons des solutions d'hébergement performantes et sécurisées, adaptées à chaque type de projet. Nous gérons également les mises à jour techniques, les sauvegardes et la surveillance de sécurité pour vous offrir une tranquillité d'esprit totale.
+                        </p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span class="font-medium">Comment garantir que mon site sera bien référencé ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-answer hidden p-4 pt-0 text-gray-600">
+                        <p>
+                            Nous intégrons les bonnes pratiques SEO dès la conception (structure technique, balisage, performances) et optimisons tous les contenus. Nous fournissons également un plan d'action SEO post-lancement et pouvons accompagner votre équipe dans la production de contenus optimisés.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Quote -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Devis Button -->
+            <div data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="file-text" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Demander un devis</h2>
+                    <p class="text-gray-600 mb-8">Obtenez une estimation personnalisée gratuite adaptée à vos besoins spécifiques et recevez une proposition détaillée. Notre équipe vous répond sous 48 heures ouvrées.</p>
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="file-text" class="mr-3"></i>
+                        Demander un devis gratuit
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Gratuit et sans engagement</p>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <div data-aos="fade-left">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="mail" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Nous contacter</h2>
+                    <p class="text-gray-600 mb-8">Une question ? Besoin d'informations complémentaires ? Notre équipe est à votre écoute pour échanger sur vos besoins.</p>
+                    <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="mail" class="mr-3"></i>
+                        Nous contacter
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Réponse rapide garantie</p>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+
+            // FAQ toggle
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    answer.classList.toggle('hidden');
+                    icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                });
+            });
+
+            // Form submission
+            const devisForm = document.getElementById('devisForm');
+            if (devisForm) {
+                devisForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(devisForm);
+                    const submitBtn = devisForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+                    
+                    try {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<span>Envoi en cours...</span>';
+                        
+                        // In a real scenario, you would send this to your server
+                        console.log('Form data:', Object.fromEntries(formData));
+                        
+                        // Simulate API call
+                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        
+                        // Show success message
+                        alert('Votre demande de devis a bien été envoyée. Nous vous contacterons rapidement.');
+                        devisForm.reset();
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                        feather.replace();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

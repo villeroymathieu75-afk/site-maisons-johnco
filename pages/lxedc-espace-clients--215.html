@@ -1,0 +1,188 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LXEDC - Votre commande est confirmée</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center gradient-bg">
+    <div class="max-w-3xl mx-auto px-6 py-12">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden p-8 md:p-10" data-aos="fade-up">
+            <div class="text-center mb-8">
+                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 pulse-animation">
+                    <i data-feather="clock" class="text-blue-500 w-10 h-10"></i>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Merci pour votre commande !</h1>
+                <p class="text-lg text-gray-600">Votre achat est confirmé et votre profil est en cours de vérification.</p>
+            </div>
+
+            <div class="space-y-6 mb-10">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i data-feather="calendar" class="text-blue-500 w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Disponibilité des contenus</h3>
+                        <p class="text-gray-600 mt-1">Vos documents seront disponibles à partir du <span class="font-bold text-blue-500">26 septembre</span>. Nous travaillons actuellement à leur préparation pour vous offrir la meilleure expérience possible.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i data-feather="refresh-cw" class="text-blue-500 w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Mises à jour régulières</h3>
+                        <p class="text-gray-600 mt-1">Tous les <span class="font-bold text-blue-500">26 du mois</span>, les documents seront mis à jour et complétés avec de nouveaux contenus pour enrichir votre expérience.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i data-feather="mail" class="text-blue-500 w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Service client</h3>
+                        <p class="text-gray-600 mt-1">Pour toute question ou problème, n'hésitez pas à contacter notre équipe à l'adresse : <a href="mailto:serviceclient@maison-johnco-marketing.com" class="text-blue-500 hover:underline">serviceclient@maison-johnco-marketing.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 rounded-lg p-6 text-center">
+                <i data-feather="info" class="w-6 h-6 text-blue-500 mx-auto mb-3"></i>
+                <p class="text-blue-700 font-medium">Le service est actuellement en préparation. Les contenus arrivent progressivement et seront disponibles très bientôt. Nous vous remercions pour votre patience et votre confiance.</p>
+            </div>
+
+            <!-- Programme d'affiliation -->
+            <section class="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+                <div class="container mx-auto max-w-6xl">
+                    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Gagnez jusqu'à 500€/mois avec notre programme d'affiliation</h2>
+                   
+                    <div class="bg-white bg-opacity-20 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">Comment ça marche ?</h3>
+                                <p class="text-lg mb-6">Parrainez des membres et gagnez <span class="font-bold text-yellow-300">25% de commission</span> sur chaque abonnement que vous générez. Plus vous parrainez, plus vous gagnez !</p>
+                               
+                                <div class="flex items-center mb-6">
+                                    <div class="bg-yellow-400 text-purple-900 p-3 rounded-full mr-4">
+                                        <i data-feather="dollar-sign" class="w-6 h-6"></i>
+                                    </div>
+                                    <p class="text-lg">Paiements automatiques chaque mois via PayPal ou virement bancaire</p>
+                                </div>
+                               
+                                <a href="https://maison-john-amp-co-marketing.surecart.com/affiliates/sign_up" class="bg-yellow-400 hover:bg-yellow-500 text-purple-900 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 inline-block">
+                                    Rejoindre et commencer à parrainer
+                                </a>
+                            </div>
+                           
+                            <div class="bg-white bg-opacity-90 rounded-lg p-6 text-purple-900">
+                                <h3 class="text-xl font-bold mb-4 text-center">Vos gains potentiels</h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-purple-100 p-4 rounded-lg text-center">
+                                        <p class="text-sm">20 parrainages</p>
+                                        <p class="text-2xl font-bold">100€/mois</p>
+                                    </div>
+                                    <div class="bg-purple-100 p-4 rounded-lg text-center">
+                                        <p class="text-sm">30 parrainages</p>
+                                        <p class="text-2xl font-bold">150€/mois</p>
+                                    </div>
+                                    <div class="bg-purple-100 p-4 rounded-lg text-center">
+                                        <p class="text-sm">40 parrainages</p>
+                                        <p class="text-2xl font-bold">200€/mois</p>
+                                    </div>
+                                    <div class="bg-purple-100 p-4 rounded-lg text-center">
+                                        <p class="text-sm">50 parrainages</p>
+                                        <p class="text-2xl font-bold">250€/mois</p>
+                                    </div>
+                                    <div class="bg-purple-100 p-4 rounded-lg text-center">
+                                        <p class="text-sm">60 parrainages</p>
+                                        <p class="text-2xl font-bold">300€/mois</p>
+                                    </div>
+                                    <div class="bg-purple-100 p-4 rounded-lg text-center">
+                                        <p class="text-sm">70 parrainages</p>
+                                        <p class="text-2xl font-bold">350€/mois</p>
+                                    </div>
+                                    <div class="bg-purple-100 p-4 rounded-lg text-center">
+                                        <p class="text-sm">80 parrainages</p>
+                                        <p class="text-2xl font-bold">400€/mois</p>
+                                    </div>
+                                    <div class="bg-purple-100 p-4 rounded-lg text-center">
+                                        <p class="text-sm">90 parrainages</p>
+                                        <p class="text-2xl font-bold">450€/mois</p>
+                                    </div>
+                                    <div class="bg-purple-100 p-4 rounded-lg text-center col-span-2">
+                                        <p class="text-sm">100 parrainages</p>
+                                        <p class="text-3xl font-bold text-purple-600">500€/mois</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="mt-10 text-center">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Aperçu du programme 2025-2026</h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Accès+aux+documents+LXEDC&details=Les+documents+de+votre+formation+LXEDC+sont+maintenant+disponibles+sur+https://maison-johnco-marketing.com/lxedc-espace-clients/&dates=20240926T000000Z/20240926T235959Z" 
+                       target="_blank" 
+                       class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
+                        <i data-feather="calendar" class="w-5 h-5"></i>
+                        Ajouter le 26 septembre
+                    </a>
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Mise+à+jour+LXEDC&details=Nouveaux+contenus+disponibles+pour+votre+formation+LXEDC+sur+https://maison-johnco-marketing.com/lxedc-espace-clients/&dates=20240926T000000Z/20240926T235959Z&recur=RRULE:FREQ=MONTHLY;BYMONTHDAY=26" 
+                       target="_blank" 
+                       class="bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
+                        <i data-feather="refresh-cw" class="w-5 h-5"></i>
+                        Rappel mensuel
+                    </a>
+                </div>
+                <div class="overflow-hidden rounded-lg shadow mt-4">
+                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRveyjdO16w79-V4-0A-VAVuGOca6bUIThYkcZqsPY57iC6kdjeBHtBP4zzg52sVyREKhVMmsPS3UM1/pubhtml?gid=1256480885&amp;single=true&amp;widget=true&amp;headers=false" class="w-full h-[500px] border-0"></iframe>
+                </div>
+                <p class="text-gray-500 text-sm mt-4 text-center">Ce tableau est susceptible d'évoluer pour améliorer votre expérience.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

@@ -1,0 +1,66 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTENU & RÉDACTION</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-16">CONTENU & RÉDACTION</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Copywriting & Rédaction Commerciale -->
+            <a href="copywriting-redaction-commerciale" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
+                <div class="bg-blue-100 p-4 rounded-full mb-4">
+                    <i data-feather="trending-up" class="text-blue-600 w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Copywriting & Rédaction Commerciale</h3>
+                <p class="text-blue-600 font-medium">En savoir plus →</p>
+            </a>
+
+            <!-- Rédaction SEO & Articles de Blog -->
+            <a href="redaction-seo-articles-de-blog" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
+                <div class="bg-purple-100 p-4 rounded-full mb-4">
+                    <i data-feather="pen-tool" class="text-purple-600 w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Rédaction SEO & Articles de Blog</h3>
+                <p class="text-purple-600 font-medium">En savoir plus →</p>
+            </a>
+
+            <!-- Création de Scripts Vidéo Publicitaires -->
+            <a href="creation-de-scripts-video-publicitaires" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
+                <div class="bg-red-100 p-4 rounded-full mb-4">
+                    <i data-feather="dollar-sign" class="text-red-600 w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Création de Scripts Vidéo Publicitaires</h3>
+                <p class="text-red-600 font-medium">En savoir plus →</p>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

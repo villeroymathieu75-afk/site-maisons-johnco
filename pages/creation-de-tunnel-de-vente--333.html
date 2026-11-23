@@ -1,0 +1,623 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de Tunnel de Vente | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#1E3A8A',
+                        accent: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .funnel-step {
+            position: relative;
+        }
+        .funnel-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background-color: #3B82F6;
+        }
+        .contact-card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Hero Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Création de Tunnel de Vente</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Transformez votre trafic en clients fidèles avec des parcours d'achat automatisés et optimisés.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center justify-center mb-6">
+                    <i data-feather="layers" class="w-12 h-12 text-accent mr-4"></i>
+                    <h2 class="text-2xl font-bold text-secondary">Définition et périmètre</h2>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    La création de tunnel de vente désigne l'élaboration d'un parcours digital structuré qui guide un prospect depuis sa première interaction avec la marque jusqu'à l'achat final et, idéalement, jusqu'à sa fidélisation.
+                </p>
+                <p class="text-gray-700">
+                    Un tunnel de vente (ou "sales funnel") se compose d'étapes successives pensées pour capter l'attention, susciter l'intérêt, déclencher la décision et provoquer l'action. Le périmètre inclut la conception stratégique, la mise en place technique (pages de capture, séquences emails, offres intermédiaires, upsell, downsell), l'optimisation de chaque étape pour maximiser la conversion et l'intégration des outils de suivi analytique.
+                </p>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center justify-center mb-8">
+                <i data-feather="target" class="w-10 h-10 text-accent mr-4"></i>
+                <h2 class="text-3xl font-bold text-secondary">Finalités business et marketing</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="users" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Transformation du trafic</h3>
+                    </div>
+                    <p class="text-gray-600">Transformer un trafic non qualifié en prospects identifiés</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="mail" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Lead nurturing</h3>
+                    </div>
+                    <p class="text-gray-600">Nourrir la relation par des contenus pertinents</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="clock" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Cycle d'achat réduit</h3>
+                    </div>
+                    <p class="text-gray-600">Réduire le cycle d'achat grâce à des séquences automatisées</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="250">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="trending-up" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Valeur moyenne augmentée</h3>
+                    </div>
+                    <p class="text-gray-600">Augmenter la valeur moyenne des paniers via des offres complémentaires</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="dollar-sign" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">ROI optimisé</h3>
+                    </div>
+                    <p class="text-gray-600">Maximiser le retour sur investissement publicitaire</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="350">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="repeat" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Fidélisation</h3>
+                    </div>
+                    <p class="text-gray-600">Fidéliser les clients par des parcours post-achat adaptés</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg" data-aos="fade-up">
+                <p class="text-gray-700 italic">
+                    Bien conçu, le tunnel devient une machine commerciale automatisée, capable de générer des ventes récurrentes tout en réduisant les coûts humains et marketing.
+                </p>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center justify-center mb-8">
+                <i data-feather="list" class="w-10 h-10 text-accent mr-4"></i>
+                <h2 class="text-3xl font-bold text-secondary">Approche méthodologique</h2>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-3 mr-4">
+                                <span class="font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Analyse stratégique</h3>
+                                <p class="text-gray-600">
+                                    Définition des objectifs (génération de leads, vente directe, abonnement), étude des audiences cibles et de leurs comportements.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+                    <div class="p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-3 mr-4">
+                                <span class="font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Cartographie du funnel</h3>
+                                <p class="text-gray-600">
+                                    Modélisation des différentes étapes (TOFU, MOFU, BOFU – Top, Middle, Bottom of Funnel) et identification des points de contact essentiels.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-3 mr-4">
+                                <span class="font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Création des pages dédiées</h3>
+                                <p class="text-gray-600">
+                                    Landing pages de capture, pages de vente, pages de paiement, pages de remerciement.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="250">
+                    <div class="p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-3 mr-4">
+                                <span class="font-bold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Mise en place des offres</h3>
+                                <p class="text-gray-600">
+                                    Produit d'appel (tripwire), offre principale, upsells et downsells pour maximiser la valeur du client.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-3 mr-4">
+                                <span class="font-bold">5</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Automatisation marketing</h3>
+                                <p class="text-gray-600">
+                                    Intégration d'outils d'emailing et CRM, séquences de nurturing, relances automatiques de paniers abandonnés.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="350">
+                    <div class="p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-3 mr-4">
+                                <span class="font-bold">6</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Optimisation UX et design</h3>
+                                <p class="text-gray-600">
+                                    Parcours fluides, call-to-action stratégiques, preuves sociales (avis clients, témoignages), éléments de réassurance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-3 mr-4">
+                                <span class="font-bold">7</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Intégration technique</h3>
+                                <p class="text-gray-600">
+                                    Connexion aux systèmes de paiement, plateformes publicitaires, outils d'analyse et suivi des conversions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="450">
+                    <div class="p-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-3 mr-4">
+                                <span class="font-bold">8</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2">Tests et optimisation continue</h3>
+                                <p class="text-gray-600">
+                                    A/B testing des titres, offres, visuels et placements CTA pour maximiser les résultats.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standards Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="flex items-center justify-center mb-6">
+                    <i data-feather="shield" class="w-12 h-12 text-accent mr-4"></i>
+                    <h2 class="text-2xl font-bold text-secondary">Standards de qualité et conformité</h2>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    Chaque tunnel de vente doit respecter les règles légales (RGPD pour la collecte des données, informations claires sur les prix, CGV et mentions légales accessibles) et les normes de sécurité (paiements sécurisés, certificats SSL).
+                </p>
+                <p class="text-gray-700">
+                    Il doit aussi garantir une expérience mobile-first : rapidité, simplicité et ergonomie sur smartphone.
+                </p>
+            </div>
+        </section>
+
+        <!-- Interdependencies Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center justify-center mb-8">
+                <i data-feather="link" class="w-10 h-10 text-accent mr-4"></i>
+                <h2 class="text-3xl font-bold text-secondary">Interdépendance avec les autres disciplines digitales</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="search" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">SEO et publicité digitale</h3>
+                    </div>
+                    <p class="text-gray-600">Pour générer du trafic entrant</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="edit" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Content marketing</h3>
+                    </div>
+                    <p class="text-gray-600">Pour nourrir l'intérêt et créer de la confiance</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="layout" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">UX et UI Design</h3>
+                    </div>
+                    <p class="text-gray-600">Pour optimiser chaque étape de navigation</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="250">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="database" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">CRM et email marketing</h3>
+                    </div>
+                    <p class="text-gray-600">Pour accompagner le prospect dans son parcours</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md col-span-2 mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i data-feather="bar-chart-2" class="w-5 h-5 text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Analyse de données</h3>
+                    </div>
+                    <p class="text-gray-600">Pour mesurer et améliorer en continu les performances</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center justify-center mb-8">
+                <i data-feather="package" class="w-10 h-10 text-accent mr-4"></i>
+                <h2 class="text-3xl font-bold text-secondary">Formats et livrables</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <ul class="list-disc pl-6 space-y-3 text-gray-700">
+                    <li>Une cartographie complète du tunnel (schéma des étapes)</li>
+                    <li>Des maquettes et pages fonctionnelles (capture, vente, paiement, remerciement)</li>
+                    <li>Des séquences email automatisées</li>
+                    <li>Un système de suivi des performances (tracking, tableaux de bord)</li>
+                    <li>Un plan d'optimisation et d'A/B testing</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Performance Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center justify-center mb-8">
+                <i data-feather="activity" class="w-10 h-10 text-accent mr-4"></i>
+                <h2 class="text-3xl font-bold text-secondary">Mesure de performance et optimisation continue</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">%</div>
+                        <h3 class="font-semibold">Taux de conversion global</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="150">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">%</div>
+                        <h3 class="font-semibold">Taux de clic entre les étapes</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">€</div>
+                        <h3 class="font-semibold">Coût par acquisition (CPA)</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="250">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">€</div>
+                        <h3 class="font-semibold">Valeur moyenne par client</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">%</div>
+                        <h3 class="font-semibold">Taux d'abandon de panier</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="350">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">%</div>
+                        <h3 class="font-semibold">Retour sur investissement (ROAS)</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white rounded-xl shadow-lg p-8" data-aos="fade-up">
+                <p class="text-gray-700">
+                    Ces données servent à ajuster en permanence le contenu, le design et la mécanique commerciale, garantissant un tunnel toujours performant.
+                </p>
+            </div>
+        </section>
+
+        <!-- Expected Results Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="bg-primary text-white rounded-xl shadow-lg p-8">
+                <div class="flex items-center justify-center mb-6">
+                    <i data-feather="award" class="w-12 h-12 text-white mr-4"></i>
+                    <h2 class="text-2xl font-bold text-white">Résultats attendus</h2>
+                </div>
+                <p class="mb-6">
+                    Un service de création de tunnel de vente abouti livre un dispositif clé en main, capable de transformer le trafic en chiffre d'affaires mesurable et scalable.
+                </p>
+                <p>
+                    L'entreprise dispose ainsi d'un outil automatisé et optimisé, permettant de générer des ventes en continu, d'augmenter la valeur client et de sécuriser sa croissance.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center justify-center mb-8">
+                <i data-feather="help-circle" class="w-10 h-10 text-accent mr-4"></i>
+                <h2 class="text-3xl font-bold text-secondary">FAQ</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-semibold text-lg">Combien de temps faut-il pour mettre en place un tunnel de vente efficace ?</span>
+                        <i data-feather="chevron-down" class="accordion-icon transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            La durée varie en fonction de la complexité du tunnel et des intégrations nécessaires. En moyenne, comptez entre 4 et 8 semaines pour un tunnel complet avec toutes les optimisations.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-semibold text-lg">Quels outils utilisez-vous pour créer les tunnels de vente ?</span>
+                        <i data-feather="chevron-down" class="accordion-icon transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Nous utilisons une variété d'outils selon les besoins : ClickFunnels, Shopify, WooCommerce pour les pages de vente ; Mailchimp, ActiveCampaign pour l'email marketing ; Zapier pour les automatisations ; Google Analytics et Facebook Pixel pour le tracking.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-semibold text-lg">Comment mesurez-vous le succès d'un tunnel de vente ?</span>
+                        <i data-feather="chevron-down" class="accordion-icon transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Nous suivons plusieurs indicateurs clés : taux de conversion à chaque étape, coût d'acquisition client, valeur moyenne des commandes, taux de rebond, et surtout le retour sur investissement global. Ces données nous permettent d'optimiser continuellement le tunnel.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="250">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-semibold text-lg">Pouvez-vous créer des tunnels pour des produits physiques et digitaux ?</span>
+                        <i data-feather="chevron-down" class="accordion-icon transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Absolument. Nos tunnels sont adaptés à tous types de produits et services. Les stratégies varient légèrement (logistique pour les physiques, accès immédiat pour les digitaux), mais les principes fondamentaux de conversion restent les mêmes.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-semibold text-lg">Proposez-vous un accompagnement après la mise en place ?</span>
+                        <i data-feather="chevron-down" class="accordion-icon transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Oui, nous proposons des formules d'optimisation continue avec des analyses mensuelles et des ajustements réguliers pour améliorer constamment les performances. C'est la clé pour maintenir un tunnel performant sur le long terme.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Quote -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Devis Button -->
+            <div data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="file-text" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Demander un devis</h2>
+                    <p class="text-gray-600 mb-8">Obtenez une estimation personnalisée gratuite adaptée à vos besoins spécifiques et recevez une proposition détaillée. Notre équipe vous répond sous 48 heures ouvrées.</p>
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="file-text" class="mr-3"></i>
+                        Demander un devis gratuit
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Gratuit et sans engagement</p>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <div data-aos="fade-left">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="mail" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Nous contacter</h2>
+                    <p class="text-gray-600 mb-8">Une question ? Besoin d'informations complémentaires ? Notre équipe est à votre écoute pour échanger sur vos besoins.</p>
+                    <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="mail" class="mr-3"></i>
+                        Nous contacter
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Réponse rapide garantie</p>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        feather.replace();
+        
+        // Accordion functionality
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.accordion-icon');
+                
+                // Toggle content
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For demonstration, we'll just show an alert
+            alert('Votre demande de devis a été envoyée avec succès. Nous vous contacterons rapidement.');
+            this.reset();
+            
+            // In a real implementation, you would use fetch or XMLHttpRequest to send the data
+            // Example:
+            /*
+            const formData = new FormData(this);
+            fetch('mail_handler.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Message sent successfully!');
+                    this.reset();
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+            */
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

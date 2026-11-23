@@ -1,0 +1,447 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE OFFRES PARTICULIERS — Maison John&Co Marketing
+     Formations, Coaching, Reconversion digitale
+     Charte : vert #10B981 + violet #7C3AED
+     ═══════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+.mjc-pa{
+  --dk:#0A1628;--dk2:#1E3A5F;--lt:#FAFAFA;--wh:#FFFFFF;
+  --gr:#10B981;--grl:#6EE7B7;--grh:#059669;--grg:rgba(16,185,129,.35);
+  --ac:#7C3AED;--acl:#A78BFA;--ach:#6D28D9;--acg:rgba(124,58,237,.35);
+  --amber:#F59E0B;
+  --td:#1A1A2E;--tm:#6B7280;--tl:#FFFFFF;--tlm:#B4D0C5;
+  --bl:#E5E7EB;--bd:rgba(255,255,255,.12);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--td);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.mjc-pa *,.mjc-pa *::before,.mjc-pa *::after{box-sizing:border-box;}
+.mjc-pa p{margin:0 0 14px;} .mjc-pa h1,.mjc-pa h2,.mjc-pa h3,.mjc-pa h4{margin:0;letter-spacing:-.02em;}
+.mjc-pa a{text-decoration:none;color:inherit;}
+.pa-w{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+@keyframes pa-gr{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pa-fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes pa-pu{0%,100%{box-shadow:0 0 0 0 var(--grg)}70%{box-shadow:0 0 0 12px transparent}}
+@keyframes pa-up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+.pa-rev{opacity:0;transform:translateY(32px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1);}
+.pa-rev.on{opacity:1;transform:translateY(0);}
+.pa-rev.d1{transition-delay:.1s}.pa-rev.d2{transition-delay:.2s}.pa-rev.d3{transition-delay:.3s}
+
+/* HERO */
+.pa-hero{background:var(--dk);padding:130px 0 90px;position:relative;overflow:hidden;color:var(--tl);}
+.pa-hero-bg{position:absolute;inset:0;background:linear-gradient(130deg,#0A1628 0%,#0A2018 40%,#102A1A 65%,#0A1628 100%);background-size:400% 400%;animation:pa-gr 18s ease infinite;z-index:0;}
+.pa-o{position:absolute;border-radius:50%;filter:blur(80px);z-index:1;animation:pa-fl 8s ease-in-out infinite;}
+.pa-o1{top:-80px;right:-60px;width:440px;height:440px;background:radial-gradient(circle,var(--gr),transparent 70%);opacity:.2;}
+.pa-o2{bottom:-80px;left:-60px;width:360px;height:360px;background:radial-gradient(circle,var(--ac),transparent 70%);opacity:.16;animation-delay:-4s;}
+.pa-hero-in{position:relative;z-index:2;max-width:860px;}
+.pa-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,129,.14);backdrop-filter:blur(10px);color:var(--grl);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:30px;border:1px solid rgba(110,231,183,.3);animation:pa-up .8s ease-out;}
+.pa-dot{width:8px;height:8px;background:var(--gr);border-radius:50%;animation:pa-pu 2s infinite;}
+.pa-hero h1{font-size:56px;font-weight:700;line-height:1.08;margin-bottom:20px;animation:pa-up .9s ease-out .1s both;}
+.pa-hero h1 .ag{background:linear-gradient(135deg,#6EE7B7,#10B981,#A7F3D0);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:pa-gr 5s ease infinite;}
+.pa-hero-sub{font-size:18px;color:var(--tlm);margin-bottom:40px;line-height:1.6;max-width:680px;animation:pa-up 1s ease-out .25s both;}
+.pa-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;animation:pa-up 1s ease-out .4s both;}
+.pa-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;transition:all .3s ease;cursor:pointer;border:none;}
+.pa-btn-p{background:linear-gradient(135deg,var(--gr),var(--grh));color:white;box-shadow:0 4px 18px var(--grg);}
+.pa-btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 26px var(--grg);}
+.pa-btn-o{background:rgba(255,255,255,.07);color:white;border:1px solid rgba(255,255,255,.22);}
+.pa-btn-o:hover{background:rgba(255,255,255,.12);border-color:var(--grl);}
+.pa-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:40px;border-top:1px solid var(--bd);animation:pa-up 1s ease-out .55s both;}
+.pa-stat-v{font-size:32px;font-weight:700;background:linear-gradient(135deg,var(--grl),var(--gr));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:4px;}
+.pa-stat-l{font-size:12px;color:var(--tlm);text-transform:uppercase;letter-spacing:1px;}
+
+/* PARCOURS */
+.pa-parcours{background:var(--wh);padding:70px 0;}
+.pa-section-head{text-align:center;margin-bottom:52px;}
+.pa-section-head h2{font-size:36px;font-weight:700;color:var(--td);margin-bottom:10px;}
+.pa-section-head p{font-size:16px;color:var(--tm);max-width:560px;margin:0 auto;}
+.pa-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:10px;}
+
+.pa-par-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.pa-par-card{background:var(--lt);border:1px solid var(--bl);border-radius:20px;padding:32px;transition:all .35s ease;display:flex;flex-direction:column;}
+.pa-par-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(10,22,40,.08);border-color:var(--grl);}
+.pa-par-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:24px;}
+.ppi-1{background:rgba(16,185,129,.1);}
+.ppi-2{background:rgba(245,158,11,.1);}
+.ppi-3{background:rgba(124,58,237,.1);}
+.pa-par-card h3{font-size:20px;font-weight:700;color:var(--td);margin-bottom:8px;}
+.pa-par-card p{font-size:14px;color:var(--tm);line-height:1.6;margin-bottom:18px;flex:1;}
+.pa-par-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--gr);transition:gap .3s ease;}
+.pa-par-link:hover{gap:10px;}
+
+/* OFFRES */
+.pa-offres{background:var(--lt);padding:70px 0 100px;}
+.pa-offres-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+
+.pa-pack{background:var(--wh);border:1px solid var(--bl);border-radius:24px;padding:32px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:all .35s cubic-bezier(.16,1,.3,1);}
+.pa-pack:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(10,22,40,.1);}
+.pa-pack.popular{border-color:var(--gr);box-shadow:0 8px 32px rgba(16,185,129,.14);}
+.pa-pack.popular:hover{box-shadow:0 24px 52px rgba(16,185,129,.24);}
+.pa-pack-badge{position:absolute;top:22px;right:22px;background:linear-gradient(135deg,var(--gr),var(--grh));color:white;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;}
+.pa-pack-emoji{font-size:32px;margin-bottom:16px;display:block;}
+.pa-pack-name{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.pn-1{color:var(--gr);}
+.pn-2{color:var(--ac);}
+.pn-3{color:var(--amber);}
+.pa-pack h3{font-size:22px;font-weight:700;color:var(--td);margin-bottom:8px;}
+.pa-pack-desc{font-size:13px;color:var(--tm);line-height:1.55;margin-bottom:20px;}
+.pa-price-row{display:flex;align-items:flex-end;gap:6px;margin-bottom:4px;}
+.pa-price{font-size:36px;font-weight:800;color:var(--td);line-height:1;}
+.pa-price-unit{font-size:13px;color:var(--tm);padding-bottom:3px;}
+.pa-price-note{font-size:12px;color:var(--tm);margin-bottom:22px;}
+.pa-divider{height:1px;background:var(--bl);margin:18px 0;}
+.pa-features{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px;flex:1;}
+.pa-features li{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--td);}
+.pa-chk{flex-shrink:0;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:9px;}
+.chk-gr{background:rgba(16,185,129,.12);color:var(--gr);}
+.chk-ac{background:rgba(124,58,237,.12);color:var(--ac);}
+.chk-am{background:rgba(245,158,11,.12);color:var(--amber);}
+.pa-pack-cta{display:block;text-align:center;padding:12px;border-radius:10px;font-size:14px;font-weight:700;transition:all .3s ease;cursor:pointer;border:none;font-family:inherit;}
+.pcta-1{background:rgba(16,185,129,.08);color:var(--gr);border:1.5px solid rgba(16,185,129,.22);}
+.pcta-1:hover{background:var(--gr);color:white;}
+.pcta-2{background:linear-gradient(135deg,var(--gr),var(--ac));color:white;}
+.pcta-2:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 20px var(--grg);}
+.pcta-3{background:rgba(245,158,11,.08);color:var(--amber);border:1.5px solid rgba(245,158,11,.22);}
+.pcta-3:hover{background:var(--amber);color:white;}
+
+/* FORMATIONS EN LIGNE */
+.pa-formations{background:var(--dk);padding:80px 0;}
+.pa-form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.pa-form-card{background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:18px;padding:28px;display:flex;gap:20px;align-items:flex-start;transition:all .3s ease;cursor:pointer;}
+.pa-form-card:hover{background:rgba(16,185,129,.06);border-color:rgba(110,231,183,.3);transform:translateY(-3px);}
+.pa-form-icon{flex-shrink:0;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.pfi-1{background:rgba(16,185,129,.15);}
+.pfi-2{background:rgba(245,158,11,.15);}
+.pfi-3{background:rgba(236,72,153,.15);}
+.pfi-4{background:rgba(6,182,212,.15);}
+.pa-form-card h4{font-size:17px;font-weight:700;color:var(--tl);margin-bottom:6px;}
+.pa-form-card p{font-size:13px;color:var(--tlm);line-height:1.5;margin-bottom:12px;}
+.pa-form-meta{display:flex;gap:12px;align-items:center;}
+.pa-form-dur{font-size:11px;color:var(--grl);font-weight:600;}
+.pa-form-lvl{font-size:11px;padding:3px 8px;border-radius:999px;font-weight:600;}
+.lvl-deb{background:rgba(16,185,129,.15);color:var(--grl);}
+.lvl-int{background:rgba(245,158,11,.15);color:#FCD34D;}
+.lvl-ava{background:rgba(236,72,153,.15);color:#F9A8D4;}
+.pa-form-price{font-size:14px;font-weight:700;color:var(--gr);margin-left:auto;flex-shrink:0;}
+
+/* FAQ */
+.pa-faq{background:var(--lt);padding:80px 0;}
+.pa-faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto;}
+.pa-faq-item{background:var(--wh);border:1px solid var(--bl);border-radius:14px;overflow:hidden;}
+.pa-faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-size:15px;font-weight:600;color:var(--td);}
+.pa-faq-q:hover{color:var(--gr);}
+.pa-faq-icon{flex-shrink:0;width:26px;height:26px;background:var(--lt);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--tm);transition:all .3s ease;}
+.pa-faq-item.open .pa-faq-icon{background:var(--gr);color:white;transform:rotate(45deg);}
+.pa-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;padding:0 22px;font-size:14px;color:var(--tm);line-height:1.7;}
+.pa-faq-item.open .pa-faq-a{max-height:300px;padding:0 22px 18px;}
+
+/* CTA */
+.pa-final{background:linear-gradient(135deg,#0A2018,#0A1628,#102A1A);padding:100px 0;text-align:center;position:relative;overflow:hidden;}
+.pa-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:560px;background:radial-gradient(circle,rgba(16,185,129,.15),transparent 70%);border-radius:50%;}
+.pa-final-in{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+.pa-final h2{font-size:40px;font-weight:700;line-height:1.15;margin-bottom:16px;color:var(--tl);}
+.pa-final h2 .ag{background:linear-gradient(135deg,var(--grl),var(--gr));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.pa-final p{font-size:17px;color:var(--tlm);margin-bottom:32px;}
+.pa-final-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+@media(max-width:1024px){.pa-hero h1{font-size:40px;}.pa-hero-stats{grid-template-columns:repeat(2,1fr);}.pa-par-grid,.pa-offres-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto;}.pa-form-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.pa-hero{padding:100px 0 60px;}.pa-hero h1{font-size:28px;}.pa-hero-sub{font-size:15px;}.pa-hero-ctas{flex-direction:column;align-items:stretch;}.pa-btn{justify-content:center;}.pa-parcours,.pa-offres,.pa-formations,.pa-faq,.pa-final{padding:52px 0;}.pa-form-card{flex-direction:column;}.pa-final h2{font-size:26px;}.pa-final-btns{flex-direction:column;}}
+</style>
+
+<div class="mjc-pa">
+
+<!-- ══ HERO ══ -->
+<section class="pa-hero">
+  <div class="pa-hero-bg"></div>
+  <div class="pa-o pa-o1"></div>
+  <div class="pa-o pa-o2"></div>
+  <div class="pa-w">
+    <div class="pa-hero-in">
+      <div class="pa-badge"><span class="pa-dot"></span>Offres &amp; Formations Particuliers</div>
+      <h1>Apprenez le digital,<br><span class="ag">transformez votre vie</span></h1>
+      <p class="pa-hero-sub">Formations en ligne, coaching individuel, accompagnement reconversion — tout ce qu'il faut pour maîtriser le marketing digital et créer de nouvelles opportunités professionnelles.</p>
+      <div class="pa-hero-ctas">
+        <a href="/contact?type=formation&profil=particulier" class="pa-btn pa-btn-p">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Découvrir les formations
+        </a>
+        <a href="https://calendly.com/contact-maison-johnco-marketing" target="_blank" rel="noopener noreferrer" class="pa-btn pa-btn-o">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Orientation gratuite
+        </a>
+      </div>
+      <div class="pa-hero-stats">
+        <div><div class="pa-stat-v">+1 200</div><div class="pa-stat-l">Particuliers formés</div></div>
+        <div><div class="pa-stat-v">92%</div><div class="pa-stat-l">Taux de satisfaction</div></div>
+        <div><div class="pa-stat-v">6</div><div class="pa-stat-l">Formations disponibles</div></div>
+        <div><div class="pa-stat-v">CPF</div><div class="pa-stat-l">Éligible sur demande</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARCOURS ══ -->
+<section class="pa-parcours">
+  <div class="pa-w">
+    <div class="pa-section-head pa-rev">
+      <span class="pa-eyebrow">Comment ça marche</span>
+      <h2>3 façons d'être accompagné</h2>
+      <p>Choisissez la formule qui correspond à votre rythme, vos objectifs et votre niveau de départ.</p>
+    </div>
+    <div class="pa-par-grid">
+      <div class="pa-par-card pa-rev">
+        <div class="pa-par-icon ppi-1">🎓</div>
+        <h3>Formations en ligne</h3>
+        <p>Modules vidéo complets, exercices pratiques et accès à vie. Apprenez à votre rythme, depuis chez vous, avec des contenus mis à jour régulièrement.</p>
+        <a href="#pa-formations" onclick="scrollToId('pa-formations')" class="pa-par-link">Voir les formations <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="pa-par-card pa-rev d1">
+        <div class="pa-par-icon ppi-2">🧑‍💻</div>
+        <h3>Coaching individuel</h3>
+        <p>Sessions visio personnalisées avec un expert. Programme adapté à vos objectifs spécifiques, suivi de progression et retours en temps réel.</p>
+        <a href="#pa-offres" onclick="scrollToId('pa-offres')" class="pa-par-link">Voir les packs coaching <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="pa-par-card pa-rev d2">
+        <div class="pa-par-icon ppi-3">🔄</div>
+        <h3>Accompagnement reconversion</h3>
+        <p>Un programme complet pour changer de métier vers le digital : bilan de compétences, formation intensive, accompagnement jusqu'à l'emploi ou au lancement de votre activité.</p>
+        <a href="#pa-offres" onclick="scrollToId('pa-offres')" class="pa-par-link">Voir le pack reconversion <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PACKS COACHING ══ -->
+<section class="pa-offres" id="pa-offres">
+  <div class="pa-w">
+    <div class="pa-section-head pa-rev">
+      <span class="pa-eyebrow">Packs coaching &amp; accompagnement</span>
+      <h2>Un expert à vos côtés</h2>
+      <p>Des packs de coaching conçus pour vous donner des résultats concrets et mesurables.</p>
+    </div>
+    <div class="pa-offres-grid">
+
+      <!-- Pack Essentiel -->
+      <div class="pa-pack pa-rev">
+        <span class="pa-pack-emoji">🌱</span>
+        <div class="pa-pack-name pn-1">Pack Essentiel</div>
+        <h3>Initiation Digitale</h3>
+        <p class="pa-pack-desc">Pour les débutants qui veulent comprendre le marketing digital, créer une présence en ligne et faire leurs premiers pas avec confiance.</p>
+        <div class="pa-price-row">
+          <span class="pa-price">290</span>
+          <span class="pa-price-unit">€/mois</span>
+        </div>
+        <p class="pa-price-note">3 mois minimum · Paiement en 3x sans frais</p>
+        <div class="pa-divider"></div>
+        <ul class="pa-features">
+          <li><span class="pa-chk chk-gr">✓</span>Accès complet aux 2 premières formations</li>
+          <li><span class="pa-chk chk-gr">✓</span>2 sessions coaching individuel/mois (45min)</li>
+          <li><span class="pa-chk chk-gr">✓</span>Plan d'action personnalisé mensuel</li>
+          <li><span class="pa-chk chk-gr">✓</span>Exercices pratiques guidés</li>
+          <li><span class="pa-chk chk-gr">✓</span>Accès au groupe privé d'apprenants</li>
+          <li><span class="pa-chk chk-gr">✓</span>Support email sous 48h</li>
+        </ul>
+        <button onclick="location.href='/contact?pack=essentiel-particulier'" class="pa-pack-cta pcta-1">Commencer</button>
+      </div>
+
+      <!-- Pack Accélération (vedette) -->
+      <div class="pa-pack popular pa-rev d1">
+        <div class="pa-pack-badge">⭐ Le + demandé</div>
+        <span class="pa-pack-emoji">🚀</span>
+        <div class="pa-pack-name pn-2">Pack Accélération</div>
+        <h3>Maîtrise Complète</h3>
+        <p class="pa-pack-desc">Le programme complet pour maîtriser le marketing digital et être opérationnel rapidement. Idéal pour une reconversion ou une montée en compétences rapide.</p>
+        <div class="pa-price-row">
+          <span class="pa-price">490</span>
+          <span class="pa-price-unit">€/mois</span>
+        </div>
+        <p class="pa-price-note">3 à 6 mois · Paiement en 3x sans frais</p>
+        <div class="pa-divider"></div>
+        <ul class="pa-features">
+          <li><span class="pa-chk chk-ac">✓</span>Accès illimité aux 6 formations</li>
+          <li><span class="pa-chk chk-ac">✓</span>4 sessions coaching individuel/mois (1h)</li>
+          <li><span class="pa-chk chk-ac">✓</span>Projet fil rouge personnalisé</li>
+          <li><span class="pa-chk chk-ac">✓</span>Retours et corrections de vos travaux</li>
+          <li><span class="pa-chk chk-ac">✓</span>Atelier collectif mensuel</li>
+          <li><span class="pa-chk chk-ac">✓</span>Accès au réseau Alumni John&amp;Co</li>
+          <li><span class="pa-chk chk-ac">✓</span>Certificat de complétion reconnu</li>
+          <li><span class="pa-chk chk-ac">✓</span>Support prioritaire sous 24h</li>
+        </ul>
+        <button onclick="location.href='/contact?pack=acceleration-particulier'" class="pa-pack-cta pcta-2">Choisir ce pack</button>
+      </div>
+
+      <!-- Pack Reconversion -->
+      <div class="pa-pack pa-rev d2">
+        <span class="pa-pack-emoji">🔄</span>
+        <div class="pa-pack-name pn-3">Pack Reconversion</div>
+        <h3>Nouveau Départ Digital</h3>
+        <p class="pa-pack-desc">Un accompagnement total pour changer de cap et entrer dans le monde du digital : formation intensive + aide à la recherche d'emploi ou lancement d'activité.</p>
+        <div class="pa-price-row">
+          <span class="pa-price">890</span>
+          <span class="pa-price-unit">€/mois</span>
+        </div>
+        <p class="pa-price-note">6 mois · Éligible CPF sur demande</p>
+        <div class="pa-divider"></div>
+        <ul class="pa-features">
+          <li><span class="pa-chk chk-am">✓</span>Tout le pack Accélération</li>
+          <li><span class="pa-chk chk-am">✓</span>Bilan de compétences digitales</li>
+          <li><span class="pa-chk chk-am">✓</span>Formation intensive 6 mois</li>
+          <li><span class="pa-chk chk-am">✓</span>Coaching carrière (CV, entretiens)</li>
+          <li><span class="pa-chk chk-am">✓</span>Mise en réseau avec partenaires emploi</li>
+          <li><span class="pa-chk chk-am">✓</span>Aide au lancement d'activité freelance</li>
+          <li><span class="pa-chk chk-am">✓</span>Suivi post-formation 3 mois</li>
+          <li><span class="pa-chk chk-am">✓</span>Garantie satisfaction 30 jours</li>
+        </ul>
+        <button onclick="location.href='/contact?pack=reconversion'" class="pa-pack-cta pcta-3">Démarrer ma reconversion</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FORMATIONS EN LIGNE ══ -->
+<section class="pa-formations" id="pa-formations">
+  <div class="pa-w">
+    <div class="pa-section-head pa-rev" style="color:var(--tl);">
+      <span class="pa-eyebrow">Formations</span>
+      <h2 style="color:var(--tl);">Nos formations individuelles</h2>
+      <p style="color:var(--tlm);">Disponibles en accès immédiat ou incluses dans vos packs d'accompagnement.</p>
+    </div>
+    <div class="pa-form-grid">
+      <div class="pa-form-card pa-rev">
+        <div class="pa-form-icon pfi-1">🔍</div>
+        <div>
+          <h4>Marketing Digital — Les Fondamentaux</h4>
+          <p>Maîtrisez les piliers du digital : réseaux sociaux, SEO, email marketing, publicité en ligne. Tout ce qu'il faut pour comprendre l'écosystème.</p>
+          <div class="pa-form-meta">
+            <span class="pa-form-dur">⏱ 12h de contenu</span>
+            <span class="pa-form-lvl lvl-deb">Débutant</span>
+            <span class="pa-form-price">149€</span>
+          </div>
+        </div>
+      </div>
+      <div class="pa-form-card pa-rev d1">
+        <div class="pa-form-icon pfi-2">📣</div>
+        <div>
+          <h4>Réseaux Sociaux &amp; Personal Branding</h4>
+          <p>Créez une présence professionnelle percutante sur Instagram, LinkedIn et TikTok. Stratégie, contenus, algorithmes et croissance organique.</p>
+          <div class="pa-form-meta">
+            <span class="pa-form-dur">⏱ 8h de contenu</span>
+            <span class="pa-form-lvl lvl-deb">Débutant</span>
+            <span class="pa-form-price">129€</span>
+          </div>
+        </div>
+      </div>
+      <div class="pa-form-card pa-rev">
+        <div class="pa-form-icon pfi-1">📈</div>
+        <div>
+          <h4>SEO &amp; Référencement Google</h4>
+          <p>Apprenez à optimiser un site web pour Google : mots-clés, contenu, technique, netlinking. Devenez autonome sur votre référencement.</p>
+          <div class="pa-form-meta">
+            <span class="pa-form-dur">⏱ 10h de contenu</span>
+            <span class="pa-form-lvl lvl-int">Intermédiaire</span>
+            <span class="pa-form-price">179€</span>
+          </div>
+        </div>
+      </div>
+      <div class="pa-form-card pa-rev d1">
+        <div class="pa-form-icon pfi-2">📊</div>
+        <div>
+          <h4>Publicité Digitale — Google &amp; Meta Ads</h4>
+          <p>Créez et gérez vos premières campagnes publicitaires. Ciblage, budgets, visuels, optimisation — tout ce qu'il faut pour générer des ventes.</p>
+          <div class="pa-form-meta">
+            <span class="pa-form-dur">⏱ 14h de contenu</span>
+            <span class="pa-form-lvl lvl-int">Intermédiaire</span>
+            <span class="pa-form-price">199€</span>
+          </div>
+        </div>
+      </div>
+      <div class="pa-form-card pa-rev">
+        <div class="pa-form-icon pfi-3">💡</div>
+        <div>
+          <h4>Créer et Vendre sa Formation en Ligne</h4>
+          <p>Passez de l'idée à la formation mise en vente en 30 jours : structuration, plateforme, tunnel de vente, lancement.</p>
+          <div class="pa-form-meta">
+            <span class="pa-form-dur">⏱ 9h de contenu</span>
+            <span class="pa-form-lvl lvl-int">Intermédiaire</span>
+            <span class="pa-form-price">189€</span>
+          </div>
+        </div>
+      </div>
+      <div class="pa-form-card pa-rev d1">
+        <div class="pa-form-icon pfi-4">⚙️</div>
+        <div>
+          <h4>Freelance Digital — Se lancer &amp; Trouver ses clients</h4>
+          <p>Tout pour démarrer une activité freelance en marketing digital : positionnement, tarification, prospection, contractualisation.</p>
+          <div class="pa-form-meta">
+            <span class="pa-form-dur">⏱ 11h de contenu</span>
+            <span class="pa-form-lvl lvl-ava">Avancé</span>
+            <span class="pa-form-price">219€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="pa-faq">
+  <div class="pa-w">
+    <div class="pa-section-head pa-rev">
+      <span class="pa-eyebrow">FAQ</span>
+      <h2>Vos questions, nos réponses</h2>
+    </div>
+    <div class="pa-faq-list">
+      <div class="pa-faq-item"><div class="pa-faq-q" onclick="paFaq(this)">Faut-il des connaissances en marketing pour commencer ?<span class="pa-faq-icon">+</span></div><div class="pa-faq-a">Non, nos formations débutent vraiment de zéro. Le pack Essentiel et plusieurs formations sont spécialement conçus pour les profils sans expérience en marketing digital.</div></div>
+      <div class="pa-faq-item"><div class="pa-faq-q" onclick="paFaq(this)">Les formations sont-elles éligibles au CPF ?<span class="pa-faq-icon">+</span></div><div class="pa-faq-a">Le pack Reconversion est potentiellement éligible au CPF. Contactez-nous pour vérifier votre éligibilité et les démarches à effectuer. Un accompagnement administratif est inclus dans le pack.</div></div>
+      <div class="pa-faq-item"><div class="pa-faq-q" onclick="paFaq(this)">Combien de temps par semaine dois-je consacrer à la formation ?<span class="pa-faq-icon">+</span></div><div class="pa-faq-a">Pour le pack Essentiel : 3-4h/semaine. Pour le pack Accélération : 6-8h/semaine. Pour le pack Reconversion : 10-15h/semaine. Les contenus restent accessibles à vie.</div></div>
+      <div class="pa-faq-item"><div class="pa-faq-q" onclick="paFaq(this)">Puis-je acheter une seule formation sans prendre un pack ?<span class="pa-faq-icon">+</span></div><div class="pa-faq-a">Oui, toutes nos formations sont disponibles individuellement à l'achat. Les packs sont plus avantageux car ils incluent en plus un suivi coach personnalisé et un accès illimité aux ressources.</div></div>
+      <div class="pa-faq-item"><div class="pa-faq-q" onclick="paFaq(this)">Y a-t-il une garantie satisfait ou remboursé ?<span class="pa-faq-icon">+</span></div><div class="pa-faq-a">Le pack Reconversion inclut une garantie satisfaction de 30 jours. Sur les formations individuelles, un remboursement est possible dans les 7 jours si vous n'avez pas accédé à plus de 20% du contenu.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="pa-final">
+  <div class="pa-w">
+    <div class="pa-final-in pa-rev">
+      <h2>Votre avenir digital<br><span class="ag">commence ici</span></h2>
+      <p>Séance d'orientation gratuite de 30 minutes pour trouver la formation ou le pack qui vous correspond.</p>
+      <div class="pa-final-btns">
+        <a href="https://calendly.com/contact-maison-johnco-marketing" target="_blank" rel="noopener noreferrer" class="pa-btn pa-btn-p">
+          Réserver mon orientation gratuite
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/contact?type=formation&profil=particulier" class="pa-btn pa-btn-o">
+          Me renseigner sur les formations
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  window.paFaq = function(el){
+    const item = el.parentElement;
+    const was = item.classList.contains('open');
+    document.querySelectorAll('.pa-faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!was) item.classList.add('open');
+  };
+  window.scrollToId = function(id){
+    const el = document.getElementById(id);
+    if(el) window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-90,behavior:'smooth'});
+  };
+  const ro = new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target);}});
+  },{threshold:.07,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.pa-rev').forEach(el=>ro.observe(el));
+})();
+</script>
+<!-- /wp:html -->

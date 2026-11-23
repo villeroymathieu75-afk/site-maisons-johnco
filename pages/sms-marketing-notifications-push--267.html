@@ -1,0 +1,625 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Marketing & Notifications Push | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#1E3A8A',
+                        accent: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #1E40AF, #3B82F6);
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #E5E7EB, transparent);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="gradient-text">SMS Marketing</span> & <span class="gradient-text">Notifications Push</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Communication directe et instantanée pour atteindre vos clients avec un impact maximal
+                </p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <div class="flex items-center bg-blue-50 px-4 py-2 rounded-full">
+                        <i data-feather="check-circle" class="text-blue-600 mr-2"></i>
+                        <span class="text-blue-800">Taux de lecture > 98%</span>
+                    </div>
+                    <div class="flex items-center bg-blue-50 px-4 py-2 rounded-full">
+                        <i data-feather="zap" class="text-blue-600 mr-2"></i>
+                        <span class="text-blue-800">Messages instantanés</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Definition Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="target" class="text-blue-600"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Définition et périmètre</h2>
+                    </div>
+                    <div class="space-y-4 text-gray-700">
+                        <p>Le SMS Marketing et les notifications push regroupent les dispositifs de communication directe et instantanée permettant de diffuser des messages courts et ciblés auprès des utilisateurs sur leurs terminaux mobiles.</p>
+                        <div class="grid md:grid-cols-2 gap-6 mt-6">
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h3 class="font-semibold text-gray-900 mb-2">SMS Marketing</h3>
+                                <p>Repose sur l'envoi de textos transactionnels ou promotionnels avec un taux d'ouverture exceptionnel.</p>
+                            </div>
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h3 class="font-semibold text-gray-900 mb-2">Notifications Push</h3>
+                                <p>Alertes envoyées via des applications mobiles ou navigateurs web pour un engagement immédiat.</p>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg mt-6">
+                            <div class="flex">
+                                <i data-feather="alert-circle" class="text-blue-600 mr-3 flex-shrink-0"></i>
+                                <p>Notre périmètre inclut la stratégie de diffusion, la collecte des consentements, la rédaction personnalisée, l'intégration technique et l'optimisation continue.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Goals Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Finalités business et marketing</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ces leviers poursuivent plusieurs objectifs stratégiques pour votre entreprise</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="bell" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Notifications en temps réel</h3>
+                    <p class="text-gray-600">Confirmation de commande, livraison, alerte sécurité pour une communication essentielle.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="activity" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Stimulation de l'engagement</h3>
+                    <p class="text-gray-600">Rappels contextualisés (promotion limitée, relance panier, événement imminent).</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Augmentation des conversions</h3>
+                    <p class="text-gray-600">Incitations directes et personnalisées pour transformer les prospects en clients.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="heart" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Fidélisation client</h3>
+                    <p class="text-gray-600">Relation régulière et utile pour maintenir la connexion avec votre audience.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="layers" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Stratégie multicanale</h3>
+                    <p class="text-gray-600">Complément idéal à l'email, aux réseaux sociaux et au retargeting.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="shopping-cart" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Réduction de l'abandon</h3>
+                    <p class="text-gray-600">Diminution des paniers abandonnés dans les parcours e-commerce.</p>
+                </div>
+            </div>
+            <div class="mt-10 bg-blue-50 rounded-xl p-6 text-center" data-aos="fade-up">
+                <p class="text-blue-800 font-medium">Le SMS et les push notifications offrent un canal d'impact immédiat dans le cycle de vie client.</p>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Approche méthodologique</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Notre processus rigoureux garantit l'efficacité de vos campagnes</p>
+            </div>
+            <div class="space-y-8">
+                <div class="grid md:grid-cols-5 gap-6 items-start">
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="bg-blue-100 p-4 rounded-full">
+                            <i data-feather="compass" class="text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-semibold text-xl mb-2">Cadrage stratégique</h3>
+                        <p class="text-gray-700">Définition des objectifs (transactionnel, promotionnel, engagement, fidélisation), identification des moments clés où l'impact du message est maximal.</p>
+                    </div>
+                </div>
+                <div class="section-divider"></div>
+                <div class="grid md:grid-cols-5 gap-6 items-start">
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="bg-blue-100 p-4 rounded-full">
+                            <i data-feather="check-square" class="text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-semibold text-xl mb-2">Collecte et consentement</h3>
+                        <p class="text-gray-700">Respect des obligations légales (opt-in explicite, possibilité de désabonnement clair, gestion des préférences utilisateurs).</p>
+                    </div>
+                </div>
+                <div class="section-divider"></div>
+                <div class="grid md:grid-cols-5 gap-6 items-start">
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="bg-blue-100 p-4 rounded-full">
+                            <i data-feather="filter" class="text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-semibold text-xl mb-2">Segmentation et personnalisation</h3>
+                        <p class="text-gray-700">Ciblage en fonction des comportements, de la géolocalisation, de l'historique d'achat, du profil client ou du stade du parcours.</p>
+                    </div>
+                </div>
+                <div class="section-divider"></div>
+                <div class="grid md:grid-cols-5 gap-6 items-start">
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="bg-blue-100 p-4 rounded-full">
+                            <i data-feather="edit" class="text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-semibold text-xl mb-2">Rédaction des messages</h3>
+                        <p class="text-gray-700">Élaboration de textes courts, clairs, personnalisés et orientés vers l'action, avec intégration éventuelle de liens trackés.</p>
+                    </div>
+                </div>
+                <div class="section-divider"></div>
+                <div class="grid md:grid-cols-5 gap-6 items-start">
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="bg-blue-100 p-4 rounded-full">
+                            <i data-feather="cpu" class="text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-semibold text-xl mb-2">Intégration technique</h3>
+                        <p class="text-gray-700">Connexion avec CRM, plateformes d'emailing, outils d'automation ; paramétrage des API SMS et push.</p>
+                    </div>
+                </div>
+                <div class="section-divider"></div>
+                <div class="grid md:grid-cols-5 gap-6 items-start">
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="bg-blue-100 p-4 rounded-full">
+                            <i data-feather="repeat" class="text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-semibold text-xl mb-2">Orchestration multicanale</h3>
+                        <p class="text-gray-700">Combiner SMS, email et push pour créer des séquences cohérentes sans saturer l'utilisateur.</p>
+                    </div>
+                </div>
+                <div class="section-divider"></div>
+                <div class="grid md:grid-cols-5 gap-6 items-start">
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="bg-blue-100 p-4 rounded-full">
+                            <i data-feather="bar-chart-2" class="text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4">
+                        <h3 class="font-semibold text-xl mb-2">Optimisation continue</h3>
+                        <p class="text-gray-700">A/B testing des accroches, suivi des clics, ajustement de la fréquence et du timing en fonction des résultats.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Standards Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="award" class="text-blue-600"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Standards de qualité et conformité</h2>
+                    </div>
+                    <div class="space-y-4 text-gray-700">
+                        <p>Nos campagnes respectent scrupuleusement les normes les plus exigeantes :</p>
+                        <ul class="space-y-3 list-disc pl-5">
+                            <li>La réglementation en vigueur (RGPD, CNIL, directives ePrivacy)</li>
+                            <li>L'obligation d'opt-in explicite et la possibilité de désinscription simple (STOP SMS, paramètres push)</li>
+                            <li>La clarté et la pertinence du message, adapté au contexte et au profil</li>
+                            <li>Une pression marketing maîtrisée pour éviter la saturation et la perte de confiance</li>
+                            <li>Une sécurisation des données collectées et utilisées</li>
+                        </ul>
+                        <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                            <div class="flex">
+                                <i data-feather="shield" class="text-blue-600 mr-3 flex-shrink-0"></i>
+                                <p>Nous garantissons une approche éthique et respectueuse des utilisateurs, essentielle pour maintenir une relation de confiance à long terme.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interdependence Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Interdépendance avec les autres disciplines digitales</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Le SMS Marketing et les push notifications s'intègrent parfaitement dans votre écosystème digital</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i data-feather="mail" class="text-blue-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Email Marketing</h3>
+                    </div>
+                    <p class="text-gray-700">Ils complètent l'email marketing en offrant un canal instantané avec un taux d'ouverture bien supérieur.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i data-feather="refresh-cw" class="text-blue-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Marketing Automation</h3>
+                    </div>
+                    <p class="text-gray-700">Ils renforcent le marketing automation par des scénarios multi-étapes plus efficaces.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i data-feather="database" class="text-blue-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">CRM</h3>
+                    </div>
+                    <p class="text-gray-700">Ils s'articulent avec le CRM pour personnaliser les messages en fonction des données clients.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i data-feather="dollar-sign" class="text-blue-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg">Campagnes publicitaires</h3>
+                    </div>
+                    <p class="text-gray-700">Ils soutiennent les campagnes publicitaires en rappelant une offre ou un événement pour maximiser le ROI.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Formats et livrables</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Nous fournissons des solutions clés en main pour votre stratégie de communication</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
+                    <div class="bg-blue-50 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="clipboard" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Stratégie SMS & Push</h3>
+                    <p class="text-gray-600">Document complet aligné sur vos objectifs business et marketing.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
+                    <div class="bg-blue-50 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="users" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Base de données qualifiée</h3>
+                    <p class="text-gray-600">Segmentée avec gestion des consentements RGPD-compatible.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
+                    <div class="bg-blue-50 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="file-text" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Gabarits de messages</h3>
+                    <p class="text-gray-600">Adaptés à différents scénarios (transactionnels, promotionnels, événementiels).</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
+                    <div class="bg-blue-50 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="code" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Intégrations techniques</h3>
+                    <p class="text-gray-600">API, connecteurs CRM prêts à l'emploi pour un déploiement rapide.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
+                    <div class="bg-blue-50 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="pie-chart" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Tableau de bord</h3>
+                    <p class="text-gray-600">Suivi en temps réel avec tous les KPI essentiels.</p>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
+                    <div class="bg-blue-50 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Plan d'optimisation</h3>
+                    <p class="text-gray-600">Tests, ajustements de fréquence et contenu évolutif pour maximiser les résultats.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="bar-chart-2" class="text-blue-600"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Mesure de performance et optimisation continue</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-3 text-blue-800">KPI clés pour les SMS :</h3>
+                            <ul class="grid md:grid-cols-2 gap-4">
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Taux de délivrance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Taux de lecture (proche de 98%)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Taux de clic (CTR)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Taux de conversion</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Désinscriptions</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-3 text-blue-800">KPI clés pour les Push :</h3>
+                            <ul class="grid md:grid-cols-2 gap-4">
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Taux d'opt-in</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Taux d'ouverture</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>CTR</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Rétention applicative</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Conversions post-interaction</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-3 text-blue-800">KPI business :</h3>
+                            <ul class="grid md:grid-cols-2 gap-4">
+                                <li class="flex items-start">
+                                    <i data-feather="dollar-sign" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Chiffre d'affaires incrémental généré</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="user" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Valeur vie client (CLV)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="percent" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i>
+                                    <span>Contribution au ROI global des campagnes</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="text-blue-800"><i data-feather="info" class="mr-2 inline"></i> L'optimisation s'appuie sur le suivi en temps réel et les tests systématiques de messages, de timing et de ciblage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expected Results Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Résultats attendus</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ce que vous pouvez légitimement attendre de notre collaboration</p>
+            </div>
+            <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 text-white">
+                <div class="max-w-3xl mx-auto text-center">
+                    <i data-feather="check-circle" class="w-12 h-12 mx-auto mb-4"></i>
+                    <p class="text-xl mb-6">Un service de SMS Marketing & Notifications Push abouti permet à votre entreprise d'activer un canal direct, instantané et hautement engageant, générant des conversions rapides et renforçant la fidélité client.</p>
+                    <p class="text-lg">Il s'inscrit comme un complément indispensable à une stratégie digitale complète, apportant réactivité, proximité et efficacité.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Questions fréquentes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Toutes les réponses à vos interrogations sur notre service</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 focus:outline-none">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-lg">Quel est le taux d'ouverture moyen des SMS marketing ?</h3>
+                            <i data-feather="chevron-down" class="transform transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4">
+                        <p class="text-gray-700">Les SMS marketing affichent un taux d'ouverture exceptionnel, généralement supérieur à 98%, contre 20% en moyenne pour les emails. 90% des SMS sont lus dans les 3 minutes suivant leur réception.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 focus:outline-none">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-lg">Quelles sont les obligations légales pour envoyer des SMS marketing ?</h3>
+                            <i data-feather="chevron-down" class="transform transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4">
+                        <p class="text-gray-700">La réglementation exige un consentement explicite (opt-in) préalable du destinataire. Chaque SMS doit permettre une désinscription facile (par exemple via un STOP SMS). Nous veillons au strict respect du RGPD et des directives de la CNIL.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 focus:outline-none">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-lg">Combien de caractères peut contenir un SMS marketing ?</h3>
+                            <i data-feather="chevron-down" class="transform transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4">
+                        <p class="text-gray-700">Un SMS standard contient 160 caractères. Au-delà, le message est scindé en plusieurs SMS (ce qui peut augmenter le coût). Nous optimisons la rédaction pour transmettre un message impactant dans cette contrainte.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 focus:outline-none">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-lg">Quelle est la différence entre SMS transactionnel et promotionnel ?</h3>
+                            <i data-feather="chevron-down" class="transform transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4">
+                        <p class="text-gray-700">Les SMS transactionnels informent le client sur une action qu'il a initiée (confirmation de commande, livraison). Les SMS promotionnels proposent des offres commerciales. Les règles légales diffèrent : les transactionnels peuvent être envoyés sans opt-in préalable.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 hover:bg-gray-50 focus:outline-none">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-semibold text-lg">Comment optimiser le taux de conversion des notifications push ?</h3>
+                            <i data-feather="chevron-down" class="transform transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4">
+                        <p class="text-gray-700">Plusieurs leviers : personnalisation poussée, timing optimal (analyse des moments d'engagement), message clair avec call-to-action évident, segmentation fine de l'audience, et tests A/B réguliers des différents éléments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Quote -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Devis Button -->
+            <div data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="file-text" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Demander un devis</h2>
+                    <p class="text-gray-600 mb-8">Obtenez une estimation personnalisée gratuite adaptée à vos besoins spécifiques et recevez une proposition détaillée. Notre équipe vous répond sous 48 heures ouvrées.</p>
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="file-text" class="mr-3"></i>
+                        Demander un devis gratuit
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Gratuit et sans engagement</p>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <div data-aos="fade-left">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="mail" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Nous contacter</h2>
+                    <p class="text-gray-600 mb-8">Une question ? Besoin d'informations complémentaires ? Notre équipe est à votre écoute pour échanger sur vos besoins.</p>
+                    <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="mail" class="mr-3"></i>
+                        Nous contacter
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Réponse rapide garantie</p>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+                
+                // Close other open answers
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer && !otherAnswer.classList.contains('hidden')) {
+                        otherAnswer.classList.add('hidden');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Here you would normally send the data to your server
+            // For this example, we'll just log it and show an alert
+            console.log('Form data:', data);
+            
+            alert('Votre demande de devis a bien été envoyée. Nous vous contacterons sous 24h.');
+            this.reset();
+            
+            // In a real implementation, you would send the data to contact@maison-johnco-marketing.com
+            // This would typically be done with a server-side script or email service
+        });
+
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

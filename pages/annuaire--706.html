@@ -1,0 +1,274 @@
+<!-- wp:html -->
+<div id="annuaire-root" class="bg-gray-50 text-gray-800 p-2 md:p-8" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8 border border-gray-100">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; mb-6;">
+            <div style="grid-column: 1 / -1;">
+                <label class="block text-sm font-bold mb-1 text-gray-600">Recherche intelligente</label>
+                <input type="text" id="searchInput" placeholder="🔍 Nom, ville, catégorie..." 
+                    style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; border-left: 4px solid #2563eb;">
+            </div>
+            
+            <div>
+                <label class="block text-sm font-bold mb-1 text-gray-600">Type</label>
+                <select id="typeFilter" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"><option value="">Tous les Types</option></select>
+            </div>
+            <div>
+                <label class="block text-sm font-bold mb-1 text-gray-600">Sous-Catégorie</label>
+                <select id="categoryFilter" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"><option value="">Toutes les Sous-Catégories</option></select>
+            </div>
+            <div>
+                <label class="block text-sm font-bold mb-1 text-gray-600">Secteur d'activité</label>
+                <select id="sectorFilter" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"><option value="">Tous les Secteurs</option></select>
+            </div>
+            <div>
+                <label class="block text-sm font-bold mb-1 text-gray-600">Ville</label>
+                <select id="cityFilter" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;"><option value="">Toutes les Villes</option></select>
+            </div>
+            <div>
+                <label class="block text-sm font-bold mb-1 text-gray-600">Code Postal (CP)</label>
+                <input type="text" id="postalCodeFilter" placeholder="Ex: 13000" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; justify-content: center;">
+                <label class="text-sm cursor-pointer"><input type="checkbox" id="websiteFilter"> 🌐 Avec Site Web</label>
+                <label class="text-sm cursor-pointer"><input type="checkbox" id="googleFilter"> 📍 Avec Lien Google</label>
+                <label class="text-sm cursor-pointer"><input type="checkbox" id="contactFilter"> 📧 Contact Direct (Email/Tél)</label>
+            </div>
+
+            <div>
+                <label class="block text-sm font-bold mb-1 text-gray-600">Trier par</label>
+                <select id="sortBy" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                    <option value="name-asc">Nom (A-Z)</option>
+                    <option value="ranger-asc">Ranger ↑</option>
+                    <option value="nbr-desc">Nbr ↓</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-bold mb-1 text-gray-600">Résultats / page</label>
+                <select id="itemsPerPage" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                    <option value="20">20 par page</option>
+                    <option value="25">25 par page</option>
+                    <option value="50">50 par page</option>
+                    <option value="100">100 par page</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 20px; border-top: 2px solid #f3f4f6;">
+            <button id="resetFilters" style="padding: 10px 20px; background: #6b7280; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Réinitialiser</button>
+            <button id="openAllWebsites" style="padding: 10px 20px; background: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">🌐 Ouvrir 20 Sites</button>
+            <button id="openAllGoogle" style="padding: 10px 20px; background: #16a34a; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">📍 Ouvrir 20 Google Maps</button>
+            <button id="copyEmails" style="padding: 10px 20px; background: #9333ea; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">📧 Copier Emails</button>
+        </div>
+    </div>
+
+    <div id="resultsCounter" style="margin-bottom: 20px; font-weight: bold; color: #2563eb; font-size: 1.1rem;">Initialisation...</div>
+    <div id="resultsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;"></div>
+    
+    <div id="pagination" style="display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 40px;"></div>
+</div>
+
+<style>
+    .company-card { background: white; padding: 24px; border-radius: 15px; border: 1px solid #e5e7eb; display: flex; flex-direction: column; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .company-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border-color: #2563eb; }
+    .tag-category { font-size: 10px; font-weight: 800; text-transform: uppercase; background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 6px; margin-bottom: 8px; width: fit-content; }
+    .tag-sector { font-size: 10px; font-weight: 600; background: #f3f4f6; color: #4b5563; padding: 3px 8px; border-radius: 4px; margin-bottom: 12px; width: fit-content; }
+    .btn-action { display: block; text-align: center; padding: 10px; margin-top: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; transition: 0.2s; }
+    .btn-site { background: #2563eb; color: white; }
+    .btn-site:hover { background: #1d4ed8; }
+    .btn-maps { background: #16a34a; color: white; }
+    .btn-maps:hover { background: #15803d; }
+
+    #pagination button { padding: 10px 18px; border: 1px solid #d1d5db; background: white; cursor: pointer; border-radius: 8px; font-weight: 600; transition: 0.2s; }
+    #pagination button.active-page { background-color: #1e40af !important; color: white !important; border-color: #1e40af; }
+    #pagination button:hover:not(:disabled) { border-color: #2563eb; color: #2563eb; }
+    #pagination .arrow-btn { font-size: 20px; color: #2563eb; }
+</style>
+
+<script>
+(function() {
+    const JSON_URL = 'http://maison-johnco-marketing.com/wp-content/uploads/2026/01/csvjson.json';
+    let allData = [];
+    let filteredData = [];
+    let currentPage = 1;
+
+    async function init() {
+        try {
+            const resp = await fetch(JSON_URL);
+            const data = await resp.json();
+            allData = Array.isArray(data) ? data : Object.values(data);
+            
+            // Remplissage des listes déroulantes uniques
+            fillSelect('typeFilter', 'Type');
+            fillSelect('categoryFilter', 'Sous-Catégorie');
+            fillSelect('sectorFilter', 'Secteur d’activité');
+            fillSelect('cityFilter', 'Ville');
+
+            setupEventListeners();
+            applyFilters();
+        } catch (e) {
+            document.getElementById('resultsCounter').innerText = "Erreur : Impossible de charger le fichier JSON.";
+        }
+    }
+
+    function fillSelect(id, key) {
+        const select = document.getElementById(id);
+        const values = [...new Set(allData.map(i => i[key]).filter(v => v && v !== "#N/A"))].sort();
+        values.forEach(v => select.add(new Option(v, v)));
+    }
+
+    function setupEventListeners() {
+        const inputs = ['searchInput', 'typeFilter', 'categoryFilter', 'sectorFilter', 'cityFilter', 'postalCodeFilter', 'websiteFilter', 'googleFilter', 'contactFilter', 'sortBy', 'itemsPerPage'];
+        inputs.forEach(id => {
+            const el = document.getElementById(id);
+            el.addEventListener(el.type === 'checkbox' || el.tagName === 'SELECT' ? 'change' : 'input', () => {
+                currentPage = 1;
+                applyFilters();
+            });
+        });
+
+        document.getElementById('resetFilters').onclick = () => {
+            inputs.forEach(id => {
+                const el = document.getElementById(id);
+                if(el.type === 'checkbox') el.checked = false;
+                else el.value = "";
+            });
+            applyFilters();
+        };
+
+        document.getElementById('openAllWebsites').onclick = () => openBatch("Liens web site");
+        document.getElementById('openAllGoogle').onclick = () => openBatch("Liens Google");
+        document.getElementById('copyEmails').onclick = copyEmailsToClipboard;
+    }
+
+    function applyFilters() {
+        const search = document.getElementById('searchInput').value.toLowerCase();
+        const type = document.getElementById('typeFilter').value;
+        const cat = document.getElementById('categoryFilter').value;
+        const sect = document.getElementById('sectorFilter').value;
+        const city = document.getElementById('cityFilter').value;
+        const cp = document.getElementById('postalCodeFilter').value;
+        const onlyWeb = document.getElementById('websiteFilter').checked;
+        const onlyGoogle = document.getElementById('googleFilter').checked;
+        const onlyContact = document.getElementById('contactFilter').checked;
+
+        filteredData = allData.filter(item => {
+            const matchSearch = !search || (item.Nom || "").toLowerCase().includes(search) || (item.Ville || "").toLowerCase().includes(search);
+            const matchType = !type || item.Type === type;
+            const matchCat = !cat || item["Sous-Catégorie"] === cat;
+            const matchSect = !sect || item["Secteur d’activité"] === sect;
+            const matchCity = !city || item.Ville === city;
+            const matchCP = !cp || (item.CP || "").includes(cp);
+            const matchWeb = !onlyWeb || (item["Liens web site"] && item["Liens web site"] !== "#N/A" && item["Liens web site"] !== "");
+            const matchGoogle = !onlyGoogle || (item["Liens Google"] && item["Liens Google"] !== "#N/A" && item["Liens Google"] !== "");
+            const matchContact = !onlyContact || ((item.Email && item.Email !== "#N/A") || (item.Téléphone && item.Téléphone !== "#N/A"));
+            
+            return matchSearch && matchType && matchCat && matchSect && matchCity && matchCP && matchWeb && matchGoogle && matchContact;
+        });
+
+        const sort = document.getElementById('sortBy').value;
+        if(sort === 'name-asc') filteredData.sort((a,b) => (a.Nom || "").localeCompare(b.Nom || ""));
+        if(sort === 'ranger-asc') filteredData.sort((a,b) => (parseInt(a.Ranger) || 0) - (parseInt(b.Ranger) || 0));
+        if(sort === 'nbr-desc') filteredData.sort((a,b) => (parseInt(b.Nbr) || 0) - (parseInt(a.Nbr) || 0));
+
+        render();
+    }
+
+    function render() {
+        const grid = document.getElementById('resultsGrid');
+        const ppp = parseInt(document.getElementById('itemsPerPage').value);
+        const start = (currentPage - 1) * ppp;
+        const pageData = filteredData.slice(start, start + ppp);
+
+        document.getElementById('resultsCounter').innerHTML = `📌 <b>${filteredData.length}</b> établissements trouvés | Page ${currentPage}`;
+
+        grid.innerHTML = pageData.map(item => {
+            const hasWeb = item["Liens web site"] && item["Liens web site"] !== "#N/A" && item["Liens web site"] !== "";
+            const hasGaps = item["Liens Google"] && item["Liens Google"] !== "#N/A" && item["Liens Google"] !== "";
+            
+            return `
+                <div class="company-card">
+                    <div class="tag-category">${item["Sous-Catégorie"] || 'Établissement'}</div>
+                    <div class="tag-sector">${item["Secteur d’activité"] || ''}</div>
+                    <h3 style="font-weight: 800; font-size: 1.2rem; line-height: 1.2; margin-bottom: 15px;">${item.Nom || 'Non renseigné'}</h3>
+                    
+                    <div style="font-size: 13px; line-height: 1.6; color: #4b5563; margin-bottom: 20px; border-left: 2px solid #e5e7eb; padding-left: 10px;">
+                        ${item.Ville ? `<p>📍 <b>${item.Ville}</b> (${item.CP || ''})</p>` : ''}
+                        ${(item.Téléphone && item.Téléphone !== "#N/A") ? `<p>📞 ${item.Téléphone}</p>` : ''}
+                        ${(item.Email && item.Email !== "#N/A") ? `<p style="color:#2563eb; font-weight:bold; overflow:hidden; text-overflow:ellipsis;">📧 ${item.Email}</p>` : ''}
+                        ${(item.Adresse && item.Adresse !== "#N/A") ? `<p style="font-size:11px; color:#9ca3af; margin-top:5px;">🏠 ${item.Adresse}</p>` : ''}
+                    </div>
+
+                    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px;">
+                        ${hasWeb ? `<a href="${item["Liens web site"]}" target="_blank" class="btn-action btn-site text-white">🌐 Consulter le site web</a>` : ''}
+                        ${hasGaps ? `<a href="${item["Liens Google"]}" target="_blank" class="btn-action btn-maps text-white">📍 Voir sur Google Maps</a>` : ''}
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        renderPagination(ppp);
+    }
+
+    function renderPagination(ppp) {
+        const totalPages = Math.ceil(filteredData.length / ppp);
+        const nav = document.getElementById('pagination');
+        nav.innerHTML = '';
+        if(totalPages <= 1) return;
+
+        const prev = document.createElement('button');
+        prev.innerHTML = '←';
+        prev.className = 'arrow-btn';
+        prev.disabled = currentPage === 1;
+        prev.onclick = () => { currentPage--; render(); window.scrollTo({top: 0, behavior: 'smooth'}); };
+        nav.appendChild(prev);
+
+        let start = Math.max(1, currentPage - 2);
+        let end = Math.min(totalPages, start + 4);
+        if(end - start < 4) start = Math.max(1, end - 4);
+
+        for(let i = start; i <= end; i++) {
+            const b = document.createElement('button');
+            b.innerText = i;
+            if(i === currentPage) b.className = 'active-page';
+            b.onclick = () => { currentPage = i; render(); window.scrollTo({top: 0, behavior: 'smooth'}); };
+            nav.appendChild(b);
+        }
+
+        const next = document.createElement('button');
+        next.innerHTML = '→';
+        next.className = 'arrow-btn';
+        next.disabled = currentPage === totalPages;
+        next.onclick = () => { currentPage++; render(); window.scrollTo({top: 0, behavior: 'smooth'}); };
+        nav.appendChild(next);
+    }
+
+    function openBatch(key) {
+        const ppp = parseInt(document.getElementById('itemsPerPage').value);
+        const currentBatch = filteredData.slice((currentPage-1)*ppp, currentPage*ppp);
+        let opened = 0;
+        currentBatch.forEach(item => {
+            if(item[key] && item[key] !== "#N/A" && item[key] !== "") {
+                window.open(item[key], '_blank');
+                opened++;
+            }
+        });
+        if(opened === 0) alert("Aucun lien disponible sur cette page.");
+    }
+
+    function copyEmailsToClipboard() {
+        const ppp = parseInt(document.getElementById('itemsPerPage').value);
+        const emails = filteredData.slice((currentPage-1)*ppp, currentPage*ppp)
+            .map(i => i.Email).filter(e => e && e !== "#N/A" && e !== "");
+        
+        if(emails.length > 0) {
+            navigator.clipboard.writeText(emails.join(', ')).then(() => alert(emails.length + " emails copiés !"));
+        } else {
+            alert("Aucun email trouvé sur cette page.");
+        }
+    }
+
+    init();
+})();
+</script>
+<!-- /wp:html -->

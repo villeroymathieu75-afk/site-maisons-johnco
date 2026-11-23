@@ -1,0 +1,256 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devis sur mesure | Maison John&Co - Agence de Marketing Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .quote-card {
+            transition: all 0.3s ease;
+        }
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite;
+        }
+        @keyframes bounce-slow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Devis sur mesure pour votre projet digital</h1>
+                <p class="text-xl mb-10">Chaque projet est unique. Obtenez une estimation rapide et transparente adaptée à vos besoins spécifiques.</p>
+                <button id="start-quote-btn" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 transform hover:scale-105 animate-bounce-slow">
+                    Commencer mon devis <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Pourquoi choisir notre outil de devis ?</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="quote-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-bolt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Rapide et efficace</h3>
+                    <p class="text-gray-600">Obtenez une estimation en moins de 2 minutes grâce à notre formulaire optimisé.</p>
+                </div>
+                <div class="quote-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-sliders-h text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">100% personnalisé</h3>
+                    <p class="text-gray-600">Nous adaptons notre proposition à vos besoins spécifiques et à votre budget.</p>
+                </div>
+                <div class="quote-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-hand-holding-usd text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Transparent</h3>
+                    <p class="text-gray-600">Pas de surprises, vous savez exactement ce qui est inclus dans notre offre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-indigo-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Ce que disent nos clients</h2>
+            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Le devis était clair et détaillé. Maison John&Co a parfaitement compris nos besoins et a proposé une solution sur mesure."</p>
+                    <div class="flex items-center">
+                        <div class="bg-indigo-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-indigo-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sophie Martin</h4>
+                            <p class="text-gray-500 text-sm">Directrice Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Très impressionné par la rapidité de réponse et la qualité de l'analyse. Le devis reflétait exactement ce dont nous avions besoin."</p>
+                    <div class="flex items-center">
+                        <div class="bg-indigo-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-indigo-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Thomas Dubois</h4>
+                            <p class="text-gray-500 text-sm">Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="quote-form" class="py-20 bg-white hidden">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Votre projet en quelques questions</h2>
+                <p class="text-gray-600">Répondez à ce court questionnaire pour recevoir une estimation personnalisée.</p>
+            </div>
+            
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Votre nom</label>
+                        <input type="text" id="name" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Votre email</label>
+                        <input type="email" id="email" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Votre entreprise (optionnel)</label>
+                    <input type="text" id="company" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">Quels services vous intéressent ?</label>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <label class="flex items-center space-x-3">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500">
+                            <span class="text-gray-700">Création de site web</span>
+                        </label>
+                        <label class="flex items-center space-x-3">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500">
+                            <span class="text-gray-700">SEO (Référencement naturel)</span>
+                        </label>
+                        <label class="flex items-center space-x-3">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500">
+                            <span class="text-gray-700">Publicité en ligne (SEA)</span>
+                        </label>
+                        <label class="flex items-center space-x-3">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500">
+                            <span class="text-gray-700">Réseaux sociaux</span>
+                        </label>
+                        <label class="flex items-center space-x-3">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500">
+                            <span class="text-gray-700">Stratégie de contenu</span>
+                        </label>
+                        <label class="flex items-center space-x-3">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500">
+                            <span class="text-gray-700">Autre</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Budget estimé (optionnel)</label>
+                    <select id="budget" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition">
+                        <option value="">Je ne sais pas</option>
+                        <option value="1">Moins de 2 000€</option>
+                        <option value="2">2 000€ - 5 000€</option>
+                        <option value="3">5 000€ - 10 000€</option>
+                        <option value="4">10 000€ - 20 000€</option>
+                        <option value="5">Plus de 20 000€</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Décrivez votre projet en quelques mots</label>
+                    <textarea id="message" rows="4" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"></textarea>
+                </div>
+                
+                <div class="pt-4">
+                    <button type="submit" class="w-full gradient-bg text-white font-bold py-4 px-6 rounded-lg hover:opacity-90 transition duration-300 transform hover:scale-105">
+                        Obtenir mon devis <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à donner vie à votre projet digital ?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">Notre équipe est à votre disposition pour discuter de vos besoins et vous proposer la meilleure solution.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button id="cta-quote-btn" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+                    Demander un devis <i class="fas fa-file-alt ml-2"></i>
+                </button>
+                <a href="#" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-indigo-700 transition duration-300">
+                    Nous contacter <i class="fas fa-phone ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script>
+        // Show quote form when buttons are clicked
+        const startQuoteBtn = document.getElementById('start-quote-btn');
+        const ctaQuoteBtn = document.getElementById('cta-quote-btn');
+        const quoteForm = document.getElementById('quote-form');
+
+        [startQuoteBtn, ctaQuoteBtn].forEach(btn => {
+            btn.addEventListener('click', () => {
+                quoteForm.classList.remove('hidden');
+                quoteForm.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre demande de devis ! Notre équipe va analyser votre projet et vous répondre dans les plus brefs délais.');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

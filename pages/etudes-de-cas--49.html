@@ -1,0 +1,785 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE ÉTUDES DE CAS — Maison John&Co Marketing
+     Hub filtrable : Pros / Créateurs / Particuliers
+     À coller dans un bloc HTML personnalisé WordPress
+     ═══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .mjc-cs {
+    --bg-dark:#0A1628; --bg-darker:#1E3A5F; --bg-light:#FAFAFA; --bg-white:#FFFFFF;
+    --accent:#7C3AED; --accent-l:#A78BFA; --accent-h:#6D28D9; --accent-g:rgba(124,58,237,.4);
+    --pink:#EC4899; --pink-l:#F9A8D4;
+    --green:#10B981; --green-l:#6EE7B7;
+    --amber:#F59E0B; --amber-l:#FCD34D;
+    --red:#E63946; --red-l:#FF6B7A;
+    --text-d:#1A1A2E; --text-m:#6B7280; --text-l:#FFFFFF; --text-lm:#B0B8C5;
+    --border-l:#E5E7EB; --border-d:rgba(255,255,255,.1);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--text-d); line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .mjc-cs *,.mjc-cs *::before,.mjc-cs *::after{box-sizing:border-box;}
+  .mjc-cs p{margin:0 0 16px;} .mjc-cs h1,.mjc-cs h2,.mjc-cs h3,.mjc-cs h4{margin:0;letter-spacing:-.02em;}
+  .mjc-cs a{text-decoration:none;color:inherit;}
+  .mjc-cs-c{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+  /* ANIMS */
+  @keyframes cs-grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  @keyframes cs-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  @keyframes cs-pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-g)}70%{box-shadow:0 0 0 14px transparent}}
+  @keyframes cs-up{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+
+  .cs-rev{opacity:0;transform:translateY(36px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+  .cs-rev.on{opacity:1;transform:translateY(0);}
+  .cs-rev.d1{transition-delay:.1s}.cs-rev.d2{transition-delay:.2s}.cs-rev.d3{transition-delay:.3s}
+
+  /* HERO */
+  .mjc-cs-hero{background:var(--bg-dark);padding:130px 0 90px;position:relative;overflow:hidden;color:var(--text-l);text-align:center;}
+  .mjc-cs-hero-bg{position:absolute;inset:0;background:linear-gradient(125deg,#0A1628 0%,#1E3A5F 35%,#2D1B69 70%,#0A1628 100%);background-size:400% 400%;animation:cs-grad 20s ease infinite;z-index:0;}
+  .cs-orb{position:absolute;border-radius:50%;filter:blur(80px);z-index:1;animation:cs-float 8s ease-in-out infinite;}
+  .cs-orb-1{top:-80px;right:-80px;width:450px;height:450px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.25;}
+  .cs-orb-2{bottom:-80px;left:-80px;width:350px;height:350px;background:radial-gradient(circle,var(--accent-l),transparent 70%);opacity:.18;animation-delay:-4s;}
+  .mjc-cs-hero-inner{position:relative;z-index:2;max-width:800px;margin:0 auto;}
+  .cs-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,58,237,.15);backdrop-filter:blur(10px);color:var(--accent-l);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:28px;border:1px solid rgba(167,139,250,.3);animation:cs-up .8s ease-out;}
+  .cs-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:cs-pulse 2s infinite;}
+  .mjc-cs-hero h1{font-size:56px;font-weight:700;line-height:1.1;margin-bottom:20px;color:var(--text-l);animation:cs-up .9s ease-out .1s both;}
+  .mjc-cs-hero h1 .ag{background:linear-gradient(135deg,#A78BFA,#7C3AED,#C4B5FD);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:cs-grad 5s ease infinite;}
+  .cs-sub{font-size:18px;color:var(--text-lm);margin-bottom:48px;line-height:1.6;animation:cs-up 1s ease-out .3s both;}
+
+  /* CHIFFRES CLÉS */
+  .cs-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding-top:40px;border-top:1px solid var(--border-d);animation:cs-up 1s ease-out .5s both;}
+  .cs-stat-v{font-size:40px;font-weight:700;background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:6px;}
+  .cs-stat-l{font-size:13px;color:var(--text-lm);text-transform:uppercase;letter-spacing:1px;}
+
+  /* SECTION PRINCIPALE */
+  .mjc-cs-main{background:var(--bg-light);padding:80px 0 120px;}
+
+  /* FILTRES */
+  .cs-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:48px;align-items:center;justify-content:center;}
+  .cs-filter{
+    padding:10px 22px;background:var(--bg-white);border:1px solid var(--border-l);
+    border-radius:999px;font-size:14px;font-weight:600;color:var(--text-m);
+    cursor:pointer;transition:all .3s ease;display:inline-flex;align-items:center;gap:8px;
+    font-family:inherit;
+  }
+  .cs-filter:hover{border-color:var(--accent-l);color:var(--accent);}
+  .cs-filter.active{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;border-color:transparent;box-shadow:0 4px 16px var(--accent-g);}
+  .cs-filter-count{background:rgba(255,255,255,.25);padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;}
+  .cs-filter:not(.active) .cs-filter-count{background:rgba(124,58,237,.1);color:var(--accent);}
+
+  /* GRILLE ÉTUDES */
+  .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+
+  /* CARTE ÉTUDE DE CAS */
+  .cs-card{
+    background:var(--bg-white);border:1px solid var(--border-l);border-radius:20px;overflow:hidden;
+    transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer;display:flex;flex-direction:column;
+  }
+  .cs-card:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(10,22,40,.1);border-color:var(--accent-l);}
+  .cs-card.hidden{display:none;}
+
+  .cs-card-image{
+    height:200px;position:relative;overflow:hidden;flex-shrink:0;
+    background:linear-gradient(135deg,var(--bg-dark),var(--bg-darker));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .cs-card-image-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(10,22,40,.8) 100%);}
+  .cs-card-image-placeholder{color:rgba(255,255,255,.3);position:relative;z-index:1;}
+  /*
+    SLOT IMAGE : pour chaque étude de cas, remplacer le fond par
+    background-image: url('/wp-content/uploads/case-X.jpg');
+    background-size: cover; background-position: center;
+  */
+
+  .cs-card-category{
+    position:absolute;top:16px;left:16px;z-index:2;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    backdrop-filter:blur(8px);
+  }
+  .cat-pro{background:rgba(124,58,237,.85);color:white;}
+  .cat-creator{background:rgba(236,72,153,.85);color:white;}
+  .cat-part{background:rgba(16,185,129,.85);color:white;}
+
+  .cs-card-body{padding:24px;flex:1;display:flex;flex-direction:column;}
+  .cs-card-sector{font-size:11px;font-weight:600;color:var(--text-m);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
+  .cs-card h3{font-size:20px;font-weight:700;line-height:1.3;margin-bottom:10px;color:var(--text-d);}
+  .cs-card-excerpt{font-size:14px;color:var(--text-m);line-height:1.6;margin-bottom:20px;flex:1;}
+
+  /* Métriques */
+  .cs-card-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px;padding:16px;background:var(--bg-light);border-radius:12px;}
+  .cs-metric{text-align:center;}
+  .cs-metric-value{font-size:22px;font-weight:800;line-height:1;margin-bottom:3px;}
+  .cs-metric-label{font-size:10px;font-weight:600;color:var(--text-m);text-transform:uppercase;letter-spacing:.5px;}
+
+  .cs-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border-l);}
+  .cs-card-tags{display:flex;gap:6px;flex-wrap:wrap;}
+  .cs-tag{background:rgba(124,58,237,.08);color:var(--accent);padding:4px 10px;border-radius:999px;font-size:11px;font-weight:500;border:1px solid rgba(124,58,237,.15);}
+  .cs-tag.pink{background:rgba(236,72,153,.08);color:var(--pink);border-color:rgba(236,72,153,.15);}
+  .cs-tag.green{background:rgba(16,185,129,.08);color:var(--green);border-color:rgba(16,185,129,.15);}
+  .cs-card-arrow{width:36px;height:36px;background:var(--bg-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-m);transition:all .3s ease;border:1px solid var(--border-l);flex-shrink:0;}
+  .cs-card:hover .cs-card-arrow{background:var(--accent);color:white;border-color:var(--accent);transform:translateX(3px);}
+
+  /* ÉTUDE EN AVANT (grande) */
+  .cs-featured{
+    grid-column:span 3;
+    display:grid;grid-template-columns:1.2fr 1fr;
+    gap:0;border-radius:24px;overflow:hidden;
+    border:1px solid var(--border-l);
+    background:var(--bg-white);
+    transition:all .4s ease;
+  }
+  .cs-featured:hover{box-shadow:0 24px 48px rgba(10,22,40,.12);transform:translateY(-6px);}
+  .cs-featured .cs-card-image{height:100%;min-height:320px;}
+  .cs-featured-body{padding:40px;display:flex;flex-direction:column;justify-content:center;}
+  .cs-featured-label{display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.1);color:var(--accent);padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:16px;}
+  .cs-featured h3{font-size:28px;font-weight:700;line-height:1.2;margin-bottom:12px;color:var(--text-d);}
+  .cs-featured-desc{font-size:16px;color:var(--text-m);line-height:1.7;margin-bottom:24px;}
+  .cs-featured-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;padding:20px;background:var(--bg-light);border-radius:14px;}
+  .cs-featured-metric-v{font-size:32px;font-weight:800;line-height:1;margin-bottom:4px;}
+  .cs-featured-metric-l{font-size:11px;font-weight:600;color:var(--text-m);text-transform:uppercase;}
+  .cs-featured-cta{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;border-radius:10px;font-size:14px;font-weight:600;transition:all .3s ease;align-self:flex-start;}
+  .cs-featured-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-g);}
+
+  /* TÉMOIGNAGES */
+  .mjc-cs-testimonials{background:var(--bg-dark);padding:80px 0;}
+  .cs-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .cs-testi{background:rgba(255,255,255,.04);border:1px solid var(--border-d);border-radius:20px;padding:32px;}
+  .cs-testi-stars{color:var(--amber);font-size:18px;margin-bottom:16px;letter-spacing:2px;}
+  .cs-testi-text{font-size:15px;color:var(--text-lm);line-height:1.7;margin-bottom:24px;font-style:italic;}
+  .cs-testi-author{display:flex;align-items:center;gap:14px;}
+  .cs-testi-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-l));display:flex;align-items:center;justify-content:center;color:white;font-size:16px;font-weight:700;flex-shrink:0;}
+  .cs-testi-name{font-weight:700;font-size:14px;color:var(--text-l);}
+  .cs-testi-role{font-size:12px;color:var(--text-lm);}
+
+  /* CTA */
+  .mjc-cs-cta{background:var(--bg-dark);padding:100px 0;text-align:center;position:relative;overflow:hidden;}
+  .mjc-cs-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);border-radius:50%;}
+  .cs-cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+  .mjc-cs-cta h2{font-size:44px;font-weight:700;line-height:1.15;margin-bottom:20px;color:var(--text-l);}
+  .mjc-cs-cta h2 .ag{background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .mjc-cs-cta p{font-size:18px;color:var(--text-lm);margin-bottom:36px;}
+  .cs-cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .cs-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;transition:all .3s ease;border:none;cursor:pointer;font-family:inherit;}
+  .cs-btn-p{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;box-shadow:0 4px 16px var(--accent-g);}
+  .cs-btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--accent-g);}
+  .cs-btn-o{background:rgba(255,255,255,.06);color:white;border:1px solid var(--border-d);}
+  .cs-btn-o:hover{background:rgba(255,255,255,.1);border-color:var(--accent-l);}
+
+  /* ÉTAT VIDE */
+  .cs-empty{display:none;text-align:center;padding:80px 20px;color:var(--text-m);}
+  .cs-empty svg{margin-bottom:16px;color:var(--border-l);}
+  .cs-empty h3{font-size:20px;font-weight:600;color:var(--text-d);margin-bottom:8px;}
+  .cs-empty p{font-size:15px;margin:0;}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .mjc-cs-hero h1{font-size:42px;}
+    .cs-hero-stats{grid-template-columns:repeat(2,1fr);}
+    .cs-grid{grid-template-columns:repeat(2,1fr);}
+    .cs-featured{grid-column:span 2;grid-template-columns:1fr;}
+    .cs-featured .cs-card-image{min-height:240px;}
+    .cs-testi-grid{grid-template-columns:1fr;}
+    .mjc-cs-cta h2{font-size:32px;}
+  }
+  @media(max-width:768px){
+    .mjc-cs-hero{padding:90px 0 60px;}
+    .mjc-cs-hero h1{font-size:30px;}
+    .cs-sub{font-size:16px;}
+    .mjc-cs-main{padding:48px 0 80px;}
+    .cs-grid{grid-template-columns:1fr;}
+    .cs-featured{grid-column:span 1;}
+    .cs-featured-body{padding:24px;}
+    .cs-featured h3{font-size:22px;}
+    .cs-featured-metrics{grid-template-columns:repeat(3,1fr);}
+    .cs-featured-metric-v{font-size:24px;}
+    .mjc-cs-cta{padding:64px 0;}
+    .mjc-cs-cta h2{font-size:26px;}
+    .cs-cta-btns{flex-direction:column;align-items:stretch;}
+    .cs-btn{justify-content:center;}
+    .cs-card-metrics{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+
+<div class="mjc-cs">
+
+  <!-- HERO -->
+  <section class="mjc-cs-hero">
+    <div class="mjc-cs-hero-bg"></div>
+    <div class="cs-orb cs-orb-1"></div>
+    <div class="cs-orb cs-orb-2"></div>
+    <div class="mjc-cs-c">
+      <div class="mjc-cs-hero-inner">
+        <div class="cs-badge"><span class="cs-dot"></span>Études de cas</div>
+        <h1>Des résultats <span class="ag">mesurables</span>,<br>pas des promesses</h1>
+        <p class="cs-sub">Chiffres réels, contextes réels, stratégies déployées. Découvrez comment nous avons transformé des projets concrets en succès digitaux durables.</p>
+        <div class="cs-hero-stats">
+          <div><div class="cs-stat-v">+240%</div><div class="cs-stat-l">Croissance audience moy.</div></div>
+          <div><div class="cs-stat-v">×3.2</div><div class="cs-stat-l">ROI publicitaire moyen</div></div>
+          <div><div class="cs-stat-v">-42%</div><div class="cs-stat-l">Coût d'acquisition</div></div>
+          <div><div class="cs-stat-v">100%</div><div class="cs-stat-l">Clients satisfaits</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <section class="mjc-cs-main">
+    <div class="mjc-cs-c">
+
+      <!-- FILTRES -->
+      <div class="cs-filters cs-rev">
+        <button class="cs-filter active" data-filter="all">
+          Toutes les études <span class="cs-filter-count">12</span>
+        </button>
+        <button class="cs-filter" data-filter="pro">
+          🏢 Entreprises <span class="cs-filter-count">5</span>
+        </button>
+        <button class="cs-filter" data-filter="creator">
+          🎬 Créateurs <span class="cs-filter-count">4</span>
+        </button>
+        <button class="cs-filter" data-filter="part">
+          👤 Particuliers <span class="cs-filter-count">3</span>
+        </button>
+      </div>
+
+      <!-- GRILLE -->
+      <div class="cs-grid" id="csGrid">
+
+        <!-- ══ ÉTUDE VEDETTE 1 — PME ══ -->
+        <div class="cs-featured cs-rev" data-cat="pro">
+          <div class="cs-card-image">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-agri-naturelle.jpg') -->
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <span class="cs-card-category cat-pro">🏢 PME</span>
+          </div>
+          <div class="cs-featured-body">
+            <div class="cs-featured-label">⭐ Étude vedette</div>
+            <div class="cs-card-sector">Agroalimentaire · Bordeaux</div>
+            <h3>Comment Agri'Naturelle a multiplié son CA en ligne par 4 en 14 mois</h3>
+            <p class="cs-featured-desc">PME bordelaise spécialisée dans les produits bio locaux, Agri'Naturelle stagnait avec une boutique en ligne confidentielle. Stratégie SEO + SEA + refonte UX + email marketing : résultats spectaculaires.</p>
+            <div class="cs-featured-metrics">
+              <div>
+                <div class="cs-featured-metric-v" style="color:var(--accent);">×4.1</div>
+                <div class="cs-featured-metric-l">CA en ligne</div>
+              </div>
+              <div>
+                <div class="cs-featured-metric-v" style="color:var(--green);">+340%</div>
+                <div class="cs-featured-metric-l">Trafic organique</div>
+              </div>
+              <div>
+                <div class="cs-featured-metric-v" style="color:var(--amber);">3.8x</div>
+                <div class="cs-featured-metric-l">ROAS publicitaire</div>
+              </div>
+            </div>
+            <a href="/etudes-de-cas/agri-naturelle" class="cs-featured-cta">
+              Lire l'étude complète
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 2 — TPE ══ -->
+        <div class="cs-card cs-rev" data-cat="pro">
+          <div class="cs-card-image">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-cabinet-lyon.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <span class="cs-card-category cat-pro">🏢 TPE</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Conseil juridique · Lyon</div>
+            <h3>Cabinet Dumont & Associés : +180% de demandes clients en 6 mois</h3>
+            <p class="cs-card-excerpt">Cabinet d'avocats lyonnais invisible sur Google. SEO local + refonte site + avis clients : première page Google sur tous leurs mots-clés en 6 mois.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--accent);">+180%</div>
+                <div class="cs-metric-label">Demandes</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">#1</div>
+                <div class="cs-metric-label">Position Google</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">4.9★</div>
+                <div class="cs-metric-label">Avis Google</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag">SEO local</span><span class="cs-tag">Google Ads</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 3 — CRÉATEUR ══ -->
+        <div class="cs-card cs-rev d1" data-cat="creator">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#2D1640,#1E1048);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-sofia-travels.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <span class="cs-card-category cat-creator">🎬 Créatrice</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Voyage & lifestyle · Paris</div>
+            <h3>Sofia Travels : de 12K à 280K abonnés en 11 mois</h3>
+            <p class="cs-card-excerpt">Créatrice de contenu voyage stagnant depuis 2 ans. Repositionnement, stratégie Reels, partenariats luxe : une carrière transformée.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--pink);">×23</div>
+                <div class="cs-metric-label">Abonnés</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">+8K€</div>
+                <div class="cs-metric-label">Revenus/mois</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">6.2%</div>
+                <div class="cs-metric-label">Taux engag.</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag pink">Instagram</span><span class="cs-tag pink">Personal branding</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 4 — ETI ══ -->
+        <div class="cs-card cs-rev" data-cat="pro">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#0A1628,#2D1B69);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-technova.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <span class="cs-card-category cat-pro">🏢 ETI</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Industrie tech · Strasbourg</div>
+            <h3>TechNova Solutions : génération de leads B2B ×3 en 8 mois</h3>
+            <p class="cs-card-excerpt">ETI industrielle invisible en ligne. LinkedIn Ads + content marketing B2B + automation : pipeline commercial transformé.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--accent);">×3.1</div>
+                <div class="cs-metric-label">Leads qualifiés</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">-38%</div>
+                <div class="cs-metric-label">Coût/lead</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">+2.1M€</div>
+                <div class="cs-metric-label">Pipeline</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag">LinkedIn Ads</span><span class="cs-tag">B2B</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 5 — CRÉATEUR ══ -->
+        <div class="cs-card cs-rev d1" data-cat="creator">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#1E1048,#2D1640);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-maxfit.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <span class="cs-card-category cat-creator">🎬 Créateur</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Sport & fitness · Toulouse</div>
+            <h3>MaxFit : lancement formation en ligne à 147K€ en 30 jours</h3>
+            <p class="cs-card-excerpt">Coach sportif TikTok avec 95K abonnés. Stratégie de lancement de formation, tunnel de vente et email list : record de chiffre d'affaires.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--pink);">147K€</div>
+                <div class="cs-metric-label">CA lancement</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">892</div>
+                <div class="cs-metric-label">Ventes</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">30j</div>
+                <div class="cs-metric-label">Durée</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag pink">Lancement</span><span class="cs-tag pink">Formation</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 6 — PARTICULIER ══ -->
+        <div class="cs-card cs-rev d2" data-cat="part">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#0D2B1E,#0A2020);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-reconversion-marine.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span class="cs-card-category cat-part">👤 Particulier</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Reconversion professionnelle · Nantes</div>
+            <h3>Marine, 34 ans : de comptable à UX Designer en 9 mois</h3>
+            <p class="cs-card-excerpt">Accompagnement reconversion digitale complète. Bilan de compétences, formation UX, portfolio, candidatures : premier poste décroché en 9 mois.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">9 mois</div>
+                <div class="cs-metric-label">Durée</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">+4K€</div>
+                <div class="cs-metric-label">Salaire</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">100%</div>
+                <div class="cs-metric-label">Satisf.</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag green">Reconversion</span><span class="cs-tag green">UX Design</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 7 — PME ══ -->
+        <div class="cs-card cs-rev" data-cat="pro">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#0A1628,#1E3A5F);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-lebeaujardin.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <span class="cs-card-category cat-pro">🏢 PME</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Paysagisme & horticulture · Lille</div>
+            <h3>Le Beau Jardin : +220% de devis reçus grâce au SEO local</h3>
+            <p class="cs-card-excerpt">Paysagiste lillois dépendant du bouche-à-oreille. Google Business + SEO local + campagnes saisonnières : agenda plein 3 mois à l'avance.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--accent);">+220%</div>
+                <div class="cs-metric-label">Devis reçus</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">3 mois</div>
+                <div class="cs-metric-label">Agenda plein</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">4.8★</div>
+                <div class="cs-metric-label">Google</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag">SEO local</span><span class="cs-tag">Google Ads</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 8 — CRÉATEUR ══ -->
+        <div class="cs-card cs-rev d1" data-cat="creator">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#2D1640,#0A1628);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-nour-beauty.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="cs-card-category cat-creator">🎬 Créatrice</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Beauté & lifestyle · Marseille</div>
+            <h3>Nour Beauty : partenariat L'Oréal décroché à 45K abonnés</h3>
+            <p class="cs-card-excerpt">Créatrice beauté à fort potentiel mais image peu professionnelle. Personal branding + media kit + pitch deck : partenariat grande marque en 4 mois.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--pink);">×6</div>
+                <div class="cs-metric-label">Revenus</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">4 mois</div>
+                <div class="cs-metric-label">Durée</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">8.1%</div>
+                <div class="cs-metric-label">Engagement</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag pink">Media kit</span><span class="cs-tag pink">TikTok</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 9 — PARTICULIER ══ -->
+        <div class="cs-card cs-rev d2" data-cat="part">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#0D2B1E,#122A4A);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-lucas-business.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/></svg>
+            </div>
+            <span class="cs-card-category cat-part">👤 Particulier</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Entrepreneuriat étudiant · Lyon</div>
+            <h3>Lucas, 22 ans : première boutique en ligne à 18K€ de CA dès le 1er mois</h3>
+            <p class="cs-card-excerpt">Étudiant en école de commerce, idée de boutique dropshipping. Formation + coaching + setup technique : premier mois exceptionnel.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">18K€</div>
+                <div class="cs-metric-label">CA mois 1</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">312</div>
+                <div class="cs-metric-label">Commandes</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">4.2x</div>
+                <div class="cs-metric-label">ROAS</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag green">E-commerce</span><span class="cs-tag green">Meta Ads</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 10 — PME E-COMMERCE ══ -->
+        <div class="cs-card cs-rev" data-cat="pro">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#1A0A2E,#2D1B69);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-maison-epices.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </div>
+            <span class="cs-card-category cat-pro">🏢 TPE</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">E-commerce alimentaire · Montpellier</div>
+            <h3>Maison des Épices : +380% de ventes en ligne en 10 mois</h3>
+            <p class="cs-card-excerpt">Épicerie fine locale avec boutique en ligne artisanale. Refonte, SEO, Meta Ads, email marketing : une PME locale devenue e-commerçante nationale.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--accent);">+380%</div>
+                <div class="cs-metric-label">Ventes</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">×4.5</div>
+                <div class="cs-metric-label">ROAS</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">12K</div>
+                <div class="cs-metric-label">Clients email</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag">Meta Ads</span><span class="cs-tag">Email</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 11 — CRÉATEUR ══ -->
+        <div class="cs-card cs-rev d1" data-cat="creator">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#2D1640,#1A0A2E);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-paul-gaming.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <span class="cs-card-category cat-creator">🎬 Créateur</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Gaming · Paris</div>
+            <h3>PaulXGaming : 0 à 68K abonnés YouTube en 7 mois</h3>
+            <p class="cs-card-excerpt">Jeune créateur gaming sans stratégie. Repositionnement niche, format Shorts, optimisation SEO YouTube, communauté Discord : croissance organique pure.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--pink);">68K</div>
+                <div class="cs-metric-label">Abonnés</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">2.1M</div>
+                <div class="cs-metric-label">Vues</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">7 mois</div>
+                <div class="cs-metric-label">Durée</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-tag pink">YouTube SEO</div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ÉTUDE 12 — PARTICULIER ══ -->
+        <div class="cs-card cs-rev d2" data-cat="part">
+          <div class="cs-card-image" style="background:linear-gradient(135deg,#0A2020,#0D2B1E);">
+            <div class="cs-card-image-overlay"></div>
+            <div class="cs-card-image-placeholder">
+              <!-- SLOT IMAGE : url('/wp-content/uploads/case-isabelle-senior.jpg') -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+            </div>
+            <span class="cs-card-category cat-part">👤 Particulier</span>
+          </div>
+          <div class="cs-card-body">
+            <div class="cs-card-sector">Formation senior · Rennes</div>
+            <h3>Isabelle, 62 ans : autonome sur le digital après 3 mois d'ateliers</h3>
+            <p class="cs-card-excerpt">Retraitée complètement déconnectée du numérique. Programme doux d'initiation au digital : smartphone, démarches en ligne, réseaux familiaux. Transformation de vie.</p>
+            <div class="cs-card-metrics">
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">3 mois</div>
+                <div class="cs-metric-label">Programme</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--green);">100%</div>
+                <div class="cs-metric-label">Autonomie</div>
+              </div>
+              <div class="cs-metric">
+                <div class="cs-metric-value" style="color:var(--amber);">5★</div>
+                <div class="cs-metric-label">Satisf.</div>
+              </div>
+            </div>
+            <div class="cs-card-footer">
+              <div class="cs-card-tags"><span class="cs-tag green">Senior</span><span class="cs-tag green">Initiation</span></div>
+              <div class="cs-card-arrow">→</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cs-grid -->
+
+      <!-- État vide -->
+      <div class="cs-empty" id="csEmpty">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <h3>Aucun résultat pour ce filtre</h3>
+        <p>Essayez un autre filtre ou consultez toutes nos études.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <section class="mjc-cs-testimonials">
+    <div class="mjc-cs-c">
+      <div style="text-align:center;margin-bottom:48px;" class="cs-rev">
+        <div style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent-l);margin-bottom:16px;">— Ce que disent nos clients —</div>
+        <h2 style="font-size:40px;font-weight:700;color:var(--text-l);margin-bottom:12px;">Ils en parlent mieux que nous</h2>
+        <p style="font-size:17px;color:var(--text-lm);margin:0;">Des témoignages réels, des résultats vérifiables.</p>
+      </div>
+
+      <div class="cs-testi-grid">
+        <div class="cs-testi cs-rev">
+          <div class="cs-testi-stars">★★★★★</div>
+          <p class="cs-testi-text">"En 14 mois avec Maison John&Co, notre CA en ligne a été multiplié par 4. Ce qui m'a convaincu dès le début, c'est leur transparence totale : chaque action était expliquée, chaque euro dépensé avait une logique. Ils sont devenus un véritable partenaire stratégique."</p>
+          <div class="cs-testi-author">
+            <div class="cs-testi-avatar">A</div>
+            <div>
+              <div class="cs-testi-name">Antoine M.</div>
+              <div class="cs-testi-role">Fondateur · Agri'Naturelle · Bordeaux</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-testi cs-rev d1">
+          <div class="cs-testi-stars">★★★★★</div>
+          <p class="cs-testi-text">"Je stagnais depuis 2 ans à 12K abonnés et je commençais à perdre foi. En 11 mois avec leur accompagnement, je suis à 280K et je gagne ma vie grâce à ma passion. Leur stratégie Reels était exactement ce qu'il me fallait."</p>
+          <div class="cs-testi-author">
+            <div class="cs-testi-avatar" style="background:linear-gradient(135deg,var(--pink),#BE185D);">S</div>
+            <div>
+              <div class="cs-testi-name">Sofia L.</div>
+              <div class="cs-testi-role">Créatrice voyage · Instagram · Paris</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-testi cs-rev d2">
+          <div class="cs-testi-stars">★★★★★</div>
+          <p class="cs-testi-text">"J'avais 52 ans et j'avais peur d'être trop vieille pour me reconvertir dans le digital. Leur accompagnement patient et bienveillant m'a prouvé le contraire. Aujourd'hui j'ai un poste de UX Designer que j'adore, avec un salaire supérieur à l'ancien."</p>
+          <div class="cs-testi-author">
+            <div class="cs-testi-avatar" style="background:linear-gradient(135deg,var(--green),#059669);">M</div>
+            <div>
+              <div class="cs-testi-name">Marine D.</div>
+              <div class="cs-testi-role">UX Designer · Reconversion · Nantes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="mjc-cs-cta">
+    <div class="mjc-cs-c">
+      <div class="cs-cta-inner cs-rev">
+        <h2>Votre projet sera la <span class="ag">prochaine étude de cas</span></h2>
+        <p>Chaque projet que vous venez de lire a commencé par un simple premier échange gratuit. Le vôtre aussi.</p>
+        <div class="cs-cta-btns">
+          <a href="/contact?type=rdv" class="cs-btn cs-btn-p">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Démarrer mon projet
+          </a>
+          <a href="/portfolio" class="cs-btn cs-btn-o">
+            Voir le portfolio →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  // FILTRES
+  const filters = document.querySelectorAll('.cs-filter');
+  const cards = document.querySelectorAll('#csGrid > [data-cat]');
+  const empty = document.getElementById('csEmpty');
+
+  filters.forEach(f => {
+    f.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      f.classList.add('active');
+      const cat = f.dataset.filter;
+      let visible = 0;
+      cards.forEach(c => {
+        const show = cat === 'all' || c.dataset.cat === cat;
+        c.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      empty.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+
+  // SCROLL REVEAL
+  const ro = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); }});
+  }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.cs-rev').forEach(el => ro.observe(el));
+})();
+</script>
+<!-- /wp:html -->

@@ -1,0 +1,726 @@
+<!-- wp:html {"UAGResponsiveConditions":true} -->
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE CARRIÈRES — Maison John&Co Marketing
+     Offres d'emploi, culture, avantages, candidature spontanée
+     VERSION WORDPRESS (sans DOCTYPE/html/head/body)
+     ═══════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+.mjc-ca{
+  --dk:#0A1628;--dk2:#0F1E3A;--dk3:#131E30;--lt:#F8FAFC;--wh:#FFFFFF;
+  --ac:#7C3AED;--acl:#A78BFA;--ach:#6D28D9;--acg:rgba(124,58,237,.35);
+  --gr:#10B981;--am:#F59E0B;--cy:#06B6D4;--pk:#EC4899;
+  --td:#1A1A2E;--tm:#64748B;--tl:#F1F5F9;--tlm:#94A3B8;
+  --bl:#E2E8F0;--bd:rgba(255,255,255,.08);--bd2:rgba(255,255,255,.14);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--tl);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.mjc-ca *,.mjc-ca *::before,.mjc-ca *::after{box-sizing:border-box;}
+.mjc-ca p{margin:0 0 12px;} .mjc-ca h1,.mjc-ca h2,.mjc-ca h3,.mjc-ca h4{margin:0;letter-spacing:-.02em;}
+.mjc-ca a{text-decoration:none;color:inherit;}
+.ca-w{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+@keyframes ca-gr{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes ca-fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes ca-up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ca-pulse{0%,100%{box-shadow:0 0 0 0 rgba(124,58,237,.5)}70%{box-shadow:0 0 0 10px transparent}}
+.ca-rev{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+.ca-rev.on{opacity:1;transform:translateY(0);}
+.ca-rev.d1{transition-delay:.1s}.ca-rev.d2{transition-delay:.2s}.ca-rev.d3{transition-delay:.3s}
+
+/* HERO */
+.ca-hero{background:var(--dk);padding:120px 0 70px;position:relative;overflow:hidden;}
+.ca-hero-bg{position:absolute;inset:0;background:linear-gradient(140deg,#060E1A 0%,#0A1628 40%,#0F1E3A 70%,#060E1A 100%);z-index:0;}
+.ca-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(124,58,237,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.04) 1px,transparent 1px);background-size:60px 60px;z-index:1;}
+.ca-glow{position:absolute;border-radius:50%;filter:blur(90px);z-index:1;animation:ca-fl 10s ease-in-out infinite;}
+.ca-glow-1{width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);top:-150px;right:-100px;}
+.ca-glow-2{width:360px;height:360px;background:radial-gradient(circle,rgba(16,185,129,.1),transparent 70%);bottom:-100px;left:-60px;animation-delay:-5s;}
+.ca-hero-in{position:relative;z-index:2;max-width:780px;}
+.ca-pretitle{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acl);margin-bottom:18px;animation:ca-up .7s ease-out;}
+.ca-pretitle-bar{width:28px;height:2px;background:linear-gradient(90deg,var(--ac),var(--acl));border-radius:2px;}
+.ca-live-dot{width:8px;height:8px;background:var(--gr);border-radius:50%;animation:ca-pulse 2s infinite;}
+.ca-hero h1{font-size:52px;font-weight:800;line-height:1.08;margin-bottom:16px;animation:ca-up .8s ease-out .1s both;}
+.ca-hero h1 em{font-style:normal;background:linear-gradient(135deg,#A78BFA,#7C3AED,#C4B5FD);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:ca-gr 5s ease infinite;}
+.ca-hero-sub{font-size:17px;color:var(--tlm);max-width:600px;line-height:1.65;margin-bottom:36px;animation:ca-up .9s ease-out .2s both;}
+.ca-hero-ctas{display:flex;gap:12px;flex-wrap:wrap;animation:ca-up .9s ease-out .3s both;}
+.ca-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-size:14px;font-weight:600;font-family:inherit;transition:all .3s ease;cursor:pointer;border:none;}
+.ca-btn-p{background:linear-gradient(135deg,var(--ac),var(--ach));color:white;box-shadow:0 4px 16px var(--acg);}
+.ca-btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 24px var(--acg);}
+.ca-btn-o{background:var(--bd);color:var(--tl);border:1px solid var(--bd2);}
+.ca-btn-o:hover{background:var(--bd2);border-color:var(--acl);}
+.ca-hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:32px;animation:ca-up .9s ease-out .4s both;}
+.ca-tag{padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;background:var(--bd);border:1px solid var(--bd2);color:var(--tlm);}
+
+/* CHIFFRES */
+.ca-numbers{background:var(--dk2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:36px 0;}
+.ca-numbers-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.ca-num-item{text-align:center;padding:20px;}
+.ca-num-v{font-size:34px;font-weight:800;background:linear-gradient(135deg,var(--tl),var(--acl));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:4px;}
+.ca-num-l{font-size:12px;color:var(--tlm);text-transform:uppercase;letter-spacing:1px;}
+
+/* SECTION HEADER */
+.ca-sh{text-align:center;margin-bottom:48px;}
+.ca-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acl);margin-bottom:10px;}
+.ca-sh h2{font-size:34px;font-weight:700;color:var(--tl);margin-bottom:10px;}
+.ca-sh p{font-size:15px;color:var(--tlm);max-width:520px;margin:0 auto;}
+
+/* VALEURS */
+.ca-valeurs{background:var(--dk);padding:72px 0;}
+.ca-valeurs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.ca-valeur{background:var(--dk2);border:1px solid var(--bd);border-radius:18px;padding:28px;transition:all .3s ease;}
+.ca-valeur:hover{border-color:rgba(124,58,237,.4);transform:translateY(-3px);}
+.ca-valeur-icon{font-size:28px;margin-bottom:14px;display:block;}
+.ca-valeur h3{font-size:18px;font-weight:700;color:var(--tl);margin-bottom:8px;}
+.ca-valeur p{font-size:13px;color:var(--tlm);line-height:1.6;margin:0;}
+
+/* AVANTAGES */
+.ca-avantages{background:var(--dk2);padding:72px 0;border-top:1px solid var(--bd);}
+.ca-av-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.ca-av{display:flex;align-items:flex-start;gap:16px;background:var(--dk3);border:1px solid var(--bd);border-radius:16px;padding:22px;}
+.ca-av-icon{flex-shrink:0;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.ai-ac{background:rgba(124,58,237,.15);}
+.ai-gr{background:rgba(16,185,129,.15);}
+.ai-am{background:rgba(245,158,11,.15);}
+.ai-cy{background:rgba(6,182,212,.15);}
+.ai-pk{background:rgba(236,72,153,.15);}
+.ai-or{background:rgba(249,115,22,.15);}
+.ca-av h4{font-size:15px;font-weight:700;color:var(--tl);margin-bottom:4px;}
+.ca-av p{font-size:13px;color:var(--tlm);line-height:1.55;margin:0;}
+
+/* OFFRES D'EMPLOI */
+.ca-offres{background:var(--dk);padding:72px 0;}
+.ca-offres-filter{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:36px;}
+.ca-off-chip{padding:7px 16px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .25s;font-family:inherit;border:1px solid var(--bd2);background:transparent;color:var(--tlm);}
+.ca-off-chip:hover{border-color:var(--acl);color:var(--acl);}
+.ca-off-chip.on{background:var(--ac);color:white;border-color:var(--ac);}
+
+.ca-offres-list{display:flex;flex-direction:column;gap:14px;}
+.ca-offre{background:var(--dk2);border:1px solid var(--bd);border-radius:16px;overflow:hidden;transition:all .3s ease;}
+.ca-offre:hover{border-color:rgba(124,58,237,.4);box-shadow:0 8px 24px rgba(0,0,0,.2);}
+.ca-offre.ca-hidden{display:none;}
+.ca-offre-header{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;gap:16px;flex-wrap:wrap;}
+.ca-offre-left{display:flex;align-items:flex-start;gap:14px;}
+.ca-offre-ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.ca-offre-info h3{font-size:17px;font-weight:700;color:var(--tl);margin-bottom:4px;}
+.ca-offre-meta{display:flex;gap:8px;flex-wrap:wrap;}
+.ca-offre-badge{padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600;}
+.ob-type{background:rgba(124,58,237,.15);color:var(--acl);}
+.ob-new{background:rgba(16,185,129,.2);color:#6EE7B7;}
+.ob-urgent{background:rgba(239,68,68,.2);color:#FCA5A5;}
+.ob-dept{background:rgba(255,255,255,.06);color:var(--tlm);border:1px solid var(--bd2);}
+.ca-offre-right{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.ca-offre-loc{font-size:12px;color:var(--tlm);display:flex;align-items:center;gap:4px;}
+.ca-offre-toggle{width:32px;height:32px;background:var(--bd);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--tlm);transition:all .3s ease;flex-shrink:0;}
+.ca-offre.open .ca-offre-toggle{background:var(--ac);color:white;transform:rotate(45deg);}
+.ca-offre-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1);padding:0 24px;}
+.ca-offre.open .ca-offre-body{max-height:900px;padding:0 24px 24px;}
+.ca-offre-content{padding-top:20px;border-top:1px solid var(--bd);}
+.ca-offre-content h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--acl);margin:20px 0 10px;}
+.ca-offre-content h4:first-child{margin-top:0;}
+.ca-offre-content p,.ca-offre-content li{font-size:14px;color:var(--tlm);line-height:1.7;}
+.ca-offre-content ul,.ca-offre-content ol{padding-left:18px;margin:0 0 10px;}
+.ca-offre-content li{margin-bottom:4px;}
+.ca-offre-apply{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:11px 22px;background:linear-gradient(135deg,var(--ac),var(--ach));color:white;border-radius:10px;font-size:13px;font-weight:700;transition:all .3s ease;border:none;cursor:pointer;font-family:inherit;}
+.ca-offre-apply:hover{transform:translateY(-1px);box-shadow:0 8px 18px var(--acg);}
+
+/* Pas d'offre */
+.ca-no-offre{text-align:center;padding:60px 20px;display:none;}
+.ca-no-offre.show{display:block;}
+
+/* PROCESSUS */
+.ca-process{background:var(--dk2);padding:72px 0;border-top:1px solid var(--bd);}
+.ca-process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;}
+.ca-process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--ac),var(--acl),var(--ac),transparent);opacity:.3;}
+.ca-step{text-align:center;position:relative;}
+.ca-step-num{width:56px;height:56px;background:linear-gradient(135deg,var(--ac),var(--ach));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:white;margin:0 auto 16px;box-shadow:0 8px 20px var(--acg);}
+.ca-step h4{font-size:15px;font-weight:700;color:var(--tl);margin-bottom:6px;}
+.ca-step p{font-size:13px;color:var(--tlm);line-height:1.55;margin:0;}
+
+/* CANDIDATURE SPONTANÉE */
+.ca-spontanee{background:var(--dk);padding:72px 0;}
+.ca-form-box{background:var(--dk2);border:1px solid var(--bd);border-radius:24px;padding:40px;max-width:720px;margin:0 auto;}
+.ca-form-box h3{font-size:24px;font-weight:700;color:var(--tl);margin-bottom:6px;}
+.ca-form-box > p{font-size:15px;color:var(--tlm);margin-bottom:28px;}
+.ca-form{display:flex;flex-direction:column;gap:16px;}
+.ca-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.ca-field label{display:block;font-size:12px;font-weight:600;color:var(--tlm);margin-bottom:6px;letter-spacing:.3px;}
+.ca-input{width:100%;padding:11px 14px;background:rgba(255,255,255,.04);border:1px solid var(--bd2);border-radius:10px;font-size:14px;color:var(--tl);font-family:inherit;transition:all .3s ease;outline:none;}
+.ca-input:focus{border-color:var(--ac);background:rgba(124,58,237,.06);box-shadow:0 0 0 3px rgba(124,58,237,.15);}
+.ca-input::placeholder{color:rgba(255,255,255,.25);}
+.ca-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A78BFA' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer;}
+.ca-select option{background:#0A1628;color:white;}
+.ca-form-submit{width:100%;padding:14px;background:linear-gradient(135deg,var(--ac),var(--ach));color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .3s ease;}
+.ca-form-submit:hover{transform:translateY(-2px);box-shadow:0 10px 24px var(--acg);}
+.ca-form-note{font-size:12px;color:var(--tlm);text-align:center;}
+.ca-form-success{display:none;text-align:center;padding:32px;}
+.ca-form-success-icon{font-size:44px;margin-bottom:12px;}
+.ca-form-success h4{font-size:20px;font-weight:700;color:var(--tl);margin-bottom:8px;}
+.ca-form-success p{font-size:14px;color:var(--tlm);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .ca-hero h1{font-size:38px;}
+  .ca-numbers-row{grid-template-columns:repeat(2,1fr);}
+  .ca-valeurs-grid{grid-template-columns:repeat(2,1fr);}
+  .ca-process-steps{grid-template-columns:repeat(2,1fr);}
+  .ca-process-steps::before{display:none;}
+}
+@media(max-width:768px){
+  .ca-hero{padding:90px 0 50px;}
+  .ca-hero h1{font-size:28px;}
+  .ca-hero-sub{font-size:15px;}
+  .ca-hero-ctas{flex-direction:column;align-items:stretch;}
+  .ca-btn{justify-content:center;}
+  .ca-numbers-row{grid-template-columns:repeat(2,1fr);gap:0;}
+  .ca-valeurs-grid,.ca-av-grid{grid-template-columns:1fr;}
+  .ca-form-row{grid-template-columns:1fr;}
+  .ca-offre-header{flex-direction:column;align-items:flex-start;}
+  .ca-valeurs,.ca-avantages,.ca-offres,.ca-process,.ca-spontanee{padding:52px 0;}
+  .ca-sh h2{font-size:26px;}
+}
+</style>
+
+<div class="mjc-ca">
+
+<!-- ── HERO ── -->
+<section class="ca-hero">
+  <div class="ca-hero-bg"></div>
+  <div class="ca-hero-grid"></div>
+  <div class="ca-glow ca-glow-1"></div>
+  <div class="ca-glow ca-glow-2"></div>
+  <div class="ca-w">
+    <div class="ca-hero-in">
+      <div class="ca-pretitle">
+        <div class="ca-pretitle-bar"></div>
+        Rejoindre l'équipe
+        <span class="ca-live-dot"></span>
+        <span style="font-size:11px;font-weight:600;color:var(--gr);">5 postes ouverts</span>
+      </div>
+      <h1>Construisez le digital<br><em>de demain avec nous</em></h1>
+      <p class="ca-hero-sub">Maison John&Co grandit. Nous cherchons des talents passionnés, autonomes et exigeants pour rejoindre une équipe qui préfère l'impact aux process inutiles.</p>
+      <div class="ca-hero-ctas">
+        <button onclick="caScrollTo('ca-offres-section')" class="ca-btn ca-btn-p">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Voir les offres
+        </button>
+        <button onclick="caScrollTo('ca-spontanee-section')" class="ca-btn ca-btn-o">Candidature spontanée</button>
+      </div>
+      <div class="ca-hero-tags">
+        <span class="ca-tag">📍 Paris + Remote</span>
+        <span class="ca-tag">🕐 CDI & Freelance</span>
+        <span class="ca-tag">🚀 Startup spirit</span>
+        <span class="ca-tag">💜 Culture bienveillante</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CHIFFRES ── -->
+<div class="ca-numbers">
+  <div class="ca-w">
+    <div class="ca-numbers-row">
+      <div class="ca-num-item ca-rev"><div class="ca-num-v">18</div><div class="ca-num-l">Personnes dans l'équipe</div></div>
+      <div class="ca-num-item ca-rev d1"><div class="ca-num-v">100+</div><div class="ca-num-l">Freelances partenaires</div></div>
+      <div class="ca-num-item ca-rev d2"><div class="ca-num-v">3</div><div class="ca-num-l">Ans d'existence</div></div>
+      <div class="ca-num-item ca-rev d3"><div class="ca-num-v">4.9★</div><div class="ca-num-l">Note Glassdoor équipe</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── VALEURS ── -->
+<section class="ca-valeurs">
+  <div class="ca-w">
+    <div class="ca-sh ca-rev">
+      <span class="ca-eyebrow">Qui nous sommes</span>
+      <h2>Nos valeurs, pas des slogans</h2>
+      <p>Ce que nous croyons vraiment et comment nous travaillons concrètement au quotidien.</p>
+    </div>
+    <div class="ca-valeurs-grid">
+      <div class="ca-valeur ca-rev">
+        <span class="ca-valeur-icon">🎯</span>
+        <h3>Impact avant tout</h3>
+        <p>On mesure tout. On ne fait que ce qui génère des résultats prouvables pour nos clients. Zéro action cosmétique, zéro rapport de complaisance.</p>
+      </div>
+      <div class="ca-valeur ca-rev d1">
+        <span class="ca-valeur-icon">🏃</span>
+        <h3>Autonomie & responsabilité</h3>
+        <p>Pas de microgestion. Vous gérez votre temps, vos méthodes, vos décisions. En échange, vous êtes pleinement responsable de vos résultats.</p>
+      </div>
+      <div class="ca-valeur ca-rev d2">
+        <span class="ca-valeur-icon">📚</span>
+        <h3>Apprentissage permanent</h3>
+        <p>Le digital évolue vite. On se forme continuellement, on teste, on rate, on apprend. Personne ne sait tout et c'est très bien ainsi.</p>
+      </div>
+      <div class="ca-valeur ca-rev">
+        <span class="ca-valeur-icon">🤝</span>
+        <h3>Honnêteté radicale</h3>
+        <p>On se dit les choses directement, avec bienveillance. Entre collègues et avec les clients. Pas de langue de bois, pas de faux-semblants.</p>
+      </div>
+      <div class="ca-valeur ca-rev d1">
+        <span class="ca-valeur-icon">🌱</span>
+        <h3>Croissance partagée</h3>
+        <p>Quand John&Co grandit, l'équipe grandit. Rémunération au mérite, opportunités d'évolution rapide, participation aux succès de l'agence.</p>
+      </div>
+      <div class="ca-valeur ca-rev d2">
+        <span class="ca-valeur-icon">❤️</span>
+        <h3>Engagement sociétal</h3>
+        <p>5% de nos bénéfices vont à l'association Enfant de Cœur. Chaque membre de l'équipe peut consacrer 2h/mois à des missions de bénévolat digital.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AVANTAGES ── -->
+<section class="ca-avantages">
+  <div class="ca-w">
+    <div class="ca-sh ca-rev">
+      <span class="ca-eyebrow">Ce que nous offrons</span>
+      <h2>Travailler ici, concrètement</h2>
+      <p>Les vrais avantages, sans bullshit corporate.</p>
+    </div>
+    <div class="ca-av-grid">
+      <div class="ca-av ca-rev">
+        <div class="ca-av-icon ai-ac">💶</div>
+        <div><h4>Rémunération compétitive</h4><p>Salaires dans la tranche haute du marché, revus chaque année selon les performances. Variable déplafonné pour les profils commerciaux.</p></div>
+      </div>
+      <div class="ca-av ca-rev d1">
+        <div class="ca-av-icon ai-gr">🏠</div>
+        <div><h4>Télétravail 3j/semaine</h4><p>Modèle hybride : 2 jours au bureau à Paris (coworking Saint-Honoré) et 3 jours en remote. Full remote négociable selon le poste.</p></div>
+      </div>
+      <div class="ca-av ca-rev">
+        <div class="ca-av-icon ai-am">📈</div>
+        <div><h4>Budget formation 1 500€/an</h4><p>Chaque membre de l'équipe dispose d'un budget formation dédié pour des certifications, cours ou conférences de son choix.</p></div>
+      </div>
+      <div class="ca-av ca-rev d1">
+        <div class="ca-av-icon ai-cy">⏰</div>
+        <div><h4>Horaires flexibles</h4><p>Pas de pointeuse. On fait confiance. L'essentiel c'est la disponibilité aux créneaux clés (9h-17h) et les livrables dans les délais.</p></div>
+      </div>
+      <div class="ca-av ca-rev">
+        <div class="ca-av-icon ai-pk">🎉</div>
+        <div><h4>Team building trimestriel</h4><p>Un événement d'équipe chaque trimestre : journée activités, dîner, déplacement. L'humain avant tout, même en digital.</p></div>
+      </div>
+      <div class="ca-av ca-rev d1">
+        <div class="ca-av-icon ai-or">🚀</div>
+        <div><h4>Évolution rapide</h4><p>Structure plate = moins de politique = plus d'opportunités. Plusieurs membres de l'équipe ont évolué en 12 mois vers des rôles seniors ou de management.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OFFRES ── -->
+<section class="ca-offres" id="ca-offres-section">
+  <div class="ca-w">
+    <div class="ca-sh ca-rev">
+      <span class="ca-eyebrow">Postes ouverts</span>
+      <h2>Rejoignez l'équipe</h2>
+      <p>5 postes ouverts en ce moment. Toutes les candidatures sont lues et traitées sous 72h.</p>
+    </div>
+
+    <!-- Filtres offres -->
+    <div class="ca-offres-filter ca-rev">
+      <button class="ca-off-chip on" data-dept="all">Tous les postes</button>
+      <button class="ca-off-chip" data-dept="marketing">Marketing</button>
+      <button class="ca-off-chip" data-dept="commercial">Commercial</button>
+      <button class="ca-off-chip" data-dept="creation">Création</button>
+      <button class="ca-off-chip" data-dept="tech">Tech</button>
+    </div>
+
+    <div class="ca-offres-list">
+
+      <!-- Offre 1 -->
+      <div class="ca-offre ca-rev" data-dept="marketing">
+        <div class="ca-offre-header" onclick="caOffre(this.parentElement)">
+          <div class="ca-offre-left">
+            <div class="ca-offre-ico ai-ac">📊</div>
+            <div class="ca-offre-info">
+              <h3>Consultant·e Marketing Digital</h3>
+              <div class="ca-offre-meta">
+                <span class="ca-offre-badge ob-new">🟢 Nouveau</span>
+                <span class="ca-offre-badge ob-type">CDI</span>
+                <span class="ca-offre-badge ob-dept">Marketing</span>
+              </div>
+            </div>
+          </div>
+          <div class="ca-offre-right">
+            <span class="ca-offre-loc">📍 Paris + Remote</span>
+            <div class="ca-offre-toggle">+</div>
+          </div>
+        </div>
+        <div class="ca-offre-body">
+          <div class="ca-offre-content">
+            <h4>Le poste</h4>
+            <p>Vous pilotez les stratégies digitales de 4 à 6 clients en simultané : audit, stratégie, suivi des prestataires internes et reporting. Vous êtes l'interlocuteur principal de vos clients.</p>
+            <h4>Ce que vous ferez</h4>
+            <ul>
+              <li>Élaborer et défendre des recommandations stratégiques digitales</li>
+              <li>Coordonner les équipes SEO, social media et publicité sur vos comptes</li>
+              <li>Animer les comités de pilotage clients (mensuel)</li>
+              <li>Rédiger les reportings et analyser les KPIs</li>
+              <li>Participer à la réponse aux appels d'offres</li>
+            </ul>
+            <h4>Profil recherché</h4>
+            <ul>
+              <li>3 ans minimum d'expérience en agence ou côté annonceur</li>
+              <li>Bonne maîtrise de Google Analytics 4, Meta Business et Google Ads</li>
+              <li>À l'aise avec les chiffres et la prise de parole client</li>
+              <li>Anglais professionnel apprécié</li>
+            </ul>
+            <h4>Rémunération</h4>
+            <p>35 000€ – 45 000€ brut/an selon expérience + variable.</p>
+            <button onclick="caScrollTo('ca-spontanee-section')" class="ca-offre-apply">
+              Postuler à ce poste
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Offre 2 -->
+      <div class="ca-offre ca-rev d1" data-dept="marketing">
+        <div class="ca-offre-header" onclick="caOffre(this.parentElement)">
+          <div class="ca-offre-left">
+            <div class="ca-offre-ico ai-am">🔍</div>
+            <div class="ca-offre-info">
+              <h3>Expert·e SEO</h3>
+              <div class="ca-offre-meta">
+                <span class="ca-offre-badge ob-urgent">🔴 Urgent</span>
+                <span class="ca-offre-badge ob-type">CDI</span>
+                <span class="ca-offre-badge ob-dept">Marketing</span>
+              </div>
+            </div>
+          </div>
+          <div class="ca-offre-right">
+            <span class="ca-offre-loc">📍 Paris + Remote 3j</span>
+            <div class="ca-offre-toggle">+</div>
+          </div>
+        </div>
+        <div class="ca-offre-body">
+          <div class="ca-offre-content">
+            <h4>Le poste</h4>
+            <p>Vous prenez en charge le SEO de 5 à 8 clients : audits techniques, stratégie de contenu, suivi des positions, netlinking. Vous êtes garant·e de la progression des performances organiques.</p>
+            <h4>Ce que vous ferez</h4>
+            <ul>
+              <li>Réaliser des audits SEO techniques complets</li>
+              <li>Construire des stratégies de contenu orientées intentions de recherche</li>
+              <li>Superviser la rédaction et l'optimisation des contenus</li>
+              <li>Piloter les campagnes de netlinking</li>
+              <li>Veiller aux évolutions algorithmiques et adapter les stratégies</li>
+            </ul>
+            <h4>Profil recherché</h4>
+            <ul>
+              <li>2 ans minimum d'expérience SEO en agence</li>
+              <li>Maîtrise de Screaming Frog, SEMrush ou Ahrefs</li>
+              <li>Capacité à produire des livrables clairs pour les clients non-techniques</li>
+              <li>Passion pour le SEO et veille active</li>
+            </ul>
+            <h4>Rémunération</h4>
+            <p>32 000€ – 42 000€ brut/an selon expérience.</p>
+            <button onclick="caScrollTo('ca-spontanee-section')" class="ca-offre-apply">
+              Postuler à ce poste →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Offre 3 -->
+      <div class="ca-offre ca-rev d2" data-dept="commercial">
+        <div class="ca-offre-header" onclick="caOffre(this.parentElement)">
+          <div class="ca-offre-left">
+            <div class="ca-offre-ico ai-gr">💼</div>
+            <div class="ca-offre-info">
+              <h3>Business Developer — Comptes Entreprises</h3>
+              <div class="ca-offre-meta">
+                <span class="ca-offre-badge ob-type">CDI</span>
+                <span class="ca-offre-badge ob-dept">Commercial</span>
+              </div>
+            </div>
+          </div>
+          <div class="ca-offre-right">
+            <span class="ca-offre-loc">📍 Paris (hybride)</span>
+            <div class="ca-offre-toggle">+</div>
+          </div>
+        </div>
+        <div class="ca-offre-body">
+          <div class="ca-offre-content">
+            <h4>Le poste</h4>
+            <p>Vous développez le portefeuille clients BtoB de l'agence : prospection, qualification, démo, closing. Vous travaillez en binôme avec les consultants pour créer des propositions commerciales percutantes.</p>
+            <h4>Ce que vous ferez</h4>
+            <ul>
+              <li>Prospecter de nouveaux clients TPE/PME/ETI sur LinkedIn et par email</li>
+              <li>Conduire les appels de qualification et les rendez-vous de présentation</li>
+              <li>Construire des propositions commerciales sur mesure</li>
+              <li>Gérer le CRM et le suivi du pipeline commercial</li>
+              <li>Atteindre un objectif CA mensuel défini avec la direction</li>
+            </ul>
+            <h4>Profil recherché</h4>
+            <ul>
+              <li>Expérience en vente BtoB, idéalement dans les services digitaux</li>
+              <li>À l'aise au téléphone et en visio, excellent relationnel</li>
+              <li>Tenace, organisé·e, orienté·e résultats</li>
+            </ul>
+            <h4>Rémunération</h4>
+            <p>30 000€ fixe + variable déplafonné (objectif package 50-60K€).</p>
+            <button onclick="caScrollTo('ca-spontanee-section')" class="ca-offre-apply">Postuler à ce poste →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Offre 4 -->
+      <div class="ca-offre ca-rev" data-dept="creation">
+        <div class="ca-offre-header" onclick="caOffre(this.parentElement)">
+          <div class="ca-offre-left">
+            <div class="ca-offre-ico ai-pk">🎨</div>
+            <div class="ca-offre-info">
+              <h3>Directeur·rice Artistique Digital</h3>
+              <div class="ca-offre-meta">
+                <span class="ca-offre-badge ob-new">🟢 Nouveau</span>
+                <span class="ca-offre-badge ob-type">CDI ou Freelance</span>
+                <span class="ca-offre-badge ob-dept">Création</span>
+              </div>
+            </div>
+          </div>
+          <div class="ca-offre-right">
+            <span class="ca-offre-loc">📍 Remote possible</span>
+            <div class="ca-offre-toggle">+</div>
+          </div>
+        </div>
+        <div class="ca-offre-body">
+          <div class="ca-offre-content">
+            <h4>Le poste</h4>
+            <p>Vous supervisez et réalisez la création graphique et motion pour l'ensemble des clients de l'agence : identités visuelles, supports social media, visuels publicitaires, landing pages et templates.</p>
+            <h4>Ce que vous ferez</h4>
+            <ul>
+              <li>Concevoir des identités de marque complètes (logo, charte, design system)</li>
+              <li>Produire des visuels pour les réseaux sociaux (posts, stories, reels)</li>
+              <li>Créer des bannières et visuels publicitaires multi-formats</li>
+              <li>Réaliser des motion designs courts (Reels, Shorts, Stories animées)</li>
+              <li>Superviser la cohérence créative sur tous les comptes</li>
+            </ul>
+            <h4>Profil recherché</h4>
+            <ul>
+              <li>Maîtrise de Figma, Adobe Creative Suite (Ps, Ai, Pr, Ae)</li>
+              <li>Portfolio solide orienté digital et réseaux sociaux</li>
+              <li>Sens aigu de l'esthétique et des tendances créatives actuelles</li>
+              <li>Capacité à travailler sur plusieurs univers de marque simultanément</li>
+            </ul>
+            <h4>Rémunération</h4>
+            <p>35 000€ – 45 000€ brut/an (CDI) ou 400-600€/jour (freelance).</p>
+            <button onclick="caScrollTo('ca-spontanee-section')" class="ca-offre-apply">Postuler à ce poste →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Offre 5 -->
+      <div class="ca-offre ca-rev d1" data-dept="tech">
+        <div class="ca-offre-header" onclick="caOffre(this.parentElement)">
+          <div class="ca-offre-left">
+            <div class="ca-offre-ico ai-cy">⚙️</div>
+            <div class="ca-offre-info">
+              <h3>Intégrateur·rice Web WordPress / Développeur·se Front</h3>
+              <div class="ca-offre-meta">
+                <span class="ca-offre-badge ob-type">Freelance</span>
+                <span class="ca-offre-badge ob-dept">Tech</span>
+              </div>
+            </div>
+          </div>
+          <div class="ca-offre-right">
+            <span class="ca-offre-loc">📍 Full remote</span>
+            <div class="ca-offre-toggle">+</div>
+          </div>
+        </div>
+        <div class="ca-offre-body">
+          <div class="ca-offre-content">
+            <h4>Le poste</h4>
+            <p>Mission freelance récurrente : intégration de sites WordPress pour nos clients entreprises, landing pages HTML/CSS, optimisation de performances et corrections techniques.</p>
+            <h4>Ce que vous ferez</h4>
+            <ul>
+              <li>Intégrer des maquettes Figma sous WordPress (thèmes sur mesure ou blocs Gutenberg)</li>
+              <li>Développer des landing pages HTML/CSS/JS performantes</li>
+              <li>Optimiser les Core Web Vitals et les performances site</li>
+              <li>Intégrer des formulaires, tracking et outils tiers</li>
+            </ul>
+            <h4>Profil recherché</h4>
+            <ul>
+              <li>Excellente maîtrise de WordPress, HTML5, CSS3, JS vanille</li>
+              <li>Connaissance de base en SEO technique</li>
+              <li>Autonome, rigoureux·se, livraisons dans les délais</li>
+              <li>Disponibilité d'environ 10-15j/mois</li>
+            </ul>
+            <h4>Rémunération</h4>
+            <p>350€ – 500€/jour selon profil et complexité des missions.</p>
+            <button onclick="caScrollTo('ca-spontanee-section')" class="ca-offre-apply">Postuler à ce poste →</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- fin offres list -->
+
+    <div class="ca-no-offre" id="caNoOffre">
+      <div style="font-size:36px;margin-bottom:12px;">🔍</div>
+      <p style="font-size:15px;color:var(--tlm);">Aucun poste ouvert dans cette catégorie.<br>Envoyez quand même une candidature spontanée, on la garde en tête.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PROCESSUS ── -->
+<section class="ca-process">
+  <div class="ca-w">
+    <div class="ca-sh ca-rev">
+      <span class="ca-eyebrow">Comment ça se passe</span>
+      <h2>Processus de recrutement</h2>
+      <p>4 étapes, 2 à 3 semaines, une réponse dans tous les cas.</p>
+    </div>
+    <div class="ca-process-steps">
+      <div class="ca-step ca-rev">
+        <div class="ca-step-num">1</div>
+        <h4>Candidature</h4>
+        <p>Envoyez votre CV et lettre de motivation via le formulaire. On lit tout, on répond à tout sous 72h.</p>
+      </div>
+      <div class="ca-step ca-rev d1">
+        <div class="ca-step-num">2</div>
+        <h4>Appel RH 30min</h4>
+        <p>Premier échange pour vérifier l'alignement motivations / culture / compétences de base.</p>
+      </div>
+      <div class="ca-step ca-rev d2">
+        <div class="ca-step-num">3</div>
+        <h4>Entretien technique</h4>
+        <p>Cas pratique ou entretien métier avec le responsable de l'équipe concernée. En visio ou en présentiel.</p>
+      </div>
+      <div class="ca-step ca-rev d3">
+        <div class="ca-step-num">4</div>
+        <h4>Décision &amp; offre</h4>
+        <p>Retour sous 5 jours ouvrés. Si positif, proposition formelle et intégration planifiée selon vos disponibilités.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CANDIDATURE SPONTANÉE ── -->
+<section class="ca-spontanee" id="ca-spontanee-section">
+  <div class="ca-w">
+    <div class="ca-sh ca-rev">
+      <span class="ca-eyebrow">Candidature spontanée</span>
+      <h2>Votre profil nous intéresse même sans offre</h2>
+      <p>On garde toutes les candidatures en archive active. Si votre profil correspond à un besoin futur, on vous recontacte.</p>
+    </div>
+    <div class="ca-form-box ca-rev">
+      <h3>Envoyez votre candidature</h3>
+      <p>Parlez-nous de vous et de votre projet professionnel. On sera directs dans notre réponse.</p>
+
+      <div id="caFormWrap">
+        <form class="ca-form" action="https://formsubmit.co/contact@maison-johnco-marketing.com" method="POST">
+          <input type="hidden" name="_next" value="https://maison-johnco-marketing.com/merci-candidature">
+          <input type="hidden" name="_subject" value="Nouvelle candidature — Maison John&Co Marketing">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="Votre candidature a bien été reçue. Nous la lisons sous 72h et vous répondons dans tous les cas.">
+          <input type="hidden" name="_captcha" value="false">
+
+          <div class="ca-form-row">
+            <div class="ca-field">
+              <label>Prénom *</label>
+              <input type="text" name="prenom" required class="ca-input" placeholder="Votre prénom">
+            </div>
+            <div class="ca-field">
+              <label>Nom *</label>
+              <input type="text" name="nom" required class="ca-input" placeholder="Votre nom">
+            </div>
+          </div>
+          <div class="ca-form-row">
+            <div class="ca-field">
+              <label>Email *</label>
+              <input type="email" name="email" required class="ca-input" placeholder="votre@email.com">
+            </div>
+            <div class="ca-field">
+              <label>Téléphone</label>
+              <input type="tel" name="telephone" class="ca-input" placeholder="06 XX XX XX XX">
+            </div>
+          </div>
+          <div class="ca-field">
+            <label>Poste visé *</label>
+            <select name="poste_vise" required class="ca-input ca-select">
+              <option value="">Sélectionnez un poste ou une expertise</option>
+              <option>Consultant·e Marketing Digital</option>
+              <option>Expert·e SEO</option>
+              <option>Business Developer</option>
+              <option>Directeur·rice Artistique</option>
+              <option>Intégrateur·rice WordPress / Développeur·se</option>
+              <option>Community Manager</option>
+              <option>Traffic Manager (Google Ads / Meta Ads)</option>
+              <option>Chef·fe de projet digital</option>
+              <option>Autre (précisez en message)</option>
+            </select>
+          </div>
+          <div class="ca-field">
+            <label>Type de contrat souhaité *</label>
+            <select name="type_contrat" required class="ca-input ca-select">
+              <option value="">Sélectionnez</option>
+              <option>CDI</option>
+              <option>Freelance / Mission</option>
+              <option>Stage (6 mois minimum)</option>
+              <option>Alternance</option>
+            </select>
+          </div>
+          <div class="ca-field">
+            <label>Lien LinkedIn ou Portfolio</label>
+            <input type="url" name="portfolio" class="ca-input" placeholder="https://linkedin.com/in/votre-profil">
+          </div>
+          <div class="ca-field">
+            <label>Parlez-nous de vous et de votre motivation *</label>
+            <textarea name="motivation" required rows="5" class="ca-input" placeholder="Votre parcours, vos compétences clés, pourquoi John&Co, ce que vous attendez de ce poste..."></textarea>
+          </div>
+          <button type="submit" class="ca-form-submit">Envoyer ma candidature →</button>
+          <p class="ca-form-note">Réponse garantie sous 72h. Vos données sont traitées conformément à notre <a href="/politique-confidentialite" style="color:var(--acl);">politique de confidentialité</a>.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  // Filtres offres
+  var activeDept = 'all';
+  document.querySelectorAll('.ca-off-chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      document.querySelectorAll('.ca-off-chip').forEach(function(c){c.classList.remove('on');});
+      chip.classList.add('on');
+      activeDept = chip.dataset.dept;
+      var items = document.querySelectorAll('.ca-offre');
+      var n = 0;
+      items.forEach(function(i){
+        var ok = activeDept==='all' || i.dataset.dept===activeDept;
+        i.classList.toggle('ca-hidden', !ok);
+        if(ok) n++;
+      });
+      document.getElementById('caNoOffre').classList.toggle('show', n===0);
+    });
+  });
+
+  // Accordéon offres
+  window.caOffre = function(el){
+    var was = el.classList.contains('open');
+    document.querySelectorAll('.ca-offre.open').forEach(function(o){o.classList.remove('open');});
+    if(!was) el.classList.add('open');
+  };
+
+  // Scroll utilitaire
+  window.caScrollTo = function(id){
+    var el = document.getElementById(id);
+    if(el) window.scrollTo({top: el.getBoundingClientRect().top + window.pageYOffset - 80, behavior:'smooth'});
+  };
+
+  // Scroll reveal
+  var ro = new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target);}});
+  },{threshold:.06, rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.ca-rev').forEach(function(el){ro.observe(el);});
+})();
+</script>
+<!-- /wp:html -->

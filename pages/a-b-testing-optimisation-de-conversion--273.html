@@ -1,0 +1,640 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/B Testing & Optimisation de Conversion | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#1E3A8A',
+                        accent: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 32px;
+            height: calc(100% - 32px);
+            width: 2px;
+            background-color: #E5E7EB;
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <div class="gradient-bg text-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">A/B Testing & Optimisation de Conversion</h1>
+            <p class="text-xl md:text-2xl mb-8">Transformez vos intuitions en décisions data-driven pour maximiser vos performances digitales</p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://maison-johnco-marketing.com/devis-sur-mesure/" class="bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300">Demander un devis</a>
+                <a href="#details" class="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition duration-300">En savoir plus</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="details">
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div data-aos="fade-right">
+                <h2 class="text-3xl font-bold text-primary mb-6">Définition et positionnement du service</h2>
+                <p class="text-lg mb-4">L'A/B Testing & Optimisation de Conversion (CRO) est un dispositif scientifique d'amélioration continue des performances digitales fondé sur l'expérimentation contrôlée.</p>
+                <p class="text-lg mb-4">Il vise à comparer, de manière rigoureuse et mesurable, des variantes d'interfaces, de messages, de parcours ou de tarifications afin d'augmenter la probabilité d'atteindre un critère global d'évaluation (OEC : ventes, leads qualifiés, revenu par visiteur, activation, rétention).</p>
+                <p class="text-lg">La démarche combine data, recherche utilisateur et design d'expérience pour générer des gains incrémentaux reproductibles, tout en maîtrisant le risque grâce à des méthodes statistiques appropriées et une gouvernance stricte.</p>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-xl" data-aos="fade-left">
+                <div class="flex items-start mb-6">
+                    <div class="bg-primary rounded-full p-3 mr-4 text-white">
+                        <i data-feather="target"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Objectif principal</h3>
+                        <p class="text-gray-700">Augmenter durablement vos indicateurs clés de performance (KPI) grâce à une approche scientifique</p>
+                    </div>
+                </div>
+                <div class="flex items-start mb-6">
+                    <div class="bg-primary rounded-full p-3 mr-4 text-white">
+                        <i data-feather="bar-chart-2"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Méthodologie</h3>
+                        <p class="text-gray-700">Approche rigoureuse basée sur les données et les tests statistiques</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-primary rounded-full p-3 mr-4 text-white">
+                        <i data-feather="trending-up"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Résultats</h3>
+                        <p class="text-gray-700">Amélioration mesurable et reproductible de vos conversions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Problématiques adressées et objectifs</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold text-xl mb-4 text-secondary">Problématiques résolues</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                            <span>Décisions basées sur des intuitions ou des "best practices" non vérifiées</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                            <span>Signaux analytiques ambigus ou difficiles à interpréter</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                            <span>Changements non mesurés et leurs impacts inconnus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                            <span>Faux positifs issus d'un arrêt anticipé des tests</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold text-xl mb-4 text-secondary">Objectifs concrets</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="arrow-up" class="text-blue-500 mr-3 mt-1"></i>
+                            <span>Augmenter le taux de conversion et la valeur unitaire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="arrow-down" class="text-blue-500 mr-3 mt-1"></i>
+                            <span>Réduire le coût d'acquisition effectif</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-blue-500 mr-3 mt-1"></i>
+                            <span>Fiabiliser les arbitrages produit/marketing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="users" class="text-blue-500 mr-3 mt-1"></i>
+                            <span>Institutionnaliser une culture d'expérimentation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center" data-aos="fade-up">Périmètre d'intervention</h2>
+            <div class="relative">
+                <div class="timeline-item relative pl-16 pb-12">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white" data-aos="zoom-in">
+                        <i data-feather="list"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" data-aos="fade-right">Priorisation des hypothèses</h3>
+                    <p class="text-gray-700" data-aos="fade-right">Identification des frictions UX, évaluation de la proposition de valeur, analyse des preuves et éléments de rassurance, optimisation de la tarification et techniques de persuasion.</p>
+                </div>
+                
+                <div class="timeline-item relative pl-16 pb-12">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white" data-aos="zoom-in">
+                        <i data-feather="layout"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" data-aos="fade-right">Conception de variantes</h3>
+                    <p class="text-gray-700" data-aos="fade-right">Création de différentes versions pour le contenu, le design, la hiérarchie d'information et la navigation.</p>
+                </div>
+                
+                <div class="timeline-item relative pl-16 pb-12">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white" data-aos="zoom-in">
+                        <i data-feather="settings"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" data-aos="fade-right">Instrumentation de la mesure</h3>
+                    <p class="text-gray-700" data-aos="fade-right">Configuration précise du suivi des événements, conversions et entonnoirs.</p>
+                </div>
+                
+                <div class="timeline-item relative pl-16 pb-12">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white" data-aos="zoom-in">
+                        <i data-feather="play"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" data-aos="fade-right">Exécution des tests</h3>
+                    <p class="text-gray-700" data-aos="fade-right">Mise en œuvre via différentes méthodes (client-side, server-side, feature flags) adaptées à votre infrastructure.</p>
+                </div>
+                
+                <div class="timeline-item relative pl-16 pb-12">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white" data-aos="zoom-in">
+                        <i data-feather="bar-chart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" data-aos="fade-right">Analyse statistique</h3>
+                    <p class="text-gray-700" data-aos="fade-right">Utilisation de méthodes fréquentistes ou bayésiennes pour une interprétation rigoureuse des résultats.</p>
+                </div>
+                
+                <div class="timeline-item relative pl-16">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white" data-aos="zoom-in">
+                        <i data-feather="book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" data-aos="fade-right">Capitalisation</h3>
+                    <p class="text-gray-700" data-aos="fade-right">Documentation systématique des apprentissages dans une bibliothèque CRO pour un avantage cumulatif.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center" data-aos="fade-up">Méthodologie et déroulé type</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="flip-up">
+                    <div class="text-primary mb-4">
+                        <i data-feather="flag" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">1. Définition des objectifs</h3>
+                    <p class="text-gray-700">Établissement d'un OEC (Objectif d'Évaluation Clé) et des KPI secondaires (guardrail metrics).</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="flip-up" data-aos-delay="100">
+                    <div class="text-primary mb-4">
+                        <i data-feather="search" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">2. Audit du parcours</h3>
+                    <p class="text-gray-700">Cartographie des points de friction via données quantitatives et qualitatives.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="flip-up" data-aos-delay="200">
+                    <div class="text-primary mb-4">
+                        <i data-feather="clipboard" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">3. Formalisation des hypothèses</h3>
+                    <p class="text-gray-700">Structuration sous forme H→M→R (hypothèse → mécanisme → résultat attendu).</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="flip-up">
+                    <div class="text-primary mb-4">
+                        <i data-feather="sliders" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">4. Plan expérimental</h3>
+                    <p class="text-gray-700">Définition de la population, ciblage, taille d'échantillon et critères d'arrêt.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="flip-up" data-aos-delay="100">
+                    <div class="text-primary mb-4">
+                        <i data-feather="code" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">5. Implémentation</h3>
+                    <p class="text-gray-700">Mise en place dans un environnement contrôlé avec QA rigoureux.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="flip-up" data-aos-delay="200">
+                    <div class="text-primary mb-4">
+                        <i data-feather="pie-chart" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">6. Analyse et décision</h3>
+                    <p class="text-gray-700">Lecture statistique stricte et documentation des apprentissages.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center" data-aos="fade-up">Cadre statistique et qualité des tests</h2>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="zoom-in">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Principes appliqués</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
+                                <span>Randomisation robuste et contrôle des SRM (Sample Ratio Mismatch)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
+                                <span>Calcul de puissance et de taille d'échantillon appropriée</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
+                                <span>Gestion des arrêts séquentiels (alpha spending)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
+                                <span>Approche bayésienne avec suivi de la probabilité d'outperformance</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-8">
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Garde-fous</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="shield" class="text-blue-500 mr-3 mt-1"></i>
+                                <span>Tests A/A pour vérifier l'intégrité du pipeline de mesure</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="shield" class="text-blue-500 mr-3 mt-1"></i>
+                                <span>Correction des comparaisons multiples (tests parallèles, MVT)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="shield" class="text-blue-500 mr-3 mt-1"></i>
+                                <span>Pré-enregistrement des plans d'analyse pour limiter le p-hacking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="shield" class="text-blue-500 mr-3 mt-1"></i>
+                                <span>Analyses post-expérimentales avec CUPED ou modèles ajustés</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center" data-aos="fade-up">Variétés d'expérimentations couvertes</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up">
+                    <div class="text-primary mb-3">
+                        <i data-feather="columns" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">A/B, A/B/n</h3>
+                    <p class="text-gray-700">Comparaison de deux ou plusieurs variantes d'une même page ou élément.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-primary mb-3">
+                        <i data-feather="grid" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tests multivariés</h3>
+                    <p class="text-gray-700">Évaluation simultanée de plusieurs éléments variables sur une page.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-primary mb-3">
+                        <i data-feather="dollar-sign" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tests de tarification</h3>
+                    <p class="text-gray-700">Optimisation des stratégies de prix et promotions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up">
+                    <div class="text-primary mb-3">
+                        <i data-feather="message-square" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tests de message</h3>
+                    <p class="text-gray-700">Évaluation des claims, preuves et calls-to-action.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-primary mb-3">
+                        <i data-feather="map" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tests de parcours</h3>
+                    <p class="text-gray-700">Optimisation des tunnels de conversion et processus.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-primary mb-3">
+                        <i data-feather="box" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tests de merchandising</h3>
+                    <p class="text-gray-700">Optimisation du tri, des recommandations et de la présentation produit.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center" data-aos="fade-up">Livrables standards</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-5 rounded-xl shadow-md" data-aos="zoom-in">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg mb-4 inline-block">
+                        <i data-feather="file-text" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Backlog d'hypothèses</h3>
+                    <p class="text-sm text-gray-600">Liste priorisée des opportunités d'optimisation</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg mb-4 inline-block">
+                        <i data-feather="clipboard" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Fiches de test</h3>
+                    <p class="text-sm text-gray-600">Brief, design, variantes et critères d'arrêt</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg mb-4 inline-block">
+                        <i data-feather="check-square" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Fiche QA</h3>
+                    <p class="text-sm text-gray-600">Contrôles fonctionnels et de mesure</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg mb-4 inline-block">
+                        <i data-feather="bar-chart-2" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Rapport d'analyse</h3>
+                    <p class="text-sm text-gray-600">Effet, intervalles d'incertitude et segments</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center" data-aos="fade-up">Résultats attendus et indicateurs clés</h2>
+            <div class="bg-gradient-to-r from-primary to-accent rounded-xl p-8 text-white" data-aos="zoom-in">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Résultats visés</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="arrow-up" class="mr-3 mt-1"></i>
+                                <span>Hausse durable des conversions et du revenu par visiteur</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="arrow-down" class="mr-3 mt-1"></i>
+                                <span>Réduction du coût d'acquisition effectif</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="clock" class="mr-3 mt-1"></i>
+                                <span>Accélération du time-to-learn</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="shield" class="mr-3 mt-1"></i>
+                                <span>Meilleure robustesse des décisions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Indicateurs clés</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="percent" class="mr-3 mt-1"></i>
+                                <span>Uplift sur KPI principal et intervalles de confiance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="target" class="mr-3 mt-1"></i>
+                                <span>MDE atteint (Minimum Detectable Effect)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="activity" class="mr-3 mt-1"></i>
+                                <span>Taux d'exécution (tests/mois) et décisions actionnables</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="dollar-sign" class="mr-3 mt-1"></i>
+                                <span>Impact cumulatif sur le chiffre d'affaires</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center" data-aos="fade-up">Cas d'usage typiques</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up">
+                    <div class="text-primary mb-3">
+                        <i data-feather="refresh-cw" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Refonte de page produit</h3>
+                    <p class="text-gray-700">Optimisation des éléments clés pour maximiser les conversions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-primary mb-3">
+                        <i data-feather="credit-card" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tunnel de paiement</h3>
+                    <p class="text-gray-700">Réduction des abandons et optimisation du parcours.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-primary mb-3">
+                        <i data-feather="edit" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Formulaire à fort abandon</h3>
+                    <p class="text-gray-700">Simplification et optimisation des champs critiques.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up">
+                    <div class="text-primary mb-3">
+                        <i data-feather="link" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Harmonisation des messages</h3>
+                    <p class="text-gray-700">Alignement entre acquisition et landing pages.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-primary mb-3">
+                        <i data-feather="box" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Proposition de valeur SaaS</h3>
+                    <p class="text-gray-700">Clarification des bénéfices et différenciation.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-primary mb-3">
+                        <i data-feather="gift" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tests d'incitations</h3>
+                    <p class="text-gray-700">Évaluation des essais gratuits, garanties et livraisons.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center" data-aos="fade-up">Valeur apportée</h2>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="zoom-in">
+                <div class="p-8 md:p-12">
+                    <div class="flex items-start">
+                        <div class="bg-primary rounded-full p-3 mr-4 text-white">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <p class="text-lg">L'A/B Testing & l'Optimisation de Conversion transforment l'amélioration UX et marketing en processus d'investissement à retour mesurable. Au lieu d'opérer des changements coûteux et incertains, l'entreprise apprend vite, déploie ce qui fonctionne, abandonne ce qui n'apporte pas de valeur, et construit une avantage cumulatif fondé sur des preuves, au service de la croissance et de la rentabilité.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center" data-aos="fade-up">FAQ</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="faq-item bg-white p-6 rounded-xl shadow-md" data-aos="fade-up">
+                    <h3 class="font-bold text-lg mb-2 flex items-center justify-between cursor-pointer">
+                        <span>Quel est le trafic minimum requis pour des tests fiables ?</span>
+                        <i data-feather="chevron-down" class="text-primary"></i>
+                    </h3>
+                    <div class="answer mt-3 text-gray-700">
+                        <p>La puissance statistique dépend du taux de conversion actuel et de l'effet minimum détectable souhaité. En règle générale, nous recommandons au moins 1 000 conversions par variante pour un test A/B standard. Pour les sites à faible trafic, nous pouvons mettre en place des stratégies adaptatives ou des approches bayésiennes.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="font-bold text-lg mb-2 flex items-center justify-between cursor-pointer">
+                        <span>Combien de temps dure un test en moyenne ?</span>
+                        <i data-feather="chevron-down" class="text-primary"></i>
+                    </h3>
+                    <div class="answer mt-3 text-gray-700">
+                        <p>La durée dépend du trafic et des conversions, mais aussi des variations saisonnières. Nous calculons systématiquement la durée minimale avant lancement (généralement 2-4 semaines) et surveillons les indicateurs pour éviter les arrêts prématurés. Les tests multivariés ou sur des segments spécifiques peuvent nécessiter plus de temps.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="font-bold text-lg mb-2 flex items-center justify-between cursor-pointer">
+                        <span>Comment gérez-vous les tests sur des applications mobiles ?</span>
+                        <i data-feather="chevron-down" class="text-primary"></i>
+                    </h3>
+                    <div class="answer mt-3 text-gray-700">
+                        <p>Nous utilisons des solutions de feature flags et de tests server-side adaptés aux applications natives. L'analyse intègre les spécificités mobiles (connexions intermittentes, délais de mise à jour) et les métriques appropriées (rétention, engagement). Les tests peuvent cibler des segments spécifiques (OS, version d'app).</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="font-bold text-lg mb-2 flex items-center justify-between cursor-pointer">
+                        <span>Quelle est votre approche pour les tests de tarification ?</span>
+                        <i data-feather="chevron-down" class="text-primary"></i>
+                    </h3>
+                    <div class="answer mt-3 text-gray-700">
+                        <p>Nous mettons en place des protocoles stricts pour éviter toute discrimination illicite : randomisation par utilisateur (non par session), exclusion des clients existants si pertinent, et analyse par segments de valeur. Les tests évaluent à la fois le taux de conversion et le revenu moyen par visiteur, avec des garde-fous sur la satisfaction client.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="font-bold text-lg mb-2 flex items-center justify-between cursor-pointer">
+                        <span>Comment intégrez-vous les résultats avec d'autres outils ?</span>
+                        <i data-feather="chevron-down" class="text-primary"></i>
+                    </h3>
+                    <div class="answer mt-3 text-gray-700">
+                        <p>Nous connectons les données d'expérimentation à votre stack analytics (GA, Adobe, Mixpanel) et CRM (Salesforce, HubSpot) pour relier les tests aux revenus réels et au parcours client. Nous pouvons aussi importer des données offline pour une vue complète. Toutes les intégrations respectent les règles de conformité en vigueur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact & Quote -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Devis Button -->
+            <div data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="file-text" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Demander un devis</h2>
+                    <p class="text-gray-600 mb-8">Obtenez une estimation personnalisée gratuite adaptée à vos besoins spécifiques et recevez une proposition détaillée. Notre équipe vous répond sous 48 heures ouvrées.</p>
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="file-text" class="mr-3"></i>
+                        Demander un devis gratuit
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Gratuit et sans engagement</p>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <div data-aos="fade-left">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="mail" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Nous contacter</h2>
+                    <p class="text-gray-600 mb-8">Une question ? Besoin d'informations complémentaires ? Notre équipe est à votre écoute pour échanger sur vos besoins.</p>
+                    <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="mail" class="mr-3"></i>
+                        Nous contacter
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Réponse rapide garantie</p>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Feather icons
+        feather.replace();
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const company = document.getElementById('company').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the data to your server
+            // For this example, we'll just log it and show an alert
+            console.log({name, email, phone, company, message});
+            
+            // Send email (in a real scenario, this would be done server-side)
+            const mailtoLink = `mailto:contact@maison-johnco-marketing.com?subject=Demande de devis de ${name}&body=Nom: ${name}%0AEmail: ${email}%0ATéléphone: ${phone}%0AEntreprise: ${company}%0AMessage: ${message}`;
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Votre demande a bien été envoyée. Nous vous contacterons rapidement.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // FAQ toggle functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('h3');
+            const answer = item.querySelector('.answer');
+            const icon = item.querySelector('i');
+            
+            // Initially hide answers
+            answer.style.display = 'none';
+            
+            question.addEventListener('click', () => {
+                if (answer.style.display === 'none') {
+                    answer.style.display = 'block';
+                    icon.setAttribute('data-feather', 'chevron-up');
+                } else {
+                    answer.style.display = 'none';
+                    icon.setAttribute('data-feather', 'chevron-down');
+                }
+                feather.replace();
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

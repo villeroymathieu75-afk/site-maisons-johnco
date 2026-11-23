@@ -1,0 +1,350 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE CONTACT — Maison John&Co Marketing
+     VERSION CORRIGÉE POUR WORDPRESS
+     (sans DOCTYPE / html / head / body — déjà gérés par WordPress)
+     À coller dans un bloc HTML personnalisé
+     ═══════════════════════════════════════════════════════════ -->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  .mjc-contact-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .mjc-contact-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+  .mjc-form-input:focus { border-color: #4f46e5 !important; box-shadow: 0 0 0 2px rgba(79,70,229,0.2) !important; }
+</style>
+
+<!-- ══ HERO ══ -->
+<section class="bg-gradient-to-br from-indigo-800 via-purple-700 to-violet-600 text-white py-20 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-10 right-10 w-72 h-72 rounded-full bg-white filter blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-indigo-300 filter blur-3xl"></div>
+  </div>
+  <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+    <div class="inline-flex items-center gap-2 bg-white bg-opacity-15 border border-white border-opacity-30 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+      <span style="width:8px;height:8px;background:#C4B5FD;border-radius:50%;display:inline-block;"></span>
+      Contact &amp; Échanges
+    </div>
+    <h1 class="text-4xl md:text-5xl font-bold mb-5">Parlons de votre <span style="color:#C4B5FD;">projet digital</span></h1>
+    <p class="text-lg max-w-2xl mx-auto" style="color:#C7D2FE;">Premier échange gratuit, sans engagement. Choisissez le format qui vous convient : formulaire rapide, rendez-vous en visio ou demande de devis détaillée.</p>
+  </div>
+</section>
+
+<!-- ══ 4 CARTES ══ -->
+<section style="padding:64px 0;background:#F9FAFB;">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="bg-white rounded-2xl p-8 mjc-contact-card text-center" style="border:1px solid #E5E7EB;">
+        <div style="width:56px;height:56px;background:#EEF2FF;color:#4F46E5;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;"><i class="fas fa-phone-alt"></i></div>
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:10px;color:#1F2937;">Appelez-nous</h3>
+        <p style="color:#9CA3AF;font-size:14px;margin-bottom:20px;">Discutez directement avec un conseiller</p>
+        <a href="tel:+33602206313" style="background:#4F46E5;color:white;padding:10px 20px;border-radius:10px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+          <i class="fas fa-phone"></i> 06 02 20 63 13
+        </a>
+        <p style="font-size:12px;color:#9CA3AF;margin-top:10px;">Lun-Ven : 9h-18h</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 mjc-contact-card text-center" style="border:1px solid #E5E7EB;">
+        <div style="width:56px;height:56px;background:#F5F3FF;color:#7C3AED;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;"><i class="fas fa-calendar-alt"></i></div>
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:10px;color:#1F2937;">Prendre rendez-vous</h3>
+        <p style="color:#9CA3AF;font-size:14px;margin-bottom:20px;">Planifiez un appel avec nos experts</p>
+        <a href="https://calendly.com/contact-maison-johnco-marketing" target="_blank" rel="noopener noreferrer"
+           style="background:#7C3AED;color:white;padding:10px 20px;border-radius:10px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+          <i class="fas fa-clock"></i> Choisir un créneau
+        </a>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 mjc-contact-card text-center" style="border:1px solid #E5E7EB;">
+        <div style="width:56px;height:56px;background:#EDE9FE;color:#6D28D9;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:10px;color:#1F2937;">Demander un devis</h3>
+        <p style="color:#9CA3AF;font-size:14px;margin-bottom:20px;">Obtenez une offre personnalisée</p>
+        <button onclick="mjcOpenQuote()" style="background:#6D28D9;color:white;padding:10px 20px;border-radius:10px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;">
+          <i class="fas fa-pen"></i> Formulaire devis
+        </button>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 mjc-contact-card text-center" style="border:1px solid #E5E7EB;">
+        <div style="width:56px;height:56px;background:#EFF6FF;color:#2563EB;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;"><i class="fas fa-headset"></i></div>
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:10px;color:#1F2937;">Support &amp; Assistance</h3>
+        <p style="color:#9CA3AF;font-size:14px;margin-bottom:20px;">Questions techniques et suivi client</p>
+        <button onclick="mjcOpenSupport()" style="background:#2563EB;color:white;padding:10px 20px;border-radius:10px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;">
+          <i class="fas fa-question-circle"></i> Accéder au support
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FORMULAIRE + COORDONNÉES ══ -->
+<section style="padding:64px 0;background:#FFFFFF;">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-white rounded-2xl overflow-hidden" style="border:1px solid #E5E7EB;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+      <div class="md:flex">
+
+        <!-- Coordonnées -->
+        <div class="md:w-5/12 p-8 md:p-10" style="background:linear-gradient(160deg,#3730A3,#6D28D9);color:white;">
+          <h2 style="font-size:22px;font-weight:700;margin-bottom:28px;">Nos coordonnées</h2>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-map-marker-alt" style="font-size:13px;"></i></div>
+              <div><strong style="display:block;margin-bottom:3px;font-size:14px;">Adresse</strong><span style="font-size:13px;color:#C7D2FE;">231 Rue Saint-Honoré<br>75001 Paris, France</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-phone-alt" style="font-size:13px;"></i></div>
+              <div><strong style="display:block;margin-bottom:3px;font-size:14px;">Téléphone</strong><span style="font-size:13px;color:#C7D2FE;">06 02 20 63 13</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-envelope" style="font-size:13px;"></i></div>
+              <div><strong style="display:block;margin-bottom:3px;font-size:14px;">Email</strong><span style="font-size:13px;color:#C7D2FE;">contact@maison-johnco-marketing.com</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-clock" style="font-size:13px;"></i></div>
+              <div><strong style="display:block;margin-bottom:3px;font-size:14px;">Horaires</strong><span style="font-size:13px;color:#C7D2FE;">Lun-Mer : 9h-12h / 14h-19h30<br>Jeu-Ven : 9h-12h / 14h-18h</span></div>
+            </div>
+          </div>
+          <div style="margin-top:32px;">
+            <strong style="display:block;margin-bottom:14px;font-size:14px;">Suivez-nous</strong>
+            <div style="display:flex;gap:10px;">
+              <a href="https://www.facebook.com/maison_john_co_marketing/" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;"><i class="fab fa-facebook-f" style="font-size:13px;"></i></a>
+              <a href="https://x.com/maison_john_co_marketing/" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;"><i class="fab fa-twitter" style="font-size:13px;"></i></a>
+              <a href="https://www.linkedin.com/company/maison-john-co-marketing" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;"><i class="fab fa-linkedin-in" style="font-size:13px;"></i></a>
+              <a href="https://www.instagram.com/maison_john_co_marketing/" target="_blank" style="width:36px;height:36px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;"><i class="fab fa-instagram" style="font-size:13px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="md:w-7/12 p-8 md:p-10">
+          <h2 style="font-size:22px;font-weight:700;margin-bottom:24px;color:#111827;">Envoyez-nous un message</h2>
+          <form action="https://formsubmit.co/contact@maison-johnco-marketing.com" method="POST" style="display:flex;flex-direction:column;gap:16px;">
+            <input type="hidden" name="_next" value="https://maison-johnco-marketing.com/merci-de-nous-avoir-contactes">
+            <input type="hidden" name="_subject" value="Nouveau message - Page Contact">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Votre message a bien été reçu. Notre équipe vous répondra dans les plus brefs délais.">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div>
+              <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Nom complet *</label>
+              <input type="text" name="name" required style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;" class="mjc-form-input">
+            </div>
+            <div>
+              <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Email *</label>
+              <input type="email" name="email" required style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;" class="mjc-form-input">
+            </div>
+            <div>
+              <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Téléphone</label>
+              <input type="tel" name="phone" style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;" class="mjc-form-input">
+            </div>
+            <div>
+              <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Sujet *</label>
+              <select name="subject" required style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;" class="mjc-form-input">
+                <option value="">Sélectionnez un sujet</option>
+                <option value="Question générale">Question générale</option>
+                <option value="Demande de service">Demande de service</option>
+                <option value="Support technique">Support technique</option>
+                <option value="Partenariat">Partenariat</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Message *</label>
+              <textarea name="message" rows="4" required style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;resize:none;" class="mjc-form-input"></textarea>
+            </div>
+            <button type="submit" style="width:100%;background:#4F46E5;color:white;padding:12px;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer;">
+              Envoyer le message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CARTE GOOGLE MAPS ══ -->
+<section style="padding:64px 0;background:#F9FAFB;">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 style="font-size:28px;font-weight:700;text-align:center;margin-bottom:40px;color:#111827;">Nous trouver</h2>
+    <div style="border-radius:16px;overflow:hidden;border:1px solid #E5E7EB;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167898.63016008!2d2.2351069280055675!3d48.888406784712885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1756659119886!5m2!1sfr!2sfr"
+        width="100%" height="400" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     MODALE DEVIS
+══════════════════════════════ -->
+<div id="mjcQuoteModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:99999;overflow-y:auto;padding:20px;" onclick="if(event.target===this)mjcCloseQuote()">
+  <div style="background:white;border-radius:20px;max-width:640px;width:100%;margin:40px auto;overflow:hidden;">
+    <div style="background:linear-gradient(135deg,#6D28D9,#7C3AED);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;">
+      <h3 style="color:white;font-size:20px;font-weight:700;margin:0;">Demander un devis</h3>
+      <button onclick="mjcCloseQuote()" style="color:white;background:transparent;border:none;cursor:pointer;font-size:24px;line-height:1;">&times;</button>
+    </div>
+    <div style="padding:24px;">
+      <form action="https://formsubmit.co/contact@maison-johnco-marketing.com" method="POST" style="display:flex;flex-direction:column;gap:16px;">
+        <input type="hidden" name="_next" value="https://maison-johnco-marketing.com/merci-de-nous-avoir-contactes">
+        <input type="hidden" name="_subject" value="Demande de devis - Maison John&Co Marketing">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Votre demande de devis a bien été reçue. Notre équipe vous contactera dans les plus brefs délais.">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div>
+          <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Type de projet *</label>
+          <select name="type_projet" required style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+            <option value="">Sélectionnez un type de projet</option>
+            <option>Stratégie digitale &amp; accompagnement</option>
+            <option>Création digitale &amp; identité</option>
+            <option>Publicité digitale</option>
+            <option>Référencement &amp; visibilité</option>
+            <option>Contenu et rédaction</option>
+            <option>Automatisation &amp; CRM</option>
+            <option>Analyse et performance</option>
+            <option>Influence, social media &amp; communauté</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Budget estimé *</label>
+          <select name="budget" required style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+            <option value="">Sélectionnez une fourchette</option>
+            <option>Moins de 1 000€</option>
+            <option>1 000€ - 2 000€</option>
+            <option>2 000€ - 3 000€</option>
+            <option>3 000€ - 5 000€</option>
+            <option>5 000€ - 10 000€</option>
+            <option>Plus de 10 000€</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Délai souhaité *</label>
+          <select name="delai" required style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+            <option value="">Sélectionnez un délai</option>
+            <option>Urgent (moins d'1 mois)</option>
+            <option>1 à 3 mois</option>
+            <option>3 à 6 mois</option>
+            <option>Délai flexible</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Détails du projet *</label>
+          <textarea name="details_projet" rows="4" required placeholder="Décrivez votre projet (objectifs, cibles, spécificités...)" style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;resize:none;"></textarea>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <input type="text" name="nom" placeholder="Nom complet *" required style="padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+          <input type="text" name="entreprise" placeholder="Entreprise" style="padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+          <input type="email" name="email" placeholder="Email *" required style="padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+          <input type="tel" name="telephone" placeholder="Téléphone" style="padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:8px;">
+          <input type="checkbox" id="mjcTermsDevis" name="terms" required style="margin-top:3px;flex-shrink:0;">
+          <label for="mjcTermsDevis" style="font-size:12px;color:#6B7280;">J'accepte que Maison John&amp;Co utilise mes informations pour me contacter dans le cadre de ma demande de devis.</label>
+        </div>
+
+        <button type="submit" style="width:100%;background:#6D28D9;color:white;padding:12px;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer;">
+          Envoyer ma demande de devis
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     MODALE SUPPORT
+══════════════════════════════ -->
+<div id="mjcSupportModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:99999;overflow-y:auto;padding:20px;" onclick="if(event.target===this)mjcCloseSupport()">
+  <div style="background:white;border-radius:20px;max-width:640px;width:100%;margin:40px auto;overflow:hidden;">
+    <div style="background:linear-gradient(135deg,#1D4ED8,#4F46E5);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;">
+      <h3 style="color:white;font-size:20px;font-weight:700;margin:0;">Support &amp; Assistance</h3>
+      <button onclick="mjcCloseSupport()" style="color:white;background:transparent;border:none;cursor:pointer;font-size:24px;line-height:1;">&times;</button>
+    </div>
+    <div style="padding:24px;">
+      <form action="https://formsubmit.co/contact@maison-johnco-marketing.com" method="POST" style="display:flex;flex-direction:column;gap:16px;">
+        <input type="hidden" name="_next" value="https://maison-johnco-marketing.com/merci-de-nous-avoir-contactes">
+        <input type="hidden" name="_subject" value="Nouvelle demande de support">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Votre demande de support a bien été reçue. Notre équipe vous contactera dans les plus brefs délais.">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div>
+          <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Type de demande *</label>
+          <select name="type" required style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+            <option value="">Sélectionnez une option</option>
+            <option>Problème technique</option>
+            <option>Question sur mon compte</option>
+            <option>Facturation</option>
+            <option>Suivi de projet</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;">Décrivez votre demande *</label>
+          <textarea name="message" rows="5" required placeholder="Décrivez votre problème ou question en détail. Si lié à un projet, mentionnez son nom ou référence." style="width:100%;padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;resize:none;"></textarea>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <input type="text" name="name" placeholder="Nom complet *" required style="padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+          <input type="email" name="email" placeholder="Email *" required style="padding:10px 14px;border:1px solid #D1D5DB;border-radius:10px;font-size:14px;background:#F9FAFB;color:#111827;outline:none;">
+        </div>
+
+        <div style="background:#F9FAFB;padding:16px;border-radius:12px;border:1px solid #E5E7EB;">
+          <h4 style="font-size:14px;font-weight:600;color:#111827;margin-bottom:12px;"><i class="fas fa-question-circle" style="color:#3B82F6;margin-right:6px;"></i>Questions fréquentes</h4>
+          <div>
+            <details style="border-bottom:1px solid #E5E7EB;padding-bottom:8px;margin-bottom:8px;">
+              <summary style="font-size:13px;font-weight:500;color:#374151;cursor:pointer;">Comment suivre l'avancement de mon projet ?</summary>
+              <p style="font-size:12px;color:#6B7280;margin-top:6px;">Vous recevez des rapports hebdomadaires par email. Vous pouvez également accéder à votre espace client sur notre site.</p>
+            </details>
+            <details style="border-bottom:1px solid #E5E7EB;padding-bottom:8px;margin-bottom:8px;">
+              <summary style="font-size:13px;font-weight:500;color:#374151;cursor:pointer;">Quels sont vos délais de réponse ?</summary>
+              <p style="font-size:12px;color:#6B7280;margin-top:6px;">Nous nous engageons à répondre à toutes les demandes sous 24h ouvrées (48h pour les demandes complexes).</p>
+            </details>
+            <details>
+              <summary style="font-size:13px;font-weight:500;color:#374151;cursor:pointer;">Comment modifier une information sur mon projet ?</summary>
+              <p style="font-size:12px;color:#6B7280;margin-top:6px;">Contactez directement votre chef de projet par email ou via l'espace client avec la mention "URGENT" si nécessaire.</p>
+            </details>
+          </div>
+        </div>
+
+        <button type="submit" style="width:100%;background:#1D4ED8;color:white;padding:12px;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer;">
+          Envoyer ma demande de support
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+  function mjcOpenQuote() {
+    document.getElementById('mjcQuoteModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function mjcCloseQuote() {
+    document.getElementById('mjcQuoteModal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  function mjcOpenSupport() {
+    document.getElementById('mjcSupportModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function mjcCloseSupport() {
+    document.getElementById('mjcSupportModal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { mjcCloseQuote(); mjcCloseSupport(); }
+  });
+</script>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

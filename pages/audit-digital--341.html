@@ -1,0 +1,686 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Digital | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#1E3A8A',
+                        accent: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+        }
+        .icon-box {
+            transition: all 0.3s ease;
+        }
+        .icon-box:hover {
+            transform: translateY(-5px);
+        }
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <custom-navbar></custom-navbar>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Hero Section -->
+        <div class="gradient-bg rounded-2xl p-8 md:p-12 text-white mb-16" data-aos="fade-up">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Audit Digital</h1>
+                <p class="text-xl md:text-2xl mb-8">Une analyse complète pour optimiser votre performance digitale</p>
+                <div class="flex justify-center">
+                    <a href="#devis" class="bg-white text-primary font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition duration-300 flex items-center">
+                        <i data-feather="edit-3" class="mr-2"></i> Demander un devis
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Definition Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="target" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Définition et positionnement du service</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <p class="text-lg leading-relaxed mb-6">
+                    L'<span class="font-semibold text-primary">Audit Digital</span> est une démarche méthodique et structurée qui consiste à analyser l'ensemble des dispositifs numériques d'une organisation afin d'évaluer leur performance, leur pertinence et leur alignement avec les objectifs stratégiques de l'entreprise.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    Ce service repose sur une évaluation complète des canaux digitaux, des outils technologiques, des contenus, des processus opérationnels et des résultats mesurés, afin d'identifier les points forts, les zones d'inefficacité et les axes d'amélioration. L'objectif est de fournir une vision claire et documentée de la situation actuelle, indispensable pour orienter les décisions futures et maximiser le retour sur investissement des actions digitales.
+                </p>
+            </div>
+        </section>
+
+        <!-- Problematic Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="alert-circle" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Problématiques adressées et objectifs</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <p class="text-lg leading-relaxed mb-6">
+                    L'audit répond aux besoins de clarification et de transparence sur la performance digitale, souvent dispersée entre plusieurs équipes ou fournisseurs. Il permet de :
+                </p>
+                <ul class="space-y-4 mb-6">
+                    <li class="flex items-start">
+                        <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
+                        <span>Savoir si les ressources investies produisent des résultats tangibles</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
+                        <span>Identifier les pertes de valeur</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
+                        <span>Vérifier la cohérence entre les canaux (site web, réseaux sociaux, emailing, publicité en ligne, e-commerce, CRM)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
+                        <span>Contrôler la conformité aux réglementations (RGPD, cybersécurité, accessibilité)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
+                        <span>Évaluer la maturité technologique de l'organisation</span>
+                    </li>
+                </ul>
+                <p class="text-lg leading-relaxed">
+                    L'objectif principal est de transformer des constats parfois intuitifs en faits mesurables, et de traduire ces données en recommandations concrètes et hiérarchisées.
+                </p>
+            </div>
+        </section>
+
+        <!-- Scope Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="map" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Périmètre d'intervention</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-8 icon-box">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent p-2 rounded-full mr-4">
+                            <i data-feather="globe" class="text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Présence en ligne</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Analyse du site internet, SEO, référencement payant, réseaux sociaux et réputation en ligne.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 icon-box">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent p-2 rounded-full mr-4">
+                            <i data-feather="file-text" class="text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Stratégie de contenu</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Évaluation de la qualité, pertinence, cohérence éditoriale et expérience utilisateur.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 icon-box">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent p-2 rounded-full mr-4">
+                            <i data-feather="cpu" class="text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Performances techniques</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Vitesse de chargement, ergonomie, compatibilité mobile, accessibilité et sécurité.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 icon-box">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent p-2 rounded-full mr-4">
+                            <i data-feather="users" class="text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Acquisition et fidélisation</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Tunnels de conversion, efficacité des campagnes publicitaires, e-mails et automatisation marketing.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 icon-box">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent p-2 rounded-full mr-4">
+                            <i data-feather="database" class="text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Exploitation des données</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Tracking, analytics, CRM et tableaux de bord.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 icon-box">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent p-2 rounded-full mr-4">
+                            <i data-feather="layers" class="text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Gouvernance et intégration</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Organisation, processus, rôles et intégration technologique (CMS, ERP, API, solutions cloud).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="list" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Méthodologie et déroulé type</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <div class="grid md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg icon-box">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="search" class="text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Phase préparatoire</h3>
+                        <p class="text-gray-600 text-sm">
+                            Définition des objectifs, périmètres et données à collecter.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg icon-box">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="activity" class="text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Diagnostic</h3>
+                        <p class="text-gray-600 text-sm">
+                            Outils d'analyse spécialisés, benchmarks et entretiens.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg icon-box">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="bar-chart-2" class="text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Analyse critique</h3>
+                        <p class="text-gray-600 text-sm">
+                            Identification des écarts et risques éventuels.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg icon-box">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="check-square" class="text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Recommandations</h3>
+                        <p class="text-gray-600 text-sm">
+                            Plan d'action hiérarchisé avec quick wins et chantiers structurants.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-lg leading-relaxed">
+                    Un audit se déroule généralement en plusieurs étapes. La phase préparatoire consiste à définir les objectifs, les périmètres et les données à collecter. Le diagnostic s'appuie sur des outils d'analyse spécialisés, des benchmarks sectoriels, des entretiens avec les parties prenantes et une étude documentaire des dispositifs existants. L'analyse critique met en évidence les écarts entre les résultats observés et les objectifs fixés, les bonnes pratiques non exploitées et les risques éventuels (techniques, financiers, réglementaires, réputationnels). Les recommandations sont structurées selon un plan d'action hiérarchisé, avec des initiatives court terme (quick wins) et des chantiers plus structurants à moyen et long termes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="package" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Livrables standards</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                            <i data-feather="file-text" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Rapport détaillé</h3>
+                            <p class="text-gray-600">Présentation du diagnostic et des constats avec analyses chiffrées et indicateurs clés de performance.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                            <i data-feather="trending-up" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Benchmarks comparatifs</h3>
+                            <p class="text-gray-600">Comparaison avec les pratiques du marché et les concurrents.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                            <i data-feather="map" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Cartographie</h3>
+                            <p class="text-gray-600">Des outils et processus existants.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                            <i data-feather="alert-triangle" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Évaluation des risques</h3>
+                            <p class="text-gray-600">Identification des opportunités et menaces potentielles.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-lg leading-relaxed">
+                    Selon le contexte, une restitution exécutive peut également être réalisée sous forme de présentation synthétique à destination de la direction, avec un langage clair et orienté décision.
+                </p>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="award" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Résultats attendus et indicateurs clés</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Résultats attendus</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                                <span>Meilleure compréhension de la performance digitale</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                                <span>Réduction des investissements inefficaces</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                                <span>Amélioration de la visibilité et de la conversion</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                                <span>Mise en conformité avec les normes légales et techniques</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                                <span>Alignement plus fort entre stratégie globale et actions numériques</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Indicateurs clés</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="bar-chart-2" class="text-blue-500 mr-3 mt-1"></i>
+                                <span>Évolution du trafic qualifié</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="bar-chart-2" class="text-blue-500 mr-3 mt-1"></i>
+                                <span>Taux de conversion</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="bar-chart-2" class="text-blue-500 mr-3 mt-1"></i>
+                                <span>Coût d'acquisition client</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="bar-chart-2" class="text-blue-500 mr-3 mt-1"></i>
+                                <span>Satisfaction utilisateur</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="bar-chart-2" class="text-blue-500 mr-3 mt-1"></i>
+                                <span>Retour sur investissement publicitaire</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governance Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="users" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Gouvernance et mode de collaboration</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <p class="text-lg leading-relaxed mb-6">
+                    L'audit est mené en interaction avec les décideurs et les équipes opérationnelles, de façon à intégrer la vision stratégique et la réalité du terrain. Les parties prenantes sont impliquées dès la collecte des données, afin d'assurer l'exactitude des informations et l'appropriation des recommandations.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    La gouvernance repose sur des échanges réguliers, des points d'étape et une validation des constats avant la restitution finale.
+                </p>
+            </div>
+        </section>
+
+        <!-- Prerequisites Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="clipboard" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Pré-requis côté client</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <p class="text-lg leading-relaxed mb-6">
+                    La réussite de l'audit nécessite :
+                </p>
+                <ul class="space-y-4 mb-6">
+                    <li class="flex items-start">
+                        <i data-feather="key" class="text-primary mr-3 mt-1"></i>
+                        <span>L'accès aux plateformes d'analyse (Google Analytics, Search Console, CRM, outils publicitaires)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="file-text" class="text-primary mr-3 mt-1"></i>
+                        <span>Les tableaux de bord internes</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="file-text" class="text-primary mr-3 mt-1"></i>
+                        <span>Les contrats fournisseurs</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="dollar-sign" class="text-primary mr-3 mt-1"></i>
+                        <span>Les budgets investis</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="code" class="text-primary mr-3 mt-1"></i>
+                        <span>La documentation technique des outils en place</span>
+                    </li>
+                </ul>
+                <p class="text-lg leading-relaxed">
+                    La disponibilité des responsables marketing, IT et commerciaux est essentielle pour compléter les données par des retours qualitatifs.
+                </p>
+            </div>
+        </section>
+
+        <!-- Success Factors Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="star" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Facteurs de succès et limites</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Facteurs de succès</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                            <span>Fiabilité des données collectées</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                            <span>Clarté des objectifs définis en amont</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-3 mt-1"></i>
+                            <span>Engagement de la direction à mettre en œuvre les recommandations</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Limites</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-feather="alert-triangle" class="text-yellow-500 mr-3 mt-1"></i>
+                            <span>Contraintes budgétaires</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="alert-triangle" class="text-yellow-500 mr-3 mt-1"></i>
+                            <span>Complexité des environnements techniques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="alert-triangle" class="text-yellow-500 mr-3 mt-1"></i>
+                            <span>Résistance au changement</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 bg-white rounded-xl shadow-md p-8">
+                <p class="text-lg leading-relaxed">
+                    L'audit produit des analyses et des plans d'action, mais son efficacité dépendra toujours du suivi réel et de la capacité de l'entreprise à mobiliser ses ressources.
+                </p>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="briefcase" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Cas d'usage typiques</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <p class="text-lg leading-relaxed mb-6">
+                    Ce service est particulièrement adapté :
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                            <i data-feather="trending-down" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Baisse de performance</h3>
+                            <p class="text-gray-600">Lors d'une baisse inexpliquée de performance digitale</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                            <i data-feather="refresh-cw" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Refonte</h3>
+                            <p class="text-gray-600">D'un projet de refonte de site ou d'outils</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                            <i data-feather="dollar-sign" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Rentabilité</h3>
+                            <p class="text-gray-600">Vérification de la rentabilité des investissements publicitaires</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                            <i data-feather="clipboard" class="text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Due diligence</h3>
+                            <p class="text-gray-600">Dans le cadre d'une due diligence préalable à une levée de fonds ou à une acquisition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commitment Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="heart" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Engagement et valeur apportée</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <p class="text-lg leading-relaxed">
+                    L'audit digital apporte un diagnostic objectif, fondé sur des données concrètes et des comparatifs sectoriels, et permet de réduire les incertitudes dans la prise de décision. Il offre aux dirigeants et responsables une vision claire de l'état des dispositifs numériques, des priorités d'action et des opportunités inexploitées, garantissant ainsi un pilotage plus rationnel et une performance accrue.
+                </p>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section class="mb-20" data-aos="fade-up" id="faq">
+<div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="help-circle" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Questions fréquentes</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="divide-y divide-gray-200">
+                    <div class="p-8">
+                        <button class="flex justify-between items-center w-full text-left focus:outline-none">
+                            <h3 class="text-lg font-semibold text-gray-900">Combien de temps dure un audit digital ?</h3>
+                            <i data-feather="chevron-down" class="text-primary transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="mt-4 text-gray-600">
+                            <p>La durée d'un audit digital varie généralement entre 3 et 6 semaines selon la complexité de l'environnement digital à analyser et l'étendue du périmètre défini.</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <button class="flex justify-between items-center w-full text-left focus:outline-none">
+                            <h3 class="text-lg font-semibold text-gray-900">Quel est le coût moyen d'un audit digital ?</h3>
+                            <i data-feather="chevron-down" class="text-primary transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="mt-4 text-gray-600">
+                            <p>Les tarifs dépendent fortement du périmètre et de la complexité de l'audit. Nous proposons des audits à partir de 3 500 € pour une analyse ciblée, jusqu'à 15 000 € pour un audit complet avec recommandations stratégiques.</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <button class="flex justify-between items-center w-full text-left focus:outline-none">
+                            <h3 class="text-lg font-semibold text-gray-900">Quelle est la différence avec un audit SEO ?</h3>
+                            <i data-feather="chevron-down" class="text-primary transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="mt-4 text-gray-600">
+                            <p>Un audit SEO se concentre exclusivement sur le référencement naturel, alors que l'audit digital couvre l'ensemble des aspects de votre présence digitale : stratégie, contenus, techniques, acquisition, données, gouvernance et intégration technologique.</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <button class="flex justify-between items-center w-full text-left focus:outline-none">
+                            <h3 class="text-lg font-semibold text-gray-900">Qui doit participer à l'audit côté client ?</h3>
+                            <i data-feather="chevron-down" class="text-primary transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="mt-4 text-gray-600">
+                            <p>Idéalement, les responsables marketing, digital, IT et commerciaux doivent être impliqués, ainsi que la direction générale pour valider les orientations stratégiques. Nous adaptons notre approche en fonction de votre organisation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary p-3 rounded-full mr-4">
+                    <i data-feather="map-pin" class="text-white"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">Contactez-nous</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Coordonnées</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i data-feather="map" class="text-primary mr-4 mt-1"></i>
+                                <span>231 Rue Saint-Honoré, 75001 Paris</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="phone" class="text-primary mr-4 mt-1"></i>
+                                <span>01 88 31 53 68 / 06 02 20 63 13</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="mail" class="text-primary mr-4 mt-1"></i>
+                                <span>contact@maison-johnco-marketing.com</span>
+                            </li>
+                        </ul>
+                        <h3 class="text-xl font-semibold mt-8 mb-4 text-primary">Horaires</h3>
+                        <ul class="space-y-2">
+                            <li class="flex justify-between">
+                                <span class="font-medium">Lundi :</span>
+                                <span>09:00–12:00, 14:00–19:30</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Mardi :</span>
+                                <span>09:00–12:00, 14:00–19:30</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Mercredi :</span>
+                                <span>09:00–12:00, 14:00–19:30</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Jeudi :</span>
+                                <span>09:00–12:00, 14:00–18:00</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Vendredi :</span>
+                                <span>09:00–12:00, 14:00–18:00</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Samedi :</span>
+                                <span>09:00–12:00</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Dimanche :</span>
+                                <span>Fermé</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="devis" class="space-y-8">
+                        <div>
+                            <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center w-full bg-primary text-white font-semibold py-4 px-6 rounded-lg hover:bg-secondary transition duration-300">
+                                <i data-feather="file-text" class="mr-3"></i> Demander un devis gratuit
+                            </a>
+                            <p class="mt-3 text-sm text-gray-600 text-center">Obtenez une estimation personnalisée pour votre projet en quelques clics.</p>
+                        </div>
+                        <div>
+                            <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center w-full bg-white text-primary font-semibold py-4 px-6 rounded-lg border-2 border-primary hover:bg-primary hover:text-white transition duration-300">
+                                <i data-feather="message-circle" class="mr-3"></i> Nous contacter
+                            </a>
+                            <p class="mt-3 text-sm text-gray-600 text-center">Une question ? Notre équipe est à votre écoute pour vous accompagner.</p>
+                        </div>
+                    </div>
+</div>
+            </div>
+        </section>
+    </div>
+    
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

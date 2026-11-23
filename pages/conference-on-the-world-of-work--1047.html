@@ -1,0 +1,628 @@
+<!-- wp:html -->
+<!-- CONFÉRENCES MONDE DU TRAVAIL — Page de présentation professionnelle -->
+<div id="cw">
+
+<style>
+/* ════════════════════════════════════════════════════
+   PALETTE & TYPO
+   — Blanc pur sur sections claires
+   — Navy profond #0B1D3A sur sections foncées
+   — Accent #2F7FD8 bleu électrique (lisible sur blanc ET navy)
+   — Or pédagogique #E8A020 pour les badges "gratuit"
+   — Gris ardoise #F2F4F7 fonds alternatifs
+════════════════════════════════════════════════════ */
+:root{
+  --nv:#0B1D3A;
+  --nv2:#16305A;
+  --bl:#2F7FD8;
+  --bl2:#1A5FB0;
+  --or:#E8A020;
+  --wh:#FFFFFF;
+  --bg:#F2F4F7;
+  --tx:#1A202C;
+  --mu:#6B7A8D;
+  --br:#DDE3EC;
+  --gr:#22C55E;
+  --rd:#EF4444;
+  --r:10px;
+  --r2:16px;
+}
+#cw,#cw *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,-apple-system,Helvetica,sans-serif}
+#cw{color:var(--tx);background:var(--wh);line-height:1.6;font-size:16px}
+#cw a{color:var(--bl);text-decoration:none}
+#cw a:hover{text-decoration:underline}
+#cw button{cursor:pointer;font-family:inherit;border:none;outline:none}
+#cw img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ── HERO ── */
+.cw-hero{background:var(--nv);color:var(--wh);padding:5rem 1.5rem 4rem;text-align:center;position:relative;overflow:hidden}
+.cw-hero-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 20% 50%, rgba(47,127,216,.18) 0%, transparent 60%),
+  radial-gradient(ellipse at 80% 20%, rgba(47,127,216,.12) 0%, transparent 50%);
+  pointer-events:none}
+.cw-hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.cw-hero-tag{display:inline-block;background:rgba(232,160,32,.15);border:1px solid rgba(232,160,32,.35);color:#F5B94E;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.35rem .9rem;border-radius:30px;margin-bottom:1.5rem}
+.cw-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:1.1rem;letter-spacing:-.02em}
+.cw-hero h1 em{font-style:normal;color:#5A9FE4}
+.cw-hero-sub{font-size:1.05rem;color:rgba(255,255,255,.68);max-width:580px;margin:0 auto 2.25rem;line-height:1.75}
+.cw-hero-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--bl);color:#fff;font-size:.95rem;font-weight:700;padding:.85rem 2rem;border-radius:50px;transition:background .2s,transform .15s;text-decoration:none}
+.cw-hero-cta:hover{background:var(--bl2);transform:translateY(-1px);color:#fff;text-decoration:none}
+.cw-hero-cta-sec{display:inline-flex;align-items:center;gap:.4rem;margin-left:1rem;color:rgba(255,255,255,.55);font-size:.85rem;font-weight:600;background:none;border:1px solid rgba(255,255,255,.2);padding:.7rem 1.4rem;border-radius:50px;transition:all .2s}
+.cw-hero-cta-sec:hover{color:#fff;border-color:rgba(255,255,255,.5);text-decoration:none}
+.cw-hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:2.75rem}
+.cw-badge{display:flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.5rem .9rem;font-size:.78rem;color:rgba(255,255,255,.75)}
+.cw-badge strong{color:#fff;font-size:.95rem}
+.cw-badge-free{background:rgba(232,160,32,.12);border-color:rgba(232,160,32,.3);color:#F5B94E}
+.cw-badge-free strong{color:#FBBF24}
+
+/* ── SECTIONS LAYOUT ── */
+.cw-section{padding:5rem 1.5rem}
+.cw-section.alt{background:var(--bg)}
+.cw-section.dark{background:var(--nv);color:var(--wh)}
+.cw-wrap{max-width:900px;margin:0 auto}
+.cw-wrap-sm{max-width:680px;margin:0 auto}
+.cw-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--bl);margin-bottom:.75rem}
+.cw-section.dark .cw-eyebrow{color:#5A9FE4}
+.cw-h2{font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem}
+.cw-section.dark .cw-h2{color:var(--wh)}
+.cw-lead{font-size:1rem;color:var(--mu);line-height:1.75;max-width:600px;margin-bottom:2.25rem}
+.cw-section.dark .cw-lead{color:rgba(255,255,255,.62)}
+
+/* ── PHOTOS BAND ── */
+.cw-photos{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:220px 220px;gap:6px}
+.cw-photo{border-radius:var(--r);overflow:hidden;position:relative}
+.cw-photo:first-child{grid-row:1/3}
+.cw-photo-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(11,29,58,.8));color:#fff;font-size:.72rem;font-weight:600;padding:.6rem .8rem}
+@media(max-width:640px){.cw-photos{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px}.cw-photo:first-child{grid-row:auto}}
+
+/* ── FEATURES GRID ── */
+.cw-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+@media(max-width:640px){.cw-features{grid-template-columns:1fr}}
+.cw-feat{background:var(--wh);border:1px solid var(--br);border-radius:var(--r2);padding:1.75rem 1.5rem;transition:box-shadow .2s,transform .2s}
+.cw-feat:hover{box-shadow:0 8px 32px rgba(0,0,0,.1);transform:translateY(-3px)}
+.cw-section.dark .cw-feat{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+.cw-feat-icon{width:48px;height:48px;border-radius:12px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.1rem}
+.cw-section.dark .cw-feat-icon{background:rgba(255,255,255,.1)}
+.cw-feat h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;color:var(--tx)}
+.cw-section.dark .cw-feat h3{color:#fff}
+.cw-feat p{font-size:.83rem;color:var(--mu);line-height:1.65}
+.cw-section.dark .cw-feat p{color:rgba(255,255,255,.58)}
+
+/* ── LÉGAL ── */
+.cw-legal{background:var(--wh);border-left:4px solid var(--bl);border-radius:0 var(--r) var(--r) 0;padding:1.25rem 1.5rem;margin-top:2.5rem}
+.cw-legal h3{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--bl);margin-bottom:.75rem}
+.cw-legal-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.cw-legal-tag{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:6px;padding:.25rem .75rem;font-size:.74rem;color:#1D4ED8;font-weight:600}
+.cw-legal-tag a{color:#1D4ED8;font-weight:600}
+
+/* ── PROCESS ── */
+.cw-process{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem;position:relative}
+@media(max-width:700px){.cw-process{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.cw-process{grid-template-columns:1fr}}
+.cw-process::before{content:'';position:absolute;top:24px;left:15%;right:15%;height:2px;background:var(--br);z-index:0}
+@media(max-width:700px){.cw-process::before{display:none}}
+.cw-step{position:relative;z-index:1;text-align:center;padding:.5rem}
+.cw-step-n{width:48px;height:48px;border-radius:50%;background:var(--nv);color:#fff;font-size:.95rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto .85rem;border:3px solid var(--wh);box-shadow:0 0 0 2px var(--br)}
+.cw-step h4{font-size:.84rem;font-weight:700;color:var(--tx);margin-bottom:.3rem}
+.cw-step p{font-size:.74rem;color:var(--mu);line-height:1.55}
+
+/* ── GARANTIES ── */
+.cw-garanties{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+@media(max-width:640px){.cw-garanties{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.cw-garanties{grid-template-columns:1fr}}
+.cw-gar{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:1.1rem 1.25rem;display:flex;gap:.75rem;align-items:flex-start}
+.cw-gar-ic{font-size:1.3rem;flex-shrink:0;margin-top:.05rem}
+.cw-gar-t{font-size:.84rem;font-weight:700;color:#fff;margin-bottom:.15rem}
+.cw-gar-d{font-size:.74rem;color:rgba(255,255,255,.55);line-height:1.5}
+
+/* ── DOCS ── */
+.cw-docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:.85rem;margin-top:2rem}
+.cw-doc{background:var(--wh);border:1.5px solid var(--br);border-radius:var(--r2);padding:1.25rem 1rem;display:flex;flex-direction:column;gap:.5rem;transition:border-color .2s,box-shadow .2s}
+.cw-doc:hover{border-color:var(--bl);box-shadow:0 4px 20px rgba(47,127,216,.12)}
+.cw-doc-ic{font-size:1.5rem;line-height:1}
+.cw-doc-nm{font-size:.82rem;font-weight:700;color:var(--nv);line-height:1.3}
+.cw-doc-sb{font-size:.71rem;color:var(--mu)}
+.cw-doc-dl{margin-top:auto;display:block;text-align:center;padding:.45rem .8rem;background:var(--nv);color:#fff;border-radius:7px;font-size:.74rem;font-weight:700;text-decoration:none;transition:background .15s}
+.cw-doc-dl:hover{background:var(--bl2);color:#fff;text-decoration:none}
+.cw-doc.star{background:var(--nv);border-color:var(--nv)}
+.cw-doc.star .cw-doc-nm{color:rgba(255,255,255,.9)}
+.cw-doc.star .cw-doc-sb{color:rgba(255,255,255,.45)}
+.cw-doc.star .cw-doc-dl{background:var(--bl)}
+.cw-doc.star .cw-doc-dl:hover{background:var(--bl2)}
+
+/* ── PRIX ── */
+.cw-prix{background:var(--wh);border-radius:var(--r2);padding:2.5rem;max-width:520px;margin:2.5rem auto 0;box-shadow:0 4px 40px rgba(0,0,0,.15);text-align:center}
+.cw-prix-label{font-size:.68rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);margin-bottom:.5rem}
+.cw-prix-price{font-size:3.5rem;font-weight:800;color:var(--nv);line-height:1;margin-bottom:.25rem}
+.cw-prix-price sup{font-size:1.2rem;vertical-align:super;font-weight:700}
+.cw-prix-price sub{font-size:1rem;font-weight:500;color:var(--mu)}
+.cw-prix-note{font-size:.8rem;color:var(--mu);margin-bottom:1.5rem;line-height:1.6}
+.cw-prix-free{background:#ECFDF5;border:1px solid #A7F3D0;border-radius:8px;padding:.75rem 1rem;font-size:.85rem;color:#065F46;font-weight:600;margin-bottom:1.5rem}
+.cw-prix-btn{display:block;width:100%;padding:.9rem;background:var(--bl);color:#fff;border-radius:50px;font-size:.95rem;font-weight:700;cursor:pointer;transition:background .15s,transform .15s;border:none}
+.cw-prix-btn:hover{background:var(--bl2);transform:translateY(-1px)}
+.cw-prix-items{list-style:none;text-align:left;margin-top:1.25rem;display:flex;flex-direction:column;gap:.4rem}
+.cw-prix-items li{font-size:.8rem;color:var(--mu);display:flex;align-items:center;gap:.4rem}
+.cw-prix-items li::before{content:'✓';color:var(--gr);font-weight:700;flex-shrink:0}
+
+/* ── MODAL ── */
+.cw-overlay{display:none;position:fixed;inset:0;background:rgba(11,29,58,.65);z-index:9999;align-items:center;justify-content:center;padding:1rem}
+.cw-overlay.on{display:flex}
+.cw-modal{background:var(--wh);border-radius:var(--r2);max-width:580px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.3)}
+.cw-modal-head{padding:1.5rem 1.75rem 1.25rem;border-bottom:1px solid var(--br);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.cw-modal-head h2{font-size:1.15rem;font-weight:800;color:var(--nv);line-height:1.25}
+.cw-modal-head p{font-size:.78rem;color:var(--mu);margin-top:.25rem}
+.cw-modal-close{background:none;border:none;font-size:1.4rem;color:var(--mu);cursor:pointer;line-height:1;padding:.2rem;flex-shrink:0;margin-top:-.1rem}
+.cw-modal-close:hover{color:var(--tx)}
+.cw-modal-body{padding:1.5rem 1.75rem}
+
+/* Formulaire */
+.cw-form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+@media(max-width:500px){.cw-form-row{grid-template-columns:1fr}}
+.cw-form-row.full{grid-template-columns:1fr}
+.cw-fg{display:flex;flex-direction:column;gap:.3rem}
+.cw-fg.span2{grid-column:1/-1}
+.cw-fl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mu)}
+.cw-inp,.cw-sel,.cw-ta{width:100%;padding:.62rem .9rem;border:1.5px solid var(--br);border-radius:8px;font-family:inherit;font-size:.87rem;color:var(--tx);background:var(--bg);outline:none;transition:border-color .2s,background .2s}
+.cw-inp:focus,.cw-sel:focus,.cw-ta:focus{border-color:var(--bl);background:var(--wh)}
+.cw-inp::placeholder{color:#aab0bc}
+.cw-ta{resize:vertical;min-height:80px}
+.cw-form-section-title{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--bl);margin:1.25rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #EFF6FF}
+
+/* Adresse */
+.cw-addr-box{background:#F0F7FF;border:1px solid #BFD7F5;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:.85rem;line-height:1.7;color:var(--nv)}
+.cw-addr-box strong{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--bl);margin-bottom:.4rem;font-weight:800}
+.cw-addr-note{font-size:.75rem;color:var(--mu);margin-top:.4rem;font-style:italic}
+
+/* Boutons formulaire */
+.cw-form-btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}
+.cw-f-ok{flex:1;min-width:180px;padding:.85rem 1.25rem;background:var(--gr);color:#fff;border:none;border-radius:50px;font-size:.92rem;font-weight:700;cursor:pointer;transition:all .15s}
+.cw-f-ok:hover{background:#16A34A;transform:translateY(-1px)}
+.cw-f-no{padding:.85rem 1.25rem;background:#FEF2F2;color:var(--rd);border:1.5px solid #FCA5A5;border-radius:50px;font-size:.92rem;font-weight:700;cursor:pointer;transition:all .15s}
+.cw-f-no:hover{background:#FCA5A5}
+.cw-form-legal{font-size:.71rem;color:#9CA3AF;line-height:1.6;margin-top:.85rem}
+.cw-msg{padding:.8rem 1rem;border-radius:8px;font-size:.82rem;margin-top:.75rem;display:none}
+.cw-msg.ok{background:#ECFDF5;border:1px solid #A7F3D0;color:#065F46;display:block}
+.cw-msg.er{background:#FEF2F2;border:1px solid #FCA5A5;color:#991B1B;display:block}
+
+/* CTA section */
+.cw-cta-section{text-align:center;padding:4.5rem 1.5rem;background:var(--nv)}
+.cw-cta-section h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:.75rem;letter-spacing:-.02em}
+.cw-cta-section p{font-size:.95rem;color:rgba(255,255,255,.6);margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cw-cta-big{display:inline-flex;align-items:center;gap:.5rem;background:var(--bl);color:#fff;font-size:1rem;font-weight:700;padding:1rem 2.25rem;border-radius:50px;border:none;cursor:pointer;transition:all .2s;box-shadow:0 4px 24px rgba(47,127,216,.4)}
+.cw-cta-big:hover{background:var(--bl2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(47,127,216,.5)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .cw-section{padding:3.5rem 1.15rem}
+  .cw-features{gap:1rem}
+  .cw-hero{padding:3.5rem 1.15rem 3rem}
+}
+</style>
+
+<!-- ════════════════════════════════
+     SECTION 1 — HERO
+════════════════════════════════ -->
+<div class="cw-hero">
+  <div class="cw-hero-bg"></div>
+  <div class="cw-hero-inner">
+    <span class="cw-hero-tag">Programme national 2025–2026</span>
+    <h1>Vos élèves rencontrent<br><em>le monde professionnel</em><br>depuis leur classe</h1>
+    <p class="cw-hero-sub">Des professionnels en activité animent des conférences en visioconférence pour vos collégiens et lycéens. Un programme aligné sur le Parcours Avenir, sans organisation lourde, sans sortie scolaire.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;">
+      <button class="cw-hero-cta" onclick="cwOpenModal()">Confirmer notre participation →</button>
+      <a href="#cw-docs" class="cw-hero-cta-sec">Voir les documents ↓</a>
+    </div>
+    <div class="cw-hero-badges">
+      <div class="cw-badge cw-badge-free"><strong>0 €</strong> pour vos élèves — garanti par écrit</div>
+      <div class="cw-badge"><strong>+700</strong> métiers couverts</div>
+      <div class="cw-badge"><strong>+30</strong> familles professionnelles</div>
+      <div class="cw-badge"><strong>2h</strong> par session en direct</div>
+      <div class="cw-badge">📅 Lundi–Vendredi 8h–18h</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION 2 — PHOTOS
+════════════════════════════════ -->
+<div class="cw-section" style="padding-top:0;padding-bottom:0;background:#fff">
+  <div class="cw-photos">
+    <div class="cw-photo">
+      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80" alt="Élèves en visioconférence" loading="lazy">
+      <span class="cw-photo-cap">Conférence en direct depuis la salle de classe</span>
+    </div>
+    <div class="cw-photo">
+      <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=400&q=80" alt="Élèves attentifs" loading="lazy">
+      <span class="cw-photo-cap">Des élèves engagés et curieux</span>
+    </div>
+    <div class="cw-photo">
+      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80" alt="Intervenant professionnel" loading="lazy">
+      <span class="cw-photo-cap">Un professionnel en activité</span>
+    </div>
+    <div class="cw-photo">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80" alt="Travail collaboratif" loading="lazy">
+      <span class="cw-photo-cap">Questions et échanges en temps réel</span>
+    </div>
+    <div class="cw-photo">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="Découverte des métiers" loading="lazy">
+      <span class="cw-photo-cap">Découverte de +700 métiers</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION 3 — LE PROGRAMME
+════════════════════════════════ -->
+<div class="cw-section alt">
+  <div class="cw-wrap">
+    <p class="cw-eyebrow">Le programme</p>
+    <h2 class="cw-h2">Ce que vos élèves vivent pendant 2 heures</h2>
+    <p class="cw-lead">Chaque session met en scène un professionnel en activité qui présente son métier, son parcours, les réalités quotidiennes de son secteur — et répond aux questions de vos élèves en direct, via un chat modéré par notre équipe.</p>
+
+    <div class="cw-features">
+      <div class="cw-feat">
+        <div class="cw-feat-icon">🎤</div>
+        <h3>Des professionnels en activité</h3>
+        <p>Chaque intervenant est sélectionné selon des critères stricts : 5+ ans d'expérience, test pédagogique sur panel d'élèves, charte éthique signée. Pas de formateurs, pas de commerciaux.</p>
+      </div>
+      <div class="cw-feat">
+        <div class="cw-feat-icon">💻</div>
+        <h3>Zéro organisation logistique</h3>
+        <p>Aucune sortie scolaire, aucun transport, aucun matériel à installer. L'enseignant connecte la salle, la session démarre automatiquement. Un guide technique d'une page suffit.</p>
+      </div>
+      <div class="cw-feat">
+        <div class="cw-feat-icon">🔄</div>
+        <h3>Replay + ressources inclus</h3>
+        <p>Chaque session est enregistrée et accessible en replay sécurisé jusqu'à la fin de l'année scolaire, via un code transmis à l'enseignant référent pour ses élèves.</p>
+      </div>
+    </div>
+
+    <div class="cw-legal">
+      <h3>⚖️ Aligné sur vos obligations légales — Parcours Avenir</h3>
+      <div class="cw-legal-tags">
+        <span class="cw-legal-tag"><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037386039" target="_blank" rel="noopener">Art. L.331-7 Code de l'éducation</a></span>
+        <span class="cw-legal-tag"><a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037367660/" target="_blank" rel="noopener">Loi n°2018-771 du 5 sept. 2018</a></span>
+        <span class="cw-legal-tag"><a href="https://www.education.gouv.fr/bo/15/Hebdo27/MENE1515506C.htm" target="_blank" rel="noopener">Circulaire n°2015-106</a></span>
+        <span class="cw-legal-tag"><a href="https://www.education.gouv.fr/botexte/bo010405/MENG0100585C.htm" target="_blank" rel="noopener">Circulaire n°2001-053</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION 4 — MÉTIERS
+════════════════════════════════ -->
+<div class="cw-section">
+  <div class="cw-wrap" style="text-align:center">
+    <p class="cw-eyebrow" style="text-align:center">+30 familles professionnelles</p>
+    <h2 class="cw-h2" style="text-align:center">Un programme qui couvre tous les horizons</h2>
+    <p class="cw-lead" style="margin:0 auto 2rem;text-align:center">Chaque établissement choisit les familles de métiers adaptées à ses classes et à ses projets d'orientation.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center">
+      <span style="background:#EFF6FF;border:1px solid #BFDBFE;color:#1D4ED8;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🏥 Santé & Paramédical</span>
+      <span style="background:#F0FDF4;border:1px solid #BBF7D0;color:#166534;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">💻 Informatique & Numérique</span>
+      <span style="background:#FFF7ED;border:1px solid #FED7AA;color:#9A3412;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🏗️ Bâtiment & BTP</span>
+      <span style="background:#FDF4FF;border:1px solid #E9D5FF;color:#7E22CE;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">⚖️ Droit & Justice</span>
+      <span style="background:#FFFBEB;border:1px solid #FDE68A;color:#92400E;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">💰 Finance & Banque</span>
+      <span style="background:#FEF2F2;border:1px solid #FECACA;color:#991B1B;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🎨 Arts & Culture</span>
+      <span style="background:#F0FDF4;border:1px solid #BBF7D0;color:#166534;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🌿 Agriculture & Environnement</span>
+      <span style="background:#EFF6FF;border:1px solid #BFDBFE;color:#1D4ED8;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🚛 Transport & Logistique</span>
+      <span style="background:#FDF4FF;border:1px solid #E9D5FF;color:#7E22CE;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">📢 Communication & Médias</span>
+      <span style="background:#FFF7ED;border:1px solid #FED7AA;color:#9A3412;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🍽️ Hôtellerie & Restauration</span>
+      <span style="background:#F0FDF4;border:1px solid #BBF7D0;color:#166534;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🤝 Social & Humanitaire</span>
+      <span style="background:#EFF6FF;border:1px solid #BFDBFE;color:#1D4ED8;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🔬 Ingénierie & Recherche</span>
+      <span style="background:#FFFBEB;border:1px solid #FDE68A;color:#92400E;font-size:.78rem;font-weight:600;padding:.3rem .85rm;border-radius:30px">🛡️ Sécurité & Défense</span>
+      <span style="background:#FDF4FF;border:1px solid #E9D5FF;color:#7E22CE;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">✈️ Aéronautique & Espace</span>
+      <span style="background:#FEF2F2;border:1px solid #FECACA;color:#991B1B;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🎬 Cinéma & Audiovisuel</span>
+      <span style="background:#F0FDF4;border:1px solid #BBF7D0;color:#166534;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">⚡ Énergie & Environnement</span>
+      <span style="background:#EFF6FF;border:1px solid #BFDBFE;color:#1D4ED8;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🏠 Immobilier</span>
+      <span style="background:#FFFBEB;border:1px solid #FDE68A;color:#92400E;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">👗 Mode & Design</span>
+      <span style="background:#FDF4FF;border:1px solid #E9D5FF;color:#7E22CE;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🏅 Sport & Animation</span>
+      <span style="background:#F0FDF4;border:1px solid #BBF7D0;color:#166534;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">💊 Pharmacie & Biotech</span>
+      <span style="background:#EFF6FF;border:1px solid #BFDBFE;color:#1D4ED8;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🛒 Commerce & Vente</span>
+      <span style="background:#FFF7ED;border:1px solid #FED7AA;color:#9A3412;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🎓 Éducation & Formation</span>
+      <span style="background:#FEF2F2;border:1px solid #FECACA;color:#991B1B;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🔧 Industrie & Mécanique</span>
+      <span style="background:#FDF4FF;border:1px solid #E9D5FF;color:#7E22CE;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">📣 Marketing & Com</span>
+      <span style="background:#F0FDF4;border:1px solid #BBF7D0;color:#166534;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🚢 Marine & Maritime</span>
+      <span style="background:#FFFBEB;border:1px solid #FDE68A;color:#92400E;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🏛️ Architecture</span>
+      <span style="background:#EFF6FF;border:1px solid #BFDBFE;color:#1D4ED8;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">💎 Luxe & Haute Couture</span>
+      <span style="background:#FEF2F2;border:1px solid #FECACA;color:#991B1B;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🍷 Gastronomie</span>
+      <span style="background:#FDF4FF;border:1px solid #E9D5FF;color:#7E22CE;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">🧑‍💼 Ressources Humaines</span>
+      <span style="background:#F0FDF4;border:1px solid #BBF7D0;color:#166534;font-size:.78rem;font-weight:600;padding:.3rem .85rem;border-radius:30px">⚙️ Artisanat d'art</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION 5 — NOS ENGAGEMENTS
+════════════════════════════════ -->
+<div class="cw-section dark">
+  <div class="cw-wrap">
+    <p class="cw-eyebrow">Transparence totale</p>
+    <h2 class="cw-h2">Ce que nous vous garantissons par écrit</h2>
+    <p class="cw-lead">Chaque engagement figure dans la charte signée par les deux parties. Aucune surprise, aucune clause cachée.</p>
+
+    <div class="cw-garanties">
+      <div class="cw-gar"><div class="cw-gar-ic">✅</div><div><div class="cw-gar-t">Gratuité totale</div><div class="cw-gar-d">Aucun frais pour les élèves ni les familles, sans exception ni condition.</div></div></div>
+      <div class="cw-gar"><div class="cw-gar-ic">🔄</div><div><div class="cw-gar-t">Droit de retrait libre</div><div class="cw-gar-d">Remboursement partiel avant démarrage des sessions, sans justification.</div></div></div>
+      <div class="cw-gar"><div class="cw-gar-ic">🔒</div><div><div class="cw-gar-t">Conformité RGPD</div><div class="cw-gar-d">Aucune donnée personnelle d'élève transmise à des tiers. Hébergement UE.</div></div></div>
+      <div class="cw-gar"><div class="cw-gar-ic">⚖️</div><div><div class="cw-gar-t">Neutralité absolue</div><div class="cw-gar-d">Aucune marque, opinion politique ou religieuse. Charte signée par chaque intervenant.</div></div></div>
+      <div class="cw-gar"><div class="cw-gar-ic">📋</div><div><div class="cw-gar-t">Rapport Parcours Avenir</div><div class="cw-gar-d">Document annuel fourni pour valoriser vos obligations institutionnelles.</div></div></div>
+      <div class="cw-gar"><div class="cw-gar-ic">🎧</div><div><div class="cw-gar-t">Interlocuteur dédié</div><div class="cw-gar-d">Réponse sous 48h ouvrées. Disponible toute l'année scolaire.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION 6 — COMMENT ÇA SE PASSE
+════════════════════════════════ -->
+<div class="cw-section alt">
+  <div class="cw-wrap">
+    <p class="cw-eyebrow">Étape par étape</p>
+    <h2 class="cw-h2">De votre accord à la première session</h2>
+    <p class="cw-lead">Un processus simple, sans bureaucratie inutile. Votre établissement est opérationnel avant la rentrée.</p>
+    <div class="cw-process">
+      <div class="cw-step"><div class="cw-step-n">1</div><h4>Vous confirmez</h4><p>Téléchargez, signez et envoyez les documents par courrier. Réglez les frais de dossier.</p></div>
+      <div class="cw-step"><div class="cw-step-n">2</div><h4>Réunion pré-rentrée</h4><p>30 min en visio avec votre interlocuteur : familles de métiers, créneaux, niveaux de classes.</p></div>
+      <div class="cw-step"><div class="cw-step-n">3</div><h4>À la rentrée</h4><p>Réception des liens de connexion, du calendrier et du guide technique (1 page).</p></div>
+      <div class="cw-step"><div class="cw-step-n">4</div><h4>Pendant l'année</h4><p>Sessions en direct, replays, rapport annuel Parcours Avenir. Zéro charge pour vous.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION 7 — DOCUMENTS
+════════════════════════════════ -->
+<div class="cw-section" id="cw-docs">
+  <div class="cw-wrap">
+    <p class="cw-eyebrow">Documents</p>
+    <h2 class="cw-h2">Tout ce dont vous avez besoin</h2>
+    <p class="cw-lead">Téléchargez les documents, imprimez-les, signez-les et envoyez-les par courrier avec votre règlement.</p>
+    <div class="cw-docs">
+      <div class="cw-doc"><div class="cw-doc-ic">📋</div><div class="cw-doc-nm">Fiche de synthèse<br><span class="cw-doc-sb">Vue d'ensemble — 1 page</span></div><a class="cw-doc-dl" href="https://maison-johnco-marketing.com/wp-content/themes/astra/generate.php?doc=fiche&fmt=pdf" target="_blank">⬇ Télécharger PDF</a></div>
+      <div class="cw-doc"><div class="cw-doc-ic">📊</div><div class="cw-doc-nm">Dossier de présentation<br><span class="cw-doc-sb">Programme complet — 5 pages</span></div><a class="cw-doc-dl" href="https://maison-johnco-marketing.com/wp-content/themes/astra/generate.php?doc=presentation&fmt=pdf" target="_blank">⬇ Télécharger PDF</a></div>
+      <div class="cw-doc"><div class="cw-doc-ic">✍️</div><div class="cw-doc-nm">Lettre d'intention<br><span class="cw-doc-sb">À signer et envoyer</span></div><a class="cw-doc-dl" href="https://maison-johnco-marketing.com/wp-content/themes/astra/generate.php?doc=intention&fmt=pdf" target="_blank">⬇ Télécharger PDF</a></div>
+      <div class="cw-doc"><div class="cw-doc-ic">📜</div><div class="cw-doc-nm">Charte d'engagements<br><span class="cw-doc-sb">Nos engagements mutuels</span></div><a class="cw-doc-dl" href="https://maison-johnco-marketing.com/wp-content/themes/astra/generate.php?doc=charte&fmt=pdf" target="_blank">⬇ Télécharger PDF</a></div>
+      <div class="cw-doc"><div class="cw-doc-ic">💶</div><div class="cw-doc-nm">Devis officiel 499 € HT<br><span class="cw-doc-sb">Bon pour accord à signer</span></div><a class="cw-doc-dl" href="https://maison-johnco-marketing.com/wp-content/themes/astra/generate.php?doc=devis&fmt=pdf" target="_blank">⬇ Télécharger PDF</a></div>
+      <div class="cw-doc"><div class="cw-doc-ic">🖥️</div><div class="cw-doc-nm">Guide technique<br><span class="cw-doc-sb">Connexion le jour J — 1 page</span></div><a class="cw-doc-dl" href="https://maison-johnco-marketing.com/wp-content/themes/astra/generate.php?doc=guide&fmt=pdf" target="_blank">⬇ Télécharger PDF</a></div>
+      <div class="cw-doc"><div class="cw-doc-ic">🔒</div><div class="cw-doc-nm">Protocole RGPD<br><span class="cw-doc-sb">Protection des données élèves</span></div><a class="cw-doc-dl" href="https://maison-johnco-marketing.com/wp-content/themes/astra/generate.php?doc=rgpd&fmt=pdf" target="_blank">⬇ Télécharger PDF</a></div>
+      <div class="cw-doc"><div class="cw-doc-ic">❓</div><div class="cw-doc-nm">FAQ<br><span class="cw-doc-sb">15 questions-réponses</span></div><a class="cw-doc-dl" href="https://maison-johnco-marketing.com/wp-content/themes/astra/generate.php?doc=faq&fmt=pdf" target="_blank">⬇ Télécharger PDF</a></div>
+      <div class="cw-doc star"><div class="cw-doc-ic">📦</div><div class="cw-doc-nm">Dossier complet<br><span class="cw-doc-sb">Tous les documents en 1 PDF</span></div><a class="cw-doc-dl" href="https://maison-johnco-marketing.com/wp-content/themes/astra/generate.php?doc=all&fmt=pdf" target="_blank">⬇ Tout télécharger</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION 8 — PRIX
+════════════════════════════════ -->
+<div class="cw-section dark">
+  <div class="cw-wrap-sm" style="text-align:center">
+    <p class="cw-eyebrow" style="text-align:center">Tarification</p>
+    <h2 class="cw-h2" style="text-align:center">Simple. Transparent. Sans surprise.</h2>
+    <div class="cw-prix">
+      <p class="cw-prix-label">Frais administratifs de dossier</p>
+      <div class="cw-prix-price"><sup>€</sup>499<sub> HT</sub></div>
+      <p class="cw-prix-note">Règlement unique pour l'ensemble de l'année scolaire 2025–2026.<br>Par chèque à l'ordre de Maison John&amp;Co Marketing.</p>
+      <div class="cw-prix-free">✅ 0 € pour vos élèves — garanti par écrit dans la charte</div>
+      <button class="cw-prix-btn" onclick="cwOpenModal()">Confirmer notre participation →</button>
+      <ul class="cw-prix-items">
+        <li>Sessions illimitées sur les créneaux convenus</li>
+        <li>Interlocuteur dédié toute l'année</li>
+        <li>Replay sécurisé de chaque session</li>
+        <li>Rapport annuel Parcours Avenir</li>
+        <li>Guide technique + support le jour J</li>
+        <li>Droit de retrait avant démarrage</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION 9 — CTA FINAL
+════════════════════════════════ -->
+<div class="cw-cta-section">
+  <h2>Prêt à enrichir l'orientation<br>de vos élèves ?</h2>
+  <p>Rejoignez les établissements qui font confiance au Programme national Conférences Monde du Travail. Votre dossier est activé avant la rentrée.</p>
+  <button class="cw-cta-big" onclick="cwOpenModal()">✉ Confirmer notre participation</button>
+  <p style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:1.5rem;">Des questions ? contact@maison-johnco-marketing.com · Lun–Mer 9h–19h30 · Jeu–Ven 9h–18h</p>
+</div>
+
+<!-- ════════════════════════════════
+     MODAL — FORMULAIRE
+════════════════════════════════ -->
+<div class="cw-overlay" id="cw-overlay" onclick="cwCloseModal(event)">
+  <div class="cw-modal" role="dialog" aria-modal="true">
+    <div class="cw-modal-head">
+      <div>
+        <h2>Confirmer la participation de votre établissement</h2>
+        <p>Remplissez ce formulaire. Votre messagerie s'ouvrira avec un email pré-rédigé à nous envoyer.</p>
+      </div>
+      <button class="cw-modal-close" onclick="document.getElementById('cw-overlay').classList.remove('on')">✕</button>
+    </div>
+    <div class="cw-modal-body">
+
+      <div class="cw-addr-box">
+        <strong>📬 Adresse d'envoi du courrier signé</strong>
+        Maison John&amp;Co Marketing<br>
+        1 Kerhoc<br>
+        22170 Lanrodec
+        <p class="cw-addr-note">Dans le cadre de notre organisation en télétravail, le courrier est réceptionné et traité à cette adresse par notre responsable administratif dédié.</p>
+      </div>
+
+      <p class="cw-form-section-title">Informations de l'établissement</p>
+      <div class="cw-form-row">
+        <div class="cw-fg"><label class="cw-fl">Nom de l'établissement *</label><input class="cw-inp" id="fw-nom-etab" type="text" placeholder="Ex : Lycée Jean Moulin"></div>
+        <div class="cw-fg"><label class="cw-fl">Numéro UAI *</label><input class="cw-inp" id="fw-uai" type="text" placeholder="Ex : 0220123A"></div>
+      </div>
+      <div class="cw-form-row">
+        <div class="cw-fg"><label class="cw-fl">Adresse *</label><input class="cw-inp" id="fw-adr" type="text" placeholder="Numéro et rue"></div>
+        <div class="cw-fg"><label class="cw-fl">Code postal et ville *</label><input class="cw-inp" id="fw-ville" type="text" placeholder="Ex : 22000 Saint-Brieuc"></div>
+      </div>
+      <div class="cw-form-row">
+        <div class="cw-fg"><label class="cw-fl">Email institutionnel *</label><input class="cw-inp" id="fw-email" type="email" placeholder="secretariat@etablissement.fr"></div>
+        <div class="cw-fg"><label class="cw-fl">Téléphone</label><input class="cw-inp" id="fw-tel" type="tel" placeholder="02.XX.XX.XX.XX"></div>
+      </div>
+      <div class="cw-form-row full">
+        <div class="cw-fg cw-span2"><label class="cw-fl">Type d'établissement *</label>
+          <select class="cw-sel" id="fw-type">
+            <option value="">-- Sélectionner --</option>
+            <option value="Collège public">Collège public</option>
+            <option value="Collège privé sous contrat">Collège privé sous contrat</option>
+            <option value="Lycée général public">Lycée général public</option>
+            <option value="Lycée général privé sous contrat">Lycée général privé sous contrat</option>
+            <option value="Lycée technologique public">Lycée technologique public</option>
+            <option value="Lycée professionnel public">Lycée professionnel public</option>
+            <option value="Lycée professionnel privé sous contrat">Lycée professionnel privé sous contrat</option>
+            <option value="Lycée polyvalent public">Lycée polyvalent public</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="cw-form-section-title">Niveaux concernés</p>
+      <div class="cw-form-row">
+        <div class="cw-fg"><label class="cw-fl">Niveaux (collège)</label>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.2rem">
+            <label style="display:flex;align-items:center;gap:.3rem;font-size:.82rem;cursor:pointer"><input type="checkbox" value="6e" name="niv"> 6e</label>
+            <label style="display:flex;align-items:center;gap:.3rem;font-size:.82rem;cursor:pointer"><input type="checkbox" value="5e" name="niv"> 5e</label>
+            <label style="display:flex;align-items:center;gap:.3rem;font-size:.82rem;cursor:pointer"><input type="checkbox" value="4e" name="niv"> 4e</label>
+            <label style="display:flex;align-items:center;gap:.3rem;font-size:.82rem;cursor:pointer"><input type="checkbox" value="3e" name="niv"> 3e</label>
+          </div>
+        </div>
+        <div class="cw-fg"><label class="cw-fl">Niveaux (lycée)</label>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.2rem">
+            <label style="display:flex;align-items:center;gap:.3rem;font-size:.82rem;cursor:pointer"><input type="checkbox" value="Seconde" name="niv"> Seconde</label>
+            <label style="display:flex;align-items:center;gap:.3rem;font-size:.82rem;cursor:pointer"><input type="checkbox" value="Première" name="niv"> Première</label>
+            <label style="display:flex;align-items:center;gap:.3rem;font-size:.82rem;cursor:pointer"><input type="checkbox" value="Terminale" name="niv"> Terminale</label>
+          </div>
+        </div>
+      </div>
+
+      <p class="cw-form-section-title">Interlocuteur de l'établissement</p>
+      <div class="cw-form-row">
+        <div class="cw-fg"><label class="cw-fl">Prénom *</label><input class="cw-inp" id="fw-prenom" type="text" placeholder="Prénom"></div>
+        <div class="cw-fg"><label class="cw-fl">Nom *</label><input class="cw-inp" id="fw-nom" type="text" placeholder="NOM"></div>
+      </div>
+      <div class="cw-form-row">
+        <div class="cw-fg"><label class="cw-fl">Qualité / Rôle *</label>
+          <select class="cw-sel" id="fw-role">
+            <option value="">-- Sélectionner --</option>
+            <option value="Proviseur">Proviseur(e)</option>
+            <option value="Proviseur adjoint">Proviseur(e) adjoint(e)</option>
+            <option value="Principal">Principal(e)</option>
+            <option value="Principal adjoint">Principal(e) adjoint(e)</option>
+            <option value="Secrétaire de direction">Secrétaire de direction</option>
+            <option value="Intendant">Intendant(e) / Gestionnaire</option>
+            <option value="Enseignant référent">Enseignant(e) référent(e)</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+        <div class="cw-fg"><label class="cw-fl">Date d'envoi du courrier *</label><input class="cw-inp" id="fw-date" type="date"></div>
+      </div>
+
+      <p class="cw-form-section-title">Familles de métiers souhaitées</p>
+      <div class="cw-form-row full">
+        <div class="cw-fg cw-span2"><label class="cw-fl">Familles prioritaires (optionnel)</label>
+          <textarea class="cw-ta" id="fw-familles" placeholder="Ex : Santé & Paramédical, Informatique & Numérique, Bâtiment…"></textarea>
+        </div>
+      </div>
+
+      <div id="cw-modal-msg" class="cw-msg"></div>
+
+      <div class="cw-form-btns">
+        <button class="cw-f-ok" onclick="cwEnvoyer('ok')">✉ Confirmer l'envoi du courrier</button>
+        <button class="cw-f-no" onclick="cwEnvoyer('non')">✗ Décliner</button>
+      </div>
+      <p class="cw-form-legal">En cliquant "Confirmer", votre messagerie s'ouvre avec un email pré-rédigé. Vérifiez les informations puis envoyez. Si elle ne s'ouvre pas, écrivez directement à contact@maison-johnco-marketing.com</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /cw -->
+
+<script>
+// Pré-remplir date du jour
+(function(){
+  var d=new Date(),m=String(d.getMonth()+1).padStart(2,'0'),j=String(d.getDate()).padStart(2,'0');
+  var inp=document.getElementById('fw-date');
+  if(inp) inp.value=d.getFullYear()+'-'+m+'-'+j;
+})();
+
+function cwOpenModal(){
+  document.getElementById('cw-overlay').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function cwCloseModal(e){
+  if(e.target===document.getElementById('cw-overlay')){
+    document.getElementById('cw-overlay').classList.remove('on');
+    document.body.style.overflow='';
+  }
+}
+
+function cwGet(id){ return (document.getElementById(id)||{}).value||''; }
+
+function cwEnvoyer(type){
+  var nomEtab=cwGet('fw-nom-etab'),uai=cwGet('fw-uai'),adr=cwGet('fw-adr'),ville=cwGet('fw-ville');
+  var email=cwGet('fw-email'),tel=cwGet('fw-tel'),typeEtab=cwGet('fw-type');
+  var prenom=cwGet('fw-prenom'),nom=cwGet('fw-nom'),role=cwGet('fw-role'),date=cwGet('fw-date');
+  var familles=cwGet('fw-familles');
+  var msg=document.getElementById('cw-modal-msg');
+
+  if(!nomEtab||!uai||!adr||!ville||!email||!prenom||!nom||!role||!date){
+    msg.textContent='Veuillez remplir tous les champs obligatoires (*).';
+    msg.className='cw-msg er'; return;
+  }
+
+  // Niveaux cochés
+  var nivs=[].slice.call(document.querySelectorAll('input[name="niv"]:checked')).map(function(cb){return cb.value}).join(', ')||'Non précisés';
+
+  // Date FR
+  var p=date.split('-');
+  var dateFr=p.length===3?p[2]+'/'+p[1]+'/'+p[0]:date;
+
+  var isDir=['Proviseur','Principal'].indexOf(role)!==-1;
+  var sig=isDir?'En ma qualité de '+role:'En ma qualité de '+role+', agissant avec l\'autorisation du chef d\'établissement';
+
+  var objet,corps;
+  if(type==='ok'){
+    objet='['+uai+'] Confirmation envoi — '+nomEtab;
+    corps='Madame, Monsieur Villeroy Mathieu,\n\n'
+      +'Je vous confirme avoir adressé ce jour, le '+dateFr+', à l\'adresse convenue (1 Kerhoc, 22170 Lanrodec), l\'ensemble des documents relatifs à notre participation au Programme national de conférences visio Monde du Travail.\n\n'
+      +'Documents envoyés :\n'
+      +'- Lettre d\'intention de participation signée\n'
+      +'- Charte d\'engagements mutuels signée\n'
+      +'- Devis officiel signé (Bon pour accord)\n'
+      +'- Chèque de règlement : 499 € HT\n\n'
+      +'Établissement :\n'
+      +'Nom : '+nomEtab+'\n'
+      +(typeEtab?'Type : '+typeEtab+'\n':'')
+      +'UAI : '+uai+'\n'
+      +'Adresse : '+adr+', '+ville+'\n'
+      +'Email : '+email+'\n'
+      +(tel?'Téléphone : '+tel+'\n':'')
+      +'Niveaux concernés : '+nivs+'\n'
+      +(familles?'Familles de métiers souhaitées : '+familles+'\n':'')+'\n'
+      +sig+'.\n'
+      +'Je soussigné(e), '+prenom+' '+nom+', certifie l\'exactitude des informations ci-dessus.\n\n'
+      +'Dans l\'attente de votre confirmation de réception et de l\'activation de notre dossier,\n\n'
+      +'Veuillez agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.\n\n'
+      +prenom+' '+nom+'\n'+role+'\n'+nomEtab+'\n'+email;
+  } else {
+    objet='['+uai+'] REFUS — '+nomEtab;
+    corps='Madame, Monsieur Villeroy Mathieu,\n\n'
+      +'Après examen de votre proposition concernant le Programme national de conférences visio Monde du Travail, '
+      +'l\'établissement '+nomEtab+' (UAI : '+uai+') ne souhaite pas y participer pour l\'année scolaire 2025-2026.\n\n'
+      +'Nous vous remercions pour votre démarche et restons ouverts à de futures collaborations.\n\n'
+      +'Veuillez agréer, Madame, Monsieur, l\'expression de nos salutations distinguées.\n\n'
+      +prenom+' '+nom+'\n'+role+'\n'+nomEtab+'\n'+email;
+  }
+
+  var mailto='mailto:contact@maison-johnco-marketing.com'
+    +'?subject='+encodeURIComponent(objet)
+    +'&body='+encodeURIComponent(corps);
+
+  window.location.href=mailto;
+  msg.textContent='✅ Votre messagerie s\'ouvre. Vérifiez l\'email et cliquez sur Envoyer.';
+  msg.className='cw-msg ok';
+}
+</script>
+<!-- /wp:html -->

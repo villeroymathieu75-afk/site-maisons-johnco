@@ -1,0 +1,170 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthode & Engagements - Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .engagement-icon {
+            transition: all 0.3s ease;
+        }
+        .engagement-item:hover .engagement-icon {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+  
+
+    <!-- Notre Méthode -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Notre Approche en 3 Étapes</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Étape 1 -->
+                <div class="step-card bg-white p-8 rounded-lg shadow-md transition duration-300 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-ear-listen text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">1. Écoute & Analyse</h3>
+                    <p class="text-gray-600 text-center">
+                        Nous prenons le temps de comprendre votre entreprise, vos objectifs et votre marché. Une analyse approfondie nous permet d'identifier les opportunités et les défis spécifiques.
+                    </p>
+                </div>
+
+                <!-- Étape 2 -->
+                <div class="step-card bg-white p-8 rounded-lg shadow-md transition duration-300 border border-gray-100">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-chess text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">2. Stratégie Claire</h3>
+                    <p class="text-gray-600 text-center">
+                        Nous élaborons une feuille de route précise avec des objectifs SMART. Chaque décision est justifiée et alignée avec vos ambitions business.
+                    </p>
+                </div>
+
+                <!-- Étape 3 -->
+                <div class="step-card bg-white p-8 rounded-lg shadow-md transition duration-300 border border-gray-100">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-chart-line text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">3. Actions Mesurées</h3>
+                    <p class="text-gray-600 text-center">
+                        Mise en œuvre rigoureuse avec des indicateurs de performance clés. Nous ajustons en temps réel pour maximiser votre ROI et atteindre les résultats escomptés.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Engagements -->
+    <section class="py-16 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nos Engagements</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Transparence -->
+                <div class="engagement-item bg-white p-6 rounded-lg shadow-sm">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto engagement-icon">
+                        <i class="fas fa-glasses text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Transparence</h3>
+                    <p class="text-gray-600 text-center">
+                        Des rapports clairs et accessibles. Pas de jargon inutile, juste des faits et des chiffres compréhensibles.
+                    </p>
+                </div>
+
+                <!-- Réactivité -->
+                <div class="engagement-item bg-white p-6 rounded-lg shadow-sm">
+                    <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mb-4 mx-auto engagement-icon">
+                        <i class="fas fa-bolt text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Réactivité</h3>
+                    <p class="text-gray-600 text-center">
+                        Réponse sous 24h maximum. Une équipe disponible pour répondre à vos questions et s'adapter à vos besoins.
+                    </p>
+                </div>
+
+                <!-- Performance -->
+                <div class="engagement-item bg-white p-6 rounded-lg shadow-sm">
+                    <div class="w-14 h-14 bg-purple-50 rounded-full flex items-center justify-center mb-4 mx-auto engagement-icon">
+                        <i class="fas fa-trophy text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Performance</h3>
+                    <p class="text-gray-600 text-center">
+                        Des résultats tangibles et mesurables. Nous nous engageons sur des KPI précis et les dépassons systématiquement.
+                    </p>
+                </div>
+
+                <!-- Valeurs -->
+                <div class="engagement-item bg-white p-6 rounded-lg shadow-sm">
+                    <div class="w-14 h-14 bg-yellow-50 rounded-full flex items-center justify-center mb-4 mx-auto engagement-icon">
+                        <i class="fas fa-hands-helping text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Respect des Valeurs</h3>
+                    <p class="text-gray-600 text-center">
+                        Votre éthique est la nôtre. Nous adaptons nos stratégies pour qu'elles reflètent parfaitement votre identité et vos convictions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignage -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-blue-50 p-8 md:p-12 rounded-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold ml-4">Ils nous font confiance</h3>
+                </div>
+                <blockquote class="text-lg italic text-gray-700 mb-6">
+                    "Maison John&Co a révolutionné notre présence digitale. Leur méthode en 3 étapes nous a permis de structurer notre approche et d'obtenir des résultats quantifiables en moins de 3 mois. Leur transparence et leur réactivité sont exceptionnelles."
+                </blockquote>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-200"></div>
+                    <div class="ml-3">
+                        <p class="font-medium">Pierre Martin</p>
+                        <p class="text-sm text-gray-600">CEO, Entreprise XYZ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt à transformer votre présence digitale ?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Discutons de votre projet et voyons comment notre méthode peut vous apporter des résultats concrets.
+            </p>
+            <a href="https://maison-johnco-marketing.com/contact/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition duration-300">
+                Prendre rendez-vous
+            </a>
+        </div>
+    </section>
+
+   
+</body>
+</html>
+<!-- /wp:html -->

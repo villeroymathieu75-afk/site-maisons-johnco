@@ -1,0 +1,919 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE BLOG & RESSOURCES — Maison John&Co Marketing
+     Hub filtrable : Articles + Ressources + Newsletter
+     ═══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .mjc-blog {
+    --bg-dark:#0A1628; --bg-mid:#1E3A5F; --bg-light:#FAFAFA; --bg-white:#FFFFFF;
+    --accent:#7C3AED; --accent-l:#A78BFA; --accent-h:#6D28D9; --accent-g:rgba(124,58,237,.4);
+    --pink:#EC4899; --green:#10B981; --amber:#F59E0B; --cyan:#06B6D4;
+    --text-d:#1A1A2E; --text-m:#6B7280; --text-l:#FFFFFF; --text-lm:#B0B8C5;
+    --border-l:#E5E7EB; --border-d:rgba(255,255,255,.1);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--text-d); line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .mjc-blog *,.mjc-blog *::before,.mjc-blog *::after{box-sizing:border-box;}
+  .mjc-blog p{margin:0 0 16px;} .mjc-blog h1,.mjc-blog h2,.mjc-blog h3,.mjc-blog h4{margin:0;letter-spacing:-.02em;}
+  .mjc-blog a{text-decoration:none;color:inherit;}
+  .bl-c{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+  /* ANIMS */
+  @keyframes bl-grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  @keyframes bl-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  @keyframes bl-pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-g)}70%{box-shadow:0 0 0 14px transparent}}
+  @keyframes bl-up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+  .bl-rev{opacity:0;transform:translateY(32px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+  .bl-rev.on{opacity:1;transform:translateY(0);}
+  .bl-rev.d1{transition-delay:.1s}.bl-rev.d2{transition-delay:.2s}.bl-rev.d3{transition-delay:.3s}
+
+  /* ─── HERO ─── */
+  .bl-hero{background:var(--bg-dark);padding:130px 0 80px;position:relative;overflow:hidden;color:var(--text-l);text-align:center;}
+  .bl-hero-bg{position:absolute;inset:0;background:linear-gradient(125deg,#0A1628 0%,#1E3A5F 35%,#2D1B69 70%,#0A1628 100%);background-size:400% 400%;animation:bl-grad 20s ease infinite;z-index:0;}
+  .bl-orb{position:absolute;border-radius:50%;filter:blur(80px);z-index:1;animation:bl-float 8s ease-in-out infinite;}
+  .bl-orb-1{top:-80px;right:-80px;width:450px;height:450px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.25;}
+  .bl-orb-2{bottom:-80px;left:-80px;width:350px;height:350px;background:radial-gradient(circle,var(--accent-l),transparent 70%);opacity:.18;animation-delay:-4s;}
+  .bl-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto;}
+  .bl-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,58,237,.15);backdrop-filter:blur(10px);color:var(--accent-l);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:28px;border:1px solid rgba(167,139,250,.3);animation:bl-up .8s ease-out;}
+  .bl-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:bl-pulse 2s infinite;}
+  .bl-hero h1{font-size:52px;font-weight:700;line-height:1.1;margin-bottom:20px;color:var(--text-l);animation:bl-up .9s ease-out .1s both;}
+  .bl-hero h1 .ag{background:linear-gradient(135deg,#A78BFA,#7C3AED,#C4B5FD);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:bl-grad 5s ease infinite;}
+  .bl-sub{font-size:18px;color:var(--text-lm);margin-bottom:0;line-height:1.6;animation:bl-up 1s ease-out .3s both;}
+
+  /* Stats strip */
+  .bl-strip{background:rgba(255,255,255,.04);border-top:1px solid var(--border-d);padding:18px 0;position:relative;z-index:2;}
+  .bl-strip-inner{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;max-width:1200px;margin:0 auto;padding:0 24px;}
+  .bl-strip-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-l);font-weight:500;}
+  .bl-strip-item svg{color:var(--accent-l);}
+
+  /* ─── ARTICLE VEDETTE ─── */
+  .bl-featured-section{background:var(--bg-light);padding:60px 0 0;}
+  .bl-featured{
+    display:grid;grid-template-columns:1.3fr 1fr;gap:0;
+    background:var(--bg-white);border:1px solid var(--border-l);border-radius:24px;overflow:hidden;
+    transition:all .4s ease;cursor:pointer;
+  }
+  .bl-featured:hover{box-shadow:0 24px 48px rgba(10,22,40,.1);transform:translateY(-4px);border-color:var(--accent-l);}
+  .bl-feat-image{
+    background:linear-gradient(135deg,var(--bg-dark),var(--bg-mid));
+    min-height:360px;position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .bl-feat-image-icon{color:rgba(255,255,255,.25);}
+  .bl-feat-image::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(255,255,255,.05) 100%);}
+  .bl-feat-cat{position:absolute;top:20px;left:20px;z-index:2;padding:6px 14px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;backdrop-filter:blur(8px);}
+  .bl-feat-cat.strategie{background:rgba(124,58,237,.85);color:white;}
+  .bl-feat-cat.seo{background:rgba(245,158,11,.85);color:#0A1628;}
+  .bl-feat-cat.social{background:rgba(236,72,153,.85);color:white;}
+  .bl-feat-cat.pub{background:rgba(6,182,212,.85);color:white;}
+  .bl-feat-cat.ecom{background:rgba(16,185,129,.85);color:white;}
+  .bl-feat-cat.createurs{background:rgba(167,139,250,.85);color:#1A1A2E;}
+  .bl-feat-cat.part{background:rgba(110,231,183,.85);color:#0A2020;}
+  .bl-feat-badge{position:absolute;top:20px;right:20px;z-index:2;background:var(--amber);color:#0A1628;padding:5px 12px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;}
+  .bl-feat-body{padding:44px;display:flex;flex-direction:column;justify-content:center;}
+  .bl-feat-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--text-m);margin-bottom:16px;}
+  .bl-feat-meta span{display:flex;align-items:center;gap:4px;}
+  .bl-feat-body h2{font-size:28px;font-weight:700;line-height:1.25;margin-bottom:14px;color:var(--text-d);}
+  .bl-feat-excerpt{font-size:15px;color:var(--text-m);line-height:1.6;margin-bottom:24px;}
+  .bl-feat-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+  .bl-feat-tag{background:rgba(124,58,237,.08);color:var(--accent);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:500;border:1px solid rgba(124,58,237,.15);}
+  .bl-feat-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;border-radius:10px;font-size:14px;font-weight:600;transition:all .3s ease;align-self:flex-start;}
+  .bl-feat-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-g);}
+
+  /* ─── SECTION ARTICLES ─── */
+  .bl-articles-section{background:var(--bg-light);padding:60px 0 80px;}
+  .bl-section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:16px;}
+  .bl-section-head h2{font-size:28px;font-weight:700;color:var(--text-d);}
+  .bl-view-all{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--accent);transition:gap .3s ease;}
+  .bl-view-all:hover{gap:10px;}
+
+  /* Filtres */
+  .bl-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+  .bl-chip{padding:9px 18px;background:var(--bg-white);border:1px solid var(--border-l);border-radius:999px;font-size:13px;font-weight:600;color:var(--text-m);cursor:pointer;transition:all .3s ease;font-family:inherit;}
+  .bl-chip:hover{border-color:var(--accent-l);color:var(--accent);}
+  .bl-chip.active{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;border-color:transparent;box-shadow:0 4px 14px var(--accent-g);}
+
+  /* Grille articles */
+  .bl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .bl-card{background:var(--bg-white);border:1px solid var(--border-l);border-radius:20px;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer;display:flex;flex-direction:column;}
+  .bl-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(10,22,40,.09);border-color:var(--accent-l);}
+  .bl-card.bl-hidden{display:none;}
+
+  .bl-card-image{
+    height:180px;background:linear-gradient(135deg,var(--bg-dark),var(--bg-mid));
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .bl-card-image-icon{color:rgba(255,255,255,.25);}
+  .bl-card-cat{position:absolute;top:14px;left:14px;padding:4px 12px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;backdrop-filter:blur(8px);}
+  .bl-card-read-time{position:absolute;bottom:14px;right:14px;background:rgba(0,0,0,.5);color:white;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:500;}
+
+  .bl-card-body{padding:22px;flex:1;display:flex;flex-direction:column;}
+  .bl-card-meta{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--text-m);margin-bottom:10px;}
+  .bl-card-meta .sep{opacity:.4;}
+  .bl-card h3{font-size:17px;font-weight:700;line-height:1.35;margin-bottom:10px;color:var(--text-d);flex:1;}
+  .bl-card-excerpt{font-size:13px;color:var(--text-m);line-height:1.5;margin-bottom:16px;}
+  .bl-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border-l);margin-top:auto;}
+  .bl-card-author{display:flex;align-items:center;gap:8px;}
+  .bl-card-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-l));color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .bl-card-author-name{font-size:12px;font-weight:600;color:var(--text-d);}
+  .bl-card-arrow{width:32px;height:32px;background:var(--bg-light);border:1px solid var(--border-l);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-m);transition:all .3s ease;}
+  .bl-card:hover .bl-card-arrow{background:var(--accent);color:white;border-color:var(--accent);transform:translateX(3px);}
+
+  /* Empty */
+  .bl-empty{display:none;text-align:center;padding:60px 20px;grid-column:1/-1;}
+  .bl-empty.visible{display:block;}
+
+  /* ─── SECTION RESSOURCES ─── */
+  .bl-resources-section{background:var(--bg-dark);padding:80px 0;}
+  .bl-res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .bl-res-card{
+    background:rgba(255,255,255,.04);border:1px solid var(--border-d);border-radius:20px;
+    padding:28px;transition:all .35s ease;cursor:pointer;position:relative;overflow:hidden;
+  }
+  .bl-res-card::before{content:'';position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-l));transform:scaleX(0);transform-origin:left;transition:transform .35s ease;}
+  .bl-res-card:hover{background:rgba(124,58,237,.08);border-color:rgba(167,139,250,.3);transform:translateY(-4px);}
+  .bl-res-card:hover::before{transform:scaleX(1);}
+  .bl-res-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:22px;}
+  .ri-pdf{background:rgba(230,57,70,.15);}
+  .ri-checklist{background:rgba(16,185,129,.15);}
+  .ri-template{background:rgba(124,58,237,.15);}
+  .ri-guide{background:rgba(245,158,11,.15);}
+  .ri-video{background:rgba(236,72,153,.15);}
+  .ri-tool{background:rgba(6,182,212,.15);}
+  .bl-res-type{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-lm);margin-bottom:8px;}
+  .bl-res-card h4{font-size:17px;font-weight:700;color:var(--text-l);margin-bottom:8px;line-height:1.3;}
+  .bl-res-card p{font-size:13px;color:var(--text-lm);margin-bottom:20px;line-height:1.5;}
+  .bl-res-footer{display:flex;align-items:center;justify-content:space-between;}
+  .bl-res-badge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;}
+  .rb-free{background:rgba(16,185,129,.2);color:var(--green);}
+  .rb-premium{background:rgba(245,158,11,.2);color:var(--amber);}
+  .rb-new{background:rgba(124,58,237,.2);color:var(--accent-l);}
+  .bl-res-dl{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,255,255,.08);color:var(--text-l);border-radius:8px;font-size:12px;font-weight:600;border:1px solid var(--border-d);transition:all .3s ease;}
+  .bl-res-dl:hover{background:var(--accent);border-color:var(--accent);}
+
+  /* ─── NEWSLETTER ─── */
+  .bl-newsletter{background:var(--bg-light);padding:80px 0;}
+  .bl-nl-box{
+    background:linear-gradient(135deg,var(--bg-dark),var(--bg-mid));
+    border-radius:28px;padding:56px;
+    display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
+    position:relative;overflow:hidden;
+  }
+  .bl-nl-box::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.2),transparent 70%);border-radius:50%;}
+  .bl-nl-left{position:relative;z-index:1;}
+  .bl-nl-left h3{font-size:32px;font-weight:700;color:var(--text-l);margin-bottom:12px;}
+  .bl-nl-left p{font-size:16px;color:var(--text-lm);margin-bottom:0;}
+  .bl-nl-perks{margin-top:24px;display:flex;flex-direction:column;gap:10px;}
+  .bl-nl-perk{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-l);}
+  .bl-nl-perk::before{content:'✓';width:20px;height:20px;background:rgba(124,58,237,.2);color:var(--accent-l);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+  .bl-nl-form{position:relative;z-index:1;background:rgba(255,255,255,.06);border:1px solid var(--border-d);border-radius:20px;padding:36px;}
+  .bl-nl-form h4{font-size:22px;font-weight:700;color:var(--text-l);margin-bottom:6px;}
+  .bl-nl-form > p{font-size:14px;color:var(--text-lm);margin-bottom:24px;}
+  .bl-nl-field{margin-bottom:14px;}
+  .bl-nl-label{display:block;font-size:12px;font-weight:600;color:var(--text-lm);margin-bottom:8px;letter-spacing:.3px;}
+  .bl-nl-input{width:100%;padding:13px 16px;background:rgba(255,255,255,.06);border:1px solid var(--border-d);border-radius:10px;color:var(--text-l);font-size:14px;font-family:inherit;transition:all .3s ease;}
+  .bl-nl-input:focus{outline:none;border-color:var(--accent);background:rgba(124,58,237,.05);box-shadow:0 0 0 4px rgba(124,58,237,.12);}
+  .bl-nl-input::placeholder{color:rgba(255,255,255,.35);}
+  .bl-nl-submit{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:all .3s ease;font-family:inherit;margin-top:6px;}
+  .bl-nl-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-g);}
+  .bl-nl-gdpr{font-size:11px;color:rgba(255,255,255,.35);text-align:center;margin-top:12px;line-height:1.5;}
+  .bl-nl-success{display:none;text-align:center;padding:24px;}
+  .bl-nl-success-icon{font-size:48px;margin-bottom:12px;}
+  .bl-nl-success h4{font-size:20px;font-weight:700;color:var(--text-l);margin-bottom:8px;}
+  .bl-nl-success p{font-size:14px;color:var(--text-lm);}
+
+  /* ─── TENDANCES / TOPICS ─── */
+  .bl-topics-section{background:var(--bg-white);padding:60px 0;}
+  .bl-topics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .bl-topic{
+    background:var(--bg-light);border:1px solid var(--border-l);border-radius:16px;
+    padding:24px;text-align:center;transition:all .3s ease;cursor:pointer;
+  }
+  .bl-topic:hover{background:rgba(124,58,237,.05);border-color:var(--accent-l);transform:translateY(-3px);}
+  .bl-topic-emoji{font-size:36px;display:block;margin-bottom:12px;}
+  .bl-topic h4{font-size:16px;font-weight:700;color:var(--text-d);margin-bottom:6px;}
+  .bl-topic p{font-size:12px;color:var(--text-m);margin:0;}
+
+  /* ─── CTA FINAL ─── */
+  .bl-cta{background:var(--bg-dark);padding:100px 0;text-align:center;position:relative;overflow:hidden;}
+  .bl-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);border-radius:50%;}
+  .bl-cta-inner{position:relative;z-index:1;max-width:660px;margin:0 auto;}
+  .bl-cta h2{font-size:40px;font-weight:700;line-height:1.15;margin-bottom:20px;color:var(--text-l);}
+  .bl-cta h2 .ag{background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .bl-cta p{font-size:17px;color:var(--text-lm);margin-bottom:32px;}
+  .bl-cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .bl-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;transition:all .3s ease;border:none;cursor:pointer;font-family:inherit;}
+  .bl-btn-p{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;box-shadow:0 4px 16px var(--accent-g);}
+  .bl-btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--accent-g);}
+  .bl-btn-o{background:rgba(255,255,255,.06);color:white;border:1px solid var(--border-d);}
+  .bl-btn-o:hover{background:rgba(255,255,255,.1);border-color:var(--accent-l);}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .bl-hero h1{font-size:38px;}
+    .bl-featured{grid-template-columns:1fr;}
+    .bl-feat-image{min-height:240px;}
+    .bl-grid{grid-template-columns:repeat(2,1fr);}
+    .bl-res-grid{grid-template-columns:repeat(2,1fr);}
+    .bl-nl-box{grid-template-columns:1fr;gap:36px;padding:36px;}
+    .bl-topics-grid{grid-template-columns:repeat(2,1fr);}
+    .bl-cta h2{font-size:30px;}
+  }
+  @media(max-width:768px){
+    .bl-hero{padding:90px 0 60px;}
+    .bl-hero h1{font-size:28px;}
+    .bl-sub{font-size:16px;}
+    .bl-strip-inner{gap:20px;justify-content:flex-start;}
+    .bl-featured-section,.bl-articles-section,.bl-resources-section,.bl-newsletter,.bl-topics-section{padding:48px 0;}
+    .bl-grid{grid-template-columns:1fr;}
+    .bl-res-grid{grid-template-columns:1fr;}
+    .bl-feat-body{padding:24px;}
+    .bl-feat-body h2{font-size:22px;}
+    .bl-nl-box{padding:24px;}
+    .bl-nl-form{padding:24px;}
+    .bl-cta{padding:64px 0;}
+    .bl-cta h2{font-size:24px;}
+    .bl-cta-btns{flex-direction:column;align-items:stretch;}
+    .bl-btn{justify-content:center;}
+  }
+</style>
+
+<div class="mjc-blog">
+
+  <!-- HERO -->
+  <section class="bl-hero">
+    <div class="bl-hero-bg"></div>
+    <div class="bl-orb bl-orb-1"></div>
+    <div class="bl-orb bl-orb-2"></div>
+    <div class="bl-c">
+      <div class="bl-hero-inner">
+        <div class="bl-badge"><span class="bl-dot"></span>Blog & Ressources</div>
+        <h1>Le digital <span class="ag">expliqué simplement</span></h1>
+        <p class="bl-sub">Stratégies, tutoriels, études de cas, outils — tout ce qu'il faut pour comprendre le marketing digital et passer à l'action, chaque semaine.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="bl-strip">
+    <div class="bl-strip-inner">
+      <div class="bl-strip-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        24 articles publiés
+      </div>
+      <div class="bl-strip-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        12 ressources gratuites
+      </div>
+      <div class="bl-strip-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        1 600+ abonnés newsletter
+      </div>
+      <div class="bl-strip-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Mis à jour chaque semaine
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE VEDETTE -->
+  <section class="bl-featured-section">
+    <div class="bl-c">
+      <div class="bl-featured bl-rev">
+        <div class="bl-feat-image">
+          <div class="bl-feat-cat strategie">Stratégie</div>
+          <div class="bl-feat-badge">⭐ À la une</div>
+          <!-- SLOT IMAGE : background-image:url('/wp-content/uploads/blog-algorithme-2025.jpg'); background-size:cover; background-position:center; -->
+          <svg class="bl-feat-image-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/></svg>
+        </div>
+        <div class="bl-feat-body">
+          <div class="bl-feat-meta">
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              15 janvier 2025
+            </span>
+            <span>·</span>
+            <span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              12 min de lecture
+            </span>
+            <span>·</span>
+            <span>Mathieu Villeroy</span>
+          </div>
+          <h2>Les 7 leviers du marketing digital qui fonctionnent vraiment en 2025</h2>
+          <p class="bl-feat-excerpt">Oubliez ce que vous avez lu en 2022. Les règles ont changé. Voici ce qui génère réellement des résultats en 2025 : algorithmes, IA, nouvelles plateformes et comportements d'achat transformés.</p>
+          <div class="bl-feat-tags">
+            <span class="bl-feat-tag">Stratégie</span>
+            <span class="bl-feat-tag">2025</span>
+            <span class="bl-feat-tag">Algorithmes</span>
+            <span class="bl-feat-tag">IA marketing</span>
+          </div>
+          <a href="/blog/leviers-marketing-2025" class="bl-feat-cta">
+            Lire l'article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="bl-articles-section">
+    <div class="bl-c">
+
+      <div class="bl-section-head">
+        <h2>Tous les articles</h2>
+        <a href="/blog" class="bl-view-all">
+          Voir tout le blog
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- Filtres catégories -->
+      <div class="bl-filters bl-rev">
+        <button class="bl-chip active" data-filter="all">Tout</button>
+        <button class="bl-chip" data-filter="strategie">Stratégie</button>
+        <button class="bl-chip" data-filter="seo">SEO</button>
+        <button class="bl-chip" data-filter="social">Réseaux sociaux</button>
+        <button class="bl-chip" data-filter="pub">Publicité</button>
+        <button class="bl-chip" data-filter="ecom">E-commerce</button>
+        <button class="bl-chip" data-filter="createurs">Créateurs</button>
+        <button class="bl-chip" data-filter="part">Particuliers</button>
+      </div>
+
+      <!-- Grille articles -->
+      <div class="bl-grid" id="blGrid">
+
+        <!-- ARTICLE 1 -->
+        <a href="/blog/seo-local-2025" class="bl-card bl-rev" data-cat="seo">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#0A1628,#1E3A5F);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span class="bl-card-cat seo">SEO</span>
+            <span class="bl-card-read-time">8 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>12 jan. 2025</span><span class="sep">·</span><span>SEO Local</span>
+            </div>
+            <h3>SEO local en 2025 : les 5 actions qui font la différence sur Google Maps</h3>
+            <p class="bl-card-excerpt">Google Business Profile, avis, citations, SEO on-page local — ce qui compte vraiment pour dominer les résultats locaux.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar">MV</div>
+                <div class="bl-card-author-name">Mathieu V.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 2 -->
+        <a href="/blog/tiktok-strategie-entreprise" class="bl-card bl-rev d1" data-cat="social">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#2D1640,#1E1048);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <span class="bl-card-cat social">Réseaux sociaux</span>
+            <span class="bl-card-read-time">10 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>8 jan. 2025</span><span class="sep">·</span><span>TikTok</span>
+            </div>
+            <h3>TikTok for Business : guide complet pour les TPE et PME françaises</h3>
+            <p class="bl-card-excerpt">TikTok n'est plus réservé aux adolescents. Voici comment adapter votre business aux codes de la plateforme et générer des clients.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar" style="background:linear-gradient(135deg,var(--pink),#BE185D);">AL</div>
+                <div class="bl-card-author-name">Alban L.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 3 -->
+        <a href="/blog/meta-ads-roas" class="bl-card bl-rev d2" data-cat="pub">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#122A4A,#0A1628);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span class="bl-card-cat pub">Publicité</span>
+            <span class="bl-card-read-time">14 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>3 jan. 2025</span><span class="sep">·</span><span>Meta Ads</span>
+            </div>
+            <h3>Comment multiplier votre ROAS Meta Ads par 3 sans augmenter le budget</h3>
+            <p class="bl-card-excerpt">Structure de campagnes, audiences lookalike, créatifs UGC, A/B testing — la méthode complète pour optimiser vos Meta Ads en 2025.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar" style="background:linear-gradient(135deg,var(--cyan),#0891B2);">VA</div>
+                <div class="bl-card-author-name">Victoire A.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 4 -->
+        <a href="/blog/personal-branding-createur" class="bl-card bl-rev" data-cat="createurs">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#2D1640,#1A0A2E);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span class="bl-card-cat createurs">Créateurs</span>
+            <span class="bl-card-read-time">9 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>28 déc. 2024</span><span class="sep">·</span><span>Personal Branding</span>
+            </div>
+            <h3>Personal branding pour créateurs : construire une image de marque qui attire les partenariats</h3>
+            <p class="bl-card-excerpt">Pourquoi deux créateurs avec la même audience peuvent avoir des revenus de partenariats très différents — et comment combler cet écart.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar" style="background:linear-gradient(135deg,var(--pink),#BE185D);">CR</div>
+                <div class="bl-card-author-name">Clara R.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 5 -->
+        <a href="/blog/strategie-contenu-seo" class="bl-card bl-rev d1" data-cat="seo">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#0D2B1E,#0A1628);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <span class="bl-card-cat seo">SEO</span>
+            <span class="bl-card-read-time">11 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>20 déc. 2024</span><span class="sep">·</span><span>Content SEO</span>
+            </div>
+            <h3>Stratégie de contenu SEO en 2025 : cocon sémantique, intentions et IA</h3>
+            <p class="bl-card-excerpt">Comment structurer votre contenu pour dominer les résultats Google à long terme — sans tomber dans les pièges de la génération IA.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar">MM</div>
+                <div class="bl-card-author-name">Maëlle M.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 6 -->
+        <a href="/blog/ecommerce-shopify-conversion" class="bl-card bl-rev d2" data-cat="ecom">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#0A2020,#0D2B1E);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="bl-card-cat ecom">E-commerce</span>
+            <span class="bl-card-read-time">13 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>15 déc. 2024</span><span class="sep">·</span><span>Shopify</span>
+            </div>
+            <h3>Shopify 2025 : les 10 optimisations qui font passer votre taux de conversion de 1% à 4%</h3>
+            <p class="bl-card-excerpt">Les e-commerçants qui réussissent ne dépensent pas plus en pub — ils convertissent mieux. Voici leurs secrets.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar" style="background:linear-gradient(135deg,var(--amber),#D97706);">ED</div>
+                <div class="bl-card-author-name">Étienne D.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 7 -->
+        <a href="/blog/email-marketing-2025" class="bl-card bl-rev" data-cat="strategie">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#1A0A2E,#2D1B69);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span class="bl-card-cat strategie">Stratégie</span>
+            <span class="bl-card-read-time">9 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>10 déc. 2024</span><span class="sep">·</span><span>Email Marketing</span>
+            </div>
+            <h3>Email marketing en 2025 : pourquoi c'est toujours le canal avec le meilleur ROI</h3>
+            <p class="bl-card-excerpt">42€ de retour pour 1€ investi — l'email reste imbattable. Voici comment l'activer correctement en partant de zéro.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar">MV</div>
+                <div class="bl-card-author-name">Mathieu V.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 8 -->
+        <a href="/blog/reconversion-digital-guide" class="bl-card bl-rev d1" data-cat="part">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#0D2B1E,#122A4A);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="bl-card-cat part">Particuliers</span>
+            <span class="bl-card-read-time">15 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>5 déc. 2024</span><span class="sep">·</span><span>Reconversion</span>
+            </div>
+            <h3>Reconversion dans le digital : le guide honnête pour 2025</h3>
+            <p class="bl-card-excerpt">Les métiers qui recrutent, ceux qui sont saturés, les formations qui valent le coup — tout ce que personne ne vous dit avant de vous lancer.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar" style="background:linear-gradient(135deg,var(--green),#059669);">TB</div>
+                <div class="bl-card-author-name">Thaïs B.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 9 -->
+        <a href="/blog/linkedin-b2b-organique" class="bl-card bl-rev d2" data-cat="social">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#0A1628,#1E3A5F);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span class="bl-card-cat social">Réseaux sociaux</span>
+            <span class="bl-card-read-time">10 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>28 nov. 2024</span><span class="sep">·</span><span>LinkedIn</span>
+            </div>
+            <h3>LinkedIn organique B2B : 0 à 2 000 abonnés ciblés en 6 mois sans dépenser un centime</h3>
+            <p class="bl-card-excerpt">La stratégie complète pour construire une audience qualifiée sur LinkedIn et générer des leads sans publicité.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar" style="background:linear-gradient(135deg,var(--cyan),#0891B2);">VA</div>
+                <div class="bl-card-author-name">Victoire A.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 10 -->
+        <a href="/blog/monetiser-audience-createur" class="bl-card bl-rev" data-cat="createurs">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#2D1640,#1E1048);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            <span class="bl-card-cat createurs">Créateurs</span>
+            <span class="bl-card-read-time">12 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>22 nov. 2024</span><span class="sep">·</span><span>Monétisation</span>
+            </div>
+            <h3>7 modèles de monétisation pour créateurs (classés par facilité et potentiel)</h3>
+            <p class="bl-card-excerpt">De l'affiliation aux formations en passant par la communauté payante — quelle stratégie choisir selon votre profil et votre audience.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar" style="background:linear-gradient(135deg,var(--pink),#BE185D);">CR</div>
+                <div class="bl-card-author-name">Clara R.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 11 -->
+        <a href="/blog/google-ads-tpe" class="bl-card bl-rev d1" data-cat="pub">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#122A4A,#0A2020);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span class="bl-card-cat pub">Publicité</span>
+            <span class="bl-card-read-time">11 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>15 nov. 2024</span><span class="sep">·</span><span>Google Ads</span>
+            </div>
+            <h3>Google Ads pour les TPE : lancer sa première campagne avec 300€ de budget</h3>
+            <p class="bl-card-excerpt">Un guide pas-à-pas pour les petites structures qui veulent expérimenter Google Ads sans se ruiner et sans se noyer dans les paramètres.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar" style="background:linear-gradient(135deg,var(--amber),#D97706);">ED</div>
+                <div class="bl-card-author-name">Étienne D.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLE 12 -->
+        <a href="/blog/digital-debutant-par-ou-commencer" class="bl-card bl-rev d2" data-cat="part">
+          <div class="bl-card-image" style="background:linear-gradient(135deg,#0A2020,#0D2B1E);">
+            <svg class="bl-card-image-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span class="bl-card-cat part">Particuliers</span>
+            <span class="bl-card-read-time">7 min</span>
+          </div>
+          <div class="bl-card-body">
+            <div class="bl-card-meta">
+              <span>8 nov. 2024</span><span class="sep">·</span><span>Débutant</span>
+            </div>
+            <h3>Je veux apprendre le digital : par où commencer quand on ne sait rien ?</h3>
+            <p class="bl-card-excerpt">La question la plus posée de 2024. Une réponse honnête, structurée et sans vente cachée pour vous orienter vers les bonnes ressources gratuites.</p>
+            <div class="bl-card-footer">
+              <div class="bl-card-author">
+                <div class="bl-card-avatar">MV</div>
+                <div class="bl-card-author-name">Mathieu V.</div>
+              </div>
+              <div class="bl-card-arrow">→</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Empty state -->
+        <div class="bl-empty" id="blEmpty">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <h3 style="margin:12px 0 8px;font-size:18px;font-weight:600;color:var(--text-d);">Aucun article dans cette catégorie</h3>
+          <p style="font-size:14px;color:var(--text-m);">De nouveaux articles sont publiés chaque semaine. Inscrivez-vous à la newsletter pour ne rien manquer.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESSOURCES TÉLÉCHARGEABLES -->
+  <section class="bl-resources-section">
+    <div class="bl-c">
+      <div style="text-align:center;margin-bottom:48px;" class="bl-rev">
+        <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent-l);margin-bottom:14px;">— Ressources gratuites —</div>
+        <h2 style="font-size:36px;font-weight:700;color:var(--text-l);margin-bottom:12px;">Outils & ressources téléchargeables</h2>
+        <p style="font-size:17px;color:var(--text-lm);margin:0;">Checklists, guides, templates et outils pratiques pour passer à l'action immédiatement.</p>
+      </div>
+
+      <div class="bl-res-grid">
+
+        <div class="bl-res-card bl-rev">
+          <div class="bl-res-icon ri-checklist">✅</div>
+          <div class="bl-res-type">Checklist PDF</div>
+          <h4>Checklist audit SEO technique — 47 points</h4>
+          <p>Auditez votre site comme un expert SEO avec cette checklist de 47 points vérifiés un par un.</p>
+          <div class="bl-res-footer">
+            <span class="bl-res-badge rb-free">Gratuit</span>
+            <a href="/ressources/checklist-seo" class="bl-res-dl">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger
+            </a>
+          </div>
+        </div>
+
+        <div class="bl-res-card bl-rev d1">
+          <div class="bl-res-icon ri-template">🎨</div>
+          <div class="bl-res-type">Pack Templates</div>
+          <h4>50 templates Canva réseaux sociaux</h4>
+          <p>Posts, stories, bannières LinkedIn — 50 templates professionnels et modifiables gratuitement.</p>
+          <div class="bl-res-footer">
+            <span class="bl-res-badge rb-free">Gratuit</span>
+            <a href="/ressources/templates-canva" class="bl-res-dl">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger
+            </a>
+          </div>
+        </div>
+
+        <div class="bl-res-card bl-rev d2">
+          <div class="bl-res-icon ri-guide">📘</div>
+          <div class="bl-res-type">Guide PDF · 28 pages</div>
+          <h4>Guide complet : lancer sa présence sur LinkedIn en 30 jours</h4>
+          <p>Plan d'action jour par jour pour créer et développer un profil LinkedIn professionnel et engageant.</p>
+          <div class="bl-res-footer">
+            <span class="bl-res-badge rb-new">Nouveau</span>
+            <a href="/ressources/guide-linkedin-30-jours" class="bl-res-dl">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger
+            </a>
+          </div>
+        </div>
+
+        <div class="bl-res-card bl-rev">
+          <div class="bl-res-icon ri-pdf">📄</div>
+          <div class="bl-res-type">Tableau Excel</div>
+          <h4>Calculateur ROI publicité digitale</h4>
+          <p>Estimez votre retour sur investissement Google Ads, Meta Ads et LinkedIn Ads en quelques secondes.</p>
+          <div class="bl-res-footer">
+            <span class="bl-res-badge rb-free">Gratuit</span>
+            <a href="/ressources/calculateur-roi-pub" class="bl-res-dl">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger
+            </a>
+          </div>
+        </div>
+
+        <div class="bl-res-card bl-rev d1">
+          <div class="bl-res-icon ri-video">🎬</div>
+          <div class="bl-res-type">Template Notion</div>
+          <h4>Planning éditorial réseaux sociaux — template Notion</h4>
+          <p>Organisez votre contenu sur 3 mois avec ce template Notion prêt à l'emploi (stories, posts, reels).</p>
+          <div class="bl-res-footer">
+            <span class="bl-res-badge rb-free">Gratuit</span>
+            <a href="/ressources/template-planning-editorial" class="bl-res-dl">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger
+            </a>
+          </div>
+        </div>
+
+        <div class="bl-res-card bl-rev d2">
+          <div class="bl-res-icon ri-tool">🛠️</div>
+          <div class="bl-res-type">Guide PDF · 18 pages</div>
+          <h4>Les 30 outils gratuits indispensables du marketing digital</h4>
+          <p>Canva, Google Analytics, Semrush Free, Buffer — notre sélection des meilleures alternatives gratuites.</p>
+          <div class="bl-res-footer">
+            <span class="bl-res-badge rb-new">Nouveau</span>
+            <a href="/ressources/outils-gratuits-marketing" class="bl-res-dl">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="bl-newsletter">
+    <div class="bl-c">
+      <div class="bl-nl-box bl-rev">
+        <div class="bl-nl-left">
+          <h3>La newsletter qui vaut le coup d'être lue</h3>
+          <p>Chaque semaine, une stratégie actionnables, un outil à découvrir, une étude de cas décortiquée. Pas de remplissage. Pas de spam.</p>
+          <div class="bl-nl-perks">
+            <div class="bl-nl-perk">1 email par semaine, les mercredis matin</div>
+            <div class="bl-nl-perk">Stratégies actionnables immédiatement</div>
+            <div class="bl-nl-perk">Accès prioritaire aux nouvelles ressources</div>
+            <div class="bl-nl-perk">Désabonnement en 1 clic, sans condition</div>
+            <div class="bl-nl-perk">1 600+ professionnels déjà abonnés</div>
+          </div>
+        </div>
+        <div class="bl-nl-form">
+          <div id="nlForm">
+            <h4>Rejoindre la newsletter</h4>
+            <p>Gratuit · 1 min d'inscription · Résiliable à tout moment</p>
+            <div class="bl-nl-field">
+              <label class="bl-nl-label">Prénom *</label>
+              <input type="text" class="bl-nl-input" placeholder="Jean" id="nlPrenom">
+            </div>
+            <div class="bl-nl-field">
+              <label class="bl-nl-label">Email *</label>
+              <input type="email" class="bl-nl-input" placeholder="jean@entreprise.com" id="nlEmail">
+            </div>
+            <div class="bl-nl-field">
+              <label class="bl-nl-label">Vous êtes</label>
+              <select class="bl-nl-input" id="nlProfil" style="appearance:none;cursor:pointer;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A78BFA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;">
+                <option value="" disabled selected>Sélectionner votre profil</option>
+                <option>Dirigeant / Entrepreneur</option>
+                <option>Marketeur / Communication</option>
+                <option>Créateur de contenu</option>
+                <option>Étudiant</option>
+                <option>En reconversion</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <button class="bl-nl-submit" id="nlSubmit">
+              S'abonner gratuitement →
+            </button>
+            <p class="bl-nl-gdpr">En vous inscrivant, vous acceptez de recevoir notre newsletter. Données protégées — <a href="/rgpd" style="color:rgba(255,255,255,.6);">politique de confidentialité</a>.</p>
+          </div>
+          <div class="bl-nl-success" id="nlSuccess">
+            <div class="bl-nl-success-icon">🎉</div>
+            <h4>Bienvenue dans la newsletter !</h4>
+            <p>Vérifiez votre email pour confirmer votre inscription. Votre première newsletter arrive mercredi matin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS TENDANCE -->
+  <section class="bl-topics-section">
+    <div class="bl-c">
+      <div style="text-align:center;margin-bottom:36px;" class="bl-rev">
+        <h2 style="font-size:28px;font-weight:700;color:var(--text-d);margin-bottom:8px;">Explorer par thème</h2>
+        <p style="font-size:16px;color:var(--text-m);margin:0;">Cliquez sur un thème pour accéder directement aux articles correspondants.</p>
+      </div>
+      <div class="bl-topics-grid">
+        <div class="bl-topic bl-rev" data-filter="strategie">
+          <span class="bl-topic-emoji">🎯</span>
+          <h4>Stratégie digitale</h4>
+          <p>Plans, roadmaps, croissance</p>
+        </div>
+        <div class="bl-topic bl-rev d1" data-filter="seo">
+          <span class="bl-topic-emoji">🔍</span>
+          <h4>SEO & Référencement</h4>
+          <p>Google, contenu, technique</p>
+        </div>
+        <div class="bl-topic bl-rev d2" data-filter="social">
+          <span class="bl-topic-emoji">📱</span>
+          <h4>Réseaux sociaux</h4>
+          <p>Instagram, TikTok, LinkedIn</p>
+        </div>
+        <div class="bl-topic bl-rev d3" data-filter="pub">
+          <span class="bl-topic-emoji">📣</span>
+          <h4>Publicité digitale</h4>
+          <p>Google Ads, Meta, LinkedIn</p>
+        </div>
+        <div class="bl-topic bl-rev" data-filter="ecom">
+          <span class="bl-topic-emoji">🛒</span>
+          <h4>E-commerce</h4>
+          <p>Shopify, conversion, UX</p>
+        </div>
+        <div class="bl-topic bl-rev d1" data-filter="createurs">
+          <span class="bl-topic-emoji">🎬</span>
+          <h4>Créateurs & Influence</h4>
+          <p>Monétisation, croissance</p>
+        </div>
+        <div class="bl-topic bl-rev d2" data-filter="part">
+          <span class="bl-topic-emoji">🌱</span>
+          <h4>Particuliers & Formation</h4>
+          <p>Apprentissage, reconversion</p>
+        </div>
+        <div class="bl-topic bl-rev d3">
+          <span class="bl-topic-emoji">🛠️</span>
+          <h4>Outils & Ressources</h4>
+          <p>Templates, guides, checklists</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="bl-cta">
+    <div class="bl-c">
+      <div class="bl-cta-inner bl-rev">
+        <h2>Prêt à mettre en pratique <span class="ag">tout ce que vous lisez</span> ?</h2>
+        <p>Les articles sont gratuits. L'accompagnement personnalisé, c'est là que tout s'accélère.</p>
+        <div class="bl-cta-btns">
+          <a href="/contact?type=rdv" class="bl-btn bl-btn-p">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Appel découverte gratuit
+          </a>
+          <a href="/services" class="bl-btn bl-btn-o">Voir nos services →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  // ─── FILTRES ARTICLES ────────────────────────────────
+  const chips = document.querySelectorAll('.bl-filters .bl-chip');
+  const cards = document.querySelectorAll('#blGrid .bl-card[data-cat]');
+  const empty = document.getElementById('blEmpty');
+
+  function filterCards(cat){
+    let count = 0;
+    cards.forEach(c => {
+      const show = cat === 'all' || c.dataset.cat === cat;
+      c.classList.toggle('bl-hidden', !show);
+      if(show) count++;
+    });
+    if(empty) empty.classList.toggle('visible', count === 0);
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      filterCards(chip.dataset.filter);
+    });
+  });
+
+  // ─── TOPICS → filtres ─────────────────────────────────
+  document.querySelectorAll('.bl-topic[data-filter]').forEach(topic => {
+    topic.addEventListener('click', () => {
+      const cat = topic.dataset.filter;
+      // Active le bon chip
+      chips.forEach(c => c.classList.toggle('active', c.dataset.filter === cat));
+      filterCards(cat);
+      // Scroll vers la grille
+      const grid = document.querySelector('.bl-articles-section');
+      if(grid) window.scrollTo({top: grid.getBoundingClientRect().top + window.pageYOffset - 80, behavior:'smooth'});
+    });
+  });
+
+  // ─── NEWSLETTER ───────────────────────────────────────
+  const nlSubmit = document.getElementById('nlSubmit');
+  nlSubmit?.addEventListener('click', () => {
+    const email = document.getElementById('nlEmail')?.value.trim();
+    const prenom = document.getElementById('nlPrenom')?.value.trim();
+    if(!email || !email.includes('@')){ alert('Merci de renseigner un email valide.'); return; }
+    document.getElementById('nlForm').style.display = 'none';
+    document.getElementById('nlSuccess').style.display = 'block';
+  });
+
+  // ─── SCROLL REVEAL ────────────────────────────────────
+  const ro = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); }});
+  }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.bl-rev').forEach(el => ro.observe(el));
+})();
+</script>
+<!-- /wp:html -->

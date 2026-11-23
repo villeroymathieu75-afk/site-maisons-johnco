@@ -1,0 +1,359 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étude de Cas - Transformation Digitale Mode</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50">
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Hero Section -->
+        <section class="mb-20 text-center">
+            <h1 class="text-5xl font-bold text-indigo-800 mb-6">Stratégie Omnicanal Pour Une Marque De Mode</h1>
+            <p class="text-xl text-gray-600 mb-8">Une stratégie 360° pour une marque de mode en croissance</p>
+            <div class="flex justify-center">
+                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 rounded-full shadow-lg">
+                    <span class="font-semibold">Durée: 6 mois</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="mb-20 bg-white rounded-xl shadow-lg p-8">
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <img src="http://static.photos/fashion/1200x630/42" alt="Fashion Brand" class="rounded-lg shadow-md w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Contexte & Objectifs</h2>
+                    <p class="text-gray-600 mb-6">Accompagnement d'une marque de mode en pleine croissance dans une transformation digitale globale visant à créer une expérience client cohérente et immersive.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Refonte complète du e-commerce</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Stratégie social media unifiée</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Campagne d'influenceurs stratégique</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Approche omnicanale intégrée</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Results Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Résultats Clés</h2>
+            
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500">
+                    <h3 class="text-lg font-semibold mb-2">Taux de conversion</h3>
+                    <p class="text-4xl font-bold text-indigo-600">+55%</p>
+                    <p class="text-gray-500">E-commerce</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-500">
+                    <h3 class="text-lg font-semibold mb-2">Chiffre d'affaires</h3>
+                    <p class="text-4xl font-bold text-purple-600">+72%</p>
+                    <p class="text-gray-500">En ligne</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-pink-500">
+                    <h3 class="text-lg font-semibold mb-2">Croissance communauté</h3>
+                    <p class="text-4xl font-bold text-pink-600">+410%</p>
+                    <p class="text-gray-500">Réseaux sociaux</p>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Performance E-commerce</h3>
+                    <canvas id="ecommerceChart" height="250"></canvas>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Engagement Social Media</h3>
+                    <canvas id="socialChart" height="250"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Strategy Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Stratégie Détaillée</h2>
+            
+            <!-- E-commerce -->
+            <div class="mb-16 bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-indigo-100 p-8 flex flex-col justify-center">
+                        <div class="text-center">
+                            <i data-feather="shopping-bag" class="w-12 h-12 text-indigo-600 mx-auto mb-4"></i>
+                            <h3 class="text-2xl font-bold text-indigo-800 mb-2">E-commerce</h3>
+                            <p class="text-indigo-600">Refonte complète</p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <ul class="space-y-4">
+                            <li>
+                                <h4 class="font-semibold text-lg">Audit technique et fonctionnel</h4>
+                                <p class="text-gray-600">Identification des freins à la conversion et des points d'amélioration</p>
+                            </li>
+                            <li>
+                                <h4 class="font-semibold text-lg">UX/UI moderne</h4>
+                                <p class="text-gray-600">Navigation simplifiée, optimisation des fiches produits, tunnel d'achat rationalisé</p>
+                            </li>
+                            <li>
+                                <h4 class="font-semibold text-lg">Priorité mobile</h4>
+                                <p class="text-gray-600">70% des ventes provenant du m-commerce</p>
+                            </li>
+                            <li>
+                                <h4 class="font-semibold text-lg">Analytics avancés</h4>
+                                <p class="text-gray-600">Google Analytics 4, heatmaps, tracking événementiel</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="mb-16 bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/3 bg-pink-100 p-8 flex flex-col justify-center">
+                        <div class="text-center">
+                            <i data-feather="instagram" class="w-12 h-12 text-pink-600 mx-auto mb-4"></i>
+                            <h3 class="text-2xl font-bold text-pink-800 mb-2">Social Media</h3>
+                            <p class="text-pink-600">Stratégie cross-platform</p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <ul class="space-y-4">
+                            <li>
+                                <h4 class="font-semibold text-lg">Repositionnement visuel</h4>
+                                <p class="text-gray-600">Univers éditorial cohérent avec les ambitions de la marque</p>
+                            </li>
+                            <li>
+                                <h4 class="font-semibold text-lg">Calendrier éditorial</h4>
+                                <p class="text-gray-600">Contenus adaptés à chaque plateforme (Instagram, TikTok, Pinterest)</p>
+                            </li>
+                            <li>
+                                <h4 class="font-semibold text-lg">Animation communautaire</h4>
+                                <p class="text-gray-600">Gamification via quiz, sondages et défis participatifs</p>
+                            </li>
+                            <li>
+                                <h4 class="font-semibold text-lg">Guidelines</h4>
+                                <p class="text-gray-600">Harmonisation du ton et du style sur tous les canaux</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Influenceurs -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-purple-100 p-8 flex flex-col justify-center">
+                        <div class="text-center">
+                            <i data-feather="users" class="w-12 h-12 text-purple-600 mx-auto mb-4"></i>
+                            <h3 class="text-2xl font-bold text-purple-800 mb-2">Influenceurs</h3>
+                            <p class="text-purple-600">Approche hybride</p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <ul class="space-y-4">
+                            <li>
+                                <h4 class="font-semibold text-lg">Mix micro & macro</h4>
+                                <p class="text-gray-600">25 micro-influenceurs + 5 macro-influenceurs</p>
+                            </li>
+                            <li>
+                                <h4 class="font-semibold text-lg">Storytelling premium</h4>
+                                <p class="text-gray-600">Unboxing exclusifs, shootings immersifs, vidéos lifestyle</p>
+                            </li>
+                            <li>
+                                <h4 class="font-semibold text-lg">Portée massive</h4>
+                                <p class="text-gray-600">4,2 millions de personnes touchées</p>
+                            </li>
+                            <li>
+                                <h4 class="font-semibold text-lg">Engagement organique</h4>
+                                <p class="text-gray-600">+18% de partages organiques</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Table -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Tableau des Résultats</h2>
+            <div class="overflow-x-auto bg-white rounded-xl shadow-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">KPI</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Avant</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Après</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Taux de conversion</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">395%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">595%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-green-600">+55%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">CA en ligne</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">€450K</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">€775K</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-green-600">+72%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Temps de chargement</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">338s</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">423s</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-green-600">-40%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Taux de rebond</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">358%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">210%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-green-600">-35%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Communauté SM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">35K</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">120K</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-green-600">+210%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Taux d'engagement</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">180%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-green-600">x3.2</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Parcours omnicanal</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">N/A</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">30%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-green-600">Nouveau</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="bg-indigo-700 text-white rounded-xl shadow-lg p-8 mb-20">
+            <div class="max-w-3xl mx-auto text-center">
+                <i data-feather="quote" class="w-12 h-12 text-indigo-300 mx-auto mb-6"></i>
+                <p class="text-xl italic mb-8">"Cette transformation digitale comnicanale a radicalement changé notre relation avec nos clients. L'expérience unifiée entre nos canaux digitaux et physiques a permis d'augmenter significativement notre chiffre d'affaires tout en renforçant l'engagement de notre communauté."</p>
+                <p class="font-semibold">Directrice Marketing, Marque de Mode</p>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Impact Global</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">En six mois, cette stratégie digitale intégrée a permis à la marque de consolider son positionnement sur le marché de la mode tout en créant une expérience client fluide et cohérente sur l'ensemble de ses canaux.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-white px-6 py-3 rounded-full shadow-md border border-gray-200">
+                    <span class="font-medium">+55% conversion</span>
+                </div>
+                <div class="bg-white px-6 py-3 rounded-full shadow-md border border-gray-200">
+                    <span class="font-medium">+72% CA en ligne</span>
+                </div>
+                <div class="bg-white px-6 py-3 rounded-full shadow-md border border-gray-200">
+                    <span class="font-medium">+210% communauté</span>
+                </div>
+                <div class="bg-white px-6 py-3 rounded-full shadow-md border border-gray-200">
+                    <span class="font-medium">4.2M portée</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // E-commerce Chart
+        const ecommerceCtx = document.getElementById('ecommerceChart').getContext('2d');
+        const ecommerceChart = new Chart(ecommerceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Taux conversion', 'Chiffre affaires', 'Temps chargement', 'Taux rebond'],
+                datasets: [{
+                    label: 'Avant',
+                    data: [345, 450, 338, 358],
+                    backgroundColor: 'rgba(99, 102, 241, 0.5)',
+                    borderColor: 'rgba(99, 102, 241, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Après',
+                    data: [595, 775, 423, 410],
+                    backgroundColor: 'rgba(124, 58, 237, 0.5)',
+                    borderColor: 'rgba(124, 58, 237, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Social Chart
+        const socialCtx = document.getElementById('socialChart').getContext('2d');
+        const socialChart = new Chart(socialCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin'],
+                datasets: [{
+                    label: 'Communauté',
+                    data: [35, 45, 62, 85, 105, 120],
+                    borderColor: 'rgba(236, 72, 153, 1)',
+                    backgroundColor: 'rgba(236, 72, 153, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }, {
+                    label: 'Engagement (%)',
+                    data: [5, 60, 75, 100, 140, 180],
+                    borderColor: 'rgba(139, 92, 246, 1)',
+                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

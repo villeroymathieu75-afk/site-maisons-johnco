@@ -1,0 +1,917 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratégie de Contenu SEO | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#1E3A8A',
+                        accent: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        .content-card {
+            border-left: 4px solid #3B82F6;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 2.5rem;
+            height: calc(100% - 2.5rem);
+            width: 2px;
+            background-color: #E5E7EB;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <section class="gradient-bg rounded-2xl p-8 md:p-12 text-white mb-16" data-aos="fade-up">
+            <div class="max-w-3xl">
+                <div class="flex items-center mb-4">
+                    <div class="bg-white bg-opacity-20 rounded-full p-2 mr-3">
+                        <i data-feather="search" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-medium">Stratégie de Contenu</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Stratégie de Contenu SEO</h1>
+                <p class="text-xl opacity-90 mb-8">Optimisez votre visibilité organique avec des contenus pertinents et structurés pour générer un trafic qualifié et améliorer votre conversion.</p>
+                <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center px-6 py-3 bg-white text-primary font-medium rounded-lg hover:bg-opacity-90 transition">
+                    Demander un devis
+                    <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+</div>
+        </section>
+
+        <!-- Definition Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="target" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Définition et positionnement du service</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                <div class="p-8">
+                    <p class="text-lg leading-relaxed mb-6">La <span class="font-semibold text-primary">Stratégie de Contenu SEO</span> est un service d'élaboration, de structuration et d'optimisation des contenus destinés à améliorer la visibilité organique d'un site dans les moteurs de recherche.</p>
+                    <p class="text-lg leading-relaxed mb-6">Elle repose sur l'identification des intentions de recherche des utilisateurs, la création de contenus pertinents et qualitatifs, et leur organisation dans une architecture éditoriale cohérente.</p>
+                    <p class="text-lg leading-relaxed">L'objectif est de générer un trafic qualifié, d'améliorer la conversion et de renforcer l'autorité du site dans son domaine, en respectant les bonnes pratiques des moteurs de recherche (<span class="font-medium">Google E-E-A-T</span> : Expérience, Expertise, Autorité, Fiabilité).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="alert-triangle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Problématiques adressées et objectifs</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Problématiques courantes</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="x" class="w-5 h-5 text-red-500 mr-2 mt-0.5"></i>
+                                <span>Articles de blog peu lus ou non pertinents</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="x" class="w-5 h-5 text-red-500 mr-2 mt-0.5"></i>
+                                <span>Duplication de textes et mauvaise couverture des mots-clés</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="x" class="w-5 h-5 text-red-500 mr-2 mt-0.5"></i>
+                                <span>Incohérence entre les contenus et les attentes des internautes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="x" class="w-5 h-5 text-red-500 mr-2 mt-0.5"></i>
+                                <span>Manque de trafic organique qualifié</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="x" class="w-5 h-5 text-red-500 mr-2 mt-0.5"></i>
+                                <span>Difficulté à se positionner sur des requêtes stratégiques</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Nos objectifs</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Construire un dispositif éditorial attractif</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Améliorer la visibilité organique</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Générer un trafic qualifié et pertinent</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Augmenter les taux de conversion</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-5 h-5 text-green-500 mr-2 mt-0.5"></i>
+                                <span>Renforcer l'autorité et la crédibilité du site</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scope Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="layers" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Périmètre d'intervention</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale content-card">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="search" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Recherche et analyse des mots-clés</h3>
+                        <p class="text-gray-600">Étude des volumes, intentions de recherche (informationnelle, transactionnelle, navigationnelle), cartographie des requêtes stratégiques.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale content-card">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="grid" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Architecture éditoriale</h3>
+                        <p class="text-gray-600">Organisation des contenus en thématiques et sous-thématiques (silos, clusters), hiérarchisation selon le parcours client.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale content-card">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="edit" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Optimisation on-page</h3>
+                        <p class="text-gray-600">Rédaction ou réécriture de contenus optimisés (balises titre et meta, Hn, mots-clés secondaires, maillage interne, rich snippets).</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale content-card">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="file-text" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Création de contenus diversifiés</h3>
+                        <p class="text-gray-600">Articles de blog, guides, FAQ, études de cas, fiches produits, landing pages, contenus multimédias (vidéo, infographies, podcasts).</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale content-card">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="calendar" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Calendrier éditorial</h3>
+                        <p class="text-gray-600">Planification de la production et de la diffusion des contenus, en tenant compte de la saisonnalité et des objectifs business.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale content-card">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i data-feather="trending-up" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Suivi et amélioration continue</h3>
+                        <p class="text-gray-600">Analyse des performances des contenus publiés, ajustements, mise à jour régulière pour maintenir les positions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="list" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Méthodologie et déroulé type</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-8">
+                    <div class="relative">
+                        <!-- Timeline -->
+                        <div class="space-y-8">
+                            <div class="relative timeline-item pl-12">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <span class="font-bold">1</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Audit éditorial initial</h3>
+                                <p class="text-gray-600">Analyse des contenus existants, mesure de la performance (trafic, positionnement, engagement), identification des lacunes et duplications.</p>
+                            </div>
+                            <div class="relative timeline-item pl-12">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <span class="font-bold">2</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Définition des objectifs</h3>
+                                <p class="text-gray-600">Visibilité accrue, amélioration de la conversion, couverture d'un segment de marché, notoriété ou acquisition de leads.</p>
+                            </div>
+                            <div class="relative timeline-item pl-12">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <span class="font-bold">3</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Cartographie sémantique</h3>
+                                <p class="text-gray-600">Constitution d'une base de mots-clés organisée par thèmes et intentions, alignée avec les parcours utilisateurs.</p>
+                            </div>
+                            <div class="relative timeline-item pl-12">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <span class="font-bold">4</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Conception de la stratégie</h3>
+                                <p class="text-gray-600">Définition des piliers éditoriaux, priorisation des contenus à créer/optimiser, choix des formats et canaux de diffusion.</p>
+                            </div>
+                            <div class="relative timeline-item pl-12">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <span class="font-bold">5</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Production et optimisation</h3>
+                                <p class="text-gray-600">Création ou adaptation des contenus, mise en place des bonnes pratiques SEO (densité sémantique, structure logique, lisibilité, UX).</p>
+                            </div>
+                            <div class="relative timeline-item pl-12">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <span class="font-bold">6</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Diffusion et valorisation</h3>
+                                <p class="text-gray-600">Intégration au site, promotion via les réseaux sociaux, newsletters, relations presse digitales.</p>
+                            </div>
+                            <div class="relative pl-12">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <span class="font-bold">7</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Suivi et pilotage</h3>
+                                <p class="text-gray-600">Reporting des performances, suivi des positions, taux de clics, taux de conversion, mise à jour des contenus selon l'évolution des algorithmes et des comportements utilisateurs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="package" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Livrables standards</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover-scale">
+                    <div class="flex items-start">
+                        <div class="bg-blue-50 rounded-lg p-2 mr-4 text-primary">
+                            <i data-feather="file-text" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Rapport d'audit éditorial et sémantique</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover-scale">
+                    <div class="flex items-start">
+                        <div class="bg-blue-50 rounded-lg p-2 mr-4 text-primary">
+                            <i data-feather="map" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Cartographie des mots-clés et thématiques stratégiques</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover-scale">
+                    <div class="flex items-start">
+                        <div class="bg-blue-50 rounded-lg p-2 mr-4 text-primary">
+                            <i data-feather="compass" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Feuille de route éditoriale détaillée</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover-scale">
+                    <div class="flex items-start">
+                        <div class="bg-blue-50 rounded-lg p-2 mr-4 text-primary">
+                            <i data-feather="book" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Charte éditoriale SEO</h3>
+                            <p class="text-sm text-gray-500 mt-1">Guidelines de rédaction, ton, structure</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover-scale">
+                    <div class="flex items-start">
+                        <div class="bg-blue-50 rounded-lg p-2 mr-4 text-primary">
+                            <i data-feather="calendar" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Calendrier éditorial</h3>
+                            <p class="text-sm text-gray-500 mt-1">Hebdomadaire, mensuel ou trimestriel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 hover-scale">
+                    <div class="flex items-start">
+                        <div class="bg-blue-50 rounded-lg p-2 mr-4 text-primary">
+                            <i data-feather="bar-chart-2" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Reporting périodique</h3>
+                            <p class="text-sm text-gray-500 mt-1">Sur la performance des contenus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Résultats attendus et indicateurs clés</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                <div class="p-8">
+                    <p class="text-lg leading-relaxed mb-6">Une stratégie de contenu SEO réussie entraîne :</p>
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-50 rounded-full p-2 mr-4 text-primary">
+                                <i data-feather="trending-up" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Augmentation du trafic organique qualifié</h3>
+                                <p class="text-gray-600 text-sm">Meilleure couverture des requêtes stratégiques</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-50 rounded-full p-2 mr-4 text-primary">
+                                <i data-feather="mouse-pointer" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Amélioration des taux de clics (CTR)</h3>
+                                <p class="text-gray-600 text-sm">Positions renforcées sur les pages de résultats</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-50 rounded-full p-2 mr-4 text-primary">
+                                <i data-feather="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Hausse de l'engagement</h3>
+                                <p class="text-gray-600 text-sm">Temps passé, taux de rebond réduit</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-50 rounded-full p-2 mr-4 text-primary">
+                                <i data-feather="dollar-sign" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Progression du nombre de leads ou ventes</h3>
+                                <p class="text-gray-600 text-sm">Générés par les contenus optimisés</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Indicateurs clés de performance (KPI)</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center mb-1">
+                                    <i data-feather="bar-chart" class="w-4 h-4 text-primary mr-2"></i>
+                                    <span class="font-medium">Positions des mots-clés cibles</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center mb-1">
+                                    <i data-feather="users" class="w-4 h-4 text-primary mr-2"></i>
+                                    <span class="font-medium">Volume de trafic organique</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center mb-1">
+                                    <i data-feather="click" class="w-4 h-4 text-primary mr-2"></i>
+                                    <span class="font-medium">Taux de clics organiques</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center mb-1">
+                                    <i data-feather="percent" class="w-4 h-4 text-primary mr-2"></i>
+                                    <span class="font-medium">Taux de conversion par contenu</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center mb-1">
+                                    <i data-feather="watch" class="w-4 h-4 text-primary mr-2"></i>
+                                    <span class="font-medium">Durée moyenne de session</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center mb-1">
+                                    <i data-feather="link" class="w-4 h-4 text-primary mr-2"></i>
+                                    <span class="font-medium">Backlinks naturels générés</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governance Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="users" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Gouvernance et mode de collaboration</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                <div class="p-8">
+                    <p class="text-lg leading-relaxed mb-6">La gouvernance se partage entre la direction marketing, les équipes éditoriales, les experts SEO et, selon les cas, les prestataires externes.</p>
+                    <p class="text-lg leading-relaxed">La collaboration s'appuie sur :</p>
+                    <ul class="list-disc pl-6 mt-4 space-y-2">
+                        <li>Un calendrier éditorial validé</li>
+                        <li>Des revues régulières de performance</li>
+                        <li>Des échanges entre rédacteurs, référenceurs et responsables métiers</li>
+                    </ul>
+                    <p class="text-lg leading-relaxed mt-6">Cette organisation garantit la pertinence des contenus et leur alignement avec les objectifs business.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prerequisites Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="check-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Pré-requis côté client</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                <div class="p-8">
+                    <p class="text-lg leading-relaxed mb-6">La réussite de la stratégie de contenu SEO suppose :</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-50 rounded-full p-2 mr-4 text-primary">
+                                <i data-feather="database" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Accès aux données analytiques</h3>
+                                <p class="text-gray-600 text-sm">Google Analytics, Search Console, outils de suivi de positions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-50 rounded-full p-2 mr-4 text-primary">
+                                <i data-feather="monitor" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Site techniquement optimisé</h3>
+                                <p class="text-gray-600 text-sm">Pour le SEO (vitesse, mobile, sécurité, etc.)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-50 rounded-full p-2 mr-4 text-primary">
+                                <i data-feather="edit-2" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Ressources éditoriales</h3>
+                                <p class="text-gray-600 text-sm">Internes ou externes pour produire le contenu</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-50 rounded-full p-2 mr-4 text-primary">
+                                <i data-feather="target" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Validation des thématiques</h3>
+                                <p class="text-gray-600 text-sm">Prioritaires en accord avec la stratégie commerciale</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Factors Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="star" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Facteurs de succès et limites</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Facteurs clés de succès</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                    <i data-feather="check" class="w-4 h-4"></i>
+                                </div>
+                                <span>Qualité et pertinence des contenus produits</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                    <i data-feather="check" class="w-4 h-4"></i>
+                                </div>
+                                <span>Régularité de publication</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                    <i data-feather="check" class="w-4 h-4"></i>
+                                </div>
+                                <span>Alignement avec les intentions des utilisateurs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                    <i data-feather="check" class="w-4 h-4"></i>
+                                </div>
+                                <span>Capacité à actualiser les textes au fil du temps</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                    <i data-feather="check" class="w-4 h-4"></i>
+                                </div>
+                                <span>Collaboration entre équipes SEO et éditoriales</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">Limites potentielles</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="bg-red-50 rounded-full p-1 mr-3 text-red-500">
+                                    <i data-feather="alert-circle" class="w-4 h-4"></i>
+                                </div>
+                                <span>Délai nécessaire pour obtenir des résultats (plusieurs mois)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-red-50 rounded-full p-1 mr-3 text-red-500">
+                                    <i data-feather="alert-circle" class="w-4 h-4"></i>
+                                </div>
+                                <span>Concurrence forte sur certaines thématiques</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-red-50 rounded-full p-1 mr-3 text-red-500">
+                                    <i data-feather="alert-circle" class="w-4 h-4"></i>
+                                </div>
+                                <span>Dépendance aux évolutions algorithmiques</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-red-50 rounded-full p-1 mr-3 text-red-500">
+                                    <i data-feather="alert-circle" class="w-4 h-4"></i>
+                                </div>
+                                <span>Investissement initial en temps et ressources</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-red-50 rounded-full p-1 mr-3 text-red-500">
+                                    <i data-feather="alert-circle" class="w-4 h-4"></i>
+                                </div>
+                                <span>Nécessité d'une maintenance continue</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="briefcase" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Cas d'usage typiques</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-lg p-3 mb-4 inline-block">
+                            <i data-feather="shopping-cart" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Sites e-commerce</h3>
+                        <p class="text-gray-600">Optimisation des fiches produits et guides d'achat pour augmenter les conversions.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-lg p-3 mb-4 inline-block">
+                            <i data-feather="users" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Entreprises B2B</h3>
+                        <p class="text-gray-600">Génération de leads via des guides techniques et études de cas.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-lg p-3 mb-4 inline-block">
+                            <i data-feather="book-open" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Blogs d'expertise</h3>
+                        <p class="text-gray-600">Renforcement de l'autorité sur des sujets spécialisés.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                    <div class="p-8">
+                        <div class="bg-blue-50 rounded-lg p-3 mb-4 inline-block">
+                            <i data-feather="home" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Sites institutionnels</h3>
+                        <p class="text-gray-600">Accroissement de la visibilité sur des thématiques spécifiques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="dollar-sign" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Valeur apportée</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary bg-opacity-10 rounded-full p-3 mr-4 text-primary">
+                            <i data-feather="award" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Transformez votre site en référence éditoriale</h3>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                        <i data-feather="check" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="font-medium">Captation durable d'un trafic qualifié</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                        <i data-feather="check" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="font-medium">Réduction des coûts publicitaires</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                        <i data-feather="check" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="font-medium">Renforcement de la crédibilité de la marque</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                        <i data-feather="check" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="font-medium">Amélioration des taux de conversion</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                        <i data-feather="check" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="font-medium">Création d'un actif pérenne</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-blue-50 rounded-full p-1 mr-3 text-primary">
+                                        <i data-feather="check" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="font-medium">Résultats sur le long terme</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="flex items-start mb-8">
+                <div class="bg-primary rounded-lg p-3 mr-4 text-white">
+                    <i data-feather="help-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Questions fréquentes</h2>
+                    <div class="w-16 h-1 bg-primary mt-2"></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="divide-y divide-gray-200">
+                    <div class="p-8">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                <h3 class="text-lg font-semibold text-gray-900">Combien de temps faut-il pour voir les premiers résultats ?</h3>
+                                <div class="text-primary">
+                                    <i data-feather="chevron-down" class="w-5 h-5 group-open:hidden"></i>
+                                    <i data-feather="chevron-up" class="w-5 h-5 hidden group-open:block"></i>
+                                </div>
+                            </summary>
+                            <div class="mt-4 text-gray-600">
+                                <p>Les résultats d'une stratégie de contenu SEO sont généralement visibles après 3 à 6 mois, selon la concurrence sur vos mots-clés cibles et la qualité de votre mise en œuvre. Les premiers signes d'amélioration peuvent apparaître plus tôt, mais un impact significatif nécessite du temps pour que Google indexe et évalue vos contenus.</p>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="p-8">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                <h3 class="text-lg font-semibold text-gray-900">Quelle est la fréquence idéale de publication ?</h3>
+                                <div class="text-primary">
+                                    <i data-feather="chevron-down" class="w-5 h-5 group-open:hidden"></i>
+                                    <i data-feather="chevron-up" class="w-5 h-5 hidden group-open:block"></i>
+                                </div>
+                            </summary>
+                            <div class="mt-4 text-gray-600">
+                                <p>La fréquence optimale dépend de votre secteur et ressources. En général, nous recommandons :</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-1">
+                                    <li>1-2 articles de blog par semaine pour les sites en croissance</li>
+                                    <li>1 article tous les 15 jours pour les sites établis</li>
+                                    <li>Mises à jour régulières des contenus existants (au moins trimestrielles)</li>
+                                </ul>
+                                <p class="mt-2">La régularité est plus importante que la quantité.</p>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="p-8">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                <h3 class="text-lg font-semibold text-gray-900">Comment mesurez-vous le succès de la stratégie ?</h3>
+                                <div class="text-primary">
+                                    <i data-feather="chevron-down" class="w-5 h-5 group-open:hidden"></i>
+                                    <i data-feather="chevron-up" class="w-5 h-5 hidden group-open:block"></i>
+                                </div>
+                            </summary>
+                            <div class="mt-4 text-gray-600">
+                                <p>Nous suivons plusieurs indicateurs clés :</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-1">
+                                    <li>Évolution des positions sur les mots-clés cibles</li>
+                                    <li>Augmentation du trafic organique et des pages vues</li>
+                                    <li>Amélioration des taux de clics (CTR) dans les résultats de recherche</li>
+                                    <li>Durée moyenne des sessions et taux de rebond</li>
+                                    <li>Nombre de leads ou ventes générés</li>
+                                    <li>Backlinks naturels acquis</li>
+                                </ul>
+                                <p class="mt-2">Ces métriques sont analysées dans des rapports mensuels.</p>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="p-8">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                <h3 class="text-lg font-semibold text-gray-900">Faut-il combiner SEO et publicité payante ?</h3>
+                                <div class="text-primary">
+                                    <i data-feather="chevron-down" class="w-5 h-5 group-open:hidden"></i>
+                                    <i data-feather="chevron-up" class="w-5 h-5 hidden group-open:block"></i>
+                                </div>
+                            </summary>
+                            <div class="mt-4 text-gray-600">
+                                <p>Les deux approches sont complémentaires :</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-1">
+                                    <li>Le SEO apporte des résultats durables mais prend du temps</li>
+                                    <li>La publicité (SEA) donne une visibilité immédiate mais coûteuse</li>
+                                </ul>
+                                <p class="mt-2">Nous recommandons souvent de démarrer avec les deux, puis de réduire progressivement le budget publicitaire au fur et à mesure que le SEO porte ses fruits.</p>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="p-8">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                <h3 class="text-lg font-semibold text-gray-900">Quelle est la durée minimale d'engagement recommandée ?</h3>
+                                <div class="text-primary">
+                                    <i data-feather="chevron-down" class="w-5 h-5 group-open:hidden"></i>
+                                    <i data-feather="chevron-up" class="w-5 h-5 hidden group-open:block"></i>
+                                </div>
+                            </summary>
+                            <div class="mt-4 text-gray-600">
+                                <p>Pour des résultats tangibles, nous conseillons un engagement minimal de 12 mois. Le SEO est une stratégie à long terme qui nécessite :</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-1">
+                                    <li>3-6 mois pour la mise en place et les premiers résultats</li>
+                                    <li>6-12 mois pour optimiser et amplifier les effets</li>
+                                </ul>
+                                <p class="mt-2">Des contrats plus courts (6 mois) sont possibles pour des audits ou lancements initiaux.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="gradient-bg rounded-2xl p-8 md:p-12 text-white text-center">
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white bg-opacity-20 rounded-full p-3 inline-block mb-6">
+                        <i data-feather="message-circle" class="w-8 h-8"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Prêt à booster votre visibilité ?</h2>
+                    <p class="text-xl opacity-90 mb-10">Notre équipe d'experts SEO est à votre écoute pour construire ensemble votre stratégie de contenu gagnante.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                        <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm">
+                            <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center w-full bg-white text-primary font-semibold py-4 px-6 rounded-lg hover:bg-opacity-90 transition transform hover:scale-105">
+                                <i data-feather="file-text" class="w-5 h-5 mr-2"></i>
+                                Demander un devis gratuit
+                            </a>
+                            <p class="text-sm opacity-80 mt-4">Recevez une estimation personnalisée sous 72h</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm">
+                            <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center w-full bg-transparent border-2 border-white text-white font-semibold py-4 px-6 rounded-lg hover:bg-white hover:text-primary transition transform hover:scale-105">
+                                <i data-feather="mail" class="w-5 h-5 mr-2"></i>
+                                Nous contacter
+                            </a>
+                            <p class="text-sm opacity-80 mt-4">Discutez directement avec nos experts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

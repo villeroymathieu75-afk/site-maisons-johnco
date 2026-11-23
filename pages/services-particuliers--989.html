@@ -1,0 +1,1039 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE SERVICES PARTICULIERS — Maison John&Co Marketing
+     Sidebar sticky + cartes expandables
+     Couleur signature : ÉMERAUDE (#10B981)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .mjc-sp2 {
+    --bg-dark: #0A1628;
+    --bg-light: #FAFAFA;
+    --bg-white: #FFFFFF;
+    --accent: #10B981;
+    --accent-light: #6EE7B7;
+    --accent-hover: #059669;
+    --accent-glow: rgba(16,185,129,0.35);
+    --text-dark: #1A1A2E;
+    --text-medium: #6B7280;
+    --text-light: #FFFFFF;
+    --text-light-mute: #B0B8C5;
+    --border-light: #E5E7EB;
+    --border-dark: rgba(255,255,255,0.1);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .mjc-sp2 *, .mjc-sp2 *::before, .mjc-sp2 *::after { box-sizing: border-box; }
+  .mjc-sp2 p { margin: 0 0 16px; }
+  .mjc-sp2 h1, .mjc-sp2 h2, .mjc-sp2 h3, .mjc-sp2 h4 { margin: 0; letter-spacing: -0.02em; }
+  .mjc-sp2 a { text-decoration: none; color: inherit; }
+  .mjc-sp2-c { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  /* ═══ ANIMS ═══ */
+  @keyframes mjc-sp2-grad { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+  @keyframes mjc-sp2-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
+  @keyframes mjc-sp2-pulse { 0%,100%{box-shadow:0 0 0 0 var(--accent-glow)} 70%{box-shadow:0 0 0 14px transparent} }
+  @keyframes mjc-sp2-up { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+
+  .mjc-sp2-rev { opacity:0; transform:translateY(40px); transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .mjc-sp2-rev.on { opacity:1; transform:translateY(0); }
+
+  /* ═══ HERO ═══ */
+  .mjc-sp2-hero {
+    padding: 140px 0 100px;
+    background: var(--bg-dark);
+    position: relative; overflow: hidden; color: var(--text-light);
+  }
+  .mjc-sp2-hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(125deg, #0A1628 0%, #0D2B1E 40%, #0A2020 70%, #0A1628 100%);
+    background-size: 400% 400%;
+    animation: mjc-sp2-grad 20s ease infinite; z-index: 0;
+  }
+  .mjc-sp2-orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); z-index: 1;
+    animation: mjc-sp2-float 8s ease-in-out infinite;
+  }
+  .mjc-sp2-orb-1 { top: 10%; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, var(--accent), transparent 70%); opacity: 0.2; }
+  .mjc-sp2-orb-2 { bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, var(--accent-light), transparent 70%); opacity: 0.15; animation-delay:-4s; }
+
+  .mjc-sp2-hero-inner { position: relative; z-index: 2; max-width: 900px; }
+  .mjc-sp2-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(16,185,129,0.15); backdrop-filter: blur(10px);
+    color: var(--accent-light); padding: 8px 18px; border-radius: 999px;
+    font-size: 13px; font-weight: 500; margin-bottom: 32px;
+    border: 1px solid rgba(110,231,183,0.3);
+    animation: mjc-sp2-up 0.8s ease-out;
+  }
+  .mjc-sp2-dot { width:8px; height:8px; background:var(--accent); border-radius:50%; animation: mjc-sp2-pulse 2s infinite; }
+  .mjc-sp2-hero h1 {
+    font-size: 64px; font-weight: 700; line-height: 1.05;
+    color: var(--text-light); margin-bottom: 24px;
+    animation: mjc-sp2-up 0.9s ease-out 0.1s both;
+  }
+  .mjc-sp2-hero h1 .ag {
+    background: linear-gradient(135deg, var(--accent-light), var(--accent), #34D399);
+    background-size: 200% 200%;
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    animation: mjc-sp2-grad 5s ease infinite;
+  }
+  .mjc-sp2-sub {
+    font-size: 19px; color: var(--text-light-mute); margin-bottom: 40px;
+    line-height: 1.6; max-width: 720px;
+    animation: mjc-sp2-up 1s ease-out 0.3s both;
+  }
+  .mjc-sp2-cta { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:60px; animation: mjc-sp2-up 1s ease-out 0.5s both; }
+
+  .mjc-sp2-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; border-radius: 10px; font-size: 15px;
+    font-weight: 500; font-family: inherit; line-height: 1;
+    transition: all 0.3s ease; cursor: pointer; border: none;
+  }
+  .mjc-sp2-btn-p { background: linear-gradient(135deg, var(--accent), var(--accent-hover)); color:white; box-shadow: 0 4px 20px var(--accent-glow); }
+  .mjc-sp2-btn-p:hover { transform: translateY(-2px); box-shadow: 0 12px 28px var(--accent-glow); }
+  .mjc-sp2-btn-o { background: rgba(255,255,255,0.06); color:white; border: 1px solid rgba(255,255,255,0.2); }
+  .mjc-sp2-btn-o:hover { background: rgba(255,255,255,0.1); border-color: var(--accent-light); }
+
+  .mjc-sp2-stats {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 32px;
+    padding-top: 40px; border-top: 1px solid var(--border-dark);
+    animation: mjc-sp2-up 1s ease-out 0.7s both;
+  }
+  .mjc-sp2-stat-v {
+    font-size: 36px; font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-light), var(--accent));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    line-height: 1; margin-bottom: 6px;
+  }
+  .mjc-sp2-stat-l { font-size: 13px; color: var(--text-light-mute); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ═══ MAIN ═══ */
+  .mjc-sp2-main { background: var(--bg-light); padding: 80px 0 120px; }
+  .mjc-sp2-layout { display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start; }
+
+  /* ══ SIDEBAR ══ */
+  .mjc-sp2-sidebar {
+    position: sticky; top: 100px;
+    background: var(--bg-white); border: 1px solid var(--border-light);
+    border-radius: 20px; padding: 24px;
+    max-height: calc(100vh - 120px); overflow-y: auto;
+  }
+  .mjc-sp2-sidebar-ttl { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; padding: 0 8px; }
+  .mjc-sp2-nav { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:4px; }
+  .mjc-sp2-nav-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px; border-radius: 10px;
+    color: var(--text-medium); font-size: 13px; font-weight: 500;
+    transition: all 0.3s ease; cursor: pointer; position: relative; line-height: 1.4;
+  }
+  .mjc-sp2-nav-item:hover { background: var(--bg-light); color: var(--text-dark); }
+  .mjc-sp2-nav-item.on { background: rgba(16,185,129,0.08); color: var(--accent); font-weight: 600; }
+  .mjc-sp2-nav-item.on::before { content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); width:3px; height:24px; background: linear-gradient(180deg, var(--accent), var(--accent-light)); border-radius:0 3px 3px 0; }
+  .mjc-sp2-num { flex-shrink:0; width:24px; height:24px; background:rgba(16,185,129,0.1); color:var(--accent); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; transition:all 0.3s ease; }
+  .mjc-sp2-nav-item.on .mjc-sp2-num { background: linear-gradient(135deg, var(--accent), var(--accent-hover)); color:white; }
+  .mjc-sp2-sidebar-cta { margin-top:20px; padding:16px; background: linear-gradient(135deg, var(--bg-dark), #0D2B1E); border-radius:14px; text-align:center; }
+  .mjc-sp2-sidebar-cta p { font-size:13px; color:var(--text-light-mute); margin:0 0 12px; }
+  .mjc-sp2-sidebar-cta a { display:inline-flex; align-items:center; gap:6px; padding:10px 16px; background:var(--accent); color:white; border-radius:8px; font-size:13px; font-weight:600; transition:all 0.3s ease; }
+  .mjc-sp2-sidebar-cta a:hover { background:var(--accent-hover); transform:translateY(-1px); }
+
+  /* ══ CATÉGORIE ══ */
+  .mjc-sp2-cat { margin-bottom: 80px; scroll-margin-top: 100px; }
+  .mjc-sp2-cat:last-of-type { margin-bottom: 60px; }
+  .mjc-sp2-cat-hd {
+    display:flex; align-items:flex-start; gap:24px;
+    margin-bottom:32px; padding:32px;
+    background:var(--bg-white); border-radius:20px;
+    border:1px solid var(--border-light);
+    position:relative; overflow:hidden;
+  }
+  .mjc-sp2-cat-hd::before { content:''; position:absolute; top:0; right:0; width:200px; height:200px; background:radial-gradient(circle, rgba(16,185,129,0.07),transparent 70%); border-radius:50%; }
+  .mjc-sp2-cat-icon { flex-shrink:0; width:64px; height:64px; background:linear-gradient(135deg, var(--accent), var(--accent-hover)); color:white; border-radius:16px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px var(--accent-glow); position:relative; z-index:1; }
+  .mjc-sp2-cat-info { flex:1; position:relative; z-index:1; }
+  .mjc-sp2-cat-n { display:inline-block; background:rgba(16,185,129,0.1); color:var(--accent); padding:4px 10px; border-radius:6px; font-size:11px; font-weight:700; letter-spacing:1.5px; margin-bottom:8px; }
+  .mjc-sp2-cat-hd h2 { font-size:30px; font-weight:700; line-height:1.2; margin-bottom:8px; }
+  .mjc-sp2-cat-hd p { font-size:15px; color:var(--text-medium); margin:0; line-height:1.6; }
+  .mjc-sp2-count { flex-shrink:0; background:var(--bg-light); padding:8px 14px; border-radius:999px; font-size:12px; font-weight:600; color:var(--text-medium); border:1px solid var(--border-light); position:relative; z-index:1; }
+
+  /* ══ GRILLE + CARTES ══ */
+  .mjc-sp2-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .mjc-sp2-svc {
+    background:var(--bg-white); border:1px solid var(--border-light);
+    border-radius:16px; overflow:hidden;
+    transition:all 0.3s cubic-bezier(0.16,1,0.3,1); cursor:pointer;
+  }
+  .mjc-sp2-svc:hover { border-color:var(--accent-light); transform:translateY(-3px); box-shadow:0 12px 24px rgba(16,185,129,0.08); }
+  .mjc-sp2-svc.open { border-color:var(--accent); box-shadow:0 16px 32px rgba(16,185,129,0.12); grid-column:span 2; }
+  .mjc-sp2-svc-hd { padding:24px; display:flex; align-items:flex-start; gap:16px; }
+  .mjc-sp2-svc-ico { flex-shrink:0; width:44px; height:44px; background:rgba(16,185,129,0.08); color:var(--accent); border-radius:10px; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; }
+  .mjc-sp2-svc.open .mjc-sp2-svc-ico, .mjc-sp2-svc:hover .mjc-sp2-svc-ico { background:linear-gradient(135deg, var(--accent), var(--accent-hover)); color:white; }
+  .mjc-sp2-svc-txt { flex:1; min-width:0; }
+  .mjc-sp2-svc-txt h3 { font-size:17px; font-weight:700; line-height:1.3; margin-bottom:6px; color:var(--text-dark); }
+  .mjc-sp2-svc-short { font-size:13px; color:var(--text-medium); line-height:1.5; margin:0; }
+  .mjc-sp2-tog { flex-shrink:0; width:32px; height:32px; background:var(--bg-light); color:var(--text-medium); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; border:1px solid var(--border-light); }
+  .mjc-sp2-svc.open .mjc-sp2-tog { background:var(--accent); color:white; transform:rotate(45deg); border-color:var(--accent); }
+
+  .mjc-sp2-det { max-height:0; overflow:hidden; padding:0 24px; transition:max-height 0.5s cubic-bezier(0.16,1,0.3,1), padding 0.5s ease; }
+  .mjc-sp2-svc.open .mjc-sp2-det { max-height:800px; padding:0 24px 24px; }
+  .mjc-sp2-det-inner { padding-top:16px; border-top:1px solid var(--border-light); }
+  .mjc-sp2-det h4 { font-size:11px; font-weight:700; color:var(--accent); letter-spacing:1.5px; text-transform:uppercase; margin:16px 0 10px; }
+  .mjc-sp2-det h4:first-child { margin-top:0; }
+  .mjc-sp2-det p { font-size:14px; color:var(--text-dark); line-height:1.7; margin:0; }
+  .mjc-sp2-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(2,1fr); gap:6px; }
+  .mjc-sp2-list li { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-dark); padding:4px 0; }
+  .mjc-sp2-list li::before { content:''; flex-shrink:0; width:14px; height:14px; background:linear-gradient(135deg, var(--accent), var(--accent-hover)); border-radius:50%; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:center; }
+  .mjc-sp2-tags { display:flex; flex-wrap:wrap; gap:6px; }
+  .mjc-sp2-tag { background:rgba(16,185,129,0.08); color:var(--accent); padding:4px 10px; border-radius:999px; font-size:11px; font-weight:500; border:1px solid rgba(16,185,129,0.15); }
+  .mjc-sp2-link { display:inline-flex; align-items:center; gap:6px; margin-top:16px; padding:10px 18px; background:var(--accent); color:white; border-radius:8px; font-size:13px; font-weight:600; transition:all 0.3s ease; }
+  .mjc-sp2-link:hover { background:var(--accent-hover); transform:translateY(-1px); box-shadow:0 8px 16px var(--accent-glow); }
+
+  /* ═══ FINAL ═══ */
+  .mjc-sp2-final {
+    background: linear-gradient(135deg, #0A1628, #0D2B1E);
+    padding:100px 0; color:white; text-align:center; position:relative; overflow:hidden;
+  }
+  .mjc-sp2-final::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:600px; height:600px; background:radial-gradient(circle, rgba(16,185,129,0.18),transparent 70%); border-radius:50%; }
+  .mjc-sp2-final-inner { position:relative; z-index:1; max-width:720px; margin:0 auto; }
+  .mjc-sp2-final h2 { font-size:48px; font-weight:700; line-height:1.15; margin-bottom:20px; }
+  .mjc-sp2-final h2 .ag { background:linear-gradient(135deg, var(--accent-light), var(--accent)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .mjc-sp2-final p { font-size:18px; color:var(--text-light-mute); margin-bottom:40px; }
+  .mjc-sp2-final-btns { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media(max-width:1024px){
+    .mjc-sp2-hero h1{font-size:48px;}
+    .mjc-sp2-stats{grid-template-columns:repeat(2,1fr);}
+    .mjc-sp2-layout{grid-template-columns:1fr;}
+    .mjc-sp2-sidebar{position:relative;top:0;max-height:none;order:-1;}
+    .mjc-sp2-grid{grid-template-columns:1fr;}
+    .mjc-sp2-svc.open{grid-column:span 1;}
+  }
+  @media(max-width:768px){
+    .mjc-sp2-hero{padding:100px 0 60px;}
+    .mjc-sp2-hero h1{font-size:32px;}
+    .mjc-sp2-sub{font-size:16px;}
+    .mjc-sp2-cta{flex-direction:column;align-items:stretch;}
+    .mjc-sp2-btn{justify-content:center;}
+    .mjc-sp2-main{padding:48px 0 80px;}
+    .mjc-sp2-cat-hd{flex-wrap:wrap;padding:20px;}
+    .mjc-sp2-cat-hd h2{font-size:22px;}
+    .mjc-sp2-list{grid-template-columns:1fr;}
+    .mjc-sp2-final h2{font-size:28px;}
+    .mjc-sp2-final-btns{flex-direction:column;}
+  }
+</style>
+
+<div class="mjc-sp2">
+
+  <!-- HERO -->
+  <section class="mjc-sp2-hero">
+    <div class="mjc-sp2-hero-bg"></div>
+    <div class="mjc-sp2-orb mjc-sp2-orb-1"></div>
+    <div class="mjc-sp2-orb mjc-sp2-orb-2"></div>
+    <div class="mjc-sp2-c">
+      <div class="mjc-sp2-hero-inner">
+        <div class="mjc-sp2-badge"><span class="mjc-sp2-dot"></span>Services pour les particuliers</div>
+        <h1>Le digital, <span class="ag">accessible à tous</span></h1>
+        <p class="mjc-sp2-sub">Formations, cours, coaching, outils et sensibilisation : tout ce qu'il faut pour apprendre, progresser et s'épanouir dans le monde numérique. Que vous débutiez, vous reconvertiez ou cherchiez à développer un projet personnel, nous vous accompagnons à votre rythme.</p>
+        <div class="mjc-sp2-cta">
+          <a href="/contact?type=devis&profil=particulier" class="mjc-sp2-btn mjc-sp2-btn-p">
+            Démarrer mon parcours
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#mjc-sp2-cat-1" class="mjc-sp2-btn mjc-sp2-btn-o">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            Découvrir nos services
+          </a>
+        </div>
+        <div class="mjc-sp2-stats">
+          <div><div class="mjc-sp2-stat-v">5</div><div class="mjc-sp2-stat-l">Domaines d'expertise</div></div>
+          <div><div class="mjc-sp2-stat-v">29</div><div class="mjc-sp2-stat-l">Services dédiés</div></div>
+          <div><div class="mjc-sp2-stat-v">0</div><div class="mjc-sp2-stat-l">Prérequis technique</div></div>
+          <div><div class="mjc-sp2-stat-v">À votre rythme</div><div class="mjc-sp2-stat-l">Apprentissage adapté</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <section class="mjc-sp2-main">
+    <div class="mjc-sp2-c">
+      <div class="mjc-sp2-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="mjc-sp2-sidebar">
+          <div class="mjc-sp2-sidebar-ttl">Nos 5 domaines</div>
+          <ul class="mjc-sp2-nav">
+            <li class="mjc-sp2-nav-item on" data-target="mjc-sp2-cat-1"><span class="mjc-sp2-num">01</span><span>Formations en ligne</span></li>
+            <li class="mjc-sp2-nav-item" data-target="mjc-sp2-cat-2"><span class="mjc-sp2-num">02</span><span>Cours & Ateliers en direct</span></li>
+            <li class="mjc-sp2-nav-item" data-target="mjc-sp2-cat-3"><span class="mjc-sp2-num">03</span><span>Accompagnement individuel</span></li>
+            <li class="mjc-sp2-nav-item" data-target="mjc-sp2-cat-4"><span class="mjc-sp2-num">04</span><span>Outils & Packs clés en main</span></li>
+            <li class="mjc-sp2-nav-item" data-target="mjc-sp2-cat-5"><span class="mjc-sp2-num">05</span><span>Sensibilisation & Inclusion</span></li>
+          </ul>
+          <div class="mjc-sp2-sidebar-cta">
+            <p>Pas sûr de par où commencer ?</p>
+            <a href="/contact?type=rdv&profil=particulier">
+              Orientation gratuite
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </aside>
+
+        <!-- CONTENU -->
+        <div>
+
+          <!-- ─── CAT 1 — FORMATIONS EN LIGNE ─── -->
+          <section class="mjc-sp2-cat mjc-sp2-rev" id="mjc-sp2-cat-1">
+            <div class="mjc-sp2-cat-hd">
+              <div class="mjc-sp2-cat-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <div class="mjc-sp2-cat-info">
+                <span class="mjc-sp2-cat-n">CATÉGORIE 01</span>
+                <h2>Formations en ligne</h2>
+                <p>Apprendre à son rythme, depuis chez soi. Des formations concrètes, structurées et accessibles sur tous les sujets du digital.</p>
+              </div>
+              <span class="mjc-sp2-count">7 formations</span>
+            </div>
+            <div class="mjc-sp2-grid">
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Formations Métiers du Digital</h3>
+                    <p class="mjc-sp2-svc-short">Découvrir et maîtriser les métiers porteurs du digital : UX, SEO, social media, content creator.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cette formation</h4>
+                  <p>Un panorama complet des métiers du digital les plus accessibles et les plus demandés. Chaque module vous donne les bases solides pour exercer ou vous spécialiser : community manager, chargé de référencement, content creator, email marketer, data analyst junior.</p>
+                  <h4>Ce que vous apprenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Panorama des métiers digitaux</li>
+                    <li>Compétences clés par métier</li>
+                    <li>Outils incontournables</li>
+                    <li>Comment décrocher un stage/job</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Débutant</span><span class="mjc-sp2-tag">Reconversion</span><span class="mjc-sp2-tag">Étudiants</span></div>
+                  <a href="/contact?service=formation-metiers" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Formations Création de Business en Ligne</h3>
+                    <p class="mjc-sp2-svc-short">Créer, lancer et développer une activité en ligne de A à Z, même sans expérience préalable.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cette formation</h4>
+                  <p>Formation complète pour lancer une activité en ligne : trouver son idée de business, valider son marché, créer son offre, construire son audience, faire ses premières ventes. De l'idée au premier euro encaissé.</p>
+                  <h4>Ce que vous apprenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Validation d'une idée</li>
+                    <li>Création de l'offre</li>
+                    <li>Acquisition de clients</li>
+                    <li>Premières ventes</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Entrepreneuriat</span><span class="mjc-sp2-tag">Business en ligne</span></div>
+                  <a href="/contact?service=formation-business" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Formations Marketing Digital Simplifié</h3>
+                    <p class="mjc-sp2-svc-short">Les bases du marketing digital expliquées simplement, sans jargon, avec des cas concrets.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cette formation</h4>
+                  <p>Le marketing digital démystifié pour les non-techniciens : comprendre comment fonctionne Google, pourquoi vos posts Instagram ne sont pas vus, comment attirer des clients en ligne. Des concepts clés avec des exemples du quotidien.</p>
+                  <h4>Ce que vous apprenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Fondamentaux marketing digital</li>
+                    <li>SEO simplifié</li>
+                    <li>Réseaux sociaux basiques</li>
+                    <li>Email marketing intro</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Grand débutant</span><span class="mjc-sp2-tag">Sans jargon</span></div>
+                  <a href="/contact?service=formation-marketing-simplifie" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Formations Monétisation Réseaux Sociaux</h3>
+                    <p class="mjc-sp2-svc-short">Transformer sa présence sur les réseaux en source de revenus complémentaires ou principaux.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cette formation</h4>
+                  <p>Formation pratique pour monétiser vos réseaux sociaux même avec une petite audience : affiliation, partenariats micro-influenceurs, vente de formations, coaching, lives payants. Ce que vous pouvez gagner selon votre profil.</p>
+                  <h4>Ce que vous apprenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>6 modèles de monétisation</li>
+                    <li>Affiliation débutant</li>
+                    <li>Premiers partenariats</li>
+                    <li>Projections réalistes</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Revenus complémentaires</span><span class="mjc-sp2-tag">Réseaux sociaux</span></div>
+                  <a href="/contact?service=formation-monetisation-rs" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Formations Création de Contenu</h3>
+                    <p class="mjc-sp2-svc-short">Photo, vidéo, rédaction, podcasting : maîtriser la création de contenu pour se démarquer en ligne.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cette formation</h4>
+                  <p>Apprenez à créer du contenu professionnel avec votre smartphone : cadrer et filmer, monter avec CapCut, écrire des légendes qui engagent, prendre de bonnes photos. Le contenu de qualité n'est plus réservé aux pros.</p>
+                  <h4>Ce que vous apprenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Vidéo smartphone</li>
+                    <li>Montage CapCut</li>
+                    <li>Écriture captivante</li>
+                    <li>Photo de qualité</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Smartphone</span><span class="mjc-sp2-tag">Pratique</span></div>
+                  <a href="/contact?service=formation-contenu" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Formations Vente en Ligne & Tunnel de Vente</h3>
+                    <p class="mjc-sp2-svc-short">Vendre sur Internet : boutique, produits numériques, tunnels de conversion simples et efficaces.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cette formation</h4>
+                  <p>Créer votre première boutique en ligne, configurer les paiements, concevoir une page de vente efficace et construire un tunnel de vente simple. Formation accessible même sans connaissance technique.</p>
+                  <h4>Ce que vous apprenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Boutique en ligne simple</li>
+                    <li>Page de vente</li>
+                    <li>Tunnel basique</li>
+                    <li>Paiement en ligne</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">E-commerce simple</span><span class="mjc-sp2-tag">Vente directe</span></div>
+                  <a href="/contact?service=formation-vente" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Formations Productivité & Organisation Digitale</h3>
+                    <p class="mjc-sp2-svc-short">Notion, Trello, automatisations, outils IA : organiser sa vie digitale pour être plus efficace.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cette formation</h4>
+                  <p>Maîtriser les outils de productivité digitale : Notion pour s'organiser, Trello pour ses projets, outils IA (ChatGPT, Claude) pour gagner du temps, automatisations simples avec Zapier. Travailler smarter, pas harder.</p>
+                  <h4>Ce que vous apprenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Notion débutant</li>
+                    <li>Outils IA pratiques</li>
+                    <li>Automatisations simples</li>
+                    <li>Système de gestion perso</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Productivité</span><span class="mjc-sp2-tag">IA</span><span class="mjc-sp2-tag">Organisation</span></div>
+                  <a href="/contact?service=formation-productivite" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ─── CAT 2 — COURS & ATELIERS EN DIRECT ─── -->
+          <section class="mjc-sp2-cat mjc-sp2-rev" id="mjc-sp2-cat-2">
+            <div class="mjc-sp2-cat-hd">
+              <div class="mjc-sp2-cat-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="mjc-sp2-cat-info">
+                <span class="mjc-sp2-cat-n">CATÉGORIE 02</span>
+                <h2>Cours & Ateliers en direct</h2>
+                <p>Apprendre en groupe, en temps réel. Des sessions live interactives pour progresser avec le soutien de la communauté.</p>
+              </div>
+              <span class="mjc-sp2-count">5 ateliers</span>
+            </div>
+            <div class="mjc-sp2-grid">
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Cours Collectifs Initiation Digital</h3>
+                    <p class="mjc-sp2-svc-short">Groupes de 8 à 12 personnes pour apprendre ensemble les bases du digital dans une ambiance bienveillante.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce cours</h4>
+                  <p>Cours en visioconférence en petits groupes pour débutants. Programme structuré sur 4 à 8 séances, avec questions/réponses, exercices pratiques et entraide entre participants. L'apprentissage collectif est souvent plus efficace et plus motivant.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Sessions live 2h</li>
+                    <li>Petit groupe (8-12 pers.)</li>
+                    <li>Exercices pratiques</li>
+                    <li>Accès replay</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Visio</span><span class="mjc-sp2-tag">Petit groupe</span></div>
+                  <a href="/contact?service=cours-collectifs" class="mjc-sp2-link">Rejoindre un groupe →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Ateliers Pratiques Création de Contenu</h3>
+                    <p class="mjc-sp2-svc-short">Sessions pratiques : on crée ensemble, en direct, de vrais contenus pour vos réseaux.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cet atelier</h4>
+                  <p>Des ateliers "mains dans le cambouis" où vous créez de vrais contenus pendant la session : un Reel, une story, un post LinkedIn, un email. Vous repartez avec des livrables concrets et des compétences immédiatement applicables.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Contenus créés en live</li>
+                    <li>Feedback immédiat</li>
+                    <li>Techniques pratiques</li>
+                    <li>Livrables utilisables</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">100% pratique</span><span class="mjc-sp2-tag">Concret</span></div>
+                  <a href="/contact?service=atelier-contenu" class="mjc-sp2-link">Participer →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Cours d'Entrepreneuriat Digital Jeunesse</h3>
+                    <p class="mjc-sp2-svc-short">Programme spécial 15-25 ans pour apprendre à entreprendre en ligne dès le plus jeune âge.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce cours</h4>
+                  <p>Programme spécialement conçu pour les 15-25 ans : monter une mini-boutique en ligne, créer et vendre ses créations numériques, utiliser les réseaux pour se faire connaître. L'entrepreneuriat digitale expliqué dans leur langage.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Adapté aux jeunes</li>
+                    <li>Mini-projets concrets</li>
+                    <li>Mentorat pair-à-pair</li>
+                    <li>Certificat de participation</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">15-25 ans</span><span class="mjc-sp2-tag">Jeunesse</span></div>
+                  <a href="/contact?service=entrepreneuriat-jeunesse" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Ateliers TikTok / Reels / Shorts</h3>
+                    <p class="mjc-sp2-svc-short">Maîtriser le format vidéo court : tournage, montage, publication et optimisation pour chaque plateforme.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cet atelier</h4>
+                  <p>Atelier spécialisé vidéo courte : comment filmer avec son téléphone, monter avec CapCut en 15 minutes, ajouter les sous-titres, choisir la musique, publier au bon moment sur TikTok, Instagram Reels et YouTube Shorts.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Tournage smartphone</li>
+                    <li>CapCut de A à Z</li>
+                    <li>Stratégie publication</li>
+                    <li>Première vidéo créée</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">TikTok</span><span class="mjc-sp2-tag">Reels</span><span class="mjc-sp2-tag">CapCut</span></div>
+                  <a href="/contact?service=atelier-video-court" class="mjc-sp2-link">Participer →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Cours "Comprendre les Algorithmes"</h3>
+                    <p class="mjc-sp2-svc-short">Démystifier les algorithmes de Google, Instagram, TikTok et YouTube pour travailler avec eux.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce cours</h4>
+                  <p>Explication simple et concrète du fonctionnement des algorithmes de chaque plateforme : qu'est-ce qui fait qu'un contenu est mis en avant ? Comment l'algorithme décide qui voit vos publications ? Quels comportements pénalisent votre compte ?</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Algorithmes expliqués</li>
+                    <li>Règles à respecter</li>
+                    <li>Erreurs à éviter</li>
+                    <li>Bonnes pratiques</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Vulgarisation</span><span class="mjc-sp2-tag">Pratique immédiate</span></div>
+                  <a href="/contact?service=cours-algorithmes" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ─── CAT 3 — ACCOMPAGNEMENT INDIVIDUEL ─── -->
+          <section class="mjc-sp2-cat mjc-sp2-rev" id="mjc-sp2-cat-3">
+            <div class="mjc-sp2-cat-hd">
+              <div class="mjc-sp2-cat-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div class="mjc-sp2-cat-info">
+                <span class="mjc-sp2-cat-n">CATÉGORIE 03</span>
+                <h2>Accompagnement individuel</h2>
+                <p>Un suivi 100% personnalisé pour avancer à votre rythme, selon vos objectifs et votre situation spécifique.</p>
+              </div>
+              <span class="mjc-sp2-count">5 services</span>
+            </div>
+            <div class="mjc-sp2-grid">
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Coaching Digital Personnalisé</h3>
+                    <p class="mjc-sp2-svc-short">Sessions one-to-one pour avancer sur votre projet digital avec un expert dédié à votre réussite.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce service</h4>
+                  <p>Sessions de coaching individuel régulières (hebdo ou bimensuel) pour avancer sur votre projet digital à votre rythme. Vous fixez vos objectifs, on co-construit le chemin. Idéal pour ceux qui veulent un suivi adapté à leur situation unique.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Sessions individuelles</li>
+                    <li>Plan personnalisé</li>
+                    <li>Feedback continu</li>
+                    <li>Accès entre les sessions</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Sur mesure</span><span class="mjc-sp2-tag">Votre rythme</span></div>
+                  <a href="/contact?service=coaching-perso" class="mjc-sp2-link">Commencer le coaching →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Séance Orientation Digitale Jeunes & Étudiants</h3>
+                    <p class="mjc-sp2-svc-short">Session dédiée pour découvrir les possibilités du digital et définir un plan de formation ou de carrière.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce service</h4>
+                  <p>Une séance d'orientation de 2h pour les 16-25 ans : découvrir les métiers du digital, identifier ses aptitudes, comprendre les formations disponibles, tracer un premier plan d'action. Pour ne pas choisir par défaut, mais par conviction.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Exploration des métiers</li>
+                    <li>Test d'aptitudes</li>
+                    <li>Plan de formation</li>
+                    <li>Ressources gratuites</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">16-25 ans</span><span class="mjc-sp2-tag">Orientation</span></div>
+                  <a href="/contact?service=orientation-jeunes" class="mjc-sp2-link">Réserver une séance →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10H3M21 6H3M21 14H3M21 18H3"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Conseil Création de Projet Personnel</h3>
+                    <p class="mjc-sp2-svc-short">Transformer une idée, une passion ou un projet de vie en quelque chose de concret grâce au digital.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce service</h4>
+                  <p>Vous avez une idée, une passion, un projet de vie — mais vous ne savez pas comment le concrétiser en ligne. Nous vous aidons à structurer votre projet, identifier l'angle digital pertinent et construire un premier plan d'action réaliste.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Clarification du projet</li>
+                    <li>Angle digital défini</li>
+                    <li>Plan d'action concret</li>
+                    <li>Ressources sélectionnées</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Projet de vie</span><span class="mjc-sp2-tag">Concrétisation</span></div>
+                  <a href="/contact?service=conseil-projet" class="mjc-sp2-link">Parler de mon projet →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Bilan de Compétences Digitales</h3>
+                    <p class="mjc-sp2-svc-short">Évaluer vos compétences numériques actuelles et identifier vos axes de progression prioritaires.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce service</h4>
+                  <p>Évaluation complète de vos compétences numériques actuelles : maîtrise des outils, niveau de confort avec le digital, lacunes prioritaires. Livrée sous forme d'un rapport avec un plan de montée en compétence personnalisé.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Évaluation complète</li>
+                    <li>Rapport personnalisé</li>
+                    <li>Lacunes identifiées</li>
+                    <li>Plan de progression</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Diagnostic</span><span class="mjc-sp2-tag">Progression</span></div>
+                  <a href="/contact?service=bilan-competences" class="mjc-sp2-link">Faire mon bilan →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Accompagnement à la Reconversion Numérique</h3>
+                    <p class="mjc-sp2-svc-short">Se réorienter vers un métier ou une activité dans le digital : suivi complet du projet de reconversion.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce service</h4>
+                  <p>Accompagnement sur la durée (3 à 6 mois) pour mener à bien une reconversion vers un métier du digital : définir le nouveau cap, identifier les formations nécessaires, construire un portfolio, décrocher ses premières missions ou son premier emploi.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Plan de reconversion</li>
+                    <li>Sélection formations</li>
+                    <li>Construction portfolio</li>
+                    <li>Aide à la recherche</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Reconversion</span><span class="mjc-sp2-tag">Accompagnement long</span></div>
+                  <a href="/contact?service=reconversion" class="mjc-sp2-link">Démarrer ma reconversion →</a>
+                </div></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ─── CAT 4 — OUTILS & PACKS CLÉS EN MAIN ─── -->
+          <section class="mjc-sp2-cat mjc-sp2-rev" id="mjc-sp2-cat-4">
+            <div class="mjc-sp2-cat-hd">
+              <div class="mjc-sp2-cat-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <div class="mjc-sp2-cat-info">
+                <span class="mjc-sp2-cat-n">CATÉGORIE 04</span>
+                <h2>Outils & Packs clés en main</h2>
+                <p>Des ressources prêtes à l'emploi pour gagner du temps et profiter des meilleurs outils sans avoir à tout créer.</p>
+              </div>
+              <span class="mjc-sp2-count">4 ressources</span>
+            </div>
+            <div class="mjc-sp2-grid">
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Packs de Templates Prêts à l'Emploi</h3>
+                    <p class="mjc-sp2-svc-short">Collections de templates Canva pour vos réseaux sociaux, présentations, CV et projets personnels.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce pack</h4>
+                  <p>Collections de templates Canva personnalisables pour tous vos besoins : posts Instagram, stories, présentations PowerPoint, CV, portfolios, flyers événements. Professionnels, modifiables en quelques clics, sans compétences en design.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>50+ templates Canva</li>
+                    <li>Modifiables librement</li>
+                    <li>Multi-formats</li>
+                    <li>Mises à jour incluses</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Canva</span><span class="mjc-sp2-tag">Prêt à l'emploi</span><span class="mjc-sp2-tag">Sans design</span></div>
+                  <a href="/contact?service=packs-templates" class="mjc-sp2-link">Accéder aux packs →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Kits de Création de Marque Personnelle</h3>
+                    <p class="mjc-sp2-svc-short">Tout ce qu'il faut pour lancer sa marque personnelle : logo, couleurs, templates, bio, plan éditorial.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce kit</h4>
+                  <p>Kit complet pour créer sa marque personnelle de A à Z : générateur de logo simple, palette de couleurs personnalisée, templates réseaux, guide pour écrire sa bio, plan éditorial sur 30 jours. Tout pour se lancer professionnellement en une journée.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Générateur de logo</li>
+                    <li>Charte graphique</li>
+                    <li>Templates réseaux</li>
+                    <li>Plan 30 jours</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Personal branding</span><span class="mjc-sp2-tag">Clé en main</span></div>
+                  <a href="/contact?service=kit-marque" class="mjc-sp2-link">Obtenir le kit →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Modèles de Pages Web & Mini-Sites</h3>
+                    <p class="mjc-sp2-svc-short">Modèles de pages prêts à personnaliser pour créer votre présence web sans coder.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cette ressource</h4>
+                  <p>Modèles de pages web et mini-sites clés en main (sur Carrd, Notion, ou en HTML simple) pour créer rapidement une page portfolio, une page de lien bio, une page événement ou un mini-site personnel. Sans code, sans designer.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Modèles prêts</li>
+                    <li>Guide de personnalisation</li>
+                    <li>Options gratuites</li>
+                    <li>Mobile optimisé</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Sans code</span><span class="mjc-sp2-tag">Rapide</span></div>
+                  <a href="/contact?service=modeles-web" class="mjc-sp2-link">Accéder aux modèles →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Ressources Téléchargeables (Checklists, Fiches)</h3>
+                    <p class="mjc-sp2-svc-short">Bibliothèque de guides pratiques, checklists et fiches méthode pour progresser en autonomie.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cette ressource</h4>
+                  <p>Bibliothèque croissante de ressources téléchargeables gratuites ou à petit prix : checklists "lancer sa page Instagram", fiches méthode SEO, guides "premier email marketing", trackers de productivité. Des outils pratiques pour avancer seul.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>50+ fiches pratiques</li>
+                    <li>Checklists prêtes</li>
+                    <li>Guides étape par étape</li>
+                    <li>Mises à jour régulières</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Gratuit & payant</span><span class="mjc-sp2-tag">Autonomie</span></div>
+                  <a href="/contact?service=ressources" class="mjc-sp2-link">Accéder à la bibliothèque →</a>
+                </div></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ─── CAT 5 — SENSIBILISATION & INCLUSION NUMÉRIQUE ─── -->
+          <section class="mjc-sp2-cat mjc-sp2-rev" id="mjc-sp2-cat-5">
+            <div class="mjc-sp2-cat-hd">
+              <div class="mjc-sp2-cat-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div class="mjc-sp2-cat-info">
+                <span class="mjc-sp2-cat-n">CATÉGORIE 05</span>
+                <h2>Sensibilisation & Inclusion Numérique</h2>
+                <p>Parce que le numérique doit être accessible à tous. Ateliers, mentorat et programmes solidaires pour les publics éloignés du digital.</p>
+              </div>
+              <span class="mjc-sp2-count">4 programmes</span>
+            </div>
+            <div class="mjc-sp2-grid">
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Ateliers d'Éducation Numérique pour Tous</h3>
+                    <p class="mjc-sp2-svc-short">Initiation au numérique pour les publics seniors, éloignés du digital ou peu à l'aise avec la technologie.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste cet atelier</h4>
+                  <p>Ateliers d'initiation numérique adaptés aux publics seniors, aux personnes éloignées du digital ou simplement peu à l'aise avec les outils numériques. Rythme lent, bienveillance garantie, support patient. Apprendre à utiliser un smartphone, naviguer sur internet, faire des démarches en ligne.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Initiation à votre niveau</li>
+                    <li>Rythme adapté</li>
+                    <li>Petits groupes</li>
+                    <li>Fiches mémo offertes</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Seniors</span><span class="mjc-sp2-tag">Tous niveaux</span><span class="mjc-sp2-tag">Bienveillant</span></div>
+                  <a href="/contact?service=education-numerique" class="mjc-sp2-link">S'inscrire →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Programme "Digital Pour Tous" (Accès Solidaire)</h3>
+                    <p class="mjc-sp2-svc-short">Formations à tarif solidaire ou gratuites pour les personnes en situation de précarité ou d'exclusion numérique.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce programme</h4>
+                  <p>En lien avec notre engagement solidaire et l'association Enfant de Cœur, nous proposons des formations à tarif réduit (sur critères de ressources) ou gratuites pour les personnes en situation de précarité, d'exclusion numérique ou dans des zones géographiques non desservies.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Accès aux formations</li>
+                    <li>Tarif adapté</li>
+                    <li>Matériel fourni</li>
+                    <li>Suivi personnalisé</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Solidaire</span><span class="mjc-sp2-tag">Accès réduit</span><span class="mjc-sp2-tag">Association</span></div>
+                  <a href="/contact?service=digital-pour-tous" class="mjc-sp2-link">En savoir plus →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Mentorat Jeunesse & Projets Étudiants</h3>
+                    <p class="mjc-sp2-svc-short">Accompagnement bénévole ou solidaire de jeunes porteurs de projets digitaux dans des zones peu desservies.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce programme</h4>
+                  <p>Programme de mentorat en ligne dédié aux jeunes 16-25 ans porteurs de projets dans des zones peu desservies ou issus de milieux défavorisés. Un mentor dédié pour accompagner projet scolaire, associatif ou entrepreneurial à impact.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Mentor dédié</li>
+                    <li>Sessions régulières</li>
+                    <li>Réseau & opportunités</li>
+                    <li>Certification fin de parcours</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Jeunesse</span><span class="mjc-sp2-tag">Solidaire</span><span class="mjc-sp2-tag">Impact</span></div>
+                  <a href="/contact?service=mentorat-jeunesse" class="mjc-sp2-link">Candidater →</a>
+                </div></div>
+              </div>
+
+              <div class="mjc-sp2-svc">
+                <div class="mjc-sp2-svc-hd">
+                  <div class="mjc-sp2-svc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                  <div class="mjc-sp2-svc-txt">
+                    <h3>Interventions Scolaires ou Associatives</h3>
+                    <p class="mjc-sp2-svc-short">Sessions d'intervention dans les écoles, lycées, associations et structures sociales sur les thématiques du digital.</p>
+                  </div>
+                  <div class="mjc-sp2-tog">+</div>
+                </div>
+                <div class="mjc-sp2-det"><div class="mjc-sp2-det-inner">
+                  <h4>En quoi consiste ce service</h4>
+                  <p>Nous intervenons dans les établissements scolaires, lycées, associations, MJC et structures d'insertion pour des sessions de sensibilisation au numérique (fake news, vie privée en ligne, algorithmes, opportunités digitales). Présentiel ou visio selon la localisation.</p>
+                  <h4>Ce que vous obtenez</h4>
+                  <ul class="mjc-sp2-list">
+                    <li>Intervention sur mesure</li>
+                    <li>Support pédagogique inclus</li>
+                    <li>Présentiel ou visio</li>
+                    <li>Attestation d'intervention</li>
+                  </ul>
+                  <div class="mjc-sp2-tags"><span class="mjc-sp2-tag">Écoles</span><span class="mjc-sp2-tag">Associations</span><span class="mjc-sp2-tag">Présentiel</span></div>
+                  <a href="/contact?service=interventions" class="mjc-sp2-link">Demander une intervention →</a>
+                </div></div>
+              </div>
+
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="mjc-sp2-final">
+    <div class="mjc-sp2-c">
+      <div class="mjc-sp2-final-inner mjc-sp2-rev">
+        <h2>Prêt à franchir le pas vers le <span class="ag">digital</span> ?</h2>
+        <p>Premier échange gratuit, sans engagement. On vous aide à trouver le point de départ qui vous correspond.</p>
+        <div class="mjc-sp2-final-btns">
+          <a href="/contact?type=rdv&profil=particulier" class="mjc-sp2-btn mjc-sp2-btn-p">
+            Session d'orientation gratuite
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="/offres-particuliers" class="mjc-sp2-btn mjc-sp2-btn-o">Voir les offres particuliers</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  // Accordéon
+  document.querySelectorAll('.mjc-sp2-svc').forEach(s => {
+    s.querySelector('.mjc-sp2-svc-hd').addEventListener('click', () => s.classList.toggle('open'));
+  });
+  // Sidebar
+  const items = document.querySelectorAll('.mjc-sp2-nav-item');
+  const cats = document.querySelectorAll('.mjc-sp2-cat');
+  items.forEach(i => {
+    i.addEventListener('click', () => {
+      const t = document.getElementById(i.dataset.target);
+      if(t) window.scrollTo({top: t.getBoundingClientRect().top + window.pageYOffset - 100, behavior:'smooth'});
+    });
+  });
+  window.addEventListener('scroll', () => {
+    let cur = null;
+    const pos = window.pageYOffset + 150;
+    cats.forEach(c => { if(c.offsetTop <= pos) cur = c.id; });
+    items.forEach(i => i.classList.toggle('on', i.dataset.target === cur));
+  }, {passive:true});
+  // Reveal
+  const ro = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); }});
+  }, {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.mjc-sp2-rev').forEach(el => ro.observe(el));
+})();
+</script>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

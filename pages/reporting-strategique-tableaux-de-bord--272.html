@@ -1,0 +1,1015 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting Stratégique & Tableaux de Bord | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+        }
+        .kpi-tree {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .kpi-tree::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #10b981);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0.75rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            z-index: 1;
+        }
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            left: 1.25rem;
+            top: 1.25rem;
+            bottom: -2rem;
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="gradient-bg rounded-2xl p-8 mb-16" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-2/3 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Reporting Stratégique & Tableaux de Bord
+                    </h1>
+                    <p class="text-xl text-gray-700 mb-6">
+                        Transformez vos données en informations décisionnelles fiables et actionnables pour piloter votre performance avec précision.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Demander un devis
+                        </a>
+                        <a href="#faq" class="border border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Questions fréquentes
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-xs">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="bar-chart-2" class="text-blue-600"></i>
+                            </div>
+                            <h3 class="font-semibold">KPI stratégiques</h3>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i data-feather="eye" class="text-green-600"></i>
+                            </div>
+                            <h3 class="font-semibold">Visibilité en temps réel</h3>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i data-feather="alert-triangle" class="text-purple-600"></i>
+                            </div>
+                            <h3 class="font-semibold">Alertes proactives</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Definition Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="target" class="mr-3 text-blue-600"></i>
+                Définition et positionnement du service
+            </h2>
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <p class="text-lg text-gray-700 mb-4">
+                    Le Reporting Stratégique & Tableaux de Bord consiste à concevoir, industrialiser et opérer un dispositif de pilotage qui transforme des données hétérogènes en informations décisionnelles fiables, actionnables et partagées.
+                </p>
+                <p class="text-lg text-gray-700">
+                    Le service couvre l'ensemble de la chaîne de valeur—de la définition des indicateurs et de leur sémantique, jusqu'à la visualisation, l'alerte proactive et la diffusion exécutive—pour fournir aux directions et aux équipes un référentiel commun (« source de vérité ») permettant d'allouer les ressources, d'arbitrer en temps réel et de mesurer la création de valeur.
+                </p>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="alert-octagon" class="mr-3 text-red-600"></i>
+                Problématiques adressées et objectifs
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-red-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold text-red-800 mb-4">Problématiques fréquentes</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Multiplicité de versions d'un même chiffre</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Indicateurs mal définis ou mal interprétés</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Écarts entre outils et sources de données</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Absence de vision consolidée par objectif</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Latence excessive des données</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Tableaux de bord esthétiques mais non décisionnels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Dépendance à des extractions manuelles sources d'erreurs</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-green-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold text-green-800 mb-4">Nos objectifs</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Standardiser la définition des KPI</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Fiabiliser les calculs et les sources</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Accélérer la disponibilité des chiffres utiles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Offrir des vues alignées sur les objectifs métiers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Relier systématiquement la performance opérationnelle aux résultats business (revenus, marge, pipeline, rétention, NPS)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scope Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="map" class="mr-3 text-purple-600"></i>
+                Périmètre d'intervention
+            </h2>
+            
+            <div class="space-y-8">
+                <!-- Scope Item 1 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="bg-purple-50 px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-xl font-semibold text-purple-800 flex items-center">
+                            <i data-feather="compass" class="mr-2"></i>
+                            Cadre décisionnel et KPI tree
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 kpi-tree">
+                            <li class="flex items-start">
+                                <i data-feather="star" class="text-yellow-500 mr-2 mt-1"></i>
+                                <span>Définition du North Star / OEC (critère global d'évaluation)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="trending-up" class="text-blue-500 mr-2 mt-1"></i>
+                                <span>Déclinaison en objectifs par domaine (acquisition, produit, ventes, service client, finances)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="link" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Cartographie des relations causales (KPI de résultat, d'action et de garde-fous)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="book" class="text-red-500 mr-2 mt-1"></i>
+                                <span>Dictionnaire des métriques et règles de calcul officielles</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Scope Item 2 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="bg-blue-50 px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-800 flex items-center">
+                            <i data-feather="database" class="mr-2"></i>
+                            Architecture de données et couche sémantique
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="box" class="text-purple-500 mr-2 mt-1"></i>
+                                <span>Modélisation (entrepôt de données, schémas étoile/flocon)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="hash" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Normalisation des identifiants (utilisateur, compte, campagne, produit)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="clock" class="text-yellow-500 mr-2 mt-1"></i>
+                                <span>Gestion des fenêtres temporelles et des déduplications</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="layers" class="text-red-500 mr-2 mt-1"></i>
+                                <span>Mise en place d'une couche métrique (semantic layer) garantissant des définitions uniques et réutilisables</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Scope Item 3 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="bg-green-50 px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-xl font-semibold text-green-800 flex items-center">
+                            <i data-feather="layout" class="mr-2"></i>
+                            Conception de tableaux de bord
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="briefcase" class="text-blue-500 mr-2 mt-1"></i>
+                                <span>Vues exécutives synthétiques (C-level) orientées objectifs et écarts vs cibles</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="sliders" class="text-purple-500 mr-2 mt-1"></i>
+                                <span>Vues managériales par levier (canaux, segments, funnels)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="search" class="text-yellow-500 mr-2 mt-1"></i>
+                                <span>Vues opérationnelles interactives (diagnostic, exploration, cohortes)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="eye" class="text-red-500 mr-2 mt-1"></i>
+                                <span>Standards de visualisation (lisibilité, hiérarchies, formats, comparaisons temporelles, saisonnalité)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Scope Item 4 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="bg-yellow-50 px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-xl font-semibold text-yellow-800 flex items-center">
+                            <i data-feather="bell" class="mr-2"></i>
+                            Alerte et détection d'anomalies
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="alert-circle" class="text-red-500 mr-2 mt-1"></i>
+                                <span>Seuils, bandes de contrôle, prévisions et détection d'écarts (jour/semaine/mois)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="mail" class="text-blue-500 mr-2 mt-1"></i>
+                                <span>Notifications contextualisées (e-mail, Slack/Teams) avec liens vers la vue d'investigation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Scope Item 5 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="bg-red-50 px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-xl font-semibold text-red-800 flex items-center">
+                            <i data-feather="shield" class="mr-2"></i>
+                            Gouvernance, qualité et traçabilité
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="file-text" class="text-purple-500 mr-2 mt-1"></i>
+                                <span>Data contracts, SLA de fraîcheur</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Contrôles de qualité (complet, exact, cohérent)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="git-merge" class="text-yellow-500 mr-2 mt-1"></i>
+                                <span>Lineage des métriques, versioning des définitions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="edit" class="text-blue-500 mr-2 mt-1"></i>
+                                <span>Journal des changements, processus de demande d'évolution</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Scope Item 6 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="bg-indigo-50 px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-xl font-semibold text-indigo-800 flex items-center">
+                            <i data-feather="lock" class="mr-2"></i>
+                            Sécurité et conformité
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="user" class="text-red-500 mr-2 mt-1"></i>
+                                <span>Contrôles d'accès (RBAC)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="eye-off" class="text-purple-500 mr-2 mt-1"></i>
+                                <span>Anonymisation/pseudonymisation, minimisation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="list" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Traçabilité des consultations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="shield" class="text-yellow-500 mr-2 mt-1"></i>
+                                <span>Alignement RGPD et politiques internes</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Scope Item 7 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="bg-pink-50 px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-xl font-semibold text-pink-800 flex items-center">
+                            <i data-feather="users" class="mr-2"></i>
+                            Adoption et diffusion
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i data-feather="calendar" class="text-blue-500 mr-2 mt-1"></i>
+                                <span>Rituels de pilotage (weekly business review, MBR/QBR)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="book-open" class="text-purple-500 mr-2 mt-1"></i>
+                                <span>Kits de lecture, formations ciblées</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="inbox" class="text-green-500 mr-2 mt-1"></i>
+                                <span>Digests automatisés</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="globe" class="text-yellow-500 mr-2 mt-1"></i>
+                                <span>Portail des métriques (glossaire vivant et recherche)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="list" class="mr-3 text-blue-600"></i>
+                Méthodologie et déroulé type
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Cadrage exécutif</h3>
+                    <p class="text-gray-700">Finalités, décisions à outiller, périmètre, objectifs quantifiés, populations cibles, rythme de pilotage, contraintes réglementaires.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Inventaire et audit de données</h3>
+                    <p class="text-gray-700">Cartographie des sources (analytics, adtech, CRM/ERP, e-commerce, support), évaluation de la qualité, des écarts inter-outils et de la latence ; identification des jointures et des manques.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Conception du modèle & sémantique</h3>
+                    <p class="text-gray-700">KPI tree, dictionnaire des métriques, règles d'attribution (marketing et revenus), conventions temporelles, gestion des identités et des événements, couche sémantique commune.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Construction & automatisation</h3>
+                    <p class="text-gray-700">Pipelines ELT/ETL, tests de données, orchestration, calculs incrémentaux, vues matérialisées, tableaux de bord prototypes, validation itérative avec les décideurs.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Qualité, sécurité, conformité</h3>
+                    <p class="text-gray-700">Mise en place des contrôles (fraîcheur, complétude, cohérence), RBAC, politiques de rétention, documentation, procédure de changement contrôlé.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Déploiement & adoption</h3>
+                    <p class="text-gray-700">Formation par persona, guides d'usage, rituels de pilotage, alerting, boucle d'amélioration continue (collecte des besoins, feuille de route d'évolution).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="package" class="mr-3 text-purple-600"></i>
+                Livrables standards
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-purple-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="file-text" class="text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Charte de pilotage</h3>
+                    <p class="text-gray-700">OEC, KPI par domaine, cibles, périodicité, responsabilités.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-blue-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="book" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Dictionnaire des métriques et glossaire</h3>
+                    <p class="text-gray-700">Définitions, formules, sources, filtres, fenêtres, limites.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-green-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="database" class="text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Modèle de données et couche sémantique</h3>
+                    <p class="text-gray-700">Schémas, mapping d'identifiants, règles de jointure documentée.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-yellow-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="layout" class="text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Tableaux de bord</h3>
+                    <p class="text-gray-700">Exécutifs, managériaux et opérationnels, prêts à l'emploi, avec filtres, drill-down et annotations.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-red-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="bell" class="text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Système d'alertes</h3>
+                    <p class="text-gray-700">Paramétré (seuils, forecasts, canaux de notification) et SLA de fraîcheur.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-indigo-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="clipboard" class="text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Dossier de gouvernance et kit d'adoption</h3>
+                    <p class="text-gray-700">Processus de changement, journal des versions, politique d'accès, guides, parcours de formation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="award" class="mr-3 text-green-600"></i>
+                Résultats attendus et indicateurs clés
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white border border-green-200 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-green-800 mb-4 flex items-center">
+                        <i data-feather="trending-up" class="mr-2"></i>
+                        Impact business
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Accélération et fiabilisation des décisions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Meilleure allocation budgétaire par canal/segment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Réduction du coût d'acquisition effectif</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Amélioration des taux de conversion et de rétention</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Visibilité consolidée du pipeline et des revenus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Réduction du délai de réaction en cas d'anomalie</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white border border-blue-200 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-blue-800 mb-4 flex items-center">
+                        <i data-feather="bar-chart-2" class="mr-2"></i>
+                        Qualité et adoption du reporting
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-blue-500 mr-2 mt-1"></i>
+                            <span>Taux d'usage des dashboards</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-blue-500 mr-2 mt-1"></i>
+                            <span>Temps médian d'accès à l'information</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-blue-500 mr-2 mt-1"></i>
+                            <span>Fraîcheur moyenne des données</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-blue-500 mr-2 mt-1"></i>
+                            <span>Taux d'alertes pertinentes vs bruit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-blue-500 mr-2 mt-1"></i>
+                            <span>Nombre d'incidents évités/détectés</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-blue-500 mr-2 mt-1"></i>
+                            <span>Baisse des extractions ad hoc manuelles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-blue-500 mr-2 mt-1"></i>
+                            <span>Diminution des écarts inter-outils</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white border border-purple-200 rounded-xl p-6 md:col-span-2">
+                    <h3 class="text-xl font-semibold text-purple-800 mb-4 flex items-center">
+                        <i data-feather="shield" class="mr-2"></i>
+                        Gouvernance
+                    </h3>
+                    <ul class="space-y-3 md:columns-2">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1"></i>
+                            <span>Respect des SLA</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1"></i>
+                            <span>Couverture documentaire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1"></i>
+                            <span>Nombre de métriques standardisées</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-purple-500 mr-2 mt-1"></i>
+                            <span>Stabilité des définitions dans le temps</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governance Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="users" class="mr-3 text-indigo-600"></i>
+                Gouvernance et mode de collaboration
+            </h2>
+            <div class="bg-indigo-50 p-6 rounded-xl">
+                <p class="text-lg text-gray-700 mb-4">
+                    Un comité de pilotage définit les priorités et tranche les évolutions d'indicateurs. Un owner des métriques par domaine garantit la qualité et l'alignement métier. Les équipes data/BI assurent l'industrialisation (pipelines, tests, sécurité). Les directions consommatrices (marketing, ventes, produit, finance, service client) participent aux revues régulières, valident les lectures et portent l'adoption auprès de leurs équipes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Prerequisites Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="alert-circle" class="mr-3 text-yellow-600"></i>
+                Pré-requis côté client
+            </h2>
+            <div class="bg-yellow-50 p-6 rounded-xl">
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i data-feather="database" class="text-yellow-600 mr-2 mt-1"></i>
+                        <span>Accès aux sources de données (analytics, CRM/ERP, plateformes publicitaires, e-commerce, support)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="user" class="text-yellow-600 mr-2 mt-1"></i>
+                        <span>Désignation des sponsors et des owners</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="target" class="text-yellow-600 mr-2 mt-1"></i>
+                        <span>Clarification des objectifs et des cibles</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="percent" class="text-yellow-600 mr-2 mt-1"></i>
+                        <span>Validation des règles d'attribution et des conventions temporelles</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="clock" class="text-yellow-600 mr-2 mt-1"></i>
+                        <span>Arbitrage sur les priorités d'intégration et la fréquence de rafraîchissement</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Success Factors Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="zap" class="mr-3 text-green-600"></i>
+                Facteurs de succès et limites
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white border border-green-200 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-green-800 mb-4 flex items-center">
+                        <i data-feather="thumbs-up" class="mr-2"></i>
+                        Facteurs clés
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Définitions stables des KPI</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Qualité et fiabilité de la donnée source</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Simplicité visuelle au service de la décision</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Alertes actionnables et pertinentes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Rituels de lecture réguliers et cadrés</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Documentation vivante et accessible</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white border border-red-200 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-red-800 mb-4 flex items-center">
+                        <i data-feather="alert-triangle" class="mr-2"></i>
+                        Limites et risques
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Dépendances techniques (qualité des sources, latence des API)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Contraintes réglementaires (consentement, minimisation)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Risques d'inflation de KPI ou de sur-segmentation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="x" class="text-red-500 mr-2 mt-1"></i>
+                            <span>Complexité des règles d'attribution multi-canal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1"></i>
+                            <span class="text-gray-700">Ces limites se maîtrisent par la priorisation, la gouvernance et l'itération contrôlée</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="briefcase" class="mr-3 text-blue-600"></i>
+                Cas d'usage typiques
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-blue-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="dollar-sign" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Pilotage d'un mix média multi-plateformes</h3>
+                    <p class="text-gray-700">Analyse des performances par canal, optimisation des budgets publicitaires.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-purple-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="trending-up" class="text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Consolidation marketing-ventes</h3>
+                    <p class="text-gray-700">Suivi du coût d'acquisition → pipeline → revenus.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-green-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="shopping-cart" class="text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Suivi e-commerce</h3>
+                    <p class="text-gray-700">Analyse des tunnels de conversion, AOV, marge par produit.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-yellow-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="cloud" class="text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Pilotage SaaS</h3>
+                    <p class="text-gray-700">Suivi de l'ARR/MRR, NDR/GRR, churn, expansion.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-red-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="smile" class="text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Suivi de la satisfaction</h3>
+                    <p class="text-gray-700">Analyse du CSAT, CES, NPS et qualité de service.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="bg-indigo-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="map-pin" class="text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Supervision d'un réseau de points de vente</h3>
+                    <p class="text-gray-700">Suivi du GBP, visites, appels, itinéraires.</p>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-300 md:col-span-2 lg:col-span-3">
+                    <div class="bg-pink-100 p-3 rounded-full inline-block mb-4">
+                        <i data-feather="activity" class="text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Monitoring de lancements produits et de campagnes majeures</h3>
+                    <p class="text-gray-700">Analyse des performances en temps réel, ajustement des stratégies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <i data-feather="star" class="mr-3 text-yellow-600"></i>
+                Valeur apportée
+            </h2>
+            <div class="bg-yellow-50 p-8 rounded-xl">
+                <p class="text-lg text-gray-700 mb-4">
+                    Le Reporting Stratégique & les Tableaux de Bord instaurent un avantage informationnel durable : une lecture unifiée de la performance, des décisions plus rapides et mieux fondées, une réduction des risques opérationnels et une capacité à démontrer—preuves à l'appui—la contribution réelle des initiatives au résultat financier.
+                </p>
+                <p class="text-lg text-gray-700 font-medium">
+                    Ils transforment la donnée en actif managérial et la mesure en levier de compétitivité.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+                <i data-feather="help-circle" class="mr-3 text-blue-600"></i>
+                Questions fréquentes
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-900">Quelle est la durée typique d'un projet de reporting stratégique ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            La durée varie selon la complexité des besoins et le nombre de sources à intégrer. Un projet standard prend généralement entre 6 et 12 semaines, réparties en phases de cadrage, conception, développement et déploiement. Les projets plus complexes (multi-sources, règles d'attribution sophistiquées) peuvent nécessiter jusqu'à 16 semaines.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-900">Quels outils utilisez-vous pour créer les tableaux de bord ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            Nous nous adaptons à votre écosystème existant. Pour la visualisation, nous travaillons principalement avec Power BI, Tableau, Looker ou des solutions sur-mesure selon vos besoins. Pour l'architecture de données, nous privilégions des solutions comme Snowflake, BigQuery, Redshift ou des entrepôts SQL traditionnels. L'important est de choisir les outils les plus adaptés à votre contexte technique et à vos compétences internes.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-900">Comment garantissez-vous la qualité des données ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            Nous mettons en place un système complet de contrôle qualité : validation des sources, tests automatisés (complétude, cohérence, exactitude), monitoring de la fraîcheur, alertes sur les anomalies. Chaque métrique est documentée avec ses limites et conditions d'utilisation. Nous établissons également des SLA clairs avec les propriétaires des données sources.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-900">Quelle est votre approche pour garantir l'adoption par les équipes ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            L'adoption est un axe central de notre méthodologie. Nous impliquons les futurs utilisateurs dès la conception via des ateliers collaboratifs. Nous adaptons les vues aux besoins spécifiques de chaque persona. Nous mettons en place des rituels de lecture (revues hebdomadaires/mensuelles) et fournissons des kits de formation ciblés. Enfin, nous mesurons régulièrement le taux d'usage et collectons les feedbacks pour améliorer continuellement les outils.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-900">Comment gérez-vous l'évolution des besoins dans le temps ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            Nous établissons un processus de gouvernance clair avec un comité de pilotage qui priorise les évolutions. La couche sémantique est conçue pour être évolutive. Nous documentons systématiquement chaque changement (journal des versions) et proposons des forfaits d'évolution post-projet. En moyenne, nous recommandons une revue trimestrielle des indicateurs pour s'assurer de leur pertinence continue.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center">
+                        <span class="text-lg font-medium text-gray-900">Quels sont vos tarifs pour ce type de service ?</span>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-700">
+                            Nos tarifs dépendent de la complexité du projet (nombre de sources, métriques, utilisateurs). Un projet standard démarre à partir de 15 000€. Nous proposons des forfaits adaptés aux PME comme aux grands comptes. Contactez-nous pour une étude personnalisée de vos besoins et un devis précis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <div class="bg-gray-50 rounded-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <i data-feather="mail" class="mr-3 text-blue-600"></i>
+                    Contactez-nous
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="flex items-start mb-4">
+                            <i data-feather="map-pin" class="text-gray-700 mr-3 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Adresse</h3>
+                                <p class="text-gray-700">231 Rue Saint-Honoré, 75001 Paris</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i data-feather="phone" class="text-gray-700 mr-3 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Téléphone</h3>
+                                <p class="text-gray-700">01 88 31 53 68 / 06 02 20 63 13</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="clock" class="text-gray-700 mr-3 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Horaires</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>Lundi : 09:00–12:00, 14:00–19:30</li>
+                                    <li>Mardi : 09:00–12:00, 14:00–19:30</li>
+                                    <li>Mercredi : 09:00–12:00, 14:00–19:30</li>
+                                    <li>Jeudi : 09:00–12:00, 14:00–18:00</li>
+                                    <li>Vendredi : 09:00–12:00, 14:00–18:00</li>
+                                    <li>Samedi : 09:00–12:00</li>
+                                    <li>Dimanche : Fermé</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Envoyez-nous un message</h3>
+                            <p class="text-gray-700 mb-4">Vous avez des questions sur nos services ? Nous sommes à votre écoute.</p>
+                            <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                                Accéder au formulaire
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="mb-12" data-aos="fade-up">
+            <div class="bg-blue-600 rounded-xl p-8 text-white">
+                <h2 class="text-3xl font-bold mb-2">Demander un devis</h2>
+                <p class="text-blue-100 mb-6">Remplissez ce formulaire pour recevoir une proposition personnalisée.</p>
+                
+                <form id="devisForm" class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nom" class="block text-blue-100 mb-2">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required class="w-full px-4 py-3 rounded-lg bg-blue-500 border border-blue-400 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300">
+                    </div>
+                    <div>
+                        <label for="entreprise" class="block text-blue-100 mb-2">Entreprise</label>
+                        <input type="text" id="entreprise" name="entreprise" class="w-full px-4 py-3 rounded-lg bg-blue-500 border border-blue-400 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-blue-100 mb-2">Email *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-blue-500 border border-blue-400 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300">
+                    </div>
+                    <div>
+                        <label for="telephone" class="block text-blue-100 mb-2">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" class="w-full px-4 py-3 rounded-lg bg-blue-500 border border-blue-400 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="besoins" class="block text-blue-100 mb-2">Décrivez vos besoins *</label>
+                        <textarea id="besoins" name="besoins" rows="4" required class="w-full px-4 py-3 rounded-lg bg-blue-500 border border-blue-400 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Envoyer la demande
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Form submission
+        document.getElementById('devisForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // In a real scenario, you would send this data to your server
+            console.log('Form data:', data);
+            
+            // Show success message
+            alert('Votre demande a bien été envoyée. Nous vous contacterons rapidement.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

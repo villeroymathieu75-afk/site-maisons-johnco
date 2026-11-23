@@ -1,0 +1,400 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: DNVB E-Commerce Optimization</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold text-gray-900 mb-4">DNVB Fashion E-Commerce Transformation</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">8-month optimization project that increased revenue by 78% through UX redesign, funnel optimization, and data-driven retargeting</p>
+            <div class="mt-8">
+                <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full mr-2">E-Commerce</span>
+                <span class="inline-block bg-pink-100 text-pink-800 text-sm font-semibold px-3 py-1 rounded-full mr-2">UX Optimization</span>
+                <span class="inline-block bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">Retargeting</span>
+            </div>
+        </div>
+
+        <!-- Project Overview -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Project Overview</h2>
+                <p class="text-gray-600 mb-4">This 8-month project aimed to enhance the digital performance of a fashion DNVB (Digital Native Vertical Brand) by improving user experience, sales funnel efficiency, and retargeting campaign relevance.</p>
+                <p class="text-gray-600 mb-4">Key challenges included a complex navigation system, insufficient product details, and a checkout process with high abandonment rates.</p>
+                <div class="bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                    <h3 class="font-semibold text-indigo-800 mb-2">Core Objectives</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-indigo-500 mr-2 mt-0.5"></i>
+                            <span>Increase conversion rate sustainably</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-indigo-500 mr-2 mt-0.5"></i>
+                            <span>Reduce customer acquisition cost</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-indigo-500 mr-2 mt-0.5"></i>
+                            <span>Maximize e-commerce profitability</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-indigo-500 mr-2 mt-0.5"></i>
+                            <span>Reinforce premium brand image</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <canvas id="resultsChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Key Statistics -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Key Results Achieved</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-5xl font-bold text-indigo-600 mb-2">78%</div>
+                    <p class="text-gray-600">Total revenue growth</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-5xl font-bold text-pink-600 mb-2">61%</div>
+                    <p class="text-gray-600">Conversion rate increase</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-5xl font-bold text-purple-600 mb-2">48%</div>
+                    <p class="text-gray-600">Additional sales from retargeting</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-5xl font-bold text-teal-600 mb-2">34%</div>
+                    <p class="text-gray-600">Bounce rate reduction</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategy Sections -->
+        <div class="space-y-20">
+            <!-- UX Redesign -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-1 md:order-2">
+                    <h3 class="text-xs font-semibold text-indigo-500 uppercase tracking-wider mb-2">Phase 1</h3>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">UX/UI Redesign</h2>
+                    <p class="text-gray-600 mb-4">A comprehensive audit revealed friction points: complex navigation, insufficient product details, and lack of key information accessibility.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                            <span>Minimalist, immersive interface with HD visuals</span>
+                        </li>
+                        <li class="flex">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                            <span>Intelligent filter engine (sizes, colors, collections)</span>
+                        </li>
+                        <li class="flex">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                            <span>Enhanced product pages with customer reviews and recommendations</span>
+                        </li>
+                        <li class="flex">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                            <span>Interactive sizing guide</span>
+                        </li>
+                    </ul>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-lg p-2">
+                                <i data-feather="bar-chart-2" class="text-white"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Results</p>
+                                <p class="text-sm text-gray-600">Bounce rate ↓34%, Session duration ↑52%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-2 md:order-1">
+                    <img src="http://static.photos/fashion/1024x576/1" alt="UX Redesign" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+
+            <!-- Checkout Optimization -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-xs font-semibold text-indigo-500 uppercase tracking-wider mb-2">Phase 2</h3>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Checkout Funnel Optimization</h2>
+                    <p class="text-gray-600 mb-4">The original checkout process had too many steps and high cart abandonment. The new flow was streamlined to three clicks maximum.</p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Improvements:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-5 w-5 bg-indigo-100 text-indigo-800 rounded-full flex items-center justify-center mr-2">
+                                    <span class="text-xs font-bold">1</span>
+                                </div>
+                                <span>Add to cart → Checkout → Payment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-5 w-5 bg-indigo-100 text-indigo-800 rounded-full flex items-center justify-center mr-2">
+                                    <span class="text-xs font-bold">2</span>
+                                </div>
+                                <span>Diversified payment options (cards, PayPal, Apple Pay, Klarna)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-5 w-5 bg-indigo-100 text-indigo-800 rounded-full flex items-center justify-center mr-2">
+                                    <span class="text-xs font-bold">3</span>
+                                </div>
+                                <span>Urgency notifications (low stock, express delivery)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-pink-500 rounded-lg p-2">
+                                <i data-feather="shopping-cart" class="text-white"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Results</p>
+                                <p class="text-sm text-gray-600">Conversion rate ↑61%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="http://static.photos/technology/1024x576/2" alt="Checkout Optimization" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+
+            <!-- Retargeting -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-1 md:order-2">
+                    <h3 class="text-xs font-semibold text-indigo-500 uppercase tracking-wider mb-2">Phase 3</h3>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Multichannel Retargeting</h2>
+                    <p class="text-gray-600 mb-4">Visitors who didn't complete purchases were retargeted through dynamic ads on Facebook, Instagram, and Google Display.</p>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 text-purple-600">
+                                <i data-feather="target"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-medium text-gray-900">Personalized Campaigns</h4>
+                                <p class="text-sm text-gray-600">Ads customized based on viewed products</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 text-purple-600">
+                                <i data-feather="mail"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-medium text-gray-900">Automated Emails</h4>
+                                <p class="text-sm text-gray-600">Cart abandonment sequences, personalized recommendations</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 text-purple-600">
+                                <i data-feather="smartphone"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-medium text-gray-900">Cross-Device Tracking</h4>
+                                <p class="text-sm text-gray-600">Following users from mobile research to desktop purchase</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-purple-500 rounded-lg p-2">
+                                <i data-feather="dollar-sign" class="text-white"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Results</p>
+                                <p class="text-sm text-gray-600">48% more sales from retargeting (27% of total revenue)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-2 md:order-1">
+                    <img src="http://static.photos/technology/1024x576/3" alt="Retargeting" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+
+            <!-- Analytics -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-xs font-semibold text-indigo-500 uppercase tracking-wider mb-2">Phase 4</h3>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Conversion Analytics</h2>
+                    <p class="text-gray-600 mb-4">An advanced conversion analysis system was implemented using Google Analytics 4, Tag Manager, and Hotjar.</p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-2">Tracking Capabilities:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex">
+                                <i data-feather="activity" class="text-teal-500 mr-2 mt-0.5"></i>
+                                <span>User behavior (clicks, scrolls, time on page)</span>
+                            </li>
+                            <li class="flex">
+                                <i data-feather="zap" class="text-teal-500 mr-2 mt-0.5"></i>
+                                <span>Regular A/B testing (landing pages, CTAs, promotions)</span>
+                            </li>
+                            <li class="flex">
+                                <i data-feather="trending-up" class="text-teal-500 mr-2 mt-0.5"></i>
+                                <span>Continuous optimization based on data insights</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-teal-500 rounded-lg p-2">
+                                <i data-feather="pie-chart" class="text-white"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Results</p>
+                                <p class="text-sm text-gray-600">22% increase in average order value</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="http://static.photos/office/1024x576/4" alt="Analytics Dashboard" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Results -->
+        <div class="mt-24 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-8 text-white">
+            <h2 class="text-3xl font-bold mb-6">Final Results Summary</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Key Performance Indicators</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <div class="bg-white bg-opacity-20 rounded-full p-2 mr-4">
+                                <i data-feather="arrow-up" class="text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">78% Revenue Growth</p>
+                                <p class="text-indigo-100 text-sm">Total e-commerce revenue increase</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="bg-white bg-opacity-20 rounded-full p-2 mr-4">
+                                <i data-feather="shopping-bag" class="text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">61% Higher Conversions</p>
+                                <p class="text-indigo-100 text-sm">Improved checkout process</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="bg-white bg-opacity-20 rounded-full p-2 mr-4">
+                                <i data-feather="repeat" class="text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">34% Fewer Bounces</p>
+                                <p class="text-indigo-100 text-sm">Improved site engagement</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Revenue Impact</h3>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <p class="text-indigo-100">Before Optimization</p>
+                                <p class="font-bold text-lg">$X</p>
+                            </div>
+                            <i data-feather="arrow-right" class="text-white"></i>
+                            <div>
+                                <p class="text-indigo-100">After Optimization</p>
+                                <p class="font-bold text-lg">$1.78X</p>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-white bg-opacity-30 rounded-full overflow-hidden">
+                            <div class="h-full bg-white rounded-full" style="width: 78%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="mt-20 bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto text-center">
+            <i data-feather="message-square" class="text-indigo-500 w-12 h-12 mx-auto mb-6"></i>
+            <blockquote class="text-xl font-medium text-gray-700 mb-6">
+                "This comprehensive optimization transformed our digital performance. The combination of UX improvements, funnel optimization, and data-driven retargeting delivered exceptional ROI and positioned us for sustainable growth."
+            </blockquote>
+            <div>
+                <p class="font-bold text-gray-900">Marketing Director</p>
+                <p class="text-gray-600">DNVB Fashion Brand</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Chart.js implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('resultsChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Revenue Growth', 'Conversion Rate', 'Retargeting Sales', 'Bounce Rate Reduction', 'Avg Order Value'],
+                    datasets: [{
+                        label: 'Performance Improvement',
+                        data: [78, 61, 48, 34, 22],
+                        backgroundColor: [
+                            'rgba(99, 102, 241, 0.7)',
+                            'rgba(236, 72, 153, 0.7)',
+                            'rgba(124, 58, 237, 0.7)',
+                            'rgba(20, 184, 166, 0.7)',
+                            'rgba(16, 185, 129, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(99, 102, 241, 1)',
+                            'rgba(236, 72, 153, 1)',
+                            'rgba(124, 58, 237, 1)',
+                            'rgba(20, 184, 166, 1)',
+                            'rgba(16, 185, 129, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Percentage Improvement (%)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Performance Metrics Improvement',
+                            font: {
+                                size: 16
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

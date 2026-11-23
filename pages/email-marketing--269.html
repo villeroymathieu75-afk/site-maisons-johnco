@@ -1,0 +1,476 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Marketing | Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-left-color: #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <div class="min-h-screen gradient-bg">
+        <!-- Hero Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    <span class="text-blue-600">Email Marketing</span> sur Mesure
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Stratégies performantes pour transformer vos emails en leviers de croissance et de fidélisation.
+                </p>
+                <div class="mt-10 flex justify-center">
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure/" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                        Demander un devis
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Definition Section -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="mail" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Définition et périmètre</h2>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        L'Email Marketing consiste à concevoir, produire, envoyer et mesurer des communications électroniques à destination d'audiences opt-in, dans un objectif de notoriété, d'activation, de conversion et de fidélisation.
+                    </p>
+                    <p class="text-gray-600">
+                        Le périmètre couvre l'ensemble du cycle : stratégie éditoriale et commerciale, collecte et gestion des consentements, segmentation et ciblage, conception créative (HTML/CSS + texte), scénarisation des envois (campagnes et messages transactionnels), délivrabilité, conformité (RGPD/CNIL), intégration technique (ESP, CRM, CDP, e-commerce), mesure des performances et optimisation continue.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Benefits -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900">Finalités business et marketing</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-8 service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="dollar-sign" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Revenus récurrents</h3>
+                    <p class="text-gray-600">Générer des revenus récurrents à coût marginal faible et exploiter la donnée 1st-party (moins dépendante des plateformes).</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="trending-down" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Réduction du CAC</h3>
+                    <p class="text-gray-600">Réduire le coût d'acquisition client par la réactivation et l'up/cross-sell.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Sécurité relationnelle</h3>
+                    <p class="text-gray-600">Sécuriser la relation client (transactionnel, service, réassurance) et soutenir le cycle de vie (onboarding, usage, rétention, win-back).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900">Approche méthodologique</h2>
+            </div>
+            <div class="space-y-8">
+                <!-- Cadrage & données -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="clipboard" class="text-blue-600 w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Cadrage & données</h3>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Objectifs (CA, ROAS, LTV, part CRM), contraintes juridiques</li>
+                            <li>Inventaire des sources de contacts, état de la base (taille, fraicheur, engagement)</li>
+                            <li>Cartographie du cycle de vie (acquisition → activation → réachat → churn)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Collecte & consentements -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="check-circle" class="text-blue-600 w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Collecte & consentements</h3>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Dispositifs d'acquisition qualifiée (formulaires, checkout, événements)</li>
+                            <li>Double opt-in recommandé, centre de préférences (thématiques, fréquences)</li>
+                            <li>Gestion des listes de suppression, preuve de consentement, politiques de conservation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Architecture de flux -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="layers" class="text-blue-600 w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Architecture de flux</h3>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Séparation transactionnel (confirmations, reçus, notifications) et marketing (newsletters, offres, contenus)</li>
+                            <li>Priorisation des parcours lifecycle (welcome, post-achat, cross-sell, réactivation, anniversaires, alertes stock/prix)</li>
+                            <li>Campagnes ad hoc (lancements, saisonnalités)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Segmentation & ciblage -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i data-feather="filter" class="text-blue-600 w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Segmentation & ciblage</h3>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Règles RFM, probabilités d'achat, appétence produit</li>
+                            <li>Signaux d'intention (navigation, panier), statuts relationnels (nouveau, actif, à risque, dormants)</li>
+                            <li>Approche B2B (compte, fonction, maturité)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lifecycle Strategy -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900">Stratégie de contenu par moments du cycle de vie</h2>
+            </div>
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Welcome / Onboarding -->
+                    <div class="flex items-start" data-aos="fade-up">
+                        <div class="bg-blue-600 rounded-full p-2 flex-shrink-0 mr-4 relative z-10">
+                            <i data-feather="user-plus" class="text-white w-5 h-5"></i>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-semibold mb-2">Welcome / Onboarding</h3>
+                            <p class="text-gray-600">Présentation de la valeur, éducatif court, 2–4 messages cadencés, 1 offre de première activation si B2C.</p>
+                        </div>
+                    </div>
+
+                    <!-- Post-achat / Nurturing -->
+                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-blue-600 rounded-full p-2 flex-shrink-0 mr-4 relative z-10">
+                            <i data-feather="shopping-bag" class="text-white w-5 h-5"></i>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-semibold mb-2">Post-achat / Nurturing</h3>
+                            <p class="text-gray-600">Confirmation, suivi, conseils d'usage, UGC/avis, cross-sell contextuel.</p>
+                        </div>
+                    </div>
+
+                    <!-- Récurrence / Fidélisation -->
+                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-blue-600 rounded-full p-2 flex-shrink-0 mr-4 relative z-10">
+                            <i data-feather="repeat" class="text-white w-5 h-5"></i>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-semibold mb-2">Récurrence / Fidélisation</h3>
+                            <p class="text-gray-600">Contenus utiles (guides, nouveautés), avantages exclusifs, statuts programmes, relances paniers/wishlists.</p>
+                        </div>
+                    </div>
+
+                    <!-- Prévention du churn -->
+                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-blue-600 rounded-full p-2 flex-shrink-0 mr-4 relative z-10">
+                            <i data-feather="alert-octagon" class="text-white w-5 h-5"></i>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-semibold mb-2">Prévention du churn</h3>
+                            <p class="text-gray-600">Détection d'inactivité, soft incentive, alternative de fréquence, enquête courte.</p>
+                        </div>
+                    </div>
+
+                    <!-- Réactivation / Win-back -->
+                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-blue-600 rounded-full p-2 flex-shrink-0 mr-4 relative z-10">
+                            <i data-feather="refresh-cw" class="text-white w-5 h-5"></i>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-md p-6 flex-1">
+                            <h3 class="text-xl font-semibold mb-2">Réactivation / Win-back</h3>
+                            <p class="text-gray-600">Campagne limitée dans le temps, appel explicite à ré-opt-in, sinon désinscription proactive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPIs -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900">Indicateurs clés de performance</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6 text-center" data-aos="fade-up">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="inbox" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Délivrabilité</h3>
+                    <p class="text-gray-600 text-sm">Taux d'acceptation, bounces, inbox placement, plaintes (<0,1 %), réputation domaine.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="activity" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Engagement</h3>
+                    <p class="text-gray-600 text-sm">Taux d'ouverture (indicatif), CTR/CTOR, profondeur de visite, réponses.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="dollar-sign" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Business</h3>
+                    <p class="text-gray-600 text-sm">Taux de conversion, CA attribué, RPE (revenue per email), ROAS CRM, LTV/CAC, part du CA CRM.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="shield" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Hygiène</h3>
+                    <p class="text-gray-600 text-sm">Croissance nette de base, part d'actifs 90 jours, churn volontaire (désinscriptions), churn technique (inactifs purgés).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900">Livrables</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-8" data-aos="fade-up">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="file-text" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Stratégie Email</h3>
+                    <p class="text-gray-600">Objectifs, segments, pression, contenus, calendrier.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="layout" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Gabarits modulaires</h3>
+                    <p class="text-gray-600">Accessibles et compatibles dark mode, bibliothèque de blocs.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="settings" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Parcours automatisés</h3>
+                    <p class="text-gray-600">Clé en main (welcome, post-achat, panier, fidélisation, win-back).</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="check-square" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Cadre de conformité</h3>
+                    <p class="text-gray-600">Collecte, preuves, centre de préférences, mentions.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-blue-100 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i data-feather="bar-chart-2" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Run & optimisation</h3>
+                    <p class="text-gray-600">Plan de tests, tableaux de bord, routines d'hygiène et de délivrabilité.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expected Results -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="bg-blue-50 rounded-xl p-8" data-aos="fade-up">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-600 p-3 rounded-full mr-4">
+                        <i data-feather="award" class="text-white w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Résultats attendus</h2>
+                </div>
+                <p class="text-gray-700">
+                    Mise en place d'un dispositif CRM propriétaire, rentable et pérenne, capable de générer des revenus incrémentaux mesurables, d'améliorer la valeur vie client, de réduire la dépendance publicitaire et d'offrir une expérience relationnelle cohérente et conforme.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900">Questions fréquentes</h2>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-medium">Quelle est la différence entre email marketing et spam ?</span>
+                        <i data-feather="chevron-down" class="transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            L'email marketing se distingue fondamentalement du spam par le consentement explicite des destinataires (opt-in), la pertinence des contenus envoyés, le respect des réglementations (RGPD/CNIL) et la qualité de la relation établie. Contrairement au spam, il s'appuie sur une base de contacts qualifiés et consentants.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-medium">Combien de temps faut-il pour voir les premiers résultats ?</span>
+                        <i data-feather="chevron-down" class="transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Les délais varient selon l'état initial de votre base email et votre secteur d'activité. Généralement, les premières campagnes montrent des résultats sous 2-4 semaines, tandis que l'optimisation complète du cycle de vie peut prendre 3-6 mois pour déployer tous les parcours automatisés et affiner les segments.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-medium">Quel est le coût moyen d'une campagne email ?</span>
+                        <i data-feather="chevron-down" class="transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Les coûts dépendent de nombreux facteurs : volume d'envois, complexité des créations, niveau de segmentation, intégrations techniques nécessaires. En moyenne, comptez entre 1 500€ et 5 000€ pour une campagne complète (stratégie, création, envoi, reporting), avec des économies d'échelle sur les campagnes récurrentes.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <button class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+                        <span class="font-medium">Comment mesurez-vous l'impact réel sur mon chiffre d'affaires ?</span>
+                        <i data-feather="chevron-down" class="transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-600">
+                            Nous utilisons plusieurs méthodes complémentaires : tracking des conversions post-clic, analyse d'incrémentalité via groupes témoins (holdout), modélisation de l'attribution multi-canal, et corrélation entre les pics d'activité email et les variations de CA. Cette approche multidimensionnelle permet d'isoler l'impact réel du canal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Quote -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Devis Button -->
+            <div data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="file-text" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Demander un devis</h2>
+                    <p class="text-gray-600 mb-8">Obtenez une estimation personnalisée gratuite adaptée à vos besoins spécifiques et recevez une proposition détaillée. Notre équipe vous répond sous 48 heures ouvrées.</p>
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="file-text" class="mr-3"></i>
+                        Demander un devis gratuit
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Gratuit et sans engagement</p>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <div data-aos="fade-left">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="mail" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Nous contacter</h2>
+                    <p class="text-gray-600 mb-8">Une question ? Besoin d'informations complémentaires ? Notre équipe est à votre écoute pour échanger sur vos besoins.</p>
+                    <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="mail" class="mr-3"></i>
+                        Nous contacter
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Réponse rapide garantie</p>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        feather.replace();
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real scenario, you would send this data to your server
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email) {
+                alert('Veuillez remplir les champs obligatoires.');
+                return;
+            }
+            
+            // Here you would typically send the data to your server
+            console.log('Form data:', data);
+            
+            // Show success message
+            alert('Votre demande a bien été envoyée. Nous vous contacterons rapidement.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

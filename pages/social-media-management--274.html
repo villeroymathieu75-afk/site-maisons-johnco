@@ -1,0 +1,556 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Management - Maison John&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion-content.active {
+            max-height: 1000px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <div class="gradient-bg min-h-screen">
+        <main class="container mx-auto px-4 py-12">
+            <!-- Hero Section -->
+            <section class="text-center mb-16" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-indigo-900">
+                    <i data-feather="share-2" class="inline mr-3"></i> Social Media Management
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">
+                    Une présence stratégique et performante sur les réseaux sociaux pour développer votre marque
+                </p>
+            </section>
+
+            <!-- Definition Section -->
+            <section class="mb-20" data-aos="fade-up">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-indigo-800 flex items-center">
+                        <i data-feather="book-open" class="mr-3"></i> Définition et périmètre
+                    </h2>
+                    <div class="space-y-4 text-gray-700">
+                        <p>Le Social Media Management désigne la gestion stratégique, organisationnelle et opérationnelle de l'ensemble des activités d'une marque ou d'une organisation sur les réseaux sociaux.</p>
+                        <p>Ce service dépasse la simple animation de comptes : il englobe la définition d'objectifs alignés avec la stratégie globale de l'entreprise, la planification éditoriale, la production et diffusion de contenus, l'orchestration des campagnes organiques et sponsorisées, la modération et la relation communautaire, le suivi de la performance, ainsi que la gouvernance des équipes et des outils.</p>
+                        <p>Le périmètre inclut également :</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>La veille concurrentielle et sectorielle</li>
+                            <li>L'innovation créative et technologique</li>
+                            <li>La gestion des risques et de l'e-réputation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Objectives Section -->
+            <section class="mb-20" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-8 text-indigo-800 text-center flex justify-center items-center">
+                    <i data-feather="target" class="mr-3"></i> Finalités business et marketing
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="award" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Notoriété</h3>
+                        <p class="text-gray-600">Développer la notoriété et la visibilité de la marque sur les canaux sociaux</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="users" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Engagement</h3>
+                        <p class="text-gray-600">Accroître l'engagement des communautés à travers des contenus et conversations à valeur ajoutée</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="trending-up" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Performance</h3>
+                        <p class="text-gray-600">Soutenir la performance commerciale en générant du trafic qualifié et des conversions</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="heart" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Fidélisation</h3>
+                        <p class="text-gray-600">Améliorer la fidélisation client par une communication régulière, cohérente et personnalisée</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="image" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Image</h3>
+                        <p class="text-gray-600">Renforcer l'image et la crédibilité grâce à une présence professionnelle et maîtrisée</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="refresh-cw" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Adaptation</h3>
+                        <p class="text-gray-600">Anticiper les tendances et adapter la communication aux évolutions rapides des plateformes</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methodology Section -->
+            <section class="mb-20" data-aos="fade-up">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-indigo-800 flex items-center">
+                        <i data-feather="list" class="mr-3"></i> Approche méthodologique
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i data-feather="search" class="text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Audit initial</h3>
+                                <p class="text-gray-700">Analyse des comptes existants, benchmark concurrentiel, diagnostic de performance et de positionnement.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i data-feather="target" class="text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Stratégie Social Media</h3>
+                                <p class="text-gray-700">Définition des objectifs (notoriété, engagement, conversion, fidélisation), choix des plateformes prioritaires, élaboration de la ligne éditoriale et visuelle.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i data-feather="calendar" class="text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Planification éditoriale</h3>
+                                <p class="text-gray-700">Création d'un calendrier de publications structuré, intégrant contenus organiques, campagnes sponsorisées et temps forts.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i data-feather="image" class="text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Production de contenus</h3>
+                                <p class="text-gray-700">Conception de visuels, vidéos, stories, carrousels et formats adaptés aux codes de chaque réseau.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i data-feather="send" class="text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Publication et orchestration</h3>
+                                <p class="text-gray-700">Utilisation d'outils de planification, adaptation des messages à chaque plateforme, optimisation des horaires de diffusion.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i data-feather="message-square" class="text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Community management</h3>
+                                <p class="text-gray-700">Modération proactive, réponses personnalisées, gestion des conversations privées et publiques.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i data-feather="dollar-sign" class="text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Gestion publicitaire</h3>
+                                <p class="text-gray-700">Intégration des campagnes Social Ads dans une logique globale, coordination avec les actions organiques.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i data-feather="bar-chart-2" class="text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Analyse et reporting</h3>
+                                <p class="text-gray-700">Suivi des KPI, mise en place de tableaux de bord, recommandations stratégiques pour l'optimisation continue.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i data-feather="zap" class="text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Innovation et adaptation</h3>
+                                <p class="text-gray-700">Test de nouveaux formats (Reels, Shorts, Lives, podcasts sociaux), veille technologique et adoption rapide des évolutions algorithmiques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quality Standards Section -->
+            <section class="mb-20" data-aos="fade-up">
+                <div class="bg-indigo-800 text-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6 flex items-center">
+                        <i data-feather="check-circle" class="mr-3"></i> Standards de qualité et conformité
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
+                                <i data-feather="layers" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Cohérence de marque</h3>
+                                <p>Sur toutes les plateformes pour une identité unifiée</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
+                                <i data-feather="eye" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Accessibilité</h3>
+                                <p>Sous-titres, textes alternatifs, lisibilité mobile</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
+                                <i data-feather="shield" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Conformité</h3>
+                                <p>RGPD, droits d'auteur, politiques de plateforme</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
+                                <i data-feather="lock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Sécurité</h3>
+                                <p>Authentification à deux facteurs, gestion des droits administrateurs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
+                                <i data-feather="thumbs-up" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Éthique</h3>
+                                <p>Communication responsable, évitant la désinformation ou la manipulation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interdependence Section -->
+            <section class="mb-20" data-aos="fade-up">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-indigo-800 flex items-center">
+                        <i data-feather="link" class="mr-3"></i> Interdépendance avec les autres disciplines digitales
+                    </h2>
+                    <div class="space-y-4 text-gray-700">
+                        <p>Le Social Media Management s'intègre dans un écosystème plus large :</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Il amplifie le content marketing et les campagnes publicitaires digitales</li>
+                            <li>Il soutient le SEO en générant des signaux sociaux et du trafic</li>
+                            <li>Il alimente le CRM et le marketing automation par la collecte de données sociales</li>
+                            <li>Il renforce la stratégie d'influence en collaborant avec créateurs et ambassadeurs</li>
+                            <li>Il contribue à la gestion de crise en tant que canal de communication prioritaire</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deliverables Section -->
+            <section class="mb-20" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-8 text-indigo-800 text-center flex justify-center items-center">
+                    <i data-feather="package" class="mr-3"></i> Formats et livrables
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="file-text" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Plan stratégique</h3>
+                        <p class="text-gray-600">Objectifs, plateformes, KPIs définis pour votre marque</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="book" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Charte éditoriale</h3>
+                        <p class="text-gray-600">Ligne directrice pour vos contenus sur les réseaux sociaux</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="calendar" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Calendrier éditorial</h3>
+                        <p class="text-gray-600">Planification opérationnelle de vos publications</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="image" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Kits créatifs</h3>
+                        <p class="text-gray-600">Templates, gabarits, guidelines pour vos visuels</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="pie-chart" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Rapports de performance</h3>
+                        <p class="text-gray-600">Analyse détaillée de vos résultats et recommandations</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-md p-6">
+                        <div class="text-indigo-600 mb-4">
+                            <i data-feather="alert-triangle" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Playbook de gestion de crise</h3>
+                        <p class="text-gray-600">Protocoles pour gérer les situations sensibles</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KPIs Section -->
+            <section class="mb-20" data-aos="fade-up">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-indigo-800 flex items-center">
+                        <i data-feather="bar-chart-2" class="mr-3"></i> Mesure de performance et optimisation continue
+                    </h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-700">Notoriété :</h3>
+                            <p class="text-gray-700">Portée, impressions, croissance de la communauté, part de voix</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-700">Engagement :</h3>
+                            <p class="text-gray-700">Taux d'interaction, partages, sauvegardes, taux de visionnage vidéo</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-700">Acquisition :</h3>
+                            <p class="text-gray-700">Trafic social, CTR, taux de conversion post-clic</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-700">Relation client :</h3>
+                            <p class="text-gray-700">Rapidité et pertinence des réponses, sentiment global, volume de demandes traitées</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-700">ROI :</h3>
+                            <p class="text-gray-700">Coût par engagement, coût par acquisition, valeur générée par les campagnes sociales</p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <p class="text-indigo-800 font-medium">L'optimisation continue repose sur l'analyse régulière des données, le test de nouveaux formats et l'adaptation aux changements des algorithmes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expected Results Section -->
+            <section class="mb-20" data-aos="fade-up">
+                <div class="bg-indigo-100 rounded-xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-indigo-800 flex items-center">
+                        <i data-feather="flag" class="mr-3"></i> Résultats attendus
+                    </h2>
+                    <p class="text-gray-800 text-lg">
+                        Un service de Social Media Management abouti offre une présence sociale structurée, cohérente et performante. Il permet à l'entreprise d'accroître sa visibilité, d'engager ses audiences, de générer des résultats commerciaux et de renforcer son image de marque dans un environnement digital compétitif et en constante évolution.
+                    </p>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="mb-20" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-8 text-indigo-800 text-center">FAQ</h2>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="accordion-item border-b">
+                        <button class="accordion-button w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                            <span class="text-xl font-semibold">Quels réseaux sociaux gérez-vous ?</span>
+                            <i data-feather="chevron-down" class="accordion-icon transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <div class="pb-6 pt-2 text-gray-700">
+                                Nous gérons l'ensemble des plateformes sociales pertinentes pour votre activité : Facebook, Instagram, LinkedIn, Twitter/X, TikTok, Pinterest et YouTube. Le choix des plateformes prioritaires se fait lors de l'audit initial en fonction de votre secteur d'activité, de votre audience cible et de vos objectifs.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b">
+                        <button class="accordion-button w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                            <span class="text-xl font-semibold">Combien de publications par semaine recommandez-vous ?</span>
+                            <i data-feather="chevron-down" class="accordion-icon transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <div class="pb-6 pt-2 text-gray-700">
+                                La fréquence idéale varie selon la plateforme et votre secteur. En moyenne, nous recommandons :
+                                <ul class="list-disc pl-6 mt-2 space-y-1">
+                                    <li>3-5 posts par semaine sur Instagram et Facebook</li>
+                                    <li>5-10 tweets par semaine sur Twitter/X</li>
+                                    <li>2-3 posts par semaine sur LinkedIn</li>
+                                    <li>3-5 vidéos par mois sur TikTok et YouTube</li>
+                                </ul>
+                                Ces chiffres sont adaptés après analyse de votre audience et de votre capacité à produire du contenu de qualité.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b">
+                        <button class="accordion-button w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                            <span class="text-xl font-semibold">Comment mesurez-vous le succès de votre stratégie ?</span>
+                            <i data-feather="chevron-down" class="accordion-icon transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <div class="pb-6 pt-2 text-gray-700">
+                                Nous définissons des KPI précis en fonction de vos objectifs initiaux. Ces indicateurs sont suivis mensuellement et analysés en détail dans des rapports qui vous sont transmis. Nous mesurons :
+                                <ul class="list-disc pl-6 mt-2 space-y-1">
+                                    <li>La croissance de votre audience et votre portée</li>
+                                    <li>L'engagement (likes, commentaires, partages, sauvegardes)</li>
+                                    <li>Le trafic généré vers votre site</li>
+                                    <li>Les conversions (demandes de contact, inscriptions, ventes)</li>
+                                    <li>Le retour sur investissement des campagnes payantes</li>
+                                </ul>
+                                Ces données nous permettent d'ajuster continuellement la stratégie.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b">
+                        <button class="accordion-button w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                            <span class="text-xl font-semibold">Quel est le délai pour voir des résultats ?</span>
+                            <i data-feather="chevron-down" class="accordion-icon transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <div class="pb-6 pt-2 text-gray-700">
+                                Les premiers indicateurs de performance (engagement, croissance d'audience) sont généralement visibles dès le premier mois. Pour des résultats significatifs sur la notoriété et les conversions, il faut compter 3 à 6 mois d'efforts soutenus. Les réseaux sociaux nécessitent une présence régulière et durable pour construire une communauté engagée et fidèle.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-b">
+                        <button class="accordion-button w-full text-left p-6 hover:bg-gray-50 flex justify-between items-center">
+                            <span class="text-xl font-semibold">Proposez-vous des formations pour notre équipe interne ?</span>
+                            <i data-feather="chevron-down" class="accordion-icon transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <div class="pb-6 pt-2 text-gray-700">
+                                Oui, nous proposons des sessions de formation adaptées à vos besoins :
+                                <ul class="list-disc pl-6 mt-2 space-y-1">
+                                    <li>Formation aux fondamentaux des réseaux sociaux</li>
+                                    <li>Ateliers création de contenu (rédaction, visuels, vidéos)</li>
+                                    <li>Formation à l'analyse des données et reporting</li>
+                                    <li>Ateliers community management avancé</li>
+                                    <li>Formation à la publicité sociale</li>
+                                </ul>
+                                Ces formations peuvent être organisées en présentiel ou à distance.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Contact & Quote -->
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Devis Button -->
+            <div data-aos="fade-right">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="file-text" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Demander un devis</h2>
+                    <p class="text-gray-600 mb-8">Obtenez une estimation personnalisée gratuite adaptée à vos besoins spécifiques et recevez une proposition détaillée. Notre équipe vous répond sous 48 heures ouvrées.</p>
+                    <a href="https://maison-johnco-marketing.com/devis-sur-mesure" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="file-text" class="mr-3"></i>
+                        Demander un devis gratuit
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Gratuit et sans engagement</p>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <div data-aos="fade-left">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mx-auto mb-6">
+                        <i data-feather="mail" class="text-blue-600 w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">Nous contacter</h2>
+                    <p class="text-gray-600 mb-8">Une question ? Besoin d'informations complémentaires ? Notre équipe est à votre écoute pour échanger sur vos besoins.</p>
+                    <a href="https://maison-johnco-marketing.com/contact" class="inline-flex items-center justify-center bg-blue-600 text-white py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                        <i data-feather="mail" class="mr-3"></i>
+                        Nous contacter
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Réponse rapide garantie</p>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        feather.replace();
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                const accordionIcon = button.querySelector('.accordion-icon');
+
+                button.classList.toggle('active');
+                accordionContent.classList.toggle('active');
+                
+                if(button.classList.contains('active')) {
+                    accordionIcon.style.transform = 'rotate(180deg)';
+                } else {
+                    accordionIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Construct email body
+            const body = `Nom: ${name}\nEntreprise: ${company}\nEmail: ${email}\nTéléphone: ${phone}\nMessage: ${message}`;
+            
+            // In a real scenario, you would send this to your server
+            // For demo purposes, we'll just log it and show an alert
+            console.log('Form submitted:', {name, company, email, phone, message});
+            
+            alert('Votre demande de devis a été envoyée avec succès. Nous vous contacterons rapidement.');
+            
+            // Reset form
+            this.reset();
+            
+            // In production, you would actually send the email
+            // window.location.href = `mailto:contact@maison-johnco-marketing.com?subject=Demande de devis&body=${encodeURIComponent(body)}`;
+        });
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

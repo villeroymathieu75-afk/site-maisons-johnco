@@ -1,0 +1,860 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE FAQ — Maison John&Co Marketing
+     Accordéon par catégorie + recherche temps réel
+     ═══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .mjc-faq {
+    --bg-dark:#0A1628; --bg-mid:#1E3A5F; --bg-light:#FAFAFA; --bg-white:#FFFFFF;
+    --accent:#7C3AED; --accent-l:#A78BFA; --accent-h:#6D28D9; --accent-g:rgba(124,58,237,.4);
+    --pink:#EC4899; --green:#10B981; --amber:#F59E0B;
+    --text-d:#1A1A2E; --text-m:#6B7280; --text-l:#FFFFFF; --text-lm:#B0B8C5;
+    --border-l:#E5E7EB; --border-d:rgba(255,255,255,.1);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--text-d); line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  .mjc-faq *,.mjc-faq *::before,.mjc-faq *::after{box-sizing:border-box;}
+  .mjc-faq p{margin:0 0 16px;} .mjc-faq h1,.mjc-faq h2,.mjc-faq h3,.mjc-faq h4{margin:0;letter-spacing:-.02em;}
+  .mjc-faq a{text-decoration:none;color:inherit;}
+  .faq-c{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* ANIMS */
+  @keyframes faq-grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  @keyframes faq-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  @keyframes faq-pulse{0%,100%{box-shadow:0 0 0 0 var(--accent-g)}70%{box-shadow:0 0 0 14px transparent}}
+  @keyframes faq-up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+  .faq-rev{opacity:0;transform:translateY(32px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+  .faq-rev.on{opacity:1;transform:translateY(0);}
+  .faq-rev.d1{transition-delay:.1s}.faq-rev.d2{transition-delay:.2s}
+
+  /* ─── HERO ─── */
+  .faq-hero{background:var(--bg-dark);padding:130px 0 90px;position:relative;overflow:hidden;color:var(--text-l);text-align:center;}
+  .faq-hero-bg{position:absolute;inset:0;background:linear-gradient(125deg,#0A1628 0%,#1E3A5F 35%,#2D1B69 70%,#0A1628 100%);background-size:400% 400%;animation:faq-grad 20s ease infinite;z-index:0;}
+  .faq-orb{position:absolute;border-radius:50%;filter:blur(80px);z-index:1;animation:faq-float 8s ease-in-out infinite;}
+  .faq-orb-1{top:-80px;right:-80px;width:450px;height:450px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.25;}
+  .faq-orb-2{bottom:-80px;left:-80px;width:350px;height:350px;background:radial-gradient(circle,var(--accent-l),transparent 70%);opacity:.18;animation-delay:-4s;}
+  .faq-hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto;}
+  .faq-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,58,237,.15);backdrop-filter:blur(10px);color:var(--accent-l);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:28px;border:1px solid rgba(167,139,250,.3);animation:faq-up .8s ease-out;}
+  .faq-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:faq-pulse 2s infinite;}
+  .faq-hero h1{font-size:52px;font-weight:700;line-height:1.1;margin-bottom:20px;color:var(--text-l);animation:faq-up .9s ease-out .1s both;}
+  .faq-hero h1 .ag{background:linear-gradient(135deg,#A78BFA,#7C3AED,#C4B5FD);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:faq-grad 5s ease infinite;}
+  .faq-sub{font-size:18px;color:var(--text-lm);margin-bottom:36px;line-height:1.6;animation:faq-up 1s ease-out .3s both;}
+
+  /* Barre de recherche hero */
+  .faq-search-hero{position:relative;max-width:560px;margin:0 auto;animation:faq-up 1s ease-out .5s both;}
+  .faq-search-input{
+    width:100%;padding:18px 20px 18px 52px;
+    background:rgba(255,255,255,.1);backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.2);border-radius:16px;
+    color:var(--text-l);font-size:16px;font-family:inherit;
+    transition:all .3s ease;
+  }
+  .faq-search-input:focus{outline:none;background:rgba(255,255,255,.15);border-color:var(--accent-l);box-shadow:0 0 0 4px rgba(124,58,237,.2);}
+  .faq-search-input::placeholder{color:rgba(255,255,255,.5);}
+  .faq-search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.6);}
+  .faq-search-count{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:12px;color:rgba(255,255,255,.5);font-weight:500;}
+
+  /* Stats */
+  .faq-hero-stats{display:flex;justify-content:center;gap:48px;margin-top:40px;padding-top:36px;border-top:1px solid var(--border-d);animation:faq-up 1s ease-out .7s both;flex-wrap:wrap;}
+  .faq-stat{text-align:center;}
+  .faq-stat-v{font-size:36px;font-weight:700;background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:4px;}
+  .faq-stat-l{font-size:12px;color:var(--text-lm);text-transform:uppercase;letter-spacing:1px;}
+
+  /* ─── SECTION PRINCIPALE ─── */
+  .faq-main{background:var(--bg-light);padding:80px 0 120px;}
+  .faq-layout{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start;}
+
+  /* ─── SIDEBAR NAV ─── */
+  .faq-sidebar{
+    position:sticky;top:100px;
+    background:var(--bg-white);border:1px solid var(--border-l);border-radius:20px;padding:24px;
+    max-height:calc(100vh - 120px);overflow-y:auto;
+  }
+  .faq-sidebar-title{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;padding:0 8px;}
+  .faq-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;}
+  .faq-nav-item{
+    display:flex;align-items:center;gap:10px;
+    padding:11px 14px;border-radius:10px;
+    color:var(--text-m);font-size:13px;font-weight:500;
+    transition:all .3s ease;cursor:pointer;
+  }
+  .faq-nav-item:hover{background:var(--bg-light);color:var(--text-d);}
+  .faq-nav-item.active{background:rgba(124,58,237,.08);color:var(--accent);font-weight:600;}
+  .faq-nav-item.active::before{content:'';position:absolute;left:0;}
+  .faq-nav-emoji{font-size:15px;flex-shrink:0;}
+  .faq-nav-cnt{margin-left:auto;background:rgba(124,58,237,.1);color:var(--accent);padding:2px 8px;border-radius:999px;font-size:10px;font-weight:700;}
+
+  /* ─── CONTENU ─── */
+  .faq-content{min-width:0;}
+
+  /* Alerte de recherche */
+  .faq-search-info{
+    display:none;
+    align-items:center;gap:12px;padding:14px 18px;
+    background:rgba(124,58,237,.08);border:1px solid rgba(167,139,250,.25);
+    border-radius:12px;margin-bottom:32px;font-size:14px;color:var(--text-d);
+  }
+  .faq-search-info.visible{display:flex;}
+  .faq-search-info svg{color:var(--accent);flex-shrink:0;}
+  .faq-search-clear{margin-left:auto;padding:5px 12px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .3s ease;}
+  .faq-search-clear:hover{background:var(--accent-h);}
+
+  /* Bloc catégorie */
+  .faq-cat{margin-bottom:48px;scroll-margin-top:100px;}
+  .faq-cat-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid var(--border-l);}
+  .faq-cat-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--accent),var(--accent-l));color:white;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+  .faq-cat h2{font-size:22px;font-weight:700;color:var(--text-d);}
+  .faq-cat-count{margin-left:auto;background:rgba(124,58,237,.1);color:var(--accent);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;flex-shrink:0;}
+
+  /* Items FAQ */
+  .faq-list{display:flex;flex-direction:column;gap:8px;}
+  .faq-item{
+    background:var(--bg-white);border:1px solid var(--border-l);border-radius:14px;overflow:hidden;
+    transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  .faq-item:hover{border-color:rgba(167,139,250,.4);}
+  .faq-item.open{border-color:var(--accent);box-shadow:0 4px 20px rgba(124,58,237,.08);}
+  .faq-item.faq-hidden{display:none;}
+  .faq-q{
+    padding:20px 24px;display:flex;align-items:center;gap:14px;
+    cursor:pointer;user-select:none;transition:color .2s ease;
+  }
+  .faq-q-text{font-weight:600;font-size:15px;color:var(--text-d);flex:1;line-height:1.4;}
+  .faq-q-text mark{background:rgba(124,58,237,.15);color:var(--accent);border-radius:4px;padding:0 2px;}
+  .faq-item:hover .faq-q-text,.faq-item.open .faq-q-text{color:var(--accent);}
+  .faq-tog{
+    flex-shrink:0;width:32px;height:32px;
+    background:rgba(124,58,237,.08);color:var(--accent);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    transition:all .35s cubic-bezier(.16,1,.3,1);font-size:20px;font-weight:300;
+  }
+  .faq-item.open .faq-tog{background:var(--accent);color:white;transform:rotate(45deg);}
+  .faq-a{
+    max-height:0;overflow:hidden;
+    font-size:14px;color:var(--text-m);line-height:1.75;
+    padding:0 24px;
+    transition:max-height .45s cubic-bezier(.16,1,.3,1), padding .45s ease;
+  }
+  .faq-item.open .faq-a{max-height:600px;padding:0 24px 22px;}
+  .faq-a p{margin:0 0 10px;}
+  .faq-a p:last-child{margin:0;}
+  .faq-a ul{list-style:none;padding:0;margin:0 0 10px;}
+  .faq-a ul li{display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;font-size:14px;color:var(--text-d);}
+  .faq-a ul li::before{content:'→';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px;}
+  .faq-a a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+
+  /* État vide */
+  .faq-empty{display:none;text-align:center;padding:80px 20px;}
+  .faq-empty.visible{display:block;}
+  .faq-empty svg{margin-bottom:16px;color:var(--border-l);}
+  .faq-empty h3{font-size:20px;font-weight:600;color:var(--text-d);margin-bottom:8px;}
+  .faq-empty p{font-size:15px;color:var(--text-m);}
+
+  /* ─── BLOC "CONTACT" ─── */
+  .faq-contact-strip{
+    background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(167,139,250,.06));
+    border:1px solid rgba(124,58,237,.25);border-radius:24px;padding:40px;
+    margin-top:48px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  }
+  .faq-contact-strip h3{font-size:22px;font-weight:700;color:var(--text-d);margin-bottom:8px;}
+  .faq-contact-strip p{font-size:15px;color:var(--text-m);margin:0;}
+  .faq-contact-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0;}
+  .faq-contact-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;transition:all .3s ease;white-space:nowrap;}
+  .faq-contact-btn-p{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;box-shadow:0 4px 14px var(--accent-g);}
+  .faq-contact-btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-g);}
+  .faq-contact-btn-o{background:var(--bg-white);color:var(--text-d);border:1px solid var(--border-l);}
+  .faq-contact-btn-o:hover{border-color:var(--accent-l);color:var(--accent);}
+
+  /* ─── CTA FINAL ─── */
+  .faq-cta{background:var(--bg-dark);padding:100px 0;text-align:center;position:relative;overflow:hidden;}
+  .faq-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);border-radius:50%;}
+  .faq-cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto;}
+  .faq-cta h2{font-size:40px;font-weight:700;line-height:1.15;margin-bottom:20px;color:var(--text-l);}
+  .faq-cta h2 .ag{background:linear-gradient(135deg,var(--accent-l),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .faq-cta p{font-size:17px;color:var(--text-lm);margin-bottom:32px;}
+  .faq-cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  .faq-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;transition:all .3s ease;border:none;cursor:pointer;font-family:inherit;}
+  .faq-btn-p{background:linear-gradient(135deg,var(--accent),var(--accent-h));color:white;box-shadow:0 4px 16px var(--accent-g);}
+  .faq-btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--accent-g);}
+  .faq-btn-o{background:rgba(255,255,255,.06);color:white;border:1px solid var(--border-d);}
+  .faq-btn-o:hover{background:rgba(255,255,255,.1);border-color:var(--accent-l);}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .faq-hero h1{font-size:38px;}
+    .faq-layout{grid-template-columns:1fr;}
+    .faq-sidebar{position:relative;top:0;max-height:none;order:-1;}
+    .faq-nav{flex-direction:row;flex-wrap:wrap;gap:6px;}
+    .faq-nav-item{padding:8px 14px;border-radius:999px;background:var(--bg-white);border:1px solid var(--border-l);}
+    .faq-nav-item.active{background:var(--accent);color:white;}
+    .faq-nav-item.active .faq-nav-cnt{background:rgba(255,255,255,.25);color:white;}
+    .faq-contact-strip{grid-template-columns:1fr;}
+    .faq-contact-btns{flex-direction:row;}
+  }
+  @media(max-width:768px){
+    .faq-hero{padding:90px 0 60px;}
+    .faq-hero h1{font-size:28px;}
+    .faq-sub{font-size:16px;}
+    .faq-hero-stats{gap:28px;}
+    .faq-stat-v{font-size:28px;}
+    .faq-main{padding:48px 0 80px;}
+    .faq-cat h2{font-size:19px;}
+    .faq-q{padding:16px 18px;}
+    .faq-q-text{font-size:14px;}
+    .faq-item.open .faq-a{padding:0 18px 18px;}
+    .faq-contact-strip{padding:24px;}
+    .faq-contact-btns{flex-direction:column;}
+    .faq-cta h2{font-size:26px;}
+    .faq-cta-btns{flex-direction:column;align-items:stretch;}
+    .faq-btn{justify-content:center;}
+  }
+</style>
+
+<div class="mjc-faq">
+
+  <!-- HERO -->
+  <section class="faq-hero">
+    <div class="faq-hero-bg"></div>
+    <div class="faq-orb faq-orb-1"></div>
+    <div class="faq-orb faq-orb-2"></div>
+    <div class="faq-c">
+      <div class="faq-hero-inner">
+        <div class="faq-badge"><span class="faq-dot"></span>Foire aux questions</div>
+        <h1>Toutes vos <span class="ag">réponses</span> ici</h1>
+        <p class="faq-sub">Parcourez nos 60+ questions fréquentes ou utilisez la recherche pour trouver exactement ce que vous cherchez en quelques secondes.</p>
+
+        <div class="faq-search-hero">
+          <svg class="faq-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="faq-search-input" id="faqSearchHero" placeholder="Chercher une question... (ex: tarifs, résiliation, délai...)">
+          <span class="faq-search-count" id="faqSearchCount"></span>
+        </div>
+
+        <div class="faq-hero-stats">
+          <div class="faq-stat"><div class="faq-stat-v">60+</div><div class="faq-stat-l">Questions traitées</div></div>
+          <div class="faq-stat"><div class="faq-stat-v">7</div><div class="faq-stat-l">Catégories</div></div>
+          <div class="faq-stat"><div class="faq-stat-v">24h</div><div class="faq-stat-l">Si pas de réponse ici</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <section class="faq-main">
+    <div class="faq-c">
+      <div class="faq-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="faq-sidebar">
+          <div class="faq-sidebar-title">Catégories</div>
+          <ul class="faq-nav">
+            <li class="faq-nav-item active" data-cat="all"><span class="faq-nav-emoji">🔍</span>Tout voir<span class="faq-nav-cnt">60</span></li>
+            <li class="faq-nav-item" data-cat="general"><span class="faq-nav-emoji">💬</span>Général<span class="faq-nav-cnt">8</span></li>
+            <li class="faq-nav-item" data-cat="entreprises"><span class="faq-nav-emoji">🏢</span>Entreprises<span class="faq-nav-cnt">10</span></li>
+            <li class="faq-nav-item" data-cat="createurs"><span class="faq-nav-emoji">🎬</span>Créateurs<span class="faq-nav-cnt">9</span></li>
+            <li class="faq-nav-item" data-cat="particuliers"><span class="faq-nav-emoji">👤</span>Particuliers<span class="faq-nav-cnt">8</span></li>
+            <li class="faq-nav-item" data-cat="tarifs"><span class="faq-nav-emoji">💰</span>Tarifs & Paiement<span class="faq-nav-cnt">10</span></li>
+            <li class="faq-nav-item" data-cat="process"><span class="faq-nav-emoji">⚙️</span>Comment on travaille<span class="faq-nav-cnt">9</span></li>
+            <li class="faq-nav-item" data-cat="technique"><span class="faq-nav-emoji">🛠️</span>Technique & Outils<span class="faq-nav-cnt">8</span></li>
+          </ul>
+        </aside>
+
+        <!-- CONTENU -->
+        <div class="faq-content">
+
+          <!-- Alerte recherche -->
+          <div class="faq-search-info" id="faqSearchInfo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span id="faqSearchLabel">Résultats pour ""</span>
+            <button class="faq-search-clear" id="faqSearchClear">Effacer</button>
+          </div>
+
+          <!-- ═══ CATÉGORIE : GÉNÉRAL ═══ -->
+          <section class="faq-cat faq-rev" id="faq-general" data-cat="general">
+            <div class="faq-cat-header">
+              <div class="faq-cat-icon">💬</div>
+              <h2>Questions générales</h2>
+              <span class="faq-cat-count">8 questions</span>
+            </div>
+            <div class="faq-list">
+
+              <div class="faq-item" data-cat="general">
+                <div class="faq-q"><span class="faq-q-text">Qui est Maison John&Co Marketing ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Maison John&Co Marketing est une agence de marketing digital fondée en septembre 2024 par Mathieu Villeroy. Basée à Paris avec 11 antennes régionales en France, nous accompagnons trois types de clients : les entreprises (TPE, PME, ETI), les créateurs de contenu et influenceurs, et les particuliers souhaitant apprendre ou développer un projet digital.</p><p>Notre force est un réseau de 100+ freelances experts coordonnés par une équipe interne dédiée, ce qui nous permet d'offrir la profondeur d'une grande agence avec la réactivité d'une structure à taille humaine.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="general">
+                <div class="faq-q"><span class="faq-q-text">Dans quelles villes êtes-vous présents ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Notre siège social est à Paris. Nous disposons de 11 antennes administratives en France :</p><ul><li>Lille, Rennes, Nantes, Bordeaux, Toulouse</li><li>Marseille, Nice, Lyon, Strasbourg, Dijon, Montpellier</li></ul><p>Notre organisation 100% digitale nous permet d'accompagner des clients partout en France et à l'international (24 pays européens + 40+ pays dans le monde) sans contrainte géographique.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="general">
+                <div class="faq-q"><span class="faq-q-text">Combien de temps faut-il pour obtenir une réponse ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Nous nous engageons à répondre à toute demande sous <strong>24h ouvrées</strong> (lundi–vendredi, 9h–19h CET). Pour les clients sous contrat PME ou ETI, le délai est réduit à 24h ou 4h selon le niveau de support souscrit.</p><p>Pour les demandes urgentes, mentionnez-le explicitement dans votre message via la <a href="/contact">page contact</a>.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="general">
+                <div class="faq-q"><span class="faq-q-text">Travaillez-vous à distance ou uniquement en présentiel ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Notre organisation est nativement 100% digitale. Toutes nos missions se déroulent à distance via visioconférence, email et outils collaboratifs (Slack, Notion, Google Workspace). Nous accompagnons des clients partout en France et dans le monde avec la même qualité de service.</p><p>Des rendez-vous physiques peuvent être organisés sur demande dans nos antennes locales ou chez vous, notamment pour les grandes missions ETI.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="general">
+                <div class="faq-q"><span class="faq-q-text">Quelle est votre politique de confidentialité ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Nous respectons scrupuleusement le RGPD (Règlement Général sur la Protection des Données). Vos données personnelles ne sont jamais revendues ou partagées avec des tiers sans votre consentement explicite. Consultez notre <a href="/rgpd">politique de confidentialité complète</a> pour tous les détails.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="general">
+                <div class="faq-q"><span class="faq-q-text">Avez-vous un engagement solidaire ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui. 5% de nos bénéfices nets sont reversés à l'association <strong>Enfant de Cœur</strong>, qui œuvre pour l'éducation et la protection des enfants défavorisés. Cet engagement est inscrit dans nos statuts et fait partie de notre ADN depuis la création de l'agence.</p><p>En travaillant avec nous, vous contribuez indirectement à cette cause. Nos clients peuvent également le mentionner dans leur communication RSE si ils le souhaitent.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="general">
+                <div class="faq-q"><span class="faq-q-text">Proposez-vous un premier échange gratuit ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui, toujours. Le premier échange (appel découverte de 30 minutes) est 100% gratuit et sans engagement. Il nous permet de comprendre votre situation et vos objectifs, et de vérifier que nous sommes bien le bon partenaire pour vous. Si ce n'est pas le cas, nous vous le disons honnêtement et vous orientons vers une solution mieux adaptée.</p><p><a href="/contact?type=rdv">Réserver un appel découverte →</a></p></div>
+              </div>
+
+              <div class="faq-item" data-cat="general">
+                <div class="faq-q"><span class="faq-q-text">Comment puis-je suivre l'avancement de ma mission ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Chaque client dispose d'un espace de suivi dédié selon son niveau de pack :</p><ul><li><strong>TPE :</strong> rapport mensuel PDF + accès à votre tableau de bord analytics</li><li><strong>PME :</strong> rapport bi-mensuel + dashboard temps réel + réunion mensuelle</li><li><strong>ETI :</strong> rapport hebdomadaire + dashboard multi-sources + réunion hebdomadaire direction</li></ul><p>Vous pouvez consulter votre espace client depuis la page dédiée à tout moment.</p></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ═══ CATÉGORIE : ENTREPRISES ═══ -->
+          <section class="faq-cat faq-rev" id="faq-entreprises" data-cat="entreprises">
+            <div class="faq-cat-header">
+              <div class="faq-cat-icon">🏢</div>
+              <h2>Services pour les entreprises</h2>
+              <span class="faq-cat-count">10 questions</span>
+            </div>
+            <div class="faq-list">
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Quels types d'entreprises accompagnez-vous ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Nous accompagnons des TPE (artisans, professions libérales, commerçants, start-ups), des PME (10 à 250 salariés) et des ETI (250+ salariés) dans tous les secteurs d'activité : retail, B2B industriel, services, restauration, tourisme, santé, tech, immobilier, agriculture, culture...</p><p>Nos packs sont conçus pour s'adapter à chaque taille d'entreprise avec le bon niveau d'intensité et d'investissement.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Combien de temps avant de voir les premiers résultats ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Cela dépend du levier activé :</p><ul><li><strong>Publicité payante (Google Ads, Meta Ads) :</strong> leads possibles dès la 1ère semaine</li><li><strong>Réseaux sociaux :</strong> engagement visible dès le 2e mois</li><li><strong>SEO :</strong> résultats significatifs entre 3 et 6 mois</li><li><strong>Email marketing :</strong> premiers revenus dès la 1ère campagne</li></ul><p>Nous définissons des jalons réalistes lors du premier échange. Pas de promesses irréalistes : nous préférons sous-promettre et sur-délivrer.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Je n'ai aucune présence digitale. Par où commencer ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Parfait point de départ. Nous commençons par un <strong>audit digital de base</strong> (gratuit lors du premier échange) qui identifie les 3 leviers prioritaires selon votre secteur et vos objectifs. Nous construisons ensuite une roadmap progressive, en priorisant ce qui donnera des résultats rapides.</p><p>Vous n'avez pas besoin d'être présent partout d'un coup — mieux vaut 1 canal bien maîtrisé que 5 mal gérés.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Gérez-vous les budgets publicitaires ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui, nous gérons les campagnes publicitaires (stratégie, ciblage, créations, optimisation, reporting). Mais les budgets publicitaires sont versés directement par vous sur vos propres comptes Google Ads, Meta Ads, LinkedIn Ads, etc. Vous restez propriétaire et voyez chaque euro dépensé.</p><p>Nos honoraires couvrent la gestion et l'optimisation, pas l'achat média lui-même.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Puis-je commencer petit et monter en gamme ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Absolument, c'est même notre modèle préféré. Vous commencez avec le pack TPE (Starter Digital), et lorsque les résultats sont au rendez-vous et que votre budget croît, vous évoluez vers le pack PME (Growth Digital). Le passage se fait sans friction puisque votre équipe connaît déjà votre dossier.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Avez-vous de l'expérience dans mon secteur ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Avec 100+ experts dans notre réseau, nous couvrons la très grande majorité des secteurs. Si votre secteur est spécifique (ex : médical réglementé, armement, tabac), nous vous le disons honnêtement et nous vous orientons si nécessaire.</p><p>Lors du premier échange, nous vous présentons systématiquement des références concrètes dans votre secteur ou un secteur proche.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Mon équipe doit-elle être impliquée ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Seulement autant que vous le souhaitez. Certains clients délèguent 100% et ne regardent que les rapports. D'autres préfèrent collaborer étroitement pour monter en compétence en interne. Nous nous adaptons.</p><p>Le minimum requis : un point de contact interne disponible 30 min/mois pour le pack Starter, 1h/mois pour Growth.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Proposez-vous de la transformation digitale complète ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui, c'est l'un de nos services phares pour les ETI : accompagnement à la transformation digitale globale (outils, process, équipes, culture). Cela inclut le choix des outils (CRM, marketing automation, analytics), la formation des équipes internes, la conduite du changement et le suivi sur 12 à 36 mois.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Créez-vous des sites web ou gérez-vous uniquement le marketing ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Les deux. Nous créons des sites web (vitrines, institutionnels, e-commerce, landing pages) et gérons l'ensemble du marketing digital associé. L'avantage : le site est conçu dès le départ avec les bonnes pratiques SEO, UX et conversion — pas un site "joli" qui ne convertit pas.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="entreprises">
+                <div class="faq-q"><span class="faq-q-text">Je suis déjà avec une autre agence. Pouvez-vous reprendre mon dossier ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui. Nous faisons régulièrement des reprises de dossiers. Notre processus d'onboarding comprend un audit de l'existant (campagnes en cours, SEO, contenu, outils) pour identifier ce qui fonctionne et ce qui doit être revu. La transition est pensée pour être la plus fluide possible, avec une passation claire des comptes et accès.</p></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ═══ CATÉGORIE : CRÉATEURS ═══ -->
+          <section class="faq-cat faq-rev" id="faq-createurs" data-cat="createurs">
+            <div class="faq-cat-header">
+              <div class="faq-cat-icon">🎬</div>
+              <h2>Services pour les créateurs</h2>
+              <span class="faq-cat-count">9 questions</span>
+            </div>
+            <div class="faq-list">
+
+              <div class="faq-item" data-cat="createurs">
+                <div class="faq-q"><span class="faq-q-text">Quel nombre d'abonnés minimum faut-il pour être accompagné ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Aucun minimum. Nous accompagnons des créateurs à tous les stades : des débutants à 0 abonné jusqu'à des personnalités digitales avec des millions de followers. Ce qui compte, c'est votre motivation, votre niche et la clarté de votre objectif — pas un chiffre arbitraire.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="createurs">
+                <div class="faq-q"><span class="faq-q-text">Sur quelles plateformes intervenez-vous ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Nous couvrons toutes les plateformes majeures :</p><ul><li>Instagram, TikTok, YouTube, LinkedIn, Facebook, Pinterest, Snapchat</li><li>Twitch, Discord, Telegram pour les communautés</li><li>Beehiiv, Substack, ConvertKit pour les newsletters</li><li>Shopify, Gumroad, Podia pour la vente de produits</li></ul><p>Nous vous conseillons sur lesquelles prioriser selon votre niche et vos objectifs.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="createurs">
+                <div class="faq-q"><span class="faq-q-text">Pouvez-vous m'aider à décrocher des partenariats avec des marques ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui, c'est l'un de nos services phares pour les créateurs. Nous vous aidons à :</p><ul><li>Créer un media kit professionnel convaincant</li><li>Positionner votre profil pour attirer les marques de votre niche</li><li>Accéder à notre réseau de marques partenaires à la recherche de créateurs</li><li>Négocier vos contrats pour obtenir une juste rémunération</li></ul><p>Nous ne prenons pas de commission sur les partenariats — nous facturons notre service d'accompagnement, c'est tout.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="createurs">
+                <div class="faq-q"><span class="faq-q-text">Je stagne depuis plusieurs mois. Que proposez-vous ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>La stagnation est souvent liée à 3 causes : un positionnement flou, un contenu qui ne correspond pas aux signaux de l'algorithme, ou une fréquence/format inadapté. Nous commençons par un <strong>audit d'image et de profil</strong> pour identifier la cause précise, puis nous construisons un plan d'action concret sur 90 jours.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="createurs">
+                <div class="faq-q"><span class="faq-q-text">Prenez-vous en charge la production de contenu à ma place ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Partiellement. Nous pouvons prendre en charge la stratégie éditoriale, l'écriture de scripts, les templates visuels, le montage vidéo et la planification des publications. Mais la présence authentique à l'image (tournage vidéo de vous-même, interactions communautaires) reste votre travail — c'est ce qui fait votre valeur en tant que créateur.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="createurs">
+                <div class="faq-q"><span class="faq-q-text">Comment puis-je monétiser mon audience si j'ai encore peu d'abonnés ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>L'audience n'est pas la seule voie. Avec une petite audience très engagée (même 2 000 abonnés), vous pouvez :</p><ul><li>Vendre une formation ou un e-book dans votre niche</li><li>Proposer du coaching ou des consultations individuelles</li><li>Faire de l'affiliation sur des produits que vous utilisez vraiment</li><li>Créer une communauté privée payante (Discord, Telegram)</li></ul><p>Nous adaptons la stratégie de monétisation à votre stade de développement.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="createurs">
+                <div class="faq-q"><span class="faq-q-text">Aidez-vous à créer des formations en ligne ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui. De la conception (structure, contenu, tarification) au lancement (tunnel de vente, email sequence, stratégie de lancement), nous vous accompagnons à chaque étape. Nous avons accompagné plusieurs créateurs dont les lancements ont dépassé les 100K€ de CA.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="createurs">
+                <div class="faq-q"><span class="faq-q-text">Gérez-vous mon community management à ma place ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui, dans le cadre du pack Creator Growth. Nous gérons les réponses aux commentaires, la modération, les DM entrants (selon vos règles préalablement définies) et l'animation des stories. Vous restez concentré sur la création pendant que votre communauté est chouchoutée.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="createurs">
+                <div class="faq-q"><span class="faq-q-text">Est-ce que vous pouvez m'aider à protéger mon contenu ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui. Nous vous conseillons sur la protection de vos créations (droits d'auteur, watermarking, procédures de signalement sur YouTube/Meta/TikTok), les licences d'utilisation et les clauses contractuelles à inclure dans vos contrats avec les marques. Pour les questions juridiques complexes, nous vous orientons vers des avocats spécialisés.</p></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ═══ CATÉGORIE : PARTICULIERS ═══ -->
+          <section class="faq-cat faq-rev" id="faq-particuliers" data-cat="particuliers">
+            <div class="faq-cat-header">
+              <div class="faq-cat-icon">👤</div>
+              <h2>Services pour les particuliers</h2>
+              <span class="faq-cat-count">8 questions</span>
+            </div>
+            <div class="faq-list">
+
+              <div class="faq-item" data-cat="particuliers">
+                <div class="faq-q"><span class="faq-q-text">Faut-il avoir des connaissances techniques pour suivre vos formations ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Absolument pas. Nos formations pour particuliers sont conçues pour être accessibles dès le niveau zéro. Nous partons toujours du concret et du pratique, sans jargon technique inutile. Plusieurs de nos clients les plus satisfaits n'avaient jamais utilisé Instagram ou Google Analytics avant de nous rejoindre.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="particuliers">
+                <div class="faq-q"><span class="faq-q-text">Les formations sont-elles éligibles au CPF ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Nous travaillons activement à obtenir les certifications nécessaires pour l'éligibilité CPF. En attendant, des financements alternatifs peuvent être possibles selon votre situation (Pôle Emploi, OPCO, Région). Contactez-nous pour étudier votre situation spécifique — nous vous orientons vers la meilleure option.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="particuliers">
+                <div class="faq-q"><span class="faq-q-text">Proposez-vous des formations pour les seniors éloignés du numérique ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui, c'est l'une de nos catégories de services les plus importantes. Nos ateliers d'initiation numérique pour seniors sont conçus avec un rythme très progressif, des groupes très petits (4-6 personnes), une approche 100% bienveillante et sans jugement. L'objectif : que chaque participant reparte autonome et confiant.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="particuliers">
+                <div class="faq-q"><span class="faq-q-text">Comment se passe un accompagnement à la reconversion ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>La reconversion démarre par un bilan de compétences digitales (2h) pour identifier votre point de départ, vos aptitudes et le métier cible. Nous construisons ensuite un plan de parcours : formations à suivre (en ligne ou en live), projets pratiques, construction du portfolio, préparation aux entretiens. L'accompagnement dure généralement 3 à 9 mois.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="particuliers">
+                <div class="faq-q"><span class="faq-q-text">Je veux lancer un projet perso digital. Par où commencer ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Commencez par notre <strong>séance de conseil projet personnel</strong> (2h, individuel). Vous repartez avec : une clarification de votre idée, le bon angle digital, une évaluation réaliste du potentiel, et un plan d'action concret sur 90 jours. Ensuite, selon votre besoin, nous pouvons vous accompagner à l'exécution ou vous laisser avancer seul avec les bons outils.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="particuliers">
+                <div class="faq-q"><span class="faq-q-text">Les ateliers se déroulent en présentiel ou en visio ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Les deux. Les ateliers collectifs se font principalement en visioconférence (Zoom ou Google Meet). Les sessions d'initiation pour seniors ou les interventions scolaires peuvent se faire en présentiel sur demande, dans nos antennes locales ou directement dans votre établissement (école, association, MJC).</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="particuliers">
+                <div class="faq-q"><span class="faq-q-text">Proposez-vous des accès à tarif solidaire ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui. Dans le cadre de notre programme <strong>"Digital Pour Tous"</strong>, nous proposons des formations à tarif réduit (sur critères de ressources) ou gratuites pour les personnes en situation de précarité numérique ou économique. Ce programme est financé en partie par notre engagement solidaire (5% des bénéfices reversés). <a href="/contact?service=digital-pour-tous">En savoir plus →</a></p></div>
+              </div>
+
+              <div class="faq-item" data-cat="particuliers">
+                <div class="faq-q"><span class="faq-q-text">Les formations ont-elles des prérequis d'âge ou de niveau ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Aucun prérequis d'âge. Nous accompagnons des personnes de 15 à 75+ ans. Les formations sont organisées par niveau (débutant, intermédiaire, avancé) et par tranche d'âge quand cela est pertinent (ex : programme "Entrepreneuriat Jeunesse" pour les 15-25 ans, ateliers senior pour les 60+).</p></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ═══ CATÉGORIE : TARIFS ═══ -->
+          <section class="faq-cat faq-rev" id="faq-tarifs" data-cat="tarifs">
+            <div class="faq-cat-header">
+              <div class="faq-cat-icon">💰</div>
+              <h2>Tarifs & Facturation</h2>
+              <span class="faq-cat-count">10 questions</span>
+            </div>
+            <div class="faq-list">
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Y a-t-il un budget minimum pour travailler avec vous ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Pas de minimum strict. Nos offres démarrent à 97€ (formation solo particulier) jusqu'à plusieurs milliers d'euros par mois pour les missions ETI. Ce qui compte, c'est l'adéquation entre vos objectifs et votre budget — un budget de 500€/mois avec les bons leviers peut produire d'excellents résultats pour une TPE locale.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Pourquoi vos tarifs ne sont-ils pas affichés clairement ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Parce que chaque situation est différente. Un pack "PME" peut varier du simple au triple selon le nombre de canaux, la maturité digitale existante, le secteur, les objectifs et la durée. Nos pages <a href="/offres-tarifs">Offres & Tarifs</a> et <a href="/packs-pros">Packs Pros</a> affichent des points de départ réalistes ("à partir de"). Le devis précis arrive après le premier échange gratuit.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Les budgets publicitaires sont-ils inclus dans vos honoraires ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Non. Les budgets publicitaires (Google Ads, Meta Ads, LinkedIn Ads...) sont versés directement par vous sur vos propres comptes. Vous restez propriétaire et voyez chaque euro dépensé en temps réel. Nos honoraires couvrent uniquement la gestion, la stratégie et l'optimisation des campagnes.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Quel est votre mode de facturation ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Pour les packs mensuels : facturation en début de mois, paiement par virement ou prélèvement automatique. Pour les missions ponctuelles : acompte de 30-50% à la signature, solde à la livraison. Pour les grandes missions ETI : planning de facturation sur mesure défini dans le contrat.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Comment fonctionne la résiliation ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Préavis d'un mois pour les packs TPE et PME, d'un trimestre pour le pack ETI. Aucun frais de résiliation. À la fin du contrat, nous vous remettons l'intégralité de vos actifs digitaux (accès aux comptes, données, contenus, rapport final). Vous ne repartez jamais les mains vides.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Proposez-vous des facilités de paiement ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Pour les formations, nous proposons le paiement en 3x sans frais. Pour les grandes missions, un paiement en plusieurs échéances peut être négocié lors du devis. Contactez-nous pour discuter des modalités adaptées à votre situation.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Y a-t-il des frais cachés ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Jamais. Votre devis est détaillé ligne par ligne. Tout ce qui est inclus est listé explicitement, tout ce qui est exclu (budgets pub, outils tiers payants) est clairement mentionné. Nous appliquons une politique de transparence totale — c'est l'un de nos engagements fondamentaux.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Proposez-vous un pack "à la carte" ou uniquement des abonnements ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Les deux. Nos packs mensuels (TPE/PME/ETI, Creator, Particulier) sont la formule la plus populaire pour un accompagnement continu. Mais nous proposons également des missions ponctuelles (audit, création de site, lancement, formation spécifique) facturées au projet. <a href="/contact?type=devis">Demandez un devis →</a></p></div>
+              </div>
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Puis-je obtenir un devis avant de m'engager ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Toujours. Le devis est gratuit, détaillé et sans obligation d'achat. Nous vous soumettons une proposition sous 48h ouvrées après notre premier échange. Vous êtes libre de l'accepter, de la négocier ou de ne pas donner suite.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="tarifs">
+                <div class="faq-q"><span class="faq-q-text">Vos tarifs sont-ils TTC ou HT ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Tous nos tarifs affichés sur le site et dans nos devis sont exprimés <strong>hors taxes (HT)</strong>. La TVA applicable (20% pour les services digitaux en France) est ajoutée lors de la facturation. Pour les clients professionnels assujettis à la TVA, celle-ci est récupérable. Pour les particuliers, les formations peuvent bénéficier d'exonérations — nous vous précisons les conditions lors du devis.</p></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ═══ CATÉGORIE : PROCESS ═══ -->
+          <section class="faq-cat faq-rev" id="faq-process" data-cat="process">
+            <div class="faq-cat-header">
+              <div class="faq-cat-icon">⚙️</div>
+              <h2>Comment on travaille</h2>
+              <span class="faq-cat-count">9 questions</span>
+            </div>
+            <div class="faq-list">
+
+              <div class="faq-item" data-cat="process">
+                <div class="faq-q"><span class="faq-q-text">Comment se déroule le démarrage d'une mission ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Voici les 5 étapes de notre onboarding :</p><ul><li><strong>Appel découverte (J0) :</strong> 30 min pour comprendre votre situation</li><li><strong>Devis (J0+48h) :</strong> proposition détaillée et plan d'action</li><li><strong>Contrat & accès (J+7) :</strong> signature et récupération de vos accès</li><li><strong>Audit onboarding (J+14) :</strong> analyse de l'existant, définition des KPI</li><li><strong>Lancement opérationnel (J+21) :</strong> premières actions déployées</li></ul></div>
+              </div>
+
+              <div class="faq-item" data-cat="process">
+                <div class="faq-q"><span class="faq-q-text">Qui sera mon interlocuteur au quotidien ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Vous avez un <strong>interlocuteur unique dédié</strong> (chargé de compte ou chef de projet selon le pack) qui centralise toutes les communications. Derrière, une équipe d'experts intervient selon les besoins (SEO, publicité, contenu, design...) mais vous n'avez pas à gérer cette complexité.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="process">
+                <div class="faq-q"><span class="faq-q-text">Comment validez-vous les contenus avant publication ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Tous les contenus (posts réseaux, articles SEO, créatifs publicitaires, emails) vous sont soumis pour validation avant publication. Nous utilisons un système de validation simple (Google Drive partagé ou outil dédié) avec un délai de validation défini en contrat (généralement 48h). Si aucune retour sous ce délai, le contenu est considéré approuvé — pour ne pas bloquer le planning.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="process">
+                <div class="faq-q"><span class="faq-q-text">Avec quels outils travaillez-vous ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Nous utilisons les outils leaders du marché selon les besoins :</p><ul><li><strong>Communication :</strong> Slack, email, visioconférence</li><li><strong>Gestion de projet :</strong> Notion, Trello, Asana</li><li><strong>Analytics :</strong> Google Analytics 4, Search Console, Looker Studio</li><li><strong>Publicité :</strong> Google Ads, Meta Business Suite, LinkedIn Campaign Manager</li><li><strong>CRM :</strong> HubSpot, Pipedrive, Brevo selon les besoins</li></ul></div>
+              </div>
+
+              <div class="faq-item" data-cat="process">
+                <div class="faq-q"><span class="faq-q-text">Vous restez-vous à jour des évolutions du marché ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>C'est une obligation pour nous. Notre équipe suit en permanence les évolutions des algorithmes, des plateformes, des bonnes pratiques et des nouvelles réglementations (RGPD, e-Privacy...). Nous organisons des sessions de mise à jour interne mensuelles et participons aux principales conférences du secteur (SMX, Inbound, VivaTech...).</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="process">
+                <div class="faq-q"><span class="faq-q-text">Que se passe-t-il si les résultats ne sont pas au rendez-vous ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Nous travaillons sur des KPI définis ensemble dès le départ. Si les résultats s'écartent des objectifs, nous analysons les causes avec transparence lors du reporting et ajustons la stratégie. Nous n'attendons pas la fin du mois pour vous signaler un problème — notre culture est la proactivité. Si les ajustements ne suffisent pas, nous discutons ouvertement des alternatives.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="process">
+                <div class="faq-q"><span class="faq-q-text">Qui reste propriétaire des comptes et données créés ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Toujours vous. Vos comptes publicitaires, votre Google Analytics, votre site, votre liste email, vos contenus — tout vous appartient. Nous travaillons sur vos outils, pas sur les nôtres. C'est un principe non négociable. À la fin du contrat, vous avez 100% de vos actifs sans aucune dépendance à notre agence.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="process">
+                <div class="faq-q"><span class="faq-q-text">Faites-vous de la sous-traitance ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Nous disposons d'un réseau de 100+ freelances partenaires, experts dans leur domaine, que nous mobilisons selon les besoins. Ce n'est pas de la sous-traitance "aveugle" — chaque freelance est sélectionné et validé par notre équipe, et travaille sous la supervision de votre chef de projet. Vous n'avez qu'un seul interlocuteur, quelle que soit la complexité de la mission.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="process">
+                <div class="faq-q"><span class="faq-q-text">Gérez-vous des missions internationales ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui. Grâce à notre réseau de collaborateurs dans 24 pays européens et 40+ pays dans le monde, nous pouvons déployer des stratégies marketing adaptées à chaque marché local. Cela inclut la traduction/localisation des contenus, la gestion des plateformes locales (Yandex en Russie, Naver en Corée, WeChat en Chine...) et la connaissance des codes culturels locaux.</p></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ═══ CATÉGORIE : TECHNIQUE ═══ -->
+          <section class="faq-cat faq-rev" id="faq-technique" data-cat="technique">
+            <div class="faq-cat-header">
+              <div class="faq-cat-icon">🛠️</div>
+              <h2>Technique & Outils</h2>
+              <span class="faq-cat-count">8 questions</span>
+            </div>
+            <div class="faq-list">
+
+              <div class="faq-item" data-cat="technique">
+                <div class="faq-q"><span class="faq-q-text">Créez-vous des sites WordPress ou d'autres CMS ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Nous créons principalement des sites sur <strong>WordPress</strong> (le CMS le plus répandu, facile à gérer en autonomie). Selon les besoins, nous travaillons aussi sur Webflow (pour les sites très design), Shopify ou WooCommerce (e-commerce), Carrd (landing pages simples), et du développement sur mesure pour les projets complexes.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="technique">
+                <div class="faq-q"><span class="faq-q-text">Pouvez-vous travailler sur mon site existant sans tout refaire ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui. Nous commençons toujours par un audit de l'existant pour décider ce qui mérite d'être conservé, amélioré ou refait. Repartir de zéro n'est pas toujours la meilleure option — parfois quelques optimisations ciblées (vitesse, SEO technique, UX) suffisent à multiplier les performances.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="technique">
+                <div class="faq-q"><span class="faq-q-text">Configurez-vous Google Analytics 4 et le suivi des conversions ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui, c'est inclus dans l'onboarding de tous nos packs. Nous configurons Google Analytics 4, Google Tag Manager, les événements de conversion personnalisés (formulaires, ventes, clics...) et connectons les données à votre tableau de bord. Sans tracking correct, l'optimisation est impossible.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="technique">
+                <div class="faq-q"><span class="faq-q-text">Gérez-vous la conformité RGPD de mes outils marketing ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui. Nous configurons les bannières de consentement (CMP), vérifions la conformité de vos formulaires, de votre tracking et de vos emails marketing selon les exigences RGPD. Pour les grandes missions ETI, nous travaillons avec des DPO (Délégués à la Protection des Données) partenaires pour des audits approfondis.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="technique">
+                <div class="faq-q"><span class="faq-q-text">Quel CRM conseillez-vous ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Cela dépend de votre taille et de votre usage :</p><ul><li><strong>TPE/PME simple :</strong> Brevo (ex-Sendinblue) — abordable et complet</li><li><strong>PME avec sales team :</strong> Pipedrive ou HubSpot Free</li><li><strong>ETI :</strong> HubSpot ou Salesforce selon le volume et les besoins d'intégration</li></ul><p>Nous paramétrons et formons votre équipe quel que soit l'outil choisi.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="technique">
+                <div class="faq-q"><span class="faq-q-text">Mon site est lent. Pouvez-vous l'optimiser ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui. L'optimisation de la vitesse (Core Web Vitals, PageSpeed) est l'une de nos spécialités. Un site lent pénalise à la fois votre SEO Google et vos taux de conversion. Nous auditons et optimisons : compression des images, mise en cache, minification du code, CDN, optimisation de la base de données. Résultats généralement très rapides à voir.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="technique">
+                <div class="faq-q"><span class="faq-q-text">Utilisez-vous l'IA dans vos services ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Oui, intelligemment. Nous utilisons des outils IA pour accélérer certaines tâches (ébauche de contenus, analyse de données, optimisation de ciblage) mais toujours avec une validation et une finalisation humaine. Nous ne livrons jamais du contenu IA brut — la qualité éditoriale et la cohérence avec votre marque restent notre responsabilité.</p></div>
+              </div>
+
+              <div class="faq-item" data-cat="technique">
+                <div class="faq-q"><span class="faq-q-text">Gérez-vous la sécurité de mon site web ?</span><span class="faq-tog">+</span></div>
+                <div class="faq-a"><p>Dans le cadre de nos missions de création et maintenance, oui : certificat SSL, sauvegardes automatiques, mises à jour plugins/thème, protection contre les attaques brute force, monitoring de disponibilité. Pour les ETI avec des exigences de sécurité avancées, nous faisons intervenir des experts en cybersécurité partenaires.</p></div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Bloc "Pas trouvé votre réponse ?" -->
+          <div class="faq-contact-strip faq-rev">
+            <div>
+              <h3>Votre question n'est pas dans la liste ?</h3>
+              <p>Posez-la directement à notre équipe. Nous répondons sous 24h ouvrées, toujours avec précision et sans jargon.</p>
+            </div>
+            <div class="faq-contact-btns">
+              <a href="/contact" class="faq-contact-btn faq-contact-btn-p">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Poser ma question
+              </a>
+              <a href="/contact?type=rdv" class="faq-contact-btn faq-contact-btn-o">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Prendre RDV gratuit
+              </a>
+            </div>
+          </div>
+
+          <!-- État vide recherche -->
+          <div class="faq-empty" id="faqEmpty">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <h3>Aucun résultat pour cette recherche</h3>
+            <p>Essayez des termes différents ou posez directement votre question à notre équipe.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="faq-cta">
+    <div class="faq-c">
+      <div class="faq-cta-inner faq-rev">
+        <h2>Prêt à passer à <span class="ag">l'action</span> ?</h2>
+        <p>Toutes vos questions ont une réponse. L'étape suivante : un premier échange gratuit, sans engagement.</p>
+        <div class="faq-cta-btns">
+          <a href="/contact?type=rdv" class="faq-btn faq-btn-p">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Prendre rendez-vous gratuitement
+          </a>
+          <a href="/offres-tarifs" class="faq-btn faq-btn-o">Voir les offres →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  // ─── ACCORDÉON ────────────────────────────────────────
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      // ferme tous les autres de la même catégorie
+      item.closest('.faq-list')?.querySelectorAll('.faq-item.open').forEach(i => {
+        if(i !== item) i.classList.remove('open');
+      });
+      item.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // ─── SIDEBAR NAV ──────────────────────────────────────
+  const navItems = document.querySelectorAll('.faq-nav-item');
+  const cats = document.querySelectorAll('.faq-cat');
+
+  navItems.forEach(nav => {
+    nav.addEventListener('click', () => {
+      navItems.forEach(n => n.classList.remove('active'));
+      nav.classList.add('active');
+      const cat = nav.dataset.cat;
+      // Affiche/cache les catégories
+      cats.forEach(c => {
+        if(cat === 'all' || c.dataset.cat === cat){
+          c.style.display = '';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+      // Efface la recherche
+      clearSearch();
+      // Scroll vers la section si pas "all"
+      if(cat !== 'all'){
+        const target = document.getElementById('faq-' + cat);
+        if(target) window.scrollTo({top: target.getBoundingClientRect().top + window.pageYOffset - 100, behavior:'smooth'});
+      }
+    });
+  });
+
+  // Scroll auto pour activer le bon item de nav
+  const setActiveNav = () => {
+    let cur = null;
+    const pos = window.pageYOffset + 160;
+    cats.forEach(c => { if(c.offsetTop <= pos) cur = c.dataset.cat; });
+    // Ne met à jour que si on est en mode "all"
+    const activeNav = document.querySelector('.faq-nav-item.active');
+    if(activeNav?.dataset.cat === 'all' && cur){
+      navItems.forEach(n => {
+        n.classList.toggle('active', n.dataset.cat === cur || (cur && n.dataset.cat === 'all'));
+      });
+    }
+  };
+  window.addEventListener('scroll', setActiveNav, {passive:true});
+
+  // ─── RECHERCHE ────────────────────────────────────────
+  let searchTimeout;
+  const searchInput = document.getElementById('faqSearchHero');
+  const searchInfo = document.getElementById('faqSearchInfo');
+  const searchLabel = document.getElementById('faqSearchLabel');
+  const searchCount = document.getElementById('faqSearchCount');
+  const searchClear = document.getElementById('faqSearchClear');
+  const emptyEl = document.getElementById('faqEmpty');
+
+  function highlight(text, term){
+    if(!term) return text;
+    const re = new RegExp('(' + term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+    return text.replace(re, '<mark>$1</mark>');
+  }
+
+  function doSearch(term){
+    const items = document.querySelectorAll('.faq-item');
+    let count = 0;
+    // Affiche toutes les catégories
+    cats.forEach(c => c.style.display = '');
+    // Reset nav
+    navItems.forEach(n => n.classList.toggle('active', n.dataset.cat === 'all'));
+
+    if(!term){
+      items.forEach(i => { i.classList.remove('faq-hidden'); });
+      searchInfo.classList.remove('visible');
+      emptyEl.classList.remove('visible');
+      searchCount.textContent = '';
+      // Restaure l'accordéon : remet les textes originaux
+      items.forEach(i => {
+        const qOrig = i.dataset.origQ;
+        if(qOrig) i.querySelector('.faq-q-text').innerHTML = qOrig;
+      });
+      return;
+    }
+
+    items.forEach(i => {
+      const qText = i.querySelector('.faq-q-text');
+      if(!i.dataset.origQ) i.dataset.origQ = qText.textContent;
+      const aText = i.querySelector('.faq-a')?.textContent || '';
+      const q = i.dataset.origQ.toLowerCase();
+      const a = aText.toLowerCase();
+      const match = q.includes(term) || a.includes(term);
+      i.classList.toggle('faq-hidden', !match);
+      if(match){
+        count++;
+        qText.innerHTML = highlight(i.dataset.origQ, term);
+        if(match) i.classList.add('open');
+      } else {
+        qText.innerHTML = i.dataset.origQ;
+        i.classList.remove('open');
+      }
+    });
+
+    // Cache les catégories vides
+    cats.forEach(c => {
+      const visible = c.querySelectorAll('.faq-item:not(.faq-hidden)').length;
+      c.style.display = visible === 0 ? 'none' : '';
+    });
+
+    searchInfo.classList.add('visible');
+    searchLabel.textContent = count + ' résultat' + (count > 1 ? 's' : '') + ' pour "' + term + '"';
+    searchCount.textContent = count;
+    emptyEl.classList.toggle('visible', count === 0);
+  }
+
+  function clearSearch(){
+    if(searchInput) searchInput.value = '';
+    doSearch('');
+  }
+
+  searchInput?.addEventListener('input', e => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => doSearch(e.target.value.trim().toLowerCase()), 200);
+  });
+
+  searchClear?.addEventListener('click', clearSearch);
+
+  // ─── SCROLL REVEAL ────────────────────────────────────
+  const ro = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); }});
+  }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.faq-rev').forEach(el => ro.observe(el));
+})();
+</script>
+<!-- /wp:html -->

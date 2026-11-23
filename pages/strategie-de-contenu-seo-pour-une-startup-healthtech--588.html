@@ -1,0 +1,393 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étude de Cas: Stratégie SEO HealthTech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+        }
+        .stat-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: 4px solid #bfdbfe;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 33px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #bfdbfe;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Hero Section -->
+        <section class="mb-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Stratégie de contenu SEO pour une startup healthtech</h1>
+            <p class="text-xl text-gray-600 mb-8">Transformation digitale sur 10 mois - Résultats concrets</p>
+            <div class="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full">
+                <i data-feather="clock" class="mr-2 w-5 h-5"></i>
+                <span>Durée: 10 mois</span>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="mb-20 bg-white rounded-2xl p-8 shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Contexte du Projet</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 mb-6">Accompagnement d'une startup healthtech dans la construction d'une visibilité organique solide pour s'imposer comme référence dans son domaine et générer des leads qualifiés.</p>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <i data-feather="target" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Objectif Principal</h3>
+                            <p class="text-gray-600">Développer une présence digitale crédible et génératrice de trafic qualifié</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <i data-feather="bar-chart-2" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Défi Majeur</h3>
+                            <p class="text-gray-600">Secteur concurrentiel avec réglementation stricte et besoin accru de confiance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-l pl-8">
+                    <h3 class="font-semibold text-gray-800 mb-4">Approche Stratégique</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1 w-5 h-5"></i>
+                            <span>Audit technique et sémantique complet</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1 w-5 h-5"></i>
+                            <span>Création d'un blog expert avec calendrier éditorial</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1 w-5 h-5"></i>
+                            <span>Stratégie de netlinking qualitative</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1 w-5 h-5"></i>
+                            <span>Optimisations techniques continues</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1 w-5 h-5"></i>
+                            <span>Monitoring analytique approfondi</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Results Section -->
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Résultats Clés Obtenus</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Stat Card 1 -->
+                <div class="stat-card bg-white rounded-xl p-6 text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="activity" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">+265%</h3>
+                    <p class="text-gray-600">Augmentation du trafic organique</p>
+                    <p class="text-sm text-gray-500 mt-2">De 18k à 65.4k visites/mois</p>
+                </div>
+                
+                <!-- Stat Card 2 -->
+                <div class="stat-card bg-white rounded-xl p-6 text-center">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="award" class="text-green-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">134/200</h3>
+                    <p class="text-gray-600">Mots-clés en 1ère page Google</p>
+                    <p class="text-sm text-gray-500 mt-2">Dont 52 en top 3</p>
+                </div>
+                
+                <!-- Stat Card 3 -->
+                <div class="stat-card bg-white rounded-xl p-6 text-center">
+                    <div class="bg-purple-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="text-purple-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">+73%</h3>
+                    <p class="text-gray-600">Taux de conversion organique</p>
+                    <p class="text-sm text-gray-500 mt-2">+48% de leads qualifiés</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Results Section -->
+        <section class="mb-20 bg-white rounded-2xl p-8 shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Détail des Performances</h2>
+            
+            <!-- Table 1: Traffic Growth -->
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Évolution du Trafic Organique</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Période</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Visites Mensuelles</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Croissance</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pages/Visite</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Durée Moyenne</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">Mois 1 (Début)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">18,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Baseline</td>
+                                <td class="px-6 py-4 whitespace-nowrap">1.8</td>
+                                <td class="px-6 py-4 whitespace-nowrap">2:10</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">Mois 5</td>
+                                <td class="px-6 py-4 whitespace-nowrap">34,500</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-green-600">+92%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">2.3</td>
+                                <td class="px-6 py-4 whitespace-nowrap">3:45</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">Mois 10 (Fin)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">65,400</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-green-600">+265%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">2.7</td>
+                                <td class="px-6 py-4 whitespace-nowrap">4:20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Table 2: Keyword Performance -->
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Performances des Mots-Clés</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Catégorie</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mots-clés Suivis</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Top 3</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Top 10</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Top 20</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">Transactionnels</td>
+                                <td class="px-6 py-4 whitespace-nowrap">75</td>
+                                <td class="px-6 py-4 whitespace-nowrap">24</td>
+                                <td class="px-6 py-4 whitespace-nowrap">48</td>
+                                <td class="px-6 py-4 whitespace-nowrap">67</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">Informationnels</td>
+                                <td class="px-6 py-4 whitespace-nowrap">125</td>
+                                <td class="px-6 py-4 whitespace-nowrap">28</td>
+                                <td class="px-6 py-4 whitespace-nowrap">86</td>
+                                <td class="px-6 py-4 whitespace-nowrap">117</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-semibold">Total</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-semibold">200</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-semibold">52</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-semibold">134</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-semibold">184</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Table 3: Blog Performance -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Performances du Blog Expert</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Métrique</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Valeur</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">Part du trafic total</td>
+                                <td class="px-6 py-4 whitespace-nowrap">38%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Principal moteur de croissance</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">Temps moyen de lecture</td>
+                                <td class="px-6 py-4 whitespace-nowrap">4:20</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Fort engagement des visiteurs</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">Articles publiés</td>
+                                <td class="px-6 py-4 whitespace-nowrap">82</td>
+                                <td class="px-6 py-4 whitespace-nowrap">3.2 articles/semaine</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">Backlinks générés</td>
+                                <td class="px-6 py-4 whitespace-nowrap">112</td>
+                                <td class="px-6 py-4 whitespace-nowrap">61% du total</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Méthodologie Appliquée</h2>
+            <div class="relative timeline pl-16">
+                <!-- Timeline Item 1 -->
+                <div class="relative timeline-item mb-12">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                                <span>1</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Audit Complet</h3>
+                        </div>
+                        <p class="text-gray-700">Analyse technique (vitesse, mobile, indexabilité) et sémantique (couververture des sujets, opportunités de contenu) approfondie pour identifier les axes d'amélioration prioritaires.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="relative timeline-item mb-12">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                                <span>2</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Stratégie de Contenu</h3>
+                        </div>
+                        <p class="text-gray-700">Définition de 200 mots-clés stratégiques et création d'un calendrier éditorial pour le blog expert, avec production de contenus longs formats (guides, interviews) pour renforcer l'autorité.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="relative timeline-item mb-12">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                                <span>3</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Optimisations Techniques</h3>
+                        </div>
+                        <p class="text-gray-700">Amélioration des performances (temps de chargement divisé par 3), intégration de données structurées, optimisation de l'architecture du site et du maillage interne.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="relative timeline-item">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                                <span>4</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Netlinking Stratégique</h3>
+                        </div>
+                        <p class="text-gray-700">Acquisition de 180 backlinks de qualité via des partenariats avec des blogs spécialisés et des plateformes de santé, augmentant le Domain Authority de 21 points.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Impact Section -->
+        <section class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
+            <h2 class="text-2xl font-bold mb-6">Impact Final</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="mb-6">La startup a pu établir une présence digitale crédible dans son secteur hautement concurrentiel, avec une visibilité organique multipliée par 3.6 en 10 mois.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="mr-2 mt-1 w-5 h-5"></i>
+                            <span>Positionnement comme référence sectorielle</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="mr-2 mt-1 w-5 h-5"></i>
+                            <span>Flux continu de leads qualifiés (48% d'augmentation)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="mr-2 mt-1 w-5 h-5"></i>
+                            <span>Économies substantielles sur l'acquisition payante</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-xl p-6">
+                    <h3 class="font-semibold mb-4">Bénéfices Clés</h3>
+                    <div class="flex items-center mb-3">
+                        <div class="bg-white text-blue-600 rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                            <i data-feather="dollar-sign" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">ROI estimé: 5.8x</p>
+                            <p class="text-blue-100 text-sm">Pour 1€ investi en SEO</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="bg-white text-blue-600 rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                            <i data-feather="bar-chart-2" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">+21 points</p>
+                            <p class="text-blue-100 text-sm">Domain Authority (Ahrefs)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-white text-blue-600 rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                            <i data-feather="users" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">92% de trafic nouveau</p>
+                            <p class="text-blue-100 text-sm">Audience élargie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

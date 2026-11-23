@@ -1,0 +1,581 @@
+<!-- wp:html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuoteQuest - Formulaire Intelligent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl bg-white rounded-xl shadow-xl overflow-hidden">
+        <div class="p-6 md:p-8">
+            <div class="mb-8">
+                <div class="flex justify-between mb-2 text-sm text-gray-600">
+                    <span>Progression</span>
+                    <span id="progress-step">1/5</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 20%"></div>
+                </div>
+            </div>
+
+            <div id="initial-choice" class="text-center">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Comment pouvons-nous vous aider ?</h2>
+                <div class="grid gap-4 md:grid-cols-2">
+                    <button id="quote-btn" class="p-6 border-2 border-blue-100 rounded-xl hover:border-blue-300 transition-all flex flex-col items-center">
+                        <i data-feather="dollar-sign" class="w-10 h-10 text-blue-600 mb-3"></i>
+                        <h3 class="font-semibold text-lg mb-2">🚀 Demander un Devis</h3>
+                        <p class="text-gray-600 text-sm">Obtenez une estimation précise pour votre projet</p>
+                    </button>
+                    <button id="info-btn" class="p-6 border-2 border-blue-100 rounded-xl hover:border-blue-300 transition-all flex flex-col items-center">
+                        <i data-feather="help-circle" class="w-10 h-10 text-blue-600 mb-3"></i>
+                        <h3 class="font-semibold text-lg mb-2">❓ Obtenir des Renseignements</h3>
+                        <p class="text-gray-600 text-sm">Posez vos questions sans engagement</p>
+                    </button>
+                </div>
+            </div>
+
+            <form id="info-form" class="hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Informations de contact</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="info-name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet *</label>
+                        <input type="text" id="info-name" name="Nom" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="info-email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                        <input type="email" id="info-email" name="Email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="info-phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone *</label>
+                        <input type="tel" id="info-phone" name="Telephone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between">
+                    <button type="button" id="info-back" class="px-6 py-2 text-gray-600 font-medium rounded-lg hover:bg-gray-100">Retour</button>
+                    <button type="submit" class="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700">Envoyer ma demande</button>
+                </div>
+            </form>
+
+            <form id="quote-form-phase1" class="hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Identification (1/3)</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="quote-name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet *</label>
+                        <input type="text" id="quote-name" name="Nom" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="quote-email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                        <input type="email" id="quote-email" name="Email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="quote-phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone *</label>
+                        <input type="tel" id="quote-phone" name="Telephone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Statut *</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="profile-company" name="profile" value="Entreprise" required class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="profile-company" class="ml-2 text-sm text-gray-700">Entreprise / Organisation</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="profile-influencer" name="profile" value="Influenceur" required class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="profile-influencer" class="ml-2 text-sm text-gray-700">Influenceur / Créateur de contenu</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="profile-individual" name="profile" value="Particulier" required class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="profile-individual" class="ml-2 text-sm text-gray-700">Particulier</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Budget approximatif *</label>
+                        <select id="budget" name="Budget" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="Inférieur à 500€">Inférieur à 500€</option>
+                            <option value="500€ à 2 000€">500€ à 2 000€</option>
+                            <option value="2 000€ à 5 000€">2 000€ à 5 000€</option>
+                            <option value="5 000€ à 10 000€">5 000€ à 10 000€</option>
+                            <option value="10 000€ et plus">10 000€ et plus</option>
+                            <option value="Budget non défini">Budget non défini</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="timeline" class="block text-sm font-medium text-gray-700 mb-1">Délai idéal *</label>
+                        <select id="timeline" name="Delai" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="Dès que possible">Dès que possible</option>
+                            <option value="Dans 1 à 3 mois">Dans 1 à 3 mois</option>
+                            <option value="Dans 3 à 6 mois">Dans 3 à 6 mois</option>
+                            <option value="Plus tard">Plus tard</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-end">
+                    <button type="button" id="phase1-next" class="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700">Continuer</button>
+                </div>
+            </form>
+
+            <form id="quote-form-phase2" class="hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6" id="phase2-title">Détails spécifiques (2/3)</h2>
+                
+                <div id="company-fields" class="hidden space-y-4">
+                    <div>
+                        <label for="company-name" class="block text-sm font-medium text-gray-700 mb-1">Dénomination sociale *</label>
+                        <input type="text" id="company-name" name="Denomination" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="siret" class="block text-sm font-medium text-gray-700 mb-1">Numéro SIRET *</label>
+                        <input type="text" id="siret" name="SIRET" pattern="\d{14}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="14 chiffres">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="street" class="block text-sm font-medium text-gray-700 mb-1">Rue *</label>
+                            <input type="text" id="street" name="Rue" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="zip" class="block text-sm font-medium text-gray-700 mb-1">Code postal *</label>
+                            <input type="text" id="zip" name="Code_Postal" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="city" class="block text-sm font-medium text-gray-700 mb-1">Ville *</label>
+                            <input type="text" id="city" name="Ville" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Pays *</label>
+                            <input type="text" id="country" name="Pays" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="sector" class="block text-sm font-medium text-gray-700 mb-1">Secteur d'activité</label>
+                        <input type="text" id="sector" name="Secteur" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="website" class="block text-sm font-medium text-gray-700 mb-1">Site web</label>
+                        <input type="url" id="website" name="Site_Web" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="https://">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Services recherchés (Sélectionnez au moins un) *</label>
+                        <div class="space-y-2" data-required-group="Services">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="service-strategy" name="Services[]" value="Stratégie digitale & accompagnement" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="service-strategy" class="ml-2 text-sm text-gray-700">Stratégie digitale & accompagnement</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="service-branding" name="Services[]" value="Branding & identité visuelle" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="service-branding" class="ml-2 text-sm text-gray-700">Branding & identité visuelle</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="service-web" name="Services[]" value="Développement web" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="service-web" class="ml-2 text-sm text-gray-700">Développement web</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="business-goal" class="block text-sm font-medium text-gray-700 mb-1">Objectif principal *</label>
+                        <select id="business-goal" name="Objectif_Business" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="Acquisition de nouveaux clients">Acquisition de nouveaux clients</option>
+                            <option value="Amélioration de la rentabilité">Amélioration de la rentabilité</option>
+                            <option value="Refonte de l'identité numérique">Refonte de l'identité numérique</option>
+                            <option value="Transformation digitale complète">Transformation digitale complète</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="company-needs" class="block text-sm font-medium text-gray-700 mb-1">Description du besoin</label>
+                        <textarea id="company-needs" name="Description_Besoin" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Décrivez votre situation actuelle et vos attentes... (Facultatif)"></textarea>
+                    </div>
+                </div>
+
+                <div id="influencer-fields" class="hidden space-y-4">
+                    <div>
+                        <label for="pseudo" class="block text-sm font-medium text-gray-700 mb-1">Nom d'usage / Pseudo *</label>
+                        <input type="text" id="pseudo" name="Pseudo" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Liens vers vos plateformes (Au moins un lien) *</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <i data-feather="instagram" class="w-4 h-4 mr-2 text-pink-600"></i>
+                                <input type="url" id="instagram" name="Lien_Instagram" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Lien Instagram">
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="youtube" class="w-4 h-4 mr-2 text-red-600"></i>
+                                <input type="url" id="youtube" name="Lien_YouTube" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Lien YouTube">
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="monitor" class="w-4 h-4 mr-2 text-green-600"></i>
+                                <input type="url" id="tiktok" name="Lien_TikTok" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Lien TikTok">
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="globe" class="w-4 h-4 mr-2 text-blue-600"></i>
+                                <input type="url" id="personal-website" name="Site_Personnel" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Site web personnel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="audience-size" class="block text-sm font-medium text-gray-700 mb-1">Taille de l'audience *</label>
+                            <select id="audience-size" name="Taille_Audience" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                                <option value="" disabled selected>Sélectionnez une option</option>
+                                <option value="< 1K">&lt; 1K</option>
+                                <option value="1K - 10K">1K-10K</option>
+                                <option value="10K - 50K">10K-50K</option>
+                                <option value="50K - 100K">50K-100K</option>
+                                <option value="100K - 500K">100K-500K</option>
+                                <option value="> 500K">&gt; 500K</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="engagement-rate" class="block text-sm font-medium text-gray-700 mb-1">Taux d'engagement (%)</label>
+                            <input type="number" id="engagement-rate" name="Taux_Engagement" min="0" max="100" step="0.1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="priority-platform" class="block text-sm font-medium text-gray-700 mb-1">Plateforme à développer *</label>
+                        <select id="priority-platform" name="Plateforme_Prioritaire" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="YouTube">YouTube</option>
+                            <option value="TikTok">TikTok</option>
+                            <option value="Site web">Site web</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Services recherchés (Sélectionnez au moins un) *</label>
+                        <div class="space-y-2" data-required-group="Services_Influenceur">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="service-brand" name="Services_Influenceur[]" value="Stratégie & image de marque" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="service-brand" class="ml-2 text-sm text-gray-700">Stratégie & image de marque</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="service-content" name="Services_Influenceur[]" value="Création de contenu" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="service-content" class="ml-2 text-sm text-gray-700">Création de contenu</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="service-monetization" name="Services_Influenceur[]" value="Monétisation" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="service-monetization" class="ml-2 text-sm text-gray-700">Monétisation</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="career-goal" class="block text-sm font-medium text-gray-700 mb-1">Objectif de carrière *</label>
+                        <select id="career-goal" name="Objectif_Carriere" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="Augmenter la monétisation">Augmenter la monétisation</option>
+                            <option value="Améliorer le personal branding">Améliorer le personal branding</option>
+                            <option value="Structurer les partenariats">Structurer les partenariats</option>
+                            <option value="Croissance organique">Croissance organique</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="individual-fields" class="hidden space-y-4">
+                    <div>
+                        <label for="status" class="block text-sm font-medium text-gray-700 mb-1">Statut actuel *</label>
+                        <select id="status" name="Statut_Personnel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="Étudiant">Étudiant</option>
+                            <option value="Employé">Employé</option>
+                            <option value="Demandeur d'emploi">Demandeur d'emploi</option>
+                            <option value="Indépendant">Indépendant</option>
+                            <option value="Retraité">Retraité</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="interest" class="block text-sm font-medium text-gray-700 mb-1">Intérêt principal *</label>
+                        <select id="interest" name="Interet_Principal" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="Formations en ligne">Formations en ligne</option>
+                            <option value="Cours & ateliers en direct">Cours & ateliers en direct</option>
+                            <option value="Accompagnement individuel">Accompagnement individuel</option>
+                            <option value="Outils & packs">Outils & packs</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="domain" class="block text-sm font-medium text-gray-700 mb-1">Domaine spécifique</label>
+                        <input type="text" id="domain" name="Domaine_Specifique" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Ex: SEO, montage vidéo...">
+                    </div>
+                    <div>
+                        <label for="skill-level" class="block text-sm font-medium text-gray-700 mb-1">Niveau de compétence *</label>
+                        <select id="skill-level" name="Niveau_Competence" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="Débutant">Débutant</option>
+                            <option value="Intermédiaire">Intermédiaire</option>
+                            <option value="Avancé">Avancé</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="personal-goal" class="block text-sm font-medium text-gray-700 mb-1">Objectif personnel</label>
+                        <textarea id="personal-goal" name="Objectif_Personnel" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Ex: Reconversion professionnelle, création d'un projet personnel... (Facultatif)"></textarea>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-between">
+                    <button type="button" id="phase2-back" class="px-6 py-2 text-gray-600 font-medium rounded-lg hover:bg-gray-100">Retour</button>
+                    <button type="submit" class="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700">Envoyer ma demande</button>
+                </div>
+            </form>
+
+            <div id="success-message" class="hidden text-center py-12">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                    <i data-feather="check" class="h-6 w-6 text-green-600"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Merci pour votre demande !</h2>
+                <p class="text-gray-600 mb-6">Nous avons bien reçu votre demande et vous contacterons très rapidement.</p>
+                <button id="new-request" class="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700">Nouvelle demande</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialisation des icônes Feather
+        feather.replace();
+
+        // ADRESSE DE RÉCEPTION (Utilisée par le code d'envoi ci-dessous)
+        const RECIPIENT_EMAIL = "contact@maison-johnco-marketing.com";
+        // URL de l'API de WordPress pour l'envoi de mail
+        // NOTE: Si le formulaire n'envoie toujours rien après avoir ajouté le code PHP, essayez de remplacer par l'URL complète : 'https://votresite.com/wp-json/v1/custom-form-send'
+        const MAIL_API_URL = '/wp-json/v1/custom-form-send'; 
+
+        // 1. Récupération des éléments principaux
+        const initialChoice = document.getElementById('initial-choice');
+        const quoteBtn = document.getElementById('quote-btn');
+        const infoBtn = document.getElementById('info-btn');
+        const infoForm = document.getElementById('info-form');
+        const quoteFormPhase1 = document.getElementById('quote-form-phase1');
+        const quoteFormPhase2 = document.getElementById('quote-form-phase2');
+        const phase1NextBtn = document.getElementById('phase1-next');
+        const infoBackBtn = document.getElementById('info-back');
+        const phase2BackBtn = document.getElementById('phase2-back');
+        const successMessage = document.getElementById('success-message');
+
+        const companyFields = document.getElementById('company-fields');
+        const influencerFields = document.getElementById('influencer-fields');
+        const individualFields = document.getElementById('individual-fields');
+        const profileRadios = document.querySelectorAll('input[name="profile"]');
+
+        const progressBar = document.getElementById('progress-bar');
+        const progressStep = document.getElementById('progress-step');
+        
+        // Conteneur de tous les formulaires (pour la réinitialisation)
+        const allForms = [infoForm, quoteFormPhase1, quoteFormPhase2];
+
+        // --- FONCTION DE RÉINITIALISATION ---
+        function resetFormState() {
+            // Masquer tous les formulaires et messages
+            infoForm.classList.add('hidden');
+            quoteFormPhase1.classList.add('hidden');
+            quoteFormPhase2.classList.add('hidden');
+            successMessage.classList.add('hidden');
+
+            // Afficher le choix initial
+            initialChoice.classList.remove('hidden');
+
+            // Réinitialiser les données des formulaires
+            allForms.forEach(form => form.reset());
+
+            // Réinitialiser les champs de profil spécifiques masqués
+            companyFields.classList.add('hidden');
+            influencerFields.classList.add('hidden');
+            individualFields.classList.add('hidden');
+            
+            // Réinitialiser la barre de progression
+            updateProgress(1, 5, 20); 
+        }
+
+        function updateProgress(step, total, width) {
+            progressStep.textContent = `${step}/${total}`;
+            progressBar.style.width = `${width}%`;
+        }
+
+        // --- 2. GESTION DE LA NAVIGATION (INITIAL) ---
+
+        quoteBtn.addEventListener('click', () => {
+            initialChoice.classList.add('hidden');
+            quoteFormPhase1.classList.remove('hidden');
+            updateProgress(1, 3, 33); 
+        });
+
+        infoBtn.addEventListener('click', () => {
+            initialChoice.classList.add('hidden');
+            infoForm.classList.remove('hidden');
+            updateProgress(1, 1, 100); 
+        });
+
+        // --- 3. GESTION DES BOUTONS RETOUR (Réinitialisation) ---
+
+        infoBackBtn.addEventListener('click', resetFormState);
+        document.getElementById('new-request').addEventListener('click', resetFormState);
+
+        phase2BackBtn.addEventListener('click', () => {
+            quoteFormPhase2.classList.add('hidden');
+            quoteFormPhase1.classList.remove('hidden');
+            companyFields.classList.add('hidden');
+            influencerFields.classList.add('hidden');
+            individualFields.classList.add('hidden');
+            updateProgress(1, 3, 33); 
+        });
+
+        // --- 4. GESTION DU BOUTON CONTINUER ---
+
+        phase1NextBtn.addEventListener('click', () => {
+            // Utilisation de la validation HTML native pour la Phase 1
+            if (!quoteFormPhase1.reportValidity()) {
+                alert("Veuillez remplir tous les champs obligatoires avant de continuer.");
+                return;
+            }
+            
+            // Vérification manuelle du statut (car les radios sont plus délicats)
+            let profileSelected = document.querySelector('input[name="profile"]:checked') !== null;
+            if (!profileSelected) {
+                alert("Veuillez sélectionner votre Statut.");
+                return;
+            }
+
+
+            quoteFormPhase1.classList.add('hidden');
+            quoteFormPhase2.classList.remove('hidden');
+            updateProgress(2, 3, 66); 
+            displayProfileFields();
+        });
+
+        // --- 5. LOGIQUE CONDITIONNELLE ---
+
+        function displayProfileFields() {
+            // Masquer tous les conteneurs et retirer tous les attributs "required" ajoutés dynamiquement
+            [companyFields, influencerFields, individualFields].forEach(fieldSet => {
+                fieldSet.classList.add('hidden');
+                fieldSet.querySelectorAll('[required]').forEach(field => {
+                    field.removeAttribute('required');
+                });
+            });
+
+            const selectedProfile = document.querySelector('input[name="profile"]:checked')?.value;
+            const phase2Title = document.getElementById('phase2-title');
+            let currentFields = null;
+
+            if (selectedProfile === 'Entreprise') {
+                currentFields = companyFields;
+                phase2Title.textContent = "Détails Entreprise (2/3)";
+            } else if (selectedProfile === 'Influenceur') {
+                currentFields = influencerFields;
+                phase2Title.textContent = "Détails Influenceur (2/3)";
+            } else if (selectedProfile === 'Particulier') {
+                currentFields = individualFields;
+                phase2Title.textContent = "Détails Particulier (2/3)";
+            }
+
+            if (currentFields) {
+                currentFields.classList.remove('hidden');
+                // Réappliquer l'attribut "required" aux champs requis dans le conteneur actif
+                currentFields.querySelectorAll('input, select, textarea').forEach(field => {
+                    // On ne réapplique pas 'required' aux champs de type checkbox, car la validation est manuelle (voir point 6)
+                    if (field.type !== 'checkbox') {
+                        field.setAttribute('required', 'required');
+                    }
+                });
+            }
+        }
+
+        profileRadios.forEach(radio => {
+            radio.addEventListener('change', displayProfileFields);
+        });
+
+        // --- 6. GESTION DE LA SOUMISSION DU FORMULAIRE (ENVOI) ---
+        
+        const submitForms = [infoForm, quoteFormPhase2]; 
+
+        submitForms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Valider la phase 2 uniquement si c'est le formulaire de devis
+                if (form.id === 'quote-form-phase2') {
+                    // Valider tous les champs requis via la validation HTML native
+                    if (!form.reportValidity()) {
+                        alert("Veuillez remplir tous les champs obligatoires de cette étape.");
+                        return; // Arrête la soumission
+                    }
+
+                    // Validation spécifique des groupes de checkboxes (Services recherchés)
+                    const selectedProfile = document.querySelector('input[name="profile"]:checked')?.value;
+                    let checkboxGroupName = null;
+                    if (selectedProfile === 'Entreprise') {
+                        checkboxGroupName = 'Services';
+                    } else if (selectedProfile === 'Influenceur') {
+                        checkboxGroupName = 'Services_Influenceur';
+                    }
+                    
+                    if (checkboxGroupName) {
+                        const serviceGroup = document.querySelectorAll(`input[name="${checkboxGroupName}[]"]:checked`);
+                        if (serviceGroup.length === 0) {
+                            alert("Veuillez sélectionner au moins un 'Service recherché'.");
+                            return;
+                        }
+                    }
+                }
+                
+                // Collecte des données
+                const formData = new FormData(form);
+                const data = {};
+                for (let [key, value] of formData.entries()) {
+                    // Gère les cases à cocher multiples
+                    if (key.endsWith('[]')) {
+                        key = key.slice(0, -2);
+                        if (!data[key]) {
+                            data[key] = [];
+                        }
+                        data[key].push(value);
+                    } else {
+                        data[key] = value;
+                    }
+                }
+                
+                // Ajout de l'adresse de destination et du type de formulaire
+                data.recipient = RECIPIENT_EMAIL;
+                data.type = (form.id === 'info-form') ? 'Renseignement' : 'Devis';
+
+                // Tentative d'envoi vers l'API de WordPress
+                fetch(MAIL_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        form.classList.add('hidden');
+                        successMessage.classList.remove('hidden');
+                        updateProgress(3, 3, 100); 
+                        setTimeout(resetFormState, 3000); // Réinitialisation après succès
+                    } else {
+                        // Affiche le message d'erreur du serveur
+                        alert("Erreur lors de l'envoi : " + (result.message || "Veuillez vérifier le code PHP dans functions.php."));
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur Fetch:', error);
+                    alert("Erreur de connexion (API). L'envoi ne fonctionne pas car votre code côté serveur (PHP) est manquant ou ne répond pas.");
+                });
+            });
+        });
+
+        // Force l'état initial au chargement de la page pour contrer le cache
+        window.addEventListener('load', resetFormState);
+    </script>
+</body>
+</html>
+<!-- /wp:html -->

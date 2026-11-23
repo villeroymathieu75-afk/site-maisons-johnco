@@ -1,0 +1,489 @@
+<!-- wp:html -->
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE OFFRES CRÉATEURS DE CONTENU — Maison John&Co Marketing
+     Packs Creator, Influencer, Star + options à la carte
+     Charte : rose #EC4899 + violet #7C3AED
+     À coller dans un bloc HTML personnalisé WordPress
+     ═══════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+.mjc-cr{
+  --dk:#0A1628;--dk2:#1E3A5F;--lt:#FAFAFA;--wh:#FFFFFF;
+  --pk:#EC4899;--pkl:#F9A8D4;--pkh:#BE185D;--pkg:rgba(236,72,153,.35);
+  --ac:#7C3AED;--acl:#A78BFA;--ach:#6D28D9;--acg:rgba(124,58,237,.35);
+  --amber:#F59E0B;--green:#10B981;
+  --td:#1A1A2E;--tm:#6B7280;--tl:#FFFFFF;--tlm:#C9B8D0;
+  --bl:#E5E7EB;--bd:rgba(255,255,255,.12);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--td);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.mjc-cr *,.mjc-cr *::before,.mjc-cr *::after{box-sizing:border-box;}
+.mjc-cr p{margin:0 0 14px;} .mjc-cr h1,.mjc-cr h2,.mjc-cr h3,.mjc-cr h4{margin:0;letter-spacing:-.02em;}
+.mjc-cr a{text-decoration:none;color:inherit;}
+.cr-w{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+/* ANIMS */
+@keyframes cr-gr{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes cr-fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes cr-pu{0%,100%{box-shadow:0 0 0 0 var(--pkg)}70%{box-shadow:0 0 0 12px transparent}}
+@keyframes cr-up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+.cr-rev{opacity:0;transform:translateY(32px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1);}
+.cr-rev.on{opacity:1;transform:translateY(0);}
+.cr-rev.d1{transition-delay:.1s}.cr-rev.d2{transition-delay:.2s}.cr-rev.d3{transition-delay:.3s}
+
+/* HERO */
+.cr-hero{background:var(--dk);padding:130px 0 90px;position:relative;overflow:hidden;color:var(--tl);}
+.cr-hero-bg{position:absolute;inset:0;background:linear-gradient(130deg,#0A1628 0%,#1E1048 35%,#2D0A3A 65%,#0A1628 100%);background-size:400% 400%;animation:cr-gr 18s ease infinite;z-index:0;}
+.cr-o{position:absolute;border-radius:50%;filter:blur(80px);z-index:1;animation:cr-fl 8s ease-in-out infinite;}
+.cr-o1{top:-80px;right:-60px;width:480px;height:480px;background:radial-gradient(circle,var(--pk),transparent 70%);opacity:.22;}
+.cr-o2{bottom:-80px;left:-60px;width:380px;height:380px;background:radial-gradient(circle,var(--ac),transparent 70%);opacity:.18;animation-delay:-4s;}
+.cr-hero-in{position:relative;z-index:2;max-width:860px;}
+.cr-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(236,72,153,.15);backdrop-filter:blur(10px);color:var(--pkl);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:30px;border:1px solid rgba(249,168,212,.3);animation:cr-up .8s ease-out;}
+.cr-dot{width:8px;height:8px;background:var(--pk);border-radius:50%;animation:cr-pu 2s infinite;}
+.cr-hero h1{font-size:58px;font-weight:700;line-height:1.08;margin-bottom:20px;animation:cr-up .9s ease-out .1s both;}
+.cr-hero h1 .ag{background:linear-gradient(135deg,#F9A8D4,#EC4899,#FBCFE8);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:cr-gr 5s ease infinite;}
+.cr-hero-sub{font-size:18px;color:var(--tlm);margin-bottom:40px;line-height:1.6;max-width:680px;animation:cr-up 1s ease-out .25s both;}
+.cr-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;animation:cr-up 1s ease-out .4s both;}
+.cr-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;transition:all .3s ease;cursor:pointer;border:none;}
+.cr-btn-p{background:linear-gradient(135deg,var(--pk),var(--pkh));color:white;box-shadow:0 4px 18px var(--pkg);}
+.cr-btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 26px var(--pkg);}
+.cr-btn-o{background:rgba(255,255,255,.07);color:white;border:1px solid rgba(255,255,255,.22);}
+.cr-btn-o:hover{background:rgba(255,255,255,.12);border-color:var(--pkl);}
+.cr-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:40px;border-top:1px solid var(--bd);animation:cr-up 1s ease-out .55s both;}
+.cr-stat-v{font-size:32px;font-weight:700;background:linear-gradient(135deg,var(--pkl),var(--pk));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:4px;}
+.cr-stat-l{font-size:12px;color:var(--tlm);text-transform:uppercase;letter-spacing:1px;}
+
+/* NAV ONGLETS */
+.cr-tabs-wrap{background:var(--dk);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:80;}
+.cr-tabs{display:flex;max-width:1200px;margin:0 auto;padding:0 24px;overflow-x:auto;}
+.cr-tab{padding:16px 24px;color:var(--tlm);font-size:14px;font-weight:600;cursor:pointer;transition:all .3s ease;border-bottom:2px solid transparent;white-space:nowrap;font-family:inherit;background:transparent;border-top:none;border-left:none;border-right:none;}
+.cr-tab:hover{color:var(--tl);}
+.cr-tab.on{color:var(--pkl);border-bottom-color:var(--pk);}
+
+/* SECTION PACKS */
+.cr-packs{background:var(--lt);padding:70px 0 100px;}
+.cr-section-head{text-align:center;margin-bottom:52px;}
+.cr-section-head h2{font-size:36px;font-weight:700;color:var(--td);margin-bottom:10px;}
+.cr-section-head p{font-size:16px;color:var(--tm);max-width:580px;margin:0 auto;}
+.cr-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--pk);margin-bottom:10px;}
+
+/* GRILLE PACKS */
+.cr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+
+/* CARTE PACK */
+.cr-pack{background:var(--wh);border:1px solid var(--bl);border-radius:24px;padding:36px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:all .35s cubic-bezier(.16,1,.3,1);}
+.cr-pack:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(10,22,40,.1);}
+.cr-pack.star{border-color:var(--pk);box-shadow:0 12px 40px rgba(236,72,153,.18);}
+.cr-pack.star:hover{box-shadow:0 24px 56px rgba(236,72,153,.28);}
+.cr-pack-badge{position:absolute;top:22px;right:22px;background:linear-gradient(135deg,var(--pk),var(--pkh));color:white;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.5px;}
+.cr-pack-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:24px;}
+.pi-creator{background:rgba(236,72,153,.1);}
+.pi-influencer{background:rgba(124,58,237,.12);}
+.pi-star{background:linear-gradient(135deg,rgba(236,72,153,.15),rgba(124,58,237,.15));}
+.cr-pack-name{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.nc-creator{color:var(--pk);}
+.nc-influencer{color:var(--ac);}
+.nc-star{background:linear-gradient(135deg,var(--pk),var(--ac));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.cr-pack h3{font-size:24px;font-weight:700;color:var(--td);margin-bottom:8px;}
+.cr-pack-desc{font-size:14px;color:var(--tm);line-height:1.55;margin-bottom:24px;}
+.cr-price-row{display:flex;align-items:flex-end;gap:6px;margin-bottom:6px;}
+.cr-price{font-size:40px;font-weight:800;color:var(--td);line-height:1;}
+.cr-price-unit{font-size:14px;color:var(--tm);padding-bottom:4px;}
+.cr-price-note{font-size:12px;color:var(--tm);margin-bottom:24px;}
+.cr-divider{height:1px;background:var(--bl);margin:20px 0;}
+.cr-features{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.cr-features li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--td);}
+.cr-check{flex-shrink:0;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:10px;}
+.chk-pk{background:rgba(236,72,153,.12);color:var(--pk);}
+.chk-ac{background:rgba(124,58,237,.12);color:var(--ac);}
+.chk-star{background:linear-gradient(135deg,var(--pk),var(--ac));color:white;}
+.cr-pack-cta{display:block;text-align:center;padding:13px;border-radius:12px;font-size:14px;font-weight:700;transition:all .3s ease;cursor:pointer;border:none;font-family:inherit;}
+.cta-creator{background:rgba(236,72,153,.08);color:var(--pk);border:1.5px solid rgba(236,72,153,.25);}
+.cta-creator:hover{background:var(--pk);color:white;}
+.cta-influencer{background:rgba(124,58,237,.08);color:var(--ac);border:1.5px solid rgba(124,58,237,.25);}
+.cta-influencer:hover{background:var(--ac);color:white;}
+.cta-star{background:linear-gradient(135deg,var(--pk),var(--ac));color:white;}
+.cta-star:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 20px var(--pkg);}
+
+/* OPTIONS À LA CARTE */
+.cr-carte{background:var(--dk);padding:80px 0;}
+.cr-carte-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.cr-opt{background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:18px;padding:24px;transition:all .3s ease;}
+.cr-opt:hover{background:rgba(236,72,153,.06);border-color:rgba(249,168,212,.3);transform:translateY(-3px);}
+.cr-opt-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cr-opt-name{font-size:16px;font-weight:700;color:var(--tl);}
+.cr-opt-price{font-size:14px;font-weight:700;color:var(--pkl);background:rgba(236,72,153,.12);padding:4px 10px;border-radius:6px;}
+.cr-opt-desc{font-size:13px;color:var(--tlm);line-height:1.5;margin:0;}
+
+/* COMPARATIF */
+.cr-comp{background:var(--lt);padding:80px 0;}
+.cr-table{width:100%;border-collapse:collapse;background:var(--wh);border-radius:20px;overflow:hidden;border:1px solid var(--bl);}
+.cr-table th{padding:18px 20px;font-size:13px;font-weight:700;text-align:left;background:var(--lt);color:var(--tm);text-transform:uppercase;letter-spacing:.8px;}
+.cr-table th.col-feat{width:40%;}
+.cr-table th.col-pack{text-align:center;font-size:12px;letter-spacing:1px;}
+.cr-table th.col-star-th{background:linear-gradient(135deg,rgba(236,72,153,.08),rgba(124,58,237,.08));color:var(--pk);}
+.cr-table td{padding:15px 20px;font-size:14px;color:var(--td);border-top:1px solid var(--bl);}
+.cr-table td.col-center{text-align:center;}
+.cr-table tr:last-child td{border-bottom:none;}
+.cr-table tr:hover td{background:rgba(236,72,153,.02);}
+.cr-yes{color:var(--green);font-size:16px;}
+.cr-no{color:#D1D5DB;font-size:16px;}
+.cr-opt-val{font-size:13px;font-weight:600;color:var(--tm);}
+.cr-pk-val{font-size:13px;font-weight:600;color:var(--pk);}
+
+/* TÉMOIGNAGES */
+.cr-temoignages{background:var(--dk);padding:80px 0;}
+.cr-temo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.cr-temo{background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:18px;padding:28px;}
+.cr-temo-stars{color:#F59E0B;font-size:14px;margin-bottom:12px;}
+.cr-temo-text{font-size:14px;color:var(--tlm);line-height:1.65;font-style:italic;margin-bottom:18px;}
+.cr-temo-author{display:flex;align-items:center;gap:10px;}
+.cr-temo-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--pk),var(--ac));display:flex;align-items:center;justify-content:center;color:white;font-size:13px;font-weight:700;flex-shrink:0;}
+.cr-temo-name{font-size:14px;font-weight:700;color:var(--tl);}
+.cr-temo-role{font-size:12px;color:var(--tlm);}
+
+/* FAQ */
+.cr-faq{background:var(--lt);padding:80px 0;}
+.cr-faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto;}
+.cr-faq-item{background:var(--wh);border:1px solid var(--bl);border-radius:14px;overflow:hidden;}
+.cr-faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-size:15px;font-weight:600;color:var(--td);}
+.cr-faq-q:hover{color:var(--pk);}
+.cr-faq-icon{flex-shrink:0;width:26px;height:26px;background:var(--lt);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--tm);transition:all .3s ease;}
+.cr-faq-item.open .cr-faq-icon{background:var(--pk);color:white;transform:rotate(45deg);}
+.cr-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;padding:0 22px;font-size:14px;color:var(--tm);line-height:1.7;}
+.cr-faq-item.open .cr-faq-a{max-height:300px;padding:0 22px 18px;}
+
+/* CTA FINAL */
+.cr-final{background:linear-gradient(135deg,#2D0A3A,#1E1048,#0A1628);padding:100px 0;text-align:center;position:relative;overflow:hidden;}
+.cr-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:560px;background:radial-gradient(circle,rgba(236,72,153,.18),transparent 70%);border-radius:50%;}
+.cr-final-in{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+.cr-final h2{font-size:40px;font-weight:700;line-height:1.15;margin-bottom:16px;color:var(--tl);}
+.cr-final h2 .ag{background:linear-gradient(135deg,var(--pkl),var(--pk));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.cr-final p{font-size:17px;color:var(--tlm);margin-bottom:32px;}
+.cr-final-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.cr-hero h1{font-size:42px;}.cr-hero-stats{grid-template-columns:repeat(2,1fr);}.cr-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto;}.cr-carte-grid{grid-template-columns:repeat(2,1fr);}.cr-temo-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.cr-hero{padding:100px 0 60px;}.cr-hero h1{font-size:28px;}.cr-hero-sub{font-size:15px;}.cr-hero-ctas{flex-direction:column;align-items:stretch;}.cr-btn{justify-content:center;}.cr-packs,.cr-carte,.cr-comp,.cr-temoignages,.cr-faq,.cr-final{padding:52px 0;}.cr-carte-grid{grid-template-columns:1fr;}.cr-table{font-size:12px;}.cr-table th,.cr-table td{padding:10px 12px;}.cr-final h2{font-size:26px;}.cr-final-btns{flex-direction:column;}}
+</style>
+
+<div class="mjc-cr">
+
+<!-- ══ HERO ══ -->
+<section class="cr-hero">
+  <div class="cr-hero-bg"></div>
+  <div class="cr-o cr-o1"></div>
+  <div class="cr-o cr-o2"></div>
+  <div class="cr-w">
+    <div class="cr-hero-in">
+      <div class="cr-badge"><span class="cr-dot"></span>Offres &amp; Tarifs Créateurs</div>
+      <h1>Propulsez votre <span class="ag">carrière créative</span></h1>
+      <p class="cr-hero-sub">Des packs conçus pour les créateurs de contenu, influenceurs et artistes digitaux. Développez votre audience, monétisez votre talent et construisez une marque personnelle qui dure.</p>
+      <div class="cr-hero-ctas">
+        <a href="/contact?type=devis&profil=createur" class="cr-btn cr-btn-p">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Démarrer gratuitement
+        </a>
+        <a href="https://calendly.com/contact-maison-johnco-marketing" target="_blank" rel="noopener noreferrer" class="cr-btn cr-btn-o">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Appel découverte
+        </a>
+      </div>
+      <div class="cr-hero-stats">
+        <div><div class="cr-stat-v">+350</div><div class="cr-stat-l">Créateurs accompagnés</div></div>
+        <div><div class="cr-stat-v">×4</div><div class="cr-stat-l">Croissance audience moy.</div></div>
+        <div><div class="cr-stat-v">+85%</div><div class="cr-stat-l">Revenus partenariats</div></div>
+        <div><div class="cr-stat-v">100%</div><div class="cr-stat-l">Approche sur-mesure</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TABS NAV ══ -->
+<div class="cr-tabs-wrap">
+  <div class="cr-tabs">
+    <button class="cr-tab on" data-s="packs">Packs Creator</button>
+    <button class="cr-tab" data-s="carte">À la carte</button>
+    <button class="cr-tab" data-s="comp">Comparatif</button>
+    <button class="cr-tab" data-s="faq">FAQ</button>
+  </div>
+</div>
+
+<!-- ══ PACKS ══ -->
+<section class="cr-packs" id="cr-packs">
+  <div class="cr-w">
+    <div class="cr-section-head cr-rev">
+      <span class="cr-eyebrow">Nos packs</span>
+      <h2>Choisissez votre niveau de lancement</h2>
+      <p>Trois formules progressives adaptées à votre stade de développement, de la montée en puissance à la domination de niche.</p>
+    </div>
+    <div class="cr-grid">
+
+      <!-- Pack Creator -->
+      <div class="cr-pack cr-rev">
+        <div class="cr-pack-icon pi-creator">🎬</div>
+        <div class="cr-pack-name nc-creator">Pack Creator</div>
+        <h3>Lancement &amp; Croissance</h3>
+        <p class="cr-pack-desc">Pour les créateurs qui démarrent ou veulent structurer leur présence digitale et commencer à monétiser.</p>
+        <div class="cr-price-row">
+          <span class="cr-price">490</span>
+          <span class="cr-price-unit">€/mois</span>
+        </div>
+        <p class="cr-price-note">Engagement 3 mois minimum · Sans frais cachés</p>
+        <div class="cr-divider"></div>
+        <ul class="cr-features">
+          <li><span class="cr-check chk-pk">✓</span>Audit &amp; stratégie de contenu initiale</li>
+          <li><span class="cr-check chk-pk">✓</span>Planning éditorial mensuel (16 posts)</li>
+          <li><span class="cr-check chk-pk">✓</span>Optimisation profil Instagram + TikTok</li>
+          <li><span class="cr-check chk-pk">✓</span>Coaching mensuel 1h (visio)</li>
+          <li><span class="cr-check chk-pk">✓</span>Rapport de performance mensuel</li>
+          <li><span class="cr-check chk-pk">✓</span>5 templates visuels personnalisés</li>
+          <li><span class="cr-check chk-pk">✓</span>Accès à notre réseau de partenaires</li>
+        </ul>
+        <button onclick="location.href='/contact?pack=creator'" class="cr-pack-cta cta-creator">Choisir ce pack</button>
+      </div>
+
+      <!-- Pack Influencer (vedette) -->
+      <div class="cr-pack star cr-rev d1">
+        <div class="cr-pack-badge">⭐ Le + populaire</div>
+        <div class="cr-pack-icon pi-influencer">🚀</div>
+        <div class="cr-pack-name nc-influencer">Pack Influencer</div>
+        <h3>Accélération &amp; Monétisation</h3>
+        <p class="cr-pack-desc">Pour les créateurs actifs qui veulent accélérer leur croissance, décrocher des partenariats et diversifier leurs revenus.</p>
+        <div class="cr-price-row">
+          <span class="cr-price">890</span>
+          <span class="cr-price-unit">€/mois</span>
+        </div>
+        <p class="cr-price-note">Engagement 3 mois · Résiliation préavis 1 mois</p>
+        <div class="cr-divider"></div>
+        <ul class="cr-features">
+          <li><span class="cr-check chk-ac">✓</span>Tout le pack Creator</li>
+          <li><span class="cr-check chk-ac">✓</span>Stratégie de monétisation complète</li>
+          <li><span class="cr-check chk-ac">✓</span>Mise en relation avec 3 marques/mois</li>
+          <li><span class="cr-check chk-ac">✓</span>Négociation de partenariats (commission 10%)</li>
+          <li><span class="cr-check chk-ac">✓</span>Planning éditorial 30 posts + stories</li>
+          <li><span class="cr-check chk-ac">✓</span>Analyse concurrentielle de niche</li>
+          <li><span class="cr-check chk-ac">✓</span>Coaching 2x/mois (visio 1h)</li>
+          <li><span class="cr-check chk-ac">✓</span>Lancement produit / formation digitale</li>
+          <li><span class="cr-check chk-ac">✓</span>Création page lien en bio optimisée</li>
+        </ul>
+        <button onclick="location.href='/contact?pack=influencer'" class="cr-pack-cta cta-influencer">Choisir ce pack</button>
+      </div>
+
+      <!-- Pack Star -->
+      <div class="cr-pack cr-rev d2">
+        <div class="cr-pack-icon pi-star">✨</div>
+        <div class="cr-pack-name nc-star">Pack Star</div>
+        <h3>Domination &amp; Empire</h3>
+        <p class="cr-pack-desc">Pour les créateurs établis qui veulent bâtir un véritable empire de marque personnelle et des revenus à 6 chiffres.</p>
+        <div class="cr-price-row">
+          <span class="cr-price">1 890</span>
+          <span class="cr-price-unit">€/mois</span>
+        </div>
+        <p class="cr-price-note">Accès complet · Manager dédié · Sur-mesure</p>
+        <div class="cr-divider"></div>
+        <ul class="cr-features">
+          <li><span class="cr-check chk-star">✓</span>Tout le pack Influencer</li>
+          <li><span class="cr-check chk-star">✓</span>Manager personnel dédié</li>
+          <li><span class="cr-check chk-star">✓</span>Stratégie multi-plateformes (6 canaux)</li>
+          <li><span class="cr-check chk-star">✓</span>Création de votre propre ligne de produits</li>
+          <li><span class="cr-check chk-star">✓</span>Lancement &amp; gestion communauté payante</li>
+          <li><span class="cr-check chk-star">✓</span>Production mensuelle 2 vidéos longues</li>
+          <li><span class="cr-check chk-star">✓</span>Mise en relation 8 marques/mois premium</li>
+          <li><span class="cr-check chk-star">✓</span>Conférences &amp; prises de parole</li>
+          <li><span class="cr-check chk-star">✓</span>Accompagnement juridique (contrats)</li>
+          <li><span class="cr-check chk-star">✓</span>Appels stratégiques illimités</li>
+        </ul>
+        <button onclick="location.href='/contact?pack=star'" class="cr-pack-cta cta-star">Choisir ce pack</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ OPTIONS À LA CARTE ══ -->
+<section class="cr-carte" id="cr-carte">
+  <div class="cr-w">
+    <div class="cr-section-head cr-rev" style="color:var(--tl);">
+      <span class="cr-eyebrow">Options à la carte</span>
+      <h2 style="color:var(--tl);">Services additionnels</h2>
+      <p style="color:var(--tlm);">Complétez votre pack ou commandez un service ponctuel indépendamment.</p>
+    </div>
+    <div class="cr-carte-grid">
+      <div class="cr-opt cr-rev"><div class="cr-opt-top"><span class="cr-opt-name">Audit de profil</span><span class="cr-opt-price">149€</span></div><p class="cr-opt-desc">Analyse complète de vos comptes, recommandations actionnables, rapport PDF de 15+ pages.</p></div>
+      <div class="cr-opt cr-rev d1"><div class="cr-opt-top"><span class="cr-opt-name">Media Kit pro</span><span class="cr-opt-price">299€</span></div><p class="cr-opt-desc">Création de votre dossier de présentation pour les marques : stats, audience, services, tarifs.</p></div>
+      <div class="cr-opt cr-rev d2"><div class="cr-opt-top"><span class="cr-opt-name">Shooting contenu</span><span class="cr-opt-price">450€</span></div><p class="cr-opt-desc">Journée de production photo/vidéo, 30+ visuels livrés retouchés, droits illimités.</p></div>
+      <div class="cr-opt cr-rev"><div class="cr-opt-top"><span class="cr-opt-name">Lancement formation</span><span class="cr-opt-price">990€</span></div><p class="cr-opt-desc">Stratégie + tunnel de vente + copywriting + lancement de votre première formation en ligne.</p></div>
+      <div class="cr-opt cr-rev d1"><div class="cr-opt-top"><span class="cr-opt-name">Coaching intensif</span><span class="cr-opt-price">390€</span></div><p class="cr-opt-desc">3h de coaching personnalisé sur votre stratégie creator. Compte rendu + plan d'action 30 jours.</p></div>
+      <div class="cr-opt cr-rev d2"><div class="cr-opt-top"><span class="cr-opt-name">Gestion communauté</span><span class="cr-opt-price">390€/mois</span></div><p class="cr-opt-desc">Animation de votre communauté Discord/Telegram/Facebook, modération, engagement quotidien.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPARATIF ══ -->
+<section class="cr-comp" id="cr-comp">
+  <div class="cr-w">
+    <div class="cr-section-head cr-rev">
+      <span class="cr-eyebrow">Comparatif</span>
+      <h2>Quel pack vous correspond ?</h2>
+      <p>Comparez les fonctionnalités incluses dans chaque formule pour faire le meilleur choix.</p>
+    </div>
+    <div style="overflow-x:auto;" class="cr-rev">
+      <table class="cr-table">
+        <thead>
+          <tr>
+            <th class="col-feat">Fonctionnalité</th>
+            <th class="col-pack">Creator<br><span style="font-size:13px;color:var(--pk);">490€/mois</span></th>
+            <th class="col-pack">Influencer<br><span style="font-size:13px;color:var(--ac);">890€/mois</span></th>
+            <th class="col-pack col-star-th">⭐ Star<br><span style="font-size:13px;">1 890€/mois</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Stratégie de contenu</td><td class="col-center"><span class="cr-yes">✓</span></td><td class="col-center"><span class="cr-yes">✓</span></td><td class="col-center"><span class="cr-yes">✓</span></td></tr>
+          <tr><td>Planning éditorial</td><td class="col-center"><span class="cr-opt-val">16 posts</span></td><td class="col-center"><span class="cr-opt-val">30 posts + stories</span></td><td class="col-center"><span class="cr-pk-val">Illimité</span></td></tr>
+          <tr><td>Coaching mensuel</td><td class="col-center"><span class="cr-opt-val">1h/mois</span></td><td class="col-center"><span class="cr-opt-val">2h/mois</span></td><td class="col-center"><span class="cr-pk-val">Illimité</span></td></tr>
+          <tr><td>Accès réseau marques</td><td class="col-center"><span class="cr-yes">✓</span></td><td class="col-center"><span class="cr-yes">✓</span></td><td class="col-center"><span class="cr-yes">✓</span></td></tr>
+          <tr><td>Mise en relation marques</td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-opt-val">3/mois</span></td><td class="col-center"><span class="cr-pk-val">8/mois premium</span></td></tr>
+          <tr><td>Stratégie de monétisation</td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-yes">✓</span></td><td class="col-center"><span class="cr-yes">✓</span></td></tr>
+          <tr><td>Lancement formation</td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-yes">✓</span></td><td class="col-center"><span class="cr-yes">✓</span></td></tr>
+          <tr><td>Manager dédié</td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-yes">✓</span></td></tr>
+          <tr><td>Communauté payante</td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-yes">✓</span></td></tr>
+          <tr><td>Production vidéo longue</td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-opt-val">2/mois</span></td></tr>
+          <tr><td>Accompagnement juridique</td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-no">—</span></td><td class="col-center"><span class="cr-yes">✓</span></td></tr>
+          <tr><td>Rapport de performance</td><td class="col-center"><span class="cr-opt-val">Mensuel</span></td><td class="col-center"><span class="cr-opt-val">Mensuel</span></td><td class="col-center"><span class="cr-pk-val">Hebdomadaire</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TÉMOIGNAGES ══ -->
+<section class="cr-temoignages">
+  <div class="cr-w">
+    <div class="cr-section-head cr-rev" style="color:var(--tl);">
+      <span class="cr-eyebrow">Témoignages</span>
+      <h2 style="color:var(--tl);">Ce que disent nos créateurs</h2>
+    </div>
+    <div class="cr-temo-grid">
+      <div class="cr-temo cr-rev">
+        <div class="cr-temo-stars">★★★★★</div>
+        <p class="cr-temo-text">"En 4 mois avec le pack Influencer, j'ai signé 6 partenariats avec des marques que j'aurais jamais approchées seule. L'équipe a transformé ma façon de voir mon activité."</p>
+        <div class="cr-temo-author">
+          <div class="cr-temo-avatar">LA</div>
+          <div><div class="cr-temo-name">Léa Armand</div><div class="cr-temo-role">Lifestyle &amp; Beauté · 94K abonnés</div></div>
+        </div>
+      </div>
+      <div class="cr-temo cr-rev d1">
+        <div class="cr-temo-stars">★★★★★</div>
+        <p class="cr-temo-text">"Le pack Star, c'est comme avoir un vrai agent. En 6 mois on a lancé ma formation, ma communauté privée et j'ai doublé mon audience TikTok. ROI exceptionnel."</p>
+        <div class="cr-temo-author">
+          <div class="cr-temo-avatar">TM</div>
+          <div><div class="cr-temo-name">Thomas M.</div><div class="cr-temo-role">Finance &amp; Crypto · 230K abonnés</div></div>
+        </div>
+      </div>
+      <div class="cr-temo cr-rev d2">
+        <div class="cr-temo-stars">★★★★★</div>
+        <p class="cr-temo-text">"Partis de zéro avec le pack Creator, on a passé 10K en 3 mois sur Instagram. L'audit initial m'a ouvert les yeux sur tout ce que je faisais mal."</p>
+        <div class="cr-temo-author">
+          <div class="cr-temo-avatar">SF</div>
+          <div><div class="cr-temo-name">Sarah F.</div><div class="cr-temo-role">Cuisine &amp; Nutrition · 12K abonnés</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="cr-faq" id="cr-faq">
+  <div class="cr-w">
+    <div class="cr-section-head cr-rev">
+      <span class="cr-eyebrow">Questions fréquentes</span>
+      <h2>Tout ce que vous voulez savoir</h2>
+    </div>
+    <div class="cr-faq-list">
+
+      <div class="cr-faq-item">
+        <div class="cr-faq-q" onclick="crFaq(this)">À partir de combien d'abonnés puis-je souscrire ?<span class="cr-faq-icon">+</span></div>
+        <div class="cr-faq-a">Il n'y a pas de minimum d'abonnés requis. Nos packs s'adaptent à tous les stades : que vous démarriez de zéro ou ayez déjà une communauté établie. Ce qui compte, c'est votre engagement et votre régularité.</div>
+      </div>
+
+      <div class="cr-faq-item">
+        <div class="cr-faq-q" onclick="crFaq(this)">Comment fonctionne la mise en relation avec les marques ?<span class="cr-faq-icon">+</span></div>
+        <div class="cr-faq-a">Nous vous proposons des marques partenaires de notre réseau en adéquation avec votre niche et vos valeurs. Vous restez libre d'accepter ou de refuser chaque proposition. Nous gérons la négociation et les contrats.</div>
+      </div>
+
+      <div class="cr-faq-item">
+        <div class="cr-faq-q" onclick="crFaq(this)">Puis-je changer de pack en cours de route ?<span class="cr-faq-icon">+</span></div>
+        <div class="cr-faq-a">Oui, vous pouvez upgrader à tout moment vers un pack supérieur. La facturation est ajustée au prorata. Pour passer à un pack inférieur, un préavis d'un mois est requis.</div>
+      </div>
+
+      <div class="cr-faq-item">
+        <div class="cr-faq-q" onclick="crFaq(this)">Sur quelles plateformes travaillez-vous ?<span class="cr-faq-icon">+</span></div>
+        <div class="cr-faq-a">Instagram, TikTok, YouTube, LinkedIn, Pinterest, Twitch, Snapchat — nous nous adaptons aux plateformes sur lesquelles vous êtes actif et à celles qui correspondent à votre niche.</div>
+      </div>
+
+      <div class="cr-faq-item">
+        <div class="cr-faq-q" onclick="crFaq(this)">La commission de 10% sur les partenariats est-elle incluse dans le pack ?<span class="cr-faq-icon">+</span></div>
+        <div class="cr-faq-a">La commission de 10% s'applique uniquement sur les partenariats que nous négocions pour vous et qui se concluent. Elle est prélevée sur le montant du deal signé. Elle n'est pas comptabilisée dans le prix du pack mensuel.</div>
+      </div>
+
+      <div class="cr-faq-item">
+        <div class="cr-faq-q" onclick="crFaq(this)">Combien de temps avant de voir des résultats ?<span class="cr-faq-icon">+</span></div>
+        <div class="cr-faq-a">Les premières améliorations (engagement, portée organique) sont généralement visibles dès le 2e mois. Les partenariats et la monétisation se structurent en 3 à 6 mois selon votre niche et votre implication.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cr-final">
+  <div class="cr-w">
+    <div class="cr-final-in cr-rev">
+      <h2>Prêt à vivre de votre <span class="ag">passion créative</span> ?</h2>
+      <p>Premier appel découverte gratuit. On analyse votre situation et on vous dit exactement quel pack vous correspond.</p>
+      <div class="cr-final-btns">
+        <a href="/contact?type=devis&profil=createur" class="cr-btn cr-btn-p">
+          Demander mon devis gratuit
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://calendly.com/contact-maison-johnco-marketing" target="_blank" rel="noopener noreferrer" class="cr-btn cr-btn-o">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Réserver un appel découverte
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  // FAQ accordion
+  window.crFaq = function(el){
+    const item = el.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.cr-faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  };
+  // Tabs scroll
+  document.querySelectorAll('.cr-tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      document.querySelectorAll('.cr-tab').forEach(t=>t.classList.remove('on'));
+      tab.classList.add('on');
+      const s = document.getElementById('cr-'+tab.dataset.s);
+      if(s) window.scrollTo({top:s.getBoundingClientRect().top+window.pageYOffset-80,behavior:'smooth'});
+    });
+  });
+  // Scroll reveal
+  const ro = new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target);}});
+  },{threshold:.07,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.cr-rev').forEach(el=>ro.observe(el));
+})();
+</script>
+<!-- /wp:html -->
