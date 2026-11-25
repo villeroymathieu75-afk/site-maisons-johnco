@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import express from 'express';
 import type { Request, Response } from 'express';
 import { buildInventory, normalizePathname } from './src/inventory.ts';
-import { renderAutonomousPage, renderInventoryHtml } from './src/renderer.ts';
+import { renderInventoryHtml } from './src/renderer.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,11 +14,28 @@ const app = express();
 
 const inventory = buildInventory(__dirname);
 
-// Serve local 2026 assets and map legacy WordPress uploads path to local assets
+// Serve static GitHub Pages assets, pages, and root files verbatim
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/wp-content/uploads', express.static(path.join(__dirname, 'assets', 'uploads')));
+app.use('/pages', express.static(path.join(__dirname, 'pages')));
 
-// Lightweight JSON inventory endpoint for the navigation drawer and audit API
+app.get(['/', '/index.html'], (_req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/robots.txt', (_req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
+app.get('/sitemap.xml', (_req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
+app.get('/404.html', (_req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, '404.html'));
+});
+
+// Lightweight JSON inventory endpoint for auditing
 app.get('/api/inventory', (req: Request, res: Response) => {
   const pages = inventory.pages.map((p) => ({
     filename: p.filename,
@@ -45,13 +62,13 @@ app.get('/api/inventory', (req: Request, res: Response) => {
   res.json({ stats: inventory.stats, pages });
 });
 
-// Inventory & missing/external links audit dashboard
+// Inventory & link audit dashboard
 app.get(['/_inventaire', '/inventaire'], (_req: Request, res: Response) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.send(renderInventoryHtml(inventory));
 });
 
-// Route all 132 autonomous HTML pages (primary slugs, aliases, and /pages/<file>.html)
+// Compatibility routing for clean slug URLs -> real static files in /pages/
 app.use((req: Request, res: Response, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') {
     next();
@@ -69,18 +86,19 @@ app.use((req: Request, res: Response, next) => {
   const page = inventory.routeMap.get(normalized);
 
   if (page) {
-    const rawHtml = fs.readFileSync(page.filePath, 'utf8');
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.send(renderAutonomousPage(page, rawHtml, inventory.stats.totalPages));
+    if (page.slug === 'accueil') {
+      const qs = req.originalUrl.includes('?') ? req.originalUrl.slice(req.originalUrl.indexOf('?')) : '';
+      res.redirect(302, `/${qs}`);
+      return;
+    }
+    const qs = req.originalUrl.includes('?') ? req.originalUrl.slice(req.originalUrl.indexOf('?')) : '';
+    res.redirect(302, `/pages/${page.filename}${qs}`);
     return;
   }
 
-  // Fallback to the exported custom 404 page
-  const page404 = inventory.routeMap.get('/page-404');
-  if (page404) {
-    const raw404 = fs.readFileSync(page404.filePath, 'utf8');
-    res.status(404).setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.send(renderAutonomousPage(page404, raw404, inventory.stats.totalPages));
+  const file404 = path.join(__dirname, '404.html');
+  if (fs.existsSync(file404)) {
+    res.status(404).sendFile(file404);
     return;
   }
 
@@ -89,6 +107,6 @@ app.use((req: Request, res: Response, next) => {
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log(
-    `Maison John&Co Marketing server running on http://0.0.0.0:${PORT} (${inventory.stats.totalPages} pages indexed, ${inventory.stats.totalAssets} assets)`
+    `Maison John&Co Marketing static preview server running on http://0.0.0.0:${PORT} (${inventory.stats.totalPages} pages, ${inventory.stats.totalAssets} assets)`
   );
 });
