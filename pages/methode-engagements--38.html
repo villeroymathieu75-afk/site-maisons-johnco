@@ -1,174 +1,1191 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Méthode & Engagements - Maison John&Co</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-        .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .engagement-icon {
-            transition: all 0.3s ease;
-        }
-        .engagement-item:hover .engagement-icon {
-            transform: scale(1.1);
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — Méthode &amp; Engagements - Maison John&amp;Co">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/methode-engagements--38.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/methode-engagements--38.html">
-    <meta property="og:title" content="Méthode &amp; Engagements - Maison John&amp;Co">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Méthode &amp; Engagements — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="Découvrez la méthodologie de travail et les engagements de Maison John&amp;Co Marketing : cadrage stratégique, organisation à distance, coordination des compétences et pilotage transparent des projets digitaux.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/methode-engagements--38.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/methode-engagements--38.html">
+  <meta property="og:title" content="Méthode &amp; Engagements — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Comment Maison John&amp;Co Marketing conçoit, organise et pilote ses missions digitales : méthodologie en 6 étapes, travail à distance structuré et charte d'engagements.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/institution/methode-atelier.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --me-ivory: #F9F8F5;
+      --me-white: #FFFFFF;
+      --me-navy: #0A1628;
+      --me-navy-2: #112240;
+      --me-ink: #121B2B;
+      --me-muted: #526075;
+      --me-line: #E4E2DC;
+      --me-line-dark: rgba(255, 255, 255, 0.12);
+      --me-accent: #7C3AED;
+      --me-accent-hover: #6D28D9;
+      --me-accent-soft: #F3EEFF;
+      --me-serif: 'Playfair Display', Georgia, serif;
+      --me-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --me-mono: 'IBM Plex Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--me-ivory);
+      color: var(--me-ink);
+      font-family: var(--me-sans);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .me-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── REVEAL ANIMATION ── */
+    .me-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .me-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .me-reveal-d1 { transition-delay: 0.08s; }
+    .me-reveal-d2 { transition-delay: 0.16s; }
+    .me-reveal-d3 { transition-delay: 0.24s; }
+
+    /* ── BREADCRUMB & KICKER ── */
+    .me-crumb {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--me-muted);
+      margin-bottom: 28px;
+    }
+    .me-crumb a:hover { color: var(--me-accent); }
+    .me-crumb-sep { color: #B4B9C2; }
+
+    .me-kicker {
+      font-family: var(--me-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--me-accent);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    /* ── HERO ── */
+    .me-hero {
+      padding: 64px 0 88px;
+      border-bottom: 1px solid var(--me-line);
+      background: var(--me-ivory);
+    }
+    .me-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: 56px;
+      align-items: stretch;
+    }
+    .me-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .me-hero h1 {
+      font-family: var(--me-serif);
+      font-size: clamp(2.35rem, 4.1vw, 3.65rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--me-navy);
+      margin: 0 0 24px;
+      text-wrap: balance;
+    }
+    .me-hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--me-accent);
+    }
+    .me-hero-lead {
+      font-size: 17px;
+      color: var(--me-muted);
+      max-width: 56ch;
+      margin: 0 0 32px;
+    }
+    .me-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .me-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--me-sans);
+      white-space: nowrap;
+      transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .me-btn:focus-visible {
+      outline: 2px solid var(--me-accent);
+      outline-offset: 3px;
+    }
+    .me-btn-primary {
+      background: var(--me-navy);
+      color: var(--me-white);
+    }
+    .me-btn-primary:hover {
+      background: var(--me-accent);
+      transform: translateY(-2px);
+    }
+    .me-btn-secondary {
+      background: transparent;
+      color: var(--me-navy);
+      border-color: #CBD2DC;
+    }
+    .me-btn-secondary:hover {
+      border-color: var(--me-navy);
+      background: var(--me-white);
+    }
+
+    .me-hero-media {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .me-media-frame {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #16233A 0%, #243656 100%);
+      border: 1px solid var(--me-line);
+      flex: 1;
+      min-height: 340px;
+    }
+    .me-media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .me-media-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--me-muted);
+      padding-top: 4px;
+    }
+    .me-media-caption strong {
+      color: var(--me-ink);
+      font-weight: 600;
+    }
+
+    /* ── PRINCIPLE BAND ── */
+    .me-principles {
+      background: var(--me-white);
+      border-bottom: 1px solid var(--me-line);
+      padding: 40px 0;
+    }
+    .me-principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .me-principle {
+      padding-right: 24px;
+      border-right: 1px solid var(--me-line);
+    }
+    .me-principle:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+    .me-principle-num {
+      font-family: var(--me-mono);
+      font-size: 12px;
+      color: var(--me-accent);
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 8px;
+    }
+    .me-principle h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--me-navy);
+      margin: 0 0 6px;
+    }
+    .me-principle p {
+      font-size: 14px;
+      color: var(--me-muted);
+      margin: 0;
+    }
+
+    /* ── METHODOLOGY 6 STAGES ── */
+    .me-section {
+      padding: 92px 0;
+    }
+    .me-section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 52px;
+    }
+    .me-section-head h2 {
+      font-family: var(--me-serif);
+      font-size: clamp(1.85rem, 3vw, 2.7rem);
+      font-weight: 600;
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+      color: var(--me-navy);
+      margin: 0;
+      text-wrap: balance;
+    }
+    .me-section-head p {
+      font-size: 16px;
+      color: var(--me-muted);
+      margin: 0;
+      max-width: 54ch;
+    }
+
+    /* Interactive Stage Selector */
+    .me-stage-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px;
+      background: var(--me-white);
+      border: 1px solid var(--me-line);
+      border-radius: 10px;
+      margin-bottom: 36px;
+    }
+    .me-stage-btn {
+      appearance: none;
+      background: transparent;
+      border: none;
+      border-radius: 7px;
+      padding: 10px 14px;
+      font-family: var(--me-sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--me-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.18s ease, color 0.18s ease;
+      white-space: nowrap;
+    }
+    .me-stage-btn span {
+      font-family: var(--me-mono);
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+      opacity: 0.75;
+    }
+    .me-stage-btn:hover {
+      color: var(--me-navy);
+      background: var(--me-ivory);
+    }
+    .me-stage-btn.is-active {
+      background: var(--me-navy);
+      color: var(--me-white);
+    }
+    .me-stage-btn:focus-visible {
+      outline: 2px solid var(--me-accent);
+      outline-offset: 2px;
+    }
+
+    /* Editorial Ledger of 6 Stages */
+    .me-ledger {
+      border-top: 1px solid var(--me-line);
+    }
+    .me-step {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1.05fr) minmax(0, 1.35fr);
+      gap: 32px;
+      padding: 36px 24px;
+      border-bottom: 1px solid var(--me-line);
+      background: transparent;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+      scroll-margin-top: 104px;
+    }
+    .me-step.is-highlighted {
+      background: var(--me-white);
+      border-radius: 10px;
+      box-shadow: 0 1px 0 var(--me-line);
+    }
+    .me-step-num {
+      font-family: var(--me-mono);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--me-navy);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.1;
+    }
+    .me-step.is-highlighted .me-step-num {
+      color: var(--me-accent);
+    }
+    .me-step-head h3 {
+      font-family: var(--me-serif);
+      font-size: 23px;
+      font-weight: 600;
+      color: var(--me-navy);
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+    .me-step-meta {
+      font-size: 13px;
+      color: var(--me-muted);
+    }
+    .me-step-body p {
+      font-size: 15px;
+      color: #364152;
+      margin: 0 0 16px;
+    }
+    .me-step-points {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 24px;
+    }
+    .me-step-points li {
+      font-size: 14px;
+      color: var(--me-ink);
+      padding-left: 16px;
+      position: relative;
+    }
+    .me-step-points li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--me-accent);
+    }
+    .me-step-deliverable {
+      font-size: 13px;
+      color: var(--me-muted);
+      padding-top: 14px;
+      border-top: 1px solid var(--me-line);
+    }
+    .me-step-deliverable strong {
+      color: var(--me-navy);
+      font-weight: 600;
+    }
+
+    /* ── REMOTE COLLABORATION DARK BAND ── */
+    .me-remote {
+      background: var(--me-navy);
+      color: #F1F5F9;
+      padding: 96px 0;
+    }
+    .me-remote-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 60px;
+      align-items: center;
+    }
+    .me-remote .me-kicker { color: #C4B5FD; }
+    .me-remote h2 {
+      font-family: var(--me-serif);
+      font-size: clamp(1.85rem, 3vw, 2.65rem);
+      font-weight: 600;
+      line-height: 1.18;
+      color: var(--me-white);
+      margin: 0 0 20px;
+      text-wrap: balance;
+    }
+    .me-remote-lead {
+      font-size: 16px;
+      color: #C2CDDD;
+      margin: 0 0 32px;
+      letter-spacing: 0.01em;
+    }
+    .me-remote-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .me-remote-item {
+      padding-top: 16px;
+      border-top: 1px solid var(--me-line-dark);
+    }
+    .me-remote-item h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--me-white);
+      margin: 0 0 8px;
+    }
+    .me-remote-item p {
+      font-size: 14px;
+      color: #B4C1D4;
+      margin: 0;
+    }
+
+    .me-diagram-panel {
+      background: var(--me-navy-2);
+      border: 1px solid var(--me-line-dark);
+      border-radius: 14px;
+      padding: 32px;
+    }
+    .me-diagram-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--me-white);
+      margin: 0 0 6px;
+    }
+    .me-diagram-sub {
+      font-size: 13px;
+      color: #9FB0C8;
+      margin: 0 0 24px;
+    }
+    .me-diagram-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── COMMITMENTS SECTION ── */
+    .me-commitments {
+      background: var(--me-white);
+      padding: 96px 0;
+      border-bottom: 1px solid var(--me-line);
+    }
+    .me-commit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--me-line);
+      border-left: 1px solid var(--me-line);
+    }
+    .me-commit-card {
+      padding: 36px 30px;
+      border-right: 1px solid var(--me-line);
+      border-bottom: 1px solid var(--me-line);
+      background: var(--me-white);
+      transition: background-color 0.2s ease;
+    }
+    .me-commit-card:hover {
+      background: var(--me-ivory);
+    }
+    .me-commit-index {
+      font-family: var(--me-mono);
+      font-size: 12px;
+      color: var(--me-accent);
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .me-commit-card h3 {
+      font-family: var(--me-serif);
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--me-navy);
+      margin: 0 0 12px;
+      line-height: 1.25;
+    }
+    .me-commit-card p {
+      font-size: 14.5px;
+      color: var(--me-muted);
+      margin: 0;
+    }
+
+    .me-honesty-note {
+      margin-top: 36px;
+      padding: 24px 28px;
+      background: var(--me-ivory);
+      border: 1px solid var(--me-line);
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.35fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .me-honesty-note h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--me-navy);
+      margin: 0;
+    }
+    .me-honesty-note p {
+      font-size: 14.5px;
+      color: #364152;
+      margin: 0;
+    }
+
+    /* ── GOVERNANCE & LONG-TERM COLLABORATION ── */
+    .me-cadence {
+      background: var(--me-ivory);
+      padding: 88px 0;
+      border-bottom: 1px solid var(--me-line);
+    }
+    .me-cadence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .me-cadence-card {
+      background: var(--me-white);
+      border: 1px solid var(--me-line);
+      border-radius: 12px;
+      padding: 30px 28px;
+    }
+    .me-cadence-meta {
+      font-size: 12px;
+      color: var(--me-muted);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .me-cadence-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--me-navy);
+      margin: 0 0 10px;
+    }
+    .me-cadence-card p {
+      font-size: 14.5px;
+      color: var(--me-muted);
+      margin: 0;
+    }
+
+    /* ── CTA & INSTITUTIONAL FOOTER ── */
+    .me-cta {
+      padding: 88px 0;
+      background: var(--me-white);
+    }
+    .me-cta-box {
+      background: var(--me-navy);
+      color: var(--me-white);
+      border-radius: 16px;
+      padding: 56px 52px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) auto;
+      gap: 36px;
+      align-items: center;
+    }
+    .me-cta-box h2 {
+      font-family: var(--me-serif);
+      font-size: clamp(1.75rem, 2.8vw, 2.45rem);
+      font-weight: 600;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+    .me-cta-box p {
+      font-size: 16px;
+      color: #C2CDDD;
+      margin: 0;
+      max-width: 56ch;
+    }
+    .me-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .me-btn-light {
+      background: var(--me-white);
+      color: var(--me-navy);
+    }
+    .me-btn-light:hover {
+      background: #EDE9FE;
+      transform: translateY(-2px);
+    }
+    .me-btn-ghost-dark {
+      background: transparent;
+      color: var(--me-white);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    .me-btn-ghost-dark:hover {
+      border-color: var(--me-white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .me-footer {
+      background: var(--me-ivory);
+      border-top: 1px solid var(--me-line);
+      padding: 40px 0 48px;
+      font-size: 13.5px;
+      color: var(--me-muted);
+    }
+    .me-footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .me-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+    .me-footer-links a:hover {
+      color: var(--me-navy);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .me-hero-grid,
+      .me-section-head,
+      .me-remote-grid,
+      .me-cta-box {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .me-step {
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: 20px;
+      }
+      .me-step-body {
+        grid-column: 1 / -1;
+      }
+      .me-commit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .me-cadence-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .me-wrap { padding: 0 18px; }
+      .me-hero { padding: 44px 0 56px; }
+      .me-section, .me-remote, .me-commitments, .me-cadence, .me-cta { padding: 64px 0; }
+      .me-principles-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .me-principle {
+        border-right: none;
+        border-bottom: 1px solid var(--me-line);
+        padding: 0 0 20px;
+      }
+      .me-principle:last-child { border-bottom: none; padding-bottom: 0; }
+      .me-step {
+        grid-template-columns: 1fr;
+        padding: 28px 16px;
+        gap: 12px;
+      }
+      .me-step-points,
+      .me-remote-list,
+      .me-commit-grid,
+      .me-honesty-note {
+        grid-template-columns: 1fr;
+      }
+      .me-cta-box { padding: 36px 24px; }
+      .me-stage-nav { overflow-x: auto; flex-wrap: nowrap; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .me-reveal { opacity: 1; transform: none; transition: none; }
+      .me-btn { transition: none; }
+    }
+  </style>
 </head>
-<body class="font-sans antialiased text-gray-800">
-<mjc-site-header></mjc-site-header>
-<script src="../assets/js/site-header.js"></script>
-  
+<body>
+  <mjc-site-header></mjc-site-header>
+  <script src="../assets/js/site-header.js"></script>
 
-    <!-- Notre Méthode -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Notre Approche en 3 Étapes</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
+  <main>
+    <!-- ── HERO ── -->
+    <section class="me-hero">
+      <div class="me-wrap">
+        <nav class="me-crumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a>
+          <span class="me-crumb-sep" aria-hidden="true">/</span>
+          <a href="a-propos--31.html">À propos</a>
+          <span class="me-crumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Méthode &amp; Engagements</span>
+        </nav>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Étape 1 -->
-                <div class="step-card bg-white p-8 rounded-lg shadow-md transition duration-300 border border-gray-100">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-ear-listen text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-4">1. Écoute & Analyse</h3>
-                    <p class="text-gray-600 text-center">
-                        Nous prenons le temps de comprendre votre entreprise, vos objectifs et votre marché. Une analyse approfondie nous permet d'identifier les opportunités et les défis spécifiques.
-                    </p>
-                </div>
-
-                <!-- Étape 2 -->
-                <div class="step-card bg-white p-8 rounded-lg shadow-md transition duration-300 border border-gray-100">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-chess text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-4">2. Stratégie Claire</h3>
-                    <p class="text-gray-600 text-center">
-                        Nous élaborons une feuille de route précise avec des objectifs SMART. Chaque décision est justifiée et alignée avec vos ambitions business.
-                    </p>
-                </div>
-
-                <!-- Étape 3 -->
-                <div class="step-card bg-white p-8 rounded-lg shadow-md transition duration-300 border border-gray-100">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-chart-line text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-4">3. Actions Mesurées</h3>
-                    <p class="text-gray-600 text-center">
-                        Mise en œuvre rigoureuse avec des indicateurs de performance clés. Nous ajustons en temps réel pour maximiser votre ROI et atteindre les résultats escomptés.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nos Engagements -->
-    <section class="py-16 gradient-bg">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nos Engagements</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <!-- Transparence -->
-                <div class="engagement-item bg-white p-6 rounded-lg shadow-sm">
-                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 mx-auto engagement-icon">
-                        <i class="fas fa-glasses text-blue-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-3">Transparence</h3>
-                    <p class="text-gray-600 text-center">
-                        Des rapports clairs et accessibles. Pas de jargon inutile, juste des faits et des chiffres compréhensibles.
-                    </p>
-                </div>
-
-                <!-- Réactivité -->
-                <div class="engagement-item bg-white p-6 rounded-lg shadow-sm">
-                    <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mb-4 mx-auto engagement-icon">
-                        <i class="fas fa-bolt text-green-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-3">Réactivité</h3>
-                    <p class="text-gray-600 text-center">
-                        Réponse sous 24h maximum. Une équipe disponible pour répondre à vos questions et s'adapter à vos besoins.
-                    </p>
-                </div>
-
-                <!-- Performance -->
-                <div class="engagement-item bg-white p-6 rounded-lg shadow-sm">
-                    <div class="w-14 h-14 bg-purple-50 rounded-full flex items-center justify-center mb-4 mx-auto engagement-icon">
-                        <i class="fas fa-trophy text-purple-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-3">Performance</h3>
-                    <p class="text-gray-600 text-center">
-                        Des résultats tangibles et mesurables. Nous nous engageons sur des KPI précis et les dépassons systématiquement.
-                    </p>
-                </div>
-
-                <!-- Valeurs -->
-                <div class="engagement-item bg-white p-6 rounded-lg shadow-sm">
-                    <div class="w-14 h-14 bg-yellow-50 rounded-full flex items-center justify-center mb-4 mx-auto engagement-icon">
-                        <i class="fas fa-hands-helping text-yellow-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-3">Respect des Valeurs</h3>
-                    <p class="text-gray-600 text-center">
-                        Votre éthique est la nôtre. Nous adaptons nos stratégies pour qu'elles reflètent parfaitement votre identité et vos convictions.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Témoignage -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="bg-blue-50 p-8 md:p-12 rounded-xl">
-                <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        <i class="fas fa-quote-left text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold ml-4">Ils nous font confiance</h3>
-                </div>
-                <blockquote class="text-lg italic text-gray-700 mb-6">
-                    "Maison John&Co a révolutionné notre présence digitale. Leur méthode en 3 étapes nous a permis de structurer notre approche et d'obtenir des résultats quantifiables en moins de 3 mois. Leur transparence et leur réactivité sont exceptionnelles."
-                </blockquote>
-                <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-gray-200"></div>
-                    <div class="ml-3">
-                        <p class="font-medium">Pierre Martin</p>
-                        <p class="text-sm text-gray-600">CEO, Entreprise XYZ</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-16 bg-gray-900 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Prêt à transformer votre présence digitale ?</h2>
-            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Discutons de votre projet et voyons comment notre méthode peut vous apporter des résultats concrets.
+        <div class="me-hero-grid">
+          <div class="me-hero-copy">
+            <span class="me-kicker">Méthodologie &amp; conduite de projet</span>
+            <h1>Une méthode structurée, du cadrage initial au <em>pilotage durable</em>.</h1>
+            <p class="me-hero-lead">
+              Chez Maison John&amp;Co Marketing, la performance digitale ne repose jamais sur l'improvisation. Chaque mission suit un cadre lisible — écoute, diagnostic, architecture, coordination des expertises et suivi rigoureux — pensé pour offrir clarté, souplesse et maîtrise à chaque étape.
             </p>
-            <a href="contact--895.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition duration-300">
-                Prendre rendez-vous
-            </a>
+            <div class="me-hero-actions">
+              <a href="contact--895.html" class="me-btn me-btn-primary">Échanger sur votre projet</a>
+              <a href="#etapes-methode" class="me-btn me-btn-secondary">Parcourir les 6 étapes</a>
+            </div>
+          </div>
+
+          <div class="me-hero-media">
+            <div class="me-media-frame">
+              <img src="../assets/images/institution/methode-atelier.jpg" alt="Plan de travail de cadrage stratégique avec feuille de route digitale et maquettes de projet" referrerpolicy="no-referrer">
+            </div>
+            <div class="me-media-caption">
+              <span><strong>Cadrage &amp; architecture</strong> · Feuille de route documentée avant chaque mise en œuvre</span>
+              <span>Travail à distance structuré</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-   
+    <!-- ── 3 PRINCIPES FONDATEURS ── -->
+    <section class="me-principles" aria-label="Principes directeurs">
+      <div class="me-wrap">
+        <div class="me-principles-grid">
+          <div class="me-principle me-reveal">
+            <div class="me-principle-num">Principe 01</div>
+            <h2>Comprendre avant d'agir</h2>
+            <p>Aucune action n'est lancée sans un cadrage clair de votre modèle économique, de vos priorités et de vos contraintes réelles.</p>
+          </div>
+          <div class="me-principle me-reveal me-reveal-d1">
+            <div class="me-principle-num">Principe 02</div>
+            <h2>Orchestrer les bonnes compétences</h2>
+            <p>Un pilotage centralisé coordonne les profils spécialisés requis pour votre projet, afin d'éviter la dispersion entre prestataires isolés.</p>
+          </div>
+          <div class="me-principle me-reveal me-reveal-d2">
+            <div class="me-principle-num">Principe 03</div>
+            <h2>Piloter par les faits</h2>
+            <p>Des points d'étape réguliers, des livrables vérifiables et des indicateurs lisibles guident chaque ajustement dans la durée.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LES 6 ÉTAPES DE LA MÉTHODOLOGIE ── -->
+    <section class="me-section" id="etapes-methode">
+      <div class="me-wrap">
+        <div class="me-section-head me-reveal">
+          <div>
+            <span class="me-kicker">Déroulement d'une mission</span>
+            <h2>Six étapes progressives pour sécuriser chaque décision</h2>
+          </div>
+          <p>
+            Qu'il s'agisse d'un accompagnement stratégique, d'une refonte digitale, d'une application ou d'un dispositif d'acquisition, notre démarche suit un enchaînement cohérent et adaptable à l'envergure de votre projet.
+          </p>
+        </div>
+
+        <div class="me-stage-nav me-reveal" role="tablist" aria-label="Accès rapide aux étapes de la méthode">
+          <button type="button" class="me-stage-btn is-active" data-target="step-1" role="tab" aria-selected="true"><span>01</span> Écoute &amp; besoins</button>
+          <button type="button" class="me-stage-btn" data-target="step-2" role="tab" aria-selected="false"><span>02</span> Analyse &amp; stratégie</button>
+          <button type="button" class="me-stage-btn" data-target="step-3" role="tab" aria-selected="false"><span>03</span> Conception &amp; plan</button>
+          <button type="button" class="me-stage-btn" data-target="step-4" role="tab" aria-selected="false"><span>04</span> Coordination</button>
+          <button type="button" class="me-stage-btn" data-target="step-5" role="tab" aria-selected="false"><span>05</span> Suivi &amp; livrables</button>
+          <button type="button" class="me-stage-btn" data-target="step-6" role="tab" aria-selected="false"><span>06</span> Amélioration continue</button>
+        </div>
+
+        <div class="me-ledger">
+          <!-- Étape 1 -->
+          <article class="me-step is-highlighted me-reveal" id="step-1">
+            <div class="me-step-num">01</div>
+            <div class="me-step-head">
+              <h3>Écoute &amp; compréhension des enjeux</h3>
+              <div class="me-step-meta">Phase d'immersion · Objectifs &amp; contexte métier</div>
+            </div>
+            <div class="me-step-body">
+              <p>
+                Toute collaboration débute par un temps d'écoute structuré. Nous prenons le temps de comprendre votre entreprise, votre marché, vos publics cibles, vos ressources internes et l'historique de vos actions digitales.
+              </p>
+              <ul class="me-step-points">
+                <li>Entretien de cadrage sur vos objectifs commerciaux et d'image</li>
+                <li>Identification précise des priorités et des contraintes opérationnelles</li>
+                <li>Clarification du périmètre, des délais souhaités et des interlocuteurs</li>
+                <li>Alignement sur votre positionnement et vos valeurs de marque</li>
+              </ul>
+              <div class="me-step-deliverable"><strong>Jalon clé :</strong> Synthèse de cadrage validée conjointement avant l'analyse approfondie.</div>
+            </div>
+          </article>
+
+          <!-- Étape 2 -->
+          <article class="me-step me-reveal" id="step-2">
+            <div class="me-step-num">02</div>
+            <div class="me-step-head">
+              <h3>Analyse préalable &amp; stratégie adaptée</h3>
+              <div class="me-step-meta">Phase de diagnostic · Arbitrages &amp; feuille de route</div>
+            </div>
+            <div class="me-step-body">
+              <p>
+                Avant toute production ou activation, nous réalisons un diagnostic objectif de votre existant et de votre environnement concurrentiel. Cette étape évite les dépenses dispersées et oriente les efforts sur les leviers réellement pertinents.
+              </p>
+              <ul class="me-step-points">
+                <li>Audit de vos supports, parcours utilisateurs et canaux actifs</li>
+                <li>Lecture des opportunités sectorielles et des points de friction</li>
+                <li>Définition d'une feuille de route hiérarchisée et réaliste</li>
+                <li>Sélection d'indicateurs de suivi cohérents avec vos ambitions</li>
+              </ul>
+              <div class="me-step-deliverable"><strong>Jalon clé :</strong> Recommandation stratégique claire, argumentée et priorisée.</div>
+            </div>
+          </article>
+
+          <!-- Étape 3 -->
+          <article class="me-step me-reveal" id="step-3">
+            <div class="me-step-num">03</div>
+            <div class="me-step-head">
+              <h3>Conception &amp; planification opérationnelle</h3>
+              <div class="me-step-meta">Phase d'architecture · Calendrier &amp; spécifications</div>
+            </div>
+            <div class="me-step-body">
+              <p>
+                Une fois le cap validé, nous traduisons la stratégie en plan d'action détaillé. Chaque chantier — création, développement, contenu, référencement, acquisition ou automatisation — est découpé en lots concrets et en jalons de validation.
+              </p>
+              <ul class="me-step-points">
+                <li>Rédaction des briefs créatifs, éditoriaux ou fonctionnels</li>
+                <li>Établissement d'un rétroplanning réaliste avec points de contrôle</li>
+                <li>Définition des responsabilités entre votre équipe et l'agence</li>
+                <li>Préparation des accès, outils de suivi et standards de qualité</li>
+              </ul>
+              <div class="me-step-deliverable"><strong>Jalon clé :</strong> Plan de production partagé et calendrier des étapes de validation.</div>
+            </div>
+          </article>
+
+          <!-- Étape 4 -->
+          <article class="me-step me-reveal" id="step-4">
+            <div class="me-step-num">04</div>
+            <div class="me-step-head">
+              <h3>Coordination des compétences spécialisées</h3>
+              <div class="me-step-meta">Phase d'orchestration · Interlocuteur dédié &amp; synergie</div>
+            </div>
+            <div class="me-step-body">
+              <p>
+                Un projet digital abouti mobilise rarement une seule discipline. Maison John&amp;Co Marketing assemble et coordonne les compétences complémentaires nécessaires — stratégie, design, développement web ou applicatif, SEO, rédaction, publicité ou CRM — sous une direction cohérente.
+              </p>
+              <ul class="me-step-points">
+                <li>Mobilisation ciblée de spécialistes adaptés aux besoins réels de la mission</li>
+                <li>Un point de contact central pour fluidifier vos échanges</li>
+                <li>Cohérence assurée entre discours de marque, interface et technique</li>
+                <li>Passerelles fluides entre les différents métiers impliqués</li>
+              </ul>
+              <div class="me-step-deliverable"><strong>Jalon clé :</strong> Équipe projet mobilisée autour d'un brief unifié et d'une coordination continue.</div>
+            </div>
+          </article>
+
+          <!-- Étape 5 -->
+          <article class="me-step me-reveal" id="step-5">
+            <div class="me-step-num">05</div>
+            <div class="me-step-head">
+              <h3>Suivi des missions, communication &amp; qualité des livrables</h3>
+              <div class="me-step-meta">Phase de déploiement · Contrôle qualité &amp; transparence</div>
+            </div>
+            <div class="me-step-body">
+              <p>
+                Pendant toute l'exécution, nous privilégions une communication claire, régulière et documentée. Chaque livrable fait l'objet d'une revue attentive — fond, forme, compatibilité technique et cohérence stratégique — avant de vous être présenté.
+              </p>
+              <ul class="me-step-points">
+                <li>Points d'avancement réguliers et comptes rendus synthétiques</li>
+                <li>Relecture et vérification qualité systématique avant livraison</li>
+                <li>Validation par étapes pour éviter les mauvaises surprises en fin de projet</li>
+                <li>Explications accessibles, sans jargon technique superflu</li>
+              </ul>
+              <div class="me-step-deliverable"><strong>Jalon clé :</strong> Livrables vérifiés, documentés et validés à chaque phase.</div>
+            </div>
+          </article>
+
+          <!-- Étape 6 -->
+          <article class="me-step me-reveal" id="step-6">
+            <div class="me-step-num">06</div>
+            <div class="me-step-head">
+              <h3>Mesure, ajustement &amp; collaboration durable</h3>
+              <div class="me-step-meta">Phase de consolidation · Itérations &amp; amélioration continue</div>
+            </div>
+            <div class="me-step-body">
+              <p>
+                La mise en ligne ou le lancement d'une campagne n'est pas une fin en soi. Nous analysons les données réelles d'usage et de performance pour affiner progressivement les dispositifs et construire une relation de travail utile sur la durée.
+              </p>
+              <ul class="me-step-points">
+                <li>Lecture factuelle des indicateurs définis lors du cadrage</li>
+                <li>Identification des pistes d'optimisation prioritaires</li>
+                <li>Ajustements progressifs en fonction des retours terrain et du marché</li>
+                <li>Accompagnement évolutif adapté au rythme de votre développement</li>
+              </ul>
+              <div class="me-step-deliverable"><strong>Jalon clé :</strong> Bilans périodiques et plan d'amélioration continue partagé.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FONCTIONNEMENT À DISTANCE ── -->
+    <section class="me-remote">
+      <div class="me-wrap">
+        <div class="me-remote-grid">
+          <div class="me-reveal">
+            <span class="me-kicker">Organisation opérationnelle</span>
+            <h2>Le fonctionnement à distance : un levier concret de flexibilité et d'efficacité</h2>
+            <p class="me-remote-lead">
+              Travailler à distance n'est pas une contrainte subie, mais un mode d'organisation conçu pour concentrer l'énergie sur la qualité des projets, la réactivité des échanges et la pertinence des compétences mobilisées.
+            </p>
+            <div class="me-remote-list">
+              <div class="me-remote-item">
+                <h3>Gain de temps réel</h3>
+                <p>Des visioconférences ciblées et des échanges écrits structurés remplacent les réunions chronophages et les déplacements superflus.</p>
+              </div>
+              <div class="me-remote-item">
+                <h3>Souplesse de planification</h3>
+                <p>Des créneaux d'échange plus faciles à caler dans des agendas chargés, en France comme sur différents fuseaux horaires.</p>
+              </div>
+              <div class="me-remote-item">
+                <h3>Accès aux bons profils</h3>
+                <p>S'affranchir des limites géographiques permet de mobiliser la compétence exacte requise par votre projet plutôt qu'un compromis de proximité.</p>
+              </div>
+              <div class="me-remote-item">
+                <h3>Traçabilité des décisions</h3>
+                <p>Chaque validation, brief, document de suivi et compte rendu reste centralisé et consultable simplement à tout moment.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="me-diagram-panel me-reveal me-reveal-d1" aria-label="Schéma du rythme de collaboration à distance">
+            <h3 class="me-diagram-title">Architecture d'un cycle de collaboration</h3>
+            <p class="me-diagram-sub">Un rythme simple qui maintient la visibilité sans alourdir votre quotidien.</p>
+            <svg class="me-diagram-svg" viewBox="0 0 460 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cycle en 4 temps : Cadrage visio, Production coordonnée, Validation asynchrone, Point de pilotage">
+              <rect x="16" y="18" width="194" height="114" rx="10" fill="#172A4B" stroke="rgba(255,255,255,0.16)"/>
+              <text x="34" y="46" fill="#C4B5FD" font-family="IBM Plex Mono, monospace" font-size="11">TEMPS 01</text>
+              <text x="34" y="70" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700">Cadrage &amp; priorités</text>
+              <text x="34" y="92" fill="#B4C1D4" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Visio structurée, objectifs</text>
+              <text x="34" y="110" fill="#B4C1D4" font-family="Plus Jakarta Sans, sans-serif" font-size="12">et jalons documentés.</text>
+
+              <rect x="250" y="18" width="194" height="114" rx="10" fill="#172A4B" stroke="rgba(255,255,255,0.16)"/>
+              <text x="268" y="46" fill="#C4B5FD" font-family="IBM Plex Mono, monospace" font-size="11">TEMPS 02</text>
+              <text x="268" y="70" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700">Production coordonnée</text>
+              <text x="268" y="92" fill="#B4C1D4" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Exécution spécialisée avec</text>
+              <text x="268" y="110" fill="#B4C1D4" font-family="Plus Jakarta Sans, sans-serif" font-size="12">contrôle qualité interne.</text>
+
+              <rect x="250" y="188" width="194" height="114" rx="10" fill="#172A4B" stroke="rgba(255,255,255,0.16)"/>
+              <text x="268" y="216" fill="#C4B5FD" font-family="IBM Plex Mono, monospace" font-size="11">TEMPS 03</text>
+              <text x="268" y="240" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700">Partage &amp; validation</text>
+              <text x="268" y="262" fill="#B4C1D4" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Livrables commentés et</text>
+              <text x="268" y="280" fill="#B4C1D4" font-family="Plus Jakarta Sans, sans-serif" font-size="12">retours centralisés.</text>
+
+              <rect x="16" y="188" width="194" height="114" rx="10" fill="#1E1B4B" stroke="#7C3AED"/>
+              <text x="34" y="216" fill="#C4B5FD" font-family="IBM Plex Mono, monospace" font-size="11">TEMPS 04</text>
+              <text x="34" y="240" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700">Bilan &amp; ajustements</text>
+              <text x="34" y="262" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Lecture des indicateurs et</text>
+              <text x="34" y="280" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="12">prochaines itérations.</text>
+
+              <!-- Connecteurs directionnels -->
+              <path d="M210 75 H242" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M238 70 L245 75 L238 80" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <path d="M347 132 V180" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M342 175 L347 182 L352 175" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <path d="M250 245 H218" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M222 240 L215 245 L222 250" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <path d="M113 188 V140" stroke="rgba(167,139,250,0.55)" stroke-width="1.6" stroke-dasharray="4 4" stroke-linecap="round"/>
+              <path d="M108 145 L113 138 L118 145" stroke="rgba(167,139,250,0.55)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NOS ENGAGEMENTS ── -->
+    <section class="me-commitments" id="engagements">
+      <div class="me-wrap">
+        <div class="me-section-head me-reveal">
+          <div>
+            <span class="me-kicker">Charte d'engagement</span>
+            <h2>Six engagements concrets au cœur de chaque mission</h2>
+          </div>
+          <p>
+            Nos engagements portent sur ce qui dépend réellement de notre exigence professionnelle : la qualité de la méthode, la clarté du suivi, la rigueur d'exécution et le respect de votre identité.
+          </p>
+        </div>
+
+        <div class="me-commit-grid me-reveal">
+          <div class="me-commit-card">
+            <span class="me-commit-index">Engagement 01</span>
+            <h3>Qualité &amp; soin des livrables</h3>
+            <p>Chaque document, interface, campagne ou développement est vérifié avant livraison. Nous préférons un périmètre bien maîtrisé à une accumulation superficielle.</p>
+          </div>
+
+          <div class="me-commit-card">
+            <span class="me-commit-index">Engagement 02</span>
+            <h3>Organisation &amp; lisibilité</h3>
+            <p>Vous savez toujours où en est votre projet, quelle étape suit et quelles validations sont attendues. Des jalons clairs remplacent l'opacité.</p>
+          </div>
+
+          <div class="me-commit-card">
+            <span class="me-commit-index">Engagement 03</span>
+            <h3>Réactivité &amp; disponibilité</h3>
+            <p>Une communication fluide, des retours rapides et un suivi attentif de vos demandes afin de maintenir la dynamique du projet sans blocages inutiles.</p>
+          </div>
+
+          <div class="me-commit-card">
+            <span class="me-commit-index">Engagement 04</span>
+            <h3>Transparence totale</h3>
+            <p>Des bilans intelligibles, sans jargon opaque. Nous partageons aussi bien les avancées que les points de vigilance afin d'éclairer vos arbitrages.</p>
+          </div>
+
+          <div class="me-commit-card">
+            <span class="me-commit-index">Engagement 05</span>
+            <h3>Adaptation &amp; respect des valeurs</h3>
+            <p>Votre éthique, votre ton et votre culture d'entreprise guident nos recommandations. Nous adaptons nos dispositifs à votre maturité digitale et non l'inverse.</p>
+          </div>
+
+          <div class="me-commit-card">
+            <span class="me-commit-index">Engagement 06</span>
+            <h3>Culture de la mesure</h3>
+            <p>Nous définissons des indicateurs réalistes et suivons les données concrètes pour orienter les optimisations et concentrer les efforts là où ils créent le plus de valeur.</p>
+          </div>
+        </div>
+
+        <div class="me-honesty-note me-reveal">
+          <h3>Notre exigence d'honnêteté professionnelle</h3>
+          <p>
+            En marketing digital comme en conception de solutions numériques, la performance dépend d'un ensemble de facteurs : qualité de l'offre, dynamique concurrentielle, budget mobilisé, saisonnalité et évolution des plateformes. C'est pourquoi <strong>nous ne promettons jamais de résultats garantis artificiellement</strong>. Nous nous engageons en revanche pleinement sur la rigueur de notre méthodologie, la qualité des moyens mis en œuvre, la transparence du suivi et la recherche constante d'améliorations mesurables.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RYTHME DE SUIVI ── -->
+    <section class="me-cadence">
+      <div class="me-wrap">
+        <div class="me-section-head me-reveal">
+          <div>
+            <span class="me-kicker">Relation client au quotidien</span>
+            <h2>Un suivi pensé pour durer, à votre rythme</h2>
+          </div>
+          <p>
+            Que vous ayez besoin d'une intervention ciblée ou d'un accompagnement récurrent sur plusieurs trimestres, nous calibrons le niveau de suivi selon votre organisation interne.
+          </p>
+        </div>
+
+        <div class="me-cadence-grid">
+          <div class="me-cadence-card me-reveal">
+            <span class="me-cadence-meta">Démarrage · Cadrage</span>
+            <h3>Un lancement clair et documenté</h3>
+            <p>Chaque collaboration s'ouvre par une phase de cadrage précise afin d'aligner objectifs, calendrier, rôles et critères d'évaluation dès le premier jour.</p>
+          </div>
+          <div class="me-cadence-card me-reveal me-reveal-d1">
+            <span class="me-cadence-meta">Exécution · Visibilité</span>
+            <h3>Des échanges synthétiques et utiles</h3>
+            <p>Points réguliers en visioconférence et comptes rendus structurés permettent de suivre l'avancement concret sans multiplier les réunions superflues.</p>
+          </div>
+          <div class="me-cadence-card me-reveal me-reveal-d2">
+            <span class="me-cadence-meta">Continuité · Évolution</span>
+            <h3>Des ajustements guidés par l'usage</h3>
+            <p>Au fil de la mission, les enseignements tirés des résultats et des retours clients nourrissent les étapes suivantes pour inscrire votre projet dans la durée.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA FINAL ── -->
+    <section class="me-cta">
+      <div class="me-wrap">
+        <div class="me-cta-box me-reveal">
+          <div>
+            <h2>Un projet digital à structurer ou à faire évoluer ?</h2>
+            <p>
+              Présentez-nous vos objectifs lors d'un premier échange : nous évaluerons ensemble le cadre méthodologique le plus adapté à votre contexte.
+            </p>
+          </div>
+          <div class="me-cta-actions">
+            <a href="contact--895.html" class="me-btn me-btn-light">Prendre contact</a>
+            <a href="devis-sur-mesure--48.html" class="me-btn me-btn-ghost-dark">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="me-footer">
+    <div class="me-wrap">
+      <div class="me-footer-row">
+        <span>Maison John&amp;Co Marketing — Méthode &amp; Engagements</span>
+        <nav class="me-footer-links" aria-label="Navigation institutionnelle">
+          <a href="notre-agence--35.html">Notre agence</a>
+          <a href="equipe-dirigeante--37.html">Équipe dirigeante</a>
+          <a href="carrieres--39.html">Carrières</a>
+          <a href="services-proposes-pour-les-entreprises--395.html">Services entreprises</a>
+          <a href="contact--895.html">Contact</a>
+          <a href="mentions-legales--1004.html">Mentions légales</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.me-stage-btn'));
+      var steps = Array.prototype.slice.call(document.querySelectorAll('.me-step'));
+
+      function setActiveStage(targetId, shouldScroll) {
+        buttons.forEach(function (btn) {
+          var active = btn.getAttribute('data-target') === targetId;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        steps.forEach(function (step) {
+          step.classList.toggle('is-highlighted', step.id === targetId);
+        });
+        if (shouldScroll) {
+          var el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setActiveStage(btn.getAttribute('data-target'), true);
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var revealObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.me-reveal').forEach(function (el) {
+          revealObs.observe(el);
+        });
+
+        var stageObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              setActiveStage(entry.target.id, false);
+            }
+          });
+        }, { threshold: 0.45 });
+
+        steps.forEach(function (step) { stageObs.observe(step); });
+      } else {
+        document.querySelectorAll('.me-reveal').forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

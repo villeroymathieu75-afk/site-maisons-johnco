@@ -1,260 +1,1020 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Équipe Dirigeante | Maison John&Co</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .team-card:hover .team-overlay {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .team-overlay {
-            transition: all 0.3s ease;
-            transform: translateY(20px);
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — Équipe Dirigeante | Maison John&amp;Co">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/equipe-dirigeante--37.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/equipe-dirigeante--37.html">
-    <meta property="og:title" content="Équipe Dirigeante | Maison John&amp;Co">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Équipe Dirigeante — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="Découvrez l'organisation dirigeante de Maison John&amp;Co Marketing : gouvernance, vision stratégique, coordination des projets et articulation des pôles d'expertise autour de chaque mission.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/equipe-dirigeante--37.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/equipe-dirigeante--37.html">
+  <meta property="og:title" content="Notre Équipe Dirigeante — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Direction, coordination des projets, relations clients et organisation des expertises au sein de Maison John&amp;Co Marketing.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/institution/equipe-gouvernance.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ed-navy: #0A1628;
+      --ed-navy-mid: #12233F;
+      --ed-white: #FFFFFF;
+      --ed-mist: #F4F6FA;
+      --ed-ink: #111927;
+      --ed-muted: #556277;
+      --ed-line: #E2E7F0;
+      --ed-line-dark: rgba(255, 255, 255, 0.12);
+      --ed-accent: #7C3AED;
+      --ed-accent-light: #A78BFA;
+      --ed-serif: 'Fraunces', Georgia, serif;
+      --ed-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --ed-mono: 'IBM Plex Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--ed-white);
+      color: var(--ed-ink);
+      font-family: var(--ed-sans);
+      line-height: 1.66;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .ed-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── REVEAL ── */
+    .ed-rev {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ed-rev.is-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ed-rev-d1 { transition-delay: 0.08s; }
+    .ed-rev-d2 { transition-delay: 0.16s; }
+
+    .ed-kicker {
+      font-family: var(--ed-mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--ed-accent);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    /* ── DARK HERO WITH PANORAMIC FRAME ── */
+    .ed-hero {
+      background: var(--ed-navy);
+      color: var(--ed-white);
+      padding: 58px 0 0;
+      position: relative;
+    }
+    .ed-crumb {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: #9FB0C8;
+      margin-bottom: 32px;
+    }
+    .ed-crumb a:hover { color: var(--ed-white); }
+    .ed-crumb-sep { opacity: 0.45; }
+
+    .ed-hero-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 48px;
+      align-items: end;
+      padding-bottom: 48px;
+    }
+    .ed-hero .ed-kicker { color: #C4B5FD; }
+    .ed-hero h1 {
+      font-family: var(--ed-serif);
+      font-size: clamp(2.4rem, 4.3vw, 3.7rem);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .ed-hero h1 em {
+      font-style: italic;
+      color: #C4B5FD;
+    }
+    .ed-hero-intro {
+      font-size: 16.5px;
+      color: #C4D0E0;
+      margin: 0 0 24px;
+      letter-spacing: 0.01em;
+    }
+    .ed-hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .ed-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--ed-sans);
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s ease, border-color 0.18s ease;
+    }
+    .ed-btn:focus-visible {
+      outline: 2px solid var(--ed-accent-light);
+      outline-offset: 3px;
+    }
+    .ed-btn-accent {
+      background: var(--ed-accent);
+      color: var(--ed-white);
+    }
+    .ed-btn-accent:hover {
+      background: #6D28D9;
+      transform: translateY(-2px);
+    }
+    .ed-btn-ghost {
+      background: transparent;
+      color: var(--ed-white);
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+    .ed-btn-ghost:hover {
+      border-color: var(--ed-white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .ed-btn-dark {
+      background: var(--ed-navy);
+      color: var(--ed-white);
+    }
+    .ed-btn-dark:hover {
+      background: var(--ed-accent);
+      transform: translateY(-2px);
+    }
+    .ed-btn-outline-dark {
+      background: transparent;
+      color: var(--ed-navy);
+      border-color: #CBD5E1;
+    }
+    .ed-btn-outline-dark:hover {
+      border-color: var(--ed-navy);
+      background: var(--ed-mist);
+    }
+
+    .ed-hero-visual-band {
+      background: linear-gradient(to bottom, var(--ed-navy) 55%, var(--ed-white) 55%);
+      padding-bottom: 12px;
+    }
+    .ed-panoramic {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      aspect-ratio: 21 / 9;
+      background: linear-gradient(135deg, #162847 0%, #0D192E 100%);
+      position: relative;
+    }
+    .ed-panoramic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 48%;
+    }
+    .ed-panoramic-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px 4px 0;
+      font-size: 13px;
+      color: var(--ed-muted);
+    }
+
+    /* ── DIRECTION GÉNÉRALE & RESPONSABILITÉS ── */
+    .ed-section {
+      padding: 88px 0;
+    }
+    .ed-section-mist {
+      background: var(--ed-mist);
+      border-top: 1px solid var(--ed-line);
+      border-bottom: 1px solid var(--ed-line);
+    }
+    .ed-dir-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 56px;
+      align-items: start;
+    }
+    .ed-leader-card {
+      background: var(--ed-mist);
+      border: 1px solid var(--ed-line);
+      border-radius: 14px;
+      padding: 36px;
+    }
+    .ed-monogram {
+      width: 68px;
+      height: 68px;
+      border-radius: 12px;
+      background: var(--ed-navy);
+      color: var(--ed-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ed-serif);
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 22px;
+    }
+    .ed-leader-role {
+      font-size: 13px;
+      color: var(--ed-accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .ed-leader-card h2 {
+      font-family: var(--ed-serif);
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--ed-navy);
+      margin: 0 0 16px;
+      line-height: 1.15;
+    }
+    .ed-leader-card p {
+      font-size: 15px;
+      color: #39465A;
+      margin: 0 0 18px;
+    }
+    .ed-leader-card p:last-of-type { margin-bottom: 24px; }
+    .ed-leader-meta {
+      padding-top: 18px;
+      border-top: 1px solid var(--ed-line);
+      font-size: 13.5px;
+      color: var(--ed-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .ed-leader-meta a {
+      color: var(--ed-navy);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .ed-leader-meta a:hover { color: var(--ed-accent); }
+
+    .ed-mandate-head h2 {
+      font-family: var(--ed-serif);
+      font-size: clamp(1.8rem, 2.8vw, 2.45rem);
+      font-weight: 600;
+      color: var(--ed-navy);
+      margin: 0 0 14px;
+      line-height: 1.18;
+      text-wrap: balance;
+    }
+    .ed-mandate-head p {
+      font-size: 16px;
+      color: var(--ed-muted);
+      margin: 0 0 32px;
+    }
+    .ed-mandate-list {
+      border-top: 1px solid var(--ed-line);
+    }
+    .ed-mandate-row {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--ed-line);
+    }
+    .ed-mandate-idx {
+      font-family: var(--ed-mono);
+      font-size: 13px;
+      color: var(--ed-accent);
+      font-variant-numeric: tabular-nums;
+      padding-top: 3px;
+    }
+    .ed-mandate-row h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ed-navy);
+      margin: 0 0 6px;
+    }
+    .ed-mandate-row p {
+      font-size: 14.5px;
+      color: var(--ed-muted);
+      margin: 0;
+    }
+
+    /* ── INTERACTIVE PROJECT ORCHESTRATION ── */
+    .ed-section-header {
+      max-width: 720px;
+      margin-bottom: 44px;
+    }
+    .ed-section-header h2 {
+      font-family: var(--ed-serif);
+      font-size: clamp(1.85rem, 3vw, 2.6rem);
+      font-weight: 600;
+      color: var(--ed-navy);
+      margin: 0 0 14px;
+      line-height: 1.16;
+      text-wrap: balance;
+    }
+    .ed-section-header p {
+      font-size: 16px;
+      color: var(--ed-muted);
+      margin: 0;
+    }
+
+    .ed-orchestrator {
+      background: var(--ed-white);
+      border: 1px solid var(--ed-line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .ed-orch-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 14px 18px;
+      background: #EEF2F8;
+      border-bottom: 1px solid var(--ed-line);
+    }
+    .ed-orch-tab {
+      appearance: none;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      padding: 10px 16px;
+      font-family: var(--ed-sans);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ed-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    }
+    .ed-orch-tab:hover { color: var(--ed-navy); background: rgba(255, 255, 255, 0.7); }
+    .ed-orch-tab.is-active {
+      background: var(--ed-white);
+      color: var(--ed-navy);
+      border-color: var(--ed-line);
+      box-shadow: 0 1px 2px rgba(10, 22, 40, 0.06);
+    }
+    .ed-orch-tab:focus-visible {
+      outline: 2px solid var(--ed-accent);
+      outline-offset: 2px;
+    }
+    .ed-orch-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 40px;
+      padding: 36px;
+      align-items: start;
+    }
+    .ed-orch-panel h3 {
+      font-family: var(--ed-serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ed-navy);
+      margin: 0 0 12px;
+    }
+    .ed-orch-panel p {
+      font-size: 15px;
+      color: var(--ed-muted);
+      margin: 0 0 20px;
+    }
+    .ed-orch-summary {
+      font-size: 13.5px;
+      color: var(--ed-ink);
+      padding-top: 16px;
+      border-top: 1px solid var(--ed-line);
+    }
+    .ed-orch-roles {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .ed-orch-role-item {
+      padding: 16px 18px;
+      background: var(--ed-mist);
+      border: 1px solid var(--ed-line);
+      border-radius: 10px;
+    }
+    .ed-orch-role-item strong {
+      display: block;
+      font-size: 14.5px;
+      color: var(--ed-navy);
+      margin-bottom: 4px;
+    }
+    .ed-orch-role-item span {
+      font-size: 13.5px;
+      color: var(--ed-muted);
+    }
+
+    /* ── 6 FUNCTIONAL LEADERSHIP POLES ── */
+    .ed-poles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .ed-pole {
+      background: var(--ed-white);
+      border: 1px solid var(--ed-line);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ed-pole:hover {
+      border-color: #B9C4D6;
+      transform: translateY(-2px);
+    }
+    .ed-pole-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .ed-pole-num {
+      font-family: var(--ed-mono);
+      font-size: 12px;
+      color: var(--ed-accent);
+      font-variant-numeric: tabular-nums;
+    }
+    .ed-pole-scope {
+      font-size: 12.5px;
+      color: var(--ed-muted);
+    }
+    .ed-pole h3 {
+      font-family: var(--ed-serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ed-navy);
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+    .ed-pole p {
+      font-size: 14.5px;
+      color: #414E63;
+      margin: 0 0 18px;
+    }
+    .ed-pole-domains {
+      font-size: 13px;
+      color: var(--ed-muted);
+      padding-top: 14px;
+      border-top: 1px solid var(--ed-line);
+    }
+
+    /* ── VALUES (PRESERVED FROM EXISTING PAGE: INNOVATION, COLLABORATION, EXCELLENCE) ── */
+    .ed-values-band {
+      background: var(--ed-navy);
+      color: var(--ed-white);
+      padding: 84px 0;
+    }
+    .ed-values-band .ed-kicker { color: #C4B5FD; }
+    .ed-values-band h2 {
+      font-family: var(--ed-serif);
+      font-size: clamp(1.85rem, 3vw, 2.55rem);
+      font-weight: 500;
+      margin: 0 0 44px;
+      max-width: 24ch;
+      line-height: 1.18;
+      text-wrap: balance;
+    }
+    .ed-values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+    .ed-value-col {
+      padding-top: 22px;
+      border-top: 1px solid var(--ed-line-dark);
+    }
+    .ed-value-col h3 {
+      font-family: var(--ed-serif);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ed-white);
+      margin: 0 0 10px;
+    }
+    .ed-value-col p {
+      font-size: 14.5px;
+      color: #B8C4D6;
+      margin: 0;
+    }
+
+    /* ── CAREERS & CONTACT BRIDGE ── */
+    .ed-bridge {
+      padding: 84px 0;
+      background: var(--ed-white);
+    }
+    .ed-bridge-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .ed-bridge-card {
+      background: var(--ed-mist);
+      border: 1px solid var(--ed-line);
+      border-radius: 14px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .ed-bridge-card h2 {
+      font-family: var(--ed-serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--ed-navy);
+      margin: 0 0 10px;
+      line-height: 1.22;
+    }
+    .ed-bridge-card p {
+      font-size: 15px;
+      color: var(--ed-muted);
+      margin: 0;
+    }
+
+    .ed-footer {
+      background: var(--ed-mist);
+      border-top: 1px solid var(--ed-line);
+      padding: 38px 0 46px;
+      font-size: 13.5px;
+      color: var(--ed-muted);
+    }
+    .ed-footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .ed-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+    .ed-footer-links a:hover {
+      color: var(--ed-navy);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .ed-hero-top,
+      .ed-dir-grid,
+      .ed-orch-panel,
+      .ed-poles-grid,
+      .ed-bridge-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .ed-values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ed-wrap { padding: 0 18px; }
+      .ed-hero { padding: 40px 0 0; }
+      .ed-panoramic { aspect-ratio: 16 / 10; }
+      .ed-section, .ed-values-band, .ed-bridge { padding: 60px 0; }
+      .ed-leader-card, .ed-orch-panel, .ed-pole, .ed-bridge-card { padding: 26px 22px; }
+      .ed-orch-tabs { overflow-x: auto; flex-wrap: nowrap; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .ed-rev { opacity: 1; transform: none; transition: none; }
+      .ed-btn, .ed-pole { transition: none; }
+    }
+  </style>
 </head>
-<body class="font-sans bg-gray-50">
-<mjc-site-header></mjc-site-header>
-<script src="../assets/js/site-header.js"></script>
-   
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-50 to-purple-50 py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Notre <span class="gradient-text">Équipe Dirigeante</span></h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Nous rassemblons les meilleurs talents pour construire une agence digitale d'exception. 
-                Découvrez les profils qui incarnent notre vision et notre ambition.
+<body>
+  <mjc-site-header></mjc-site-header>
+  <script src="../assets/js/site-header.js"></script>
+
+  <main>
+    <!-- ── HERO ── -->
+    <section class="ed-hero">
+      <div class="ed-wrap">
+        <nav class="ed-crumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a>
+          <span class="ed-crumb-sep" aria-hidden="true">/</span>
+          <a href="a-propos--31.html">À propos</a>
+          <span class="ed-crumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Notre Équipe Dirigeante</span>
+        </nav>
+
+        <div class="ed-hero-top">
+          <div>
+            <span class="ed-kicker">Gouvernance &amp; pilotage</span>
+            <h1>Une direction claire pour <em>orchestrer</em> des expertises complémentaires.</h1>
+          </div>
+          <div>
+            <p class="ed-hero-intro">
+              La crédibilité d'une agence repose sur la solidité de son pilotage. Chez Maison John&amp;Co Marketing, la direction assure la cohérence stratégique, la coordination des intervenants et le suivi direct des relations clients et partenaires.
             </p>
+            <div class="ed-hero-links">
+              <a href="contact--895.html" class="ed-btn ed-btn-accent">Contacter la direction</a>
+              <a href="carrieres--39.html" class="ed-btn ed-btn-ghost">Rejoindre nos talents</a>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="ed-hero-visual-band">
+        <div class="ed-wrap">
+          <div class="ed-panoramic">
+            <img src="../assets/images/institution/equipe-gouvernance.jpg" alt="Espace de direction et de coordination stratégique baigné de lumière naturelle" referrerpolicy="no-referrer">
+          </div>
+          <div class="ed-panoramic-caption">
+            <span>Gouvernance de projet · Supervision stratégique, coordination et qualité d'exécution</span>
+            <span>Maison John&amp;Co Marketing</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Team Introduction -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Une équipe <span class="gradient-text">multidisciplinaire</span></h2>
-                <p class="text-gray-600 text-lg">
-                    Chez Maison John&Co, nous croyons que la force d'une agence réside dans la diversité des compétences 
-                    et la complémentarité des profils. Notre équipe dirigeante réunit des experts aux parcours variés, 
-                    unis par une même ambition : réinventer le marketing digital.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Visionary Strategist -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <div class="relative h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-                        <i class="fas fa-brain text-white text-6xl"></i>
-                        <div class="absolute inset-0 bg-black bg-opacity-40 team-overlay opacity-0 flex items-center justify-center">
-                            <div class="text-center p-4">
-                                <p class="text-white text-sm">"Transformer les idées en stratégies gagnantes"</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Stratège Visionnaire</h3>
-                        <p class="text-gray-600 mb-4">Expert en analyse de marché et en positionnement de marque</p>
-                        <div class="flex space-x-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Stratégie</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Innovation</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Leadership</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Creative Director -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <div class="relative h-64 bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center">
-                        <i class="fas fa-paint-brush text-white text-6xl"></i>
-                        <div class="absolute inset-0 bg-black bg-opacity-40 team-overlay opacity-0 flex items-center justify-center">
-                            <div class="text-center p-4">
-                                <p class="text-white text-sm">"Donner vie aux marques à travers des créations mémorables"</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Directeur Créatif</h3>
-                        <p class="text-gray-600 mb-4">Maître de l'identité visuelle et des campagnes percutantes</p>
-                        <div class="flex space-x-2">
-                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Créativité</span>
-                            <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Design</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Storytelling</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Digital Technologist -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <div class="relative h-64 bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center">
-                        <i class="fas fa-code text-white text-6xl"></i>
-                        <div class="absolute inset-0 bg-black bg-opacity-40 team-overlay opacity-0 flex items-center justify-center">
-                            <div class="text-center p-4">
-                                <p class="text-white text-sm">"Construire l'infrastructure digitale de demain"</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Technologue Digital</h3>
-                        <p class="text-gray-600 mb-4">Expert en solutions techniques et en architecture digitale</p>
-                        <div class="flex space-x-2">
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Technologie</span>
-                            <span class="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full">Développement</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">SEO</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Manager -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <div class="relative h-64 bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center">
-                        <i class="fas fa-tasks text-white text-6xl"></i>
-                        <div class="absolute inset-0 bg-black bg-opacity-40 team-overlay opacity-0 flex items-center justify-center">
-                            <div class="text-center p-4">
-                                <p class="text-white text-sm">"Transformer les idées en résultats concrets"</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Chef de Projet</h3>
-                        <p class="text-gray-600 mb-4">Garant de l'exécution et de la satisfaction client</p>
-                        <div class="flex space-x-2">
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Gestion</span>
-                            <span class="bg-orange-100 text-orange-800 text-xs px-3 py-1 rounded-full">Organisation</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Agilité</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Influence Marketing Specialist -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <div class="relative h-64 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
-                        <i class="fas fa-bullhorn text-white text-6xl"></i>
-                        <div class="absolute inset-0 bg-black bg-opacity-40 team-overlay opacity-0 flex items-center justify-center">
-                            <div class="text-center p-4">
-                                <p class="text-white text-sm">"Créer des connexions authentiques entre marques et communautés"</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Spécialiste Influence</h3>
-                        <p class="text-gray-600 mb-4">Architecte des stratégies de marketing d'influence</p>
-                        <div class="flex space-x-2">
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Réseaux sociaux</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Influenceurs</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Viralité</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Data Analyst -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-2">
-                    <div class="relative h-64 bg-gradient-to-r from-gray-600 to-gray-800 flex items-center justify-center">
-                        <i class="fas fa-chart-line text-white text-6xl"></i>
-                        <div class="absolute inset-0 bg-black bg-opacity-40 team-overlay opacity-0 flex items-center justify-center">
-                            <div class="text-center p-4">
-                                <p class="text-white text-sm">"Transformer les données en décisions éclairées"</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Analyste Data</h3>
-                        <p class="text-gray-600 mb-4">Expert en mesure de performance et optimisation</p>
-                        <div class="flex space-x-2">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Analytics</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">KPI</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">ROI</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Values -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Nos <span class="gradient-text">Valeurs d'Équipe</span></h2>
-                <p class="text-gray-600 text-lg">
-                    Ces principes guident notre recrutement et notre collaboration au quotidien
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-lightbulb text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Innovation</h3>
-                    <p class="text-gray-600">Nous repoussons constamment les limites du marketing digital</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-xl shadow-md text-center">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-hands-helping text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Collaboration</h3>
-                    <p class="text-gray-600">Nos forces combinées créent des résultats exceptionnels</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-xl shadow-md text-center">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-trophy text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Excellence</h3>
-                    <p class="text-gray-600">Nous visons l'exceptionnel dans chaque projet</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Team CTA -->
-    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Rejoignez Notre Aventure</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">
-                Vous partagez notre vision et souhaitez intégrer une équipe ambitieuse ? 
-                Nous recherchons en permanence des talents exceptionnels.
+    <!-- ── DIRECTION GÉNÉRALE & RESPONSABILITÉS ── -->
+    <section class="ed-section">
+      <div class="ed-wrap">
+        <div class="ed-dir-grid">
+          <aside class="ed-leader-card ed-rev" aria-label="Direction Générale">
+            <div class="ed-monogram" aria-hidden="true">MV</div>
+            <span class="ed-leader-role">Fondateur · Direction Générale</span>
+            <h2>Mathieu Villeroy</h2>
+            <p>
+              À la direction de Maison John&amp;Co Marketing, Mathieu Villeroy porte la vision de l'agence, son développement et l'exigence de qualité appliquée à chaque accompagnement.
             </p>
-            <a href="carrieres--39.html" class="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300">
-                Postuler <i class="fas fa-arrow-right ml-2"></i>
-            </a>
+            <p>
+              Son rôle articule la compréhension des enjeux clients, le cadrage stratégique des missions et la mobilisation coordonnée des expertises nécessaires à leur réussite, aussi bien pour les entreprises que pour les créateurs et les particuliers.
+            </p>
+            <div class="ed-leader-meta">
+              <span><strong>Périmètre :</strong> Vision, développement, supervision stratégique &amp; relations clients</span>
+              <span><strong>Contact direct :</strong> <a href="contact--895.html">Prendre contact via la page dédiée</a></span>
+            </div>
+          </aside>
+
+          <div class="ed-rev ed-rev-d1">
+            <div class="ed-mandate-head">
+              <span class="ed-kicker">Rôle de la direction</span>
+              <h2>Quatre responsabilités au service de chaque mission</h2>
+              <p>
+                Plutôt qu'une chaîne hiérarchique complexe qui éloigne les décideurs des projets, notre gouvernance reste directement impliquée dans la conduite opérationnelle et la relation client.
+              </p>
+            </div>
+
+            <div class="ed-mandate-list">
+              <div class="ed-mandate-row">
+                <div class="ed-mandate-idx">01</div>
+                <div>
+                  <h3>Vision &amp; développement de l'agence</h3>
+                  <p>Définir les orientations de Maison John&amp;Co Marketing, enrichir ses domaines d'intervention — du marketing digital aux solutions numériques — et structurer son développement sur le long terme.</p>
+                </div>
+              </div>
+              <div class="ed-mandate-row">
+                <div class="ed-mandate-idx">02</div>
+                <div>
+                  <h3>Supervision stratégique &amp; opérationnelle</h3>
+                  <p>Garantir que chaque livrable, campagne ou interface reste fidèle aux objectifs définis lors du cadrage, avec un regard transversal sur la cohérence d'ensemble.</p>
+                </div>
+              </div>
+              <div class="ed-mandate-row">
+                <div class="ed-mandate-idx">03</div>
+                <div>
+                  <h3>Coordination des projets &amp; des intervenants</h3>
+                  <p>Constituer pour chaque mission l'attelage de compétences adapté — en interne comme auprès de professionnels indépendants spécialisés — et orchestrer les étapes d'exécution.</p>
+                </div>
+              </div>
+              <div class="ed-mandate-row">
+                <div class="ed-mandate-idx">04</div>
+                <div>
+                  <h3>Gestion des relations clients &amp; partenaires</h3>
+                  <p>Entretenir un dialogue direct, transparent et durable avec nos clients, partenaires et intervenants afin de fluidifier les décisions et sécuriser les collaborations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-   
+    <!-- ── ORGANISATION DES COMPÉTENCES AUTOUR DES PROJETS ── -->
+    <section class="ed-section ed-section-mist" id="organisation-projets">
+      <div class="ed-wrap">
+        <div class="ed-section-header ed-rev">
+          <span class="ed-kicker">Architecture des missions</span>
+          <h2>Comment les compétences s'organisent autour de votre projet</h2>
+          <p>
+            Selon la nature et l'échelle de la mission, la direction mobilise un socle de pilotage unifié associé aux expertises métiers exactes dont le projet a besoin. Sélectionnez un contexte pour voir cette articulation.
+          </p>
+        </div>
 
-    <script>
-        // Simple script for mobile menu toggle (could be expanded)
-        document.querySelector('button').addEventListener('click', function() {
-            const nav = document.querySelector('nav');
-            nav.classList.toggle('hidden');
-            nav.classList.toggle('flex');
-            nav.classList.toggle('flex-col');
-            nav.classList.toggle('absolute');
-            nav.classList.toggle('top-16');
-            nav.classList.toggle('right-6');
-            nav.classList.toggle('bg-white');
-            nav.classList.toggle('p-4');
-            nav.classList.toggle('rounded-lg');
-            nav.classList.toggle('shadow-md');
-            nav.classList.toggle('space-y-4');
+        <div class="ed-orchestrator ed-rev">
+          <div class="ed-orch-tabs" role="tablist" aria-label="Exemples d'organisation de projet">
+            <button type="button" class="ed-orch-tab is-active" data-scenario="strategie" role="tab" aria-selected="true">Stratégie &amp; transformation</button>
+            <button type="button" class="ed-orch-tab" data-scenario="produit" role="tab" aria-selected="false">Site, plateforme ou application</button>
+            <button type="button" class="ed-orch-tab" data-scenario="acquisition" role="tab" aria-selected="false">Visibilité &amp; acquisition</button>
+            <button type="button" class="ed-orch-tab" data-scenario="marque" role="tab" aria-selected="false">Image, social media &amp; influence</button>
+          </div>
+          <div class="ed-orch-panel" id="edOrchPanel" aria-live="polite">
+            <div>
+              <h3 id="edOrchTitle">Cadrage stratégique et feuille de route digitale</h3>
+              <p id="edOrchDesc">La direction conduit le diagnostic initial, structure les arbitrages prioritaires et coordonne les analyses sectorielles pour bâtir un plan d'action exécutable par étapes.</p>
+              <div class="ed-orch-summary" id="edOrchSummary">
+                <strong>Pilotage :</strong> Direction Générale &amp; Stratégie, appuyée selon le périmètre par les pôles Data et Coordination de projet.
+              </div>
+            </div>
+            <div class="ed-orch-roles" id="edOrchRoles">
+              <div class="ed-orch-role-item">
+                <strong>Direction &amp; Cadrage Stratégique</strong>
+                <span>Compréhension du modèle métier, positionnement, priorisation des chantiers et relation direction client.</span>
+              </div>
+              <div class="ed-orch-role-item">
+                <strong>Analyse &amp; Lecture de Performance</strong>
+                <span>Audit de l'existant, définition des indicateurs clés et mesure de la maturité digitale.</span>
+              </div>
+              <div class="ed-orch-role-item">
+                <strong>Coordination de déploiement</strong>
+                <span>Planification des phases suivantes et passage de relais fluide vers les experts métiers concernés.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LES 6 PÔLES FONCTIONNELS DE PILOTAGE & D'EXPERTISE ── -->
+    <section class="ed-section">
+      <div class="ed-wrap">
+        <div class="ed-section-header ed-rev">
+          <span class="ed-kicker">Fonctions clés de l'agence</span>
+          <h2>Six pôles de responsabilités complémentaires</h2>
+          <p>
+            Maison John&amp;Co Marketing rassemble une vision pluridisciplinaire structurée autour de six grandes fonctions métiers, mobilisées ensemble ou séparément selon les besoins de chaque projet.
+          </p>
+        </div>
+
+        <div class="ed-poles-grid">
+          <article class="ed-pole ed-rev">
+            <div>
+              <div class="ed-pole-top">
+                <span class="ed-pole-num">Pôle 01</span>
+                <span class="ed-pole-scope">Vision &amp; arbitrage</span>
+              </div>
+              <h3>Direction Stratégique</h3>
+              <p>Analyse de marché, positionnement de marque et définition des feuilles de route digitales. Ce pôle aligne chaque choix marketing avec les objectifs économiques de l'organisation.</p>
+            </div>
+            <div class="ed-pole-domains">Stratégie · Positionnement · Transformation digitale</div>
+          </article>
+
+          <article class="ed-pole ed-rev ed-rev-d1">
+            <div>
+              <div class="ed-pole-top">
+                <span class="ed-pole-num">Pôle 02</span>
+                <span class="ed-pole-scope">Identité &amp; expérience</span>
+              </div>
+              <h3>Direction Créative &amp; Design</h3>
+              <p>Conception d'identités visuelles, direction artistique, design d'interfaces et narration de marque. L'objectif : bâtir des univers lisibles, cohérents et mémorables sur tous les supports.</p>
+            </div>
+            <div class="ed-pole-domains">Direction artistique · UI/UX Design · Storytelling</div>
+          </article>
+
+          <article class="ed-pole ed-rev">
+            <div>
+              <div class="ed-pole-top">
+                <span class="ed-pole-num">Pôle 03</span>
+                <span class="ed-pole-scope">Ingénierie &amp; solutions</span>
+              </div>
+              <h3>Architecture Technique &amp; Digital</h3>
+              <p>Conception et mise en œuvre des solutions web, plateformes, applications, performances techniques et fondations SEO. Ce pôle veille à la robustesse et à l'évolutivité des outils numériques.</p>
+            </div>
+            <div class="ed-pole-domains">Développement web &amp; applicatif · Architecture · SEO technique</div>
+          </article>
+
+          <article class="ed-pole ed-rev ed-rev-d1">
+            <div>
+              <div class="ed-pole-top">
+                <span class="ed-pole-num">Pôle 04</span>
+                <span class="ed-pole-scope">Exécution &amp; suivi</span>
+              </div>
+              <h3>Coordination &amp; Gestion de Projet</h3>
+              <p>Planification, synchronisation des intervenants spécialisés, contrôle des délais et qualité des livrables. Ce rôle assure un déroulement serein et une communication limpide avec le client.</p>
+            </div>
+            <div class="ed-pole-domains">Planification · Coordination d'intervenants · Suivi qualité</div>
+          </article>
+
+          <article class="ed-pole ed-rev">
+            <div>
+              <div class="ed-pole-top">
+                <span class="ed-pole-num">Pôle 05</span>
+                <span class="ed-pole-scope">Communautés &amp; rayonnement</span>
+              </div>
+              <h3>Social Media &amp; Influence</h3>
+              <p>Structuration des prises de parole sociales, collaborations créateurs et animation de communautés engagées. Une approche orientée pertinence culturelle et crédibilité relationnelle.</p>
+            </div>
+            <div class="ed-pole-domains">Réseaux sociaux · Marketing d'influence · Communautés</div>
+          </article>
+
+          <article class="ed-pole ed-rev ed-rev-d1">
+            <div>
+              <div class="ed-pole-top">
+                <span class="ed-pole-num">Pôle 06</span>
+                <span class="ed-pole-scope">Mesure &amp; pilotage</span>
+              </div>
+              <h3>Data &amp; Performance</h3>
+              <p>Mise en place du tracking, construction de tableaux de bord décisionnels et analyse des parcours de conversion. Transformer les données disponibles en arbitrages concrets.</p>
+            </div>
+            <div class="ed-pole-domains">Analytics · Indicateurs clés · Optimisation de conversion</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── VALEURS D'ÉQUIPE ── -->
+    <section class="ed-values-band">
+      <div class="ed-wrap">
+        <span class="ed-kicker">Culture de collaboration</span>
+        <h2>Trois principes qui guident notre gouvernance et nos collaborations</h2>
+        <div class="ed-values-grid">
+          <div class="ed-value-col ed-rev">
+            <h3>Innovation utile</h3>
+            <p>Nous suivons de près l'évolution des usages, des technologies et des plateformes pour intégrer ce qui crée une vraie valeur opérationnelle, sans céder aux effets de mode.</p>
+          </div>
+          <div class="ed-value-col ed-rev ed-rev-d1">
+            <h3>Collaboration exigeante</h3>
+            <p>La force de notre organisation repose sur la complémentarité des profils : écoute mutuelle, responsabilités claires et travail coordonné entre direction, spécialistes et clients.</p>
+          </div>
+          <div class="ed-value-col ed-rev ed-rev-d2">
+            <h3>Exigence &amp; rigueur</h3>
+            <p>De la précision d'un cadrage à la finition d'un livrable, chaque détail compte. Nous cultivons une discipline professionnelle constante sur l'ensemble des missions confiées.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PASSERELLES CARRIÈRES & CONTACT ── -->
+    <section class="ed-bridge">
+      <div class="ed-wrap">
+        <div class="ed-bridge-grid">
+          <div class="ed-bridge-card ed-rev">
+            <div>
+              <span class="ed-kicker">Talents &amp; indépendants</span>
+              <h2>Rejoindre l'équipe ou collaborer en freelance</h2>
+              <p>Vous partagez cette exigence de clarté et de qualité ? Découvrez nos postes ouverts, les profils recherchés en continu et notre espace dédié aux professionnels indépendants.</p>
+            </div>
+            <div>
+              <a href="carrieres--39.html" class="ed-btn ed-btn-dark">Découvrir la page Carrières</a>
+            </div>
+          </div>
+
+          <div class="ed-bridge-card ed-rev ed-rev-d1">
+            <div>
+              <span class="ed-kicker">Votre projet</span>
+              <h2>Échanger directement avec la direction</h2>
+              <p>Présentez-nous vos enjeux digitaux, vos besoins d'accompagnement ou votre projet d'application pour définir ensemble l'organisation la plus adaptée.</p>
+            </div>
+            <div>
+              <a href="contact--895.html" class="ed-btn ed-btn-outline-dark">Prendre contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ed-footer">
+    <div class="me-wrap ed-wrap">
+      <div class="ed-footer-row">
+        <span>Maison John&amp;Co Marketing — Notre Équipe Dirigeante</span>
+        <nav class="ed-footer-links" aria-label="Navigation institutionnelle">
+          <a href="notre-agence--35.html">Notre agence</a>
+          <a href="methode-engagements--38.html">Méthode &amp; engagements</a>
+          <a href="carrieres--39.html">Carrières</a>
+          <a href="services-proposes-pour-les-entreprises--395.html">Services entreprises</a>
+          <a href="contact--895.html">Contact</a>
+          <a href="mentions-legales--1004.html">Mentions légales</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var scenarios = {
+        strategie: {
+          title: 'Cadrage stratégique et feuille de route digitale',
+          desc: 'La direction conduit le diagnostic initial, structure les arbitrages prioritaires et coordonne les analyses sectorielles pour bâtir un plan d\'action exécutable par étapes.',
+          summary: '<strong>Pilotage :</strong> Direction Générale &amp; Stratégie, appuyée selon le périmètre par les pôles Data et Coordination de projet.',
+          roles: [
+            { name: 'Direction & Cadrage Stratégique', text: 'Compréhension du modèle métier, positionnement, priorisation des chantiers et relation direction client.' },
+            { name: 'Analyse & Lecture de Performance', text: 'Audit de l\'existant, définition des indicateurs clés et mesure de la maturité digitale.' },
+            { name: 'Coordination de déploiement', text: 'Planification des phases suivantes et passage de relais fluide vers les experts métiers concernés.' }
+          ]
+        },
+        produit: {
+          title: 'Conception de site, plateforme ou application numérique',
+          desc: 'De l\'expression du besoin à la mise en production, la direction coordonne les experts UX/UI, les développeurs spécialisés et le contrôle qualité pour livrer une solution cohérente et maintenable.',
+          summary: '<strong>Pilotage :</strong> Direction de projet et Architecture Technique, en lien étroit avec le Design UI/UX et les développeurs mobilisés.',
+          roles: [
+            { name: 'Supervision & Cadrage Fonctionnel', text: 'Définition des usages, des priorités produit, du rétroplanning et des jalons de validation client.' },
+            { name: 'Design UI/UX & Direction Créative', text: 'Conception des parcours, maquettes responsives et système graphique aligné sur votre identité.' },
+            { name: 'Développement Web / Applicatif & QA', text: 'Intégration, architecture technique, tests multi-écrans et préparation de la mise en ligne.' }
+          ]
+        },
+        acquisition: {
+          title: 'Dispositifs de visibilité organique et d\'acquisition',
+          desc: 'Pour conjuguer référencement durable, campagnes publicitaires et conversion, les experts SEO, média et analytique travaillent sur une même feuille de route coordonnée.',
+          summary: '<strong>Pilotage :</strong> Coordination centrale associant SEO, Publicité Digitale, Contenu et Mesure de Performance.',
+          roles: [
+            { name: 'Stratégie & Arbitrage Canaux', text: 'Répartition cohérente entre visibilité organique, campagnes payantes et parcours de conversion.' },
+            { name: 'Spécialistes SEO, Contenu & Média', text: 'Production éditoriale, optimisation technique et gestion rigoureuse des campagnes ciblées.' },
+            { name: 'Data & Reporting Décisionnel', text: 'Suivi des indicateurs de conversion, lecture claire des résultats et ajustements continus.' }
+          ]
+        },
+        marque: {
+          title: 'Rayonnement de marque, social media et influence',
+          desc: 'La direction créative et le pôle social media alignent l\'image, le discours éditorial et les collaborations créateurs afin de construire une présence cohérente et authentique.',
+          summary: '<strong>Pilotage :</strong> Direction Créative &amp; Pôle Influence, coordonnés autour d\'une ligne éditoriale unifiée.',
+          roles: [
+            { name: 'Direction Artistique & Ligne Éditoriale', text: 'Définition des codes visuels, du ton de marque et des formats adaptés à chaque plateforme.' },
+            { name: 'Social Media & Communautés', text: 'Programmation, animation quotidienne et suivi qualitatif des interactions.' },
+            { name: 'Stratégie d\'Influence & Partenariats', text: 'Sélection pertinente de créateurs, coordination des briefs et suivi des retombées.' }
+          ]
+        }
+      };
+
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.ed-orch-tab'));
+      var titleEl = document.getElementById('edOrchTitle');
+      var descEl = document.getElementById('edOrchDesc');
+      var summaryEl = document.getElementById('edOrchSummary');
+      var rolesEl = document.getElementById('edOrchRoles');
+
+      function renderScenario(key) {
+        var data = scenarios[key];
+        if (!data) return;
+        tabs.forEach(function (t) {
+          var active = t.getAttribute('data-scenario') === key;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
         });
-    </script>
+        titleEl.textContent = data.title;
+        descEl.textContent = data.desc;
+        summaryEl.innerHTML = data.summary;
+        rolesEl.innerHTML = data.roles.map(function (r) {
+          return '<div class="ed-orch-role-item"><strong>' + r.name + '</strong><span>' + r.text + '</span></div>';
+        }).join('');
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          renderScenario(tab.getAttribute('data-scenario'));
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-in');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+        document.querySelectorAll('.ed-rev').forEach(function (el) { obs.observe(el); });
+      } else {
+        document.querySelectorAll('.ed-rev').forEach(function (el) { el.classList.add('is-in'); });
+      }
+    })();
+  </script>
 </body>
 </html>
-<p></p>

@@ -1,271 +1,1067 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison John&Co - Notre Agence de Marketing Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .hover-scale {
-            transition: all 0.3s ease;
-        }
-        .hover-scale:hover {
-            transform: scale(1.03);
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — Maison John&amp;Co - Notre Agence de Marketing Digital">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/notre-agence--35.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/notre-agence--35.html">
-    <meta property="og:title" content="Maison John&amp;Co - Notre Agence de Marketing Digital">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Agence — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="Découvrez Maison John&amp;Co Marketing : une agence de marketing digital et de solutions numériques à organisation agile, fonctionnant à distance, ouverte aux collaborations françaises et internationales.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/notre-agence--35.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/notre-agence--35.html">
+  <meta property="og:title" content="Notre Agence — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Identité, philosophie, modèle opérationnel agile, travail à distance, ouverture internationale et conception de projets digitaux et d'applications.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/institution/agence-atelier-digital.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ag-white: #FFFFFF;
+      --ag-mist: #F5F7FA;
+      --ag-navy: #0A1628;
+      --ag-navy-2: #12213B;
+      --ag-ink: #111827;
+      --ag-muted: #526074;
+      --ag-line: #E2E7EF;
+      --ag-line-dark: rgba(255, 255, 255, 0.13);
+      --ag-accent: #7C3AED;
+      --ag-accent-hover: #6D28D9;
+      --ag-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+      --ag-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      --ag-mono: 'IBM Plex Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--ag-white);
+      color: var(--ag-ink);
+      font-family: var(--ag-sans);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .ag-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .ag-rev {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ag-rev.is-shown {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ag-rev-d1 { transition-delay: 0.08s; }
+    .ag-rev-d2 { transition-delay: 0.16s; }
+
+    .ag-kicker {
+      font-family: var(--ag-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--ag-accent);
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    /* ── HERO MASTHEAD ── */
+    .ag-hero {
+      padding: 58px 0 84px;
+      border-bottom: 1px solid var(--ag-line);
+      background: var(--ag-white);
+    }
+    .ag-crumb {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--ag-muted);
+      margin-bottom: 32px;
+    }
+    .ag-crumb a:hover { color: var(--ag-accent); }
+    .ag-crumb-sep { color: #B4BECC; }
+
+    .ag-hero-head {
+      max-width: 920px;
+      margin-bottom: 48px;
+    }
+    .ag-hero h1 {
+      font-family: var(--ag-display);
+      font-size: clamp(2.45rem, 4.4vw, 3.85rem);
+      font-weight: 700;
+      line-height: 1.07;
+      letter-spacing: -0.03em;
+      color: var(--ag-navy);
+      margin: 0 0 22px;
+      text-wrap: balance;
+    }
+    .ag-hero h1 span {
+      color: var(--ag-accent);
+    }
+    .ag-hero-sub {
+      font-size: 18px;
+      color: var(--ag-muted);
+      max-width: 64ch;
+      margin: 0;
+    }
+
+    .ag-hero-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 32px;
+      align-items: stretch;
+    }
+    .ag-showcase-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--ag-line);
+      background: linear-gradient(135deg, #132036 0%, #1F3252 100%);
+      min-height: 360px;
+    }
+    .ag-showcase-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ag-manifesto-box {
+      background: var(--ag-mist);
+      border: 1px solid var(--ag-line);
+      border-radius: 14px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .ag-manifesto-quote {
+      font-family: var(--ag-display);
+      font-size: 23px;
+      font-weight: 600;
+      line-height: 1.32;
+      letter-spacing: -0.02em;
+      color: var(--ag-navy);
+      margin: 0;
+    }
+    .ag-manifesto-text {
+      font-size: 15px;
+      color: #414F64;
+      margin: 0;
+    }
+    .ag-manifesto-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--ag-line);
+    }
+
+    .ag-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--ag-sans);
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s ease, border-color 0.18s ease;
+    }
+    .ag-btn:focus-visible {
+      outline: 2px solid var(--ag-accent);
+      outline-offset: 3px;
+    }
+    .ag-btn-primary {
+      background: var(--ag-navy);
+      color: var(--ag-white);
+    }
+    .ag-btn-primary:hover {
+      background: var(--ag-accent);
+      transform: translateY(-2px);
+    }
+    .ag-btn-outline {
+      background: var(--ag-white);
+      color: var(--ag-navy);
+      border-color: #CBD5E1;
+    }
+    .ag-btn-outline:hover {
+      border-color: var(--ag-navy);
+    }
+    .ag-btn-light {
+      background: var(--ag-white);
+      color: var(--ag-navy);
+    }
+    .ag-btn-light:hover {
+      background: #EDE9FE;
+      transform: translateY(-2px);
+    }
+    .ag-btn-ghost-dark {
+      background: transparent;
+      color: var(--ag-white);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+    .ag-btn-ghost-dark:hover {
+      border-color: var(--ag-white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* ── SECTIONS ── */
+    .ag-section {
+      padding: 92px 0;
+    }
+    .ag-section-mist {
+      background: var(--ag-mist);
+      border-top: 1px solid var(--ag-line);
+      border-bottom: 1px solid var(--ag-line);
+    }
+    .ag-section-dark {
+      background: var(--ag-navy);
+      color: var(--ag-white);
+    }
+    .ag-section-dark .ag-kicker { color: #C4B5FD; }
+
+    .ag-sec-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+    .ag-sec-head h2 {
+      font-family: var(--ag-display);
+      font-size: clamp(1.9rem, 3.1vw, 2.7rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: var(--ag-navy);
+      margin: 0;
+      text-wrap: balance;
+    }
+    .ag-section-dark .ag-sec-head h2 { color: var(--ag-white); }
+    .ag-sec-head p {
+      font-size: 16px;
+      color: var(--ag-muted);
+      margin: 0;
+    }
+    .ag-section-dark .ag-sec-head p { color: #B8C5D8; }
+
+    /* ── OPERATING MODEL (AGILE + FREELANCES + REMOTE + INTERNATIONAL) ── */
+    .ag-model-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 48px;
+      align-items: start;
+    }
+    .ag-model-prose p {
+      font-size: 16px;
+      color: #364357;
+      margin: 0 0 18px;
+    }
+    .ag-model-pillars {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .ag-pillar-box {
+      background: var(--ag-white);
+      border: 1px solid var(--ag-line);
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .ag-pillar-box h3 {
+      font-family: var(--ag-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ag-navy);
+      margin: 0 0 8px;
+    }
+    .ag-pillar-box p {
+      font-size: 14px;
+      color: var(--ag-muted);
+      margin: 0;
+    }
+
+    .ag-schema-card {
+      background: var(--ag-navy);
+      color: var(--ag-white);
+      border-radius: 14px;
+      padding: 32px;
+    }
+    .ag-schema-card h3 {
+      font-family: var(--ag-display);
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+    .ag-schema-card > p {
+      font-size: 14px;
+      color: #B4C1D4;
+      margin: 0 0 24px;
+    }
+    .ag-schema-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── INTERACTIVE EXPERTISE EXPLORER (4 PÔLES INCLUDING APPS & DIGITAL SOLUTIONS) ── */
+    .ag-domain-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .ag-domain-tab {
+      appearance: none;
+      background: var(--ag-mist);
+      border: 1px solid var(--ag-line);
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-family: var(--ag-sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ag-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    }
+    .ag-domain-tab:hover {
+      color: var(--ag-navy);
+      border-color: #B9C4D6;
+    }
+    .ag-domain-tab.is-active {
+      background: var(--ag-navy);
+      color: var(--ag-white);
+      border-color: var(--ag-navy);
+    }
+    .ag-domain-tab:focus-visible {
+      outline: 2px solid var(--ag-accent);
+      outline-offset: 2px;
+    }
+
+    .ag-domain-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 36px;
+      padding: 40px;
+      background: var(--ag-mist);
+      border: 1px solid var(--ag-line);
+      border-radius: 14px;
+      align-items: start;
+    }
+    .ag-domain-stage h3 {
+      font-family: var(--ag-display);
+      font-size: 27px;
+      font-weight: 700;
+      color: var(--ag-navy);
+      margin: 0 0 14px;
+      line-height: 1.2;
+    }
+    .ag-domain-stage > div > p {
+      font-size: 15.5px;
+      color: #364357;
+      margin: 0 0 22px;
+    }
+    .ag-domain-points {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ag-domain-points li {
+      font-size: 14.5px;
+      color: var(--ag-ink);
+      padding-left: 18px;
+      position: relative;
+    }
+    .ag-domain-points li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--ag-accent);
+    }
+    .ag-domain-side {
+      background: var(--ag-white);
+      border: 1px solid var(--ag-line);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .ag-domain-side h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ag-navy);
+      margin: 0 0 10px;
+    }
+    .ag-domain-side p {
+      font-size: 14px;
+      color: var(--ag-muted);
+      margin: 0 0 20px;
+    }
+    .ag-domain-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ag-text-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ag-accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ag-text-link:hover {
+      color: var(--ag-navy);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* ── DIGITAL PRODUCTS & APPS FOCUS (DARK BAND) ── */
+    .ag-digital-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .ag-digital-card {
+      background: var(--ag-navy-2);
+      border: 1px solid var(--ag-line-dark);
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .ag-digital-idx {
+      font-family: var(--ag-mono);
+      font-size: 12px;
+      color: #C4B5FD;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .ag-digital-card h3 {
+      font-family: var(--ag-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ag-white);
+      margin: 0 0 10px;
+    }
+    .ag-digital-card p {
+      font-size: 14.5px;
+      color: #B4C1D4;
+      margin: 0;
+    }
+
+    /* ── WHY MAISON JOHN&CO & 3 AUDIENCES ── */
+    .ag-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+    .ag-why-item {
+      padding-top: 20px;
+      border-top: 1px solid var(--ag-line);
+    }
+    .ag-why-item h3 {
+      font-family: var(--ag-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ag-navy);
+      margin: 0 0 10px;
+    }
+    .ag-why-item p {
+      font-size: 14.5px;
+      color: var(--ag-muted);
+      margin: 0;
+    }
+
+    .ag-audiences {
+      background: var(--ag-mist);
+      border: 1px solid var(--ag-line);
+      border-radius: 14px;
+      padding: 36px;
+    }
+    .ag-audiences-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .ag-audiences-head h3 {
+      font-family: var(--ag-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ag-navy);
+      margin: 0;
+    }
+    .ag-audiences-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .ag-audience-card {
+      background: var(--ag-white);
+      border: 1px solid var(--ag-line);
+      border-radius: 10px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: border-color 0.18s ease, transform 0.18s ease;
+    }
+    .ag-audience-card:hover {
+      border-color: var(--ag-accent);
+      transform: translateY(-2px);
+    }
+    .ag-audience-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ag-navy);
+      margin: 0 0 6px;
+    }
+    .ag-audience-card p {
+      font-size: 14px;
+      color: var(--ag-muted);
+      margin: 0;
+    }
+
+    /* ── FINAL CTA & FOOTER ── */
+    .ag-cta {
+      padding: 84px 0;
+      background: var(--ag-white);
+    }
+    .ag-cta-banner {
+      background: var(--ag-navy);
+      color: var(--ag-white);
+      border-radius: 16px;
+      padding: 54px 50px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .ag-cta-banner h2 {
+      font-family: var(--ag-display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.15;
+      text-wrap: balance;
+    }
+    .ag-cta-banner p {
+      font-size: 16px;
+      color: #C2CDDD;
+      margin: 0;
+      max-width: 56ch;
+    }
+    .ag-cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .ag-footer {
+      background: var(--ag-mist);
+      border-top: 1px solid var(--ag-line);
+      padding: 38px 0 46px;
+      font-size: 13.5px;
+      color: var(--ag-muted);
+    }
+    .ag-footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .ag-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+    .ag-footer-links a:hover {
+      color: var(--ag-navy);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .ag-hero-showcase,
+      .ag-sec-head,
+      .ag-model-grid,
+      .ag-domain-stage,
+      .ag-cta-banner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .ag-digital-grid,
+      .ag-why-grid,
+      .ag-audiences-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ag-wrap { padding: 0 18px; }
+      .ag-hero { padding: 40px 0 56px; }
+      .ag-section, .ag-cta { padding: 60px 0; }
+      .ag-manifesto-box, .ag-domain-stage, .ag-audiences, .ag-schema-card { padding: 26px 20px; }
+      .ag-model-pillars { grid-template-columns: 1fr; }
+      .ag-cta-banner { padding: 36px 24px; }
+      .ag-domain-tabs { overflow-x: auto; flex-wrap: nowrap; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .ag-rev { opacity: 1; transform: none; transition: none; }
+      .ag-btn, .ag-audience-card { transition: none; }
+    }
+  </style>
 </head>
-<body class="font-sans antialiased text-gray-800">
-<mjc-site-header></mjc-site-header>
-<script src="../assets/js/site-header.js"></script>
-    <!-- Header -->
-    <header class="gradient-bg py-12 md:py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-800">
-                <span class="text-indigo-600">Maison</span> John&Co
-            </h1>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-                Plus qu'une agence : votre maison d'expertise et de stratégie digitale
+<body>
+  <mjc-site-header></mjc-site-header>
+  <script src="../assets/js/site-header.js"></script>
+
+  <main>
+    <!-- ── HERO ── -->
+    <section class="ag-hero">
+      <div class="ag-wrap">
+        <nav class="ag-crumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a>
+          <span class="ag-crumb-sep" aria-hidden="true">/</span>
+          <a href="a-propos--31.html">À propos</a>
+          <span class="ag-crumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Notre Agence</span>
+        </nav>
+
+        <div class="ag-hero-head">
+          <span class="ag-kicker">Identité institutionnelle</span>
+          <h1>Plus qu'une agence : une <span>maison d'expertise</span> et de projets digitaux.</h1>
+          <p class="ag-hero-sub">
+            Maison John&amp;Co Marketing accompagne les entreprises, les créateurs et les porteurs de projets dans la stratégie digitale, le marketing de croissance et la conception de solutions numériques — sites, plateformes et applications — grâce à une organisation agile, coordonnée à distance et ouverte sur l'international.
+          </p>
+        </div>
+
+        <div class="ag-hero-showcase">
+          <div class="ag-showcase-photo">
+            <img src="../assets/images/institution/agence-atelier-digital.jpg" alt="Poste de conception digitale présentant des maquettes d'interfaces web et mobiles" referrerpolicy="no-referrer">
+          </div>
+
+          <div class="ag-manifesto-box">
+            <div>
+              <span class="ag-kicker">Notre philosophie</span>
+              <p class="ag-manifesto-quote">
+                « Nous ne vendons pas des actions isolées : nous construisons des écosystèmes digitaux cohérents où chaque pièce s'emboîte avec justesse. »
+              </p>
+            </div>
+            <p class="ag-manifesto-text">
+              Dans un environnement numérique mouvant, empiler des prestataires sans ligne directrice dilue les résultats. Notre vocation est de penser chaque dispositif dans sa globalité — du positionnement stratégique jusqu'aux outils concrets utilisés par vos clients.
             </p>
-            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6 md:p-8 hover-scale">
-                <p class="text-lg md:text-xl leading-relaxed">
-                    Chez Maison John&Co, nous bâtissons des stratégies digitales sur mesure qui accompagnent chaque étape de votre croissance. Notre approche 360° combine expertise technique et vision stratégique pour des résultats tangibles et durables.
-                </p>
+            <div class="ag-manifesto-actions">
+              <a href="contact--895.html" class="ag-btn ag-btn-primary">Discuter de votre projet</a>
+              <a href="methode-engagements--38.html" class="ag-btn ag-btn-outline">Voir notre méthode</a>
             </div>
+          </div>
         </div>
-    </header>
-
-    <!-- Notre Philosophie -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Notre philosophie</h2>
-                    <p class="text-lg mb-6 leading-relaxed">
-                        Dans un monde digital en constante évolution, nous croyons en la puissance des stratégies cohérentes et des expertises complémentaires. Comme une maison bien construite, chaque élément de votre présence digitale doit être pensé dans sa globalité.
-                    </p>
-                    <div class="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-600">
-                        <p class="text-indigo-800 font-medium">
-                            "Nous ne vendons pas des services, nous construisons des écosystèmes digitaux performants où chaque pièce s'emboîte parfaitement."
-                        </p>
-                    </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <img src="https://www.accile.com/wp-content/uploads/2022/05/AdobeStock_226788568-scaled.jpeg" 
-                         alt="Équipe Maison John&Co" 
-                         class="rounded-lg shadow-xl w-full h-auto object-cover">
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Notre Approche 360° -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Notre Approche 360°</h2>
-                <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
-                <p class="text-xl max-w-3xl mx-auto">
-                    Une vision globale pour une performance optimale sur tous les canaux digitaux
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Stratégie -->
-                <div class="bg-white p-8 rounded-xl shadow-md service-card transition-all duration-300">
-                    <div class="text-indigo-600 mb-4 text-4xl">
-                        <i class="fas fa-chess"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Stratégie Digitale</h3>
-                    <p class="text-gray-600">
-                        Plans sur mesure alignés sur vos objectifs business. Analyse complète, positionnement et feuille de route pour maximiser votre ROI digital.
-                    </p>
-                </div>
-                
-                <!-- Publicité -->
-                <div class="bg-white p-8 rounded-xl shadow-md service-card transition-all duration-300">
-                    <div class="text-indigo-600 mb-4 text-4xl">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Publicité Performance</h3>
-                    <p class="text-gray-600">
-                        Campagnes multi-canaux optimisées en continu. Google Ads, Meta, LinkedIn et programmatique pour convertir au meilleur coût.
-                    </p>
-                </div>
-                
-                <!-- Contenu -->
-                <div class="bg-white p-8 rounded-xl shadow-md service-card transition-all duration-300">
-                    <div class="text-indigo-600 mb-4 text-4xl">
-                        <i class="fas fa-pen-fancy"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Création de Contenu</h3>
-                    <p class="text-gray-600">
-                        Narratives brandées et contenu à haute valeur ajoutée. De la production à la distribution, nous créons des assets qui engagent et convertissent.
-                    </p>
-                </div>
-                
-                <!-- Influence -->
-                <div class="bg-white p-8 rounded-xl shadow-md service-card transition-all duration-300">
-                    <div class="text-indigo-600 mb-4 text-4xl">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Marketing d'Influence</h3>
-                    <p class="text-gray-600">
-                        Stratégies d'activation d'influenceurs authentiques. Identification, relation et campagnes avec des ambassadeurs alignés sur vos valeurs.
-                    </p>
-                </div>
-                
-                <!-- Formation -->
-                <div class="bg-white p-8 rounded-xl shadow-md service-card transition-all duration-300">
-                    <div class="text-indigo-600 mb-4 text-4xl">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Formation & Accompagnement</h3>
-                    <p class="text-gray-600">
-                        Empowerment de vos équipes. Workshops sur mesure et transfert de compétences pour une autonomie digitale durable.
-                    </p>
-                </div>
-                
-                <!-- Data -->
-                <div class="bg-white p-8 rounded-xl shadow-md service-card transition-all duration-300">
-                    <div class="text-indigo-600 mb-4 text-4xl">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Analytics & Optimisation</h3>
-                    <p class="text-gray-600">
-                        Pilotage data-driven de votre performance. Tracking avancé, tableaux de bord actionnables et tests permanents pour progresser continuellement.
-                    </p>
-                </div>
-            </div>
+    <!-- ── MODÈLE OPÉRATIONNEL AGILE ── -->
+    <section class="ag-section ag-section-mist" id="modele-operationnel">
+      <div class="ag-wrap">
+        <div class="ag-sec-head ag-rev">
+          <div>
+            <span class="ag-kicker">Organisation assumée</span>
+            <h2>Une structure agile, pilotée avec rigueur et ouverte au monde</h2>
+          </div>
+          <p>
+            Maison John&amp;Co Marketing a fait un choix opérationnel clair : une direction et une coordination dédiées, capables de mobiliser les bonnes expertises indépendantes selon chaque mission.
+          </p>
         </div>
-    </section>
 
-    <!-- Pourquoi Nous Choisir -->
-    <section class="py-16 bg-indigo-600 text-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pourquoi choisir Maison John&Co ?</h2>
-                <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-4">
-                        <i class="fas fa-chess-queen"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Vision Stratégique</h3>
-                    <p>
-                        Nous pensons d'abord business, puis digital. Chaque recommandation sert vos objectifs globaux, pas seulement vos KPIs digitaux.
-                    </p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-4">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Cohérence Globale</h3>
-                    <p>
-                        Tous nos services s'articulent harmonieusement pour créer une présence digitale unifiée et performante sur tous les canaux.
-                    </p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="text-5xl mb-4">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Accompagnement Sur Mesure</h3>
-                    <p>
-                        Véritables partenaires, nous nous adaptons à votre maturité digitale et grandissons à vos côtés sur le long terme.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Témoignages -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ils nous font confiance</h2>
-                <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="italic mb-6">
-                        "Maison John&Co a complètement transformé notre approche digitale. Leur vision 360° nous a permis de multiplier par 3 notre trafic qualifié en 6 mois tout en renforçant considérablement notre image de marque."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="bg-indigo-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
-                            <span class="text-indigo-600 font-bold">EB</span>
-                        </div>
-                        <div>
-                            <p class="font-bold">Énola Barlet</p>
-                            <p class="text-sm text-gray-500">Directrice des opérations</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="italic mb-6">
-                        "Ce qui m'a convaincu chez Maison John&Co, c'est leur capacité à lier stratégie long terme et résultats immédiats. Leur approche globale a créé une cohérence parfaite entre nos différents canaux."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="bg-indigo-100 rounded-full w-12 h-12 flex items-center justify-center mr-4">
-                            <span class="text-indigo-600 font-bold">YG</span>
-                        </div>
-                        <div>
-                            <p class="font-bold">Yanis Grivot</p>
-                            <p class="text-sm text-gray-500">CEO</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-16 gradient-bg">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à construire votre succès digital ?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">
-                Discutons de votre projet et imaginons ensemble une stratégie sur mesure pour votre marque.
+        <div class="ag-model-grid">
+          <div class="ag-model-prose ag-rev">
+            <p>
+              Plutôt que d'entretenir une structure lourde ou de chercher à ressembler artificiellement à un grand groupe de centaines de salariés, nous assumons un modèle moderne, léger et exigeant : <strong>une gouvernance centrale qui cadre, pilote et garantit la cohérence</strong>, complétée par des professionnels indépendants et spécialistes métiers mobilisés à la carte selon les besoins réels de votre projet.
             </p>
-            <a href="contact--895.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
-                Contactez notre équipe
+            <p>
+              Cette organisation apporte un double avantage concret : vous bénéficiez d'un interlocuteur clair et responsable de l'ensemble, tout en accédant à des profils pointus — designers, développeurs d'applications, experts SEO, rédacteurs, spécialistes publicité ou automatisation — sans lourdeur administrative.
+            </p>
+
+            <div class="ag-model-pillars">
+              <div class="ag-pillar-box">
+                <h3>Souplesse &amp; complémentarité</h3>
+                <p>Chaque équipe projet est composée sur mesure autour de vos enjeux réels, qu'il s'agisse d'un audit ciblé ou d'un programme complet.</p>
+              </div>
+              <div class="ag-pillar-box">
+                <h3>Fonctionnement à distance</h3>
+                <p>Une organisation fluide, rapide à mobiliser et centrée sur les livrables plutôt que sur les contraintes logistiques.</p>
+              </div>
+              <div class="ag-pillar-box">
+                <h3>France &amp; international</h3>
+                <p>Notre mode de fonctionnement facilite les collaborations francophones et internationales, en mobilisant des profils adaptés à différents marchés.</p>
+              </div>
+              <div class="ag-pillar-box">
+                <h3>Pilotage unifié</h3>
+                <p>La coordination reste assurée par l'agence : vous gardez une vision lisible du calendrier, des priorités et de la qualité produite.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="ag-schema-card ag-rev ed-rev-d1">
+            <h3>Comment s'articule notre organisation</h3>
+            <p>Un socle de direction constant, relié à un écosystème de compétences spécialisées activées selon la mission.</p>
+            <svg class="ag-schema-svg" viewBox="0 0 460 350" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma d'organisation : Direction et coordination centrale reliant les experts indépendants spécialisés aux projets clients en France et à l'international">
+              <!-- Bloc Haut : Client -->
+              <rect x="90" y="14" width="280" height="62" rx="10" fill="#172A4B" stroke="rgba(255,255,255,0.2)"/>
+              <text x="230" y="40" text-anchor="middle" fill="#C4B5FD" font-family="IBM Plex Mono, monospace" font-size="11">VOTRE PROJET · FRANCE &amp; INTERNATIONAL</text>
+              <text x="230" y="61" text-anchor="middle" fill="#FFFFFF" font-family="Bricolage Grotesque, sans-serif" font-size="16" font-weight="600">Objectifs, contexte &amp; ambitions</text>
+
+              <!-- Flèche bas -->
+              <path d="M230 76 V112" stroke="#A78BFA" stroke-width="1.8"/>
+              <path d="M225 107 L230 114 L235 107" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- Bloc Central : Direction & Coordination -->
+              <rect x="44" y="116" width="372" height="86" rx="12" fill="#23194E" stroke="#7C3AED" stroke-width="1.5"/>
+              <text x="230" y="143" text-anchor="middle" fill="#C4B5FD" font-family="IBM Plex Mono, monospace" font-size="11">MAISON JOHN&amp;CO MARKETING</text>
+              <text x="230" y="167" text-anchor="middle" fill="#FFFFFF" font-family="Bricolage Grotesque, sans-serif" font-size="17" font-weight="700">Direction, Stratégie &amp; Coordination</text>
+              <text x="230" y="188" text-anchor="middle" fill="#CBD5E1" font-family="Manrope, sans-serif" font-size="12">Cadrage · Sélection des experts · Contrôle qualité · Suivi client</text>
+
+              <!-- Connecteurs vers les 3 pôles spécialisés -->
+              <path d="M120 202 V244" stroke="rgba(167,139,250,0.75)" stroke-width="1.6"/>
+              <path d="M230 202 V244" stroke="rgba(167,139,250,0.75)" stroke-width="1.6"/>
+              <path d="M340 202 V244" stroke="rgba(167,139,250,0.75)" stroke-width="1.6"/>
+
+              <!-- 3 Blocs Bas : Compétences mobilisées -->
+              <rect x="20" y="246" width="132" height="84" rx="10" fill="#172A4B" stroke="rgba(255,255,255,0.16)"/>
+              <text x="86" y="274" text-anchor="middle" fill="#FFFFFF" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600">Design &amp;</text>
+              <text x="86" y="293" text-anchor="middle" fill="#FFFFFF" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600">Contenu</text>
+              <text x="86" y="314" text-anchor="middle" fill="#9FB0C8" font-family="Manrope, sans-serif" font-size="11">UI/UX · Marque</text>
+
+              <rect x="164" y="246" width="132" height="84" rx="10" fill="#172A4B" stroke="rgba(255,255,255,0.16)"/>
+              <text x="230" y="274" text-anchor="middle" fill="#FFFFFF" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600">Tech &amp;</text>
+              <text x="230" y="293" text-anchor="middle" fill="#FFFFFF" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600">Applications</text>
+              <text x="230" y="314" text-anchor="middle" fill="#9FB0C8" font-family="Manrope, sans-serif" font-size="11">Web · Apps · CRM</text>
+
+              <rect x="308" y="246" width="132" height="84" rx="10" fill="#172A4B" stroke="rgba(255,255,255,0.16)"/>
+              <text x="374" y="274" text-anchor="middle" fill="#FFFFFF" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600">Acquisition</text>
+              <text x="374" y="293" text-anchor="middle" fill="#FFFFFF" font-family="Bricolage Grotesque, sans-serif" font-size="14" font-weight="600">&amp; Data</text>
+              <text x="374" y="314" text-anchor="middle" fill="#9FB0C8" font-family="Manrope, sans-serif" font-size="11">SEO · Ads · Social</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DOMAINES DE COMPÉTENCES (INTERACTIF) ── -->
+    <section class="ag-section" id="domaines">
+      <div class="ag-wrap">
+        <div class="ag-sec-head ag-rev">
+          <div>
+            <span class="ag-kicker">Approche 360°</span>
+            <h2>Des expertises complémentaires pensées pour travailler ensemble</h2>
+          </div>
+          <p>
+            Nous intervenons sur l'ensemble de la chaîne de valeur digitale afin d'éviter la rupture entre réflexion stratégique, production technique et visibilité commerciale.
+          </p>
+        </div>
+
+        <div class="ag-domain-tabs ag-rev" role="tablist" aria-label="Domaines de compétences de l'agence">
+          <button type="button" class="ag-domain-tab is-active" data-domain="strategie" role="tab" aria-selected="true">Stratégie &amp; Accompagnement</button>
+          <button type="button" class="ag-domain-tab" data-domain="solutions" role="tab" aria-selected="false">Web, Applications &amp; Solutions</button>
+          <button type="button" class="ag-domain-tab" data-domain="visibilite" role="tab" aria-selected="false">Visibilité, Contenu &amp; Influence</button>
+          <button type="button" class="ag-domain-tab" data-domain="performance" role="tab" aria-selected="false">CRM, Automatisation &amp; Data</button>
+        </div>
+
+        <div class="ag-domain-stage ag-rev" aria-live="polite">
+          <div>
+            <h3 id="agDomainTitle">Stratégie digitale, audit et accompagnement sur mesure</h3>
+            <p id="agDomainDesc">
+              Nous aidons les décideurs à clarifier leur positionnement, prioriser leurs investissements numériques et structurer leur transformation digitale avec une feuille de route réaliste.
+            </p>
+            <ul class="ag-domain-points" id="agDomainPoints">
+              <li>Consulting stratégique, veille sectorielle et plans de communication digitale</li>
+              <li>Audits complets des supports, parcours et leviers d'acquisition existants</li>
+              <li>Coaching et accompagnement des équipes vers davantage d'autonomie</li>
+            </ul>
+          </div>
+          <aside class="ag-domain-side">
+            <h4 id="agDomainSideTitle">Explorer ce champ d'action</h4>
+            <p id="agDomainSideText">Chaque domaine s'articule avec nos autres pôles afin de préserver la cohérence de votre écosystème digital.</p>
+            <div class="ag-domain-links" id="agDomainLinks">
+              <a href="strategie-digitale-accompagnement--396.html" class="ag-text-link">Stratégie Digitale &amp; Accompagnement →</a>
+              <a href="services-proposes-pour-les-entreprises--395.html" class="ag-text-link">Vue d'ensemble des services entreprises →</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONCEPTION DE PROJETS DIGITAUX & APPLICATIONS ── -->
+    <section class="ag-section ag-section-dark">
+      <div class="ag-wrap">
+        <div class="ag-sec-head ag-rev">
+          <div>
+            <span class="ag-kicker">Culture produit &amp; numérique</span>
+            <h2>Développer des projets digitaux, des applications et des solutions sur mesure</h2>
+          </div>
+          <p>
+            Au-delà des campagnes de communication, Maison John&amp;Co Marketing aborde le digital comme un véritable terrain de conception produit : interfaces web, tunnels de conversion, applications et outils numériques utiles au quotidien.
+          </p>
+        </div>
+
+        <div class="ag-digital-grid">
+          <article class="ag-digital-card ag-rev">
+            <span class="ag-digital-idx">01 · Usages &amp; architecture</span>
+            <h3>Concevoir à partir du besoin réel</h3>
+            <p>Avant d'écrire la première ligne de code ou de dessiner un écran, nous clarifions les parcours utilisateurs, les objectifs métiers et la simplicité d'usage attendue.</p>
+          </article>
+
+          <article class="ag-digital-card ag-rev ag-rev-d1">
+            <span class="ag-digital-idx">02 · Interfaces &amp; développement</span>
+            <h3>Allier design soigné et socle fiable</h3>
+            <p>Sites vitrines, boutiques e-commerce, landing pages ou projets d'applications numériques : nous coordonnons design UI/UX et développement spécialisé pour un rendu fluide sur tous les écrans.</p>
+          </article>
+
+          <article class="ag-digital-card ag-rev ag-rev-d2">
+            <span class="ag-digital-idx">03 · Écosystème connecté</span>
+            <h3>Relier l'outil à la croissance</h3>
+            <p>Une solution numérique prend tout son sens lorsqu'elle s'intègre naturellement au référencement, au CRM, à l'automatisation et au suivi analytique de l'entreprise.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CE QUI NOUS DISTINGUE & NOS 3 PUBLICS ── -->
+    <section class="ag-section">
+      <div class="ag-wrap">
+        <div class="ag-sec-head ag-rev">
+          <div>
+            <span class="ag-kicker">Notre posture</span>
+            <h2>Pourquoi collaborer avec Maison John&amp;Co Marketing</h2>
+          </div>
+          <p>
+            Nous abordons chaque projet avec un équilibre entre vision d'ensemble, exigence d'exécution et relation humaine directe.
+          </p>
+        </div>
+
+        <div class="ag-why-grid">
+          <div class="ag-why-item ag-rev">
+            <h3>Penser business avant l'outil</h3>
+            <p>Chaque recommandation répond à un enjeu concret — notoriété, acquisition, structuration ou expérience client — plutôt qu'à une simple logique de catalogue.</p>
+          </div>
+          <div class="ag-why-item ag-rev ag-rev-d1">
+            <h3>Cohérence globale</h3>
+            <p>Stratégie, identité, technique, contenu et acquisition dialoguent entre eux pour bâtir une présence lisible et harmonieuse sur l'ensemble de vos canaux.</p>
+          </div>
+          <div class="ag-why-item ag-rev ag-rev-d2">
+            <h3>Accompagnement évolutif</h3>
+            <p>Notre structure agile nous permet d'adapter le périmètre et les compétences mobilisées au fil de l'évolution de vos besoins, sans rigidité contractuelle inutile.</p>
+          </div>
+        </div>
+
+        <div class="ag-audiences ag-rev">
+          <div class="ag-audiences-head">
+            <h3>Trois univers d'accompagnement</h3>
+            <a href="etudes-de-cas--49.html" class="ag-text-link">Consulter nos études de cas →</a>
+          </div>
+          <div class="ag-audiences-grid">
+            <a href="services-proposes-pour-les-entreprises--395.html" class="ag-audience-card">
+              <div>
+                <h4>Entreprises &amp; organisations</h4>
+                <p>Stratégie, création digitale, acquisition, SEO, automatisation CRM, analyse et accompagnement sur mesure.</p>
+              </div>
+              <span class="ag-text-link">Découvrir l'espace entreprises →</span>
             </a>
+
+            <a href="services-influenceurs--988.html" class="ag-audience-card">
+              <div>
+                <h4>Influenceurs &amp; créateurs</h4>
+                <p>Structuration d'image, développement d'audience, monétisation et accompagnement de carrière digitale.</p>
+              </div>
+              <span class="ag-text-link">Découvrir l'espace influenceurs →</span>
+            </a>
+
+            <a href="services-particuliers--989.html" class="ag-audience-card">
+              <div>
+                <h4>Particuliers &amp; porteurs de projets</h4>
+                <p>Accompagnement personnalisé, montée en compétences digitales et concrétisation de projets numériques.</p>
+              </div>
+              <span class="ag-text-link">Découvrir l'espace particuliers →</span>
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
+    <!-- ── CTA FINAL ── -->
+    <section class="ag-cta">
+      <div class="ag-wrap">
+        <div class="ag-cta-banner ag-rev">
+          <div>
+            <h2>Construisons un projet digital à la hauteur de vos ambitions</h2>
+            <p>
+              Vous souhaitez échanger sur une stratégie, un besoin d'accompagnement ou le développement d'une solution numérique ? Parlons-en simplement.
+            </p>
+          </div>
+          <div class="ag-cta-btns">
+            <a href="contact--895.html" class="ag-btn ag-btn-light">Contacter l'agence</a>
+            <a href="equipe-dirigeante--37.html" class="ag-btn ag-btn-ghost-dark">Découvrir la gouvernance</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ag-footer">
+    <div class="ag-wrap">
+      <div class="ag-footer-row">
+        <span>Maison John&amp;Co Marketing — Notre Agence</span>
+        <nav class="ag-footer-links" aria-label="Navigation institutionnelle">
+          <a href="equipe-dirigeante--37.html">Équipe dirigeante</a>
+          <a href="methode-engagements--38.html">Méthode &amp; engagements</a>
+          <a href="carrieres--39.html">Carrières</a>
+          <a href="portfolio--57.html">Portfolio</a>
+          <a href="contact--895.html">Contact</a>
+          <a href="mentions-legales--1004.html">Mentions légales</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var domains = {
+        strategie: {
+          title: 'Stratégie digitale, audit et accompagnement sur mesure',
+          desc: 'Nous aidons les décideurs à clarifier leur positionnement, prioriser leurs investissements numériques et structurer leur transformation digitale avec une feuille de route réaliste.',
+          points: [
+            'Consulting stratégique, veille sectorielle et plans de communication digitale',
+            'Audits complets des supports, parcours et leviers d\'acquisition existants',
+            'Coaching et accompagnement des équipes vers davantage d\'autonomie'
+          ],
+          sideTitle: 'Explorer ce champ d\'action',
+          sideText: 'Chaque domaine s\'articule avec nos autres pôles afin de préserver la cohérence de votre écosystème digital.',
+          links: [
+            { label: 'Stratégie Digitale & Accompagnement →', href: 'strategie-digitale-accompagnement--396.html' },
+            { label: 'Vue d\'ensemble des services entreprises →', href: 'services-proposes-pour-les-entreprises--395.html' }
+          ]
+        },
+        solutions: {
+          title: 'Création digitale, sites web, applications et solutions numériques',
+          desc: 'De l\'architecture fonctionnelle au design UI/UX et au développement, nous concevons des interfaces claires, responsives et pensées pour l\'usage comme pour la conversion.',
+          points: [
+            'Webdesign, UI/UX design et optimisation de l\'expérience mobile',
+            'Création de sites web, boutiques e-commerce, landing pages et tunnels de vente',
+            'Cadrage et coordination de projets d\'applications et de solutions numériques sur mesure'
+          ],
+          sideTitle: 'Aller plus loin',
+          sideText: 'Nos réalisations techniques s\'appuient sur une coordination étroite entre design, ingénierie et enjeux marketing.',
+          links: [
+            { label: 'Création Digitale & Identité →', href: 'creation-digitale-identite--397.html' },
+            { label: 'Découvrir le portfolio →', href: 'portfolio--57.html' }
+          ]
+        },
+        visibilite: {
+          title: 'Référencement naturel, publicité, contenu et influence',
+          desc: 'Nous combinons acquisition ciblée, visibilité organique durable, rédaction commerciale et stratégies sociales pour installer votre présence sur les canaux qui comptent pour vos audiences.',
+          points: [
+            'SEO technique, référencement local et stratégies de contenu éditorial',
+            'Campagnes publicitaires multi-canales (Search, Social Ads, Vidéo, Retargeting)',
+            'Copywriting, scripts vidéo, social media management et marketing d\'influence'
+          ],
+          sideTitle: 'Pôles associés',
+          sideText: 'L\'acquisition et le contenu travaillent de concert pour renforcer à la fois la notoriété et la qualité des prises de contact.',
+          links: [
+            { label: 'Référencement & Visibilité →', href: 'referencement-visibilite--399.html' },
+            { label: 'Publicité Digitale →', href: 'publicite-digitale--398.html' },
+            { label: 'Contenu & Rédaction →', href: 'contenu-redaction--400.html' },
+            { label: 'Influence, Social Media & Communauté →', href: 'influence-social-media-communaute--403.html' }
+          ]
+        },
+        performance: {
+          title: 'Automatisation, relation client CRM et pilotage par la donnée',
+          desc: 'Nous structurons le suivi relationnel et les instruments de mesure afin de fluidifier vos processus commerciaux et d\'appuyer vos décisions sur des indicateurs fiables.',
+          points: [
+            'Déploiement CRM, marketing automation, email et scénarios relationnels',
+            'Webanalyse, suivi des conversions et tableaux de bord de pilotage',
+            'Expérimentations A/B testing et optimisation continue des parcours'
+          ],
+          sideTitle: 'Pôles associés',
+          sideText: 'Des outils bien connectés et des données lisibles transforment vos actions marketing en un système pilotable.',
+          links: [
+            { label: 'Automatisation & CRM →', href: 'automatisation-crm--401.html' },
+            { label: 'Analyse & Performance →', href: 'analyse-performance--402.html' }
+          ]
+        }
+      };
+
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.ag-domain-tab'));
+      var titleEl = document.getElementById('agDomainTitle');
+      var descEl = document.getElementById('agDomainDesc');
+      var pointsEl = document.getElementById('agDomainPoints');
+      var sideTitleEl = document.getElementById('agDomainSideTitle');
+      var sideTextEl = document.getElementById('agDomainSideText');
+      var linksEl = document.getElementById('agDomainLinks');
+
+      function selectDomain(key) {
+        var d = domains[key];
+        if (!d) return;
+        tabs.forEach(function (t) {
+          var active = t.getAttribute('data-domain') === key;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        titleEl.textContent = d.title;
+        descEl.textContent = d.desc;
+        pointsEl.innerHTML = d.points.map(function (p) { return '<li>' + p + '</li>'; }).join('');
+        sideTitleEl.textContent = d.sideTitle;
+        sideTextEl.textContent = d.sideText;
+        linksEl.innerHTML = d.links.map(function (l) {
+          return '<a href="' + l.href + '" class="ag-text-link">' + l.label + '</a>';
+        }).join('');
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          selectDomain(tab.getAttribute('data-domain'));
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-shown');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+        document.querySelectorAll('.ag-rev').forEach(function (el) { obs.observe(el); });
+      } else {
+        document.querySelectorAll('.ag-rev').forEach(function (el) { el.classList.add('is-shown'); });
+      }
+    })();
+  </script>
 </body>
 </html>
-<p></p>
