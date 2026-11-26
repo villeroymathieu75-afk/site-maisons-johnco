@@ -2,7 +2,9 @@
   if (customElements.get('mjc-site-header')) return;
 
   // Derive the site root cleanly from this script's own URL (.../assets/js/site-header.js -> .../)
-  const currentScript = document.currentScript;
+  const currentScript =
+    document.currentScript ||
+    document.querySelector('script[src*="site-header.js"]');
   let siteRoot = '/';
   if (currentScript && currentScript.src) {
     try {
@@ -17,6 +19,28 @@
     if (!target || target === '/') return siteRoot;
     return siteRoot + target.replace(/^\/+/, '');
   }
+
+  function syncHeaderMetrics() {
+    const h = window.innerWidth < 1080 ? 64 : 72;
+    document.documentElement.style.setProperty('--mjc-header-height', h + 'px');
+    return h;
+  }
+
+  function ensureGlobalGuardStyle() {
+    if (document.getElementById('mjc-header-layout-guard')) return;
+    const style = document.createElement('style');
+    style.id = 'mjc-header-layout-guard';
+    style.textContent = [
+      ':root { --mjc-header-height: 72px; }',
+      '@media (max-width: 1079px) { :root { --mjc-header-height: 64px; } }',
+      'html { scroll-padding-top: calc(var(--mjc-header-height, 72px) + 12px); }',
+      'mjc-site-header { display: block !important; width: 100% !important; max-width: none !important; flex: 0 0 auto !important; align-self: stretch !important; margin: 0 !important; padding: 0 !important; position: relative !important; z-index: 2147483000 !important; box-sizing: border-box !important; }',
+    ].join('\n');
+    (document.head || document.documentElement).appendChild(style);
+  }
+
+  ensureGlobalGuardStyle();
+  syncHeaderMetrics();
 
   const BRAND = {
     label: 'Maison John&Co Marketing',
@@ -323,9 +347,16 @@
   }
 
   function renderDesktopSubmenu(items, level) {
+    const hasNestedSubmenus = items.some(
+      (item) => Array.isArray(item.children) && item.children.length > 0
+    );
+    const listClass = ['submenu', 'level-' + level, hasNestedSubmenus ? 'has-nested' : 'is-leaf']
+      .filter(Boolean)
+      .join(' ');
+
     return (
-      '<ul class="submenu level-' +
-      level +
+      '<ul class="' +
+      listClass +
       '" role="menu">' +
       items
         .map((item) => {
@@ -502,11 +533,29 @@
       this.attachShadow({ mode: 'open' });
       this.closeTimers = new WeakMap();
       this.mobileOpen = false;
+      this.lastPointerType = 'mouse';
+      this.savedHtmlOverflow = '';
+      this.savedBodyOverflow = '';
     }
 
     connectedCallback() {
+      ensureGlobalGuardStyle();
+      syncHeaderMetrics();
+      this.guardBodyLayout();
       this.render();
       this.bindEvents();
+    }
+
+    guardBodyLayout() {
+      if (!document.body) return;
+      try {
+        const cs = window.getComputedStyle(document.body);
+        if (cs.display === 'flex' && cs.flexDirection === 'row') {
+          document.body.style.flexDirection = 'column';
+        }
+      } catch {
+        // Ignore computed style issues
+      }
     }
 
     openLi(li) {
@@ -570,24 +619,52 @@
     adjustSubmenuPosition(submenu) {
       submenu.classList.remove('flip-left', 'align-right');
       submenu.style.top = '';
-      const rect = submenu.getBoundingClientRect();
+      submenu.style.left = '';
+      submenu.style.right = '';
+
+      const headerH = syncHeaderMetrics();
       const vw = window.innerWidth;
       const vh = window.innerHeight;
+      const pad = 12;
+
+      let rect = submenu.getBoundingClientRect();
 
       if (submenu.classList.contains('level-1')) {
-        if (rect.right > vw - 16) submenu.classList.add('align-right');
+        if (rect.right > vw - pad) {
+          submenu.classList.add('align-right');
+          rect = submenu.getBoundingClientRect();
+        }
+        if (rect.left < pad) {
+          const shift = pad - rect.left;
+          submenu.style.left = shift + 'px';
+          submenu.style.right = 'auto';
+        }
       } else {
-        if (rect.right > vw - 16) submenu.classList.add('flip-left');
-        if (rect.bottom > vh - 16) {
-          const overflow = rect.bottom - (vh - 16);
+        if (rect.right > vw - pad) {
+          submenu.classList.add('flip-left');
+          rect = submenu.getBoundingClientRect();
+          // If flipping left would clip off the left edge on compact laptops, clamp inside viewport
+          if (rect.left < pad) {
+            const parentRect = submenu.parentElement.getBoundingClientRect();
+            const desiredLeft = Math.max(pad, Math.min(vw - rect.width - pad, parentRect.left + 20));
+            submenu.classList.remove('flip-left');
+            submenu.style.left = desiredLeft - parentRect.left + 'px';
+            submenu.style.right = 'auto';
+            rect = submenu.getBoundingClientRect();
+          }
+        }
+        if (rect.bottom > vh - pad) {
+          const overflow = rect.bottom - (vh - pad);
           const currentTop = parseFloat(getComputedStyle(submenu).top) || 0;
-          const nextTop = Math.max(-rect.top + 80, currentTop - overflow);
+          const minTop = currentTop - (rect.top - (headerH + 8));
+          const nextTop = Math.max(minTop, currentTop - overflow);
           submenu.style.top = nextTop + 'px';
         }
       }
     }
 
     setMobileOpen(open) {
+      if (open === this.mobileOpen) return;
       this.mobileOpen = open;
       const drawer = this.shadowRoot.querySelector('.m-drawer');
       const backdrop = this.shadowRoot.querySelector('.m-backdrop');
@@ -599,12 +676,30 @@
         burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
         burger.innerHTML = open ? CLOSE_ICON : MENU_ICON;
       }
-      document.documentElement.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        this.savedHtmlOverflow = document.documentElement.style.overflow;
+        this.savedBodyOverflow = document.body ? document.body.style.overflow : '';
+        document.documentElement.style.overflow = 'hidden';
+        if (document.body) document.body.style.overflow = 'hidden';
+      } else {
+        document.documentElement.style.overflow = this.savedHtmlOverflow;
+        if (document.body) document.body.style.overflow = this.savedBodyOverflow;
+      }
     }
 
     bindEvents() {
+      this.shadowRoot.addEventListener(
+        'pointerdown',
+        (e) => {
+          this.lastPointerType = e.pointerType || 'mouse';
+        },
+        { passive: true }
+      );
+
       this.shadowRoot.querySelectorAll('.desktop-nav li.has-sub').forEach((li) => {
-        li.addEventListener('mouseenter', () => this.openLi(li));
+        li.addEventListener('mouseenter', () => {
+          if (this.lastPointerType !== 'touch') this.openLi(li);
+        });
         li.addEventListener('mouseleave', () => {
           if (!li.classList.contains('is-pinned')) this.scheduleCloseLi(li);
         });
@@ -625,7 +720,66 @@
             }
           });
         }
+
+        // On touchscreens >= 1080px (e.g. iPad Pro landscape), first tap opens submenu; second tap navigates
+        const parentLink = li.querySelector(
+          ':scope > .nav-trigger > .nav-link, :scope > .sub-row > .sub-link'
+        );
+        if (parentLink) {
+          parentLink.addEventListener('click', (e) => {
+            if (this.lastPointerType === 'touch' && !li.classList.contains('is-open')) {
+              e.preventDefault();
+              this.openLi(li);
+              li.classList.add('is-pinned');
+            }
+          });
+        }
       });
+
+      // Keyboard navigation for desktop menus
+      const desktopNav = this.shadowRoot.querySelector('.desktop-nav');
+      if (desktopNav) {
+        desktopNav.addEventListener('keydown', (e) => {
+          const activeEl = this.shadowRoot.activeElement;
+          if (!activeEl) return;
+          const currentLi = activeEl.closest('li');
+          if (!currentLi) return;
+
+          if (e.key === 'ArrowDown') {
+            if (currentLi.classList.contains('nav-item') && currentLi.classList.contains('has-sub')) {
+              e.preventDefault();
+              this.openLi(currentLi);
+              currentLi.classList.add('is-pinned');
+              const firstLink = currentLi.querySelector(':scope > .submenu > li a');
+              if (firstLink) firstLink.focus();
+            } else if (currentLi.classList.contains('sub-item')) {
+              e.preventDefault();
+              const nextLi = currentLi.nextElementSibling || currentLi.parentElement.firstElementChild;
+              const nextLink = nextLi && nextLi.querySelector(':scope > a, :scope > .sub-row > a');
+              if (nextLink) nextLink.focus();
+            }
+          } else if (e.key === 'ArrowUp' && currentLi.classList.contains('sub-item')) {
+            e.preventDefault();
+            const prevLi = currentLi.previousElementSibling || currentLi.parentElement.lastElementChild;
+            const prevLink = prevLi && prevLi.querySelector(':scope > a, :scope > .sub-row > a');
+            if (prevLink) prevLink.focus();
+          } else if (e.key === 'ArrowRight' && currentLi.classList.contains('sub-item') && currentLi.classList.contains('has-sub')) {
+            e.preventDefault();
+            this.openLi(currentLi);
+            currentLi.classList.add('is-pinned');
+            const firstChild = currentLi.querySelector(':scope > .submenu > li a');
+            if (firstChild) firstChild.focus();
+          } else if (e.key === 'ArrowLeft' && currentLi.classList.contains('sub-item')) {
+            const parentLi = currentLi.parentElement && currentLi.parentElement.closest('li.has-sub');
+            if (parentLi) {
+              e.preventDefault();
+              this.closeLiImmediate(parentLi);
+              const trigger = parentLi.querySelector(':scope > .sub-row > a, :scope > .nav-trigger > a');
+              if (trigger) trigger.focus();
+            }
+          }
+        });
+      }
 
       const burger = this.shadowRoot.querySelector('.burger-btn');
       const backdrop = this.shadowRoot.querySelector('.m-backdrop');
@@ -645,17 +799,30 @@
         });
       });
 
+      this.shadowRoot.querySelectorAll('.m-link, .m-account-link').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (this.mobileOpen) this.setMobileOpen(false);
+        });
+      });
+
       document.addEventListener('click', (e) => {
         if (!e.composedPath().includes(this)) this.closeAllDesktop();
       });
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
           this.closeAllDesktop();
-          if (this.mobileOpen) this.setMobileOpen(false);
+          if (this.mobileOpen) {
+            this.setMobileOpen(false);
+            if (burger) burger.focus();
+          }
         }
       });
       window.addEventListener('resize', () => {
+        syncHeaderMetrics();
         if (window.innerWidth >= 1080 && this.mobileOpen) this.setMobileOpen(false);
+        this.shadowRoot.querySelectorAll('.desktop-nav .is-open > .submenu').forEach((sm) => {
+          this.adjustSubmenuPosition(sm);
+        });
       });
     }
 
@@ -668,8 +835,13 @@
         <style>
           :host {
             all: initial;
-            display: block;
-            width: 100%;
+            display: block !important;
+            width: 100% !important;
+            max-width: none !important;
+            flex: 0 0 auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
             font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             -webkit-font-smoothing: antialiased;
             color: #0A1628;
@@ -683,11 +855,12 @@
           }
           *, *::before, *::after { box-sizing: border-box; }
 
-          .spacer { height: var(--mjc-h); width: 100%; }
+          .spacer { display: block; height: var(--mjc-h); width: 100%; flex-shrink: 0; }
 
           .bar {
             position: fixed;
             top: 0; left: 0; right: 0;
+            width: 100%;
             height: var(--mjc-h);
             background: var(--mjc-surface);
             backdrop-filter: blur(12px);
@@ -718,6 +891,7 @@
             letter-spacing: -0.02em;
             white-space: nowrap;
             flex-shrink: 0;
+            min-width: 0;
             padding: 6px 0;
             transition: color 0.16s ease;
           }
@@ -729,6 +903,7 @@
             align-items: center;
             flex: 1;
             justify-content: center;
+            min-width: 0;
           }
           .nav-list {
             list-style: none;
@@ -782,6 +957,7 @@
             margin: 0; padding: 8px;
             position: absolute;
             min-width: 256px;
+            max-width: calc(100vw - 24px);
             background: #FFFFFF;
             border: 1px solid var(--mjc-border);
             border-radius: 10px;
@@ -791,6 +967,14 @@
             pointer-events: none;
             transition: opacity 0.15s cubic-bezier(0.16, 1, 0.3, 1), transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.15s ease;
           }
+          .submenu.is-leaf {
+            max-height: calc(100vh - var(--mjc-h) - 24px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+          }
+          .submenu.has-nested {
+            overflow: visible;
+          }
           .submenu.level-1 { top: calc(100% + 10px); left: 0; transform: translateY(6px); z-index: 10; }
           .submenu.level-1::before { content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
           .submenu.level-1.align-right { left: auto; right: 0; }
@@ -798,8 +982,8 @@
           .submenu.level-2, .submenu.level-3 {
             top: -8px;
             left: calc(100% + 8px);
-            min-width: 300px;
-            max-width: 340px;
+            min-width: 292px;
+            max-width: min(340px, calc(100vw - 24px));
             transform: translateX(6px);
             z-index: 20;
           }
@@ -888,6 +1072,7 @@
           .m-drawer {
             position: fixed; top: 0; right: 0; bottom: 0;
             width: min(390px, 92vw);
+            max-width: 100vw;
             background: #FFFFFF; z-index: 2147483002;
             transform: translateX(100%);
             transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
@@ -899,25 +1084,26 @@
           .m-header {
             height: 64px; padding: 0 16px 0 20px;
             border-bottom: 1px solid var(--mjc-border);
-            display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-shrink: 0;
           }
-          .m-title { font-size: 15px; font-weight: 700; color: var(--mjc-ink); }
+          .m-title { font-size: 15px; font-weight: 700; color: var(--mjc-ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
           .m-close {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 40px; height: 40px; border-radius: 8px;
+            width: 40px; height: 40px; flex-shrink: 0; border-radius: 8px;
             border: 1px solid var(--mjc-border); background: #FFFFFF; color: var(--mjc-ink); cursor: pointer;
           }
 
-          .m-body { flex: 1; overflow-y: auto; padding: 12px 14px 28px; }
+          .m-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding: 12px 14px 28px; }
           .m-list { list-style: none; margin: 0; padding: 0; }
           .m-depth-1 { padding-left: 12px; border-left: 1px solid #E2E8F0; margin: 2px 0 6px 12px; }
           .m-depth-2 { padding-left: 12px; border-left: 1px solid #DDD6FE; margin: 2px 0 6px 10px; }
           .m-depth-3 { padding-left: 12px; border-left: 1px solid #E2E8F0; margin: 2px 0 6px 10px; }
           .m-row { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
           .m-link {
-            display: block; flex: 1; padding: 10px;
+            display: block; flex: 1; min-width: 0; padding: 10px;
             color: #1E293B; text-decoration: none;
             font-size: 14.5px; font-weight: 500; line-height: 1.35; border-radius: 7px;
+            word-break: break-word;
           }
           .m-depth-0 > .m-item > .m-row > .m-link,
           .m-depth-0 > .m-item > .m-link { font-weight: 600; color: var(--mjc-ink); }
@@ -930,7 +1116,7 @@
           }
           .m-toggle {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 40px; height: 40px; flex-shrink: 0;
+            width: 44px; height: 44px; flex-shrink: 0;
             border: none; background: transparent; color: #64748B; border-radius: 7px; cursor: pointer;
           }
           .m-toggle:hover { background: #F1F5F9; color: var(--mjc-accent); }
@@ -939,22 +1125,54 @@
           .m-panel { display: none; }
           .m-item.m-open > .m-panel { display: block; }
 
-          .m-footer { padding: 14px 16px; border-top: 1px solid var(--mjc-border); background: #F8FAFC; flex-shrink: 0; }
+          .m-footer {
+            padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+            border-top: 1px solid var(--mjc-border);
+            background: #F8FAFC;
+            flex-shrink: 0;
+          }
           .m-account-link {
             display: flex; align-items: center; justify-content: center; gap: 8px;
-            width: 100%; padding: 11px 16px; border-radius: 8px;
+            width: 100%; padding: 12px 16px; border-radius: 8px;
             background: var(--mjc-ink); color: #FFFFFF; text-decoration: none;
             font-size: 14px; font-weight: 600;
           }
           .m-account-link:hover { background: var(--mjc-accent); }
 
+          /* Compact laptop / landscape tablet refinement (1080px–1220px) */
+          @media (min-width: 1080px) and (max-width: 1220px) {
+            .inner { padding: 0 18px; gap: 14px; }
+            .brand { font-size: 15px; }
+            .nav-list { gap: 2px; }
+            .nav-link { padding: 9px 7px 9px 9px; font-size: 13.5px; }
+            .nav-item:not(.has-sub) > .nav-link { padding: 9px 10px; }
+            .submenu.level-2, .submenu.level-3 { min-width: 268px; max-width: 300px; }
+          }
+
+          /* Enlarged touch targets for coarse pointers (touch laptops / tablets in landscape) */
+          @media (pointer: coarse) {
+            .nav-arrow-btn { width: 34px; height: 38px; }
+            .sub-arrow-btn { width: 38px; height: 40px; }
+            .sub-link { padding: 11px 12px; }
+          }
+
+          /* Tablet & Mobile breakpoint */
           @media (max-width: 1079px) {
             :host { --mjc-h: 64px; }
             .inner { padding: 0 16px; gap: 12px; }
-            .brand { font-size: 15px; }
+            .brand { font-size: 15px; flex-shrink: 1; overflow: hidden; text-overflow: ellipsis; }
             .desktop-nav { display: none; }
             .burger-btn { display: inline-flex; }
             .account-btn { width: 42px; height: 42px; }
+          }
+
+          /* Small phone protection (<= 380px) */
+          @media (max-width: 380px) {
+            .inner { padding: 0 12px; gap: 8px; }
+            .brand { font-size: 13.5px; }
+            .right-actions { gap: 6px; }
+            .account-btn { width: 38px; height: 38px; }
+            .burger-btn { width: 40px; height: 40px; }
           }
 
           @media (prefers-reduced-motion: reduce) {

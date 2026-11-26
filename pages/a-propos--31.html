@@ -1723,9 +1723,9 @@
 
   .mjc-panel {
     position: fixed;
-    top: 0;
+    top: var(--mjc-header-height, 72px);
     right: 0;
-    height: 100vh;
+    height: calc(100vh - var(--mjc-header-height, 72px));
     width: 480px;
     max-width: 100vw;
     background: linear-gradient(180deg, #0A1628, #1E3A5F);
@@ -2808,9 +2808,9 @@
 
   .mjc-eu-panel {
     position: fixed;
-    top: 0;
+    top: var(--mjc-header-height, 72px);
     right: 0;
-    height: 100vh;
+    height: calc(100vh - var(--mjc-header-height, 72px));
     width: 520px;
     max-width: 100vw;
     background: linear-gradient(180deg, #0A1628, #122A4A);
@@ -4034,9 +4034,9 @@
 
   .mjc-w-panel {
     position: fixed;
-    top: 0;
+    top: var(--mjc-header-height, 72px);
     right: 0;
-    height: 100vh;
+    height: calc(100vh - var(--mjc-header-height, 72px));
     width: 520px;
     max-width: 100vw;
     background: linear-gradient(180deg, #0A1628, #1F1810);

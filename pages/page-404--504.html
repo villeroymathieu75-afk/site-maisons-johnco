@@ -8,9 +8,12 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
+            margin: 0;
             background-color: #f8f9fa;
             color: #343a40;
+        }
+        .error-wrap {
+            padding: 50px 20px;
         }
         h1 {
             font-size: 50px;
@@ -45,11 +48,13 @@
 <body>
 <mjc-site-header></mjc-site-header>
 <script src="../assets/js/site-header.js"></script>
-    <div class="error-code">404</div>
-    <div class="emoji">😕</div>
-    <h1>Oups !</h1>
-    <p>Il y a eu un problème avec cette page.</p>
-    <p>Elle semble ne pas exister ou être temporairement indisponible.</p>
-    <p><a href="../">Retour à l'accueil</a></p>
+    <main class="error-wrap">
+        <div class="error-code">404</div>
+        <div class="emoji">😕</div>
+        <h1>Oups !</h1>
+        <p>Il y a eu un problème avec cette page.</p>
+        <p>Elle semble ne pas exister ou être temporairement indisponible.</p>
+        <p><a href="../">Retour à l'accueil</a></p>
+    </main>
 </body>
 </html>
