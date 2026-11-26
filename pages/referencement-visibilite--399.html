@@ -1,76 +1,894 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RÉFÉRENCEMENT & VISIBILITÉ</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .service-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — RÉFÉRENCEMENT &amp; VISIBILITÉ">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/referencement-visibilite--399.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/referencement-visibilite--399.html">
-    <meta property="og:title" content="RÉFÉRENCEMENT &amp; VISIBILITÉ — Maison John&amp;Co Marketing">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Référencement &amp; Visibilité — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="SEO naturel, référencement local, stratégie de contenu SEO et optimisation Google Business Profile : bâtissez une visibilité organique durable avec Maison John&amp;Co Marketing.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/referencement-visibilite--399.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/referencement-visibilite--399.html">
+  <meta property="og:title" content="Référencement &amp; Visibilité — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Captez un trafic organique qualifié, au niveau national comme local, grâce à une architecture SEO rigoureuse et durable.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/categories/referencement-visibilite.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F9FAF8;
+      --white: #FFFFFF;
+      --deep: #0F2429;
+      --navy: #0A1628;
+      --teal: #0F766E;
+      --teal-soft: #ECFDF8;
+      --violet: #7C3AED;
+      --violet-hover: #6D28D9;
+      --ink: #111D20;
+      --muted: #475559;
+      --subtle: #647478;
+      --line: #E2E7E4;
+      --display: 'Outfit', sans-serif;
+      --body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HERO LUMINEUX ARCHITECTURAL ── */
+    .se-hero {
+      padding: 48px 0 84px;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+    .se-crumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--subtle);
+      margin-bottom: 40px;
+    }
+    .se-crumb a { text-decoration: none; }
+    .se-crumb a:hover { color: var(--teal); }
+    .se-crumb .current { color: var(--ink); font-weight: 600; }
+
+    .se-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 56px;
+      align-items: stretch;
+    }
+    .se-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .se-kicker {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--teal);
+      margin: 0 0 16px;
+    }
+    .se-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.35rem, 4.1vw, 3.6rem);
+      font-weight: 600;
+      line-height: 1.09;
+      letter-spacing: -0.025em;
+      margin: 0 0 22px;
+      color: var(--deep);
+      text-wrap: balance;
+    }
+    .se-hero-lead {
+      font-size: 16.5px;
+      color: var(--muted);
+      margin: 0 0 32px;
+      max-width: 56ch;
+    }
+    .se-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn-deep {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 8px;
+      background: var(--deep);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, transform 0.16s ease;
+    }
+    .btn-deep:hover { background: var(--teal); transform: translateY(-1px); }
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--deep);
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color 0.16s ease, color 0.16s ease;
+    }
+    .btn-line:hover { border-color: var(--teal); color: var(--teal); }
+
+    .se-hero-photo {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #E8EEEB, #D6E2DF);
+      min-height: 360px;
+    }
+    .se-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── PEDAGOGIE : NATIONAL VS LOCAL ── */
+    .se-section { padding: 92px 0; }
+    .se-section-white {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .se-head {
+      max-width: 72ch;
+      margin-bottom: 48px;
+    }
+    .se-h2 {
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 3.1vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--deep);
+      margin: 0 0 14px;
+      text-wrap: balance;
+    }
+    .se-sub { margin: 0; font-size: 16px; color: var(--muted); }
+
+    .se-dual {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+    .se-dual-col {
+      padding: 40px 36px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+    .se-dual-col.is-deep {
+      background: var(--deep);
+      border-color: var(--deep);
+      color: #FFFFFF;
+    }
+    .se-dual-col.is-deep .se-dual-kicker { color: #5EEAD4; }
+    .se-dual-col.is-deep h3 { color: #FFFFFF; }
+    .se-dual-col.is-deep p, .se-dual-col.is-deep li { color: #CBD5E1; }
+    .se-dual-kicker {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--teal);
+      margin: 0 0 10px;
+    }
+    .se-dual-col h3 {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--deep);
+      margin: 0 0 14px;
+      line-height: 1.25;
+    }
+    .se-dual-col p { margin: 0 0 18px; font-size: 15.5px; color: var(--muted); }
+    .se-dual-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14.5px;
+    }
+    .se-dual-list li {
+      padding-left: 18px;
+      position: relative;
+      color: var(--ink);
+    }
+    .se-dual-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .se-dual-col.is-deep .se-dual-list li::before { color: #5EEAD4; }
+
+    /* ── DOSSIERS DES 4 PRESTATIONS ── */
+    .se-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .se-dossier {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 40px;
+      padding: 40px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      align-items: center;
+    }
+    .se-dossier-idx {
+      font-family: var(--display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--teal);
+      margin: 0 0 10px;
+    }
+    .se-dossier h3 {
+      font-family: var(--display);
+      font-size: 27px;
+      font-weight: 600;
+      color: var(--deep);
+      margin: 0 0 14px;
+      line-height: 1.2;
+    }
+    .se-dossier p {
+      margin: 0 0 24px;
+      font-size: 15.5px;
+      color: var(--muted);
+    }
+    .se-dossier-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      min-height: 44px;
+      border-radius: 8px;
+      background: var(--deep);
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .se-dossier-btn:hover { background: var(--teal); }
+
+    .se-dossier-box {
+      padding: 28px;
+      border-radius: 10px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+    .se-dossier-box h4 {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--deep);
+      margin: 0 0 12px;
+    }
+    .se-dossier-box ul {
+      margin: 0 0 16px;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .se-dossier-box li { padding-left: 14px; position: relative; }
+    .se-dossier-box li::before { content: '·'; position: absolute; left: 0; font-weight: 700; color: var(--teal); }
+    .se-dossier-syn {
+      margin: 0;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 13.5px;
+      color: var(--ink);
+    }
+
+    /* ── DIAGNOSTIC INTERACTIF D'INTENTION ── */
+    .se-guide {
+      background: var(--deep);
+      color: #FFFFFF;
+      padding: 84px 0;
+    }
+    .se-guide .se-kicker { color: #5EEAD4; }
+    .se-guide .se-h2 { color: #FFFFFF; }
+    .se-guide .se-sub { color: #CBD5E1; }
+
+    .se-intent-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 32px 0 28px;
+    }
+    .se-intent-tab {
+      appearance: none;
+      padding: 12px 18px;
+      min-height: 44px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.04);
+      color: #E2E8F0;
+      font-family: var(--body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    }
+    .se-intent-tab:hover { border-color: #5EEAD4; }
+    .se-intent-tab[aria-selected="true"] {
+      background: #FFFFFF;
+      color: var(--deep);
+      border-color: #FFFFFF;
+    }
+
+    .se-intent-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 36px;
+      padding: 36px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .se-intent-card h3 {
+      font-family: var(--display);
+      font-size: 24px;
+      margin: 0 0 12px;
+      color: #FFFFFF;
+    }
+    .se-intent-card p { margin: 0; color: #CBD5E1; font-size: 15.5px; }
+    .se-intent-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+    }
+    .se-intent-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(15, 36, 41, 0.7);
+      text-decoration: none;
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 15px;
+      transition: border-color 0.16s ease, transform 0.16s ease;
+    }
+    .se-intent-link:hover { border-color: #5EEAD4; transform: translateX(3px); }
+    .se-intent-link small { display: block; font-weight: 500; font-size: 12.5px; color: #5EEAD4; margin-bottom: 2px; }
+
+    /* ── CAS CLIENTS & CTA ── */
+    .se-cases {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .se-case {
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .se-case-meta { font-size: 13px; color: var(--subtle); margin: 0 0 8px; }
+    .se-case h3 {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--deep);
+      margin: 0 0 10px;
+      line-height: 1.28;
+    }
+    .se-case p { margin: 0; font-size: 14.5px; color: var(--muted); }
+    .se-text-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+    }
+    .se-text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .se-cta {
+      margin-top: 64px;
+      padding: 48px 52px;
+      border-radius: 14px;
+      background: var(--navy);
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .se-cta h2 {
+      font-family: var(--display);
+      font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      margin: 0 0 10px;
+      line-height: 1.18;
+      text-wrap: balance;
+    }
+    .se-cta p { margin: 0; color: #CBD5E1; max-width: 56ch; font-size: 15.5px; }
+    .btn-violet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 8px;
+      background: var(--violet);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .btn-violet:hover { background: var(--violet-hover); }
+    .btn-dark-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-dark-line:hover { border-color: #FFFFFF; }
+
+    /* ── FOOTER ── */
+    .se-footer {
+      border-top: 1px solid var(--line);
+      background: var(--white);
+      padding: 56px 0 44px;
+    }
+    .se-footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .se-footer-top h2 { font-family: var(--display); font-size: 21px; margin: 0; color: var(--deep); }
+    .se-cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px 24px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--line);
+    }
+    .se-cat-grid a { font-size: 14px; color: var(--muted); text-decoration: none; padding: 6px 0; }
+    .se-cat-grid a:hover { color: var(--teal); }
+    .se-cat-grid a[aria-current="page"] { color: var(--deep); font-weight: 700; }
+    .se-legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--subtle);
+    }
+    .se-legal-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .se-legal-links a { text-decoration: none; }
+    .se-legal-links a:hover { color: var(--deep); }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .js-ready .reveal:not(.is-visible) { opacity: 0; transform: translateY(14px); }
+
+    @media (max-width: 1024px) {
+      .se-hero-grid, .se-dual, .se-dossier, .se-intent-card, .se-cta { grid-template-columns: 1fr; }
+      .se-cases { grid-template-columns: 1fr; }
+      .se-cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .wrap { padding: 0 20px; }
+      .se-hero { padding: 32px 0 56px; }
+      .se-section, .se-guide { padding: 60px 0; }
+      .se-dual-col, .se-dossier, .se-intent-card, .se-cta { padding: 26px 22px; }
+      .se-cat-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+      .js-ready .reveal:not(.is-visible) { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body>
 <mjc-site-header></mjc-site-header>
 <script src="../assets/js/site-header.js"></script>
-    <div class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-16">RÉFÉRENCEMENT & VISIBILITÉ</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- SOE / Référencement -->
-            <a href="soe-referencement--261.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-blue-100 p-4 rounded-full mb-4">
-                    <i data-feather="trending-up" class="text-blue-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">SOE / Référencement</h3>
-                <p class="text-blue-600 font-medium">En savoir plus →</p>
-            </a>
 
-            <!-- Référencement Local -->
-            <a href="referencement-local--262.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-purple-100 p-4 rounded-full mb-4">
-                    <i data-feather="pen-tool" class="text-purple-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Référencement Local</h3>
-                <p class="text-purple-600 font-medium">En savoir plus →</p>
-            </a>
+<main>
+  <!-- ── HERO ── -->
+  <section class="se-hero">
+    <div class="wrap">
+      <nav class="se-crumb" aria-label="Fil d'Ariane">
+        <a href="../">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <a href="services-proposes-pour-les-entreprises--395.html">Services entreprises</a>
+        <span aria-hidden="true">/</span>
+        <span class="current">Référencement &amp; Visibilité</span>
+      </nav>
 
-            <!-- Stratégie de Contenu SEO -->
-            <a href="strategie-de-contenu-seo--260.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-red-100 p-4 rounded-full mb-4">
-                    <i data-feather="dollar-sign" class="text-red-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Stratégie de Contenu SEO</h3>
-                <p class="text-red-600 font-medium">En savoir plus →</p>
-            </a>
-
-            <!-- Optimisation Fiche Google Business Profile -->
-            <a href="optimisation-fiche-google-business-profile--263.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-green-100 p-4 rounded-full mb-4">
-                    <i data-feather="search" class="text-green-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Optimisation Fiche Google Business Profile</h3>
-                <p class="text-green-600 font-medium">En savoir plus →</p>
-            </a>
+      <div class="se-hero-grid">
+        <div class="se-hero-copy">
+          <p class="se-kicker">Pôle 04 · Visibilité organique nationale &amp; locale</p>
+          <h1>Construire une visibilité durable là où vos clients vous cherchent.</h1>
+          <p class="se-hero-lead">
+            Contrairement au trafic loué qui s'interrompt dès que les campagnes s'arrêtent, le référencement naturel constitue un actif pérenne. Nous structurons votre technique, vos contenus et votre présence locale pour capter durablement les recherches à forte intention.
+          </p>
+          <div class="se-actions">
+            <a class="btn-deep" href="devis-sur-mesure--48.html">Demander un diagnostic SEO</a>
+            <a class="btn-line" href="#piliers">Explorer les 4 prestations</a>
+          </div>
         </div>
-    </div>
 
-    <script>
-        feather.replace();
-    </script>
+        <figure class="se-hero-photo">
+          <img
+            src="../assets/images/categories/referencement-visibilite.jpg"
+            alt="Architecture lumineuse en pierre et verre illustrant la clarté structurelle du référencement naturel"
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+          >
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PEDAGOGIE : LES DEUX DIMENSIONS DE LA VISIBILITE ── -->
+  <section class="se-section">
+    <div class="wrap">
+      <div class="se-head reveal">
+        <p class="se-kicker">Comprendre les leviers</p>
+        <h2 class="se-h2">Deux territoires complémentaires pour dominer les résultats de recherche.</h2>
+        <p class="se-sub">Selon votre modèle économique — e-commerce, B2B national ou réseau de points de vente — la visibilité sur Google repose sur deux mécaniques distinctes que nous articulons avec précision.</p>
+      </div>
+
+      <div class="se-dual reveal">
+        <article class="se-dual-col">
+          <p class="se-dual-kicker">Territoire 01 · Portée nationale &amp; thématique</p>
+          <h3>Autorité technique &amp; éditoriale</h3>
+          <p>Pour émerger sur des requêtes concurrentielles liées à vos métiers, Google attend une architecture irréprochable, un maillage interne cohérent et des contenus répondant précisément aux intentions de recherche.</p>
+          <ul class="se-dual-list">
+            <li>Socle technique rapide, indexable et sans frein de crawl</li>
+            <li>Stratégie sémantique alignée sur le parcours de décision client</li>
+            <li>Réduction progressive de votre dépendance au budget publicitaire</li>
+          </ul>
+        </article>
+
+        <article class="se-dual-col is-deep">
+          <p class="se-dual-kicker">Territoire 02 · Proximité &amp; ancrage territorial</p>
+          <h3>Présence géolocalisée &amp; Google Maps</h3>
+          <p>Pour les entreprises qui reçoivent du public ou interviennent sur des zones géographiques précises, la visibilité locale décide directement des appels, demandes d'itinéraire et visites en établissement.</p>
+          <ul class="se-dual-list">
+            <li>Optimisation des pages locales et des signaux géographiques</li>
+            <li>Gestion rigoureuse de votre fiche Google Business Profile</li>
+            <li>Cohérence des informations, catégories et avis clients</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LES 4 PRESTATIONS EN PROFONDEUR ── -->
+  <section id="piliers" class="se-section se-section-white">
+    <div class="wrap">
+      <div class="se-head reveal">
+        <p class="se-kicker">Les 4 prestations du pôle</p>
+        <h2 class="se-h2">Quatre expertises complémentaires au service de votre trafic organique.</h2>
+        <p class="se-sub">Du socle technique jusqu'à la visibilité de proximité, découvrez le rôle précis de chaque prestation.</p>
+      </div>
+
+      <div class="se-stack">
+        <article class="se-dossier reveal">
+          <div>
+            <p class="se-dossier-idx">01. Socle organique global</p>
+            <h3>SOE / Référencement</h3>
+            <p>Un travail de fond sur les fondations techniques, l'architecture des pages et la pertinence globale de votre site afin d'améliorer durablement vos positions sur les moteurs de recherche et d'attirer un trafic qualifié.</p>
+            <a class="se-dossier-btn" href="soe-referencement--261.html">Découvrir la prestation →</a>
+          </div>
+          <div class="se-dossier-box">
+            <h4>Ce que couvre l'intervention</h4>
+            <ul>
+              <li>Audit technique, indexation et performances de chargement</li>
+              <li>Optimisation de l'arborescence, des balises et du maillage interne</li>
+              <li>Suivi des positions clés et plan d'amélioration continue</li>
+            </ul>
+            <p class="se-dossier-syn"><strong>Complémentaire avec :</strong> Stratégie de Contenu SEO &amp; Création de Sites Web.</p>
+          </div>
+        </article>
+
+        <article class="se-dossier reveal">
+          <div>
+            <p class="se-dossier-idx">02. Ancrage territorial</p>
+            <h3>Référencement Local</h3>
+            <p>Optimisez votre visibilité sur les recherches géolocalisées afin de capter les clients situés à proximité de vos agences, boutiques, cabinets ou zones d'intervention.</p>
+            <a class="se-dossier-btn" href="referencement-local--262.html">Découvrir la prestation →</a>
+          </div>
+          <div class="se-dossier-box">
+            <h4>Ce que couvre l'intervention</h4>
+            <ul>
+              <li>Structuration de pages dédiées par ville ou zone d'intervention</li>
+              <li>Cohérence des citations locales et données structurées</li>
+              <li>Optimisation de la conversion locale (appels, itinéraires, prises de rendez-vous)</li>
+            </ul>
+            <p class="se-dossier-syn"><strong>Complémentaire avec :</strong> Optimisation Fiche Google Business Profile.</p>
+          </div>
+        </article>
+
+        <article class="se-dossier reveal">
+          <div>
+            <p class="se-dossier-idx">03. Architecture sémantique</p>
+            <h3>Stratégie de Contenu SEO</h3>
+            <p>Transformez votre expertise métier en un plan éditorial structuré qui capte les intentions de recherche de vos prospects à chaque stade de leur réflexion, de la découverte jusqu'au choix du prestataire.</p>
+            <a class="se-dossier-btn" href="strategie-de-contenu-seo--260.html">Découvrir la prestation →</a>
+          </div>
+          <div class="se-dossier-box">
+            <h4>Ce que couvre l'intervention</h4>
+            <ul>
+              <li>Cartographie des mots-clés et intentions de recherche prioritaires</li>
+              <li>Organisation en cocons sémantiques et pages piliers</li>
+              <li>Calendrier éditorial et briefs optimisés pour la conversion</li>
+            </ul>
+            <p class="se-dossier-syn"><strong>Complémentaire avec :</strong> Rédaction SEO &amp; Articles de Blog.</p>
+          </div>
+        </article>
+
+        <article class="se-dossier reveal">
+          <div>
+            <p class="se-dossier-idx">04. Visibilité Google Maps &amp; Pack Local</p>
+            <h3>Optimisation Fiche Google Business Profile</h3>
+            <p>Faites de votre fiche d'établissement une vitrine complète, rassurante et active qui ressort en priorité dans Google Maps et les résultats locaux sur mobile.</p>
+            <a class="se-dossier-btn" href="optimisation-fiche-google-business-profile--263.html">Découvrir la prestation →</a>
+          </div>
+          <div class="se-dossier-box">
+            <h4>Ce que couvre l'intervention</h4>
+            <ul>
+              <li>Paramétrage précis des catégories, attributs, services et zones</li>
+              <li>Optimisation des visuels, publications régulières et questions-réponses</li>
+              <li>Méthode de collecte et de réponse aux avis clients</li>
+            </ul>
+            <p class="se-dossier-syn"><strong>Complémentaire avec :</strong> Référencement Local &amp; Réputation en ligne.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DIAGNOSTIC INTERACTIF ── -->
+  <section class="se-guide" aria-labelledby="guide-title">
+    <div class="wrap">
+      <p class="se-kicker">Orientation rapide</p>
+      <h2 id="guide-title" class="se-h2">Par quel levier de visibilité commencer ?</h2>
+      <p class="se-sub">Choisissez votre priorité actuelle pour visualiser la combinaison la plus efficace.</p>
+
+      <div class="se-intent-tabs" role="tablist" aria-label="Objectifs de visibilité">
+        <button class="se-intent-tab" role="tab" aria-selected="true" data-intent="national" type="button">Capter une demande nationale / B2B</button>
+        <button class="se-intent-tab" role="tab" aria-selected="false" data-intent="local" type="button">Attirer des clients près de nos établissements</button>
+        <button class="se-intent-tab" role="tab" aria-selected="false" data-intent="stagne" type="button">Débloquer un site peu visible</button>
+      </div>
+
+      <div class="se-intent-card" role="tabpanel">
+        <div>
+          <h3 id="in-title">Allier socle SEO et stratégie sémantique</h3>
+          <p id="in-desc">Pour conquérir des requêtes à forte valeur sur un marché national, il faut d'abord s'assurer que le site est sain techniquement, puis déployer un plan éditorial structuré qui démontre votre expertise sur chaque problématique client.</p>
+        </div>
+        <div class="se-intent-links" id="in-links">
+          <a class="se-intent-link" href="soe-referencement--261.html">
+            <div><small>Priorité 1</small>SOE / Référencement</div>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="se-intent-link" href="strategie-de-contenu-seo--260.html">
+            <div><small>Priorité 2</small>Stratégie de Contenu SEO</div>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ETUDES DE CAS & CTA ── -->
+  <section class="se-section">
+    <div class="wrap">
+      <div class="se-head reveal">
+        <p class="se-kicker">Retours d'expérience</p>
+        <h2 class="se-h2">La visibilité organique en situation réelle.</h2>
+      </div>
+
+      <div class="se-cases reveal">
+        <article class="se-case">
+          <div>
+            <p class="se-case-meta">Scale-up · SEO Technique</p>
+            <h3>SEO technique pour une scale-up</h3>
+            <p>Assainissement de l'architecture d'indexation, correction des freins techniques et structuration des pages stratégiques pour soutenir la croissance organique.</p>
+          </div>
+          <a class="se-text-link" href="seo-technique-pour-une-scale-up--584.html">Consulter l'étude de cas →</a>
+        </article>
+
+        <article class="se-case">
+          <div>
+            <p class="se-case-meta">Franchise · SEO Local &amp; Maps</p>
+            <h3>SEO local pour une franchise de restaurants</h3>
+            <p>Déploiement d'une présence géolocalisée cohérente par établissement et optimisation des fiches Google Business Profile.</p>
+          </div>
+          <a class="se-text-link" href="seo-local-pour-une-franchise-de-restaurants--609.html">Consulter l'étude de cas →</a>
+        </article>
+
+        <article class="se-case">
+          <div>
+            <p class="se-case-meta">Healthtech · Contenu SEO</p>
+            <h3>Stratégie de contenu SEO pour une startup Healthtech</h3>
+            <p>Construction d'une architecture éditoriale thématique destinée à capter des recherches qualifiées et renforcer la légitimité sectorielle.</p>
+          </div>
+          <a class="se-text-link" href="strategie-de-contenu-seo-pour-une-startup-healthtech--588.html">Consulter l'étude de cas →</a>
+        </article>
+      </div>
+
+      <div class="se-cta reveal">
+        <div>
+          <h2>Faites de la recherche organique un pilier de votre acquisition.</h2>
+          <p>Nous évaluons votre potentiel de visibilité nationale et locale et vous remettons un plan d'action clair, sans jargon inutile.</p>
+        </div>
+        <div class="se-actions">
+          <a class="btn-violet" href="devis-sur-mesure--48.html">Demander un devis SEO</a>
+          <a class="btn-dark-line" href="contact--895.html">Échanger avec l'agence</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="se-footer">
+  <div class="wrap">
+    <div class="se-footer-top">
+      <h2>Parcourir les 8 catégories de services</h2>
+      <a class="se-text-link" href="services-proposes-pour-les-entreprises--395.html">Vue globale Services entreprises →</a>
+    </div>
+    <nav class="se-cat-grid" aria-label="Catégories de services">
+      <a href="strategie-digitale-accompagnement--396.html">01. Stratégie Digitale &amp; Accompagnement</a>
+      <a href="creation-digitale-identite--397.html">02. Création Digitale &amp; Identité</a>
+      <a href="publicite-digitale--398.html">03. Publicité Digitale</a>
+      <a href="referencement-visibilite--399.html" aria-current="page">04. Référencement &amp; Visibilité</a>
+      <a href="contenu-redaction--400.html">05. Contenu &amp; Rédaction</a>
+      <a href="automatisation-crm--401.html">06. Automatisation &amp; CRM</a>
+      <a href="analyse-performance--402.html">07. Analyse &amp; Performance</a>
+      <a href="influence-social-media-communaute--403.html">08. Influence, Social Media &amp; Communauté</a>
+    </nav>
+    <div class="se-legal">
+      <span>© Maison John&amp;Co Marketing — Tous droits réservés</span>
+      <div class="se-legal-links">
+        <a href="offres-tarifs--45.html">Offres &amp; tarifs</a>
+        <a href="etudes-de-cas--49.html">Études de cas</a>
+        <a href="contact--895.html">Contact</a>
+        <a href="mentions-legales--1004.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    document.documentElement.classList.add('js-ready');
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach((el) => io.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    const intents = {
+      national: {
+        title: "Allier socle SEO et stratégie sémantique",
+        desc: "Pour conquérir des requêtes à forte valeur sur un marché national, il faut d'abord s'assurer que le site est sain techniquement, puis déployer un plan éditorial structuré qui démontre votre expertise sur chaque problématique client.",
+        links: [
+          { tag: "Priorité 1", name: "SOE / Référencement", href: "soe-referencement--261.html" },
+          { tag: "Priorité 2", name: "Stratégie de Contenu SEO", href: "strategie-de-contenu-seo--260.html" }
+        ]
+      },
+      local: {
+        title: "Dominer les recherches de proximité et Google Maps",
+        desc: "Pour générer des appels, des demandes d'itinéraire et des visites en point de vente, l'association entre pages locales optimisées et fiche Google Business Profile complète produit un impact direct.",
+        links: [
+          { tag: "Priorité 1", name: "Optimisation Fiche Google Business Profile", href: "optimisation-fiche-google-business-profile--263.html" },
+          { tag: "Priorité 2", name: "Référencement Local", href: "referencement-local--262.html" }
+        ]
+      },
+      stagne: {
+        title: "Lever les blocages techniques puis relancer l'éditorial",
+        desc: "Lorsqu'un site existant ne progresse plus dans Google, nous commençons par corriger les freins techniques et structurels, avant de cibler de nouvelles opportunités de mots-clés à fort potentiel.",
+        links: [
+          { tag: "Priorité 1", name: "SOE / Référencement", href: "soe-referencement--261.html" },
+          { tag: "Priorité 2", name: "Stratégie de Contenu SEO", href: "strategie-de-contenu-seo--260.html" }
+        ]
+      }
+    };
+
+    const tabs = document.querySelectorAll('.se-intent-tab');
+    const titleEl = document.getElementById('in-title');
+    const descEl = document.getElementById('in-desc');
+    const linksEl = document.getElementById('in-links');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const d = intents[tab.dataset.intent];
+        if (!d) return;
+        tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+        titleEl.textContent = d.title;
+        descEl.textContent = d.desc;
+        linksEl.innerHTML = d.links.map((l) => (
+          '<a class="se-intent-link" href="' + l.href + '">' +
+            '<div><small>' + l.tag + '</small>' + l.name + '</div>' +
+            '<span aria-hidden="true">→</span>' +
+          '</a>'
+        )).join('');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
-<p></p>

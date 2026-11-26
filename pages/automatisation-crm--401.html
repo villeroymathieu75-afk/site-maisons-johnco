@@ -1,76 +1,845 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUTOMATISATION & CRM</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .service-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — AUTOMATISATION &amp; CRM">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/automatisation-crm--401.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/automatisation-crm--401.html">
-    <meta property="og:title" content="AUTOMATISATION &amp; CRM — Maison John&amp;Co Marketing">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatisation &amp; CRM — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="Email marketing, marketing automation, CRM et gestion de la relation client, SMS marketing et notifications push : industrialisez votre relation client avec Maison John&amp;Co Marketing.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/automatisation-crm--401.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/automatisation-crm--401.html">
+  <meta property="og:title" content="Automatisation &amp; CRM — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Centralisez vos données clients, orchestrez vos scénarios relationnels et transformez chaque interaction en opportunité commerciale.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/categories/automatisation-crm.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F6F8FC;
+      --white: #FFFFFF;
+      --navy: #0B192F;
+      --navy-mid: #142847;
+      --cobalt: #1D4ED8;
+      --cobalt-soft: #EFF6FF;
+      --violet: #7C3AED;
+      --violet-hover: #6D28D9;
+      --ink: #0F172A;
+      --muted: #475569;
+      --subtle: #64748B;
+      --border: #DDE4F0;
+      --display: 'Manrope', sans-serif;
+      --body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HERO INGENIERIE RELATIONNELLE ── */
+    .au-hero {
+      padding: 48px 0 84px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .au-crumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--subtle);
+      margin-bottom: 40px;
+    }
+    .au-crumb a { text-decoration: none; }
+    .au-crumb a:hover { color: var(--cobalt); }
+    .au-crumb .current { color: var(--ink); font-weight: 600; }
+
+    .au-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 52px;
+      align-items: stretch;
+    }
+    .au-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .au-kicker {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--cobalt);
+      margin: 0 0 16px;
+    }
+    .au-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.25rem, 3.9vw, 3.45rem);
+      font-weight: 800;
+      line-height: 1.09;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin: 0 0 22px;
+      text-wrap: balance;
+    }
+    .au-lead {
+      font-size: 16.5px;
+      color: var(--muted);
+      margin: 0 0 32px;
+      max-width: 56ch;
+    }
+    .au-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn-cobalt {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, transform 0.16s ease;
+    }
+    .btn-cobalt:hover { background: var(--cobalt); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--navy);
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color 0.16s ease, color 0.16s ease;
+    }
+    .btn-outline:hover { border-color: var(--cobalt); color: var(--cobalt); }
+
+    .au-hero-photo {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #E8EEF7, #DCE5F2);
+      min-height: 360px;
+    }
+    .au-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── WORKFLOW INTERACTIF DU CYCLE DE VIE CLIENT ── */
+    .au-section { padding: 92px 0; }
+    .au-section-white {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .au-head { max-width: 72ch; margin-bottom: 44px; }
+    .au-h2 {
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 3.1vw, 2.7rem);
+      font-weight: 800;
+      line-height: 1.14;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+      margin: 0 0 14px;
+      text-wrap: balance;
+    }
+    .au-sub { margin: 0; font-size: 16px; color: var(--muted); }
+
+    .au-rail {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .au-node {
+      appearance: none;
+      text-align: left;
+      padding: 18px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      cursor: pointer;
+      font-family: var(--body);
+      transition: border-color 0.16s ease, background-color 0.16s ease;
+    }
+    .au-node:hover { border-color: var(--cobalt); }
+    .au-node[aria-selected="true"] {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #FFFFFF;
+    }
+    .au-node span {
+      display: block;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--cobalt);
+      margin-bottom: 6px;
+    }
+    .au-node[aria-selected="true"] span { color: #93C5FD; }
+    .au-node strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 15.5px;
+      font-weight: 700;
+    }
+
+    .au-flow-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 36px;
+      padding: 36px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .au-flow-panel h3 {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 12px;
+    }
+    .au-flow-panel p { margin: 0 0 18px; color: var(--muted); font-size: 15.5px; }
+    .au-flow-trigger {
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--ink);
+      margin: 0;
+    }
+    .au-flow-bricks {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+    }
+    .au-brick {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      text-decoration: none;
+      transition: border-color 0.16s ease, transform 0.16s ease;
+    }
+    .au-brick:hover { border-color: var(--cobalt); transform: translateX(3px); }
+    .au-brick small { display: block; font-size: 12.5px; color: var(--cobalt); margin-bottom: 2px; font-weight: 500; }
+    .au-brick strong { font-size: 15px; color: var(--navy); }
+
+    /* ── GRILLE ARCHITECTURALE DES 4 PRESTATIONS ── */
+    .au-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .au-card {
+      padding: 38px 36px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      transition: border-color 0.16s ease, background-color 0.16s ease;
+    }
+    .au-card:hover { border-color: #93C5FD; background: var(--white); }
+    .au-card.is-anchor {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #FFFFFF;
+    }
+    .au-card.is-anchor .au-card-num { color: #93C5FD; }
+    .au-card.is-anchor h3 { color: #FFFFFF; }
+    .au-card.is-anchor p, .au-card.is-anchor li { color: #CBD5E1; }
+    .au-card.is-anchor .au-card-list { border-top-color: rgba(255, 255, 255, 0.14); }
+    .au-card.is-anchor .au-card-btn { background: #FFFFFF; color: var(--navy); }
+    .au-card.is-anchor .au-card-btn:hover { background: var(--violet); color: #FFFFFF; }
+
+    .au-card-num {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--cobalt);
+      margin: 0 0 12px;
+    }
+    .au-card h3 {
+      font-family: var(--display);
+      font-size: 25px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 12px;
+      line-height: 1.22;
+    }
+    .au-card p { margin: 0 0 18px; font-size: 15.5px; color: var(--muted); }
+    .au-card-list {
+      margin: 0;
+      padding: 16px 0 0;
+      list-style: none;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .au-card-list li { padding-left: 16px; position: relative; }
+    .au-card-list li::before { content: '→'; position: absolute; left: 0; color: var(--cobalt); font-size: 12px; }
+    .au-card.is-anchor .au-card-list li::before { color: #93C5FD; }
+    .au-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      min-height: 44px;
+      border-radius: 7px;
+      background: var(--navy);
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .au-card-btn:hover { background: var(--cobalt); }
+
+    /* ── GAINS OPERATIONNELS (3 COLONNES) ── */
+    .au-gains {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 84px 0;
+    }
+    .au-gains .au-kicker { color: #93C5FD; }
+    .au-gains .au-h2 { color: #FFFFFF; }
+    .au-gains .au-sub { color: #CBD5E1; }
+    .au-gains-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .au-gain {
+      padding: 30px 28px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: var(--navy-mid);
+    }
+    .au-gain h3 {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0 0 10px;
+    }
+    .au-gain p { margin: 0; font-size: 14.5px; color: #CBD5E1; }
+
+    /* ── CAS CLIENTS & CTA ── */
+    .au-cases {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+    .au-case {
+      padding: 36px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .au-case-meta { font-family: var(--mono); font-size: 12px; color: var(--subtle); margin: 0 0 10px; }
+    .au-case h3 { font-family: var(--display); font-size: 22px; font-weight: 700; margin: 0 0 10px; color: var(--navy); }
+    .au-case p { margin: 0; font-size: 15px; color: var(--muted); }
+    .au-inline-link { font-size: 14px; font-weight: 600; color: var(--cobalt); text-decoration: none; }
+    .au-inline-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .au-cta {
+      margin-top: 64px;
+      padding: 48px 52px;
+      border-radius: 14px;
+      background: var(--navy);
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .au-cta h2 { font-family: var(--display); font-size: clamp(1.75rem, 2.8vw, 2.4rem); font-weight: 800; margin: 0 0 10px; line-height: 1.16; text-wrap: balance; }
+    .au-cta p { margin: 0; color: #CBD5E1; max-width: 56ch; font-size: 15.5px; }
+    .btn-violet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 8px;
+      background: var(--violet);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .btn-violet:hover { background: var(--violet-hover); }
+    .btn-dark-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-dark-line:hover { border-color: #FFFFFF; }
+
+    /* ── FOOTER ── */
+    .au-footer {
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      padding: 56px 0 44px;
+    }
+    .au-footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .au-footer-top h2 { font-family: var(--display); font-size: 21px; font-weight: 700; margin: 0; color: var(--navy); }
+    .au-cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px 24px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .au-cat-grid a { font-size: 14px; color: var(--muted); text-decoration: none; padding: 6px 0; }
+    .au-cat-grid a:hover { color: var(--cobalt); }
+    .au-cat-grid a[aria-current="page"] { color: var(--navy); font-weight: 700; }
+    .au-legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--subtle);
+    }
+    .au-legal-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .au-legal-links a { text-decoration: none; }
+    .au-legal-links a:hover { color: var(--navy); }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .js-ready .reveal:not(.is-visible) { opacity: 0; transform: translateY(14px); }
+
+    @media (max-width: 1024px) {
+      .au-hero-grid, .au-flow-panel, .au-cta { grid-template-columns: 1fr; }
+      .au-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .au-gains-grid { grid-template-columns: 1fr; }
+      .au-cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .wrap { padding: 0 20px; }
+      .au-hero { padding: 32px 0 56px; }
+      .au-section, .au-gains { padding: 60px 0; }
+      .au-rail, .au-grid, .au-cases, .au-cat-grid { grid-template-columns: 1fr; }
+      .au-card, .au-flow-panel, .au-cta, .au-case { padding: 26px 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+      .js-ready .reveal:not(.is-visible) { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body>
 <mjc-site-header></mjc-site-header>
 <script src="../assets/js/site-header.js"></script>
-    <div class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-16">AUTOMATISATION & CRM</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Email Marketing -->
-            <a href="email-marketing--269.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-blue-100 p-4 rounded-full mb-4">
-                    <i data-feather="trending-up" class="text-blue-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Email Marketing</h3>
-                <p class="text-blue-600 font-medium">En savoir plus →</p>
-            </a>
 
-            <!-- Marketing Automation -->
-            <a href="marketing-automation--268.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-purple-100 p-4 rounded-full mb-4">
-                    <i data-feather="pen-tool" class="text-purple-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Marketing Automation</h3>
-                <p class="text-purple-600 font-medium">En savoir plus →</p>
-            </a>
+<main>
+  <!-- ── HERO ── -->
+  <section class="au-hero">
+    <div class="wrap">
+      <nav class="au-crumb" aria-label="Fil d'Ariane">
+        <a href="../">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <a href="services-proposes-pour-les-entreprises--395.html">Services entreprises</a>
+        <span aria-hidden="true">/</span>
+        <span class="current">Automatisation &amp; CRM</span>
+      </nav>
 
-            <!-- CRM & Gestion de la Relation Client -->
-            <a href="crm-gestion-de-la-relation-client--270.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-red-100 p-4 rounded-full mb-4">
-                    <i data-feather="dollar-sign" class="text-red-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">CRM & Gestion de la Relation Client</h3>
-                <p class="text-red-600 font-medium">En savoir plus →</p>
-            </a>
-
-            <!-- SMS Marketing & Notifications Push -->
-            <a href="sms-marketing-notifications-push--267.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-green-100 p-4 rounded-full mb-4">
-                    <i data-feather="search" class="text-green-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">SMS Marketing & Notifications Push</h3>
-                <p class="text-green-600 font-medium">En savoir plus →</p>
-            </a>
+      <div class="au-hero-grid">
+        <div class="au-hero-copy">
+          <p class="au-kicker">Pôle 06 · Architecture relationnelle &amp; cycle de vie client</p>
+          <h1>Ne laissez plus aucun prospect ni client actif s'échapper par manque de suivi.</h1>
+          <p class="au-lead">
+            Acquérir un contact coûte cher ; le perdre faute de relance personnalisée ou de données centralisées coûte encore plus. Nous concevons des systèmes CRM, emails, SMS et scénarios automatisés qui maintiennent une relation fluide, pertinente et respectueuse à chaque étape du cycle de vie.
+          </p>
+          <div class="au-actions">
+            <a class="btn-cobalt" href="devis-sur-mesure--48.html">Structurer votre écosystème CRM</a>
+            <a class="btn-outline" href="#briques">Découvrir les 4 prestations</a>
+          </div>
         </div>
-    </div>
 
-    <script>
-        feather.replace();
-    </script>
+        <figure class="au-hero-photo">
+          <img
+            src="../assets/images/categories/automatisation-crm.jpg"
+            alt="Composition architecturale de prismes de verre et rails métalliques illustrant la fluidité des workflows CRM"
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+          >
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORKFLOW INTERACTIF DU CYCLE DE VIE ── -->
+  <section class="au-section">
+    <div class="wrap">
+      <div class="au-head reveal">
+        <p class="au-kicker">Orchestration du cycle de vie</p>
+        <h2 class="au-h2">Comment CRM, automation, email et SMS travaillent de concert.</h2>
+        <p class="au-sub">Cliquez sur une étape du parcours client pour voir quel mécanisme se déclenche et quelles prestations entrent en jeu.</p>
+      </div>
+
+      <div class="au-rail" role="tablist" aria-label="Étapes du cycle de vie client">
+        <button class="au-node" role="tab" aria-selected="true" data-step="capture" type="button">
+          <span>01.</span><strong>Capture</strong>
+        </button>
+        <button class="au-node" role="tab" aria-selected="false" data-step="qualif" type="button">
+          <span>02.</span><strong>Qualification</strong>
+        </button>
+        <button class="au-node" role="tab" aria-selected="false" data-step="nurturing" type="button">
+          <span>03.</span><strong>Nurturing</strong>
+        </button>
+        <button class="au-node" role="tab" aria-selected="false" data-step="conversion" type="button">
+          <span>04.</span><strong>Conversion</strong>
+        </button>
+        <button class="au-node" role="tab" aria-selected="false" data-step="fidelite" type="button">
+          <span>05.</span><strong>Fidélisation</strong>
+        </button>
+      </div>
+
+      <div class="au-flow-panel" role="tabpanel">
+        <div>
+          <h3 id="wf-title">Collecter proprement et centraliser immédiatement</h3>
+          <p id="wf-desc">Chaque formulaire, demande de devis ou inscription alimente automatiquement votre base CRM avec l'origine du contact, son consentement RGPD et son centre d'intérêt, sans ressaisie manuelle.</p>
+          <p class="au-flow-trigger" id="wf-trigger"><strong>Déclencheur type :</strong> soumission d'un formulaire site web, téléchargement d'une ressource ou création de compte.</p>
+        </div>
+        <div class="au-flow-bricks" id="wf-bricks">
+          <a class="au-brick" href="crm-gestion-de-la-relation-client--270.html">
+            <div><small>Référentiel unique</small><strong>CRM &amp; Gestion de la Relation Client</strong></div>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="au-brick" href="marketing-automation--268.html">
+            <div><small>Routage &amp; bienvenue immédiate</small><strong>Marketing Automation</strong></div>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LES 4 PRESTATIONS ── -->
+  <section id="briques" class="au-section au-section-white">
+    <div class="wrap">
+      <div class="au-head reveal">
+        <p class="au-kicker">Les 4 prestations du pôle</p>
+        <h2 class="au-h2">Quatre briques complémentaires pour une relation client maîtrisée.</h2>
+        <p class="au-sub">Toutes nos architectures respectent la conformité RGPD, la délivrabilité technique et une pression relationnelle mesurée.</p>
+      </div>
+
+      <div class="au-grid">
+        <article class="au-card is-anchor reveal">
+          <div>
+            <p class="au-card-num">01 · Le cœur de l'architecture</p>
+            <h3>CRM &amp; Gestion de la Relation Client</h3>
+            <p>Centralisez l'historique complet de vos prospects et clients, structurez votre pipeline commercial et donnez à vos équipes marketing et ventes une vision partagée en temps réel.</p>
+            <ul class="au-card-list">
+              <li>Modélisation des pipelines, champs et règles d'attribution</li>
+              <li>Nettoyage, segmentation et gouvernance de la base de données</li>
+              <li>Adoption opérationnelle par vos équipes commerciales</li>
+            </ul>
+          </div>
+          <a class="au-card-btn" href="crm-gestion-de-la-relation-client--270.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="au-card reveal">
+          <div>
+            <p class="au-card-num">02 · L'orchestration intelligente</p>
+            <h3>Marketing Automation</h3>
+            <p>Concevez des scénarios comportementaux qui déclenchent le bon message au bon moment — bienvenue, qualification, relance panier ou réactivation — sans perdre la finesse humaine.</p>
+            <ul class="au-card-list">
+              <li>Cartographie des parcours et scoring d'engagement</li>
+              <li>Workflows multi-étapes connectés à votre site et CRM</li>
+              <li>Contrôle de la pression marketing et mesure par scénario</li>
+            </ul>
+          </div>
+          <a class="au-card-btn" href="marketing-automation--268.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="au-card reveal">
+          <div>
+            <p class="au-card-num">03 · Le canal propriétaire durable</p>
+            <h3>Email Marketing</h3>
+            <p>Transformez votre base abonnés en un levier régulier de conversion et de fidélisation grâce à des newsletters éditoriales, campagnes segmentées et séquences commerciales délivrables.</p>
+            <ul class="au-card-list">
+              <li>Architecture de campagnes, design responsive et copywriting</li>
+              <li>Paramétrage de la délivrabilité (SPF, DKIM, DMARC) et hygiène de liste</li>
+              <li>Tests d'objets, de contenus et suivi des revenus générés</li>
+            </ul>
+          </div>
+          <a class="au-card-btn" href="email-marketing--269.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="au-card reveal">
+          <div>
+            <p class="au-card-num">04 · L'instantanéité mobile</p>
+            <h3>SMS Marketing &amp; Notifications Push</h3>
+            <p>Activez des canaux directs à très forte visibilité pour vos rappels de rendez-vous, ventes privées, alertes de réassort ou confirmations clés, toujours avec consentement explicite.</p>
+            <ul class="au-card-list">
+              <li>Scénarios courts à haute pertinence temporelle</li>
+              <li>Segmentation fine pour éviter toute sollicitation intrusive</li>
+              <li>Gestion rigoureuse de l'opt-in et du désabonnement</li>
+            </ul>
+          </div>
+          <a class="au-card-btn" href="sms-marketing-notifications-push--267.html">Découvrir la prestation →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GAINS OPERATIONNELS ── -->
+  <section class="au-gains">
+    <div class="wrap">
+      <div class="au-head reveal">
+        <p class="au-kicker">Bénéfices concrets</p>
+        <h2 class="au-h2">Ce que change une architecture CRM &amp; automation bien conçue.</h2>
+        <p class="au-sub">L'objectif n'est pas d'empiler des logiciels, mais de libérer du temps humain tout en augmentant la qualité de chaque interaction.</p>
+      </div>
+
+      <div class="au-gains-grid reveal">
+        <article class="au-gain">
+          <h3>Gains pour vos équipes commerciales</h3>
+          <p>Fin des relances oubliées et des tableaux dispersés : les commerciaux se concentrent sur les prospects les plus engagés, avec tout l'historique sous les yeux.</p>
+        </article>
+        <article class="au-gain">
+          <h3>Expérience fluide côté client</h3>
+          <p>Chaque client reçoit des informations cohérentes avec son parcours réel — jamais un message promotionnel déconnecté de sa dernière commande ou demande.</p>
+        </article>
+        <article class="au-gain">
+          <h3>Rentabilité sur la durée</h3>
+          <p>En augmentant le taux de transformation des leads existants et la récurrence d'achat, vous rentabilisez chaque euro investi en acquisition amont.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAS CLIENTS & CTA ── -->
+  <section class="au-section">
+    <div class="wrap">
+      <div class="au-head reveal">
+        <p class="au-kicker">Projets déployés</p>
+        <h2 class="au-h2">Exemples d'architectures relationnelles mises en œuvre.</h2>
+      </div>
+
+      <div class="au-cases reveal">
+        <article class="au-case">
+          <div>
+            <p class="au-case-meta">Immobilier · Déploiement CRM</p>
+            <h3>Déploiement CRM pour un groupe immobilier</h3>
+            <p>Centralisation des contacts multi-agences, structuration du suivi commercial et automatisation des relances sur des cycles de décision longs.</p>
+          </div>
+          <a class="au-inline-link" href="deploiement-crm-pour-un-groupe-immobilier--587.html">Consulter l'étude de cas →</a>
+        </article>
+
+        <article class="au-case">
+          <div>
+            <p class="au-case-meta">Éducation · Email Marketing</p>
+            <h3>Email marketing pour une école privée</h3>
+            <p>Scénarios d'information et d'accompagnement des candidats et familles depuis la première demande de brochure jusqu'aux journées portes ouvertes.</p>
+          </div>
+          <a class="au-inline-link" href="email-marketing-pour-une-ecole-privee--577.html">Consulter l'étude de cas →</a>
+        </article>
+      </div>
+
+      <div class="au-cta reveal">
+        <div>
+          <h2>Transformez vos contacts en relations clients durables.</h2>
+          <p>Audit de votre base existante, choix ou refonte de CRM, scénarios automatisés : construisons un système simple à piloter par vos équipes.</p>
+        </div>
+        <div class="au-actions">
+          <a class="btn-violet" href="devis-sur-mesure--48.html">Demander un devis</a>
+          <a class="btn-dark-line" href="contact--895.html">Contacter l'agence</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="au-footer">
+  <div class="wrap">
+    <div class="au-footer-top">
+      <h2>Parcourir nos 8 pôles d'expertise</h2>
+      <a class="au-inline-link" href="services-proposes-pour-les-entreprises--395.html">Vue globale Services entreprises →</a>
+    </div>
+    <nav class="au-cat-grid" aria-label="Catégories de services">
+      <a href="strategie-digitale-accompagnement--396.html">01. Stratégie Digitale &amp; Accompagnement</a>
+      <a href="creation-digitale-identite--397.html">02. Création Digitale &amp; Identité</a>
+      <a href="publicite-digitale--398.html">03. Publicité Digitale</a>
+      <a href="referencement-visibilite--399.html">04. Référencement &amp; Visibilité</a>
+      <a href="contenu-redaction--400.html">05. Contenu &amp; Rédaction</a>
+      <a href="automatisation-crm--401.html" aria-current="page">06. Automatisation &amp; CRM</a>
+      <a href="analyse-performance--402.html">07. Analyse &amp; Performance</a>
+      <a href="influence-social-media-communaute--403.html">08. Influence, Social Media &amp; Communauté</a>
+    </nav>
+    <div class="au-legal">
+      <span>© Maison John&amp;Co Marketing — Tous droits réservés</span>
+      <div class="au-legal-links">
+        <a href="offres-tarifs--45.html">Offres &amp; tarifs</a>
+        <a href="etudes-de-cas--49.html">Études de cas</a>
+        <a href="contact--895.html">Contact</a>
+        <a href="mentions-legales--1004.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    document.documentElement.classList.add('js-ready');
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach((el) => io.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    const steps = {
+      capture: {
+        title: "Collecter proprement et centraliser immédiatement",
+        desc: "Chaque formulaire, demande de devis ou inscription alimente automatiquement votre base CRM avec l'origine du contact, son consentement RGPD et son centre d'intérêt, sans ressaisie manuelle.",
+        trigger: "<strong>Déclencheur type :</strong> soumission d'un formulaire site web, téléchargement d'une ressource ou création de compte.",
+        bricks: [
+          { sub: "Référentiel unique", name: "CRM & Gestion de la Relation Client", href: "crm-gestion-de-la-relation-client--270.html" },
+          { sub: "Routage & bienvenue immédiate", name: "Marketing Automation", href: "marketing-automation--268.html" }
+        ]
+      },
+      qualif: {
+        title: "Segmenter et prioriser les contacts les plus mûrs",
+        desc: "Les interactions (pages visitées, ouvertures, clics, formulaires) attribuent automatiquement un niveau d'intérêt afin d'alerter vos équipes commerciales au bon moment.",
+        trigger: "<strong>Déclencheur type :</strong> visite répétée d'une page tarifs, téléchargement ciblé ou seuil de scoring atteint.",
+        bricks: [
+          { sub: "Scoring & alertes commerciales", name: "Marketing Automation", href: "marketing-automation--268.html" },
+          { sub: "Attribution pipeline ventes", name: "CRM & Gestion de la Relation Client", href: "crm-gestion-de-la-relation-client--270.html" }
+        ]
+      },
+      nurturing: {
+        title: "Entretenir l'intérêt sans sollicitation excessive",
+        desc: "Pour les prospects qui réfléchissent encore, des séquences éditoriales ciblées apportent des preuves, cas concrets et réponses pédagogiques jusqu'à maturation du besoin.",
+        trigger: "<strong>Déclencheur type :</strong> rythme séquencé sur plusieurs semaines selon la thématique choisie par le prospect.",
+        bricks: [
+          { sub: "Séquences pédagogiques & preuves", name: "Email Marketing", href: "email-marketing--269.html" },
+          { sub: "Scénarios adaptatifs", name: "Marketing Automation", href: "marketing-automation--268.html" }
+        ]
+      },
+      conversion: {
+        title: "Accompagner le dernier pas vers la décision",
+        desc: "Relance de panier ou de devis en attente, rappel de rendez-vous par SMS ou notification ciblée : chaque point de friction est levé au moment exact où la décision se joue.",
+        trigger: "<strong>Déclencheur type :</strong> panier abandonné, devis envoyé sans réponse ou rendez-vous confirmé à J-1.",
+        bricks: [
+          { sub: "Rappels instantanés à forte lecture", name: "SMS Marketing & Notifications Push", href: "sms-marketing-notifications-push--267.html" },
+          { sub: "Relances personnalisées", name: "Email Marketing", href: "email-marketing--269.html" }
+        ]
+      },
+      fidelite: {
+        title: "Développer la récurrence et la recommandation",
+        desc: "Après l'achat ou la signature, des parcours d'onboarding, enquêtes de satisfaction et offres de réachat ou de montée en gamme augmentent durablement la valeur client.",
+        trigger: "<strong>Déclencheur type :</strong> anniversaire client, fin de prestation, cycle de renouvellement ou inactivité prolongée.",
+        bricks: [
+          { sub: "Suivi valeur vie client", name: "CRM & Gestion de la Relation Client", href: "crm-gestion-de-la-relation-client--270.html" },
+          { sub: "Programmes fidélité & réactivation", name: "Email Marketing", href: "email-marketing--269.html" },
+          { sub: "Accès privilégiés & alertes", name: "SMS Marketing & Notifications Push", href: "sms-marketing-notifications-push--267.html" }
+        ]
+      }
+    };
+
+    const nodes = document.querySelectorAll('.au-node');
+    nodes.forEach((node) => {
+      node.addEventListener('click', () => {
+        const d = steps[node.dataset.step];
+        if (!d) return;
+        nodes.forEach((n) => n.setAttribute('aria-selected', n === node ? 'true' : 'false'));
+        document.getElementById('wf-title').textContent = d.title;
+        document.getElementById('wf-desc').textContent = d.desc;
+        document.getElementById('wf-trigger').innerHTML = d.trigger;
+        document.getElementById('wf-bricks').innerHTML = d.bricks.map((b) => (
+          '<a class="au-brick" href="' + b.href + '">' +
+            '<div><small>' + b.sub + '</small><strong>' + b.name + '</strong></div>' +
+            '<span aria-hidden="true">→</span>' +
+          '</a>'
+        )).join('');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
-<p></p>

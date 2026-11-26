@@ -1,94 +1,1086 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUBLICITÉ DIGITALE</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .service-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — PUBLICITÉ DIGITALE">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/strategie-digitale-accompagnement--396.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/strategie-digitale-accompagnement--396.html">
-    <meta property="og:title" content="PUBLICITÉ DIGITALE">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stratégie Digitale &amp; Accompagnement — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="Consulting stratégique digital, audit complet, coaching d'équipes, veille, plan de communication et transformation digitale : structurez votre croissance avec Maison John&amp;Co Marketing.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/strategie-digitale-accompagnement--396.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/strategie-digitale-accompagnement--396.html">
+  <meta property="og:title" content="Stratégie Digitale &amp; Accompagnement — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Clarifiez vos priorités, arbitrez vos investissements et transformez votre présence numérique en levier de croissance durable.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/categories/strategie-digitale.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-soft: #13233C;
+      --ivory: #F8F7F4;
+      --white: #FFFFFF;
+      --ink: #111827;
+      --muted: #4B5563;
+      --subtle: #6B7280;
+      --accent: #6D28D9;
+      --accent-hover: #5B21B6;
+      --accent-soft: #F3EEFF;
+      --brass: #9A7440;
+      --line: #E5E2DC;
+      --line-dark: rgba(255, 255, 255, 0.14);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HERO EXECUTIF ── */
+    .st-hero {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 64px 0 88px;
+    }
+    .st-crumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: #94A3B8;
+      margin-bottom: 40px;
+    }
+    .st-crumb a {
+      text-decoration: none;
+      transition: color 0.16s ease;
+    }
+    .st-crumb a:hover { color: #FFFFFF; }
+    .st-crumb .sep { color: rgba(255, 255, 255, 0.28); }
+    .st-crumb .current { color: #E2E8F0; font-weight: 500; }
+
+    .st-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: 56px;
+      align-items: stretch;
+    }
+    .st-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .st-kicker {
+      font-size: 13px;
+      font-weight: 600;
+      color: #C4B5FD;
+      letter-spacing: 0.02em;
+      margin: 0 0 18px;
+    }
+    .st-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4.2vw, 3.65rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 24px;
+      text-wrap: balance;
+      color: #FFFFFF;
+    }
+    .st-hero-lead {
+      font-size: 17px;
+      line-height: 1.72;
+      color: #CBD5E1;
+      max-width: 56ch;
+      margin: 0 0 36px;
+    }
+    .st-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, transform 0.16s ease;
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-primary:focus-visible, .btn-outline:focus-visible, .btn-dark:focus-visible, .st-link:focus-visible {
+      outline: 2px solid #C4B5FD;
+      outline-offset: 3px;
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #F8FAFC;
+      font-size: 14.5px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color 0.16s ease, background-color 0.16s ease;
+    }
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.52);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .st-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line-dark);
+      font-size: 13.5px;
+      color: #94A3B8;
+    }
+    .st-hero-meta strong { color: #F8FAFC; font-weight: 600; }
+
+    .st-hero-media {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #162844, #0F1E36);
+      min-height: 360px;
+    }
+    .st-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .st-hero-caption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 28px 24px 20px;
+      background: linear-gradient(to top, rgba(10, 22, 40, 0.86), rgba(10, 22, 40, 0.35) 65%, transparent);
+      font-size: 13px;
+      color: #E2E8F0;
+    }
+
+    /* ── SECTION DIAGNOSTIC (ENJEUX) ── */
+    .st-section {
+      padding: 96px 0;
+    }
+    .st-section-white {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .st-header-split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+    .st-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 12px;
+    }
+    .st-h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin: 0;
+      text-wrap: balance;
+      color: var(--navy);
+    }
+    .st-intro-p {
+      margin: 0;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .st-challenges {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .st-challenge {
+      padding: 36px 36px 34px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--ivory);
+    }
+    .st-challenge-num {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--brass);
+      margin: 0 0 12px;
+      font-variant-numeric: tabular-nums;
+    }
+    .st-challenge h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 10px;
+      line-height: 1.35;
+    }
+    .st-challenge p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* ── LEDGER DES 6 PRESTATIONS ── */
+    .st-ledger {
+      border-top: 1px solid var(--line);
+    }
+    .st-ledger-row {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 0.95fr) minmax(0, 1.15fr) auto;
+      gap: 28px 36px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+      transition: background-color 0.18s ease;
+    }
+    .st-ledger-num {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--navy);
+      opacity: 0.45;
+      line-height: 1;
+      padding-top: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+    .st-ledger-title h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+    .st-ledger-meta {
+      font-size: 13px;
+      color: var(--subtle);
+      margin: 0;
+    }
+    .st-ledger-body p {
+      margin: 0 0 14px;
+      font-size: 15.5px;
+      color: var(--muted);
+    }
+    .st-ledger-points {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 20px;
+      font-size: 13.5px;
+      color: var(--ink);
+    }
+    .st-ledger-points li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .st-ledger-points li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    .st-ledger-cta {
+      display: flex;
+      align-items: center;
+      padding-top: 4px;
+    }
+    .st-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      min-height: 44px;
+      border-radius: 6px;
+      border: 1px solid #D6D3CC;
+      background: var(--white);
+      color: var(--navy);
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color 0.16s ease, color 0.16s ease, background-color 0.16s ease, transform 0.16s ease;
+    }
+    .st-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    /* ── SELECTEUR INTERACTIF DE POINT D'ENTREE ── */
+    .st-compass {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 88px 0;
+    }
+    .st-compass .st-eyebrow { color: #C4B5FD; }
+    .st-compass .st-h2 { color: #FFFFFF; margin-bottom: 14px; }
+    .st-compass-sub {
+      color: #CBD5E1;
+      max-width: 64ch;
+      margin: 0 0 36px;
+      font-size: 16px;
+    }
+    .st-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .st-tab {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.04);
+      color: #E2E8F0;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 18px;
+      min-height: 44px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    }
+    .st-tab:hover {
+      border-color: rgba(255, 255, 255, 0.48);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .st-tab[aria-selected="true"] {
+      background: #FFFFFF;
+      color: var(--navy);
+      border-color: #FFFFFF;
+    }
+    .st-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 44px;
+      padding: 36px;
+      border: 1px solid var(--line-dark);
+      border-radius: 10px;
+      background: var(--navy-soft);
+    }
+    .st-panel h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin: 0 0 12px;
+    }
+    .st-panel p {
+      margin: 0 0 20px;
+      color: #CBD5E1;
+      font-size: 15.5px;
+    }
+    .st-panel-outcome {
+      font-size: 14px;
+      color: #E2E8F0;
+      padding-top: 16px;
+      border-top: 1px solid var(--line-dark);
+      margin: 0;
+    }
+    .st-panel-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .st-step-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--line-dark);
+      background: rgba(10, 22, 40, 0.55);
+      text-decoration: none;
+      transition: border-color 0.16s ease, transform 0.16s ease;
+    }
+    .st-step-card:hover {
+      border-color: #A78BFA;
+      transform: translateX(3px);
+    }
+    .st-step-role {
+      display: block;
+      font-size: 12.5px;
+      color: #C4B5FD;
+      margin-bottom: 3px;
+    }
+    .st-step-name {
+      display: block;
+      font-size: 15.5px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+    .st-step-arrow { color: #C4B5FD; font-weight: 600; flex-shrink: 0; }
+
+    /* ── COMPLEMENTARITE & CAS CLIENTS ── */
+    .st-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
+    }
+    .st-case {
+      padding: 36px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .st-case-meta {
+      font-size: 13px;
+      color: var(--subtle);
+      margin: 0 0 10px;
+    }
+    .st-case h3 {
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 0 0 12px;
+      line-height: 1.28;
+    }
+    .st-case p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .st-text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .st-text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    /* ── CONCLUSION COMMERCIALE ── */
+    .st-cta-band {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 88px 0;
+    }
+    .st-cta-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 40px;
+      align-items: center;
+      padding: 48px 52px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: #FFFFFF;
+    }
+    .st-cta-box h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      text-wrap: balance;
+    }
+    .st-cta-box p {
+      margin: 0;
+      color: #CBD5E1;
+      font-size: 15.5px;
+      max-width: 56ch;
+    }
+    .st-cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* ── PASSERELLE AUTRES CATEGORIES & PIED DE PAGE ── */
+    .st-footer {
+      background: var(--ivory);
+      border-top: 1px solid var(--line);
+      padding: 64px 0 48px;
+    }
+    .st-footer-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .st-footer-head h2 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 0;
+    }
+    .st-cat-links {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px 24px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--line);
+    }
+    .st-cat-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 0;
+      transition: color 0.15s ease;
+    }
+    .st-cat-links a:hover { color: var(--accent); }
+    .st-cat-links a[aria-current="page"] { color: var(--navy); font-weight: 700; }
+
+    .st-legal {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 28px;
+      font-size: 13px;
+      color: var(--subtle);
+    }
+    .st-legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .st-legal-links a { text-decoration: none; }
+    .st-legal-links a:hover { color: var(--navy); }
+
+    /* Reveal animation (progressive & safe) */
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .js-ready .reveal:not(.is-visible) {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    @media (max-width: 1024px) {
+      .st-hero-grid, .st-header-split, .st-panel, .st-cta-box {
+        grid-template-columns: 1fr;
+      }
+      .st-ledger-row {
+        grid-template-columns: 56px minmax(0, 1fr);
+        gap: 16px 24px;
+      }
+      .st-ledger-body, .st-ledger-cta { grid-column: 2; }
+      .st-cat-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 720px) {
+      .wrap { padding: 0 20px; }
+      .st-hero { padding: 40px 0 56px; }
+      .st-section, .st-compass, .st-cta-band { padding: 64px 0; }
+      .st-challenges, .st-cases-grid, .st-ledger-points { grid-template-columns: 1fr; }
+      .st-challenge { padding: 26px 22px; }
+      .st-ledger-row { grid-template-columns: 1fr; gap: 14px; padding: 30px 0; }
+      .st-ledger-body, .st-ledger-cta { grid-column: 1; }
+      .st-panel, .st-cta-box { padding: 28px 22px; }
+      .st-cat-links { grid-template-columns: 1fr; }
+      .st-tab { white-space: normal; text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+      .js-ready .reveal:not(.is-visible) { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body>
 <mjc-site-header></mjc-site-header>
 <script src="../assets/js/site-header.js"></script>
-    <div class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-16">PUBLICITÉ DIGITALE</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Consulting Stratégique Digital -->
-            <a href="consulting-strategique-digital--340.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-blue-100 p-4 rounded-full mb-4">
-                    <i data-feather="trending-up" class="text-blue-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Consulting Stratégique Digital</h3>
-                <p class="text-blue-600 font-medium">En savoir plus →</p>
-            </a>
 
-            <!-- Audit Digital -->
-            <a href="audit-digital--341.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-purple-100 p-4 rounded-full mb-4">
-                    <i data-feather="pen-tool" class="text-purple-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Audit Digital</h3>
-                <p class="text-purple-600 font-medium">En savoir plus →</p>
-            </a>
+<main>
+  <!-- ── HERO ── -->
+  <section class="st-hero">
+    <div class="wrap">
+      <nav class="st-crumb" aria-label="Fil d'Ariane">
+        <a href="../">Accueil</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="services-proposes-pour-les-entreprises--395.html">Services entreprises</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span class="current">Stratégie Digitale &amp; Accompagnement</span>
+      </nav>
 
-            <!-- Coaching & Accompagnements -->
-            <a href="coaching-accompagnements--342.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-red-100 p-4 rounded-full mb-4">
-                    <i data-feather="dollar-sign" class="text-red-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Coaching & Accompagnements</h3>
-                <p class="text-red-600 font-medium">En savoir plus →</p>
-            </a>
-
-            <!-- Veille Stratégique Digitale -->
-            <a href="veille-strategique-digitale--339.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-green-100 p-4 rounded-full mb-4">
-                    <i data-feather="search" class="text-green-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Veille Stratégique Digitale</h3>
-                <p class="text-green-600 font-medium">En savoir plus →</p>
-            </a>
-
-            <!-- Plan de Communication Digitale -->
-            <a href="plan-de-communication-digitale--338.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-yellow-100 p-4 rounded-full mb-4">
-                    <i data-feather="edit" class="text-yellow-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Plan de Communication Digitale</h3>
-                <p class="text-yellow-600 font-medium">En savoir plus →</p>
-            </a>
-
-            <!-- Accompagnement à la Transformation Digitale -->
-            <a href="accompagnement-a-la-transformation-digitale--337.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-indigo-100 p-4 rounded-full mb-4">
-                    <i data-feather="refresh-cw" class="text-indigo-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Publicité Vidéo</h3>
-                <p class="text-indigo-600 font-medium">En savoir plus →</p>
-            </a>
+      <div class="st-hero-grid">
+        <div class="st-hero-copy">
+          <p class="st-kicker">Pôle 01 · Direction stratégique &amp; pilotage numérique</p>
+          <h1>Décider avec clarté avant d'investir dans vos leviers digitaux.</h1>
+          <p class="st-hero-lead">
+            Multiplier les outils et les campagnes sans feuille de route disperse vos budgets et ralentit votre croissance. Maison John&amp;Co Marketing accompagne dirigeants, directions marketing et équipes internes pour diagnostiquer l'existant, hiérarchiser les priorités et piloter chaque étape de votre développement numérique.
+          </p>
+          <div class="st-hero-actions">
+            <a class="btn-primary" href="devis-sur-mesure--48.html">Planifier un cadrage stratégique</a>
+            <a class="btn-outline" href="#prestations">Explorer les 6 prestations</a>
+          </div>
+          <div class="st-hero-meta">
+            <span><strong>6</strong> expertises dédiées</span>
+            <span><strong>Publics :</strong> Dirigeants, PME, ETI &amp; équipes marketing</span>
+            <span><strong>Approche :</strong> Diagnostic, gouvernance &amp; transfert de compétences</span>
+          </div>
         </div>
-    </div>
 
-    <script>
-        feather.replace();
-    </script>
+        <figure class="st-hero-media">
+          <img
+            src="../assets/images/categories/strategie-digitale.jpg"
+            alt="Salle de conseil stratégique parisienne de Maison John&Co Marketing avec feuilles de route digitales"
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+          >
+          <figcaption class="st-hero-caption">
+            Cadrage stratégique, arbitrage budgétaire et feuilles de route exécutables sur 6 à 24 mois.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ENJEUX & PROBLEMATIQUES ── -->
+  <section class="st-section">
+    <div class="wrap">
+      <div class="st-header-split reveal">
+        <div>
+          <p class="st-eyebrow">Pourquoi commencer par la stratégie</p>
+          <h2 class="st-h2">Résoudre les freins structurels avant d'accélérer l'exécution.</h2>
+        </div>
+        <p class="st-intro-p">
+          La plupart des sous-performances digitales ne proviennent pas d'un manque d'actions, mais d'un défaut d'alignement entre vos objectifs commerciaux, vos cibles et les canaux activés. Ce pôle pose des fondations mesurables avant toute dépense média ou technique.
+        </p>
+      </div>
+
+      <div class="st-challenges reveal">
+        <article class="st-challenge">
+          <p class="st-challenge-num">01.</p>
+          <h3>Investissements dispersés et arbitrages flous</h3>
+          <p>Lorsque le site, le référencement, la publicité et les réseaux sociaux avancent en silos, chaque canal consomme du budget sans synergie. Une feuille de route hiérarchisée concentre vos ressources sur les leviers à plus fort rendement.</p>
+        </article>
+        <article class="st-challenge">
+          <p class="st-challenge-num">02.</p>
+          <h3>Manque de visibilité sur l'existant et la concurrence</h3>
+          <p>Sans audit objectif ni veille structurée, les décisions reposent sur des intuitions. Mesurer l'état réel de votre écosystème et observer les mouvements de votre marché sécurise vos choix d'investissement.</p>
+        </article>
+        <article class="st-challenge">
+          <p class="st-challenge-num">03.</p>
+          <h3>Prise de parole incohérente d'un canal à l'autre</h3>
+          <p>Un positionnement imprécis dilue votre différenciation. Le plan de communication digitale unifie vos messages, vos audiences prioritaires et votre calendrier de diffusion sur l'ensemble de vos points de contact.</p>
+        </article>
+        <article class="st-challenge">
+          <p class="st-challenge-num">04.</p>
+          <h3>Difficulté à faire adopter les nouveaux outils en interne</h3>
+          <p>Une transformation digitale échoue si les équipes ne s'approprient pas les méthodes. Le coaching et l'accompagnement au changement installent des routines durables et autonomisent vos collaborateurs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LES 6 PRESTATIONS ── -->
+  <section id="prestations" class="st-section st-section-white">
+    <div class="wrap">
+      <div class="st-header-split reveal">
+        <div>
+          <p class="st-eyebrow">Périmètre du pôle</p>
+          <h2 class="st-h2">Six expertises complémentaires pour cadrer, former et transformer.</h2>
+        </div>
+        <p class="st-intro-p">
+          Chaque prestation peut être mobilisée de façon autonome pour répondre à un besoin immédiat, ou combinée dans un programme d'accompagnement pluriannuel piloté aux côtés de votre direction.
+        </p>
+      </div>
+
+      <div class="st-ledger">
+        <article class="st-ledger-row reveal">
+          <div class="st-ledger-num">01.</div>
+          <div class="st-ledger-title">
+            <h3>Consulting Stratégique Digital</h3>
+            <p class="st-ledger-meta">Direction générale · Arbitrage &amp; feuille de route</p>
+          </div>
+          <div class="st-ledger-body">
+            <p>Un accompagnement de haut niveau pour aligner votre modèle d'affaires avec les leviers numériques les plus rentables, définir vos priorités trimestrielles et sécuriser vos décisions d'investissement.</p>
+            <ul class="st-ledger-points">
+              <li>Cadrage des objectifs business et KPIs</li>
+              <li>Architecture globale des canaux digitaux</li>
+              <li>Priorisation budgétaire et plan d'action</li>
+              <li>Gouvernance et pilotage de direction</li>
+            </ul>
+          </div>
+          <div class="st-ledger-cta">
+            <a class="st-link" href="consulting-strategique-digital--340.html">Découvrir la prestation →</a>
+          </div>
+        </article>
+
+        <article class="st-ledger-row reveal">
+          <div class="st-ledger-num">02.</div>
+          <div class="st-ledger-title">
+            <h3>Audit Digital</h3>
+            <p class="st-ledger-meta">Diagnostic 360° · Technique, UX, SEO &amp; acquisition</p>
+          </div>
+          <div class="st-ledger-body">
+            <p>Une photographie exhaustive et factuelle de votre écosystème numérique pour identifier vos points de fuite, évaluer la maturité de vos actifs et établir un plan correctif classé par impact.</p>
+            <ul class="st-ledger-points">
+              <li>Analyse du site, des parcours et de la conversion</li>
+              <li>Revue SEO, publicité, contenus et données</li>
+              <li>Benchmark concurrentiel de votre secteur</li>
+              <li>Recommandations priorisées et chiffrées</li>
+            </ul>
+          </div>
+          <div class="st-ledger-cta">
+            <a class="st-link" href="audit-digital--341.html">Découvrir la prestation →</a>
+          </div>
+        </article>
+
+        <article class="st-ledger-row reveal">
+          <div class="st-ledger-num">03.</div>
+          <div class="st-ledger-title">
+            <h3>Coaching &amp; Accompagnements</h3>
+            <p class="st-ledger-meta">Équipes internes · Montée en compétences sur mesure</p>
+          </div>
+          <div class="st-ledger-body">
+            <p>Des sessions individuelles ou collectives conçues autour de vos cas réels pour rendre vos équipes autonomes dans le pilotage de leurs campagnes, de leurs outils et de leurs décisions marketing.</p>
+            <ul class="st-ledger-points">
+              <li>Programmes adaptés au niveau de chaque équipe</li>
+              <li>Ateliers pratiques sur vos propres supports</li>
+              <li>Mentorat continu de responsables marketing</li>
+              <li>Transfert de méthodes et grilles opérationnelles</li>
+            </ul>
+          </div>
+          <div class="st-ledger-cta">
+            <a class="st-link" href="coaching-accompagnements--342.html">Découvrir la prestation →</a>
+          </div>
+        </article>
+
+        <article class="st-ledger-row reveal">
+          <div class="st-ledger-num">04.</div>
+          <div class="st-ledger-title">
+            <h3>Veille Stratégique Digitale</h3>
+            <p class="st-ledger-meta">Anticipation · Marché, concurrence &amp; innovations</p>
+          </div>
+          <div class="st-ledger-body">
+            <p>Un dispositif d'observation continue qui transforme les signaux de votre marché, les initiatives concurrentes et les évolutions technologiques en avantage décisionnel concret.</p>
+            <ul class="st-ledger-points">
+              <li>Suivi structuré des concurrents et positionnements</li>
+              <li>Détection des tendances sectorielles émergentes</li>
+              <li>Synthèses exécutives périodiques exploitables</li>
+              <li>Alertes opportunités et recommandations d'action</li>
+            </ul>
+          </div>
+          <div class="st-ledger-cta">
+            <a class="st-link" href="veille-strategique-digitale--339.html">Découvrir la prestation →</a>
+          </div>
+        </article>
+
+        <article class="st-ledger-row reveal">
+          <div class="st-ledger-num">05.</div>
+          <div class="st-ledger-title">
+            <h3>Plan de Communication Digitale</h3>
+            <p class="st-ledger-meta">Cohérence de marque · Messages, canaux &amp; rythme</p>
+          </div>
+          <div class="st-ledger-body">
+            <p>La formalisation complète de votre prise de parole numérique : définition des cibles, territoire éditorial, répartition des canaux et calendrier de campagnes pour installer une présence lisible et durable.</p>
+            <ul class="st-ledger-points">
+              <li>Cartographie des audiences et messages clés</li>
+              <li>Sélection et rôle de chaque canal digital</li>
+              <li>Calendrier éditorial et temps forts annuels</li>
+              <li>Cadre de mesure de la notoriété et de l'engagement</li>
+            </ul>
+          </div>
+          <div class="st-ledger-cta">
+            <a class="st-link" href="plan-de-communication-digitale--338.html">Découvrir la prestation →</a>
+          </div>
+        </article>
+
+        <article class="st-ledger-row reveal">
+          <div class="st-ledger-num">06.</div>
+          <div class="st-ledger-title">
+            <h3>Accompagnement à la Transformation Digitale</h3>
+            <p class="st-ledger-meta">Organisation · Processus, outils &amp; conduite du changement</p>
+          </div>
+          <div class="st-ledger-body">
+            <p>Un pilotage global pour moderniser vos processus métiers, intégrer des outils numériques cohérents et accompagner vos équipes à chaque étape d'une évolution structurelle de votre organisation.</p>
+            <ul class="st-ledger-points">
+              <li>Diagnostic de maturité organisationnelle et SI</li>
+              <li>Schéma directeur de déploiement progressif</li>
+              <li>Choix des solutions et coordination des prestataires</li>
+              <li>Conduite du changement et suivi de l'adoption</li>
+            </ul>
+          </div>
+          <div class="st-ledger-cta">
+            <a class="st-link" href="accompagnement-a-la-transformation-digitale--337.html">Découvrir la prestation →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPLEMENTARITE INTERACTIVE ── -->
+  <section class="st-compass" aria-labelledby="compass-title">
+    <div class="wrap">
+      <p class="st-eyebrow">Orchestration &amp; complémentarité</p>
+      <h2 id="compass-title" class="st-h2">Quel point d'entrée correspond à votre situation actuelle ?</h2>
+      <p class="st-compass-sub">
+        Sélectionnez l'enjeu qui reflète le mieux votre contexte afin d'identifier l'enchaînement de prestations le plus pertinent.
+      </p>
+
+      <div class="st-tabs" role="tablist" aria-label="Situations d'entreprise">
+        <button class="st-tab" role="tab" aria-selected="true" data-scenario="stagnation" type="button">Croissance qui plafonne</button>
+        <button class="st-tab" role="tab" aria-selected="false" data-scenario="lancement" type="button">Nouveau positionnement ou lancement</button>
+        <button class="st-tab" role="tab" aria-selected="false" data-scenario="equipes" type="button">Structuration d'équipe interne</button>
+        <button class="st-tab" role="tab" aria-selected="false" data-scenario="transformation" type="button">Modernisation globale</button>
+      </div>
+
+      <div class="st-panel" id="scenario-panel" role="tabpanel">
+        <div>
+          <h3 id="sc-title">Identifier les freins avant de réinvestir</h3>
+          <p id="sc-desc">Lorsque vos actions digitales produisent moins de résultats qu'attendu, l'urgence n'est pas d'augmenter le budget mais de comprendre précisément où se perdent le trafic, l'attention et les opportunités commerciales.</p>
+          <p class="st-panel-outcome" id="sc-outcome"><strong>Résultat attendu :</strong> un diagnostic impartial suivi d'une feuille de route priorisée sur les actions à fort levier.</p>
+        </div>
+        <div class="st-panel-steps" id="sc-steps">
+          <a class="st-step-card" href="audit-digital--341.html">
+            <div>
+              <span class="st-step-role">Étape 1 · Mesurer l'existant</span>
+              <span class="st-step-name">Audit Digital</span>
+            </div>
+            <span class="st-step-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="st-step-card" href="consulting-strategique-digital--340.html">
+            <div>
+              <span class="st-step-role">Étape 2 · Arbitrer les priorités</span>
+              <span class="st-step-name">Consulting Stratégique Digital</span>
+            </div>
+            <span class="st-step-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="st-step-card" href="veille-strategique-digitale--339.html">
+            <div>
+              <span class="st-step-role">Étape 3 · Sécuriser l'avance</span>
+              <span class="st-step-name">Veille Stratégique Digitale</span>
+            </div>
+            <span class="st-step-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ETUDES DE CAS REELLES ── -->
+  <section class="st-section">
+    <div class="wrap">
+      <div class="st-header-split reveal">
+        <div>
+          <p class="st-eyebrow">Mises en application</p>
+          <h2 class="st-h2">Comment la stratégie se traduit sur le terrain.</h2>
+        </div>
+        <p class="st-intro-p">
+          Découvrez deux démarches concrètes illustrant l'articulation entre cadrage stratégique, organisation omnicanale et exécution digitale.
+        </p>
+      </div>
+
+      <div class="st-cases-grid reveal">
+        <article class="st-case">
+          <div>
+            <p class="st-case-meta">Hôtellerie · Transformation digitale</p>
+            <h3>Transformation digitale pour une chaîne hôtelière</h3>
+            <p>Refonte de l'architecture numérique, modernisation de l'expérience de réservation et accompagnement opérationnel des équipes sur l'ensemble des établissements.</p>
+          </div>
+          <a class="st-text-link" href="transformation-digitale-pour-une-chaine-hoteliere--578.html">Consulter l'étude de cas →</a>
+        </article>
+
+        <article class="st-case">
+          <div>
+            <p class="st-case-meta">Mode &amp; Retail · Stratégie omnicanale</p>
+            <h3>Stratégie omnicanale pour une marque de mode</h3>
+            <p>Unification des points de contact physiques et digitaux, cohérence éditoriale et coordination des leviers d'acquisition autour d'une vision client partagée.</p>
+          </div>
+          <a class="st-text-link" href="strategie-omnicanal-pour-une-marque-de-mode--580.html">Consulter l'étude de cas →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONCLUSION COMMERCIALE ── -->
+  <section class="st-cta-band">
+    <div class="wrap">
+      <div class="st-cta-box reveal">
+        <div>
+          <h2>Construisons votre feuille de route digitale.</h2>
+          <p>Exposez-nous vos enjeux, vos délais et l'organisation de vos équipes : nous vous proposons une approche calibrée, sans dispositif superflu.</p>
+        </div>
+        <div class="st-cta-btns">
+          <a class="btn-primary" href="devis-sur-mesure--48.html">Demander un devis sur mesure</a>
+          <a class="btn-outline" href="contact--895.html">Contacter l'agence</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="st-footer">
+  <div class="wrap">
+    <div class="st-footer-head">
+      <h2>Explorer les 8 pôles d'expertise entreprises</h2>
+      <a class="st-text-link" href="services-proposes-pour-les-entreprises--395.html">Vue globale Services entreprises →</a>
+    </div>
+    <nav class="st-cat-links" aria-label="Catégories de services">
+      <a href="strategie-digitale-accompagnement--396.html" aria-current="page">01. Stratégie Digitale &amp; Accompagnement</a>
+      <a href="creation-digitale-identite--397.html">02. Création Digitale &amp; Identité</a>
+      <a href="publicite-digitale--398.html">03. Publicité Digitale</a>
+      <a href="referencement-visibilite--399.html">04. Référencement &amp; Visibilité</a>
+      <a href="contenu-redaction--400.html">05. Contenu &amp; Rédaction</a>
+      <a href="automatisation-crm--401.html">06. Automatisation &amp; CRM</a>
+      <a href="analyse-performance--402.html">07. Analyse &amp; Performance</a>
+      <a href="influence-social-media-communaute--403.html">08. Influence, Social Media &amp; Communauté</a>
+    </nav>
+    <div class="st-legal">
+      <span>© Maison John&amp;Co Marketing — Tous droits réservés</span>
+      <div class="st-legal-links">
+        <a href="offres-tarifs--45.html">Offres &amp; tarifs</a>
+        <a href="etudes-de-cas--49.html">Études de cas</a>
+        <a href="methode-engagements--38.html">Méthode &amp; engagements</a>
+        <a href="mentions-legales--1004.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    document.documentElement.classList.add('js-ready');
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach((el) => io.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    const scenarios = {
+      stagnation: {
+        title: "Identifier les freins avant de réinvestir",
+        desc: "Lorsque vos actions digitales produisent moins de résultats qu'attendu, l'urgence n'est pas d'augmenter le budget mais de comprendre précisément où se perdent le trafic, l'attention et les opportunités commerciales.",
+        outcome: "<strong>Résultat attendu :</strong> un diagnostic impartial suivi d'une feuille de route priorisée sur les actions à fort levier.",
+        steps: [
+          { role: "Étape 1 · Mesurer l'existant", name: "Audit Digital", href: "audit-digital--341.html" },
+          { role: "Étape 2 · Arbitrer les priorités", name: "Consulting Stratégique Digital", href: "consulting-strategique-digital--340.html" },
+          { role: "Étape 3 · Sécuriser l'avance", name: "Veille Stratégique Digitale", href: "veille-strategique-digitale--339.html" }
+        ]
+      },
+      lancement: {
+        title: "Cadrer un lancement ou un repositionnement",
+        desc: "Avant d'ouvrir des campagnes d'acquisition ou de produire des supports, nous alignons votre promesse de marque, votre architecture de canaux et votre calendrier de déploiement.",
+        outcome: "<strong>Résultat attendu :</strong> un lancement lisible, différenciant et orchestré sur chaque canal pertinent.",
+        steps: [
+          { role: "Étape 1 · Observer le marché", name: "Veille Stratégique Digitale", href: "veille-strategique-digitale--339.html" },
+          { role: "Étape 2 · Définir le cap", name: "Consulting Stratégique Digital", href: "consulting-strategique-digital--340.html" },
+          { role: "Étape 3 · Orchestrer la prise de parole", name: "Plan de Communication Digitale", href: "plan-de-communication-digitale--338.html" }
+        ]
+      },
+      equipes: {
+        title: "Faire monter vos équipes en autonomie",
+        desc: "Vous souhaitez internaliser une partie de votre pilotage marketing tout en conservant un regard senior ? Nous structurons vos processus et accompagnons vos collaborateurs sur leurs dossiers réels.",
+        outcome: "<strong>Résultat attendu :</strong> des équipes opérationnelles, équipées de méthodes claires et durables.",
+        steps: [
+          { role: "Étape 1 · Évaluer les besoins", name: "Audit Digital", href: "audit-digital--341.html" },
+          { role: "Étape 2 · Former en situation réelle", name: "Coaching & Accompagnements", href: "coaching-accompagnements--342.html" },
+          { role: "Étape 3 · Donner un cadre commun", name: "Plan de Communication Digitale", href: "plan-de-communication-digitale--338.html" }
+        ]
+      },
+      transformation: {
+        title: "Piloter une évolution structurelle de l'entreprise",
+        desc: "Digitaliser les métiers, moderniser les outils et faire évoluer la culture interne demande un cap clair et une conduite du changement rigoureuse à chaque jalon.",
+        outcome: "<strong>Résultat attendu :</strong> une transition maîtrisée, adoptée par les équipes et alignée sur vos enjeux métiers.",
+        steps: [
+          { role: "Étape 1 · Schéma directeur", name: "Accompagnement à la Transformation Digitale", href: "accompagnement-a-la-transformation-digitale--337.html" },
+          { role: "Étape 2 · Pilotage exécutif", name: "Consulting Stratégique Digital", href: "consulting-strategique-digital--340.html" },
+          { role: "Étape 3 · Adoption interne", name: "Coaching & Accompagnements", href: "coaching-accompagnements--342.html" }
+        ]
+      }
+    };
+
+    const tabs = document.querySelectorAll('.st-tab');
+    const scTitle = document.getElementById('sc-title');
+    const scDesc = document.getElementById('sc-desc');
+    const scOutcome = document.getElementById('sc-outcome');
+    const scSteps = document.getElementById('sc-steps');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const key = tab.dataset.scenario;
+        const data = scenarios[key];
+        if (!data) return;
+        tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+        scTitle.textContent = data.title;
+        scDesc.textContent = data.desc;
+        scOutcome.innerHTML = data.outcome;
+        scSteps.innerHTML = data.steps.map((s) => (
+          '<a class="st-step-card" href="' + s.href + '">' +
+            '<div><span class="st-step-role">' + s.role + '</span><span class="st-step-name">' + s.name + '</span></div>' +
+            '<span class="st-step-arrow" aria-hidden="true">→</span>' +
+          '</a>'
+        )).join('');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
-<p></p>

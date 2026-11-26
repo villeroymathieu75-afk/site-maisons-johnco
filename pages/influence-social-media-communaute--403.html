@@ -1,76 +1,842 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INFLUENCE, SOCIAL MEDIA & COMMUNAUTÉ</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .service-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — INFLUENCE, SOCIAL MEDIA &amp; COMMUNAUTÉ">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/influence-social-media-communaute--403.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/influence-social-media-communaute--403.html">
-    <meta property="og:title" content="INFLUENCE, SOCIAL MEDIA &amp; COMMUNAUTÉ — Maison John&amp;Co Marketing">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influence, Social Media &amp; Communauté — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="Gestion des réseaux sociaux, social media management, stratégie d'influence digitale et création de communauté digitale : fédérez vos audiences avec Maison John&amp;Co Marketing.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/influence-social-media-communaute--403.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/influence-social-media-communaute--403.html">
+  <meta property="og:title" content="Influence, Social Media &amp; Communauté — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Transformez votre présence sociale en préférence de marque, collaborations créateurs crédibles et communautés engagées.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/categories/influence-social.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Urbanist:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --warm: #FCFBF9;
+      --warm-alt: #F4F1EC;
+      --white: #FFFFFF;
+      --navy: #0A1628;
+      --ink: #131722;
+      --muted: #4B5262;
+      --subtle: #6B7280;
+      --accent: #7C3AED;
+      --accent-hover: #6D28D9;
+      --rose: #9D174D;
+      --rose-soft: #FDF2F8;
+      --border: #E8E3DC;
+      --display: 'Urbanist', sans-serif;
+      --body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--warm);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HERO CULTURE & PRODUCTION ── */
+    .so-hero {
+      padding: 44px 0 84px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .so-crumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--subtle);
+      margin-bottom: 36px;
+    }
+    .so-crumb a { text-decoration: none; }
+    .so-crumb a:hover { color: var(--accent); }
+    .so-crumb .current { color: var(--ink); font-weight: 600; }
+
+    .so-hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 52px;
+      align-items: center;
+    }
+    .so-hero-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--warm-alt);
+      aspect-ratio: 16 / 10.5;
+    }
+    .so-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .so-kicker {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--rose);
+      margin: 0 0 14px;
+    }
+    .so-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 4.3vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+      margin: 0 0 22px;
+      text-wrap: balance;
+    }
+    .so-lead {
+      font-size: 16.5px;
+      color: var(--muted);
+      margin: 0 0 32px;
+      max-width: 54ch;
+    }
+    .so-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn-navy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, transform 0.16s ease;
+    }
+    .btn-navy:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn-soft {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--warm);
+      color: var(--navy);
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color 0.16s ease, color 0.16s ease;
+    }
+    .btn-soft:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── CLARIFICATION DES 4 ROLES (ECOSYSTEME) ── */
+    .so-section { padding: 92px 0; }
+    .so-section-white {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .so-head { max-width: 72ch; margin-bottom: 48px; }
+    .so-h2 {
+      font-family: var(--display);
+      font-size: clamp(2rem, 3.2vw, 2.9rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin: 0 0 14px;
+      text-wrap: balance;
+    }
+    .so-sub { margin: 0; font-size: 16px; color: var(--muted); }
+
+    .so-spectrum {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .so-spec-item {
+      padding: 28px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .so-spec-tag {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--rose);
+      margin: 0 0 10px;
+    }
+    .so-spec-item h3 {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+    .so-spec-item p { margin: 0; font-size: 14.5px; color: var(--muted); }
+
+    /* ── SHOWCASE ALTERNE DES 4 PRESTATIONS ── */
+    .so-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+    .so-card {
+      padding: 40px 36px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--warm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      transition: border-color 0.16s ease, transform 0.16s ease;
+    }
+    .so-card:hover { border-color: #C4B5FD; transform: translateY(-2px); }
+    .so-card.is-featured {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #FFFFFF;
+    }
+    .so-card.is-featured .so-card-role { color: #F9A8D4; }
+    .so-card.is-featured h3 { color: #FFFFFF; }
+    .so-card.is-featured p, .so-card.is-featured li { color: #CBD5E1; }
+    .so-card.is-featured .so-card-list { border-top-color: rgba(255, 255, 255, 0.14); }
+    .so-card.is-featured .so-card-btn { background: #FFFFFF; color: var(--navy); }
+    .so-card.is-featured .so-card-btn:hover { background: var(--accent); color: #FFFFFF; }
+
+    .so-card-role {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--rose);
+      margin: 0 0 10px;
+    }
+    .so-card h3 {
+      font-family: var(--display);
+      font-size: 27px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 14px;
+      line-height: 1.18;
+    }
+    .so-card p { margin: 0 0 18px; font-size: 15.5px; color: var(--muted); }
+    .so-card-list {
+      margin: 0;
+      padding: 16px 0 0;
+      list-style: none;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .so-card-list li { padding-left: 16px; position: relative; }
+    .so-card-list li::before { content: '·'; position: absolute; left: 0; font-weight: 800; color: var(--accent); }
+    .so-card.is-featured .so-card-list li::before { color: #F9A8D4; }
+
+    .so-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      min-height: 44px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .so-card-btn:hover { background: var(--accent); }
+
+    /* ── SELECTEUR INTERACTIF D'ENJEU SOCIAL ── */
+    .so-selector {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 88px 0;
+    }
+    .so-selector .so-kicker { color: #F9A8D4; }
+    .so-selector .so-h2 { color: #FFFFFF; }
+    .so-selector .so-sub { color: #CBD5E1; }
+
+    .so-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 32px 0 24px;
+    }
+    .so-tab {
+      appearance: none;
+      padding: 12px 18px;
+      min-height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.05);
+      color: #E2E8F0;
+      font-family: var(--body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease;
+    }
+    .so-tab:hover { border-color: #F9A8D4; }
+    .so-tab[aria-selected="true"] {
+      background: #FFFFFF;
+      color: var(--navy);
+      border-color: #FFFFFF;
+    }
+
+    .so-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 36px;
+      padding: 36px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .so-panel h3 {
+      font-family: var(--display);
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: #FFFFFF;
+    }
+    .so-panel p { margin: 0 0 18px; color: #CBD5E1; font-size: 15.5px; }
+    .so-panel-note {
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 14px;
+      color: #E2E8F0;
+      margin: 0;
+    }
+    .so-panel-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+    }
+    .so-panel-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(10, 22, 40, 0.65);
+      text-decoration: none;
+      color: #FFFFFF;
+      transition: border-color 0.16s ease, transform 0.16s ease;
+    }
+    .so-panel-link:hover { border-color: #F9A8D4; transform: translateX(3px); }
+    .so-panel-link small { display: block; font-size: 12.5px; color: #F9A8D4; margin-bottom: 2px; }
+    .so-panel-link strong { font-size: 15.5px; }
+
+    /* ── CAS CLIENTS & PASSERELLE CREATEURS ── */
+    .so-cases {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .so-case {
+      padding: 32px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .so-case-meta { font-size: 13px; color: var(--subtle); margin: 0 0 8px; }
+    .so-case h3 {
+      font-family: var(--display);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 10px;
+      line-height: 1.24;
+    }
+    .so-case p { margin: 0; font-size: 14.5px; color: var(--muted); }
+    .so-inline-link { font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; }
+    .so-inline-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .so-bridge {
+      margin-top: 40px;
+      padding: 28px 32px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--warm-alt);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .so-bridge p { margin: 0; font-size: 15px; color: var(--muted); max-width: 66ch; }
+    .so-bridge strong { color: var(--navy); }
+
+    .so-cta {
+      margin-top: 56px;
+      padding: 52px;
+      border-radius: 16px;
+      background: var(--navy);
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .so-cta h2 { font-family: var(--display); font-size: clamp(1.85rem, 3vw, 2.55rem); font-weight: 700; margin: 0 0 10px; line-height: 1.15; text-wrap: balance; }
+    .so-cta p { margin: 0; color: #CBD5E1; max-width: 56ch; font-size: 15.5px; }
+    .btn-violet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .btn-violet:hover { background: var(--accent-hover); }
+    .btn-outline-light {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-outline-light:hover { border-color: #FFFFFF; }
+
+    /* ── FOOTER ── */
+    .so-footer {
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      padding: 56px 0 44px;
+    }
+    .so-footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .so-footer-top h2 { font-family: var(--display); font-size: 22px; font-weight: 700; margin: 0; color: var(--navy); }
+    .so-cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px 24px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .so-cat-grid a { font-size: 14px; color: var(--muted); text-decoration: none; padding: 6px 0; }
+    .so-cat-grid a:hover { color: var(--accent); }
+    .so-cat-grid a[aria-current="page"] { color: var(--navy); font-weight: 700; }
+    .so-legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--subtle);
+    }
+    .so-legal-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .so-legal-links a { text-decoration: none; }
+    .so-legal-links a:hover { color: var(--navy); }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .js-ready .reveal:not(.is-visible) { opacity: 0; transform: translateY(14px); }
+
+    @media (max-width: 1024px) {
+      .so-hero-layout, .so-panel, .so-cta { grid-template-columns: 1fr; }
+      .so-spectrum { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .so-cases { grid-template-columns: 1fr; }
+      .so-cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .wrap { padding: 0 20px; }
+      .so-hero { padding: 30px 0 56px; }
+      .so-section, .so-selector { padding: 60px 0; }
+      .so-spectrum, .so-cards, .so-cat-grid { grid-template-columns: 1fr; }
+      .so-card, .so-panel, .so-cta, .so-case { padding: 26px 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+      .js-ready .reveal:not(.is-visible) { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body>
 <mjc-site-header></mjc-site-header>
 <script src="../assets/js/site-header.js"></script>
-    <div class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-16">INFLUENCE, SOCIAL MEDIA & COMMUNAUTÉ</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Gestion des Réseaux Sociaux -->
-            <a href="gestion-des-reseaux-sociaux--276.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-blue-100 p-4 rounded-full mb-4">
-                    <i data-feather="trending-up" class="text-blue-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Gestion des Réseaux Sociaux</h3>
-                <p class="text-blue-600 font-medium">En savoir plus →</p>
-            </a>
 
-            <!-- Social Media Management -->
-            <a href="social-media-management--274.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-purple-100 p-4 rounded-full mb-4">
-                    <i data-feather="pen-tool" class="text-purple-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Social Media Management</h3>
-                <p class="text-purple-600 font-medium">En savoir plus →</p>
-            </a>
+<main>
+  <!-- ── HERO ── -->
+  <section class="so-hero">
+    <div class="wrap">
+      <nav class="so-crumb" aria-label="Fil d'Ariane">
+        <a href="../">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <a href="services-proposes-pour-les-entreprises--395.html">Services entreprises</a>
+        <span aria-hidden="true">/</span>
+        <span class="current">Influence, Social Media &amp; Communauté</span>
+      </nav>
 
-            <!-- Stratégie d’Influence Digitale -->
-            <a href="strategie-dinfluence-digitale--275.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-red-100 p-4 rounded-full mb-4">
-                    <i data-feather="dollar-sign" class="text-red-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Stratégie d’Influence Digitale</h3>
-                <p class="text-red-600 font-medium">En savoir plus →</p>
-            </a>
+      <div class="so-hero-layout">
+        <figure class="so-hero-photo">
+          <img
+            src="../assets/images/categories/influence-social.jpg"
+            alt="Tournage éditorial et direction artistique de contenu social dans un studio parisien"
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+          >
+        </figure>
 
-            <!-- Création de Communauté Digitale -->
-            <a href="creation-de-communaute-digitale--277.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-green-100 p-4 rounded-full mb-4">
-                    <i data-feather="search" class="text-green-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Création de Communauté Digitale</h3>
-                <p class="text-green-600 font-medium">En savoir plus →</p>
-            </a>
+        <div>
+          <p class="so-kicker">Pôle 08 · Présence sociale, créateurs &amp; communautés de marque</p>
+          <h1>Transformer l'attention sociale en préférence de marque durable.</h1>
+          <p class="so-lead">
+            Publier machinalement ne crée ni attachement ni chiffre d'affaires. Nous bâtissons des stratégies sociales cohérentes, pilotons votre présence au quotidien, orchestrons des collaborations d'influence sincères et fédérons des communautés vivantes autour de votre univers.
+          </p>
+          <div class="so-actions">
+            <a class="btn-navy" href="devis-sur-mesure--48.html">Construire votre stratégie sociale</a>
+            <a class="btn-soft" href="#prestations">Découvrir les 4 prestations</a>
+          </div>
         </div>
+      </div>
     </div>
+  </section>
 
-    <script>
-        feather.replace();
-    </script>
+  <!-- ── 4 ROLES DISTINCTS, 1 ECOSYSTEME ── -->
+  <section class="so-section">
+    <div class="wrap">
+      <div class="so-head reveal">
+        <p class="so-kicker">Architecture du pôle</p>
+        <h2 class="so-h2">Quatre métiers complémentaires pour ne rien laisser au hasard.</h2>
+        <p class="so-sub">Une présence sociale performante distingue clairement le pilotage éditorial, l'animation opérationnelle, l'amplification par des créateurs et la fidélisation communautaire.</p>
+      </div>
+
+      <div class="so-spectrum reveal">
+        <article class="so-spec-item">
+          <p class="so-spec-tag">01 · Exécution &amp; régularité</p>
+          <h3>Animer au quotidien</h3>
+          <p>Assurer la continuité éditoriale, la planification, la modération et la réactivité quotidienne sur vos comptes officiels.</p>
+        </article>
+        <article class="so-spec-item">
+          <p class="so-spec-tag">02 · Cap &amp; performance</p>
+          <h3>Piloter la stratégie sociale</h3>
+          <p>Définir les plateformes prioritaires, la ligne éditoriale, les formats piliers et la mesure d'impact business.</p>
+        </article>
+        <article class="so-spec-item">
+          <p class="so-spec-tag">03 · Crédibilité tierce</p>
+          <h3>Activer l'influence</h3>
+          <p>Collaborer avec des créateurs alignés sur vos valeurs pour élargir votre portée et nourrir la confiance.</p>
+        </article>
+        <article class="so-spec-item">
+          <p class="so-spec-tag">04 · Appartenance durable</p>
+          <h3>Fédérer une communauté</h3>
+          <p>Créer un espace relationnel actif où vos clients échangent, co-construisent et deviennent vos meilleurs ambassadeurs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LES 4 PRESTATIONS ── -->
+  <section id="prestations" class="so-section so-section-white">
+    <div class="wrap">
+      <div class="so-head reveal">
+        <p class="so-kicker">Les 4 prestations du pôle</p>
+        <h2 class="so-h2">Des expertises calibrées pour la notoriété, l'engagement et la fidélité.</h2>
+      </div>
+
+      <div class="so-cards">
+        <article class="so-card reveal">
+          <div>
+            <p class="so-card-role">01 · Présence continue &amp; community management</p>
+            <h3>Gestion des Réseaux Sociaux</h3>
+            <p>Prenez appui sur une équipe dédiée pour assurer la programmation, l'animation quotidienne, la modération bienveillante et la cohérence opérationnelle de vos comptes sur l'ensemble de vos plateformes.</p>
+            <ul class="so-card-list">
+              <li>Calendrier de publication, mise en ligne et suivi quotidien</li>
+              <li>Modération des commentaires, réponses messages et veille réputation</li>
+              <li>Reporting régulier d'activité et d'engagement</li>
+            </ul>
+          </div>
+          <a class="so-card-btn" href="gestion-des-reseaux-sociaux--276.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="so-card is-featured reveal">
+          <div>
+            <p class="so-card-role">02 · Stratégie éditoriale &amp; gouvernance sociale</p>
+            <h3>Social Media Management</h3>
+            <p>Structurez votre prise de parole sur les réseaux sociaux comme un véritable canal de croissance : positionnement par plateforme, concepts créatifs récurrents, articulation organique/payant et pilotage des KPIs.</p>
+            <ul class="so-card-list">
+              <li>Stratégie social media, charte éditoriale et choix des plateformes</li>
+              <li>Conception de formats signature (vidéo courte, carrousels, prises de parole)</li>
+              <li>Coordination avec vos campagnes Social Ads et lancements commerciaux</li>
+            </ul>
+          </div>
+          <a class="so-card-btn" href="social-media-management--274.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="so-card reveal">
+          <div>
+            <p class="so-card-role">03 · Partenariats créateurs &amp; rayonnement</p>
+            <h3>Stratégie d'Influence Digitale</h3>
+            <p>Concevez et déployez des campagnes d'influence authentiques, fondées sur une sélection exigeante des créateurs, des briefs créatifs respectueux de leur voix et un suivi clair des retombées.</p>
+            <ul class="so-card-list">
+              <li>Casting affinitaire (nano, micro, macro-influenceurs) et vérification d'audience</li>
+              <li>Cadrage contractuel, briefs créatifs et coordination des publications</li>
+              <li>Analyse de la portée, de l'engagement et des conversions générées</li>
+            </ul>
+          </div>
+          <a class="so-card-btn" href="strategie-dinfluence-digitale--275.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="so-card reveal">
+          <div>
+            <p class="so-card-role">04 · Écosystème relationnel propriétaire</p>
+            <h3>Création de Communauté Digitale</h3>
+            <p>Dépassez la simple logique d'abonnés pour bâtir un espace d'échange autonome qui cultive le sentiment d'appartenance, nourrit vos décisions produit et transforme vos clients en ambassadeurs.</p>
+            <ul class="so-card-list">
+              <li>Architecture communautaire, choix des espaces et charte d'échanges</li>
+              <li>Rituels d'animation, contenus exclusifs et programmes ambassadeurs</li>
+              <li>Mesure de la rétention et de l'activité organique des membres</li>
+            </ul>
+          </div>
+          <a class="so-card-btn" href="creation-de-communaute-digitale--277.html">Découvrir la prestation →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SELECTEUR INTERACTIF ── -->
+  <section class="so-selector" aria-labelledby="sel-title">
+    <div class="wrap">
+      <p class="so-kicker">Orientation par enjeu</p>
+      <h2 id="sel-title" class="so-h2">Quelle dynamique sociale souhaitez-vous enclencher ?</h2>
+      <p class="so-sub">Choisissez votre priorité pour identifier l'association de prestations la plus cohérente.</p>
+
+      <div class="so-tabs" role="tablist" aria-label="Priorités social media et influence">
+        <button class="so-tab" role="tab" aria-selected="true" data-prio="regulier" type="button">Professionnaliser nos comptes</button>
+        <button class="so-tab" role="tab" aria-selected="false" data-prio="notoriete" type="button">Accélérer notre notoriété</button>
+        <button class="so-tab" role="tab" aria-selected="false" data-prio="fidelite" type="button">Créer un noyau d'ambassadeurs</button>
+      </div>
+
+      <div class="so-panel" role="tabpanel">
+        <div>
+          <h3 id="so-title">Installer une présence régulière, cohérente et exigeante</h3>
+          <p id="so-desc">Lorsque vos comptes manquent de rythme ou d'identité claire, associer une direction Social Media à une gestion opérationnelle rigoureuse rétablit immédiatement la crédibilité de votre marque.</p>
+          <p class="so-panel-note" id="so-note"><strong>Synergie utile :</strong> Création de Contenu Digital et Publicité ADS Réseaux Sociaux.</p>
+        </div>
+        <div class="so-panel-links" id="so-links">
+          <a class="so-panel-link" href="social-media-management--274.html">
+            <div><small>Cap éditorial</small><strong>Social Media Management</strong></div>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="so-panel-link" href="gestion-des-reseaux-sociaux--276.html">
+            <div><small>Exécution &amp; animation</small><strong>Gestion des Réseaux Sociaux</strong></div>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAS CLIENTS & CTA ── -->
+  <section class="so-section">
+    <div class="wrap">
+      <div class="so-head reveal">
+        <p class="so-kicker">Campagnes &amp; réalisations</p>
+        <h2 class="so-h2">Des stratégies sociales adaptées à chaque secteur.</h2>
+      </div>
+
+      <div class="so-cases reveal">
+        <article class="so-case">
+          <div>
+            <p class="so-case-meta">Cosmétiques · Influence Digitale</p>
+            <h3>Campagne d'influence pour une marque de cosmétiques</h3>
+            <p>Sélection affinitaire de créatrices, narration authentique autour des routines produit et amplification sociale coordonnée.</p>
+          </div>
+          <a class="so-inline-link" href="campagne-dinfluence-pour-une-marque-de-cosmetiques--579.html">Découvrir l'étude de cas →</a>
+        </article>
+
+        <article class="so-case">
+          <div>
+            <p class="so-case-meta">Joaillerie · Lancement &amp; Rayonnement</p>
+            <h3>Lancement viral pour une marque de joaillerie</h3>
+            <p>Direction créative sociale et activation ciblée pour créer un moment de marque mémorable lors d'un lancement de collection.</p>
+          </div>
+          <a class="so-inline-link" href="lancement-viral-pour-une-marque-de-joaillerie--582.html">Découvrir l'étude de cas →</a>
+        </article>
+
+        <article class="so-case">
+          <div>
+            <p class="so-case-meta">Restauration · Stratégie TikTok</p>
+            <h3>Stratégie TikTok pour une chaîne de restaurants</h3>
+            <p>Conception de formats natifs rythmés et récurrents pensés pour stimuler l'engagement local et la fréquentation en point de vente.</p>
+          </div>
+          <a class="so-inline-link" href="strategie-tiktok-pour-une-chaine-de-restaurants--585.html">Découvrir l'étude de cas →</a>
+        </article>
+      </div>
+
+      <div class="so-bridge reveal">
+        <p><strong>Vous êtes créateur de contenu ou influenceur ?</strong> Découvrez notre accompagnement dédié à la structuration de carrière, au personal branding et aux partenariats marques.</p>
+        <a class="so-inline-link" href="services-influenceurs--988.html">Explorer Services influenceurs →</a>
+      </div>
+
+      <div class="so-cta reveal">
+        <div>
+          <h2>Faites de vos réseaux un véritable territoire de préférence.</h2>
+          <p>Gestion quotidienne, stratégie social media, influence ou création de communauté : construisons un dispositif fidèle à votre identité.</p>
+        </div>
+        <div class="so-actions">
+          <a class="btn-violet" href="devis-sur-mesure--48.html">Demander un devis</a>
+          <a class="btn-outline-light" href="contact--895.html">Contacter l'agence</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="so-footer">
+  <div class="wrap">
+    <div class="so-footer-top">
+      <h2>Explorer les 8 pôles d'expertise entreprises</h2>
+      <a class="so-inline-link" href="services-proposes-pour-les-entreprises--395.html">Vue globale Services entreprises →</a>
+    </div>
+    <nav class="so-cat-grid" aria-label="Catégories de services">
+      <a href="strategie-digitale-accompagnement--396.html">01. Stratégie Digitale &amp; Accompagnement</a>
+      <a href="creation-digitale-identite--397.html">02. Création Digitale &amp; Identité</a>
+      <a href="publicite-digitale--398.html">03. Publicité Digitale</a>
+      <a href="referencement-visibilite--399.html">04. Référencement &amp; Visibilité</a>
+      <a href="contenu-redaction--400.html">05. Contenu &amp; Rédaction</a>
+      <a href="automatisation-crm--401.html">06. Automatisation &amp; CRM</a>
+      <a href="analyse-performance--402.html">07. Analyse &amp; Performance</a>
+      <a href="influence-social-media-communaute--403.html" aria-current="page">08. Influence, Social Media &amp; Communauté</a>
+    </nav>
+    <div class="so-legal">
+      <span>© Maison John&amp;Co Marketing — Tous droits réservés</span>
+      <div class="so-legal-links">
+        <a href="offres-tarifs--45.html">Offres &amp; tarifs</a>
+        <a href="etudes-de-cas--49.html">Études de cas</a>
+        <a href="contact--895.html">Contact</a>
+        <a href="mentions-legales--1004.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    document.documentElement.classList.add('js-ready');
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach((el) => io.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    const prios = {
+      regulier: {
+        title: "Installer une présence régulière, cohérente et exigeante",
+        desc: "Lorsque vos comptes manquent de rythme ou d'identité claire, associer une direction Social Media à une gestion opérationnelle rigoureuse rétablit immédiatement la crédibilité de votre marque.",
+        note: "<strong>Synergie utile :</strong> Création de Contenu Digital et Publicité ADS Réseaux Sociaux.",
+        links: [
+          { sub: "Cap éditorial", name: "Social Media Management", href: "social-media-management--274.html" },
+          { sub: "Exécution & animation", name: "Gestion des Réseaux Sociaux", href: "gestion-des-reseaux-sociaux--276.html" }
+        ]
+      },
+      notoriete: {
+        title: "Élargir votre portée grâce à des créateurs crédibles",
+        desc: "Pour faire découvrir un lancement, conquérir une nouvelle cible ou renforcer la preuve sociale, des collaborations d'influence bien choisies prolongent et amplifient votre prise de parole officielle.",
+        note: "<strong>Synergie utile :</strong> Publicité Vidéo et Scripts Vidéo Publicitaires.",
+        links: [
+          { sub: "Collaborations créateurs", name: "Stratégie d'Influence Digitale", href: "strategie-dinfluence-digitale--275.html" },
+          { sub: "Relais sur vos comptes", name: "Social Media Management", href: "social-media-management--274.html" }
+        ]
+      },
+      fidelite: {
+        title: "Fédérer une communauté active autour de votre univers",
+        desc: "Transformer des acheteurs ponctuels en membres engagés crée un avantage durable moins sensible aux fluctuations algorithmiques des plateformes.",
+        note: "<strong>Synergie utile :</strong> Email Marketing et CRM & Gestion de la Relation Client.",
+        links: [
+          { sub: "Espace relationnel dédié", name: "Création de Communauté Digitale", href: "creation-de-communaute-digitale--277.html" },
+          { sub: "Animation continue", name: "Gestion des Réseaux Sociaux", href: "gestion-des-reseaux-sociaux--276.html" }
+        ]
+      }
+    };
+
+    const tabs = document.querySelectorAll('.so-tab');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const d = prios[tab.dataset.prio];
+        if (!d) return;
+        tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+        document.getElementById('so-title').textContent = d.title;
+        document.getElementById('so-desc').textContent = d.desc;
+        document.getElementById('so-note').innerHTML = d.note;
+        document.getElementById('so-links').innerHTML = d.links.map((l) => (
+          '<a class="so-panel-link" href="' + l.href + '">' +
+            '<div><small>' + l.sub + '</small><strong>' + l.name + '</strong></div>' +
+            '<span aria-hidden="true">→</span>' +
+          '</a>'
+        )).join('');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
-<p></p>

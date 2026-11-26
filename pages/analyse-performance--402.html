@@ -1,67 +1,781 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANALYSE & PERFORMANCE</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .service-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — ANALYSE &amp; PERFORMANCE">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/analyse-performance--402.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/analyse-performance--402.html">
-    <meta property="og:title" content="ANALYSE &amp; PERFORMANCE — Maison John&amp;Co Marketing">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse &amp; Performance — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="Webanalyse et suivi des conversions, A/B testing et optimisation de conversion (CRO), reporting stratégique et tableaux de bord : pilotez votre croissance par la donnée avec Maison John&amp;Co Marketing.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/analyse-performance--402.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/analyse-performance--402.html">
+  <meta property="og:title" content="Analyse &amp; Performance — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Fiabilisez vos données, expérimentez avec rigueur statistique et pilotez vos performances sur des tableaux de bord décisionnels.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/categories/analyse-performance.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A1628;
+      --carbon: #111C30;
+      --white: #FFFFFF;
+      --mist: #F1F5F9;
+      --ink: #0F172A;
+      --muted: #475569;
+      --subtle: #64748B;
+      --accent: #7C3AED;
+      --accent-hover: #6D28D9;
+      --accent-light: #C4B5FD;
+      --teal: #0D9488;
+      --border: #DCE3EC;
+      --border-dark: rgba(255, 255, 255, 0.13);
+      --display: 'Archivo', sans-serif;
+      --body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      font-variant-numeric: tabular-nums;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HERO PRECISION SUISSE ── */
+    .an-hero {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 52px 0 88px;
+    }
+    .an-crumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: #94A3B8;
+      margin-bottom: 40px;
+    }
+    .an-crumb a { text-decoration: none; }
+    .an-crumb a:hover { color: #FFFFFF; }
+    .an-crumb .current { color: #E2E8F0; font-weight: 500; }
+
+    .an-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 52px;
+      align-items: stretch;
+    }
+    .an-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .an-kicker {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: #5EEAD4;
+      margin: 0 0 16px;
+    }
+    .an-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.35rem, 4.1vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin: 0 0 22px;
+      text-wrap: balance;
+    }
+    .an-lead {
+      font-size: 16.5px;
+      color: #CBD5E1;
+      margin: 0 0 34px;
+      max-width: 55ch;
+    }
+    .an-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn-violet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, transform 0.16s ease;
+    }
+    .btn-violet:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-ghost-dark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-ghost-dark:hover { border-color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+
+    .an-hero-photo {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border-dark);
+      background: var(--carbon);
+      min-height: 360px;
+    }
+    .an-hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── LA BOUCLE D'AMELIORATION CONTINUE ── */
+    .an-section { padding: 92px 0; }
+    .an-section-mist {
+      background: var(--mist);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .an-head { max-width: 72ch; margin-bottom: 48px; }
+    .an-eyebrow {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--teal);
+      margin: 0 0 10px;
+    }
+    .an-h2 {
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 3.1vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin: 0 0 14px;
+      text-wrap: balance;
+    }
+    .an-sub { margin: 0; font-size: 16px; color: var(--muted); }
+
+    .an-loop {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .an-loop-step {
+      padding: 36px 32px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .an-loop-step:last-child { border-right: none; }
+    .an-loop-code {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      margin: 0 0 10px;
+    }
+    .an-loop-step h3 {
+      font-family: var(--display);
+      font-size: 23px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+    .an-loop-step p { margin: 0; font-size: 15px; color: var(--muted); }
+    .an-loop-ref {
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .an-loop-ref:hover { color: var(--accent); }
+
+    /* ── DOSSIERS ANALYTIQUES DES 3 PRESTATIONS ── */
+    .an-dossiers {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .an-dossier {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 40px;
+      padding: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      align-items: start;
+    }
+    .an-dossier-num {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--teal);
+      margin: 0 0 10px;
+    }
+    .an-dossier h3 {
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 14px;
+      line-height: 1.18;
+    }
+    .an-dossier p { margin: 0 0 24px; font-size: 15.5px; color: var(--muted); }
+    .an-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      min-height: 44px;
+      border-radius: 6px;
+      background: var(--navy);
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .an-btn:hover { background: var(--accent); }
+
+    .an-spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .an-spec-table tr { border-bottom: 1px solid var(--border); }
+    .an-spec-table tr:last-child { border-bottom: none; }
+    .an-spec-table th {
+      text-align: left;
+      vertical-align: top;
+      padding: 12px 16px 12px 0;
+      width: 34%;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--subtle);
+    }
+    .an-spec-table td {
+      padding: 12px 0;
+      color: var(--ink);
+    }
+
+    /* ── GUIDE INTERACTIF DES DECISIONS DATA ── */
+    .an-console {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 88px 0;
+    }
+    .an-console .an-eyebrow { color: #5EEAD4; }
+    .an-console .an-h2 { color: #FFFFFF; }
+    .an-console .an-sub { color: #CBD5E1; }
+
+    .an-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 32px 0 24px;
+    }
+    .an-tab {
+      appearance: none;
+      padding: 12px 18px;
+      min-height: 44px;
+      border-radius: 6px;
+      border: 1px solid var(--border-dark);
+      background: rgba(255, 255, 255, 0.04);
+      color: #E2E8F0;
+      font-family: var(--body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease;
+    }
+    .an-tab:hover { border-color: #5EEAD4; }
+    .an-tab[aria-selected="true"] {
+      background: #FFFFFF;
+      color: var(--navy);
+      border-color: #FFFFFF;
+    }
+
+    .an-board {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 36px;
+      padding: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--border-dark);
+      background: var(--carbon);
+    }
+    .an-board h3 {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: #FFFFFF;
+    }
+    .an-board p { margin: 0 0 20px; color: #CBD5E1; font-size: 15.5px; }
+    .an-kpis {
+      margin: 0;
+      padding: 18px 0 0;
+      border-top: 1px solid var(--border-dark);
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 20px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: #E2E8F0;
+    }
+    .an-kpis li::before { content: '— '; color: #5EEAD4; }
+    .an-board-cta {
+      padding: 28px;
+      border-radius: 8px;
+      border: 1px solid var(--border-dark);
+      background: rgba(10, 22, 40, 0.65);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .an-board-cta small { font-family: var(--mono); font-size: 12px; color: #5EEAD4; margin-bottom: 8px; }
+    .an-board-cta strong { font-family: var(--display); font-size: 22px; color: #FFFFFF; margin-bottom: 12px; line-height: 1.25; }
+    .an-board-cta p { font-size: 14px; color: #CBD5E1; margin-bottom: 22px; }
+
+    /* ── CAS CLIENTS & CTA ── */
+    .an-cases {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+    .an-case {
+      padding: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--mist);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .an-case-meta { font-family: var(--mono); font-size: 12px; color: var(--subtle); margin: 0 0 10px; }
+    .an-case h3 { font-family: var(--display); font-size: 22px; font-weight: 700; margin: 0 0 10px; color: var(--navy); }
+    .an-case p { margin: 0; font-size: 15px; color: var(--muted); }
+    .an-inline-link { font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; }
+    .an-inline-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .an-cta {
+      margin-top: 64px;
+      padding: 48px 52px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .an-cta h2 { font-family: var(--display); font-size: clamp(1.75rem, 2.8vw, 2.4rem); font-weight: 700; margin: 0 0 10px; line-height: 1.18; text-wrap: balance; }
+    .an-cta p { margin: 0; color: #CBD5E1; max-width: 56ch; font-size: 15.5px; }
+
+    /* ── FOOTER ── */
+    .an-footer {
+      border-top: 1px solid var(--border);
+      background: var(--mist);
+      padding: 56px 0 44px;
+    }
+    .an-footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .an-footer-top h2 { font-family: var(--display); font-size: 21px; font-weight: 700; margin: 0; color: var(--navy); }
+    .an-cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px 24px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .an-cat-grid a { font-size: 14px; color: var(--muted); text-decoration: none; padding: 6px 0; }
+    .an-cat-grid a:hover { color: var(--accent); }
+    .an-cat-grid a[aria-current="page"] { color: var(--navy); font-weight: 700; }
+    .an-legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--subtle);
+    }
+    .an-legal-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .an-legal-links a { text-decoration: none; }
+    .an-legal-links a:hover { color: var(--navy); }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .js-ready .reveal:not(.is-visible) { opacity: 0; transform: translateY(14px); }
+
+    @media (max-width: 1024px) {
+      .an-hero-grid, .an-dossier, .an-board, .an-cta { grid-template-columns: 1fr; }
+      .an-loop { grid-template-columns: 1fr; }
+      .an-loop-step { border-right: none; border-bottom: 1px solid var(--border); }
+      .an-loop-step:last-child { border-bottom: none; }
+      .an-cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .wrap { padding: 0 20px; }
+      .an-hero { padding: 36px 0 56px; }
+      .an-section, .an-console { padding: 60px 0; }
+      .an-dossier, .an-board, .an-cta, .an-case { padding: 26px 22px; }
+      .an-cases, .an-kpis, .an-cat-grid { grid-template-columns: 1fr; }
+      .an-spec-table th, .an-spec-table td { display: block; width: 100%; padding: 6px 0; }
+      .an-spec-table tr { display: block; padding: 10px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+      .js-ready .reveal:not(.is-visible) { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body>
 <mjc-site-header></mjc-site-header>
 <script src="../assets/js/site-header.js"></script>
-    <div class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-16">ANALYSE & PERFORMANCE</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Webanalyse & Suivi des Conversions -->
-            <a href="webanalyse-suivi-des-conversions--271.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-blue-100 p-4 rounded-full mb-4">
-                    <i data-feather="trending-up" class="text-blue-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Webanalyse & Suivi des Conversions</h3>
-                <p class="text-blue-600 font-medium">En savoir plus →</p>
-            </a>
 
-            <!-- A/B Testing & Optimisation de Conversion -->
-            <a href="a-b-testing-optimisation-de-conversion--273.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-purple-100 p-4 rounded-full mb-4">
-                    <i data-feather="pen-tool" class="text-purple-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">A/B Testing & Optimisation de Conversion</h3>
-                <p class="text-purple-600 font-medium">En savoir plus →</p>
-            </a>
+<main>
+  <!-- ── HERO ── -->
+  <section class="an-hero">
+    <div class="wrap">
+      <nav class="an-crumb" aria-label="Fil d'Ariane">
+        <a href="../">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <a href="services-proposes-pour-les-entreprises--395.html">Services entreprises</a>
+        <span aria-hidden="true">/</span>
+        <span class="current">Analyse &amp; Performance</span>
+      </nav>
 
-            <!-- Reporting Stratégique & Tableaux de Bord -->
-            <a href="retargeting-remarketing--151.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-red-100 p-4 rounded-full mb-4">
-                    <i data-feather="dollar-sign" class="text-red-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Reporting Stratégique & Tableaux de Bord</h3>
-                <p class="text-red-600 font-medium">En savoir plus →</p>
-            </a>
+      <div class="an-hero-grid">
+        <div class="an-hero-copy">
+          <p class="an-kicker">Pôle 07 · Mesure fiable, expérimentation &amp; pilotage</p>
+          <h1>Remplacer les suppositions par des décisions fondées sur des données fiables.</h1>
+          <p class="an-lead">
+            Sans plan de mesure propre, il est impossible de savoir quels canaux génèrent réellement vos clients et où vos parcours décrochent. Nous installons une chaîne analytique rigoureuse — de la collecte conforme au RGPD jusqu'à l'optimisation continue de vos conversions.
+          </p>
+          <div class="an-actions">
+            <a class="btn-violet" href="devis-sur-mesure--48.html">Auditer votre dispositif data</a>
+            <a class="btn-ghost-dark" href="#expertises">Voir les 3 expertises</a>
+          </div>
         </div>
-    </div>
 
-    <script>
-        feather.replace();
-    </script>
+        <figure class="an-hero-photo">
+          <img
+            src="../assets/images/categories/analyse-performance.jpg"
+            alt="Directrice analytics étudiant des courbes de conversion et tableaux de bord dans le studio Maison John&Co Marketing"
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+          >
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOUCLE D'AMELIORATION CONTINUE ── -->
+  <section class="an-section">
+    <div class="wrap">
+      <div class="an-head reveal">
+        <p class="an-eyebrow">Système d'amélioration continue</p>
+        <h2 class="an-h2">Trois étapes indissociables : mesurer, comprendre, optimiser.</h2>
+        <p class="an-sub">La donnée n'a de valeur que lorsqu'elle déclenche une amélioration mesurable. Nos trois prestations forment une boucle complète qui sécurise chacun de vos arbitrages marketing.</p>
+      </div>
+
+      <div class="an-loop reveal">
+        <article class="an-loop-step">
+          <div>
+            <p class="an-loop-code">Étape 01 · Collecter</p>
+            <h3>Mesurer sans biais</h3>
+            <p>Déployer un plan de marquage fiable et conforme pour suivre chaque micro- et macro-conversion, quel que soit le canal d'entrée.</p>
+          </div>
+          <a class="an-loop-ref" href="webanalyse-suivi-des-conversions--271.html">Webanalyse &amp; Suivi des Conversions →</a>
+        </article>
+
+        <article class="an-loop-step">
+          <div>
+            <p class="an-loop-code">Étape 02 · Interpréter</p>
+            <h3>Piloter avec clarté</h3>
+            <p>Consolider vos sources dans des tableaux de bord lisibles par la direction comme par les équipes opérationnelles, reliés à vos objectifs business.</p>
+          </div>
+          <a class="an-loop-ref" href="reporting-strategique-tableaux-de-bord--272.html">Reporting Stratégique &amp; Tableaux de Bord →</a>
+        </article>
+
+        <article class="an-loop-step">
+          <div>
+            <p class="an-loop-code">Étape 03 · Améliorer</p>
+            <h3>Expérimenter et convertir</h3>
+            <p>Valider chaque évolution d'interface, d'offre ou de tunnel par des tests A/B statistiquement rigoureux afin d'augmenter le rendement de votre trafic.</p>
+          </div>
+          <a class="an-loop-ref" href="a-b-testing-optimisation-de-conversion--273.html">A/B Testing &amp; Optimisation de Conversion →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LES 3 DOSSIERS PRESTATIONS ── -->
+  <section id="expertises" class="an-section an-section-mist">
+    <div class="wrap">
+      <div class="an-head reveal">
+        <p class="an-eyebrow">Les 3 prestations du pôle</p>
+        <h2 class="an-h2">Trois expertises conçues pour transformer vos chiffres en résultats.</h2>
+      </div>
+
+      <div class="an-dossiers">
+        <article class="an-dossier reveal">
+          <div>
+            <p class="an-dossier-num">01 · Fiabilité de la mesure</p>
+            <h3>Webanalyse &amp; Suivi des Conversions</h3>
+            <p>Nous concevons, auditons et déployons votre architecture de tracking afin que chaque formulaire, appel, ajout au panier ou vente soit attribué avec précision et dans le respect du consentement utilisateur.</p>
+            <a class="an-btn" href="webanalyse-suivi-des-conversions--271.html">Découvrir la prestation →</a>
+          </div>
+          <table class="an-spec-table" aria-label="Détails Webanalyse">
+            <tbody>
+              <tr><th>Problématique</th><td>Données incomplètes, doublons de conversions ou perte de visibilité sur l'origine des leads.</td></tr>
+              <tr><th>Périmètre</th><td>Plan de marquage, gestionnaire de balises, suivi e-commerce &amp; leads, conformité consentement.</td></tr>
+              <tr><th>Bénéfice clé</th><td>Une base de vérité fiable pour arbitrer vos budgets SEO, publicitaires et créatifs.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="an-dossier reveal">
+          <div>
+            <p class="an-dossier-num">02 · Expérimentation &amp; CRO</p>
+            <h3>A/B Testing &amp; Optimisation de Conversion</h3>
+            <p>Augmentez le volume de clients à trafic constant en identifiant les freins comportementaux de vos pages clés et en testant scientifiquement de meilleures variantes d'ergonomie, de message ou d'offre.</p>
+            <a class="an-btn" href="a-b-testing-optimisation-de-conversion--273.html">Découvrir la prestation →</a>
+          </div>
+          <table class="an-spec-table" aria-label="Détails A/B Testing">
+            <tbody>
+              <tr><th>Problématique</th><td>Trafic en hausse mais taux de transformation stagnant sur les pages clés ou le panier.</td></tr>
+              <tr><th>Périmètre</th><td>Analyse des parcours et abandons, priorisation d'hypothèses, protocoles de tests A/B et déploiement gagnant.</td></tr>
+              <tr><th>Bénéfice clé</th><td>Des gains durables prouvés statistiquement plutôt que des refontes basées sur des opinions.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="an-dossier reveal">
+          <div>
+            <p class="an-dossier-num">03 · Gouvernance &amp; lisibilité</p>
+            <h3>Reporting Stratégique &amp; Tableaux de Bord</h3>
+            <p>Sortez des exports manuels chronophages : nous construisons des tableaux de bord automatisés, sur mesure et hiérarchisés pour donner à chaque décideur les indicateurs utiles à son niveau d'action.</p>
+            <a class="an-btn" href="reporting-strategique-tableaux-de-bord--272.html">Découvrir la prestation →</a>
+          </div>
+          <table class="an-spec-table" aria-label="Détails Reporting Stratégique">
+            <tbody>
+              <tr><th>Problématique</th><td>Données éclatées entre régies publicitaires, analytics et CRM sans lecture consolidée.</td></tr>
+              <tr><th>Périmètre</th><td>Définition des KPIs métiers, connexion multi-sources, dashboards exécutifs et comités de lecture.</td></tr>
+              <tr><th>Bénéfice clé</th><td>Un pilotage rapide et partagé pour réallouer vos efforts vers ce qui crée de la valeur.</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GUIDE INTERACTIF DES DECISIONS ── -->
+  <section class="an-console" aria-labelledby="console-title">
+    <div class="wrap">
+      <p class="an-eyebrow">Pilotage par la donnée</p>
+      <h2 id="console-title" class="an-h2">À quelle question décisionnelle souhaitez-vous répondre ?</h2>
+      <p class="an-sub">Sélectionnez votre besoin prioritaire pour visualiser les indicateurs pertinents et le levier à activer en premier.</p>
+
+      <div class="an-tabs" role="tablist" aria-label="Questions analytiques">
+        <button class="an-tab" role="tab" aria-selected="true" data-mode="tracking" type="button">Quels canaux apportent vraiment mes clients ?</button>
+        <button class="an-tab" role="tab" aria-selected="false" data-mode="cro" type="button">Pourquoi mes visiteurs quittent-ils avant de convertir ?</button>
+        <button class="an-tab" role="tab" aria-selected="false" data-mode="direction" type="button">Comment suivre la rentabilité en un coup d'œil ?</button>
+      </div>
+
+      <div class="an-board" role="tabpanel">
+        <div>
+          <h3 id="an-title">Fiabiliser l'attribution et chaque événement de conversion</h3>
+          <p id="an-desc">Avant d'optimiser vos campagnes ou vos pages, nous vérifions que chaque point de contact — soumission de formulaire, clic téléphone, prise de rendez-vous ou transaction — est mesuré proprement et rattaché à sa source réelle.</p>
+          <ul class="an-kpis" id="an-kpis">
+            <li>Sources &amp; campagnes d'acquisition</li>
+            <li>Conversions qualifiées par canal</li>
+            <li>Parcours multi-visites</li>
+            <li>Qualité du consentement RGPD</li>
+          </ul>
+        </div>
+        <div class="an-board-cta">
+          <small>Expertise prioritaire</small>
+          <strong id="an-service">Webanalyse &amp; Suivi des Conversions</strong>
+          <p id="an-note">Le prérequis indispensable à toute décision budgétaire fiable.</p>
+          <a id="an-link" class="btn-violet" href="webanalyse-suivi-des-conversions--271.html">Découvrir la prestation →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAS CLIENTS & CTA ── -->
+  <section class="an-section">
+    <div class="wrap">
+      <div class="an-head reveal">
+        <p class="an-eyebrow">Mise en pratique</p>
+        <h2 class="an-h2">L'analyse appliquée à l'optimisation de la conversion.</h2>
+      </div>
+
+      <div class="an-cases reveal">
+        <article class="an-case">
+          <div>
+            <p class="an-case-meta">Santé · CRO &amp; Parcours de prise de rendez-vous</p>
+            <h3>Optimisation des conversions pour une clinique</h3>
+            <p>Analyse fine des points d'abandon dans le parcours patient et améliorations ciblées pour fluidifier la prise de rendez-vous en ligne.</p>
+          </div>
+          <a class="an-inline-link" href="optimisation-des-conversions-pour-une-clinique--583.html">Consulter l'étude de cas →</a>
+        </article>
+
+        <article class="an-case">
+          <div>
+            <p class="an-case-meta">E-commerce Mode · Mesure &amp; Tunnel d'achat</p>
+            <h3>Optimisation e-commerce pour une DNVB mode</h3>
+            <p>Exploitation des données comportementales pour hiérarchiser les optimisations de fiches produits et réduire les frictions au paiement.</p>
+          </div>
+          <a class="an-inline-link" href="optimisation-e-commerce-pour-une-dnvb-mode--611.html">Consulter l'étude de cas →</a>
+        </article>
+      </div>
+
+      <div class="an-cta reveal">
+        <div>
+          <h2>Reprenez le contrôle total sur la lecture de vos performances.</h2>
+          <p>Parlons de vos outils actuels, de vos indicateurs clés et des leviers d'optimisation à débloquer sur votre site.</p>
+        </div>
+        <div class="an-actions">
+          <a class="btn-violet" href="devis-sur-mesure--48.html">Demander un devis</a>
+          <a class="btn-ghost-dark" href="contact--895.html">Contacter l'agence</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="an-footer">
+  <div class="wrap">
+    <div class="an-footer-top">
+      <h2>Explorer les 8 pôles d'expertise entreprises</h2>
+      <a class="an-inline-link" href="services-proposes-pour-les-entreprises--395.html">Vue globale Services entreprises →</a>
+    </div>
+    <nav class="an-cat-grid" aria-label="Catégories de services">
+      <a href="strategie-digitale-accompagnement--396.html">01. Stratégie Digitale &amp; Accompagnement</a>
+      <a href="creation-digitale-identite--397.html">02. Création Digitale &amp; Identité</a>
+      <a href="publicite-digitale--398.html">03. Publicité Digitale</a>
+      <a href="referencement-visibilite--399.html">04. Référencement &amp; Visibilité</a>
+      <a href="contenu-redaction--400.html">05. Contenu &amp; Rédaction</a>
+      <a href="automatisation-crm--401.html">06. Automatisation &amp; CRM</a>
+      <a href="analyse-performance--402.html" aria-current="page">07. Analyse &amp; Performance</a>
+      <a href="influence-social-media-communaute--403.html">08. Influence, Social Media &amp; Communauté</a>
+    </nav>
+    <div class="an-legal">
+      <span>© Maison John&amp;Co Marketing — Tous droits réservés</span>
+      <div class="an-legal-links">
+        <a href="offres-tarifs--45.html">Offres &amp; tarifs</a>
+        <a href="etudes-de-cas--49.html">Études de cas</a>
+        <a href="contact--895.html">Contact</a>
+        <a href="mentions-legales--1004.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    document.documentElement.classList.add('js-ready');
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach((el) => io.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    const modes = {
+      tracking: {
+        title: "Fiabiliser l'attribution et chaque événement de conversion",
+        desc: "Avant d'optimiser vos campagnes ou vos pages, nous vérifions que chaque point de contact — soumission de formulaire, clic téléphone, prise de rendez-vous ou transaction — est mesuré proprement et rattaché à sa source réelle.",
+        kpis: ["Sources & campagnes d'acquisition", "Conversions qualifiées par canal", "Parcours multi-visites", "Qualité du consentement RGPD"],
+        service: "Webanalyse & Suivi des Conversions",
+        note: "Le prérequis indispensable à toute décision budgétaire fiable.",
+        href: "webanalyse-suivi-des-conversions--271.html"
+      },
+      cro: {
+        title: "Identifier les frictions et tester des améliorations mesurables",
+        desc: "Nous analysons les étapes où les utilisateurs hésitent ou abandonnent (formulaires, fiches offres, tunnels mobiles), formulons des hypothèses priorisées et validons les gains par des tests A/B encadrés.",
+        kpis: ["Taux de conversion par étape", "Abandons formulaire & panier", "Engagement sur pages clés", "Significativité statistique"],
+        service: "A/B Testing & Optimisation de Conversion",
+        note: "Pour générer davantage de résultats avec le trafic dont vous disposez déjà.",
+        href: "a-b-testing-optimisation-de-conversion--273.html"
+      },
+      direction: {
+        title: "Consolider tous vos leviers dans une lecture exécutive",
+        desc: "Nous relions vos données web, publicitaires et commerciales dans des tableaux de bord clairs, mis à jour automatiquement, permettant à la direction de suivre l'essentiel sans se noyer dans les chiffres bruts.",
+        kpis: ["Coût d'acquisition par levier", "Volume & valeur des opportunités", "Évolution mensuelle & objectifs", "Vue consolidée multi-canaux"],
+        service: "Reporting Stratégique & Tableaux de Bord",
+        note: "Pour piloter vos arbitrages marketing avec transparence et réactivité.",
+        href: "reporting-strategique-tableaux-de-bord--272.html"
+      }
+    };
+
+    const tabs = document.querySelectorAll('.an-tab');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const d = modes[tab.dataset.mode];
+        if (!d) return;
+        tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+        document.getElementById('an-title').textContent = d.title;
+        document.getElementById('an-desc').textContent = d.desc;
+        document.getElementById('an-kpis').innerHTML = d.kpis.map((k) => '<li>' + k + '</li>').join('');
+        document.getElementById('an-service').textContent = d.service;
+        document.getElementById('an-note').textContent = d.note;
+        document.getElementById('an-link').href = d.href;
+      });
+    });
+  })();
+</script>
 </body>
 </html>
-<p></p>

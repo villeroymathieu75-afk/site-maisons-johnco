@@ -1,94 +1,965 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUBLICITÉ DIGITALE</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .service-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — PUBLICITÉ DIGITALE">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/publicite-digitale--398.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/publicite-digitale--398.html">
-    <meta property="og:title" content="PUBLICITÉ DIGITALE — Maison John&amp;Co Marketing">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicité Digitale — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="Campagnes PPC, Social Ads, Display Programmatique, Retargeting, Publicité Native et Publicité Vidéo : orchestrez une acquisition payante rentable avec Maison John&amp;Co Marketing.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/publicite-digitale--398.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/publicite-digitale--398.html">
+  <meta property="og:title" content="Publicité Digitale — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Ciblage précis, messages créatifs et pilotage continu sur l'ensemble des régies publicitaires digitales.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/categories/publicite-digitale.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --obsidian: #0B1120;
+      --slate-900: #111A2E;
+      --slate-800: #1E293B;
+      --ice: #F8FAFC;
+      --white: #FFFFFF;
+      --ink: #0F172A;
+      --muted: #475569;
+      --subtle: #64748B;
+      --accent: #7C3AED;
+      --accent-hover: #6D28D9;
+      --accent-light: #C4B5FD;
+      --amber: #D97706;
+      --border: #E2E8F0;
+      --border-dark: rgba(255, 255, 255, 0.12);
+      --display: 'Bricolage Grotesque', sans-serif;
+      --body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ice);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HERO MEDIA STUDIO ── */
+    .ad-hero {
+      background: var(--obsidian);
+      color: #FFFFFF;
+      padding: 56px 0 88px;
+    }
+    .ad-crumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: #94A3B8;
+      margin-bottom: 40px;
+    }
+    .ad-crumb a { text-decoration: none; }
+    .ad-crumb a:hover { color: #FFFFFF; }
+    .ad-crumb .current { color: #E2E8F0; font-weight: 500; }
+
+    .ad-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 52px;
+      align-items: stretch;
+    }
+    .ad-hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .ad-kicker {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--accent-light);
+      margin: 0 0 18px;
+    }
+    .ad-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 4.3vw, 3.75rem);
+      font-weight: 600;
+      line-height: 1.07;
+      letter-spacing: -0.025em;
+      margin: 0 0 22px;
+      text-wrap: balance;
+    }
+    .ad-hero-lead {
+      font-size: 17px;
+      color: #CBD5E1;
+      margin: 0 0 34px;
+      max-width: 54ch;
+    }
+    .ad-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn-violet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, transform 0.16s ease;
+    }
+    .btn-violet:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-ghost-dark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #F8FAFC;
+      font-size: 14.5px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color 0.16s ease, background-color 0.16s ease;
+    }
+    .btn-ghost-dark:hover { border-color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+
+    .ad-hero-visual {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-dark);
+      background: var(--slate-900);
+      min-height: 350px;
+    }
+    .ad-hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ad-hero-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-dark);
+    }
+    .ad-strip-item h2 {
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin: 0 0 6px;
+    }
+    .ad-strip-item p {
+      margin: 0;
+      font-size: 14px;
+      color: #94A3B8;
+    }
+
+    /* ── ORCHESTRATION FULL-FUNNEL INTERACTIVE ── */
+    .ad-section {
+      padding: 92px 0;
+    }
+    .ad-section-white {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .ad-head {
+      max-width: 72ch;
+      margin-bottom: 44px;
+    }
+    .ad-eyebrow {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--accent);
+      margin: 0 0 12px;
+    }
+    .ad-h2 {
+      font-family: var(--display);
+      font-size: clamp(1.95rem, 3.2vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      margin: 0 0 14px;
+      color: var(--ink);
+      text-wrap: balance;
+    }
+    .ad-sub {
+      margin: 0;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .ad-funnel-bar {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .ad-funnel-tab {
+      appearance: none;
+      text-align: left;
+      padding: 20px 22px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--body);
+      cursor: pointer;
+      transition: border-color 0.16s ease, background-color 0.16s ease;
+    }
+    .ad-funnel-tab:hover { border-color: #A78BFA; }
+    .ad-funnel-tab[aria-selected="true"] {
+      background: var(--obsidian);
+      border-color: var(--obsidian);
+      color: #FFFFFF;
+    }
+    .ad-funnel-tab span {
+      display: block;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .ad-funnel-tab[aria-selected="true"] span { color: var(--accent-light); }
+    .ad-funnel-tab strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .ad-funnel-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: 36px;
+      padding: 36px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .ad-funnel-stage h3 {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .ad-funnel-stage p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+    .ad-funnel-note {
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--ink);
+      margin: 0;
+    }
+    .ad-funnel-levers {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ad-lever-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--ice);
+      text-decoration: none;
+      transition: border-color 0.16s ease, transform 0.16s ease;
+    }
+    .ad-lever-link:hover {
+      border-color: var(--accent);
+      transform: translateX(3px);
+    }
+    .ad-lever-link small {
+      display: block;
+      font-size: 12.5px;
+      color: var(--subtle);
+      margin-bottom: 3px;
+    }
+    .ad-lever-link strong {
+      font-size: 15.5px;
+      color: var(--ink);
+    }
+
+    /* ── MATRICE DES 6 PRESTATIONS ── */
+    .ad-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .ad-card {
+      padding: 36px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--ice);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      transition: border-color 0.16s ease, background-color 0.16s ease;
+    }
+    .ad-card:hover {
+      border-color: #A78BFA;
+      background: var(--white);
+    }
+    .ad-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--subtle);
+    }
+    .ad-card-stage { color: var(--accent); font-weight: 500; }
+    .ad-card h3 {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 12px;
+      line-height: 1.22;
+    }
+    .ad-card p {
+      margin: 0 0 18px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .ad-card-specs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13.5px;
+    }
+    .ad-card-specs dt {
+      font-size: 12px;
+      color: var(--subtle);
+      margin-bottom: 2px;
+    }
+    .ad-card-specs dd {
+      margin: 0;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .ad-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      min-height: 44px;
+      border-radius: 7px;
+      background: var(--obsidian);
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .ad-card-btn:hover { background: var(--accent); }
+
+    /* ── METHODE MEDIA 4 ETAPES ── */
+    .ad-method {
+      background: var(--obsidian);
+      color: #FFFFFF;
+      padding: 88px 0;
+    }
+    .ad-method .ad-eyebrow { color: var(--accent-light); }
+    .ad-method .ad-h2 { color: #FFFFFF; }
+    .ad-method .ad-sub { color: #CBD5E1; }
+    .ad-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 44px;
+    }
+    .ad-step {
+      padding: 28px 24px;
+      border-radius: 10px;
+      border: 1px solid var(--border-dark);
+      background: var(--slate-900);
+    }
+    .ad-step-num {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent-light);
+      margin: 0 0 12px;
+    }
+    .ad-step h3 {
+      font-family: var(--display);
+      font-size: 19px;
+      font-weight: 600;
+      margin: 0 0 10px;
+      color: #FFFFFF;
+    }
+    .ad-step p { margin: 0; font-size: 14.5px; color: #94A3B8; }
+
+    /* ── ETUDES DE CAS & CTA ── */
+    .ad-cases {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .ad-case {
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .ad-case-kicker {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--subtle);
+      margin: 0 0 10px;
+    }
+    .ad-case h3 {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 10px;
+      line-height: 1.28;
+    }
+    .ad-case p { margin: 0; font-size: 14.5px; color: var(--muted); }
+    .ad-inline-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .ad-inline-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .ad-cta {
+      margin-top: 64px;
+      padding: 48px 52px;
+      border-radius: 14px;
+      background: var(--obsidian);
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .ad-cta h2 {
+      font-family: var(--display);
+      font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      margin: 0 0 10px;
+      line-height: 1.18;
+      text-wrap: balance;
+    }
+    .ad-cta p { margin: 0; color: #CBD5E1; max-width: 56ch; font-size: 15.5px; }
+
+    /* ── FOOTER ── */
+    .ad-footer {
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      padding: 56px 0 44px;
+    }
+    .ad-footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .ad-footer-top h2 { font-family: var(--display); font-size: 21px; margin: 0; color: var(--ink); }
+    .ad-cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px 24px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ad-cat-grid a { font-size: 14px; color: var(--muted); text-decoration: none; padding: 6px 0; }
+    .ad-cat-grid a:hover { color: var(--accent); }
+    .ad-cat-grid a[aria-current="page"] { color: var(--ink); font-weight: 700; }
+    .ad-legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--subtle);
+    }
+    .ad-legal-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .ad-legal-links a { text-decoration: none; }
+    .ad-legal-links a:hover { color: var(--ink); }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .js-ready .reveal:not(.is-visible) { opacity: 0; transform: translateY(14px); }
+
+    @media (max-width: 1024px) {
+      .ad-hero-grid, .ad-funnel-stage, .ad-cta { grid-template-columns: 1fr; }
+      .ad-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .ad-cases { grid-template-columns: 1fr; }
+      .ad-cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .wrap { padding: 0 20px; }
+      .ad-hero { padding: 36px 0 56px; }
+      .ad-section, .ad-method { padding: 60px 0; }
+      .ad-hero-strip, .ad-funnel-bar, .ad-matrix, .ad-steps, .ad-card-specs, .ad-cat-grid {
+        grid-template-columns: 1fr;
+      }
+      .ad-card, .ad-funnel-stage, .ad-cta { padding: 26px 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+      .js-ready .reveal:not(.is-visible) { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body>
 <mjc-site-header></mjc-site-header>
 <script src="../assets/js/site-header.js"></script>
-    <div class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-16">PUBLICITÉ DIGITALE</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Publicité en Ligne (PPC) -->
-            <a href="publicite-en-ligne-ppc--146.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-blue-100 p-4 rounded-full mb-4">
-                    <i data-feather="trending-up" class="text-blue-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Publicité en Ligne (PPC)</h3>
-                <p class="text-blue-600 font-medium">En savoir plus →</p>
-            </a>
 
-            <!-- Publicité ADS Réseaux Sociaux -->
-            <a href="publicite-ads-reseaux-sociaux--147.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-purple-100 p-4 rounded-full mb-4">
-                    <i data-feather="pen-tool" class="text-purple-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Publicité ADS Réseaux Sociaux</h3>
-                <p class="text-purple-600 font-medium">En savoir plus →</p>
-            </a>
+<main>
+  <!-- ── HERO ── -->
+  <section class="ad-hero">
+    <div class="wrap">
+      <nav class="ad-crumb" aria-label="Fil d'Ariane">
+        <a href="../">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <a href="services-proposes-pour-les-entreprises--395.html">Services entreprises</a>
+        <span aria-hidden="true">/</span>
+        <span class="current">Publicité Digitale</span>
+      </nav>
 
-            <!-- Display Programmatique -->
-            <a href="display-programmatique--149.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-red-100 p-4 rounded-full mb-4">
-                    <i data-feather="dollar-sign" class="text-red-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Display Programmatique</h3>
-                <p class="text-red-600 font-medium">En savoir plus →</p>
-            </a>
-
-            <!-- Retargeting & Remarketing -->
-            <a href="retargeting-remarketing--151.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-green-100 p-4 rounded-full mb-4">
-                    <i data-feather="search" class="text-green-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Retargeting & Remarketing</h3>
-                <p class="text-green-600 font-medium">En savoir plus →</p>
-            </a>
-
-            <!-- Publicité Native -->
-            <a href="publicite-native--259.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-yellow-100 p-4 rounded-full mb-4">
-                    <i data-feather="edit" class="text-yellow-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Publicité Native</h3>
-                <p class="text-yellow-600 font-medium">En savoir plus →</p>
-            </a>
-
-            <!-- Publicité Vidéo -->
-            <a href="publicite-video--253.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-indigo-100 p-4 rounded-full mb-4">
-                    <i data-feather="refresh-cw" class="text-indigo-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Publicité Vidéo</h3>
-                <p class="text-indigo-600 font-medium">En savoir plus →</p>
-            </a>
+      <div class="ad-hero-grid">
+        <div class="ad-hero-text">
+          <p class="ad-kicker">Pôle 03 · Acquisition média &amp; campagnes payantes</p>
+          <h1>Transformer votre budget média en pipeline commercial mesurable.</h1>
+          <p class="ad-hero-lead">
+            Acheter des impressions ne suffit plus. Nous concevons, diffusons et arbitrons des campagnes publicitaires multi-leviers capables de capter l'intention immédiate, de développer votre notoriété et de réengager vos prospects au moment décisif.
+          </p>
+          <div class="ad-actions">
+            <a class="btn-violet" href="devis-sur-mesure--48.html">Structurer votre plan média</a>
+            <a class="btn-ghost-dark" href="#leviers">Découvrir les 6 leviers</a>
+          </div>
         </div>
-    </div>
 
-    <script>
-        feather.replace();
-    </script>
+        <figure class="ad-hero-visual">
+          <img
+            src="../assets/images/categories/publicite-digitale.jpg"
+            alt="Studio de pilotage et création de campagnes publicitaires digitales Maison John&Co Marketing"
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+          >
+        </figure>
+      </div>
+
+      <div class="ad-hero-strip">
+        <div class="ad-strip-item">
+          <h2>Intention &amp; découverte réunies</h2>
+          <p>Associer recherche active (PPC), stimulation sociale (Social Ads) et formats immersifs (Vidéo, Native, Display).</p>
+        </div>
+        <div class="ad-strip-item">
+          <h2>Maîtrise du coût d'acquisition</h2>
+          <p>Structuration granulaire des comptes, tests créatifs réguliers et réallocation budgétaire vers les segments rentables.</p>
+        </div>
+        <div class="ad-strip-item">
+          <h2>Relais direct avec vos pages</h2>
+          <p>Cohérence entre promesse publicitaire, page d'atterrissage et suivi des conversions pour éviter toute déperdition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ORCHESTRATION FULL-FUNNEL ── -->
+  <section class="ad-section">
+    <div class="wrap">
+      <div class="ad-head reveal">
+        <p class="ad-eyebrow">Architecture full-funnel</p>
+        <h2 class="ad-h2">Chaque levier publicitaire remplit un rôle précis dans le parcours d'achat.</h2>
+        <p class="ad-sub">Plutôt que d'opposer les régies, nous combinons les formats selon la maturité de votre audience. Explorez chaque étape pour comprendre comment nos 6 prestations se renforcent mutuellement.</p>
+      </div>
+
+      <div class="ad-funnel-bar" role="tablist" aria-label="Étapes du tunnel publicitaire">
+        <button class="ad-funnel-tab" role="tab" aria-selected="true" data-stage="notoriete" type="button">
+          <span>Étape 01 · Haut de tunnel</span>
+          <strong>Notoriété &amp; Découverte</strong>
+        </button>
+        <button class="ad-funnel-tab" role="tab" aria-selected="false" data-stage="intention" type="button">
+          <span>Étape 02 · Milieu de tunnel</span>
+          <strong>Intention &amp; Considération</strong>
+        </button>
+        <button class="ad-funnel-tab" role="tab" aria-selected="false" data-stage="conversion" type="button">
+          <span>Étape 03 · Bas de tunnel</span>
+          <strong>Conversion &amp; Réactivation</strong>
+        </button>
+      </div>
+
+      <div class="ad-funnel-stage" role="tabpanel">
+        <div>
+          <h3 id="fn-title">Installer votre marque auprès d'audiences qualifiées</h3>
+          <p id="fn-desc">Avant qu'un prospect ne recherche votre solution, il doit identifier votre différence. Les formats vidéo, natifs et programmatiques vous permettent d'émerger dans des environnements éditoriaux et médias pertinents.</p>
+          <p class="ad-funnel-note" id="fn-note"><strong>Bénéfice clé :</strong> élargir votre bassin d'audiences qualifiées tout en préparant la baisse des coûts de conversion sur les étapes suivantes.</p>
+        </div>
+        <div class="ad-funnel-levers" id="fn-levers">
+          <a class="ad-lever-link" href="publicite-video--253.html">
+            <div><small>Impact émotionnel &amp; mémorisation</small><strong>Publicité Vidéo</strong></div>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="ad-lever-link" href="display-programmatique--149.html">
+            <div><small>Couverture ciblée sur l'open web</small><strong>Display Programmatique</strong></div>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="ad-lever-link" href="publicite-native--259.html">
+            <div><small>Intégration éditoriale non intrusive</small><strong>Publicité Native</strong></div>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MATRICE DES 6 LEVIERS ── -->
+  <section id="leviers" class="ad-section ad-section-white">
+    <div class="wrap">
+      <div class="ad-head reveal">
+        <p class="ad-eyebrow">Les 6 prestations du pôle</p>
+        <h2 class="ad-h2">Un dispositif publicitaire complet, calibré sur vos objectifs commerciaux.</h2>
+        <p class="ad-sub">Chaque levier fait l'objet d'un cadrage sémantique ou d'audience, d'une exécution créative soignée et d'un pilotage continu.</p>
+      </div>
+
+      <div class="ad-matrix">
+        <article class="ad-card reveal">
+          <div>
+            <div class="ad-card-top">
+              <span>01.</span>
+              <span class="ad-card-stage">Intention immédiate</span>
+            </div>
+            <h3>Publicité en Ligne (PPC)</h3>
+            <p>Positionnez vos offres exactement au moment où vos prospects recherchent vos produits ou services sur les moteurs de recherche, avec un contrôle rigoureux des enchères et des requêtes.</p>
+            <dl class="ad-card-specs">
+              <div><dt>Objectif principal</dt><dd>Leads qualifiés &amp; ventes directes</dd></div>
+              <div><dt>Synergie naturelle</dt><dd>Landing Pages &amp; Webanalyse</dd></div>
+            </dl>
+          </div>
+          <a class="ad-card-btn" href="publicite-en-ligne-ppc--146.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="ad-card reveal">
+          <div>
+            <div class="ad-card-top">
+              <span>02.</span>
+              <span class="ad-card-stage">Ciblage socio-comportemental</span>
+            </div>
+            <h3>Publicité ADS Réseaux Sociaux</h3>
+            <p>Activez Meta, LinkedIn, TikTok ou Pinterest pour toucher des segments précis selon leur profil, leurs centres d'intérêt ou leur fonction professionnelle avec des créations natives engageantes.</p>
+            <dl class="ad-card-specs">
+              <div><dt>Objectif principal</dt><dd>Demande nouvelle &amp; prospection B2B/B2C</dd></div>
+              <div><dt>Synergie naturelle</dt><dd>Création de Contenu &amp; Scripts Vidéo</dd></div>
+            </dl>
+          </div>
+          <a class="ad-card-btn" href="publicite-ads-reseaux-sociaux--147.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="ad-card reveal">
+          <div>
+            <div class="ad-card-top">
+              <span>03.</span>
+              <span class="ad-card-stage">Couverture &amp; précision média</span>
+            </div>
+            <h3>Display Programmatique</h3>
+            <p>Automatisez l'achat d'espaces publicitaires sur des inventaires médias sélectionnés afin d'exposer votre marque à des audiences qualifiées avec une optimisation en temps réel.</p>
+            <dl class="ad-card-specs">
+              <div><dt>Objectif principal</dt><dd>Visibilité ciblée &amp; soutien de marque</dd></div>
+              <div><dt>Synergie naturelle</dt><dd>Retargeting &amp; Branding</dd></div>
+            </dl>
+          </div>
+          <a class="ad-card-btn" href="display-programmatique--149.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="ad-card reveal">
+          <div>
+            <div class="ad-card-top">
+              <span>04.</span>
+              <span class="ad-card-stage">Récupération &amp; conversion</span>
+            </div>
+            <h3>Retargeting &amp; Remarketing</h3>
+            <p>Réengagez les visiteurs qui ont consulté vos offres ou abandonné un panier sans convertir, grâce à des scénarios gradués, des messages de réassurance et une pression publicitaire maîtrisée.</p>
+            <dl class="ad-card-specs">
+              <div><dt>Objectif principal</dt><dd>Finalisation des parcours d'achat</dd></div>
+              <div><dt>Synergie naturelle</dt><dd>Tunnel de Vente &amp; Email Marketing</dd></div>
+            </dl>
+          </div>
+          <a class="ad-card-btn" href="retargeting-remarketing--151.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="ad-card reveal">
+          <div>
+            <div class="ad-card-top">
+              <span>05.</span>
+              <span class="ad-card-stage">Intégration éditoriale</span>
+            </div>
+            <h3>Publicité Native</h3>
+            <p>Intégrez vos messages de façon fluide et respectueuse au sein de médias éditoriaux reconnus afin de capter l'attention de lecteurs réceptifs, loin de la fatigue publicitaire classique.</p>
+            <dl class="ad-card-specs">
+              <div><dt>Objectif principal</dt><dd>Trafic éditorial &amp; considération</dd></div>
+              <div><dt>Synergie naturelle</dt><dd>Rédaction &amp; Contenus de marque</dd></div>
+            </dl>
+          </div>
+          <a class="ad-card-btn" href="publicite-native--259.html">Découvrir la prestation →</a>
+        </article>
+
+        <article class="ad-card reveal">
+          <div>
+            <div class="ad-card-top">
+              <span>06.</span>
+              <span class="ad-card-stage">Attention &amp; storytelling</span>
+            </div>
+            <h3>Publicité Vidéo</h3>
+            <p>Déployez des formats vidéo pensés pour retenir l'attention dès les premières secondes sur YouTube, les réseaux sociaux et la vidéo en ligne, au service de la notoriété comme de la conversion.</p>
+            <dl class="ad-card-specs">
+              <div><dt>Objectif principal</dt><dd>Mémorisation &amp; démonstration produit</dd></div>
+              <div><dt>Synergie naturelle</dt><dd>Scripts Vidéo Publicitaires</dd></div>
+            </dl>
+          </div>
+          <a class="ad-card-btn" href="publicite-video--253.html">Découvrir la prestation →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── METHODE DE PILOTAGE ── -->
+  <section class="ad-method">
+    <div class="wrap">
+      <div class="ad-head reveal">
+        <p class="ad-eyebrow">Discipline d'exécution</p>
+        <h2 class="ad-h2">Comment nous sécurisons la rentabilité de vos campagnes.</h2>
+        <p class="ad-sub">Une campagne performante repose autant sur la qualité du tracking et des créations que sur la précision du ciblage.</p>
+      </div>
+
+      <div class="ad-steps reveal">
+        <div class="ad-step">
+          <p class="ad-step-num">01. Cadrage</p>
+          <h3>Tracking &amp; objectifs</h3>
+          <p>Vérification du plan de marquage, définition des conversions prioritaires et allocation budgétaire réaliste par levier.</p>
+        </div>
+        <div class="ad-step">
+          <p class="ad-step-num">02. Production</p>
+          <h3>Angles &amp; créations</h3>
+          <p>Conception d'annonces et de variations visuelles alignées sur les motivations réelles de chaque segment d'audience.</p>
+        </div>
+        <div class="ad-step">
+          <p class="ad-step-num">03. Diffusion</p>
+          <h3>Architecture granulaire</h3>
+          <p>Structuration propre des campagnes, exclusions de trafic non pertinent et maîtrise de la répétition publicitaire.</p>
+        </div>
+        <div class="ad-step">
+          <p class="ad-step-num">04. Arbitrage</p>
+          <h3>Optimisation continue</h3>
+          <p>Lecture régulière des coûts par conversion, renouvellement créatif et reporting clair orienté décision commerciale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAS CLIENTS & CTA ── -->
+  <section class="ad-section">
+    <div class="wrap">
+      <div class="ad-head reveal">
+        <p class="ad-eyebrow">Applications sectorielles</p>
+        <h2 class="ad-h2">Exemples de dispositifs publicitaires déployés.</h2>
+      </div>
+
+      <div class="ad-cases reveal">
+        <article class="ad-case">
+          <div>
+            <p class="ad-case-kicker">Fintech · Search &amp; PPC</p>
+            <h3>Campagne publicitaire PPC pour une Fintech</h3>
+            <p>Structuration de campagnes d'intention sur un marché concurrentiel pour capter des demandes qualifiées tout en maîtrisant le coût d'acquisition.</p>
+          </div>
+          <a class="ad-inline-link" href="campagne-publicitaire-ppc-pour-une-fintech--589.html">Voir l'étude de cas →</a>
+        </article>
+
+        <article class="ad-case">
+          <div>
+            <p class="ad-case-kicker">Éditeur SaaS · LinkedIn Ads</p>
+            <h3>Campagne LinkedIn pour un éditeur SaaS</h3>
+            <p>Ciblage précis de décideurs B2B et scénarios de conversion adaptés à un cycle de vente complexe.</p>
+          </div>
+          <a class="ad-inline-link" href="campagne-linkedin-pour-un-editeur-saas--581.html">Voir l'étude de cas →</a>
+        </article>
+
+        <article class="ad-case">
+          <div>
+            <p class="ad-case-kicker">Automobile · Publicité Vidéo</p>
+            <h3>Campagne vidéo publicitaire pour un constructeur automobile</h3>
+            <p>Diffusion multi-plateformes de formats vidéo calibrés pour amplifier la désirabilité et soutenir le trafic qualifié.</p>
+          </div>
+          <a class="ad-inline-link" href="campagne-video-publicitaire-pour-un-constructeur-automobile--610.html">Voir l'étude de cas →</a>
+        </article>
+      </div>
+
+      <div class="ad-cta reveal">
+        <div>
+          <h2>Accélérez votre acquisition avec un plan média rigoureux.</h2>
+          <p>Partagez vos objectifs, votre marché et votre enveloppe envisagée : nous construisons une recommandation média claire et priorisée.</p>
+        </div>
+        <div class="ad-actions">
+          <a class="btn-violet" href="devis-sur-mesure--48.html">Demander un devis</a>
+          <a class="btn-ghost-dark" href="contact--895.html">Contacter l'agence</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ad-footer">
+  <div class="wrap">
+    <div class="ad-footer-top">
+      <h2>Explorer nos autres pôles d'expertise</h2>
+      <a class="ad-inline-link" href="services-proposes-pour-les-entreprises--395.html">Tous les Services entreprises →</a>
+    </div>
+    <nav class="ad-cat-grid" aria-label="Catégories de services">
+      <a href="strategie-digitale-accompagnement--396.html">01. Stratégie Digitale &amp; Accompagnement</a>
+      <a href="creation-digitale-identite--397.html">02. Création Digitale &amp; Identité</a>
+      <a href="publicite-digitale--398.html" aria-current="page">03. Publicité Digitale</a>
+      <a href="referencement-visibilite--399.html">04. Référencement &amp; Visibilité</a>
+      <a href="contenu-redaction--400.html">05. Contenu &amp; Rédaction</a>
+      <a href="automatisation-crm--401.html">06. Automatisation &amp; CRM</a>
+      <a href="analyse-performance--402.html">07. Analyse &amp; Performance</a>
+      <a href="influence-social-media-communaute--403.html">08. Influence, Social Media &amp; Communauté</a>
+    </nav>
+    <div class="ad-legal">
+      <span>© Maison John&amp;Co Marketing — Tous droits réservés</span>
+      <div class="ad-legal-links">
+        <a href="offres-tarifs--45.html">Offres &amp; tarifs</a>
+        <a href="etudes-de-cas--49.html">Études de cas</a>
+        <a href="contact--895.html">Contact</a>
+        <a href="mentions-legales--1004.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    document.documentElement.classList.add('js-ready');
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach((el) => io.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    const stages = {
+      notoriete: {
+        title: "Installer votre marque auprès d'audiences qualifiées",
+        desc: "Avant qu'un prospect ne recherche votre solution, il doit identifier votre différence. Les formats vidéo, natifs et programmatiques vous permettent d'émerger dans des environnements éditoriaux et médias pertinents.",
+        note: "<strong>Bénéfice clé :</strong> élargir votre bassin d'audiences qualifiées tout en préparant la baisse des coûts de conversion sur les étapes suivantes.",
+        levers: [
+          { sub: "Impact émotionnel & mémorisation", name: "Publicité Vidéo", href: "publicite-video--253.html" },
+          { sub: "Couverture ciblée sur l'open web", name: "Display Programmatique", href: "display-programmatique--149.html" },
+          { sub: "Intégration éditoriale non intrusive", name: "Publicité Native", href: "publicite-native--259.html" }
+        ]
+      },
+      intention: {
+        title: "Capter la demande active et stimuler l'intérêt",
+        desc: "Lorsque vos futurs clients comparent des solutions ou expriment un besoin, la publicité sur moteurs de recherche et les campagnes sociales ciblées acheminent un trafic qualifié vers vos pages dédiées.",
+        note: "<strong>Bénéfice clé :</strong> transformer un besoin existant ou latent en visites à forte intention commerciale.",
+        levers: [
+          { sub: "Requêtes actives sur moteurs de recherche", name: "Publicité en Ligne (PPC)", href: "publicite-en-ligne-ppc--146.html" },
+          { sub: "Audiences affinitaires et professionnelles", name: "Publicité ADS Réseaux Sociaux", href: "publicite-ads-reseaux-sociaux--147.html" },
+          { sub: "Découverte par le contenu de marque", name: "Publicité Native", href: "publicite-native--259.html" }
+        ]
+      },
+      conversion: {
+        title: "Lever les derniers freins et conclure",
+        desc: "La majorité des visiteurs ne convertissent pas dès la première visite. Le retargeting séquencé, soutenu par le search de marque et la preuve sociale, réactive vos prospects au bon rythme jusqu'à la décision.",
+        note: "<strong>Bénéfice clé :</strong> rentabiliser chaque euro déjà investi dans l'acquisition de trafic amont.",
+        levers: [
+          { sub: "Scénarios ciblés de réengagement", name: "Retargeting & Remarketing", href: "retargeting-remarketing--151.html" },
+          { sub: "Capture des recherches finales de marque", name: "Publicité en Ligne (PPC)", href: "publicite-en-ligne-ppc--146.html" },
+          { sub: "Preuve sociale et offres de relance", name: "Publicité ADS Réseaux Sociaux", href: "publicite-ads-reseaux-sociaux--147.html" }
+        ]
+      }
+    };
+
+    const tabs = document.querySelectorAll('.ad-funnel-tab');
+    const titleEl = document.getElementById('fn-title');
+    const descEl = document.getElementById('fn-desc');
+    const noteEl = document.getElementById('fn-note');
+    const leversEl = document.getElementById('fn-levers');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const d = stages[tab.dataset.stage];
+        if (!d) return;
+        tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+        titleEl.textContent = d.title;
+        descEl.textContent = d.desc;
+        noteEl.innerHTML = d.note;
+        leversEl.innerHTML = d.levers.map((l) => (
+          '<a class="ad-lever-link" href="' + l.href + '">' +
+            '<div><small>' + l.sub + '</small><strong>' + l.name + '</strong></div>' +
+            '<span aria-hidden="true">→</span>' +
+          '</a>'
+        )).join('');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
-<p></p>

@@ -1,67 +1,855 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTENU & RÉDACTION</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .service-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <meta name="description" content="Maison John&amp;Co Marketing — CONTENU &amp; RÉDACTION">
-    <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/contenu-redaction--400.html">
-    <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/contenu-redaction--400.html">
-    <meta property="og:title" content="CONTENU &amp; RÉDACTION — Maison John&amp;Co Marketing">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenu &amp; Rédaction — Maison John&amp;Co Marketing</title>
+  <meta name="description" content="Copywriting et rédaction commerciale, rédaction SEO et articles de blog, création de scripts vidéo publicitaires : faites de vos mots un levier de croissance avec Maison John&amp;Co Marketing.">
+  <link rel="canonical" href="https://maison-johnco-marketing.fr/pages/contenu-redaction--400.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maison-johnco-marketing.fr/pages/contenu-redaction--400.html">
+  <meta property="og:title" content="Contenu &amp; Rédaction — Maison John&amp;Co Marketing">
+  <meta property="og:description" content="Des messages précis, structurés et persuasifs pour clarifier votre promesse, capter le trafic organique et convaincre en vidéo.">
+  <meta property="og:image" content="https://maison-johnco-marketing.fr/assets/images/categories/contenu-redaction.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #FAF9F6;
+      --paper-alt: #F2EFEA;
+      --white: #FFFFFF;
+      --espresso: #141923;
+      --navy: #0A1628;
+      --muted: #4C5361;
+      --subtle: #6E7685;
+      --accent: #6D28D9;
+      --accent-hover: #5B21B6;
+      --accent-soft: #F3EEFF;
+      --rule: #E4DFD6;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--espresso);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HERO MAISON D'EDITION ── */
+    .ed-hero {
+      padding: 44px 0 80px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .ed-crumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--subtle);
+      margin-bottom: 40px;
+    }
+    .ed-crumb a { text-decoration: none; }
+    .ed-crumb a:hover { color: var(--accent); }
+    .ed-crumb .current { color: var(--espresso); font-weight: 600; }
+
+    .ed-masthead {
+      max-width: 960px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+    .ed-kicker {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 18px;
+    }
+    .ed-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.65rem, 5.2vw, 4.4rem);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      color: var(--espresso);
+      margin: 0 0 24px;
+      text-wrap: balance;
+    }
+    .ed-hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .ed-lead {
+      font-size: 17.5px;
+      color: var(--muted);
+      max-width: 62ch;
+      margin: 0 auto 32px;
+    }
+    .ed-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+    .btn-espresso {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      min-height: 48px;
+      border-radius: 4px;
+      background: var(--espresso);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, transform 0.16s ease;
+    }
+    .btn-espresso:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn-rule {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      min-height: 48px;
+      border-radius: 4px;
+      border: 1px solid #CFC8BC;
+      background: transparent;
+      color: var(--espresso);
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color 0.16s ease, color 0.16s ease;
+    }
+    .btn-rule:hover { border-color: var(--accent); color: var(--accent); }
+
+    .ed-photo-frame {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      background: var(--paper-alt);
+    }
+    .ed-photo-wrap {
+      aspect-ratio: 16 / 7.8;
+      overflow: hidden;
+    }
+    .ed-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ed-photo-note {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px 24px;
+      padding: 14px 22px;
+      background: var(--white);
+      border-top: 1px solid var(--rule);
+      font-size: 13.5px;
+      color: var(--subtle);
+    }
+    .ed-photo-note strong { color: var(--espresso); font-weight: 600; }
+
+    /* ── MANIFESTE EDITORIAL ── */
+    .ed-section { padding: 92px 0; }
+    .ed-section-white {
+      background: var(--white);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .ed-thesis {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 56px;
+      align-items: start;
+    }
+    .ed-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.12;
+      color: var(--espresso);
+      margin: 0 0 16px;
+      text-wrap: balance;
+    }
+    .ed-quote {
+      font-family: var(--serif);
+      font-size: 23px;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--espresso);
+      margin: 0 0 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .ed-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--rule);
+    }
+    .ed-pillar h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--espresso);
+      margin: 0 0 10px;
+    }
+    .ed-pillar p { margin: 0; font-size: 15px; color: var(--muted); }
+
+    /* ── 3 DOUBLE-PAGES EDITORIALES (LES 3 PRESTATIONS) ── */
+    .ed-spreads {
+      display: flex;
+      flex-direction: column;
+    }
+    .ed-spread {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr) minmax(0, 0.95fr);
+      gap: 32px 44px;
+      padding: 52px 0;
+      border-top: 1px solid var(--rule);
+      align-items: start;
+    }
+    .ed-spread:last-child { border-bottom: 1px solid var(--rule); }
+    .ed-roman {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 500;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .ed-spread-main h3 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--espresso);
+      margin: 0 0 10px;
+    }
+    .ed-spread-meta {
+      font-size: 13.5px;
+      color: var(--subtle);
+      margin: 0 0 18px;
+    }
+    .ed-spread-main p {
+      margin: 0 0 26px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+    .ed-spread-side {
+      padding: 30px;
+      border-radius: 6px;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+    }
+    .ed-spread-side h4 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--espresso);
+      margin: 0 0 12px;
+    }
+    .ed-spread-list {
+      margin: 0 0 18px;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+    .ed-spread-list li { padding-left: 16px; position: relative; }
+    .ed-spread-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+    .ed-spread-use {
+      margin: 0;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      font-size: 13.5px;
+      color: var(--espresso);
+    }
+    .ed-cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      min-height: 44px;
+      border-radius: 4px;
+      background: var(--espresso);
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .ed-cta-link:hover { background: var(--accent); }
+
+    /* ── COMPARATEUR INTERACTIF DES FORMATS ── */
+    .ed-atelier {
+      background: var(--espresso);
+      color: #FFFFFF;
+      padding: 88px 0;
+    }
+    .ed-atelier .ed-kicker { color: #C4B5FD; }
+    .ed-atelier .ed-h2 { color: #FFFFFF; }
+    .ed-atelier-sub { color: #CBD5E1; max-width: 64ch; margin: 0 0 36px; font-size: 16px; }
+
+    .ed-goal-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .ed-goal-tab {
+      appearance: none;
+      padding: 12px 18px;
+      min-height: 44px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.04);
+      color: #E2E8F0;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease;
+    }
+    .ed-goal-tab:hover { border-color: #C4B5FD; }
+    .ed-goal-tab[aria-selected="true"] {
+      background: var(--paper);
+      color: var(--espresso);
+      border-color: var(--paper);
+    }
+
+    .ed-goal-board {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 40px;
+      padding: 36px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .ed-goal-board h3 {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: #FFFFFF;
+    }
+    .ed-goal-board p { margin: 0 0 20px; color: #CBD5E1; font-size: 15.5px; }
+    .ed-goal-specs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      margin: 0;
+    }
+    .ed-goal-specs dt { font-size: 12px; color: #C4B5FD; margin-bottom: 4px; }
+    .ed-goal-specs dd { margin: 0; font-size: 14.5px; color: #FFFFFF; }
+    .ed-goal-action {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px;
+      border-radius: 6px;
+      background: rgba(10, 22, 40, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    .ed-goal-action small { color: #C4B5FD; font-size: 13px; margin-bottom: 6px; }
+    .ed-goal-action strong { font-family: var(--serif); font-size: 26px; font-weight: 600; margin-bottom: 14px; color: #FFFFFF; line-height: 1.2; }
+    .ed-goal-action p { font-size: 14px; color: #CBD5E1; margin-bottom: 22px; }
+    .btn-light {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      min-height: 44px;
+      border-radius: 4px;
+      background: var(--paper);
+      color: var(--espresso);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, color 0.16s ease;
+    }
+    .btn-light:hover { background: var(--accent); color: #FFFFFF; }
+
+    /* ── CAS CLIENTS & CTA ── */
+    .ed-cases {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 36px;
+    }
+    .ed-case {
+      padding: 36px;
+      border-radius: 6px;
+      border: 1px solid var(--rule);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .ed-case-meta { font-size: 13px; color: var(--subtle); margin: 0 0 10px; }
+    .ed-case h3 { font-family: var(--serif); font-size: 26px; font-weight: 600; margin: 0 0 10px; color: var(--espresso); line-height: 1.2; }
+    .ed-case p { margin: 0; font-size: 15px; color: var(--muted); }
+    .ed-inline-link { font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; }
+    .ed-inline-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .ed-cta {
+      margin-top: 64px;
+      padding: 52px;
+      border-radius: 6px;
+      background: var(--navy);
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .ed-cta h2 { font-family: var(--serif); font-size: clamp(1.9rem, 3vw, 2.75rem); font-weight: 600; margin: 0 0 10px; line-height: 1.15; text-wrap: balance; }
+    .ed-cta p { margin: 0; color: #CBD5E1; max-width: 56ch; font-size: 15.5px; }
+    .ed-cta-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-violet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 26px;
+      min-height: 48px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.16s ease;
+    }
+    .btn-violet:hover { background: var(--accent-hover); }
+    .btn-outline-light {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      min-height: 48px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-outline-light:hover { border-color: #FFFFFF; }
+
+    /* ── FOOTER ── */
+    .ed-footer {
+      border-top: 1px solid var(--rule);
+      background: var(--paper-alt);
+      padding: 56px 0 44px;
+    }
+    .ed-footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .ed-footer-top h2 { font-family: var(--serif); font-size: 25px; font-weight: 600; margin: 0; color: var(--espresso); }
+    .ed-cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px 24px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .ed-cat-grid a { font-size: 14px; color: var(--muted); text-decoration: none; padding: 6px 0; }
+    .ed-cat-grid a:hover { color: var(--accent); }
+    .ed-cat-grid a[aria-current="page"] { color: var(--espresso); font-weight: 700; }
+    .ed-legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--subtle);
+    }
+    .ed-legal-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .ed-legal-links a { text-decoration: none; }
+    .ed-legal-links a:hover { color: var(--espresso); }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.48s cubic-bezier(0.16, 1, 0.3, 1), transform 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .js-ready .reveal:not(.is-visible) { opacity: 0; transform: translateY(14px); }
+
+    @media (max-width: 1024px) {
+      .ed-thesis, .ed-goal-board, .ed-cta { grid-template-columns: 1fr; }
+      .ed-spread { grid-template-columns: 64px minmax(0, 1fr); }
+      .ed-spread-side { grid-column: 2; }
+      .ed-pillars { grid-template-columns: 1fr; }
+      .ed-cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .wrap { padding: 0 20px; }
+      .ed-hero { padding: 28px 0 56px; }
+      .ed-section, .ed-atelier { padding: 60px 0; }
+      .ed-spread { grid-template-columns: 1fr; gap: 18px; padding: 36px 0; }
+      .ed-spread-side { grid-column: 1; padding: 22px; }
+      .ed-cases, .ed-goal-specs, .ed-cat-grid { grid-template-columns: 1fr; }
+      .ed-goal-board, .ed-cta, .ed-case { padding: 26px 22px; }
+      .ed-photo-wrap { aspect-ratio: 16 / 10; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+      .js-ready .reveal:not(.is-visible) { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body>
 <mjc-site-header></mjc-site-header>
 <script src="../assets/js/site-header.js"></script>
-    <div class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-16">CONTENU & RÉDACTION</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Copywriting & Rédaction Commerciale -->
-            <a href="copywriting-redaction-commerciale--266.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-blue-100 p-4 rounded-full mb-4">
-                    <i data-feather="trending-up" class="text-blue-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Copywriting & Rédaction Commerciale</h3>
-                <p class="text-blue-600 font-medium">En savoir plus →</p>
-            </a>
 
-            <!-- Rédaction SEO & Articles de Blog -->
-            <a href="redaction-seo-articles-de-blog--264.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-purple-100 p-4 rounded-full mb-4">
-                    <i data-feather="pen-tool" class="text-purple-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Rédaction SEO & Articles de Blog</h3>
-                <p class="text-purple-600 font-medium">En savoir plus →</p>
-            </a>
+<main>
+  <!-- ── HERO EDITORIAL ── -->
+  <section class="ed-hero">
+    <div class="wrap">
+      <nav class="ed-crumb" aria-label="Fil d'Ariane">
+        <a href="../">Accueil</a>
+        <span aria-hidden="true">/</span>
+        <a href="services-proposes-pour-les-entreprises--395.html">Services entreprises</a>
+        <span aria-hidden="true">/</span>
+        <span class="current">Contenu &amp; Rédaction</span>
+      </nav>
 
-            <!-- Création de Scripts Vidéo Publicitaires -->
-            <a href="creation-de-scripts-video-publicitaires--265.html" class="service-card bg-white rounded-xl p-6 flex flex-col items-center text-center">
-                <div class="bg-red-100 p-4 rounded-full mb-4">
-                    <i data-feather="dollar-sign" class="text-red-600 w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Création de Scripts Vidéo Publicitaires</h3>
-                <p class="text-red-600 font-medium">En savoir plus →</p>
-            </a>
+      <div class="ed-masthead">
+        <p class="ed-kicker">Pôle 05 · Direction éditoriale, persuasion &amp; narration</p>
+        <h1>Donner à votre marque des mots qui <em>clarifient</em>, inspirent et font agir.</h1>
+        <p class="ed-lead">
+          Un design soigné retient le regard quelques secondes ; ce sont la justesse de votre promesse, la précision de vos arguments et le rythme de votre écriture qui emportent la décision. Nous concevons des contenus pensés pour convaincre autant vos lecteurs que les moteurs de recherche.
+        </p>
+        <div class="ed-actions">
+          <a class="btn-espresso" href="devis-sur-mesure--48.html">Parler de votre stratégie éditoriale</a>
+          <a class="btn-rule" href="#disciplines">Découvrir les 3 disciplines</a>
         </div>
-    </div>
+      </div>
 
-    <script>
-        feather.replace();
-    </script>
+      <figure class="ed-photo-frame">
+        <div class="ed-photo-wrap">
+          <img
+            src="../assets/images/categories/contenu-redaction.jpg"
+            alt="Bureau éditorial parisien de Maison John&Co Marketing avec carnet manuscrit et stylo plume"
+            width="1280"
+            height="720"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
+        <figcaption class="ed-photo-note">
+          <span><strong>3 disciplines complémentaires</strong> · Copywriting commercial, Rédaction SEO et Scripts Vidéo Publicitaires</span>
+          <span>Voix de marque · Précision sectorielle · Exigence de conversion</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ── MANIFESTE ── -->
+  <section class="ed-section">
+    <div class="wrap">
+      <div class="ed-thesis reveal">
+        <div>
+          <p class="ed-kicker">La valeur du message</p>
+          <h2 class="ed-h2">Pourquoi l'écriture est le multiplicateur silencieux de tous vos canaux.</h2>
+        </div>
+        <div>
+          <p class="ed-quote">« Lorsque votre proposition de valeur est floue, chaque euro investi en design ou en publicité travaille deux fois moins efficacement. »</p>
+          <p style="margin: 0; color: var(--muted);">
+            Pages de vente, articles experts, annonces vidéo : les textes portent la crédibilité de votre entreprise. Nous refusons les discours génériques et les promesses creuses pour écrire au plus près de la réalité de vos clients et de leurs objections réelles.
+          </p>
+        </div>
+      </div>
+
+      <div class="ed-pillars reveal">
+        <div class="ed-pillar">
+          <h3>Clarifier l'offre</h3>
+          <p>Traduire une expertise parfois technique en bénéfices limpides, compréhensibles dès la première lecture par vos décideurs.</p>
+        </div>
+        <div class="ed-pillar">
+          <h3>Installer l'autorité</h3>
+          <p>Publier des contenus de fond utiles et documentés qui positionnent votre entreprise comme la référence naturelle de son marché.</p>
+        </div>
+        <div class="ed-pillar">
+          <h3>Provoquer le passage à l'action</h3>
+          <p>Structurer chaque texte et chaque script autour d'une progression logique qui lève les freins et invite naturellement au contact ou à l'achat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LES 3 DISCIPLINES EDITORIALES ── -->
+  <section id="disciplines" class="ed-section ed-section-white">
+    <div class="wrap">
+      <div style="max-width: 70ch; margin-bottom: 44px;" class="reveal">
+        <p class="ed-kicker">Les 3 prestations du pôle</p>
+        <h2 class="ed-h2">Trois écritures complémentaires pour couvrir l'ensemble du parcours client.</h2>
+      </div>
+
+      <div class="ed-spreads">
+        <article class="ed-spread reveal">
+          <div class="ed-roman">I.</div>
+          <div class="ed-spread-main">
+            <h3>Copywriting &amp; Rédaction Commerciale</h3>
+            <p class="ed-spread-meta">Persuasion · Pages de vente, offres &amp; séquences commerciales</p>
+            <p>Des textes orientés performance qui structurent votre promesse, formulent votre proposition de valeur sans artifice et guident l'utilisateur vers une action précise sur votre site, vos landing pages ou vos campagnes.</p>
+            <a class="ed-cta-link" href="copywriting-redaction-commerciale--266.html">Découvrir la prestation →</a>
+          </div>
+          <aside class="ed-spread-side">
+            <h4>Formats &amp; terrains d'application</h4>
+            <ul class="ed-spread-list">
+              <li>Pages d'accueil, pages offres et landing pages de conversion</li>
+              <li>Séquences emails commerciales et argumentaires de vente</li>
+              <li>Accroches publicitaires et micro-copy d'interface</li>
+            </ul>
+            <p class="ed-spread-use"><strong>Idéal quand :</strong> votre trafic existe mais vos pages peinent à transformer les visiteurs en prospects qualifiés.</p>
+          </aside>
+        </article>
+
+        <article class="ed-spread reveal">
+          <div class="ed-roman">II.</div>
+          <div class="ed-spread-main">
+            <h3>Rédaction SEO &amp; Articles de Blog</h3>
+            <p class="ed-spread-meta">Visibilité organique · Contenus experts &amp; trafic durable</p>
+            <p>Transformez votre blog et vos pages de fond en véritables actifs d'acquisition : des articles fouillés, structurés pour le référencement naturel et réellement utiles aux personnes qui recherchent vos réponses sur Google.</p>
+            <a class="ed-cta-link" href="redaction-seo-articles-de-blog--264.html">Découvrir la prestation →</a>
+          </div>
+          <aside class="ed-spread-side">
+            <h4>Formats &amp; terrains d'application</h4>
+            <ul class="ed-spread-list">
+              <li>Articles de fond, guides pratiques et pages piliers SEO</li>
+              <li>Structuration sémantique Hn, maillage interne et métadonnées</li>
+              <li>Contenus sectoriels respectant votre ton de marque</li>
+            </ul>
+            <p class="ed-spread-use"><strong>Idéal quand :</strong> vous souhaitez bâtir une audience organique régulière et nourrir votre crédibilité métier.</p>
+          </aside>
+        </article>
+
+        <article class="ed-spread reveal">
+          <div class="ed-roman">III.</div>
+          <div class="ed-spread-main">
+            <h3>Création de Scripts Vidéo Publicitaires</h3>
+            <p class="ed-spread-meta">Audiovisuel &amp; Social Ads · Accroches, rythme &amp; scénarisation</p>
+            <p>Des scénarios précis conçus pour retenir l'attention dès les premières secondes, structurer la démonstration produit et conclure par un appel à l'action clair sur YouTube, Meta, TikTok ou LinkedIn.</p>
+            <a class="ed-cta-link" href="creation-de-scripts-video-publicitaires--265.html">Découvrir la prestation →</a>
+          </div>
+          <aside class="ed-spread-side">
+            <h4>Formats &amp; terrains d'application</h4>
+            <ul class="ed-spread-list">
+              <li>Scripts courts (15s à 60s) pour campagnes sociales et pré-roll</li>
+              <li>Variations d'accroches (hooks) pour tests créatifs média</li>
+              <li>Découpage voix off, indications visuelles et appels à l'action</li>
+            </ul>
+            <p class="ed-spread-use"><strong>Idéal quand :</strong> vous lancez des campagnes vidéo et voulez éviter des tournages sans structure persuasive.</p>
+          </aside>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPARATEUR INTERACTIF D'OBJECTIFS ── -->
+  <section class="ed-atelier" aria-labelledby="atelier-title">
+    <div class="wrap">
+      <p class="ed-kicker">Choisir la bonne écriture</p>
+      <h2 id="atelier-title" class="ed-h2">À chaque objectif business son registre éditorial.</h2>
+      <p class="ed-atelier-sub">Comparez l'angle, le rythme et le format les plus adaptés selon ce que vous attendez de vos contenus.</p>
+
+      <div class="ed-goal-tabs" role="tablist" aria-label="Objectifs éditoriaux">
+        <button class="ed-goal-tab" role="tab" aria-selected="true" data-goal="convert" type="button">Convertir sur une page d'offre</button>
+        <button class="ed-goal-tab" role="tab" aria-selected="false" data-goal="rank" type="button">Capter du trafic organique durable</button>
+        <button class="ed-goal-tab" role="tab" aria-selected="false" data-goal="video" type="button">Captiver en campagne vidéo</button>
+      </div>
+
+      <div class="ed-goal-board" role="tabpanel">
+        <div>
+          <h3 id="go-title">Écriture commerciale directe et orientée bénéfices</h3>
+          <p id="go-desc">Sur une page de service, une landing page ou une séquence de prospection, chaque paragraphe doit répondre à une question précise du décideur : pourquoi vous, comment cela fonctionne et quelle est la prochaine étape.</p>
+          <dl class="ed-goal-specs">
+            <div><dt>Rythme &amp; structure</dt><dd id="go-rhythm">Promesse immédiate, preuves, levée d'objections, CTA clair</dd></div>
+            <div><dt>Synergie directe</dt><dd id="go-synergy">Landing Pages, Tunnel de Vente &amp; Email Marketing</dd></div>
+          </dl>
+        </div>
+        <div class="ed-goal-action">
+          <small>Prestation recommandée</small>
+          <strong id="go-service">Copywriting &amp; Rédaction Commerciale</strong>
+          <p id="go-note">Pour transformer des pages descriptives en véritables supports d'aide à la décision.</p>
+          <a id="go-link" class="btn-light" href="copywriting-redaction-commerciale--266.html">Découvrir la prestation →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── APPLICATIONS & CTA ── -->
+  <section class="ed-section">
+    <div class="wrap">
+      <p class="ed-kicker">Exemples concrets</p>
+      <h2 class="ed-h2">Le contenu en synergie avec le SEO et la vidéo.</h2>
+
+      <div class="ed-cases reveal">
+        <article class="ed-case">
+          <div>
+            <p class="ed-case-meta">Healthtech · Éditorial &amp; SEO</p>
+            <h3>Stratégie de contenu SEO pour une startup Healthtech</h3>
+            <p>Production de contenus experts et pédagogiques répondant aux exigences d'un secteur réglementé pour bâtir une autorité organique solide.</p>
+          </div>
+          <a class="ed-inline-link" href="strategie-de-contenu-seo-pour-une-startup-healthtech--588.html">Lire l'étude de cas →</a>
+        </article>
+
+        <article class="ed-case">
+          <div>
+            <p class="ed-case-meta">Automobile · Narration &amp; Campagne Vidéo</p>
+            <h3>Campagne vidéo publicitaire pour un constructeur automobile</h3>
+            <p>Conception de messages calibrés pour la diffusion vidéo digitale afin de concilier impact de marque et efficacité publicitaire.</p>
+          </div>
+          <a class="ed-inline-link" href="campagne-video-publicitaire-pour-un-constructeur-automobile--610.html">Lire l'étude de cas →</a>
+        </article>
+      </div>
+
+      <div class="ed-cta reveal">
+        <div>
+          <h2>Faites parler votre expertise avec justesse.</h2>
+          <p>Pages stratégiques, calendrier éditorial SEO ou scripts vidéo : confiez vos textes à une équipe qui relie qualité rédactionnelle et résultats commerciaux.</p>
+        </div>
+        <div class="ed-cta-btns">
+          <a class="btn-violet" href="devis-sur-mesure--48.html">Demander un devis</a>
+          <a class="btn-outline-light" href="contact--895.html">Contacter l'agence</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ed-footer">
+  <div class="wrap">
+    <div class="ed-footer-top">
+      <h2>Les 8 pôles d'expertise Maison John&amp;Co</h2>
+      <a class="ed-inline-link" href="services-proposes-pour-les-entreprises--395.html">Vue globale Services entreprises →</a>
+    </div>
+    <nav class="ed-cat-grid" aria-label="Catégories de services">
+      <a href="strategie-digitale-accompagnement--396.html">01. Stratégie Digitale &amp; Accompagnement</a>
+      <a href="creation-digitale-identite--397.html">02. Création Digitale &amp; Identité</a>
+      <a href="publicite-digitale--398.html">03. Publicité Digitale</a>
+      <a href="referencement-visibilite--399.html">04. Référencement &amp; Visibilité</a>
+      <a href="contenu-redaction--400.html" aria-current="page">05. Contenu &amp; Rédaction</a>
+      <a href="automatisation-crm--401.html">06. Automatisation &amp; CRM</a>
+      <a href="analyse-performance--402.html">07. Analyse &amp; Performance</a>
+      <a href="influence-social-media-communaute--403.html">08. Influence, Social Media &amp; Communauté</a>
+    </nav>
+    <div class="ed-legal">
+      <span>© Maison John&amp;Co Marketing — Tous droits réservés</span>
+      <div class="ed-legal-links">
+        <a href="blog-ressources--58.html">Blog &amp; ressources</a>
+        <a href="offres-tarifs--45.html">Offres &amp; tarifs</a>
+        <a href="contact--895.html">Contact</a>
+        <a href="mentions-legales--1004.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    document.documentElement.classList.add('js-ready');
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach((el) => io.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    const goals = {
+      convert: {
+        title: "Écriture commerciale directe et orientée bénéfices",
+        desc: "Sur une page de service, une landing page ou une séquence de prospection, chaque paragraphe doit répondre à une question précise du décideur : pourquoi vous, comment cela fonctionne et quelle est la prochaine étape.",
+        rhythm: "Promesse immédiate, preuves, levée d'objections, CTA clair",
+        synergy: "Landing Pages, Tunnel de Vente & Email Marketing",
+        service: "Copywriting & Rédaction Commerciale",
+        note: "Pour transformer des pages descriptives en véritables supports d'aide à la décision.",
+        href: "copywriting-redaction-commerciale--266.html"
+      },
+      rank: {
+        title: "Contenus de fond conçus pour durer sur Google",
+        desc: "Un article SEO efficace n'empile pas des mots-clés : il traite le sujet avec rigueur, répond aux questions réelles des internautes et oriente naturellement les lecteurs qualifiés vers vos prestations.",
+        rhythm: "Intentions de recherche, hiérarchie Hn, maillage interne",
+        synergy: "Stratégie de Contenu SEO & Référencement Naturel",
+        service: "Rédaction SEO & Articles de Blog",
+        note: "Pour faire de votre site une source d'information de référence qui génère un trafic pérenne.",
+        href: "redaction-seo-articles-de-blog--264.html"
+      },
+      video: {
+        title: "Scénarisation rythmée pour capter l'attention en 3 secondes",
+        desc: "En publicité vidéo ou sur les réseaux sociaux, l'audience décide instantanément si elle poursuit le visionnage. Un script travaillé cadence l'accroche, la démonstration et l'appel à l'action sans temps mort.",
+        rhythm: "Hook visuel/verbal, tension problème, solution, appel à l'action",
+        synergy: "Publicité Vidéo & Social Ads",
+        service: "Création de Scripts Vidéo Publicitaires",
+        note: "Pour maximiser le taux de visionnage et la performance de vos investissements vidéo.",
+        href: "creation-de-scripts-video-publicitaires--265.html"
+      }
+    };
+
+    const tabs = document.querySelectorAll('.ed-goal-tab');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const d = goals[tab.dataset.goal];
+        if (!d) return;
+        tabs.forEach((t) => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+        document.getElementById('go-title').textContent = d.title;
+        document.getElementById('go-desc').textContent = d.desc;
+        document.getElementById('go-rhythm').textContent = d.rhythm;
+        document.getElementById('go-synergy').textContent = d.synergy;
+        document.getElementById('go-service').textContent = d.service;
+        document.getElementById('go-note').textContent = d.note;
+        document.getElementById('go-link').href = d.href;
+      });
+    });
+  })();
+</script>
 </body>
 </html>
-<p></p>
